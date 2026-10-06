@@ -190,10 +190,10 @@
 
                 <!-- Status Filter Pills -->
                 <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto text-xs font-medium">
-                    <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-900 text-white transition-colors">All (<span id="count-all">0</span>)</button>
+                    <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-900 text-white transition-colors">Pending (<span id="count-pending">0</span>)</button>
                     <button data-filter="nicknames" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-purple-700 hover:bg-purple-100 transition-colors">Nicknames & Variants (<span id="count-nicknames">0</span>)</button>
                     <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">High Confidence (<span id="count-high">0</span>)</button>
-                    <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Pending (<span id="count-pending">0</span>)</button>
+                    <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">All (<span id="count-all">0</span>)</button>
                     <button data-filter="approved" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Approved (<span id="count-approved">0</span>)</button>
                     <button data-filter="rejected" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Rejected (<span id="count-rejected">0</span>)</button>
                 </div>
@@ -205,7 +205,7 @@
                     <span>Showing <span id="showing-count" class="font-bold text-slate-800">0</span> candidate pairs</span>
                     <span class="text-slate-300">•</span>
                     <label class="inline-flex items-center gap-1.5 cursor-pointer text-slate-600 select-none hover:text-slate-900">
-                        <input type="checkbox" id="toggle-hide-approved" class="rounded border-slate-300 text-slate-900 focus:ring-slate-900">
+                        <input type="checkbox" id="toggle-hide-approved" checked class="rounded border-slate-300 text-slate-900 focus:ring-slate-900">
                         <span>Hide approved items</span>
                     </label>
                 </div>
@@ -284,9 +284,15 @@
                 console.error(e);
             }
 
-            // Sync initial state
+            // Sync initial state from both compiled candidates and localStorage
             rawCandidates.forEach(c => {
                 const lk = c.lookup_key || c.legacy_name;
+                // If already approved in corrections.json on disk, ensure it is populated in approvedMap
+                if (c.status === 'approved') {
+                    if (!approvedMap[lk]) approvedMap[lk] = c.full_name;
+                    if (!approvedMap[c.legacy_name]) approvedMap[c.legacy_name] = c.full_name;
+                }
+                // If present in approvedMap, flag candidate as approved
                 if (approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name) {
                     c.status = 'approved';
                 }
@@ -317,9 +323,9 @@
                 });
             }
 
-            let currentFilter = 'all';
+            let currentFilter = 'pending';
             let searchQuery = '';
-            let hideApproved = false;
+            let hideApproved = true;
             let currentPage = 1;
             const pageSize = 40;
 
@@ -998,8 +1004,19 @@
                 approvedMap[lookupKey] = fullName;
                 rejectedSet.delete(id);
                 saveState();
-                render();
-                showToast(`Approved: ${lookupKey} ➔ ${fullName}`);
+
+                const el = document.getElementById(`card-${id}`);
+                if (el && (hideApproved || currentFilter === 'pending')) {
+                    el.style.transition = 'all 0.22s ease-out';
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Approved & archived: ${lookupKey} ➔ ${fullName}`);
             };
 
             window.rejectCandidate = (id) => {
@@ -1011,7 +1028,18 @@
                 }
                 rejectedSet.add(id);
                 saveState();
-                render();
+
+                const el = document.getElementById(`card-${id}`);
+                if (el && (hideApproved || currentFilter === 'pending')) {
+                    el.style.transition = 'all 0.22s ease-out';
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
                 showToast(`Rejected match.`);
             };
 
@@ -1064,11 +1092,11 @@
             document.getElementById('btn-reset-filters').addEventListener('click', () => {
                 searchQuery = '';
                 document.getElementById('filter-search').value = '';
-                if (hideApprovedToggle) hideApprovedToggle.checked = false;
-                hideApproved = false;
-                currentFilter = 'all';
+                if (hideApprovedToggle) hideApprovedToggle.checked = true;
+                hideApproved = true;
+                currentFilter = 'pending';
                 currentPage = 1;
-                document.querySelector('.filter-tab[data-filter="all"]').click();
+                document.querySelector('.filter-tab[data-filter="pending"]').click();
             });
 
             document.getElementById('btn-prev-page').addEventListener('click', () => {
