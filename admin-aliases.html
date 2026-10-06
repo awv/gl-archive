@@ -96,10 +96,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6 flex-grow">
         
         <!-- KPI METRICS -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                 <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">Total Candidates</span>
                 <span id="stat-total" class="block text-2xl font-bold font-serif text-slate-900 mt-1">0</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-purple-700">Nickname Variants</span>
+                <span id="stat-nicknames" class="block text-2xl font-bold font-serif text-purple-700 mt-1">0</span>
             </div>
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                 <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-emerald-700">High Confidence (&ge;90%)</span>
@@ -187,6 +191,7 @@
                 <!-- Status Filter Pills -->
                 <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto text-xs font-medium">
                     <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-900 text-white transition-colors">All (<span id="count-all">0</span>)</button>
+                    <button data-filter="nicknames" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-purple-700 hover:bg-purple-100 transition-colors">Nicknames & Variants (<span id="count-nicknames">0</span>)</button>
                     <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">High Confidence (<span id="count-high">0</span>)</button>
                     <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Pending (<span id="count-pending">0</span>)</button>
                     <button data-filter="approved" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">Approved (<span id="count-approved">0</span>)</button>
@@ -276,7 +281,8 @@
 
             // Sync initial state
             rawCandidates.forEach(c => {
-                if (approvedMap[c.legacy_name] === c.full_name) {
+                const lk = c.lookup_key || c.legacy_name;
+                if (approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name) {
                     c.status = 'approved';
                 }
             });
@@ -285,8 +291,11 @@
             if (!rawCandidates.some(c => c.legacy_name.toLowerCase() === 'r. gale')) {
                 rawCandidates.unshift({
                     id: 'r_gale__robert_gale',
+                    lookup_key: 'R. Gale [Parc Bryn Bach Running Club]',
+                    display_name: 'R. Gale [Parc Bryn Bach Running Club]',
                     legacy_name: 'R. Gale',
                     full_name: 'Robert Gale',
+                    is_nickname_variant: false,
                     confidence: 95,
                     confidence_reasons: ['User specified alias', 'Parc Bryn Bach Running Club'],
                     shared_clubs: ['Parc Bryn Bach Running Club'],
@@ -299,7 +308,7 @@
                     legacy_finishes: 4,
                     full_finishes: 0,
                     gender: 'M',
-                    status: approvedMap['R. Gale'] === 'Robert Gale' ? 'approved' : 'pending'
+                    status: (approvedMap['R. Gale [Parc Bryn Bach Running Club]'] === 'Robert Gale' || approvedMap['R. Gale'] === 'Robert Gale') ? 'approved' : 'pending'
                 });
             }
 
@@ -322,17 +331,26 @@
 
             const updateStats = () => {
                 const total = rawCandidates.length;
+                const nicknames = rawCandidates.filter(c => c.is_nickname_variant).length;
                 const high = rawCandidates.filter(c => c.confidence >= 90).length;
                 const approved = Object.keys(approvedMap).length;
                 const rejected = rejectedSet.size;
-                const pending = rawCandidates.filter(c => !approvedMap[c.legacy_name] && !rejectedSet.has(c.id)).length;
+                const pending = rawCandidates.filter(c => {
+                    const lk = c.lookup_key || c.legacy_name;
+                    const isApp = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
+                    return !isApp && !rejectedSet.has(c.id);
+                }).length;
 
                 document.getElementById('stat-total').textContent = total.toLocaleString();
+                const statNicknamesEl = document.getElementById('stat-nicknames');
+                if (statNicknamesEl) statNicknamesEl.textContent = nicknames.toLocaleString();
                 document.getElementById('stat-high').textContent = high.toLocaleString();
                 document.getElementById('stat-approved').textContent = approved.toLocaleString();
                 document.getElementById('stat-pending').textContent = pending.toLocaleString();
 
                 document.getElementById('count-all').textContent = total;
+                const countNicknamesEl = document.getElementById('count-nicknames');
+                if (countNicknamesEl) countNicknamesEl.textContent = nicknames;
                 document.getElementById('count-high').textContent = high;
                 document.getElementById('count-approved').textContent = approved;
                 document.getElementById('count-pending').textContent = pending;
@@ -341,9 +359,11 @@
 
             const getFilteredCandidates = () => {
                 return rawCandidates.filter(c => {
-                    const isApproved = approvedMap[c.legacy_name] === c.full_name;
+                    const lk = c.lookup_key || c.legacy_name;
+                    const isApproved = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
                     const isRejected = rejectedSet.has(c.id);
 
+                    if (currentFilter === 'nicknames' && !c.is_nickname_variant) return false;
                     if (currentFilter === 'high' && c.confidence < 90) return false;
                     if (currentFilter === 'approved' && !isApproved) return false;
                     if (currentFilter === 'rejected' && !isRejected) return false;
@@ -352,8 +372,9 @@
                     if (searchQuery) {
                         const q = searchQuery.toLowerCase();
                         const matchName = c.legacy_name.toLowerCase().includes(q) || c.full_name.toLowerCase().includes(q);
-                        const matchClub = (c.shared_clubs || []).some(cl => cl.toLowerCase().includes(q)) ||
-                                          (c.legacy_clubs || []).some(cl => cl.toLowerCase().includes(q));
+                        const matchClub = (c.lookup_key || '').toLowerCase().includes(q) ||
+                                          (c.legacy && c.legacy.club && c.legacy.club.toLowerCase().includes(q)) ||
+                                          (c.modern && c.modern.club && c.modern.club.toLowerCase().includes(q));
                         if (!matchName && !matchClub) return false;
                     }
                     return true;
@@ -397,7 +418,13 @@
                     } else if (isRejected) {
                         cardBorder = 'border-rose-200 bg-rose-50/10 opacity-60';
                         statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">REJECTED</span>`;
+                    } else if (c.is_nickname_variant) {
+                        cardBorder = 'border-purple-300 bg-purple-50/20';
                     }
+
+                    const nickBadge = c.is_nickname_variant
+                        ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">NICKNAME VARIANT (${c.nickname_detail || 'Diminutive'})</span>`
+                        : '';
 
                     const confBadgeClass = c.confidence >= 90 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
 
@@ -425,9 +452,16 @@
                         categories: c.full_categories || []
                     };
 
-                    const evidenceList = (c.confidence_reasons || []).map(r => 
-                        `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200">${r}</span>`
-                    ).join('');
+                    const evidenceList = (c.confidence_reasons || []).map(r => {
+                        const isHighlight = r.startsWith('✔') || r.includes('Name family');
+                        const cls = isHighlight 
+                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
+                            : 'bg-slate-100 text-slate-700 border-slate-200';
+                        return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                    }).join('');
+
+                    const leftColHeader = c.is_nickname_variant ? `Nickname Profile (${leg.name})` : 'Legacy Identity';
+                    const rightColHeader = c.is_nickname_variant ? `Formal Profile (${mod.name})` : 'Modern Candidate';
 
                     return `
                         <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
@@ -447,7 +481,8 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center">
+                                <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center flex-wrap">
+                                    ${nickBadge}
                                     <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
                                         ${c.confidence}% Match
                                     </span>
@@ -466,10 +501,10 @@
                             <!-- Side-by-Side Comparative Dossier -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                                 
-                                <!-- Legacy Entity Column -->
+                                <!-- Legacy / Nickname Entity Column -->
                                 <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
                                     <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
-                                        <span>Legacy Identity</span>
+                                        <span>${leftColHeader}</span>
                                         <span class="text-slate-700 font-semibold">${leg.years_span}</span>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2 text-xs">
@@ -492,10 +527,10 @@
                                     </div>
                                 </div>
 
-                                <!-- Modern Candidate Column -->
+                                <!-- Modern / Formal Candidate Column -->
                                 <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
                                     <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
-                                        <span>Modern Candidate</span>
+                                        <span>${rightColHeader}</span>
                                         <span class="text-slate-700 font-semibold">${mod.years_span}</span>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2 text-xs">
@@ -593,13 +628,142 @@
                 };
             }
 
+            // Nickname Knowledge Base for Direct Sandbox Comparisons
+            const SANDBOX_FORMAL_ROOTS = {
+                andrew: ['andy', 'drew'],
+                phillip: ['phil', 'pip'],
+                philip: ['phil', 'pip'],
+                michael: ['mike', 'mikey', 'mick'],
+                david: ['dave', 'davy', 'dai'],
+                stephen: ['steve', 'stevie'],
+                steven: ['steve', 'stevie'],
+                daniel: ['dan', 'danny'],
+                christopher: ['chris', 'christie'],
+                christian: ['chris'],
+                thomas: ['tom', 'tommy'],
+                robert: ['rob', 'robbie', 'bob', 'bobby'],
+                matthew: ['matt', 'matty'],
+                william: ['will', 'willy', 'bill', 'billy', 'liam'],
+                james: ['jim', 'jimmy', 'jamie'],
+                alexander: ['alex', 'alec', 'sandy'],
+                anthony: ['antony', 'tony'],
+                antony: ['anthony', 'tony'],
+                richard: ['rich', 'richie', 'rick', 'ricky', 'dick'],
+                nicholas: ['nick', 'nicky'],
+                benjamin: ['ben', 'benji', 'benny'],
+                edward: ['ed', 'eddie', 'ted', 'teddy', 'ned'],
+                jonathan: ['jon', 'jonny', 'john', 'johnny'],
+                john: ['jonny', 'johnny', 'jon'],
+                joseph: ['joe', 'joey'],
+                samuel: ['sam', 'sammy'],
+                timothy: ['tim', 'timmy'],
+                peter: ['pete'],
+                patrick: ['pat', 'paddy'],
+                kenneth: ['ken', 'kenny'],
+                raymond: ['ray'],
+                donald: ['don', 'donnie'],
+                ronald: ['ron', 'ronnie'],
+                leonard: ['len', 'lenny'],
+                geoffrey: ['geoff', 'jeff'],
+                jeffrey: ['jeff', 'geoff'],
+                gregory: ['greg'],
+                russell: ['russ'],
+                douglas: ['doug'],
+                stuart: ['stu'],
+                stewart: ['stu'],
+                bradley: ['brad'],
+                lawrence: ['larry'],
+                laurence: ['larry'],
+                gareth: ['gary', 'gaz'],
+                oliver: ['oli', 'ollie'],
+                sebastian: ['seb'],
+                dominic: ['dom'],
+                joshua: ['josh'],
+                alan: ['alun'],
+                hugh: ['huw'],
+                owen: ['owain'],
+                charlotte: ['charlie', 'lottie'],
+                elizabeth: ['liz', 'lizzie', 'beth', 'betty', 'eliza'],
+                rebecca: ['becky', 'becca'],
+                catherine: ['cathy', 'cat', 'kate', 'katie'],
+                katherine: ['cathy', 'cat', 'kate', 'katie'],
+                kathryn: ['cathy', 'cat', 'kate', 'katie'],
+                jennifer: ['jen', 'jenny'],
+                samantha: ['sam', 'sammy'],
+                victoria: ['vicky', 'vicki', 'tori'],
+                alexandra: ['alex', 'alexa', 'ali', 'allie'],
+                patricia: ['pat', 'trish', 'tricia'],
+                margaret: ['maggie', 'meg', 'peggy', 'mags'],
+                susan: ['suzanne', 'sue', 'susie', 'suzi'],
+                suzanne: ['sue', 'susie', 'suzi'],
+                christine: ['chris', 'chrissie', 'tina'],
+                christina: ['chris', 'chrissie', 'tina'],
+                nicola: ['nic', 'nicky'],
+                joanne: ['jo', 'josie'],
+                joanna: ['jo', 'josie'],
+                stephanie: ['steph'],
+                deborah: ['debra', 'deb', 'debbie'],
+                debra: ['deb', 'debbie'],
+                jessica: ['jess', 'jessie'],
+                frances: ['francesca', 'fran', 'frankie'],
+                francesca: ['fran', 'frankie'],
+                eleanor: ['ellie', 'ella'],
+                natasha: ['tash', 'tasha'],
+                abigail: ['abby', 'abbie'],
+                caroline: ['carolyn', 'carol', 'caz'],
+                jacqueline: ['jacqui', 'jackie']
+            };
+
+            const SANDBOX_NICK_TO_FORMAL = {};
+            Object.keys(SANDBOX_FORMAL_ROOTS).forEach(formal => {
+                SANDBOX_FORMAL_ROOTS[formal].forEach(nick => {
+                    SANDBOX_NICK_TO_FORMAL[nick] = formal;
+                });
+            });
+
+            function checkSandboxNicknameMatch(nameA, nameB) {
+                const partsA = (nameA || '').trim().split(/\s+/);
+                const partsB = (nameB || '').trim().split(/\s+/);
+                if (partsA.length < 2 || partsB.length < 2) return null;
+                const surA = partsA.slice(1).join(' ').toLowerCase();
+                const surB = partsB.slice(1).join(' ').toLowerCase();
+                if (surA !== surB) return null;
+                const fA = partsA[0].toLowerCase();
+                const fB = partsB[0].toLowerCase();
+                if (fA === fB) return null;
+
+                if (SANDBOX_NICK_TO_FORMAL[fA] === fB || (SANDBOX_FORMAL_ROOTS[fB] && SANDBOX_FORMAL_ROOTS[fB].includes(fA))) {
+                    return { isMatch: true, nick: nameA, formal: nameB, nickFirst: partsA[0], formalFirst: partsB[0] };
+                }
+                if (SANDBOX_NICK_TO_FORMAL[fB] === fA || (SANDBOX_FORMAL_ROOTS[fA] && SANDBOX_FORMAL_ROOTS[fA].includes(fB))) {
+                    return { isMatch: true, nick: nameB, formal: nameA, nickFirst: partsB[0], formalFirst: partsA[0] };
+                }
+                const rootA = SANDBOX_NICK_TO_FORMAL[fA];
+                const rootB = SANDBOX_NICK_TO_FORMAL[fB];
+                if (rootA && rootA === rootB) {
+                    if (fA.length <= fB.length) {
+                        return { isMatch: true, nick: nameA, formal: nameB, nickFirst: partsA[0], formalFirst: partsB[0] };
+                    } else {
+                        return { isMatch: true, nick: nameB, formal: nameA, nickFirst: partsB[0], formalFirst: partsA[0] };
+                    }
+                }
+                return null;
+            }
+
             function calcProb(dossierA, dossierB) {
                 if (dossierA.gender !== dossierB.gender) {
-                    return { score: 0, reasons: ["Gender mismatch (Men vs Women)"] };
+                    return { score: 0, reasons: ["Gender mismatch (Men vs Women)"], nickMatch: null };
                 }
 
                 let score = 50.0;
                 let reasons = [];
+
+                // 0. Nickname / Diminutive Match Boost
+                const nickMatch = checkSandboxNicknameMatch(dossierA.name, dossierB.name);
+                if (nickMatch) {
+                    score += 25.0;
+                    reasons.push(`✔ Known diminutive/nickname match (${nickMatch.nickFirst} ➔ ${nickMatch.formalFirst})`);
+                }
 
                 const sharedClub = (dossierA.club.toLowerCase() === dossierB.club.toLowerCase());
                 if (sharedClub) {
@@ -658,18 +822,18 @@
                     }
                 }
 
-                if (dossierA.last_year <= 2022 && dossierB.first_year >= 2021) {
+                if (dossierA.last_year <= 2024 && dossierB.first_year >= 2021) {
                     score += 8.0;
                     reasons.push(`Era transition (${dossierA.years_span.split(' ')[0]} ➔ ${dossierB.years_span.split(' ')[0]})`);
                 }
 
                 if (dossierA.finishes >= 3 && dossierB.finishes >= 3) {
                     score += 4.0;
-                    reasons.push(`Strong sample (${dossierA.finishes} legacy + ${dossierB.finishes} modern races)`);
+                    reasons.push(`Strong sample (${dossierA.finishes} earlier + ${dossierB.finishes} later finishes)`);
                 }
 
                 const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
-                return { score: finalScore, reasons };
+                return { score: finalScore, reasons, nickMatch };
             }
 
             function renderSandbox() {
@@ -682,10 +846,15 @@
                 const dB = computeDossier(selectedRunnerB);
                 if (!dA || !dB) return;
 
-                const { score, reasons } = calcProb(dA, dB);
+                const { score, reasons, nickMatch } = calcProb(dA, dB);
 
-                const isApproved = approvedMap[dA.key] === dB.name;
+                const isApproved = approvedMap[dA.key] === dB.name || approvedMap[dA.name] === dB.name;
                 const badgeClass = score >= 90 ? 'bg-emerald-100 text-emerald-800' : (score >= 60 ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700');
+                const linkLabel = isApproved 
+                    ? 'Linked ✔' 
+                    : (nickMatch 
+                        ? `Link Nickname: "${dA.key}" ➔ "${dB.name}"` 
+                        : `Link Alias: "${dA.key}" ➔ "${dB.name}"`);
 
                 resultsBox.classList.remove('hidden');
                 resultsBox.innerHTML = `
@@ -693,8 +862,9 @@
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
                             <div>
                                 <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">Comparison Analysis</span>
-                                <div class="text-base font-serif font-bold text-slate-900 mt-0.5">
-                                    ${dA.name} <span class="text-slate-500 font-normal">(${dA.club})</span> &rarr; ${dB.name} <span class="text-slate-500 font-normal">(${dB.club})</span>
+                                <div class="text-base font-serif font-bold text-slate-900 mt-0.5 flex items-center gap-2 flex-wrap">
+                                    <span>${dA.name} <span class="text-slate-500 font-normal">(${dA.club})</span> &rarr; ${dB.name} <span class="text-slate-500 font-normal">(${dB.club})</span></span>
+                                    ${nickMatch ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">Diminutive / Nickname Pair</span>` : ''}
                                 </div>
                             </div>
                             <div class="flex items-center gap-3">
@@ -702,7 +872,7 @@
                                     ${score}% Match Probability
                                 </span>
                                 <button id="btn-sandbox-link" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}">
-                                    ${isApproved ? 'Linked ✔' : `Link Alias: "${dA.key}" ➔ "${dB.name}"`}
+                                    ${linkLabel}
                                 </button>
                             </div>
                         </div>
@@ -741,7 +911,13 @@
                         <!-- Forensic Evidence List -->
                         <div class="flex flex-wrap items-center gap-1.5 pt-1">
                             <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
-                            ${reasons.map(r => `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white text-slate-700 border border-slate-200">${r}</span>`).join('')}
+                            ${reasons.map(r => {
+                                const isHighlight = r.startsWith('✔');
+                                const cls = isHighlight 
+                                    ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
+                                    : 'bg-white text-slate-700 border-slate-200';
+                                return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                            }).join('')}
                         </div>
                     </div>
                 `;

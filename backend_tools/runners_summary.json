@@ -12771,7 +12771,7 @@
       "2022/2023",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -27528,20 +27528,34 @@
   "andrew blair": {
     "canonical_name": "Andrew Blair",
     "raw_names": [
-      "Andrew Blair"
+      "A Blair",
+      "A. Blair",
+      "Andrew Blair",
+      "Andy Blair"
     ],
     "clubs": [
       "Les Croupiers Running Club"
     ],
     "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2013/2014",
+      "2015/2016",
+      "2019/2020",
+      "2021/2022",
+      "2022/2023",
+      "2023/2024",
       "2025/2026"
     ],
     "gender": "M",
     "categories": [
+      "V45",
+      "V50",
+      "V55",
       "V60"
     ],
-    "finishes": 1,
-    "first_year": 2025,
+    "finishes": 20,
+    "first_year": 2010,
     "last_year": 2025
   },
   "ray rawbone": {
@@ -44662,27 +44676,6 @@
     "first_year": 2021,
     "last_year": 2023
   },
-  "andy blair": {
-    "canonical_name": "Andy Blair",
-    "raw_names": [
-      "Andy Blair"
-    ],
-    "clubs": [
-      "Les Croupiers Running Club"
-    ],
-    "seasons": [
-      "2021/2022",
-      "2022/2023",
-      "2023/2024"
-    ],
-    "gender": "M",
-    "categories": [
-      "V55"
-    ],
-    "finishes": 7,
-    "first_year": 2021,
-    "last_year": 2023
-  },
   "michael jarrett": {
     "canonical_name": "Michael Jarrett",
     "raw_names": [
@@ -60665,7 +60658,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -70336,25 +70329,6 @@
     "gender": "M",
     "categories": [
       "V45"
-    ],
-    "finishes": 1,
-    "first_year": 2021,
-    "last_year": 2021
-  },
-  "a blair": {
-    "canonical_name": "A Blair",
-    "raw_names": [
-      "A Blair"
-    ],
-    "clubs": [
-      "Les Croupiers Running Club"
-    ],
-    "seasons": [
-      "2021/2022"
-    ],
-    "gender": "M",
-    "categories": [
-      "V55"
     ],
     "finishes": 1,
     "first_year": 2021,
@@ -84069,7 +84043,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -84255,7 +84229,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -84282,7 +84256,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -84312,7 +84286,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -84366,7 +84340,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -84485,7 +84459,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -84786,7 +84760,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -84817,7 +84791,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -85009,7 +84983,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -85320,7 +85294,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -85463,7 +85437,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -85624,7 +85598,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -85916,7 +85890,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -86040,7 +86014,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40"
@@ -86158,7 +86132,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -86256,7 +86230,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -86305,7 +86279,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -86337,7 +86311,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -86370,7 +86344,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -86716,7 +86690,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -86849,7 +86823,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -86894,7 +86868,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -87085,7 +87059,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -87136,7 +87110,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -87189,7 +87163,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -87378,7 +87352,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -87652,7 +87626,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -87734,7 +87708,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -87932,7 +87906,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -87960,7 +87934,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -88154,7 +88128,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50",
@@ -88180,7 +88154,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -88393,7 +88367,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V45"
@@ -88498,7 +88472,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -88648,7 +88622,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -88729,7 +88703,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -88758,7 +88732,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -89153,7 +89127,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -89178,7 +89152,7 @@
       "2011/2012",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V60"
@@ -89334,7 +89308,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -89627,7 +89601,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -89675,7 +89649,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -89841,7 +89815,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -90052,7 +90026,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -90095,7 +90069,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -90178,7 +90152,7 @@
     "seasons": [
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35"
     ],
@@ -90473,7 +90447,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -90524,7 +90498,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -90593,7 +90567,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -90792,7 +90766,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -91288,7 +91262,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45",
@@ -91479,7 +91453,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -91585,7 +91559,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -91619,7 +91593,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40",
@@ -91643,7 +91617,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V55"
@@ -91701,7 +91675,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -91727,7 +91701,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -92539,7 +92513,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -92680,7 +92654,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50",
@@ -92785,7 +92759,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -93106,7 +93080,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -93152,7 +93126,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V50",
@@ -93176,7 +93150,7 @@
       "2014/2015",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -93536,7 +93510,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -93758,7 +93732,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -93808,7 +93782,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50",
@@ -93916,7 +93890,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -93961,7 +93935,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -94070,7 +94044,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -94099,7 +94073,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -94425,7 +94399,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -94635,7 +94609,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -94825,7 +94799,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -95040,7 +95014,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -95075,7 +95049,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -95184,7 +95158,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -95333,7 +95307,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -95452,7 +95426,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -95781,7 +95755,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -95822,7 +95796,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -96042,7 +96016,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -96224,7 +96198,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -96958,7 +96932,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -97142,7 +97116,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -97322,7 +97296,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -97436,7 +97410,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50",
@@ -97599,7 +97573,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -98044,7 +98018,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -98231,7 +98205,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -98324,7 +98298,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -98393,7 +98367,7 @@
       "2011/2012",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -98653,7 +98627,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -99546,7 +99520,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50"
@@ -99830,7 +99804,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -99979,7 +99953,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45"
@@ -100221,7 +100195,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -100723,7 +100697,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -100852,7 +100826,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -100940,7 +100914,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -101057,7 +101031,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -101102,7 +101076,7 @@
     "seasons": [
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40"
@@ -101127,7 +101101,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -101179,7 +101153,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -101271,7 +101245,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -101587,7 +101561,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -101790,7 +101764,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V50",
@@ -101922,7 +101896,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55"
@@ -102148,7 +102122,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -102555,7 +102529,7 @@
       "2014/2015",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45"
     ],
@@ -103073,7 +103047,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -103518,7 +103492,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -103593,7 +103567,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -103667,7 +103641,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -103708,7 +103682,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -103833,7 +103807,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -103899,7 +103873,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -103982,7 +103956,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -104408,7 +104382,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -104712,7 +104686,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -105005,7 +104979,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -105200,7 +105174,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -105467,7 +105441,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -105672,7 +105646,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -106026,7 +106000,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -106182,7 +106156,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -106327,7 +106301,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50",
@@ -106443,7 +106417,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -106607,7 +106581,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -106672,7 +106646,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -106901,7 +106875,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -107528,7 +107502,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -107577,7 +107551,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -107607,7 +107581,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -107982,7 +107956,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -108524,7 +108498,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -108884,7 +108858,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50",
@@ -108969,7 +108943,7 @@
       "2010/2011",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -109042,7 +109016,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -109131,7 +109105,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -109390,7 +109364,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55"
@@ -109519,7 +109493,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -110099,7 +110073,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -110459,7 +110433,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -110695,7 +110669,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -110801,31 +110775,6 @@
     ],
     "finishes": 6,
     "first_year": 2015,
-    "last_year": 2019
-  },
-  "a. blair": {
-    "canonical_name": "A. Blair",
-    "raw_names": [
-      "A. Blair"
-    ],
-    "clubs": [
-      "Les Croupiers Running Club"
-    ],
-    "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2013/2014",
-      "2015/2016",
-      "2019/2020"
-    ],
-    "gender": "M",
-    "categories": [
-      "V45",
-      "V50",
-      "V55"
-    ],
-    "finishes": 11,
-    "first_year": 2010,
     "last_year": 2019
   },
   "g. hunt": {
@@ -111238,7 +111187,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V45",
@@ -111834,7 +111783,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -112565,7 +112514,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -112729,7 +112678,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -113883,7 +113832,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -114689,7 +114638,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -114779,7 +114728,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -114979,7 +114928,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -115075,7 +115024,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35"
     ],
@@ -115448,7 +115397,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -115556,7 +115505,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -115935,7 +115884,7 @@
     "seasons": [
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V50"
@@ -116346,7 +116295,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V45"
@@ -116559,7 +116508,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -117079,7 +117028,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -117262,7 +117211,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -117444,7 +117393,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -117484,7 +117433,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -117710,7 +117659,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V45",
@@ -117838,7 +117787,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -117980,7 +117929,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -118164,7 +118113,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -118334,7 +118283,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -118426,7 +118375,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -118799,7 +118748,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -118876,7 +118825,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -119444,7 +119393,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -119667,7 +119616,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55",
@@ -119936,7 +119885,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -120216,7 +120165,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -120331,7 +120280,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -120502,7 +120451,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -121303,7 +121252,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -121630,7 +121579,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -121983,7 +121932,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23"
     ],
@@ -122439,7 +122388,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -122562,7 +122511,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -122984,7 +122933,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -123554,7 +123503,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -123635,7 +123584,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50"
@@ -123658,7 +123607,7 @@
       "2011/2012",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -123759,7 +123708,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50"
@@ -124054,7 +124003,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V55"
@@ -124241,7 +124190,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -124600,7 +124549,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40",
@@ -125431,7 +125380,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50",
@@ -125587,7 +125536,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -125958,7 +125907,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -126223,7 +126172,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -126815,7 +126764,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -126983,7 +126932,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -127028,7 +126977,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -127490,7 +127439,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -127698,7 +127647,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -127740,7 +127689,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -127974,7 +127923,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -128022,7 +127971,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -128469,7 +128418,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V60"
@@ -129277,7 +129226,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -129331,7 +129280,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -129850,7 +129799,7 @@
       "2011/2012",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50"
@@ -130660,7 +130609,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -131015,7 +130964,7 @@
       "2014/2015",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V50"
@@ -131605,7 +131554,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50",
@@ -132220,7 +132169,7 @@
       "2014/2015",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -133068,7 +133017,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -133095,7 +133044,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -133616,7 +133565,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -134097,7 +134046,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -134146,7 +134095,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -134454,7 +134403,7 @@
       "2014/2015",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -134851,7 +134800,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -134996,7 +134945,7 @@
       "2011/2012",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -135039,7 +134988,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50"
@@ -135185,7 +135134,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -136171,7 +136120,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -136197,7 +136146,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -137010,7 +136959,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -138059,7 +138008,7 @@
       "2012/2013",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -138081,7 +138030,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -138489,7 +138438,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -138542,7 +138491,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -138847,7 +138796,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -139095,7 +139044,7 @@
       "2010/2011",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V45"
@@ -139123,7 +139072,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -139171,7 +139120,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -140378,7 +140327,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -140728,7 +140677,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -141563,7 +141512,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -143747,7 +143696,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50"
@@ -144491,7 +144440,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -144800,7 +144749,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -145355,7 +145304,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -145557,7 +145506,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V50"
@@ -146730,7 +146679,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -149015,7 +148964,7 @@
       "2012/2013",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -150305,7 +150254,7 @@
       "2010/2011",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23"
     ],
@@ -150804,7 +150753,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45"
@@ -152821,7 +152770,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -153196,7 +153145,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -153295,7 +153244,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45"
     ],
@@ -153673,7 +153622,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -153699,7 +153648,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -156443,7 +156392,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -160853,7 +160802,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -161454,7 +161403,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V70"
@@ -163374,7 +163323,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V50"
@@ -163708,7 +163657,7 @@
     "seasons": [
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -164583,7 +164532,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -166776,7 +166725,7 @@
     "seasons": [
       "2013/2014"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -167910,7 +167859,7 @@
       "2012/2013",
       "2013/2014"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -172464,7 +172413,7 @@
       "2010/2011",
       "2013/2014"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"

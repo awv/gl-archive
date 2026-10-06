@@ -261,6 +261,18 @@ def compile_database():
                         canonical_name = athlete_corrections[variant]
                         break
 
+                # Transitive alias resolution (e.g. A. Blair -> Andy Blair -> Andrew Blair)
+                for _ in range(3):
+                    next_name = None
+                    for key in [f"{canonical_name} [{sex_label}, {canonical_club}]", f"{canonical_name} [{canonical_club}]", canonical_name]:
+                        if key in athlete_corrections and athlete_corrections[key] != canonical_name:
+                            next_name = athlete_corrections[key]
+                            break
+                    if next_name:
+                        canonical_name = next_name
+                    else:
+                        break
+
                 cat_code = row["cat_code"]
                 cat_counters[cat_code] += 1
                 cat_pos = cat_counters[cat_code]

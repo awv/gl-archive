@@ -306,3 +306,19 @@ html.dark #theme-toggle-btn:hover {
     background-color: #2a374f !important;
 }
 
+/* Nickname & Variant Badges */
+html.dark .bg-purple-100 {
+    background-color: rgba(147, 51, 234, 0.22) !important;
+}
+html.dark .text-purple-700,
+html.dark .text-purple-800 {
+    color: #c084fc !important;
+}
+html.dark .border-purple-200,
+html.dark .border-purple-300 {
+    border-color: rgba(168, 85, 247, 0.35) !important;
+}
+html.dark .bg-purple-50\/20 {
+    background-color: rgba(147, 51, 234, 0.08) !important;
+}
+
