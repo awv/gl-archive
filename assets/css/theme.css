@@ -1,0 +1,308 @@
+/* theme.css — Editorial Styling & Midnight Dark Theme for GL Archive */
+
+/* 1. Base Typography & Font Features */
+body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+/* 2. Light Theme Baseline (Daylight Gazette) */
+html:not(.dark) {
+    color-scheme: light;
+    background-color: #fbfcfd;
+}
+html:not(.dark) body {
+    background-color: #fbfcfd;
+    color: #1e293b;
+}
+
+/* 3. Midnight Dark Theme (Editorial Dark Slate) */
+html.dark {
+    color-scheme: dark;
+    background-color: #0b0f19;
+}
+
+html.dark body {
+    background-color: #0b0f19 !important;
+    color: #cbd5e1 !important;
+}
+
+/* Background Elevations */
+html.dark header,
+html.dark footer,
+html.dark .bg-white {
+    background-color: #111827 !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-\[\#fbfcfd\] {
+    background-color: #0b0f19 !important;
+}
+
+html.dark .bg-slate-100 {
+    background-color: #1a2234 !important;
+}
+
+html.dark .bg-slate-200 {
+    background-color: #242f44 !important;
+}
+
+html.dark .bg-emerald-50 {
+    background-color: rgba(6, 78, 59, 0.25) !important;
+}
+
+html.dark .bg-amber-50 {
+    background-color: rgba(120, 53, 15, 0.25) !important;
+}
+
+html.dark .bg-blue-50 {
+    background-color: rgba(30, 58, 138, 0.25) !important;
+}
+
+/* Borders */
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-200\/80 {
+    border-color: #1e293b !important;
+}
+
+html.dark .border-slate-300 {
+    border-color: #334155 !important;
+}
+
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #1e293b !important;
+}
+
+/* Text Hierarchy */
+html.dark .text-slate-950,
+html.dark .text-slate-900 {
+    color: #f8fafc !important;
+}
+
+html.dark .text-slate-800 {
+    color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-700 {
+    color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-600 {
+    color: #94a3b8 !important;
+}
+
+html.dark .text-slate-500 {
+    color: #64748b !important;
+}
+
+html.dark .text-slate-400 {
+    color: #475569 !important;
+}
+
+html.dark .text-emerald-700,
+html.dark .text-emerald-800,
+html.dark .text-emerald-900 {
+    color: #34d399 !important;
+}
+
+html.dark .text-amber-700,
+html.dark .text-amber-800 {
+    color: #fbbf24 !important;
+}
+
+html.dark .text-blue-700,
+html.dark .text-blue-800 {
+    color: #60a5fa !important;
+}
+
+/* Hover States */
+html.dark .hover\:bg-slate-50:hover {
+    background-color: #151d2e !important;
+}
+
+html.dark .hover\:bg-slate-100:hover {
+    background-color: #1e293b !important;
+}
+
+html.dark .hover\:bg-slate-200:hover {
+    background-color: #2a374f !important;
+}
+
+html.dark .hover\:text-slate-900:hover,
+html.dark .hover\:text-slate-950:hover {
+    color: #ffffff !important;
+}
+
+/* Tables */
+html.dark table thead th {
+    background-color: #151d2e !important;
+    color: #94a3b8 !important;
+    border-color: #1e293b !important;
+}
+
+html.dark table tbody tr {
+    border-color: #1e293b !important;
+}
+
+html.dark table tbody tr:hover {
+    background-color: #151d2e !important;
+}
+
+/* Form Inputs & Selects */
+html.dark input[type="text"],
+html.dark input[type="search"],
+html.dark select {
+    background-color: #111827 !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+}
+
+html.dark input::placeholder {
+    color: #64748b !important;
+}
+
+html.dark input:focus,
+html.dark select:focus {
+    border-color: #38bdf8 !important;
+    background-color: #151d2e !important;
+}
+
+/* Search Palette Modal */
+html.dark #search-palette-modal .bg-white {
+    background-color: #111827 !important;
+}
+
+html.dark #search-palette-modal .border-slate-100,
+html.dark #search-palette-modal .border-slate-200 {
+    border-color: #1e293b !important;
+}
+
+html.dark #search-palette-modal kbd {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+html.dark #search-palette-modal input {
+    background-color: transparent !important;
+    color: #f8fafc !important;
+}
+
+/* Navigation & Mobile Tray */
+html.dark header.bg-white\/95 {
+    background-color: rgba(17, 24, 39, 0.95) !important;
+}
+
+html.dark #mobile-nav-tray {
+    background-color: #111827 !important;
+}
+
+/* Nav Brand Badge */
+html.dark .w-9.h-9.bg-slate-900 {
+    background-color: #065f46 !important;
+    color: #ecfdf5 !important;
+    border: 1px solid rgba(52, 211, 153, 0.3) !important;
+}
+
+/* Active Category Tabs & Pills */
+html.dark .cat-pill.active,
+html.dark .gender-tab.active,
+html.dark .tab-btn.active,
+html.dark .nav-tab-active {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: #334155 !important;
+}
+
+/* Inactive tabs */
+html.dark .cat-pill:not(.active),
+html.dark .gender-tab:not(.active),
+html.dark .tab-btn:not(.active) {
+    color: #94a3b8 !important;
+}
+
+html.dark .cat-pill:not(.active):hover,
+html.dark .gender-tab:not(.active):hover,
+html.dark .tab-btn:not(.active):hover {
+    background-color: #1a2234 !important;
+    color: #f8fafc !important;
+}
+
+/* Stat Widgets & Well Cards */
+html.dark .stat-card,
+html.dark div[class*="bg-slate-50"][class*="border"] {
+    background-color: #151d2e !important;
+    border-color: #1e293b !important;
+}
+
+/* Gender Controls & Active Pills */
+html.dark #btn-gender-m.bg-white, 
+html.dark #btn-gender-f.bg-white {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark #btn-gender-m:not(.bg-white), 
+html.dark #btn-gender-f:not(.bg-white) {
+    color: #94a3b8 !important;
+}
+
+html.dark .cat-pill.bg-slate-900,
+html.dark .filter-tab.bg-slate-900 {
+    background-color: #f1f5f9 !important;
+    color: #0b0f19 !important;
+}
+
+html.dark .cat-pill.bg-slate-100,
+html.dark .filter-tab.bg-slate-100 {
+    background-color: #1a2234 !important;
+    color: #94a3b8 !important;
+}
+
+/* Badges & Guest Flags */
+html.dark .bg-amber-100 {
+    background-color: rgba(217, 119, 6, 0.25) !important;
+}
+html.dark .text-amber-900 {
+    color: #fcd34d !important;
+}
+html.dark .text-amber-700 {
+    color: #fbbf24 !important;
+}
+
+/* Hero Search on Homepage */
+html.dark #hero-search-input {
+    background-color: #111827 !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+}
+html.dark #hero-search-input:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 1px #10b981 !important;
+}
+
+/* Athlete Page Club Badges */
+html.dark #athlete-clubs-list span,
+html.dark #athlete-clubs-list a {
+    background-color: #151d2e !important;
+    border-color: #1e293b !important;
+    color: #cbd5e1 !important;
+}
+
+/* Theme Toggle Button Styling */
+#theme-toggle-btn {
+    cursor: pointer;
+}
+html.dark #theme-toggle-btn {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+html.dark #theme-toggle-btn:hover {
+    background-color: #2a374f !important;
+}
+

@@ -1,4 +1,23 @@
-// site-layout.js — Global Layout & Search Palette for GL Archive
+// site-layout.js — Global Layout, Dark/Light Theme & Search Palette for GL Archive
+
+// 0. IMMEDIATE THEME INITIALIZATION (Prevents white flash, defaults to dark)
+(function() {
+    const stored = localStorage.getItem('gl_theme');
+    const theme = (stored === 'light') ? 'light' : 'dark';
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+    // Ensure theme.css is dynamically appended if not already in document
+    if (!document.querySelector('link[href*="theme.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'assets/css/theme.css';
+        document.head.appendChild(link);
+    }
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. INJECT GLOBAL NAV & FOOTER
@@ -43,6 +62,45 @@ function initNavEvents() {
             window.openSearchPalette();
         });
     }
+
+    // Theme Toggle Handler
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    const mobileThemeBtn = document.getElementById('mobile-theme-toggle-btn');
+    
+    function updateThemeUI() {
+        const isDark = document.documentElement.classList.contains('dark');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        if (darkIcon && lightIcon) {
+            if (isDark) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            }
+        }
+    }
+
+    function toggleTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('gl_theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('gl_theme', 'dark');
+        }
+        updateThemeUI();
+    }
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', toggleTheme);
+    }
+    if (mobileThemeBtn) {
+        mobileThemeBtn.addEventListener('click', toggleTheme);
+    }
+    updateThemeUI();
 }
 
 function initSearchPalette() {

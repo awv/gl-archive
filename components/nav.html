@@ -30,6 +30,18 @@
                 <kbd class="hidden sm:inline font-mono text-[9px] bg-white border border-slate-300 px-1.5 py-0.5 rounded text-slate-400">⌘K</kbd>
             </button>
 
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle-btn" aria-label="Toggle dark/light theme" class="flex items-center justify-center p-2 text-slate-500 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-200 transition-colors focus:outline-none" title="Toggle dark/light mode">
+                <!-- Moon icon (shown in light mode) -->
+                <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+                <!-- Sun icon (shown in dark mode) -->
+                <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+            </button>
+
             <!-- Mobile Menu Toggle Button -->
             <button id="mobile-nav-toggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,5 +56,9 @@
         <a href="seasons.html" class="block py-1.5 hover:text-slate-900">Seasons Directory</a>
         <a href="clubs.html" class="block py-1.5 hover:text-slate-900">Clubs Directory</a>
         <a href="results.html?season=2025_2026&match=1" class="block py-1.5 hover:text-slate-900">Latest Race Results</a>
+        <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-slate-500 font-normal">Theme Mode</span>
+            <button id="mobile-theme-toggle-btn" class="px-2.5 py-1 text-[11px] rounded bg-slate-100 border border-slate-200 text-slate-700">Toggle Theme</button>
+        </div>
     </div>
 </header>
