@@ -32,6 +32,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
     <script src="data.js"></script>
+    <script src="backend_tools/club_transfers.js"></script>
     <script src="site-layout.js"></script>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
@@ -84,6 +85,30 @@
                         <div id="disambiguation-pills" class="flex flex-wrap gap-2 pt-1">
                             <!-- Populated with club pills -->
                         </div>
+                    </div>
+                </div>
+
+                <!-- CAREER CLUB TRANSFER BANNER -->
+                <div id="transfer-banner" class="hidden pt-2">
+                    <div class="bg-emerald-50/80 border border-emerald-200/90 rounded-xl p-4 text-xs space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 pb-2.5">
+                            <div class="flex items-center gap-2 font-semibold text-emerald-950">
+                                <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                                </svg>
+                                <span class="text-xs font-serif font-bold uppercase tracking-tight">Verified Multi-Club Career History</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Unified Dossier</span>
+                            </div>
+                            <div id="transfer-filter-pills" class="flex flex-wrap items-center gap-1.5 text-xs font-mono">
+                                <!-- Populated dynamically with Club filter buttons -->
+                            </div>
+                        </div>
+                        <div id="transfer-timeline-path" class="text-xs font-medium text-emerald-900 flex items-center gap-2 flex-wrap">
+                            <!-- Populated with: Club A (2021–2022) ➔ Club B (2022–Present) -->
+                        </div>
+                        <p class="text-emerald-700 text-[11px] leading-relaxed">
+                            This athlete transferred clubs. All finishes across their entire Gwent League career are unified into this single profile. Use the filter buttons above to isolate a specific club spell.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -202,6 +227,16 @@
             });
             const uniqueClubs = Object.keys(clubCountsAll);
 
+            // Check for verified multi-club transfer
+            let confirmedTransfers = window.glClubTransfers || {};
+            try {
+                const saved = localStorage.getItem('gl_club_transfers_v1');
+                if (saved) Object.assign(confirmedTransfers, JSON.parse(saved));
+            } catch (e) {}
+
+            const transferInfo = confirmedTransfers[targetName];
+            const isConfirmedTransfer = !!transferInfo;
+
             // Is this an abbreviated name?
             const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
 
@@ -230,122 +265,198 @@
                 }).join('');
             }
 
-            // Now filter records for this specific athlete profile
-            let runnerRecords = allMatches;
-            if (targetClub) {
-                runnerRecords = runnerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase());
-            }
+            // Determine records for this athlete
+            let careerRecords = allMatches;
             if (targetGender) {
-                runnerRecords = runnerRecords.filter(r => r.gender === targetGender);
+                careerRecords = careerRecords.filter(r => r.gender === targetGender);
             }
 
-            if (runnerRecords.length === 0) {
-                runnerRecords = allMatches; // fallback
+            // If verified transfer athlete:
+            let selectedClubFilter = 'all'; // 'all' or specific club
+            if (isConfirmedTransfer) {
+                // Show transfer banner
+                const transBanner = document.getElementById('transfer-banner');
+                const transPath = document.getElementById('transfer-timeline-path');
+                const transPills = document.getElementById('transfer-filter-pills');
+                transBanner.classList.remove('hidden');
+
+                // Determine chronological clubs
+                const clubFirstYear = {};
+                const clubLastYear = {};
+                careerRecords.forEach(r => {
+                    const yr = parseInt(r.season_key.split('_')[0], 10);
+                    if (!clubFirstYear[r.club] || yr < clubFirstYear[r.club]) clubFirstYear[r.club] = yr;
+                    if (!clubLastYear[r.club] || yr > clubLastYear[r.club]) clubLastYear[r.club] = yr;
+                });
+                const chronClubs = Object.keys(clubCountsAll).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
+
+                // Render visual pathway
+                transPath.innerHTML = chronClubs.map((cl, idx) => {
+                    const cnt = clubCountsAll[cl] || 0;
+                    const span = `${clubFirstYear[cl] || ''}–${(clubLastYear[cl] || 0) + 1}`;
+                    const isCurrent = idx === chronClubs.length - 1;
+                    return `
+                        <span class="inline-flex items-center gap-1.5 bg-white border border-emerald-200 px-2.5 py-1 rounded-lg text-xs shadow-xs">
+                            <span class="font-bold text-slate-900">${cl}</span>
+                            <span class="text-[10px] font-mono text-emerald-800 font-semibold">(${span} • ${cnt} ${cnt === 1 ? 'race' : 'races'}${isCurrent ? ' • Present' : ''})</span>
+                        </span>
+                        ${idx < chronClubs.length - 1 ? '<span class="text-emerald-600 font-bold text-sm">&rarr;</span>' : ''}
+                    `;
+                }).join('');
+
+                // Render filter buttons
+                const renderFilterPills = () => {
+                    let pillsHtml = `
+                        <button data-club="all" class="club-filter-pill px-3 py-1 rounded-lg border text-xs font-semibold transition-colors shadow-xs ${selectedClubFilter === 'all' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}">
+                            All Clubs (${careerRecords.length})
+                        </button>
+                    `;
+                    chronClubs.forEach(cl => {
+                        const cnt = clubCountsAll[cl] || 0;
+                        const isSel = selectedClubFilter.toLowerCase() === cl.toLowerCase();
+                        pillsHtml += `
+                            <button data-club="${encodeURIComponent(cl)}" class="club-filter-pill px-3 py-1 rounded-lg border text-xs font-semibold transition-colors shadow-xs ${isSel ? 'bg-emerald-800 text-white border-emerald-800' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}">
+                                ${cl} (${cnt})
+                            </button>
+                        `;
+                    });
+                    transPills.innerHTML = pillsHtml;
+
+                    transPills.querySelectorAll('.club-filter-pill').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const clAttr = decodeURIComponent(btn.getAttribute('data-club'));
+                            selectedClubFilter = clAttr;
+                            renderFilterPills();
+                            renderAthleteProfile();
+                        });
+                    });
+                };
+
+                renderFilterPills();
+            } else {
+                // If not confirmed transfer, but targetClub was specified:
+                if (targetClub) {
+                    careerRecords = careerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase());
+                }
             }
 
-            // Sort records: Season descending, match descending
-            runnerRecords.sort((a, b) => {
-                const yrA = parseInt(a.season_key.split('_')[0], 10);
-                const yrB = parseInt(b.season_key.split('_')[0], 10);
-                if (yrA !== yrB) return yrB - yrA;
-                return b.match - a.match;
-            });
+            function renderAthleteProfile() {
+                let displayedRecords = careerRecords;
+                if (selectedClubFilter !== 'all') {
+                    displayedRecords = careerRecords.filter(r => r.club.toLowerCase() === selectedClubFilter.toLowerCase());
+                }
 
-            const latest = runnerRecords[0];
-            const name = latest.athlete;
-            const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
-            
-            document.title = `GL Archive — ${name} (${latest.club})`;
-            document.getElementById('athlete-name').textContent = name;
-            document.getElementById('athlete-gender-badge').textContent = genderLabel;
-            document.getElementById('athlete-club-badge').textContent = targetClub || latest.club;
+                if (displayedRecords.length === 0) {
+                    displayedRecords = careerRecords;
+                }
 
-            // Seasons & span
-            const seasons = [...new Set(runnerRecords.map(r => r.season))].sort();
-            const firstSeason = seasons[0];
-            const lastSeason = seasons[seasons.length - 1];
-            const spanText = firstSeason === lastSeason ? `${firstSeason}` : `${firstSeason} – ${lastSeason} (${seasons.length} ${seasons.length === 1 ? 'campaign' : 'campaigns'})`;
-            document.getElementById('athlete-career-span').textContent = `ACTIVE: ${spanText.toUpperCase()}`;
+                // Sort records: Season descending, match descending
+                displayedRecords.sort((a, b) => {
+                    const yrA = parseInt(a.season_key.split('_')[0], 10);
+                    const yrB = parseInt(b.season_key.split('_')[0], 10);
+                    if (yrA !== yrB) return yrB - yrA;
+                    return b.match - a.match;
+                });
 
-            const categories = [...new Set(runnerRecords.map(r => r.age_cat))];
-            document.getElementById('athlete-cat-span').textContent = `CATEGORIES: ${categories.join(', ')}`;
-            document.getElementById('athlete-finishes-span').textContent = `${runnerRecords.length} RACES FINISHED`;
+                const latest = displayedRecords[0];
+                const name = latest.athlete;
+                const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
+                
+                const primaryClub = (transferInfo && transferInfo.primary_club) || targetClub || latest.club;
+                document.title = `GL Archive — ${name} (${primaryClub})`;
+                document.getElementById('athlete-name').textContent = name;
+                document.getElementById('athlete-gender-badge').textContent = genderLabel;
+                document.getElementById('athlete-club-badge').textContent = (selectedClubFilter !== 'all') ? selectedClubFilter : primaryClub;
 
-            // Metrics
-            const bestPos = Math.min(...runnerRecords.map(r => r.pos));
-            const outrightWins = runnerRecords.filter(r => r.pos === 1).length;
-            const catWins = runnerRecords.filter(r => r.cat_pos === 1).length;
-            const avgPos = Math.round(runnerRecords.reduce((sum, r) => sum + r.pos, 0) / runnerRecords.length);
-            
-            const timedRaces = runnerRecords.filter(r => r.time && r.time.includes(':'));
-            timedRaces.sort((a, b) => a.time.localeCompare(b.time));
-            const fastestTime = timedRaces.length > 0 ? timedRaces[0].time : '—';
+                // Seasons & span
+                const seasons = [...new Set(displayedRecords.map(r => r.season))].sort();
+                const firstSeason = seasons[0];
+                const lastSeason = seasons[seasons.length - 1];
+                const spanText = firstSeason === lastSeason ? `${firstSeason}` : `${firstSeason} – ${lastSeason} (${seasons.length} ${seasons.length === 1 ? 'campaign' : 'campaigns'})`;
+                document.getElementById('athlete-career-span').textContent = `ACTIVE: ${spanText.toUpperCase()}`;
 
-            document.getElementById('stat-appearances').textContent = runnerRecords.length;
-            document.getElementById('stat-best-pos').textContent = `#${bestPos}`;
-            document.getElementById('stat-cat-wins').textContent = catWins;
-            document.getElementById('stat-outright-wins').textContent = outrightWins;
-            document.getElementById('stat-avg-pos').textContent = `#${avgPos}`;
-            document.getElementById('stat-fastest-time').textContent = fastestTime;
+                const categories = [...new Set(displayedRecords.map(r => r.age_cat))];
+                document.getElementById('athlete-cat-span').textContent = `CATEGORIES: ${categories.join(', ')}`;
+                document.getElementById('athlete-finishes-span').textContent = `${displayedRecords.length} RACES FINISHED`;
 
-            // Clubs list for this athlete profile
-            const profileClubs = {};
-            runnerRecords.forEach(r => {
-                profileClubs[r.club] = (profileClubs[r.club] || 0) + 1;
-            });
-            const clubsContainer = document.getElementById('athlete-clubs-list');
-            clubsContainer.innerHTML = Object.entries(profileClubs).map(([club, count]) => `
-                <a href="club.html?club=${encodeURIComponent(club)}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-sm">
-                    <span class="text-xs font-semibold text-slate-900">${club}</span>
-                    <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">${count} ${count === 1 ? 'race' : 'races'}</span>
-                </a>
-            `).join('');
+                // Metrics
+                const bestPos = Math.min(...displayedRecords.map(r => r.pos));
+                const outrightWins = displayedRecords.filter(r => r.pos === 1).length;
+                const catWins = displayedRecords.filter(r => r.cat_pos === 1).length;
+                const avgPos = Math.round(displayedRecords.reduce((sum, r) => sum + r.pos, 0) / displayedRecords.length);
+                
+                const timedRaces = displayedRecords.filter(r => r.time && r.time.includes(':'));
+                timedRaces.sort((a, b) => a.time.localeCompare(b.time));
+                const fastestTime = timedRaces.length > 0 ? timedRaces[0].time : '—';
 
-            // Historical Log Table
-            document.getElementById('log-count').textContent = runnerRecords.length;
-            const tbody = document.getElementById('athlete-history-body');
-            tbody.innerHTML = runnerRecords.map(r => {
-                const isWin = r.pos === 1;
-                const posClass = isWin ? 'font-serif font-bold text-emerald-800' : 'font-mono text-slate-800';
+                document.getElementById('stat-appearances').textContent = displayedRecords.length;
+                document.getElementById('stat-best-pos').textContent = `#${bestPos}`;
+                document.getElementById('stat-cat-wins').textContent = catWins;
+                document.getElementById('stat-outright-wins').textContent = outrightWins;
+                document.getElementById('stat-avg-pos').textContent = `#${avgPos}`;
+                document.getElementById('stat-fastest-time').textContent = fastestTime;
 
-                return `
-                    <tr class="hover:bg-slate-50/80 transition-colors">
-                        <td class="py-2.5 px-4 font-mono font-medium text-slate-500">
-                            ${r.season}
-                        </td>
-                        <td class="py-2.5 px-3 font-mono font-bold text-slate-700">
-                            Match ${r.match}
-                        </td>
-                        <td class="py-2.5 px-4 font-serif font-bold text-slate-900">
-                            <a href="results.html?season=${r.season_key}&match=${r.match}&gender=${r.gender}" class="hover:text-emerald-800 transition-colors">
-                                ${r.venue}
-                            </a>
-                        </td>
-                        <td class="py-2.5 px-3 text-center tabular-nums ${posClass}">
-                            #${r.pos}
-                        </td>
-                        <td class="py-2.5 px-3 text-center tabular-nums font-mono text-slate-400">
-                            ${r.cat_pos > 0 ? `#${r.cat_pos}` : '—'}
-                        </td>
-                        <td class="py-2.5 px-3">
-                            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-700">
-                                ${r.age_cat}
-                            </span>
-                        </td>
-                        <td class="py-2.5 px-4 text-slate-600">
-                            <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-slate-900 transition-colors">
-                                ${r.club}
-                            </a>
-                        </td>
-                        <td class="py-2.5 px-4 text-right font-mono tabular-nums font-medium text-slate-700">
-                            ${r.time || '—'}
-                        </td>
-                        <td class="py-2.5 px-4 text-right font-mono tabular-nums text-slate-500 font-semibold">
-                            ${r.pts || '—'}
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+                // Clubs list for this athlete profile
+                const profileClubs = {};
+                displayedRecords.forEach(r => {
+                    profileClubs[r.club] = (profileClubs[r.club] || 0) + 1;
+                });
+                const clubsContainer = document.getElementById('athlete-clubs-list');
+                clubsContainer.innerHTML = Object.entries(profileClubs).map(([club, count]) => `
+                    <a href="club.html?club=${encodeURIComponent(club)}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-sm">
+                        <span class="text-xs font-semibold text-slate-900">${club}</span>
+                        <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">${count} ${count === 1 ? 'race' : 'races'}</span>
+                    </a>
+                `).join('');
+
+                // Historical Log Table
+                document.getElementById('log-count').textContent = displayedRecords.length;
+                const tbody = document.getElementById('athlete-history-body');
+                tbody.innerHTML = displayedRecords.map(r => {
+                    const isWin = r.pos === 1;
+                    const posClass = isWin ? 'font-serif font-bold text-emerald-800' : 'font-mono text-slate-800';
+
+                    return `
+                        <tr class="hover:bg-slate-50/80 transition-colors">
+                            <td class="py-2.5 px-4 font-mono font-medium text-slate-500">
+                                ${r.season}
+                            </td>
+                            <td class="py-2.5 px-3 font-mono font-bold text-slate-700">
+                                Match ${r.match}
+                            </td>
+                            <td class="py-2.5 px-4 font-serif font-bold text-slate-900">
+                                <a href="results.html?season=${r.season_key}&match=${r.match}&gender=${r.gender}" class="hover:text-emerald-800 transition-colors">
+                                    ${r.venue}
+                                </a>
+                            </td>
+                            <td class="py-2.5 px-3 text-center tabular-nums ${posClass}">
+                                #${r.pos}
+                            </td>
+                            <td class="py-2.5 px-3 text-center tabular-nums font-mono text-slate-400">
+                                ${r.cat_pos > 0 ? `#${r.cat_pos}` : '—'}
+                            </td>
+                            <td class="py-2.5 px-3">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-700">
+                                    ${r.age_cat}
+                                </span>
+                            </td>
+                            <td class="py-2.5 px-4 text-slate-600">
+                                <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-slate-900 transition-colors">
+                                    ${r.club}
+                                </a>
+                            </td>
+                            <td class="py-2.5 px-4 text-right font-mono tabular-nums font-medium text-slate-700">
+                                ${r.time || '—'}
+                            </td>
+                            <td class="py-2.5 px-4 text-right font-mono tabular-nums text-slate-500 font-semibold">
+                                ${r.pts || '—'}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            renderAthleteProfile();
         })();
     </script>
 </body>

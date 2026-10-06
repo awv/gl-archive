@@ -353,6 +353,13 @@ def compile_database():
     with open(RUNNERS_SUMMARY_PATH, "w", encoding="utf-8") as f:
         json.dump(serializable_summary, f, indent=2)
 
+    # Trigger club transfer detection
+    try:
+        from detect_transfers import analyze_transfers
+        analyze_transfers()
+    except Exception as e:
+        print(f"Transfer detection hook note: {e}")
+
     print("\n" + "=" * 60)
     print("BUILD SUCCESSFUL!")
     print(f"Total Finish Records: {len(all_records)}")

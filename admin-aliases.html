@@ -49,6 +49,8 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <script src="data.js"></script>
     <script src="backend_tools/alias_candidates.js"></script>
+    <script src="backend_tools/transfer_candidates.js"></script>
+    <script src="backend_tools/club_transfers.js"></script>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
 
@@ -61,10 +63,10 @@
                     <span class="text-xs font-mono text-slate-400">•</span>
                     <span class="text-xs font-mono text-slate-500 uppercase tracking-wider">John H Collins Gwent League</span>
                 </div>
-                <h1 class="text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight mt-1">
+                <h1 id="page-title" class="text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight mt-1">
                     Athlete Identity & Alias Review
                 </h1>
-                <p class="text-xs text-slate-600 mt-0.5">
+                <p id="page-subtitle" class="text-xs text-slate-600 mt-0.5">
                     Resolve legacy abbreviated entries (2010–2022) to modern full runner profiles (2023–2026).
                 </p>
             </div>
@@ -92,29 +94,43 @@
         </div>
     </header>
 
+    <!-- SECTION SWITCHER NAVIGATION TABS -->
+    <div class="border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-6 sm:gap-8">
+            <button id="view-tab-aliases" class="py-3 text-sm font-serif font-bold border-b-2 border-slate-900 text-slate-900 transition-colors flex items-center gap-2">
+                <span>Identity & Nickname Aliases</span>
+                <span id="badge-alias-count" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-slate-100 text-slate-700">0</span>
+            </button>
+            <button id="view-tab-transfers" class="py-3 text-sm font-serif font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2">
+                <span>Runners Who Moved Clubs (Transfers)</span>
+                <span id="badge-transfer-count" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-100 text-emerald-800 font-bold">0</span>
+            </button>
+        </div>
+    </div>
+
     <!-- METRICS & TOOLBAR -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6 flex-grow">
         
         <!-- KPI METRICS -->
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">Total Candidates</span>
+                <span id="stat-label-1" class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">Total Candidates</span>
                 <span id="stat-total" class="block text-2xl font-bold font-serif text-slate-900 mt-1">0</span>
             </div>
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-purple-700">Nickname Variants</span>
+                <span id="stat-label-2" class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-purple-700">Nickname Variants</span>
                 <span id="stat-nicknames" class="block text-2xl font-bold font-serif text-purple-700 mt-1">0</span>
             </div>
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-emerald-700">High Confidence (&ge;90%)</span>
+                <span id="stat-label-3" class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-emerald-700">High Confidence (&ge;90%)</span>
                 <span id="stat-high" class="block text-2xl font-bold font-serif text-emerald-700 mt-1">0</span>
             </div>
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-blue-700">Approved Links</span>
+                <span id="stat-label-4" class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-blue-700">Approved Links</span>
                 <span id="stat-approved" class="block text-2xl font-bold font-serif text-blue-700 mt-1">0</span>
             </div>
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-amber-700">Pending Review</span>
+                <span id="stat-label-5" class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-amber-700">Pending Review</span>
                 <span id="stat-pending" class="block text-2xl font-bold font-serif text-amber-700 mt-1">0</span>
             </div>
         </div>
@@ -141,10 +157,10 @@
                 <!-- Runner A Input -->
                 <div class="space-y-1 relative">
                     <label class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">
-                        Runner A (e.g. Legacy Abbreviated)
+                        Runner A (e.g. Legacy Abbreviated or Club A)
                     </label>
                     <div class="relative">
-                        <input type="text" id="sandbox-input-a" placeholder="Type name e.g. R. Gale, L. Aherne, A. Lewis..." autocomplete="off"
+                        <input type="text" id="sandbox-input-a" placeholder="Type name e.g. R. Gale, Huw Evans, Andrew Blair..." autocomplete="off"
                             class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all font-medium">
                         <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -156,10 +172,10 @@
                 <!-- Runner B Input -->
                 <div class="space-y-1 relative">
                     <label class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">
-                        Runner B (e.g. Modern Full Name)
+                        Runner B (e.g. Modern Full Name or Club B)
                     </label>
                     <div class="relative">
-                        <input type="text" id="sandbox-input-b" placeholder="Type name e.g. Robert Gale, Lee Aherne, Adrian Lewis..." autocomplete="off"
+                        <input type="text" id="sandbox-input-b" placeholder="Type name e.g. Robert Gale, Huw Evans, Andy Blair..." autocomplete="off"
                             class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all font-medium">
                         <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -189,7 +205,7 @@
                 </div>
 
                 <!-- Status Filter Pills -->
-                <div class="flex flex-wrap items-center gap-1.5 w-full md:w-auto text-xs font-medium">
+                <div id="filter-pills-container" class="flex flex-wrap items-center gap-1.5 w-full md:w-auto text-xs font-medium">
                     <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-900 text-white transition-colors">Pending (<span id="count-pending">0</span>)</button>
                     <button data-filter="nicknames" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-purple-700 hover:bg-purple-100 transition-colors">Nicknames & Variants (<span id="count-nicknames">0</span>)</button>
                     <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">High Confidence (<span id="count-high">0</span>)</button>
@@ -202,11 +218,11 @@
             <!-- Quick Bulk Actions -->
             <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
                 <div class="flex items-center gap-3 flex-wrap">
-                    <span>Showing <span id="showing-count" class="font-bold text-slate-800">0</span> candidate pairs</span>
+                    <span>Showing <span id="showing-count" class="font-bold text-slate-800">0</span> <span id="showing-unit">candidate pairs</span></span>
                     <span class="text-slate-300">•</span>
                     <label class="inline-flex items-center gap-1.5 cursor-pointer text-slate-600 select-none hover:text-slate-900">
                         <input type="checkbox" id="toggle-hide-approved" checked class="rounded border-slate-300 text-slate-900 focus:ring-slate-900">
-                        <span>Hide approved items</span>
+                        <span>Hide <span id="hide-status-label">approved</span> items</span>
                     </label>
                 </div>
                 <div class="flex items-center gap-3">
@@ -268,14 +284,19 @@
     </div>
 
     <script>
-        // Runtime Controller
+        // Runtime Controller for Aliases & Club Transfers
         (() => {
             const rawCandidates = window.glAliasCandidates || [];
+            const rawTransferCandidates = window.glTransferCandidates || [];
             
             // Local storage backed state
             const STORAGE_KEY = 'gl_alias_corrections_v1';
+            const TRANSFER_STORAGE_KEY = 'gl_club_transfers_v1';
+            
             let approvedMap = {};
             let rejectedSet = new Set();
+            let confirmedTransfersMap = {};
+            let rejectedTransfersSet = new Set();
 
             try {
                 const saved = localStorage.getItem(STORAGE_KEY);
@@ -284,17 +305,49 @@
                 console.error(e);
             }
 
+            try {
+                const savedTransfers = localStorage.getItem(TRANSFER_STORAGE_KEY);
+                if (savedTransfers) confirmedTransfersMap = JSON.parse(savedTransfers);
+            } catch (e) {
+                console.error(e);
+            }
+
+            // Sync confirmed transfers from window.glClubTransfers
+            if (window.glClubTransfers) {
+                Object.keys(window.glClubTransfers).forEach(k => {
+                    if (!confirmedTransfersMap[k]) {
+                        confirmedTransfersMap[k] = window.glClubTransfers[k];
+                    }
+                });
+            }
+
             // Sync initial state from both compiled candidates and localStorage
             rawCandidates.forEach(c => {
                 const lk = c.lookup_key || c.legacy_name;
-                // If already approved in corrections.json on disk, ensure it is populated in approvedMap
                 if (c.status === 'approved') {
                     if (!approvedMap[lk]) approvedMap[lk] = c.full_name;
                     if (!approvedMap[c.legacy_name]) approvedMap[c.legacy_name] = c.full_name;
                 }
-                // If present in approvedMap, flag candidate as approved
                 if (approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name) {
                     c.status = 'approved';
+                }
+            });
+
+            // Sync initial state from transfer candidates
+            rawTransferCandidates.forEach(tc => {
+                if (tc.status === 'confirmed' && !confirmedTransfersMap[tc.name]) {
+                    confirmedTransfersMap[tc.name] = {
+                        gender: tc.gender,
+                        clubs: [tc.from_club, tc.to_club],
+                        primary_club: tc.to_club,
+                        from_club: tc.from_club,
+                        to_club: tc.to_club,
+                        transfer_season: tc.handover_season,
+                        confirmed: true
+                    };
+                }
+                if (confirmedTransfersMap[tc.name]) {
+                    tc.status = 'confirmed';
                 }
             });
 
@@ -323,7 +376,11 @@
                 });
             }
 
+            // Navigation & View State
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentView = urlParams.get('view') === 'transfers' ? 'transfers' : 'aliases';
             let currentFilter = 'pending';
+            let currentTransferFilter = 'pending';
             let searchQuery = '';
             let hideApproved = true;
             let currentPage = 1;
@@ -331,6 +388,7 @@
 
             const saveState = () => {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(approvedMap));
+                localStorage.setItem(TRANSFER_STORAGE_KEY, JSON.stringify(confirmedTransfersMap, null, 2));
                 updateStats();
             };
 
@@ -342,32 +400,177 @@
             };
 
             const updateStats = () => {
-                const total = rawCandidates.length;
-                const nicknames = rawCandidates.filter(c => c.is_nickname_variant).length;
-                const high = rawCandidates.filter(c => c.confidence >= 90).length;
-                const approved = Object.keys(approvedMap).length;
-                const rejected = rejectedSet.size;
-                const pending = rawCandidates.filter(c => {
-                    const lk = c.lookup_key || c.legacy_name;
-                    const isApp = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
-                    return !isApp && !rejectedSet.has(c.id);
-                }).length;
+                // Update badge counts on top tabs
+                document.getElementById('badge-alias-count').textContent = rawCandidates.length.toLocaleString();
+                document.getElementById('badge-transfer-count').textContent = rawTransferCandidates.length.toLocaleString();
 
-                document.getElementById('stat-total').textContent = total.toLocaleString();
-                const statNicknamesEl = document.getElementById('stat-nicknames');
-                if (statNicknamesEl) statNicknamesEl.textContent = nicknames.toLocaleString();
-                document.getElementById('stat-high').textContent = high.toLocaleString();
-                document.getElementById('stat-approved').textContent = approved.toLocaleString();
-                document.getElementById('stat-pending').textContent = pending.toLocaleString();
+                if (currentView === 'aliases') {
+                    const total = rawCandidates.length;
+                    const nicknames = rawCandidates.filter(c => c.is_nickname_variant).length;
+                    const high = rawCandidates.filter(c => c.confidence >= 90).length;
+                    const approved = Object.keys(approvedMap).length;
+                    const rejected = rejectedSet.size;
+                    const pending = rawCandidates.filter(c => {
+                        const lk = c.lookup_key || c.legacy_name;
+                        const isApp = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
+                        return !isApp && !rejectedSet.has(c.id);
+                    }).length;
 
-                document.getElementById('count-all').textContent = total;
-                const countNicknamesEl = document.getElementById('count-nicknames');
-                if (countNicknamesEl) countNicknamesEl.textContent = nicknames;
-                document.getElementById('count-high').textContent = high;
-                document.getElementById('count-approved').textContent = approved;
-                document.getElementById('count-pending').textContent = pending;
-                document.getElementById('count-rejected').textContent = rejected;
+                    document.getElementById('stat-label-1').textContent = 'Total Candidates';
+                    document.getElementById('stat-total').textContent = total.toLocaleString();
+
+                    document.getElementById('stat-label-2').textContent = 'Nickname Variants';
+                    document.getElementById('stat-nicknames').textContent = nicknames.toLocaleString();
+
+                    document.getElementById('stat-label-3').textContent = 'High Confidence (≥90%)';
+                    document.getElementById('stat-high').textContent = high.toLocaleString();
+
+                    document.getElementById('stat-label-4').textContent = 'Approved Links';
+                    document.getElementById('stat-approved').textContent = approved.toLocaleString();
+
+                    document.getElementById('stat-label-5').textContent = 'Pending Review';
+                    document.getElementById('stat-pending').textContent = pending.toLocaleString();
+
+                    const cAll = document.getElementById('count-all');
+                    if (cAll) cAll.textContent = total;
+                    const cNick = document.getElementById('count-nicknames');
+                    if (cNick) cNick.textContent = nicknames;
+                    const cHigh = document.getElementById('count-high');
+                    if (cHigh) cHigh.textContent = high;
+                    const cApp = document.getElementById('count-approved');
+                    if (cApp) cApp.textContent = approved;
+                    const cPend = document.getElementById('count-pending');
+                    if (cPend) cPend.textContent = pending;
+                    const cRej = document.getElementById('count-rejected');
+                    if (cRej) cRej.textContent = rejected;
+                } else {
+                    const total = rawTransferCandidates.length;
+                    const clean = rawTransferCandidates.filter(c => c.overlap_count === 0 && c.confidence >= 80).length;
+                    const high = rawTransferCandidates.filter(c => c.confidence >= 90).length;
+                    const confirmed = Object.keys(confirmedTransfersMap).length;
+                    const conflicts = rawTransferCandidates.filter(c => c.overlap_count > 0).length;
+                    const pending = rawTransferCandidates.filter(c => {
+                        const isConf = !!confirmedTransfersMap[c.name];
+                        return !isConf && !rejectedTransfersSet.has(c.id);
+                    }).length;
+
+                    document.getElementById('stat-label-1').textContent = 'Multi-Club Pairs';
+                    document.getElementById('stat-total').textContent = total.toLocaleString();
+
+                    document.getElementById('stat-label-2').textContent = 'Clean Transfers (≥80%)';
+                    document.getElementById('stat-nicknames').textContent = clean.toLocaleString();
+
+                    document.getElementById('stat-label-3').textContent = 'High Confidence (≥90%)';
+                    document.getElementById('stat-high').textContent = high.toLocaleString();
+
+                    document.getElementById('stat-label-4').textContent = 'Confirmed Transfers';
+                    document.getElementById('stat-approved').textContent = confirmed.toLocaleString();
+
+                    document.getElementById('stat-label-5').textContent = 'Conflicting Overlaps';
+                    document.getElementById('stat-pending').textContent = conflicts.toLocaleString();
+
+                    const cPend = document.getElementById('count-transfers-pending');
+                    if (cPend) cPend.textContent = pending;
+                    const cClean = document.getElementById('count-transfers-clean');
+                    if (cClean) cClean.textContent = clean;
+                    const cHigh = document.getElementById('count-transfers-high');
+                    if (cHigh) cHigh.textContent = high;
+                    const cConf = document.getElementById('count-transfers-confirmed');
+                    if (cConf) cConf.textContent = confirmed;
+                    const cConflicts = document.getElementById('count-transfers-conflicts');
+                    if (cConflicts) cConflicts.textContent = conflicts;
+                    const cAll = document.getElementById('count-transfers-all');
+                    if (cAll) cAll.textContent = total;
+                }
             };
+
+            const renderFilterPills = () => {
+                const container = document.getElementById('filter-pills-container');
+                if (currentView === 'aliases') {
+                    container.innerHTML = `
+                        <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'pending' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Pending (<span id="count-pending">0</span>)</button>
+                        <button data-filter="nicknames" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'nicknames' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-purple-700 hover:bg-purple-100'}">Nicknames & Variants (<span id="count-nicknames">0</span>)</button>
+                        <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'high' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">High Confidence (<span id="count-high">0</span>)</button>
+                        <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">All (<span id="count-all">0</span>)</button>
+                        <button data-filter="approved" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'approved' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Approved (<span id="count-approved">0</span>)</button>
+                        <button data-filter="rejected" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'rejected' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Rejected (<span id="count-rejected">0</span>)</button>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'pending' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Pending (<span id="count-transfers-pending">0</span>)</button>
+                        <button data-filter="clean" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'clean' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-emerald-700 hover:bg-emerald-100'}">Clean Transfers (≥80%) (<span id="count-transfers-clean">0</span>)</button>
+                        <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'high' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">High Confidence (≥90%) (<span id="count-transfers-high">0</span>)</button>
+                        <button data-filter="confirmed" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'confirmed' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-blue-700 hover:bg-blue-100'}">Confirmed (<span id="count-transfers-confirmed">0</span>)</button>
+                        <button data-filter="conflicts" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'conflicts' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-rose-700 hover:bg-rose-100'}">Conflicting / Overlap (<span id="count-transfers-conflicts">0</span>)</button>
+                        <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">All (<span id="count-transfers-all">0</span>)</button>
+                    `;
+                }
+
+                container.querySelectorAll('.filter-tab').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        if (currentView === 'aliases') {
+                            currentFilter = btn.dataset.filter;
+                        } else {
+                            currentTransferFilter = btn.dataset.filter;
+                        }
+                        currentPage = 1;
+                        renderFilterPills();
+                        updateStats();
+                        render();
+                    });
+                });
+            };
+
+            const switchView = (view) => {
+                currentView = view;
+                currentPage = 1;
+                searchQuery = '';
+                document.getElementById('filter-search').value = '';
+
+                const tabAliases = document.getElementById('view-tab-aliases');
+                const tabTransfers = document.getElementById('view-tab-transfers');
+
+                if (currentView === 'aliases') {
+                    tabAliases.classList.add('border-slate-900', 'text-slate-900');
+                    tabAliases.classList.remove('border-transparent', 'text-slate-500');
+                    tabTransfers.classList.remove('border-slate-900', 'text-slate-900');
+                    tabTransfers.classList.add('border-transparent', 'text-slate-500');
+
+                    document.getElementById('page-title').textContent = 'Athlete Identity & Alias Review';
+                    document.getElementById('page-subtitle').textContent = 'Resolve legacy abbreviated entries (2010–2022) to modern full runner profiles (2023–2026).';
+                    document.getElementById('btn-manual-add').classList.remove('hidden');
+                    document.getElementById('btn-copy-json').textContent = 'Copy JSON';
+                    document.getElementById('btn-download-json').textContent = 'Download corrections.json';
+                    document.getElementById('showing-unit').textContent = 'candidate pairs';
+                    document.getElementById('hide-status-label').textContent = 'approved';
+                    document.getElementById('btn-approve-all-high').textContent = 'Approve All Visible High Confidence (≥90%)';
+                } else {
+                    tabTransfers.classList.add('border-slate-900', 'text-slate-900');
+                    tabTransfers.classList.remove('border-transparent', 'text-slate-500');
+                    tabAliases.classList.remove('border-slate-900', 'text-slate-900');
+                    tabAliases.classList.add('border-transparent', 'text-slate-500');
+
+                    document.getElementById('page-title').textContent = 'Club Transfers & Career Moves';
+                    document.getElementById('page-subtitle').textContent = 'Forensic analysis of multi-club careers, timeline handovers, pace continuity, and verified club transfers.';
+                    document.getElementById('btn-manual-add').classList.add('hidden');
+                    document.getElementById('btn-copy-json').textContent = 'Copy Transfers JSON';
+                    document.getElementById('btn-download-json').textContent = 'Download club_transfers.json';
+                    document.getElementById('showing-unit').textContent = 'transfer candidates';
+                    document.getElementById('hide-status-label').textContent = 'confirmed';
+                    document.getElementById('btn-approve-all-high').textContent = 'Confirm All Visible High Confidence (≥90%)';
+                }
+
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('view', currentView);
+                window.history.replaceState({}, '', newUrl);
+
+                renderFilterPills();
+                updateStats();
+                render();
+            };
+
+            document.getElementById('view-tab-aliases').addEventListener('click', () => switchView('aliases'));
+            document.getElementById('view-tab-transfers').addEventListener('click', () => switchView('transfers'));
 
             const getFilteredCandidates = () => {
                 return rawCandidates.filter(c => {
@@ -395,187 +598,385 @@
                 });
             };
 
+            const getFilteredTransferCandidates = () => {
+                return rawTransferCandidates.filter(c => {
+                    const isConfirmed = !!confirmedTransfersMap[c.name];
+                    const isRejected = rejectedTransfersSet.has(c.id);
+
+                    if (hideApproved && isConfirmed && currentTransferFilter !== 'confirmed') return false;
+
+                    if (currentTransferFilter === 'pending' && (isConfirmed || isRejected)) return false;
+                    if (currentTransferFilter === 'clean' && (c.overlap_count > 0 || c.confidence < 80)) return false;
+                    if (currentTransferFilter === 'high' && c.confidence < 90) return false;
+                    if (currentTransferFilter === 'confirmed' && !isConfirmed) return false;
+                    if (currentTransferFilter === 'conflicts' && c.overlap_count === 0) return false;
+
+                    if (searchQuery) {
+                        const q = searchQuery.toLowerCase();
+                        const matchName = c.name.toLowerCase().includes(q);
+                        const matchClub = c.from_club.toLowerCase().includes(q) || c.to_club.toLowerCase().includes(q);
+                        if (!matchName && !matchClub) return false;
+                    }
+
+                    return true;
+                });
+            };
+
             const render = () => {
                 const container = document.getElementById('candidates-container');
                 const empty = document.getElementById('empty-state');
-                const filtered = getFilteredCandidates();
 
-                document.getElementById('showing-count').textContent = filtered.length;
+                if (currentView === 'aliases') {
+                    const filtered = getFilteredCandidates();
+                    document.getElementById('showing-count').textContent = filtered.length;
 
-                const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-                if (currentPage > totalPages) currentPage = totalPages;
+                    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                    if (currentPage > totalPages) currentPage = totalPages;
 
-                document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
-                document.getElementById('btn-prev-page').disabled = currentPage <= 1;
-                document.getElementById('btn-next-page').disabled = currentPage >= totalPages;
+                    document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+                    document.getElementById('btn-prev-page').disabled = currentPage <= 1;
+                    document.getElementById('btn-next-page').disabled = currentPage >= totalPages;
 
-                if (filtered.length === 0) {
-                    container.innerHTML = '';
-                    empty.classList.remove('hidden');
-                    return;
-                }
-                empty.classList.add('hidden');
-
-                const startIdx = (currentPage - 1) * pageSize;
-                const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
-
-                container.innerHTML = pageSlice.map(c => {
-                    const lookupKey = c.lookup_key || c.legacy_name;
-                    const isApproved = approvedMap[lookupKey] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
-                    const isRejected = rejectedSet.has(c.id);
-
-                    let cardBorder = 'border-slate-200';
-                    let statusBadge = '';
-                    if (isApproved) {
-                        cardBorder = 'border-emerald-300 bg-emerald-50/20';
-                        statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">APPROVED</span>`;
-                    } else if (isRejected) {
-                        cardBorder = 'border-rose-200 bg-rose-50/10 opacity-60';
-                        statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">REJECTED</span>`;
-                    } else if (c.is_nickname_variant) {
-                        cardBorder = 'border-purple-300 bg-purple-50/20';
+                    if (filtered.length === 0) {
+                        container.innerHTML = '';
+                        empty.classList.remove('hidden');
+                        return;
                     }
+                    empty.classList.add('hidden');
 
-                    const nickBadge = c.is_nickname_variant
-                        ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">NICKNAME VARIANT (${c.nickname_detail || 'Diminutive'})</span>`
-                        : '';
+                    const startIdx = (currentPage - 1) * pageSize;
+                    const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
 
-                    const confBadgeClass = c.confidence >= 90 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
+                    container.innerHTML = pageSlice.map(c => {
+                        const lookupKey = c.lookup_key || c.legacy_name;
+                        const isApproved = approvedMap[lookupKey] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
+                        const isRejected = rejectedSet.has(c.id);
 
-                    const leg = c.legacy || {
-                        name: c.legacy_name,
-                        club: (c.legacy_clubs && c.legacy_clubs[0]) || 'Unknown',
-                        finishes: c.legacy_finishes || 0,
-                        years_span: (c.legacy_seasons && c.legacy_seasons.length) ? `${c.legacy_seasons[c.legacy_seasons.length-1]}–${c.legacy_seasons[0]}` : 'Legacy era',
-                        avg_pos: '—',
-                        best_pos: '—',
-                        avg_cat_pos: '—',
-                        best_cat_pos: '—',
-                        categories: c.legacy_categories || []
-                    };
+                        let cardBorder = 'border-slate-200';
+                        let statusBadge = '';
+                        if (isApproved) {
+                            cardBorder = 'border-emerald-300 bg-emerald-50/20';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">APPROVED</span>`;
+                        } else if (isRejected) {
+                            cardBorder = 'border-rose-200 bg-rose-50/10 opacity-60';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">REJECTED</span>`;
+                        } else if (c.is_nickname_variant) {
+                            cardBorder = 'border-purple-300 bg-purple-50/20';
+                        }
 
-                    const mod = c.modern || {
-                        name: c.full_name,
-                        club: (c.full_clubs && c.full_clubs[0]) || 'Unknown',
-                        finishes: c.full_finishes || 0,
-                        years_span: (c.full_seasons && c.full_seasons.length) ? `${c.full_seasons[c.full_seasons.length-1]}–${c.full_seasons[0]}` : 'Modern era',
-                        avg_pos: '—',
-                        best_pos: '—',
-                        avg_cat_pos: '—',
-                        best_cat_pos: '—',
-                        categories: c.full_categories || []
-                    };
+                        const nickBadge = c.is_nickname_variant
+                            ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">NICKNAME VARIANT (${c.nickname_detail || 'Diminutive'})</span>`
+                            : '';
 
-                    const evidenceList = (c.confidence_reasons || []).map(r => {
-                        const isHighlight = r.startsWith('✔') || r.includes('Name family');
-                        const cls = isHighlight 
-                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
-                            : 'bg-slate-100 text-slate-700 border-slate-200';
-                        return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
-                    }).join('');
+                        const confBadgeClass = c.confidence >= 90 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
 
-                    const leftColHeader = c.is_nickname_variant ? `Nickname Profile (${leg.name})` : 'Legacy Identity';
-                    const rightColHeader = c.is_nickname_variant ? `Formal Profile (${mod.name})` : 'Modern Candidate';
+                        const leg = c.legacy || {
+                            name: c.legacy_name,
+                            club: (c.legacy_clubs && c.legacy_clubs[0]) || 'Unknown',
+                            finishes: c.legacy_finishes || 0,
+                            years_span: (c.legacy_seasons && c.legacy_seasons.length) ? `${c.legacy_seasons[c.legacy_seasons.length-1]}–${c.legacy_seasons[0]}` : 'Legacy era',
+                            avg_pos: '—',
+                            best_pos: '—',
+                            avg_cat_pos: '—',
+                            best_cat_pos: '—',
+                            categories: c.legacy_categories || []
+                        };
 
-                    return `
-                        <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
-                            
-                            <!-- Header Bar: Names, Lookup Key, Match Probability, Actions -->
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
-                                <div class="space-y-1">
-                                    <div class="flex items-center gap-2.5 flex-wrap">
-                                        <span class="text-base font-serif font-bold text-slate-900">${leg.name}</span>
-                                        <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${leg.club}</span>
-                                        <span class="text-slate-400 font-bold">&rarr;</span>
-                                        <span class="text-base font-serif font-bold text-emerald-800">${mod.name}</span>
-                                        <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${mod.club}</span>
-                                    </div>
-                                    <div class="text-[11px] font-mono text-slate-400">
-                                        Alias mapping: <code class="text-slate-600 font-semibold">${lookupKey}</code> &rarr; <strong class="text-slate-800">${c.full_name}</strong>
-                                    </div>
-                                </div>
+                        const mod = c.modern || {
+                            name: c.full_name,
+                            club: (c.full_clubs && c.full_clubs[0]) || 'Unknown',
+                            finishes: c.full_finishes || 0,
+                            years_span: (c.full_seasons && c.full_seasons.length) ? `${c.full_seasons[c.full_seasons.length-1]}–${c.full_seasons[0]}` : 'Modern era',
+                            avg_pos: '—',
+                            best_pos: '—',
+                            avg_cat_pos: '—',
+                            best_cat_pos: '—',
+                            categories: c.full_categories || []
+                        };
 
-                                <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center flex-wrap">
-                                    ${nickBadge}
-                                    <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
-                                        ${c.confidence}% Match
-                                    </span>
-                                    ${statusBadge}
-                                    <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
-                                        class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
-                                        ${isApproved ? 'Approved ✔' : 'Approve'}
-                                    </button>
-                                    <button onclick="window.rejectCandidate('${c.id}')" 
-                                        class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
-                                        ${isRejected ? 'Rejected ✖' : 'Reject'}
-                                    </button>
-                                </div>
-                            </div>
+                        const evidenceList = (c.confidence_reasons || []).map(r => {
+                            const isHighlight = r.startsWith('✔') || r.includes('Name family');
+                            const cls = isHighlight 
+                                ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
+                                : 'bg-slate-100 text-slate-700 border-slate-200';
+                            return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                        }).join('');
 
-                            <!-- Side-by-Side Comparative Dossier -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        const leftColHeader = c.is_nickname_variant ? `Nickname Profile (${leg.name})` : 'Legacy Identity';
+                        const rightColHeader = c.is_nickname_variant ? `Formal Profile (${mod.name})` : 'Modern Candidate';
+
+                        return `
+                            <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
                                 
-                                <!-- Legacy / Nickname Entity Column -->
-                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
-                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
-                                        <span>${leftColHeader}</span>
-                                        <span class="text-slate-700 font-semibold">${leg.years_span}</span>
+                                <!-- Header Bar: Names, Lookup Key, Match Probability, Actions -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2.5 flex-wrap">
+                                            <span class="text-base font-serif font-bold text-slate-900">${leg.name}</span>
+                                            <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${leg.club}</span>
+                                            <span class="text-slate-400 font-bold">&rarr;</span>
+                                            <span class="text-base font-serif font-bold text-emerald-800">${mod.name}</span>
+                                            <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${mod.club}</span>
+                                        </div>
+                                        <div class="text-[11px] font-mono text-slate-400">
+                                            Alias mapping: <code class="text-slate-600 font-semibold">${lookupKey}</code> &rarr; <strong class="text-slate-800">${c.full_name}</strong>
+                                        </div>
                                     </div>
-                                    <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
-                                            <strong class="text-slate-900 font-mono text-sm">${leg.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+
+                                    <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center flex-wrap">
+                                        ${nickBadge}
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
+                                            ${c.confidence}% Match
+                                        </span>
+                                        ${statusBadge}
+                                        <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
+                                            ${isApproved ? 'Approved ✔' : 'Approve'}
+                                        </button>
+                                        <button onclick="window.rejectCandidate('${c.id}')" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
+                                            ${isRejected ? 'Rejected ✖' : 'Reject'}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Side-by-Side Comparative Dossier -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                    
+                                    <!-- Legacy / Nickname Entity Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span>${leftColHeader}</span>
+                                            <span class="text-slate-700 font-semibold">${leg.years_span}</span>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
-                                            <strong class="text-slate-900 font-mono text-sm">${leg.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best ${leg.best_pos || '—'})</span></strong>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${leg.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${leg.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${leg.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${leg.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${leg.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${(leg.categories && leg.categories.length) ? leg.categories.join(', ') : 'Senior'}</strong>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
-                                            <strong class="text-slate-900 font-mono text-sm">#${leg.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${leg.best_cat_pos || '—'})</span></strong>
+                                    </div>
+
+                                    <!-- Modern / Formal Candidate Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span>${rightColHeader}</span>
+                                            <span class="text-slate-700 font-semibold">${mod.years_span}</span>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
-                                            <strong class="text-slate-900 font-mono text-xs">${(leg.categories && leg.categories.length) ? leg.categories.join(', ') : 'Senior'}</strong>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${mod.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${mod.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${mod.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${mod.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${mod.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${(mod.categories && mod.categories.length) ? mod.categories.join(', ') : 'Senior'}</strong>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Modern / Formal Candidate Column -->
-                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
-                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
-                                        <span>${rightColHeader}</span>
-                                        <span class="text-slate-700 font-semibold">${mod.years_span}</span>
+                                <!-- Forensic Evidence Badges -->
+                                <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
+                                    <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Match Evidence:</span>
+                                    ${evidenceList}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    // Current View is Transfers
+                    const filtered = getFilteredTransferCandidates();
+                    document.getElementById('showing-count').textContent = filtered.length;
+
+                    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                    if (currentPage > totalPages) currentPage = totalPages;
+
+                    document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+                    document.getElementById('btn-prev-page').disabled = currentPage <= 1;
+                    document.getElementById('btn-next-page').disabled = currentPage >= totalPages;
+
+                    if (filtered.length === 0) {
+                        container.innerHTML = '';
+                        empty.classList.remove('hidden');
+                        return;
+                    }
+                    empty.classList.add('hidden');
+
+                    const startIdx = (currentPage - 1) * pageSize;
+                    const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
+
+                    container.innerHTML = pageSlice.map(c => {
+                        const isConfirmed = !!confirmedTransfersMap[c.name];
+                        const isRejected = rejectedTransfersSet.has(c.id);
+
+                        let cardBorder = 'border-slate-200';
+                        let statusBadge = '';
+                        if (isConfirmed) {
+                            cardBorder = 'border-emerald-300 bg-emerald-50/20';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">CONFIRMED TRANSFER</span>`;
+                        } else if (isRejected) {
+                            cardBorder = 'border-rose-200 bg-rose-50/10 opacity-60';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">SEPARATE RUNNERS</span>`;
+                        }
+
+                        const confBadgeClass = c.confidence >= 90 
+                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' 
+                            : (c.confidence >= 80 
+                                ? 'bg-blue-100 text-blue-800 border border-blue-200' 
+                                : (c.overlap_count > 0 ? 'bg-rose-100 text-rose-800 border border-rose-200' : 'bg-amber-100 text-amber-800 border border-amber-200'));
+
+                        const overlapBadge = c.overlap_count === 0
+                            ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">0 Overlapping Races</span>`
+                            : `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">⚠️ ${c.overlap_count} Conflicting Fixtures</span>`;
+
+                        const genderLabel = c.gender === 'M' ? 'Senior Men' : 'Senior Women';
+
+                        const reasonsList = (c.reasons || []).map(r => 
+                            `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">✔ ${r}</span>`
+                        ).concat((c.flags || []).map(f => 
+                            `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-rose-50 text-rose-800 border border-rose-200 font-semibold">⚠️ ${f}</span>`
+                        )).join('');
+
+                        return `
+                            <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
+                                
+                                <!-- Header Bar -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2.5 flex-wrap">
+                                            <span class="text-base font-serif font-bold text-slate-900">${c.name}</span>
+                                            <span class="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-slate-900 text-white font-bold">${genderLabel}</span>
+                                            <span class="text-slate-300">•</span>
+                                            <span class="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                                                ${c.from_club} &rarr; ${c.to_club}
+                                            </span>
+                                            <span class="text-[10px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded font-semibold">
+                                                Handover: ${c.handover_season}
+                                            </span>
+                                        </div>
+                                        <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 flex-wrap">
+                                            <span>Career Transfer Record</span>
+                                            <span>•</span>
+                                            <a href="athlete.html?name=${encodeURIComponent(c.name)}" target="_blank" class="text-emerald-700 hover:underline font-semibold flex items-center gap-1">
+                                                <span>View Combined Profile</span>
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
-                                            <strong class="text-slate-900 font-mono text-sm">${mod.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+
+                                    <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center flex-wrap">
+                                        ${overlapBadge}
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
+                                            ${c.confidence}% Match
+                                        </span>
+                                        ${statusBadge}
+                                        <button onclick="window.confirmTransfer('${c.name.replace(/'/g, "\\'")}', '${c.from_club.replace(/'/g, "\\'")}', '${c.to_club.replace(/'/g, "\\'")}', '${c.id}')" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isConfirmed ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
+                                            ${isConfirmed ? 'Confirmed ✔' : 'Confirm Transfer'}
+                                        </button>
+                                        <button onclick="window.rejectTransfer('${c.id}')" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
+                                            ${isRejected ? 'Marked Separate ✖' : 'Mark Separate'}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Side-by-Side Comparative Dossier -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                    
+                                    <!-- Origin Club Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span class="text-slate-800 font-sans font-bold text-xs truncate max-w-[200px]">${c.from_club}</span>
+                                            <span class="text-slate-700 font-semibold">${c.from_stats.years_span}</span>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
-                                            <strong class="text-slate-900 font-mono text-sm">${mod.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best ${mod.best_pos || '—'})</span></strong>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.from_stats.count} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.from_stats.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.from_stats.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${c.from_stats.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.from_stats.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${c.from_stats.categories.join(', ') || 'Senior'}</strong>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
-                                            <strong class="text-slate-900 font-mono text-sm">#${mod.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${mod.best_cat_pos || '—'})</span></strong>
+                                        <div class="pt-1 border-t border-slate-200/60 text-[11px] font-mono">
+                                            <a href="athlete.html?name=${encodeURIComponent(c.name)}&club=${encodeURIComponent(c.from_club)}" target="_blank" class="text-slate-600 hover:text-slate-900 underline">
+                                                View ${c.from_club} Log &rarr;
+                                            </a>
                                         </div>
-                                        <div>
-                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
-                                            <strong class="text-slate-900 font-mono text-xs">${(mod.categories && mod.categories.length) ? mod.categories.join(', ') : 'Senior'}</strong>
+                                    </div>
+
+                                    <!-- Destination Club Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span class="text-emerald-900 font-sans font-bold text-xs truncate max-w-[200px]">${c.to_club}</span>
+                                            <span class="text-slate-700 font-semibold">${c.to_stats.years_span}</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.to_stats.count} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.to_stats.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.to_stats.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${c.to_stats.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.to_stats.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${c.to_stats.categories.join(', ') || 'Senior'}</strong>
+                                            </div>
+                                        </div>
+                                        <div class="pt-1 border-t border-slate-200/60 text-[11px] font-mono">
+                                            <a href="athlete.html?name=${encodeURIComponent(c.name)}&club=${encodeURIComponent(c.to_club)}" target="_blank" class="text-emerald-700 hover:text-emerald-900 underline">
+                                                View ${c.to_club} Log &rarr;
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Forensic Evidence Badges -->
-                            <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
-                                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Match Evidence:</span>
-                                ${evidenceList}
+                                <!-- Forensic Evidence Badges -->
+                                <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
+                                    <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Forensic Analysis:</span>
+                                    ${reasonsList}
+                                </div>
                             </div>
-                        </div>
-                    `;
-                }).join('');
+                        `;
+                    }).join('');
+                }
             };
 
             // ==========================================
@@ -766,14 +1167,106 @@
 
             function calcProb(dossierA, dossierB) {
                 if (dossierA.gender !== dossierB.gender) {
-                    return { score: 0, reasons: ["Gender mismatch (Men vs Women)"], nickMatch: null };
+                    return { score: 0, reasons: ["Gender mismatch (Men vs Women)"], nickMatch: null, isTransfer: false };
                 }
 
+                // Check if this is a Club Transfer Scenario (names match exactly or nickname match, but clubs differ)
+                const isExactName = dossierA.name.trim().toLowerCase() === dossierB.name.trim().toLowerCase();
+                const nickMatch = checkSandboxNicknameMatch(dossierA.name, dossierB.name);
+                const isDiffClub = dossierA.club.toLowerCase() !== dossierB.club.toLowerCase();
+
+                if ((isExactName || nickMatch) && isDiffClub) {
+                    // Club Transfer Forensics Mode
+                    let score = 50.0;
+                    let reasons = [];
+                    let flags = [];
+
+                    // Chronological ordering
+                    const earlierD = (dossierA.first_year <= dossierB.first_year) ? dossierA : dossierB;
+                    const laterD = (dossierA.first_year <= dossierB.first_year) ? dossierB : dossierA;
+                    const entEarlier = (earlierD === dossierA) ? selectedRunnerA : selectedRunnerB;
+                    const entLater = (earlierD === dossierA) ? selectedRunnerB : selectedRunnerA;
+
+                    // Check fixture overlaps
+                    const fixtEarlier = new Set(entEarlier.records.map(r => `${r.season_key}_${r.match}`));
+                    const fixtLater = new Set(entLater.records.map(r => `${r.season_key}_${r.match}`));
+                    let overlaps = 0;
+                    fixtEarlier.forEach(f => { if (fixtLater.has(f)) overlaps++; });
+
+                    const seasonsEarlier = new Set(entEarlier.records.map(r => r.season));
+                    const seasonsLater = new Set(entLater.records.map(r => r.season));
+                    const seasonOverlaps = Array.from(seasonsEarlier).filter(s => seasonsLater.has(s));
+
+                    if (overlaps === 0 && seasonOverlaps.length === 0) {
+                        score += 30.0;
+                        reasons.push(`Clean chronological handover (${earlierD.club} ➔ ${laterD.club}) with 0 overlap`);
+                    } else if (overlaps === 0 && seasonOverlaps.length === 1) {
+                        score += 15.0;
+                        reasons.push(`Mid-season transition in ${seasonOverlaps[0]} (0 conflicting races)`);
+                    } else {
+                        score -= 40.0;
+                        flags.push(`⚠️ Active fixture conflicts (${overlaps} fixtures run concurrently: likely separate runners)`);
+                    }
+
+                    // Age category progression
+                    function parseAge(cat) {
+                        if (cat.includes('U23')) return 22;
+                        if (cat.includes('Senior')) return 28;
+                        const m = cat.match(/\d+/);
+                        return m ? parseInt(m[0], 10) : 28;
+                    }
+                    const agesE = earlierD.categories.map(parseAge);
+                    const agesL = laterD.categories.map(parseAge);
+                    if (agesE.length && agesL.length) {
+                        const maxE = Math.max(...agesE);
+                        const minL = Math.min(...agesL);
+                        if (minL >= maxE) {
+                            score += 15.0;
+                            reasons.push(`Valid age progression: ${earlierD.categories.join('/')} ➔ ${laterD.categories.join('/')}`);
+                        } else if (minL < maxE - 5) {
+                            score -= 35.0;
+                            flags.push(`⚠️ Age regression flag (${earlierD.categories.join('/')} vs ${laterD.categories.join('/')})`);
+                        }
+                    }
+
+                    // Pace comparison
+                    const avgE = parseFloat(earlierD.avg_pos);
+                    const avgL = parseFloat(laterD.avg_pos);
+                    if (!isNaN(avgE) && !isNaN(avgL)) {
+                        const diff = Math.abs(avgE - avgL);
+                        if (diff <= 20) {
+                            score += 15.0;
+                            reasons.push(`Close pace continuity (Avg pos #${avgE} vs #${avgL})`);
+                        } else if (diff <= 50) {
+                            score += 8.0;
+                            reasons.push(`Consistent finishing standard (Avg pos #${avgE} vs #${avgL})`);
+                        } else if (diff > 120) {
+                            score -= 20.0;
+                            flags.push(`⚠️ Significant pace divergence (Avg pos #${avgE} vs #${avgL})`);
+                        }
+                    }
+
+                    if (nickMatch) {
+                        score += 15.0;
+                        reasons.push(`✔ Known diminutive variant: ${nickMatch.nickFirst} ➔ ${nickMatch.formalFirst}`);
+                    }
+
+                    const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
+                    return {
+                        score: finalScore,
+                        reasons: reasons.concat(flags),
+                        nickMatch: nickMatch,
+                        isTransfer: true,
+                        overlaps: overlaps,
+                        earlierD: earlierD,
+                        laterD: laterD
+                    };
+                }
+
+                // Standard Alias Forensic Mode
                 let score = 50.0;
                 let reasons = [];
 
-                // 0. Nickname / Diminutive Match Boost
-                const nickMatch = checkSandboxNicknameMatch(dossierA.name, dossierB.name);
                 if (nickMatch) {
                     score += 25.0;
                     reasons.push(`✔ Known diminutive/nickname match (${nickMatch.nickFirst} ➔ ${nickMatch.formalFirst})`);
@@ -798,8 +1291,6 @@
                     } else if (diff <= 60) {
                         score += 10.0;
                         reasons.push(`Consistent finishing standard (Avg pos ${avgA} vs ${avgB})`);
-                    } else if (diff <= 100) {
-                        score += 5.0;
                     } else if (diff > 160) {
                         score -= 20.0;
                         reasons.push(`Pace mismatch (Avg pos ${avgA} vs ${avgB})`);
@@ -847,7 +1338,7 @@
                 }
 
                 const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
-                return { score: finalScore, reasons, nickMatch };
+                return { score: finalScore, reasons, nickMatch, isTransfer: false };
             }
 
             function renderSandbox() {
@@ -860,89 +1351,184 @@
                 const dB = computeDossier(selectedRunnerB);
                 if (!dA || !dB) return;
 
-                const { score, reasons, nickMatch } = calcProb(dA, dB);
+                const result = calcProb(dA, dB);
+                const { score, reasons, nickMatch, isTransfer, earlierD, laterD } = result;
 
-                const isApproved = approvedMap[dA.key] === dB.name || approvedMap[dA.name] === dB.name;
                 const badgeClass = score >= 90 ? 'bg-emerald-100 text-emerald-800' : (score >= 60 ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700');
-                const linkLabel = isApproved 
-                    ? 'Linked ✔' 
-                    : (nickMatch 
-                        ? `Link Nickname: "${dA.key}" ➔ "${dB.name}"` 
-                        : `Link Alias: "${dA.key}" ➔ "${dB.name}"`);
-
+                
                 resultsBox.classList.remove('hidden');
-                resultsBox.innerHTML = `
-                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-4">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
-                            <div>
-                                <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">Comparison Analysis</span>
-                                <div class="text-base font-serif font-bold text-slate-900 mt-0.5 flex items-center gap-2 flex-wrap">
-                                    <span>${dA.name} <span class="text-slate-500 font-normal">(${dA.club})</span> &rarr; ${dB.name} <span class="text-slate-500 font-normal">(${dB.club})</span></span>
-                                    ${nickMatch ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">Diminutive / Nickname Pair</span>` : ''}
+
+                if (isTransfer) {
+                    const isConfirmed = !!confirmedTransfersMap[earlierD.name];
+                    const buttonLabel = isConfirmed 
+                        ? 'Transfer Confirmed ✔' 
+                        : `Confirm Transfer (${earlierD.club} ➔ ${laterD.club})`;
+
+                    resultsBox.innerHTML = `
+                        <div class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/30 space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-emerald-200 pb-3">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 block">Club Transfer Forensic Analysis</span>
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">Multi-Club Carrier</span>
+                                    </div>
+                                    <div class="text-base font-serif font-bold text-slate-900 mt-0.5 flex items-center gap-2 flex-wrap">
+                                        <span>${earlierD.name}</span>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-white text-slate-700 border font-mono font-semibold">${earlierD.club}</span>
+                                        <span class="text-emerald-700 font-bold">&rarr;</span>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-white text-emerald-800 border font-mono font-semibold">${laterD.club}</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 rounded-lg text-sm font-mono font-bold ${badgeClass}">
+                                        ${score}% Transfer Likelihood
+                                    </span>
+                                    <button id="btn-sandbox-confirm-transfer" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isConfirmed ? 'bg-emerald-700 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}">
+                                        ${buttonLabel}
+                                    </button>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <span class="px-3 py-1 rounded-lg text-sm font-mono font-bold ${badgeClass}">
-                                    ${score}% Match Probability
-                                </span>
-                                <button id="btn-sandbox-link" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}">
-                                    ${linkLabel}
-                                </button>
+
+                            <!-- Side by Side Boxes -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span class="text-slate-800 font-sans font-bold">${earlierD.club} (Origin)</span>
+                                        <span>${earlierD.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${earlierD.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${earlierD.avg_pos} (best #${earlierD.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${earlierD.avg_cat_pos} (best #${earlierD.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${earlierD.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span class="text-emerald-900 font-sans font-bold">${laterD.club} (Destination)</span>
+                                        <span>${laterD.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${laterD.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${laterD.avg_pos} (best #${laterD.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${laterD.avg_cat_pos} (best #${laterD.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${laterD.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Forensic Evidence List -->
+                            <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
+                                ${reasons.map(r => {
+                                    const isWarn = r.startsWith('⚠️');
+                                    const cls = isWarn 
+                                        ? 'bg-rose-50 text-rose-800 border-rose-200 font-semibold' 
+                                        : 'bg-white text-emerald-800 border-emerald-200 font-semibold';
+                                    return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                                }).join('')}
                             </div>
                         </div>
+                    `;
 
-                        <!-- Side by Side Boxes -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                            <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
-                                <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
-                                    <span>${dA.name} (Runner A)</span>
-                                    <span>${dA.years_span}</span>
+                    document.getElementById('btn-sandbox-confirm-transfer').addEventListener('click', () => {
+                        confirmedTransfersMap[earlierD.name] = {
+                            gender: earlierD.gender,
+                            clubs: [earlierD.club, laterD.club],
+                            primary_club: laterD.club,
+                            from_club: earlierD.club,
+                            to_club: laterD.club,
+                            transfer_season: laterD.seasons[0] || 'Unknown',
+                            confirmed: true
+                        };
+                        saveState();
+                        renderSandbox();
+                        render();
+                        showToast(`Confirmed Club Transfer: ${earlierD.name} (${earlierD.club} ➔ ${laterD.club})`);
+                    });
+                } else {
+                    // Standard Alias Mode
+                    const isApproved = approvedMap[dA.key] === dB.name || approvedMap[dA.name] === dB.name;
+                    const linkLabel = isApproved 
+                        ? 'Linked ✔' 
+                        : (nickMatch 
+                            ? `Link Nickname: "${dA.key}" ➔ "${dB.name}"` 
+                            : `Link Alias: "${dA.key}" ➔ "${dB.name}"`);
+
+                    resultsBox.innerHTML = `
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                                <div>
+                                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">Comparison Analysis</span>
+                                    <div class="text-base font-serif font-bold text-slate-900 mt-0.5 flex items-center gap-2 flex-wrap">
+                                        <span>${dA.name} <span class="text-slate-500 font-normal">(${dA.club})</span> &rarr; ${dB.name} <span class="text-slate-500 font-normal">(${dB.club})</span></span>
+                                        ${nickMatch ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">Diminutive / Nickname Pair</span>` : ''}
+                                    </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2 text-xs">
-                                    <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dA.club}</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dA.finishes} races</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dA.avg_pos} (best ${dA.best_pos})</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dA.avg_cat_pos} (best #${dA.best_cat_pos})</strong></div>
-                                    <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dA.categories.join(', ') || 'Senior'}</strong></div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 rounded-lg text-sm font-mono font-bold ${badgeClass}">
+                                        ${score}% Match Probability
+                                    </span>
+                                    <button id="btn-sandbox-link" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}">
+                                        ${linkLabel}
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
-                                <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
-                                    <span>${dB.name} (Runner B)</span>
-                                    <span>${dB.years_span}</span>
+                            <!-- Side by Side Boxes -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span>${dA.name} (Runner A)</span>
+                                        <span>${dA.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dA.club}</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dA.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dA.avg_pos} (best #${dA.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dA.avg_cat_pos} (best #${dA.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dA.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-2 text-xs">
-                                    <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dB.club}</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dB.finishes} races</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dB.avg_pos} (best ${dB.best_pos})</strong></div>
-                                    <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dB.avg_cat_pos} (best #${dB.best_cat_pos})</strong></div>
-                                    <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dB.categories.join(', ') || 'Senior'}</strong></div>
+
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span>${dB.name} (Runner B)</span>
+                                        <span>${dB.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dB.club}</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dB.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dB.avg_pos} (best #${dB.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dB.avg_cat_pos} (best #${dB.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dB.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Forensic Evidence List -->
-                        <div class="flex flex-wrap items-center gap-1.5 pt-1">
-                            <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
-                            ${reasons.map(r => {
-                                const isHighlight = r.startsWith('✔');
-                                const cls = isHighlight 
-                                    ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
-                                    : 'bg-white text-slate-700 border-slate-200';
-                                return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
-                            }).join('')}
+                            <!-- Forensic Evidence List -->
+                            <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
+                                ${reasons.map(r => {
+                                    const isHighlight = r.startsWith('✔');
+                                    const cls = isHighlight 
+                                        ? 'bg-emerald-50 text-emerald-800 border-emerald-200 font-semibold' 
+                                        : 'bg-white text-slate-700 border-slate-200';
+                                    return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                                }).join('')}
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
 
-                document.getElementById('btn-sandbox-link').addEventListener('click', () => {
-                    approvedMap[dA.key] = dB.name;
-                    saveState();
-                    renderSandbox();
-                    render();
-                    showToast(`Linked: ${dA.key} ➔ ${dB.name}`);
-                });
+                    document.getElementById('btn-sandbox-link').addEventListener('click', () => {
+                        approvedMap[dA.key] = dB.name;
+                        saveState();
+                        renderSandbox();
+                        render();
+                        showToast(`Linked: ${dA.key} ➔ ${dB.name}`);
+                    });
+                }
             }
 
             function setupAutocomplete(inputEl, dropdownEl, onSelect) {
@@ -999,7 +1585,7 @@
                 renderSandbox();
             });
 
-            // Global Actions
+            // Global Actions for Aliases
             window.approveCandidate = (lookupKey, fullName, id) => {
                 approvedMap[lookupKey] = fullName;
                 rejectedSet.delete(id);
@@ -1016,7 +1602,7 @@
                 } else {
                     render();
                 }
-                showToast(`Approved & archived: ${lookupKey} ➔ ${fullName}`);
+                showToast(`Approved: ${lookupKey} ➔ ${fullName}`);
             };
 
             window.rejectCandidate = (id) => {
@@ -1043,41 +1629,101 @@
                 showToast(`Rejected match.`);
             };
 
-            // Event Listeners
-            document.querySelectorAll('.filter-tab').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.filter-tab').forEach(b => {
-                        b.classList.remove('bg-slate-900', 'text-white');
-                        b.classList.add('bg-slate-100', 'text-slate-600');
-                    });
-                    btn.classList.add('bg-slate-900', 'text-white');
-                    btn.classList.remove('bg-slate-100', 'text-slate-600');
-                    currentFilter = btn.dataset.filter;
-                    currentPage = 1;
-                    render();
-                });
-            });
+            // Global Actions for Transfers
+            window.confirmTransfer = (name, fromClub, toClub, id) => {
+                confirmedTransfersMap[name] = {
+                    gender: rawTransferCandidates.find(c => c.id === id)?.gender || 'M',
+                    clubs: [fromClub, toClub],
+                    primary_club: toClub,
+                    from_club: fromClub,
+                    to_club: toClub,
+                    transfer_season: rawTransferCandidates.find(c => c.id === id)?.handover_season || 'Unknown',
+                    confirmed: true
+                };
+                rejectedTransfersSet.delete(id);
+                saveState();
 
+                const el = document.getElementById(`card-${id}`);
+                if (el && (hideApproved || currentTransferFilter === 'pending')) {
+                    el.style.transition = 'all 0.22s ease-out';
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Confirmed transfer: ${name} (${fromClub} ➔ ${toClub})`);
+            };
+
+            window.rejectTransfer = (id) => {
+                const c = rawTransferCandidates.find(cand => cand.id === id);
+                if (c && confirmedTransfersMap[c.name]) {
+                    delete confirmedTransfersMap[c.name];
+                }
+                rejectedTransfersSet.add(id);
+                saveState();
+
+                const el = document.getElementById(`card-${id}`);
+                if (el && (hideApproved || currentTransferFilter === 'pending')) {
+                    el.style.transition = 'all 0.22s ease-out';
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Marked as separate runners.`);
+            };
+
+            // Search input listener
             document.getElementById('filter-search').addEventListener('input', (e) => {
                 searchQuery = e.target.value.trim();
                 currentPage = 1;
                 render();
             });
 
+            // Bulk Approve
             document.getElementById('btn-approve-all-high').addEventListener('click', () => {
-                const visible = getFilteredCandidates().filter(c => c.confidence >= 90);
-                if (!visible.length) {
-                    showToast('No pending high-confidence matches visible.');
-                    return;
+                if (currentView === 'aliases') {
+                    const visible = getFilteredCandidates().filter(c => c.confidence >= 90);
+                    if (!visible.length) {
+                        showToast('No pending high-confidence matches visible.');
+                        return;
+                    }
+                    visible.forEach(c => {
+                        const lk = c.lookup_key || c.legacy_name;
+                        approvedMap[lk] = c.full_name;
+                        rejectedSet.delete(c.id);
+                    });
+                    saveState();
+                    render();
+                    showToast(`Approved ${visible.length} high-confidence alias matches!`);
+                } else {
+                    const visible = getFilteredTransferCandidates().filter(c => c.confidence >= 90);
+                    if (!visible.length) {
+                        showToast('No pending high-confidence transfers visible.');
+                        return;
+                    }
+                    visible.forEach(c => {
+                        confirmedTransfersMap[c.name] = {
+                            gender: c.gender,
+                            clubs: [c.from_club, c.to_club],
+                            primary_club: c.to_club,
+                            from_club: c.from_club,
+                            to_club: c.to_club,
+                            transfer_season: c.handover_season,
+                            confirmed: true
+                        };
+                        rejectedTransfersSet.delete(c.id);
+                    });
+                    saveState();
+                    render();
+                    showToast(`Confirmed ${visible.length} high-confidence transfers!`);
                 }
-                visible.forEach(c => {
-                    const lk = c.lookup_key || c.legacy_name;
-                    approvedMap[lk] = c.full_name;
-                    rejectedSet.delete(c.id);
-                });
-                saveState();
-                render();
-                showToast(`Approved ${visible.length} high-confidence matches!`);
             });
 
             const hideApprovedToggle = document.getElementById('toggle-hide-approved');
@@ -1094,9 +1740,14 @@
                 document.getElementById('filter-search').value = '';
                 if (hideApprovedToggle) hideApprovedToggle.checked = true;
                 hideApproved = true;
-                currentFilter = 'pending';
+                if (currentView === 'aliases') {
+                    currentFilter = 'pending';
+                } else {
+                    currentTransferFilter = 'pending';
+                }
                 currentPage = 1;
-                document.querySelector('.filter-tab[data-filter="pending"]').click();
+                renderFilterPills();
+                render();
             });
 
             document.getElementById('btn-prev-page').addEventListener('click', () => {
@@ -1113,24 +1764,43 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // JSON Copy & Download
+            // JSON Copy & Download (adaptive based on view)
             document.getElementById('btn-copy-json').addEventListener('click', () => {
-                navigator.clipboard.writeText(JSON.stringify(approvedMap, null, 2))
-                    .then(() => showToast('Approved mappings copied to clipboard!'))
-                    .catch(() => alert('Failed to copy.'));
+                if (currentView === 'aliases') {
+                    navigator.clipboard.writeText(JSON.stringify(approvedMap, null, 2))
+                        .then(() => showToast('Approved mappings copied to clipboard!'))
+                        .catch(() => alert('Failed to copy.'));
+                } else {
+                    navigator.clipboard.writeText(JSON.stringify(confirmedTransfersMap, null, 2))
+                        .then(() => showToast('Confirmed club transfers copied to clipboard!'))
+                        .catch(() => alert('Failed to copy.'));
+                }
             });
 
             document.getElementById('btn-download-json').addEventListener('click', () => {
-                const blob = new Blob([JSON.stringify(approvedMap, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'corrections.json';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showToast('Downloaded corrections.json! Place in backend_tools/ and run parse_league.py');
+                if (currentView === 'aliases') {
+                    const blob = new Blob([JSON.stringify(approvedMap, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'corrections.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('Downloaded corrections.json! Place in backend_tools/ and run parse_league.py');
+                } else {
+                    const blob = new Blob([JSON.stringify(confirmedTransfersMap, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'club_transfers.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('Downloaded club_transfers.json! Place in backend_tools/ and run detect_transfers.py');
+                }
             });
 
             // Manual Link Modal
@@ -1182,9 +1852,8 @@
                 updateAdminThemeUI();
             }
 
-            // Initial render
-            updateStats();
-            render();
+            // Initial view setup & render
+            switchView(currentView);
         })();
     </script>
 </body>
