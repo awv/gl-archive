@@ -52,6 +52,8 @@
     <script src="backend_tools/alias_candidates.js"></script>
     <script src="backend_tools/transfer_candidates.js"></script>
     <script src="backend_tools/club_transfers.js"></script>
+    <script src="backend_tools/name_changes.js"></script>
+    <script src="backend_tools/name_change_candidates.js"></script>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
 
@@ -97,7 +99,7 @@
 
     <!-- SECTION SWITCHER NAVIGATION TABS -->
     <div class="border-b border-slate-200 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-6 sm:gap-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-6 sm:gap-8 flex-wrap">
             <button id="view-tab-aliases" class="py-3 text-sm font-serif font-bold border-b-2 border-slate-900 text-slate-900 transition-colors flex items-center gap-2">
                 <span>Identity & Nickname Aliases</span>
                 <span id="badge-alias-count" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-slate-100 text-slate-700">0</span>
@@ -105,6 +107,10 @@
             <button id="view-tab-transfers" class="py-3 text-sm font-serif font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2">
                 <span>Runners Who Moved Clubs (Transfers)</span>
                 <span id="badge-transfer-count" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-100 text-emerald-800 font-bold">0</span>
+            </button>
+            <button id="view-tab-namechanges" class="py-3 text-sm font-serif font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-colors flex items-center gap-2">
+                <span>💍 Name Changes (Marriage / Maiden)</span>
+                <span id="badge-namechange-count" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-purple-100 text-purple-800 font-bold">0</span>
             </button>
         </div>
     </div>
@@ -289,15 +295,19 @@
         (() => {
             const rawCandidates = window.glAliasCandidates || [];
             const rawTransferCandidates = window.glTransferCandidates || [];
+            const rawNameChangeCandidates = window.glNameChangeCandidates || [];
             
             // Local storage backed state
             const STORAGE_KEY = 'gl_alias_corrections_v1';
             const TRANSFER_STORAGE_KEY = 'gl_club_transfers_v1';
+            const NAME_CHANGE_STORAGE_KEY = 'gl_name_changes_v1';
             
             let approvedMap = {};
             let rejectedSet = new Set();
             let confirmedTransfersMap = {};
             let rejectedTransfersSet = new Set();
+            let confirmedNameChangesMap = {};
+            let rejectedNameChangesSet = new Set();
 
             // Seed approvedMap from verified corrections.js if available
             if (window.glCorrections && typeof window.glCorrections === 'object') {
@@ -325,6 +335,17 @@
                         confirmedTransfersMap[k] = window.glClubTransfers[k];
                     }
                 });
+            }
+
+            // Sync confirmed name changes from window.glNameChanges & localStorage
+            if (window.glNameChanges && typeof window.glNameChanges === 'object') {
+                Object.assign(confirmedNameChangesMap, window.glNameChanges);
+            }
+            try {
+                const savedNC = localStorage.getItem(NAME_CHANGE_STORAGE_KEY);
+                if (savedNC) Object.assign(confirmedNameChangesMap, JSON.parse(savedNC));
+            } catch (e) {
+                console.error(e);
             }
 
             const normalizeLookupKey = (str) => {
@@ -358,6 +379,16 @@
                 if (!entry) return false;
                 const clubs = entry.clubs || [entry.from_club, entry.to_club];
                 return clubs.includes(c.from_club) && clubs.includes(c.to_club);
+            };
+
+            const isNameChangeCandidateConfirmed = (c) => {
+                if (!c) return false;
+                if (c.status === 'confirmed') return true;
+                const entry = confirmedNameChangesMap[c.earlier_name];
+                if (entry && (entry.primary_name === c.later_name || entry.confirmed)) return true;
+                return Object.values(confirmedNameChangesMap).some(nc => 
+                    nc.maiden_name === c.earlier_name && nc.primary_name === c.later_name
+                );
             };
 
             // Clean candidate IDs and deduplicate
@@ -406,6 +437,31 @@
                 }
             });
 
+            // Clean name change candidate IDs and deduplicate
+            const seenNameChangeIds = new Set();
+            rawNameChangeCandidates.forEach((nc, idx) => {
+                let cleanId = (nc.id || `namechange_${idx}`).replace(/[^a-zA-Z0-9_-]/g, '_');
+                if (seenNameChangeIds.has(cleanId)) {
+                    cleanId = `${cleanId}_${idx}`;
+                }
+                seenNameChangeIds.add(cleanId);
+                nc.id = cleanId;
+
+                if (nc.status === 'confirmed' && !confirmedNameChangesMap[nc.earlier_name]) {
+                    confirmedNameChangesMap[nc.earlier_name] = {
+                        primary_name: nc.later_name,
+                        maiden_name: nc.earlier_name,
+                        club: nc.club,
+                        effective_season: nc.effective_season,
+                        note: `Formerly competed as ${nc.earlier_name}`,
+                        confirmed: true
+                    };
+                }
+                if (isNameChangeCandidateConfirmed(nc)) {
+                    nc.status = 'confirmed';
+                }
+            });
+
             // If R. Gale is in legacy, ensure available for manual review
             if (!rawCandidates.some(c => c.legacy_name.toLowerCase() === 'r. gale')) {
                 const rGaleCand = {
@@ -437,9 +493,12 @@
 
             // Navigation & View State
             const urlParams = new URLSearchParams(window.location.search);
-            let currentView = urlParams.get('view') === 'transfers' ? 'transfers' : 'aliases';
+            let currentView = urlParams.get('view') === 'transfers' 
+                ? 'transfers' 
+                : (urlParams.get('view') === 'namechanges' ? 'namechanges' : 'aliases');
             let currentFilter = 'pending';
             let currentTransferFilter = 'pending';
+            let currentNameChangeFilter = 'pending';
             let searchQuery = '';
             let hideApproved = true;
             let currentPage = 1;
@@ -448,6 +507,7 @@
             const saveState = () => {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(approvedMap));
                 localStorage.setItem(TRANSFER_STORAGE_KEY, JSON.stringify(confirmedTransfersMap, null, 2));
+                localStorage.setItem(NAME_CHANGE_STORAGE_KEY, JSON.stringify(confirmedNameChangesMap, null, 2));
                 updateStats();
             };
 
@@ -462,9 +522,11 @@
                 // Pending counts for top tabs (inbox-zero workflow)
                 const pendingAliases = rawCandidates.filter(c => !isCandidateApproved(c) && !rejectedSet.has(c.id));
                 const pendingTransfers = rawTransferCandidates.filter(c => !isTransferCandidateConfirmed(c) && !rejectedTransfersSet.has(c.id));
+                const pendingNameChanges = rawNameChangeCandidates.filter(c => !isNameChangeCandidateConfirmed(c) && !rejectedNameChangesSet.has(c.id));
                 
                 document.getElementById('badge-alias-count').textContent = pendingAliases.length.toLocaleString();
                 document.getElementById('badge-transfer-count').textContent = pendingTransfers.length.toLocaleString();
+                document.getElementById('badge-namechange-count').textContent = pendingNameChanges.length.toLocaleString();
 
                 if (currentView === 'aliases') {
                     const total = rawCandidates.length;
@@ -502,7 +564,7 @@
                     if (cPend) cPend.textContent = pending;
                     const cRej = document.getElementById('count-rejected');
                     if (cRej) cRej.textContent = rejected;
-                } else {
+                } else if (currentView === 'transfers') {
                     const total = rawTransferCandidates.length;
                     const confirmed = Object.keys(confirmedTransfersMap).length;
                     const rejected = rejectedTransfersSet.size;
@@ -539,6 +601,43 @@
                     if (cConflicts) cConflicts.textContent = conflictsPending;
                     const cAll = document.getElementById('count-transfers-all');
                     if (cAll) cAll.textContent = total;
+                } else {
+                    const total = rawNameChangeCandidates.length;
+                    const confirmed = Object.keys(confirmedNameChangesMap).length;
+                    const rejected = rejectedNameChangesSet.size;
+
+                    const pending = pendingNameChanges.length;
+                    const cleanPending = pendingNameChanges.filter(c => c.overlap_count === 0 && c.confidence >= 80).length;
+                    const highPending = pendingNameChanges.filter(c => c.confidence >= 90).length;
+                    const conflictsPending = pendingNameChanges.filter(c => c.overlap_count > 0).length;
+
+                    document.getElementById('stat-label-1').textContent = 'Name Change Pairs';
+                    document.getElementById('stat-total').textContent = total.toLocaleString();
+
+                    document.getElementById('stat-label-2').textContent = 'Clean Transitions (Pending)';
+                    document.getElementById('stat-nicknames').textContent = cleanPending.toLocaleString();
+
+                    document.getElementById('stat-label-3').textContent = 'High Confidence (Pending)';
+                    document.getElementById('stat-high').textContent = highPending.toLocaleString();
+
+                    document.getElementById('stat-label-4').textContent = 'Confirmed Name Changes';
+                    document.getElementById('stat-approved').textContent = confirmed.toLocaleString();
+
+                    document.getElementById('stat-label-5').textContent = 'Conflicting Overlaps (Pending)';
+                    document.getElementById('stat-pending').textContent = conflictsPending.toLocaleString();
+
+                    const cPend = document.getElementById('count-nc-pending');
+                    if (cPend) cPend.textContent = pending;
+                    const cClean = document.getElementById('count-nc-clean');
+                    if (cClean) cClean.textContent = cleanPending;
+                    const cHigh = document.getElementById('count-nc-high');
+                    if (cHigh) cHigh.textContent = highPending;
+                    const cConf = document.getElementById('count-nc-confirmed');
+                    if (cConf) cConf.textContent = confirmed;
+                    const cConflicts = document.getElementById('count-nc-conflicts');
+                    if (cConflicts) cConflicts.textContent = conflictsPending;
+                    const cAll = document.getElementById('count-nc-all');
+                    if (cAll) cAll.textContent = total;
                 }
             };
 
@@ -553,7 +652,7 @@
                         <button data-filter="approved" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'approved' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Approved (<span id="count-approved">0</span>)</button>
                         <button data-filter="rejected" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentFilter === 'rejected' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Rejected (<span id="count-rejected">0</span>)</button>
                     `;
-                } else {
+                } else if (currentView === 'transfers') {
                     container.innerHTML = `
                         <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'pending' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Pending (<span id="count-transfers-pending">0</span>)</button>
                         <button data-filter="clean" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'clean' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-emerald-700 hover:bg-emerald-100'}">Clean Transfers (≥80%) (<span id="count-transfers-clean">0</span>)</button>
@@ -562,14 +661,25 @@
                         <button data-filter="conflicts" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'conflicts' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-rose-700 hover:bg-rose-100'}">Conflicting / Overlap (<span id="count-transfers-conflicts">0</span>)</button>
                         <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentTransferFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">All (<span id="count-transfers-all">0</span>)</button>
                     `;
+                } else {
+                    container.innerHTML = `
+                        <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'pending' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Pending (<span id="count-nc-pending">0</span>)</button>
+                        <button data-filter="clean" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'clean' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-purple-700 hover:bg-purple-100'}">Clean Transitions (≥80%) (<span id="count-nc-clean">0</span>)</button>
+                        <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'high' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">High Confidence (≥90%) (<span id="count-nc-high">0</span>)</button>
+                        <button data-filter="confirmed" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'confirmed' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-blue-700 hover:bg-blue-100'}">Confirmed (<span id="count-nc-confirmed">0</span>)</button>
+                        <button data-filter="conflicts" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'conflicts' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-rose-700 hover:bg-rose-100'}">Overlapping Seasons (<span id="count-nc-conflicts">0</span>)</button>
+                        <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">All (<span id="count-nc-all">0</span>)</button>
+                    `;
                 }
 
                 container.querySelectorAll('.filter-tab').forEach(btn => {
                     btn.addEventListener('click', () => {
                         if (currentView === 'aliases') {
                             currentFilter = btn.dataset.filter;
-                        } else {
+                        } else if (currentView === 'transfers') {
                             currentTransferFilter = btn.dataset.filter;
+                        } else {
+                            currentNameChangeFilter = btn.dataset.filter;
                         }
                         currentPage = 1;
                         renderFilterPills();
@@ -587,12 +697,18 @@
 
                 const tabAliases = document.getElementById('view-tab-aliases');
                 const tabTransfers = document.getElementById('view-tab-transfers');
+                const tabNameChanges = document.getElementById('view-tab-namechanges');
+
+                [tabAliases, tabTransfers, tabNameChanges].forEach(t => {
+                    if (t) {
+                        t.classList.remove('border-slate-900', 'text-slate-900');
+                        t.classList.add('border-transparent', 'text-slate-500');
+                    }
+                });
 
                 if (currentView === 'aliases') {
                     tabAliases.classList.add('border-slate-900', 'text-slate-900');
                     tabAliases.classList.remove('border-transparent', 'text-slate-500');
-                    tabTransfers.classList.remove('border-slate-900', 'text-slate-900');
-                    tabTransfers.classList.add('border-transparent', 'text-slate-500');
 
                     document.getElementById('page-title').textContent = 'Athlete Identity & Alias Review';
                     document.getElementById('page-subtitle').textContent = 'Resolve legacy abbreviated entries (2010–2022) to modern full runner profiles (2023–2026).';
@@ -602,11 +718,9 @@
                     document.getElementById('showing-unit').textContent = 'candidate pairs';
                     document.getElementById('hide-status-label').textContent = 'approved';
                     document.getElementById('btn-approve-all-high').textContent = 'Approve All Visible High Confidence (≥90%)';
-                } else {
+                } else if (currentView === 'transfers') {
                     tabTransfers.classList.add('border-slate-900', 'text-slate-900');
                     tabTransfers.classList.remove('border-transparent', 'text-slate-500');
-                    tabAliases.classList.remove('border-slate-900', 'text-slate-900');
-                    tabAliases.classList.add('border-transparent', 'text-slate-500');
 
                     document.getElementById('page-title').textContent = 'Club Transfers & Career Moves';
                     document.getElementById('page-subtitle').textContent = 'Forensic analysis of multi-club careers, timeline handovers, pace continuity, and verified club transfers.';
@@ -614,6 +728,18 @@
                     document.getElementById('btn-copy-json').textContent = 'Copy Transfers JSON';
                     document.getElementById('btn-download-json').textContent = 'Download club_transfers.json';
                     document.getElementById('showing-unit').textContent = 'transfer candidates';
+                    document.getElementById('hide-status-label').textContent = 'confirmed';
+                    document.getElementById('btn-approve-all-high').textContent = 'Confirm All Visible High Confidence (≥90%)';
+                } else {
+                    tabNameChanges.classList.add('border-slate-900', 'text-slate-900');
+                    tabNameChanges.classList.remove('border-transparent', 'text-slate-500');
+
+                    document.getElementById('page-title').textContent = 'Athlete Name Changes (Marriage / Maiden Names)';
+                    document.getElementById('page-subtitle').textContent = 'Forensic detection and unification of female runners competing across maiden and married surnames.';
+                    document.getElementById('btn-manual-add').classList.add('hidden');
+                    document.getElementById('btn-copy-json').textContent = 'Copy Name Changes JSON';
+                    document.getElementById('btn-download-json').textContent = 'Download name_changes.json';
+                    document.getElementById('showing-unit').textContent = 'name change candidates';
                     document.getElementById('hide-status-label').textContent = 'confirmed';
                     document.getElementById('btn-approve-all-high').textContent = 'Confirm All Visible High Confidence (≥90%)';
                 }
@@ -629,6 +755,7 @@
 
             document.getElementById('view-tab-aliases').addEventListener('click', () => switchView('aliases'));
             document.getElementById('view-tab-transfers').addEventListener('click', () => switchView('transfers'));
+            document.getElementById('view-tab-namechanges').addEventListener('click', () => switchView('namechanges'));
 
             const getFilteredCandidates = () => {
                 return rawCandidates.filter(c => {
@@ -672,6 +799,30 @@
                         const q = searchQuery.toLowerCase();
                         const matchName = c.name.toLowerCase().includes(q);
                         const matchClub = c.from_club.toLowerCase().includes(q) || c.to_club.toLowerCase().includes(q);
+                        if (!matchName && !matchClub) return false;
+                    }
+
+                    return true;
+                });
+            };
+
+            const getFilteredNameChangeCandidates = () => {
+                return rawNameChangeCandidates.filter(c => {
+                    const isConfirmed = isNameChangeCandidateConfirmed(c);
+                    const isRejected = rejectedNameChangesSet.has(c.id);
+
+                    if (hideApproved && isConfirmed && currentNameChangeFilter !== 'confirmed') return false;
+
+                    if (currentNameChangeFilter === 'pending' && (isConfirmed || isRejected)) return false;
+                    if (currentNameChangeFilter === 'clean' && (c.overlap_count > 0 || c.confidence < 80 || (isConfirmed && hideApproved) || isRejected)) return false;
+                    if (currentNameChangeFilter === 'high' && (c.confidence < 90 || (isConfirmed && hideApproved) || isRejected)) return false;
+                    if (currentNameChangeFilter === 'confirmed' && !isConfirmed) return false;
+                    if (currentNameChangeFilter === 'conflicts' && (c.overlap_count === 0 || (isConfirmed && hideApproved) || isRejected)) return false;
+
+                    if (searchQuery) {
+                        const q = searchQuery.toLowerCase();
+                        const matchName = c.earlier_name.toLowerCase().includes(q) || c.later_name.toLowerCase().includes(q);
+                        const matchClub = c.club.toLowerCase().includes(q);
                         if (!matchName && !matchClub) return false;
                     }
 
@@ -861,7 +1012,7 @@
                             </div>
                         `;
                     }).join('');
-                } else {
+                } else if (currentView === 'transfers') {
                     // Current View is Transfers
                     const filtered = getFilteredTransferCandidates();
                     document.getElementById('showing-count').textContent = filtered.length;
@@ -1020,6 +1171,177 @@
                                         <div class="pt-1 border-t border-slate-200/60 text-[11px] font-mono">
                                             <a href="athlete.html?name=${encodeURIComponent(c.name)}&club=${encodeURIComponent(c.to_club)}" target="_blank" class="text-emerald-700 hover:text-emerald-900 underline">
                                                 View ${c.to_club} Log &rarr;
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Forensic Evidence Badges -->
+                                <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
+                                    <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Forensic Analysis:</span>
+                                    ${reasonsList}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                } else {
+                    // Current View is Name Changes
+                    const filtered = getFilteredNameChangeCandidates();
+                    document.getElementById('showing-count').textContent = filtered.length;
+
+                    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                    if (currentPage > totalPages) currentPage = totalPages;
+
+                    document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+                    document.getElementById('btn-prev-page').disabled = currentPage <= 1;
+                    document.getElementById('btn-next-page').disabled = currentPage >= totalPages;
+
+                    if (filtered.length === 0) {
+                        container.innerHTML = '';
+                        empty.classList.remove('hidden');
+                        return;
+                    }
+                    empty.classList.add('hidden');
+
+                    const startIdx = (currentPage - 1) * pageSize;
+                    const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
+
+                    container.innerHTML = pageSlice.map(c => {
+                        const isConfirmed = isNameChangeCandidateConfirmed(c);
+                        const isRejected = rejectedNameChangesSet.has(c.id);
+
+                        let cardBorder = 'border-slate-200';
+                        let statusBadge = '';
+                        if (isConfirmed) {
+                            cardBorder = 'border-purple-300 bg-purple-50/20';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">CONFIRMED NAME CHANGE</span>`;
+                        } else if (isRejected) {
+                            cardBorder = 'border-rose-200 bg-rose-50/10 opacity-60';
+                            statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">SEPARATE RUNNERS</span>`;
+                        }
+
+                        const confBadgeClass = c.confidence >= 90 
+                            ? 'bg-purple-100 text-purple-800 border border-purple-200' 
+                            : (c.confidence >= 80 
+                                ? 'bg-blue-100 text-blue-800 border border-blue-200' 
+                                : (c.overlap_count > 0 ? 'bg-rose-100 text-rose-800 border border-rose-200' : 'bg-amber-100 text-amber-800 border border-amber-200'));
+
+                        const overlapBadge = c.overlap_count === 0
+                            ? `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">0 Overlapping Races</span>`
+                            : `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800">⚠️ ${c.overlap_count} Overlapping Seasons</span>`;
+
+                        const reasonsList = (c.reasons || []).map(r => 
+                            `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-50 text-purple-800 border border-purple-200 font-semibold">✔ ${r}</span>`
+                        ).concat((c.flags || []).map(f => 
+                            `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-rose-50 text-rose-800 border border-rose-200 font-semibold">⚠️ ${f}</span>`
+                        )).join('');
+
+                        return `
+                            <div class="candidate-card bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
+                                
+                                <!-- Header Bar -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2.5 flex-wrap">
+                                            <span class="text-base font-serif font-bold text-slate-900">${c.earlier_name}</span>
+                                            <span class="text-slate-400 font-bold">&rarr;</span>
+                                            <span class="text-base font-serif font-bold text-purple-900">${c.later_name}</span>
+                                            <span class="text-slate-300">•</span>
+                                            <span class="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                                                ${c.club}
+                                            </span>
+                                            <span class="text-[10px] font-mono text-purple-800 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded font-semibold">
+                                                Effective: ${c.effective_season}
+                                            </span>
+                                        </div>
+                                        <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 flex-wrap">
+                                            <span>Athlete Name Change (e.g. Marriage / Maiden Name)</span>
+                                            <span>•</span>
+                                            <a href="athlete.html?name=${encodeURIComponent(c.later_name)}" target="_blank" class="text-purple-700 hover:underline font-semibold flex items-center gap-1">
+                                                 <span>View Unified Profile</span>
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center flex-wrap">
+                                        ${overlapBadge}
+                                        <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
+                                            ${c.confidence}% Match
+                                        </span>
+                                        ${statusBadge}
+                                        <button data-action="confirm-namechange" data-id="${c.id}" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isConfirmed ? 'bg-purple-700 text-white' : 'bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100'}">
+                                            ${isConfirmed ? 'Confirmed ✔' : 'Confirm Name Change'}
+                                        </button>
+                                        <button data-action="reject-namechange" data-id="${c.id}" 
+                                            class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
+                                            ${isRejected ? 'Marked Separate ✖' : 'Mark Separate'}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Side-by-Side Comparative Dossier -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                    
+                                    <!-- Earlier / Maiden Surname Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span class="text-slate-800 font-sans font-bold text-xs truncate max-w-[200px]">${c.earlier_name} (Earlier Surname)</span>
+                                            <span class="text-slate-700 font-semibold">${c.earlier_stats.years_span}</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.earlier_stats.count} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.earlier_stats.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.earlier_stats.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${c.earlier_stats.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.earlier_stats.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${c.earlier_stats.categories.join(', ') || 'Senior'}</strong>
+                                            </div>
+                                        </div>
+                                        <div class="pt-1 border-t border-slate-200/60 text-[11px] font-mono">
+                                            <a href="athlete.html?name=${encodeURIComponent(c.earlier_name)}" target="_blank" class="text-slate-600 hover:text-slate-900 underline">
+                                                View Earlier Log &rarr;
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Later / Married Surname Column -->
+                                    <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                        <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                            <span class="text-purple-900 font-sans font-bold text-xs truncate max-w-[200px]">${c.later_name} (Later Surname)</span>
+                                            <span class="text-slate-700 font-semibold">${c.later_stats.years_span}</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-2 text-xs">
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.later_stats.count} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">${c.later_stats.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.later_stats.best_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                                <strong class="text-slate-900 font-mono text-sm">#${c.later_stats.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${c.later_stats.best_cat_pos || '—'})</span></strong>
+                                            </div>
+                                            <div>
+                                                <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                                <strong class="text-slate-900 font-mono text-xs">${c.later_stats.categories.join(', ') || 'Senior'}</strong>
+                                            </div>
+                                        </div>
+                                        <div class="pt-1 border-t border-slate-200/60 text-[11px] font-mono">
+                                            <a href="athlete.html?name=${encodeURIComponent(c.later_name)}" target="_blank" class="text-purple-700 hover:text-purple-900 underline">
+                                                View Married Log &rarr;
                                             </a>
                                         </div>
                                     </div>
@@ -1320,6 +1642,94 @@
                     };
                 }
 
+                // Check if this is an Athlete Name Change Scenario (Female runner, shared first name, different surname, same club)
+                const partsA = dossierA.name.trim().split(/\s+/);
+                const partsB = dossierB.name.trim().split(/\s+/);
+                const sameFirst = partsA[0].toLowerCase() === partsB[0].toLowerCase() && partsA.length > 1 && partsB.length > 1;
+                const diffSurname = partsA.slice(1).join(' ').toLowerCase() !== partsB.slice(1).join(' ').toLowerCase();
+                const isSameClub = dossierA.club.toLowerCase() === dossierB.club.toLowerCase();
+
+                if (dossierA.gender === 'F' && sameFirst && diffSurname && isSameClub) {
+                    let score = 50.0;
+                    let reasons = [];
+                    let flags = [];
+
+                    const earlierD = (dossierA.first_year <= dossierB.first_year) ? dossierA : dossierB;
+                    const laterD = (dossierA.first_year <= dossierB.first_year) ? dossierB : dossierA;
+                    const entEarlier = (earlierD === dossierA) ? selectedRunnerA : selectedRunnerB;
+                    const entLater = (earlierD === dossierA) ? selectedRunnerB : selectedRunnerA;
+
+                    const fixtEarlier = new Set(entEarlier.records.map(r => `${r.season_key}_${r.match}`));
+                    const fixtLater = new Set(entLater.records.map(r => `${r.season_key}_${r.match}`));
+                    let overlaps = 0;
+                    fixtEarlier.forEach(f => { if (fixtLater.has(f)) overlaps++; });
+
+                    const seasonsEarlier = new Set(entEarlier.records.map(r => r.season));
+                    const seasonsLater = new Set(entLater.records.map(r => r.season));
+                    const seasonOverlaps = Array.from(seasonsEarlier).filter(s => seasonsLater.has(s));
+
+                    if (overlaps === 0 && seasonOverlaps.length === 0) {
+                        score += 30.0;
+                        reasons.push(`Clean chronological transition (${earlierD.name} ➔ ${laterD.name}) with 0 overlap`);
+                    } else if (overlaps === 0 && seasonOverlaps.length === 1) {
+                        score += 15.0;
+                        reasons.push(`Mid-season surname transition in ${seasonOverlaps[0]} (0 conflicting races)`);
+                    } else {
+                        score -= 40.0;
+                        flags.push(`⚠️ Active fixture conflicts (${overlaps} fixtures run concurrently: likely separate runners)`);
+                    }
+
+                    function parseAgeNC(cat) {
+                        if (cat.includes('U23')) return 22;
+                        if (cat.includes('Senior')) return 28;
+                        const m = cat.match(/\d+/);
+                        return m ? parseInt(m[0], 10) : 28;
+                    }
+                    const agesE = earlierD.categories.map(parseAgeNC);
+                    const agesL = laterD.categories.map(parseAgeNC);
+                    if (agesE.length && agesL.length) {
+                        const maxE = Math.max(...agesE);
+                        const minL = Math.min(...agesL);
+                        if (minL >= maxE) {
+                            score += 15.0;
+                            reasons.push(`Valid age progression: ${earlierD.categories.join('/')} ➔ ${laterD.categories.join('/')}`);
+                        } else if (minL < maxE - 5) {
+                            score -= 35.0;
+                            flags.push(`⚠️ Age regression flag (${earlierD.categories.join('/')} vs ${laterD.categories.join('/')})`);
+                        }
+                    }
+
+                    const avgE = parseFloat(earlierD.avg_pos);
+                    const avgL = parseFloat(laterD.avg_pos);
+                    if (!isNaN(avgE) && !isNaN(avgL)) {
+                        const diff = Math.abs(avgE - avgL);
+                        if (diff <= 20) {
+                            score += 15.0;
+                            reasons.push(`Close pace continuity (Avg pos #${avgE} vs #${avgL})`);
+                        } else if (diff <= 50) {
+                            score += 8.0;
+                            reasons.push(`Consistent finishing standard (Avg pos #${avgE} vs #${avgL})`);
+                        } else if (diff > 120) {
+                            score -= 20.0;
+                            flags.push(`⚠️ Significant pace divergence (Avg pos #${avgE} vs #${avgL})`);
+                        }
+                    }
+
+                    reasons.push(`Continuous club membership at ${earlierD.club}`);
+
+                    const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
+                    return {
+                        score: finalScore,
+                        reasons: reasons.concat(flags),
+                        nickMatch: null,
+                        isTransfer: false,
+                        isNameChange: true,
+                        overlaps: overlaps,
+                        earlierD: earlierD,
+                        laterD: laterD
+                    };
+                }
+
                 // Standard Alias Forensic Mode
                 let score = 50.0;
                 let reasons = [];
@@ -1395,7 +1805,7 @@
                 }
 
                 const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
-                return { score: finalScore, reasons, nickMatch, isTransfer: false };
+                return { score: finalScore, reasons, nickMatch, isTransfer: false, isNameChange: false };
             }
 
             function renderSandbox() {
@@ -1409,13 +1819,101 @@
                 if (!dA || !dB) return;
 
                 const result = calcProb(dA, dB);
-                const { score, reasons, nickMatch, isTransfer, earlierD, laterD } = result;
+                const { score, reasons, nickMatch, isTransfer, isNameChange, earlierD, laterD } = result;
 
                 const badgeClass = score >= 90 ? 'bg-emerald-100 text-emerald-800' : (score >= 60 ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700');
                 
                 resultsBox.classList.remove('hidden');
 
-                if (isTransfer) {
+                if (isNameChange) {
+                    const isConfirmed = !!confirmedNameChangesMap[earlierD.name];
+                    const buttonLabel = isConfirmed 
+                        ? 'Name Change Confirmed ✔' 
+                        : `Confirm Name Change (${earlierD.name} ➔ ${laterD.name})`;
+
+                    resultsBox.innerHTML = `
+                        <div class="p-4 rounded-xl border border-purple-200 bg-purple-50/30 space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-200 pb-3">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-purple-800 block">Athlete Name Change Forensic Analysis</span>
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800">Maiden / Married Candidate</span>
+                                    </div>
+                                    <div class="text-base font-serif font-bold text-slate-900 mt-0.5 flex items-center gap-2 flex-wrap">
+                                        <span>${earlierD.name}</span>
+                                        <span class="text-purple-700 font-bold">&rarr;</span>
+                                        <span class="text-purple-900 font-serif font-bold">${laterD.name}</span>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-white text-slate-700 border font-mono font-semibold">${earlierD.club}</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-3 py-1 rounded-lg text-sm font-mono font-bold ${badgeClass}">
+                                        ${score}% Match Probability
+                                    </span>
+                                    <button id="btn-sandbox-confirm-nc" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isConfirmed ? 'bg-purple-700 text-white' : 'bg-purple-600 text-white hover:bg-purple-700'}">
+                                        ${buttonLabel}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Side by Side Boxes -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span class="text-slate-800 font-sans font-bold">${earlierD.name} (Earlier Surname)</span>
+                                        <span>${earlierD.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${earlierD.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${earlierD.avg_pos} (best #${earlierD.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${earlierD.avg_cat_pos} (best #${earlierD.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${earlierD.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                        <span class="text-purple-900 font-sans font-bold">${laterD.name} (Later Surname)</span>
+                                        <span>${laterD.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${laterD.finishes} races</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${laterD.avg_pos} (best #${laterD.best_pos})</strong></div>
+                                        <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${laterD.avg_cat_pos} (best #${laterD.best_cat_pos})</strong></div>
+                                        <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${laterD.categories.join(', ') || 'Senior'}</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Forensic Evidence List -->
+                            <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
+                                ${reasons.map(r => {
+                                    const isWarn = r.startsWith('⚠️');
+                                    const cls = isWarn 
+                                        ? 'bg-rose-50 text-rose-800 border-rose-200 font-semibold' 
+                                        : 'bg-white text-purple-800 border-purple-200 font-semibold';
+                                    return `<span class="px-2 py-0.5 rounded text-[11px] font-mono ${cls} border">${r}</span>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById('btn-sandbox-confirm-nc').addEventListener('click', () => {
+                        confirmedNameChangesMap[earlierD.name] = {
+                            primary_name: laterD.name,
+                            maiden_name: earlierD.name,
+                            club: earlierD.club,
+                            effective_season: (laterD.seasons && laterD.seasons[0]) || 'Unknown',
+                            note: `Formerly competed as ${earlierD.name}`,
+                            confirmed: true
+                        };
+                        saveState();
+                        renderSandbox();
+                        render();
+                        showToast(`Confirmed Name Change: ${earlierD.name} ➔ ${laterD.name}`);
+                    });
+                } else if (isTransfer) {
                     const isConfirmed = !!confirmedTransfersMap[earlierD.name];
                     const buttonLabel = isConfirmed 
                         ? 'Transfer Confirmed ✔' 
@@ -1798,6 +2296,61 @@
                 showToast(`Marked as separate runners.`);
             };
 
+            const handleConfirmNameChange = (id, cardEl) => {
+                const c = rawNameChangeCandidates.find(cand => cand.id === id);
+                if (!c) return;
+
+                confirmedNameChangesMap[c.earlier_name] = {
+                    primary_name: c.later_name,
+                    maiden_name: c.earlier_name,
+                    club: c.club,
+                    effective_season: c.effective_season,
+                    note: `Formerly competed as ${c.earlier_name}`,
+                    confirmed: true
+                };
+                c.status = 'confirmed';
+                rejectedNameChangesSet.delete(c.id);
+
+                saveState();
+
+                const shouldSlideOut = hideApproved || currentNameChangeFilter === 'pending' || currentNameChangeFilter === 'high' || currentNameChangeFilter === 'clean';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Confirmed name change: ${c.earlier_name} ➔ ${c.later_name}`);
+            };
+
+            const handleRejectNameChange = (id, cardEl) => {
+                const c = rawNameChangeCandidates.find(cand => cand.id === id);
+                if (!c) return;
+
+                delete confirmedNameChangesMap[c.earlier_name];
+                c.status = 'pending';
+                rejectedNameChangesSet.add(c.id);
+
+                saveState();
+
+                const shouldSlideOut = hideApproved || currentNameChangeFilter === 'pending' || currentNameChangeFilter === 'high' || currentNameChangeFilter === 'clean';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Marked as separate runners.`);
+            };
+
             // Global Delegation Listener on Container
             const candidatesContainer = document.getElementById('candidates-container');
             if (candidatesContainer) {
@@ -1830,6 +2383,20 @@
                         handleRejectTransfer(id, card);
                         return;
                     }
+                    const btnConfirmNC = e.target.closest('[data-action="confirm-namechange"]');
+                    if (btnConfirmNC) {
+                        const id = btnConfirmNC.dataset.id;
+                        const card = btnConfirmNC.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleConfirmNameChange(id, card);
+                        return;
+                    }
+                    const btnRejectNC = e.target.closest('[data-action="reject-namechange"]');
+                    if (btnRejectNC) {
+                        const id = btnRejectNC.dataset.id;
+                        const card = btnRejectNC.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleRejectNameChange(id, card);
+                        return;
+                    }
                 });
             }
 
@@ -1849,6 +2416,14 @@
             window.rejectTransfer = (id) => {
                 const card = document.getElementById(`card-${id}`);
                 handleRejectTransfer(id, card);
+            };
+            window.confirmNameChange = (id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleConfirmNameChange(id, card);
+            };
+            window.rejectNameChange = (id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleRejectNameChange(id, card);
             };
 
             // Search input listener
@@ -1882,7 +2457,7 @@
                     saveState();
                     render();
                     showToast(`Approved ${visible.length} high-confidence alias matches!`);
-                } else {
+                } else if (currentView === 'transfers') {
                     const visible = getFilteredTransferCandidates().filter(c => c.confidence >= 90 && !confirmedTransfersMap[c.name]);
                     if (!visible.length) {
                         showToast('No pending high-confidence transfers visible.');
@@ -1904,6 +2479,27 @@
                     saveState();
                     render();
                     showToast(`Confirmed ${visible.length} high-confidence transfers!`);
+                } else {
+                    const visible = getFilteredNameChangeCandidates().filter(c => c.confidence >= 90 && !isNameChangeCandidateConfirmed(c));
+                    if (!visible.length) {
+                        showToast('No pending high-confidence name changes visible.');
+                        return;
+                    }
+                    visible.forEach(c => {
+                        confirmedNameChangesMap[c.earlier_name] = {
+                            primary_name: c.later_name,
+                            maiden_name: c.earlier_name,
+                            club: c.club,
+                            effective_season: c.effective_season,
+                            note: `Formerly competed as ${c.earlier_name}`,
+                            confirmed: true
+                        };
+                        c.status = 'confirmed';
+                        rejectedNameChangesSet.delete(c.id);
+                    });
+                    saveState();
+                    render();
+                    showToast(`Confirmed ${visible.length} high-confidence name changes!`);
                 }
             });
 
@@ -1923,8 +2519,10 @@
                 hideApproved = true;
                 if (currentView === 'aliases') {
                     currentFilter = 'pending';
-                } else {
+                } else if (currentView === 'transfers') {
                     currentTransferFilter = 'pending';
+                } else {
+                    currentNameChangeFilter = 'pending';
                 }
                 currentPage = 1;
                 renderFilterPills();
@@ -1952,9 +2550,13 @@
                     navigator.clipboard.writeText(JSON.stringify(approvedMap, null, 2))
                         .then(() => showToast('Approved mappings copied to clipboard!'))
                         .catch(() => alert('Failed to copy.'));
-                } else {
+                } else if (currentView === 'transfers') {
                     navigator.clipboard.writeText(JSON.stringify(confirmedTransfersMap, null, 2))
                         .then(() => showToast('Confirmed club transfers copied to clipboard!'))
+                        .catch(() => alert('Failed to copy.'));
+                } else {
+                    navigator.clipboard.writeText(JSON.stringify(confirmedNameChangesMap, null, 2))
+                        .then(() => showToast('Confirmed name changes copied to clipboard!'))
                         .catch(() => alert('Failed to copy.'));
                 }
             });
@@ -1971,7 +2573,7 @@
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                     showToast('Downloaded corrections.json! Place in backend_tools/ and run parse_league.py');
-                } else {
+                } else if (currentView === 'transfers') {
                     const blob = new Blob([JSON.stringify(confirmedTransfersMap, null, 2)], { type: 'application/json' });
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement('a');
@@ -1982,6 +2584,17 @@
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                     showToast('Downloaded club_transfers.json! Place in backend_tools/ and run detect_transfers.py');
+                } else {
+                    const blob = new Blob([JSON.stringify(confirmedNameChangesMap, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'name_changes.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('Downloaded name_changes.json! Place in backend_tools/ and run detect_name_changes.py');
                 }
             });
 

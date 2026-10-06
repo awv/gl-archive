@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/theme.css">
     <script src="data.js"></script>
     <script src="backend_tools/club_transfers.js"></script>
+    <script src="backend_tools/name_changes.js"></script>
     <script src="site-layout.js"></script>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
@@ -108,6 +109,25 @@
                         </div>
                         <p class="text-emerald-700 text-[11px] leading-relaxed">
                             This athlete transferred clubs. All finishes across their entire Gwent League career are unified into this single profile. Use the filter buttons above to isolate a specific club spell.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VERIFIED NAME CHANGE (MARRIAGE/MAIDEN) BANNER -->
+                <div id="name-change-banner" class="hidden pt-2">
+                    <div class="bg-purple-50/80 border border-purple-200/90 rounded-xl p-4 text-xs space-y-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-100 pb-2">
+                            <div class="flex items-center gap-2 font-semibold text-purple-950">
+                                <span class="text-base">💍</span>
+                                <span class="text-xs font-serif font-bold uppercase tracking-tight">Verified Athlete Name Change</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">Unified Dossier</span>
+                            </div>
+                            <span id="name-change-effective-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-white text-purple-800 border border-purple-200">
+                                Effective Season
+                            </span>
+                        </div>
+                        <p id="name-change-note" class="text-purple-800 text-[11px] leading-relaxed">
+                            <!-- Populated dynamically with note -->
                         </p>
                     </div>
                 </div>
@@ -208,9 +228,33 @@
                 return;
             }
 
-            // Find all raw matches by athlete name
+            // Load verified name changes (e.g., marriage / maiden name transitions)
+            let confirmedNameChanges = window.glNameChanges || {};
+            try {
+                const savedNC = localStorage.getItem('gl_name_changes_v1');
+                if (savedNC) Object.assign(confirmedNameChanges, JSON.parse(savedNC));
+            } catch (e) {}
+
             const q = targetName.toLowerCase();
-            let allMatches = allData.filter(r => r.athlete.toLowerCase() === q);
+            let nameChangeInfo = confirmedNameChanges[targetName];
+            if (!nameChangeInfo) {
+                nameChangeInfo = Object.values(confirmedNameChanges).find(nc => 
+                    (nc.primary_name && nc.primary_name.toLowerCase() === q) ||
+                    (nc.maiden_name && nc.maiden_name.toLowerCase() === q)
+                );
+            }
+
+            const displayMasterName = (nameChangeInfo && nameChangeInfo.primary_name) ? nameChangeInfo.primary_name : targetName;
+
+            // Set of all names associated with this athlete (maiden and married)
+            const searchNames = new Set([q]);
+            if (nameChangeInfo) {
+                if (nameChangeInfo.maiden_name) searchNames.add(nameChangeInfo.maiden_name.toLowerCase());
+                if (nameChangeInfo.primary_name) searchNames.add(nameChangeInfo.primary_name.toLowerCase());
+            }
+
+            // Find all raw matches across all recognized names for this athlete
+            let allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()));
 
             if (allMatches.length === 0) {
                 document.getElementById('athlete-name').textContent = targetName;
@@ -220,21 +264,39 @@
                 return;
             }
 
-            // Group all clubs that appear under this name
+            // Show Name Change Banner if verified
+            if (nameChangeInfo) {
+                const ncBanner = document.getElementById('name-change-banner');
+                const ncNote = document.getElementById('name-change-note');
+                const ncBadge = document.getElementById('name-change-effective-badge');
+                if (ncBanner) ncBanner.classList.remove('hidden');
+                if (ncNote) {
+                    const maiden = nameChangeInfo.maiden_name || 'earlier name';
+                    ncNote.innerHTML = `${nameChangeInfo.note || `Formerly competed as <strong>${maiden}</strong>`}. All race finishes across both surnames are unified into this single profile.`;
+                }
+                if (ncBadge && nameChangeInfo.effective_season) {
+                    ncBadge.textContent = `Effective ${nameChangeInfo.effective_season}`;
+                }
+            }
+
+            // Group all clubs that appear under this athlete
             const clubCountsAll = {};
             allMatches.forEach(r => {
                 clubCountsAll[r.club] = (clubCountsAll[r.club] || 0) + 1;
             });
             const uniqueClubs = Object.keys(clubCountsAll);
 
-            // Check for verified multi-club transfer
+            // Check for verified multi-club transfer (check under targetName, maiden, and primary)
             let confirmedTransfers = window.glClubTransfers || {};
             try {
                 const saved = localStorage.getItem('gl_club_transfers_v1');
                 if (saved) Object.assign(confirmedTransfers, JSON.parse(saved));
             } catch (e) {}
 
-            const transferInfo = confirmedTransfers[targetName];
+            let transferInfo = confirmedTransfers[targetName];
+            if (!transferInfo && nameChangeInfo) {
+                transferInfo = confirmedTransfers[nameChangeInfo.maiden_name] || confirmedTransfers[nameChangeInfo.primary_name];
+            }
             const isConfirmedTransfer = !!transferInfo;
 
             // Is this an abbreviated name?
@@ -362,7 +424,7 @@
                 });
 
                 const latest = displayedRecords[0];
-                const name = latest.athlete;
+                const name = displayMasterName || latest.athlete;
                 const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
                 
                 const primaryClub = (transferInfo && transferInfo.primary_club) || targetClub || latest.club;
@@ -447,6 +509,7 @@
                                 <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-slate-900 transition-colors">
                                     ${r.club}
                                 </a>
+                                ${nameChangeInfo && r.athlete && r.athlete.toLowerCase() !== displayMasterName.toLowerCase() ? `<div class="text-[10px] font-mono text-purple-700 font-semibold mt-0.5">Ran as ${r.athlete}</div>` : ''}
                             </td>
                             <td class="py-2.5 px-4 text-right font-mono tabular-nums font-medium text-slate-700">
                                 ${r.time || '—'}
