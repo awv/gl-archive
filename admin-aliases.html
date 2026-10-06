@@ -47,6 +47,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="data.js"></script>
     <script src="backend_tools/alias_candidates.js"></script>
 </head>
 <body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
@@ -111,6 +112,62 @@
             <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
                 <span class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-amber-700">Pending Review</span>
                 <span id="stat-pending" class="block text-2xl font-bold font-serif text-amber-700 mt-1">0</span>
+            </div>
+        </div>
+
+        <!-- DIRECT RUNNER COMPARISON SANDBOX -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                <div>
+                    <h2 class="text-sm font-serif font-bold text-slate-900 uppercase tracking-tight flex items-center gap-2">
+                        <span>Direct Runner Comparison Sandbox</span>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-100 text-emerald-800 font-semibold">Interactive Forensics</span>
+                    </h2>
+                    <p class="text-xs text-slate-500 mt-0.5">
+                        Compare any two runner identities across career records, finishing pace, age trajectory, and match probability side-by-side.
+                    </p>
+                </div>
+                <div class="text-[11px] text-slate-400 font-mono">
+                    Search over 40,000 finishes
+                </div>
+            </div>
+
+            <!-- Two Search Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Runner A Input -->
+                <div class="space-y-1 relative">
+                    <label class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">
+                        Runner A (e.g. Legacy Abbreviated)
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="sandbox-input-a" placeholder="Type name e.g. R. Gale, L. Aherne, A. Lewis..." autocomplete="off"
+                            class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all font-medium">
+                        <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <div id="sandbox-dropdown-a" class="hidden absolute top-full left-0 right-0 z-30 bg-white border border-slate-200 rounded-lg shadow-xl max-h-56 overflow-y-auto divide-y divide-slate-100 mt-1"></div>
+                </div>
+
+                <!-- Runner B Input -->
+                <div class="space-y-1 relative">
+                    <label class="block text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-500">
+                        Runner B (e.g. Modern Full Name)
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="sandbox-input-b" placeholder="Type name e.g. Robert Gale, Lee Aherne, Adrian Lewis..." autocomplete="off"
+                            class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all font-medium">
+                        <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <div id="sandbox-dropdown-b" class="hidden absolute top-full left-0 right-0 z-30 bg-white border border-slate-200 rounded-lg shadow-xl max-h-56 overflow-y-auto divide-y divide-slate-100 mt-1"></div>
+                </div>
+            </div>
+
+            <!-- Comparison Output Container -->
+            <div id="sandbox-results" class="hidden pt-4 border-t border-slate-100 space-y-4">
+                <!-- Dynamically injected comparison results -->
             </div>
         </div>
 
@@ -343,52 +400,414 @@
                     }
 
                     const confBadgeClass = c.confidence >= 90 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800';
-                    const sharedClubsStr = c.shared_clubs && c.shared_clubs.length ? c.shared_clubs.join(', ') : (c.legacy_clubs[0] || 'Unknown Club');
+
+                    const leg = c.legacy || {
+                        name: c.legacy_name,
+                        club: (c.legacy_clubs && c.legacy_clubs[0]) || 'Unknown',
+                        finishes: c.legacy_finishes || 0,
+                        years_span: (c.legacy_seasons && c.legacy_seasons.length) ? `${c.legacy_seasons[c.legacy_seasons.length-1]}–${c.legacy_seasons[0]}` : 'Legacy era',
+                        avg_pos: '—',
+                        best_pos: '—',
+                        avg_cat_pos: '—',
+                        best_cat_pos: '—',
+                        categories: c.legacy_categories || []
+                    };
+
+                    const mod = c.modern || {
+                        name: c.full_name,
+                        club: (c.full_clubs && c.full_clubs[0]) || 'Unknown',
+                        finishes: c.full_finishes || 0,
+                        years_span: (c.full_seasons && c.full_seasons.length) ? `${c.full_seasons[c.full_seasons.length-1]}–${c.full_seasons[0]}` : 'Modern era',
+                        avg_pos: '—',
+                        best_pos: '—',
+                        avg_cat_pos: '—',
+                        best_cat_pos: '—',
+                        categories: c.full_categories || []
+                    };
+
+                    const evidenceList = (c.confidence_reasons || []).map(r => 
+                        `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-100 text-slate-700 border border-slate-200">${r}</span>`
+                    ).join('');
 
                     return `
-                        <div class="bg-white border ${cardBorder} rounded-xl p-4 shadow-sm hover:shadow transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4" id="card-${c.id}">
+                        <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
                             
-                            <!-- Names & Connection -->
-                            <div class="space-y-1.5 flex-grow">
-                                <div class="flex items-center gap-3 flex-wrap">
-                                    <span class="text-base font-serif font-bold text-slate-900">${c.display_name || c.legacy_name}</span>
-                                    <span class="text-slate-400 font-bold">&rarr;</span>
-                                    <span class="text-base font-serif font-bold text-slate-900">${c.full_name}</span>
-                                    
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${confBadgeClass}">
+                            <!-- Header Bar: Names, Lookup Key, Match Probability, Actions -->
+                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
+                                <div class="space-y-1">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <span class="text-base font-serif font-bold text-slate-900">${leg.name}</span>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${leg.club}</span>
+                                        <span class="text-slate-400 font-bold">&rarr;</span>
+                                        <span class="text-base font-serif font-bold text-emerald-800">${mod.name}</span>
+                                        <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono font-medium">${mod.club}</span>
+                                    </div>
+                                    <div class="text-[11px] font-mono text-slate-400">
+                                        Alias mapping: <code class="text-slate-600 font-semibold">${lookupKey}</code> &rarr; <strong class="text-slate-800">${c.full_name}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2.5 shrink-0 self-end md:self-center">
+                                    <span class="px-2.5 py-1 rounded text-xs font-mono font-bold ${confBadgeClass}">
                                         ${c.confidence}% Match
                                     </span>
                                     ${statusBadge}
-                                </div>
-                                
-                                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
-                                    <span class="font-medium text-slate-700">Club: <span class="font-semibold text-slate-900">${sharedClubsStr}</span></span>
-                                    <span>&bull;</span>
-                                    <span>Legacy: ${c.legacy_finishes} races (${c.legacy_categories.join(', ') || 'Senior'})</span>
-                                    <span>&bull;</span>
-                                    <span>Modern: ${c.full_finishes} races (${c.full_categories.join(', ') || 'Senior'})</span>
-                                </div>
-
-                                <div class="text-[11px] text-slate-400 font-mono">
-                                    ${c.confidence_reasons.join(' • ')}
+                                    <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
+                                        class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
+                                        ${isApproved ? 'Approved ✔' : 'Approve'}
+                                    </button>
+                                    <button onclick="window.rejectCandidate('${c.id}')" 
+                                        class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
+                                        ${isRejected ? 'Rejected ✖' : 'Reject'}
+                                    </button>
                                 </div>
                             </div>
 
-                            <!-- Action Buttons -->
-                            <div class="flex items-center gap-2 shrink-0 self-end md:self-center">
-                                <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
-                                    class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
-                                    ${isApproved ? 'Approved ✔' : 'Approve'}
-                                </button>
-                                <button onclick="window.rejectCandidate('${c.id}')" 
-                                    class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
-                                    ${isRejected ? 'Rejected ✖' : 'Reject'}
-                                </button>
+                            <!-- Side-by-Side Comparative Dossier -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                                
+                                <!-- Legacy Entity Column -->
+                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                        <span>Legacy Identity</span>
+                                        <span class="text-slate-700 font-semibold">${leg.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                            <strong class="text-slate-900 font-mono text-sm">${leg.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                            <strong class="text-slate-900 font-mono text-sm">${leg.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best ${leg.best_pos || '—'})</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                            <strong class="text-slate-900 font-mono text-sm">#${leg.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${leg.best_cat_pos || '—'})</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                            <strong class="text-slate-900 font-mono text-xs">${(leg.categories && leg.categories.length) ? leg.categories.join(', ') : 'Senior'}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modern Candidate Column -->
+                                <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200/80 space-y-2.5">
+                                    <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-1.5">
+                                        <span>Modern Candidate</span>
+                                        <span class="text-slate-700 font-semibold">${mod.years_span}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Finishes</span>
+                                            <strong class="text-slate-900 font-mono text-sm">${mod.finishes} <span class="text-xs text-slate-500 font-normal">races</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Finish Pos</span>
+                                            <strong class="text-slate-900 font-mono text-sm">${mod.avg_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best ${mod.best_pos || '—'})</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Avg Cat Pos</span>
+                                            <strong class="text-slate-900 font-mono text-sm">#${mod.avg_cat_pos || '—'} <span class="text-[10px] text-slate-500 font-normal">(best #${mod.best_cat_pos || '—'})</span></strong>
+                                        </div>
+                                        <div>
+                                            <span class="text-slate-400 block text-[10px] uppercase font-mono">Categories</span>
+                                            <strong class="text-slate-900 font-mono text-xs">${(mod.categories && mod.categories.length) ? mod.categories.join(', ') : 'Senior'}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Forensic Evidence Badges -->
+                            <div class="flex flex-wrap items-center gap-1.5 pt-1 border-t border-slate-100">
+                                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Match Evidence:</span>
+                                ${evidenceList}
                             </div>
                         </div>
                     `;
                 }).join('');
             };
+
+            // ==========================================
+            // DIRECT RUNNER COMPARISON SANDBOX ENGINE
+            // ==========================================
+            const inputA = document.getElementById('sandbox-input-a');
+            const inputB = document.getElementById('sandbox-input-b');
+            const dropdownA = document.getElementById('sandbox-dropdown-a');
+            const dropdownB = document.getElementById('sandbox-dropdown-b');
+            const resultsBox = document.getElementById('sandbox-results');
+
+            let selectedRunnerA = null;
+            let selectedRunnerB = null;
+
+            // Group all records by identity: key = `${raw_name} [${club}]`
+            const entityRegistry = new Map();
+            (window.glResults || []).forEach(r => {
+                const raw = (r.raw_name || '').trim();
+                if (!raw || raw.toLowerCase().includes('unknown') || raw === '-' || raw === 'N/A') return;
+                const key = `${raw} [${r.club}]`;
+                if (!entityRegistry.has(key)) {
+                    entityRegistry.set(key, {
+                        key: key,
+                        name: raw,
+                        club: r.club,
+                        gender: r.gender,
+                        records: []
+                    });
+                }
+                entityRegistry.get(key).records.push(r);
+            });
+
+            const allEntityKeys = Array.from(entityRegistry.keys());
+
+            function computeDossier(entity) {
+                if (!entity || !entity.records.length) return null;
+                const recs = entity.records;
+                const positions = recs.map(r => r.pos).filter(p => p > 0);
+                const catPositions = recs.map(r => r.cat_pos).filter(p => p > 0);
+                const seasons = Array.from(new Set(recs.map(r => r.season))).sort();
+                const categories = Array.from(new Set(recs.map(r => r.age_cat))).sort();
+                const firstYr = Math.min(...seasons.map(s => parseInt(s.split('/')[0], 10)));
+                const lastYr = Math.max(...seasons.map(s => parseInt(s.split('/')[0], 10)));
+                const avgPos = positions.length ? (positions.reduce((a, b) => a + b, 0) / positions.length).toFixed(1) : '—';
+                const bestPos = positions.length ? Math.min(...positions) : '—';
+                const avgCatPos = catPositions.length ? (catPositions.reduce((a, b) => a + b, 0) / catPositions.length).toFixed(1) : '—';
+                const bestCatPos = catPositions.length ? Math.min(...catPositions) : '—';
+
+                return {
+                    key: entity.key,
+                    name: entity.name,
+                    club: entity.club,
+                    gender: entity.gender,
+                    finishes: recs.length,
+                    seasons: seasons,
+                    years_span: `${firstYr}–${lastYr + 1} (${seasons.length} ${seasons.length === 1 ? 'season' : 'seasons'})`,
+                    categories: categories,
+                    avg_pos: avgPos,
+                    best_pos: bestPos,
+                    avg_cat_pos: avgCatPos,
+                    best_cat_pos: bestCatPos,
+                    first_year: firstYr,
+                    last_year: lastYr
+                };
+            }
+
+            function calcProb(dossierA, dossierB) {
+                if (dossierA.gender !== dossierB.gender) {
+                    return { score: 0, reasons: ["Gender mismatch (Men vs Women)"] };
+                }
+
+                let score = 50.0;
+                let reasons = [];
+
+                const sharedClub = (dossierA.club.toLowerCase() === dossierB.club.toLowerCase());
+                if (sharedClub) {
+                    score += 35.0;
+                    reasons.push(`Direct club match: ${dossierA.club}`);
+                } else {
+                    score -= 25.0;
+                    reasons.push(`Different clubs (${dossierA.club} vs ${dossierB.club})`);
+                }
+
+                const avgA = parseFloat(dossierA.avg_pos);
+                const avgB = parseFloat(dossierB.avg_pos);
+                if (!isNaN(avgA) && !isNaN(avgB)) {
+                    const diff = Math.abs(avgA - avgB);
+                    if (diff <= 25) {
+                        score += 15.0;
+                        reasons.push(`Close pace match (Avg pos ${avgA} vs ${avgB})`);
+                    } else if (diff <= 60) {
+                        score += 10.0;
+                        reasons.push(`Consistent finishing standard (Avg pos ${avgA} vs ${avgB})`);
+                    } else if (diff <= 100) {
+                        score += 5.0;
+                    } else if (diff > 160) {
+                        score -= 20.0;
+                        reasons.push(`Pace mismatch (Avg pos ${avgA} vs ${avgB})`);
+                    }
+                }
+
+                const catA = parseFloat(dossierA.avg_cat_pos);
+                const catB = parseFloat(dossierB.avg_cat_pos);
+                if (!isNaN(catA) && !isNaN(catB)) {
+                    const cDiff = Math.abs(catA - catB);
+                    if (cDiff <= 5) {
+                        score += 8.0;
+                        reasons.push(`Category rank alignment (Avg #${catA} vs #${catB})`);
+                    }
+                }
+
+                function parseAge(cat) {
+                    if (cat.includes('U23')) return 22;
+                    if (cat.includes('Senior')) return 28;
+                    const m = cat.match(/\d+/);
+                    return m ? parseInt(m[0], 10) : 28;
+                }
+                const agesA = dossierA.categories.map(parseAge);
+                const agesB = dossierB.categories.map(parseAge);
+                if (agesA.length && agesB.length) {
+                    const maxA = Math.max(...agesA);
+                    const minB = Math.min(...agesB);
+                    if (minB >= maxA) {
+                        score += 12.0;
+                        reasons.push(`Age trajectory verified (${dossierA.categories.join('/')} ➔ ${dossierB.categories.join('/')})`);
+                    } else if (minB < maxA - 5) {
+                        score -= 35.0;
+                        reasons.push("Age regression flag");
+                    }
+                }
+
+                if (dossierA.last_year <= 2022 && dossierB.first_year >= 2021) {
+                    score += 8.0;
+                    reasons.push(`Era transition (${dossierA.years_span.split(' ')[0]} ➔ ${dossierB.years_span.split(' ')[0]})`);
+                }
+
+                if (dossierA.finishes >= 3 && dossierB.finishes >= 3) {
+                    score += 4.0;
+                    reasons.push(`Strong sample (${dossierA.finishes} legacy + ${dossierB.finishes} modern races)`);
+                }
+
+                const finalScore = Math.min(Math.max(Math.round(score), 5), 99);
+                return { score: finalScore, reasons };
+            }
+
+            function renderSandbox() {
+                if (!selectedRunnerA || !selectedRunnerB) {
+                    resultsBox.classList.add('hidden');
+                    return;
+                }
+
+                const dA = computeDossier(selectedRunnerA);
+                const dB = computeDossier(selectedRunnerB);
+                if (!dA || !dB) return;
+
+                const { score, reasons } = calcProb(dA, dB);
+
+                const isApproved = approvedMap[dA.key] === dB.name;
+                const badgeClass = score >= 90 ? 'bg-emerald-100 text-emerald-800' : (score >= 60 ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700');
+
+                resultsBox.classList.remove('hidden');
+                resultsBox.innerHTML = `
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                            <div>
+                                <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">Comparison Analysis</span>
+                                <div class="text-base font-serif font-bold text-slate-900 mt-0.5">
+                                    ${dA.name} <span class="text-slate-500 font-normal">(${dA.club})</span> &rarr; ${dB.name} <span class="text-slate-500 font-normal">(${dB.club})</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="px-3 py-1 rounded-lg text-sm font-mono font-bold ${badgeClass}">
+                                    ${score}% Match Probability
+                                </span>
+                                <button id="btn-sandbox-link" class="px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-600 text-white hover:bg-emerald-700'}">
+                                    ${isApproved ? 'Linked ✔' : `Link Alias: "${dA.key}" ➔ "${dB.name}"`}
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Side by Side Boxes -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                    <span>${dA.name} (Runner A)</span>
+                                    <span>${dA.years_span}</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dA.club}</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dA.finishes} races</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dA.avg_pos} (best ${dA.best_pos})</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dA.avg_cat_pos} (best #${dA.best_cat_pos})</strong></div>
+                                    <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dA.categories.join(', ') || 'Senior'}</strong></div>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 rounded-lg bg-white border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">
+                                    <span>${dB.name} (Runner B)</span>
+                                    <span>${dB.years_span}</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div><span class="text-slate-400 block text-[10px]">Club:</span><strong class="text-slate-800 font-sans">${dB.club}</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Total Finishes:</span><strong class="text-slate-800 font-mono">${dB.finishes} races</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Avg Finish Pos:</span><strong class="text-slate-800 font-mono">${dB.avg_pos} (best ${dB.best_pos})</strong></div>
+                                    <div><span class="text-slate-400 block text-[10px]">Avg Category Pos:</span><strong class="text-slate-800 font-mono">#${dB.avg_cat_pos} (best #${dB.best_cat_pos})</strong></div>
+                                    <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Categories:</span><strong class="text-slate-800 font-mono">${dB.categories.join(', ') || 'Senior'}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forensic Evidence List -->
+                        <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                            <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-1">Evidence Breakdown:</span>
+                            ${reasons.map(r => `<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white text-slate-700 border border-slate-200">${r}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('btn-sandbox-link').addEventListener('click', () => {
+                    approvedMap[dA.key] = dB.name;
+                    saveState();
+                    renderSandbox();
+                    render();
+                    showToast(`Linked: ${dA.key} ➔ ${dB.name}`);
+                });
+            }
+
+            function setupAutocomplete(inputEl, dropdownEl, onSelect) {
+                inputEl.addEventListener('input', () => {
+                    const q = inputEl.value.trim().toLowerCase();
+                    if (!q || q.length < 2) {
+                        dropdownEl.classList.add('hidden');
+                        return;
+                    }
+                    const matches = allEntityKeys.filter(k => k.toLowerCase().includes(q)).slice(0, 10);
+                    if (!matches.length) {
+                        dropdownEl.innerHTML = `<div class="p-3 text-center text-xs text-slate-400">No runners matching "${q}"</div>`;
+                        dropdownEl.classList.remove('hidden');
+                        return;
+                    }
+                    dropdownEl.innerHTML = matches.map(k => {
+                        const ent = entityRegistry.get(k);
+                        return `
+                            <div class="p-2.5 hover:bg-slate-50 cursor-pointer flex justify-between items-center transition-colors" data-key="${k}">
+                                <div>
+                                    <strong class="text-slate-900 block font-serif">${ent.name}</strong>
+                                    <span class="text-[11px] text-slate-500 font-sans">${ent.club}</span>
+                                </div>
+                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600">${ent.records.length} races</span>
+                            </div>
+                        `;
+                    }).join('');
+                    dropdownEl.classList.remove('hidden');
+
+                    dropdownEl.querySelectorAll('[data-key]').forEach(item => {
+                        item.addEventListener('click', () => {
+                            const selectedKey = item.dataset.key;
+                            inputEl.value = selectedKey;
+                            dropdownEl.classList.add('hidden');
+                            onSelect(entityRegistry.get(selectedKey));
+                        });
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!inputEl.contains(e.target) && !dropdownEl.contains(e.target)) {
+                        dropdownEl.classList.add('hidden');
+                    }
+                });
+            }
+
+            setupAutocomplete(inputA, dropdownA, (ent) => {
+                selectedRunnerA = ent;
+                renderSandbox();
+            });
+
+            setupAutocomplete(inputB, dropdownB, (ent) => {
+                selectedRunnerB = ent;
+                renderSandbox();
+            });
 
             // Global Actions
             window.approveCandidate = (lookupKey, fullName, id) => {
