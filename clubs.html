@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Archive — Member Clubs Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="data.js"></script>
+    <script src="site-layout.js"></script>
+    <style>
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- CLUBS MASTHEAD -->
+    <header class="border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+                League Directory
+            </span>
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mt-2">
+                Member Clubs & Teams
+            </h1>
+            <p class="text-xs md:text-sm text-slate-500 font-medium mt-1 max-w-2xl">
+                Browse through all running clubs and athletic organizations represented in the Gwent Cross Country League across fifteen seasons.
+            </p>
+
+            <!-- Search Filter -->
+            <div class="mt-6 max-w-md">
+                <input type="text" id="club-search" placeholder="Filter clubs by name..." 
+                    class="w-full px-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900">
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-6">
+        <div class="flex justify-between items-center text-xs font-mono text-slate-500">
+            <span>Showing <span id="club-showing-count" class="font-bold text-slate-900">0</span> clubs</span>
+            <span>Sorted by cumulative participation</span>
+        </div>
+
+        <div id="clubs-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Populated dynamically -->
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <script>
+        (() => {
+            const allData = window.glResults || [];
+            if (!allData.length) return;
+
+            const clubsMap = new Map();
+            allData.forEach(r => {
+                const club = r.club;
+                if (!club || club === 'Unattached') return;
+
+                if (!clubsMap.has(club)) {
+                    clubsMap.set(club, {
+                        name: club,
+                        totalFinishes: 0,
+                        menFinishes: 0,
+                        womenFinishes: 0,
+                        athletes: new Set(),
+                        seasons: new Set()
+                    });
+                }
+                const c = clubsMap.get(club);
+                c.totalFinishes++;
+                if (r.gender === 'M') c.menFinishes++;
+                else c.womenFinishes++;
+                c.athletes.add(r.athlete);
+                c.seasons.add(r.season);
+            });
+
+            const allClubs = Array.from(clubsMap.values()).sort((a, b) => b.totalFinishes - a.totalFinishes);
+            const container = document.getElementById('clubs-grid');
+            const searchInput = document.getElementById('club-search');
+
+            const renderClubs = (list) => {
+                document.getElementById('club-showing-count').textContent = list.length;
+                container.innerHTML = list.map(c => `
+                    <a href="club.html?club=${encodeURIComponent(c.name)}" class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-slate-400 hover:shadow-md transition-all block group">
+                        <div class="text-sm font-serif font-bold text-slate-900 group-hover:text-emerald-900 transition-colors truncate">
+                            ${c.name}
+                        </div>
+                        <div class="mt-3 pt-2.5 border-t border-slate-100 flex justify-between items-center text-[11px] font-mono text-slate-500">
+                            <span>${c.totalFinishes.toLocaleString()} Finishes</span>
+                            <span class="text-slate-400">${c.athletes.size} Runners</span>
+                        </div>
+                    </a>
+                `).join('');
+            };
+
+            renderClubs(allClubs);
+
+            searchInput.addEventListener('input', (e) => {
+                const q = e.target.value.trim().toLowerCase();
+                const filtered = allClubs.filter(c => c.name.toLowerCase().includes(q));
+                renderClubs(filtered);
+            });
+        })();
+    </script>
+</body>
+</html>

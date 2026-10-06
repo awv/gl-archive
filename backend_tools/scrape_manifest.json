@@ -1,0 +1,1280 @@
+[
+  {
+    "season": "2025/2026",
+    "season_key": "2025_2026",
+    "match": 1,
+    "date": "11 October 2025",
+    "venue": "Margam Park, Port Talbot",
+    "hub_url": "https://www.gwent-league.org.uk/2025/res251.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sm251i.htm?ver2.5",
+      "filename": "2025_2026_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sl251i.htm?ver2.5",
+      "filename": "2025_2026_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2025/2026",
+    "season_key": "2025_2026",
+    "match": 2,
+    "date": "08 November 2025",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2025/res252.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sm252i.htm?ver2.3",
+      "filename": "2025_2026_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sl252i.htm?ver2.3",
+      "filename": "2025_2026_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2025/2026",
+    "season_key": "2025_2026",
+    "match": 3,
+    "date": "06 December 2025",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2025/res253.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sm253i.htm?ver2.1",
+      "filename": "2025_2026_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sl253i.htm?ver2.1",
+      "filename": "2025_2026_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2025/2026",
+    "season_key": "2025_2026",
+    "match": 4,
+    "date": "",
+    "venue": "07 February 2026 Chepstow Race Course",
+    "hub_url": "https://www.gwent-league.org.uk/2025/res254.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sm254i.htm?ver2.1",
+      "filename": "2025_2026_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sl254i.htm?ver2.1",
+      "filename": "2025_2026_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2025/2026",
+    "season_key": "2025_2026",
+    "match": 5,
+    "date": "28 February 2026",
+    "venue": "Parc Bryn Bach",
+    "hub_url": "https://www.gwent-league.org.uk/2025/res255.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sm255i.htm?ver2.1",
+      "filename": "2025_2026_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2025/sl255i.htm?ver2.1",
+      "filename": "2025_2026_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2024/2025",
+    "season_key": "2024_2025",
+    "match": 1,
+    "date": "12 October 2024",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2024/res241.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sm241i.htm?ver1.5",
+      "filename": "2024_2025_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sl241i.htm?ver1.5",
+      "filename": "2024_2025_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2024/2025",
+    "season_key": "2024_2025",
+    "match": 2,
+    "date": "09 November 2024",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2024/res242.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sm242i.htm?ver1.6",
+      "filename": "2024_2025_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sl242i.htm?ver1.6",
+      "filename": "2024_2025_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2024/2025",
+    "season_key": "2024_2025",
+    "match": 3,
+    "date": "30 November 2024",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2024/res243.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sm243i.htm?ver2.3",
+      "filename": "2024_2025_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sl243i.htm?ver2.3",
+      "filename": "2024_2025_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2024/2025",
+    "season_key": "2024_2025",
+    "match": 4,
+    "date": "08 February 2025",
+    "venue": "Margam Park, Port Talbot",
+    "hub_url": "https://www.gwent-league.org.uk/2024/res244.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sm244i.htm?ver1.7",
+      "filename": "2024_2025_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sl244i.htm?ver1.7",
+      "filename": "2024_2025_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2024/2025",
+    "season_key": "2024_2025",
+    "match": 5,
+    "date": "02 March 2025",
+    "venue": "Brecon (Penlan)",
+    "hub_url": "https://www.gwent-league.org.uk/2024/res245.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sm245i.htm?ver1.3",
+      "filename": "2024_2025_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2024/sl245i.htm?ver1.3",
+      "filename": "2024_2025_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2023/2024",
+    "season_key": "2023_2024",
+    "match": 1,
+    "date": "14 October 2023",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2023/res231.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sm231i.htm?ver1.1",
+      "filename": "2023_2024_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sl231i.htm?ver1.1",
+      "filename": "2023_2024_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2023/2024",
+    "season_key": "2023_2024",
+    "match": 2,
+    "date": "11 November 2023",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2023/res232.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sm232i.htm?ver1.1",
+      "filename": "2023_2024_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sl232i.htm?ver1.1",
+      "filename": "2023_2024_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2023/2024",
+    "season_key": "2023_2024",
+    "match": 3,
+    "date": "02 December 2023",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2023/res233.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sm233i.htm?ver1.5",
+      "filename": "2023_2024_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sl233i.htm?ver1.5",
+      "filename": "2023_2024_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2023/2024",
+    "season_key": "2023_2024",
+    "match": 4,
+    "date": "10 February 2024",
+    "venue": "Margam Park, Port Talbot",
+    "hub_url": "https://www.gwent-league.org.uk/2023/res234.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sm234i.htm?ver1.3",
+      "filename": "2023_2024_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sl234i.htm?ver1.3",
+      "filename": "2023_2024_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2023/2024",
+    "season_key": "2023_2024",
+    "match": 5,
+    "date": "02 March 2024",
+    "venue": "Parc Pont-y-Pwl (Pontypool)",
+    "hub_url": "https://www.gwent-league.org.uk/2023/res235.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sm235i.htm?ver1.5",
+      "filename": "2023_2024_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2023/sl235i.htm?ver1.5",
+      "filename": "2023_2024_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2022/2023",
+    "season_key": "2022_2023",
+    "match": 1,
+    "date": "15 October 2022",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2022/res221.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sm221i.htm",
+      "filename": "2022_2023_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sl221i.htm",
+      "filename": "2022_2023_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2022/2023",
+    "season_key": "2022_2023",
+    "match": 2,
+    "date": "12 November 2022",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2022/res222.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sm222i.htm",
+      "filename": "2022_2023_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sl222i.htm",
+      "filename": "2022_2023_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2022/2023",
+    "season_key": "2022_2023",
+    "match": 3,
+    "date": "03 December 2022",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2022/res223.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sm223i.htm",
+      "filename": "2022_2023_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sl223i.htm",
+      "filename": "2022_2023_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2022/2023",
+    "season_key": "2022_2023",
+    "match": 4,
+    "date": "11 February 2023",
+    "venue": "Margam Park, Port Talbot",
+    "hub_url": "https://www.gwent-league.org.uk/2022/res224.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sm224i.htm",
+      "filename": "2022_2023_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sl224i.htm",
+      "filename": "2022_2023_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2022/2023",
+    "season_key": "2022_2023",
+    "match": 5,
+    "date": "04 March 2023",
+    "venue": "Parc Pont-y-Pwl (Pontypool)",
+    "hub_url": "https://www.gwent-league.org.uk/2022/res225.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sm225i.htm",
+      "filename": "2022_2023_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2022/sl225i.htm",
+      "filename": "2022_2023_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2021/2022",
+    "season_key": "2021_2022",
+    "match": 1,
+    "date": "16 October 2021",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2021/res211.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sm211i.htm",
+      "filename": "2021_2022_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sl211i.htm",
+      "filename": "2021_2022_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2021/2022",
+    "season_key": "2021_2022",
+    "match": 2,
+    "date": "14 November 2021",
+    "venue": "Parc de Pugh, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2021/res212.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sm212i.htm",
+      "filename": "2021_2022_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sl212i.htm",
+      "filename": "2021_2022_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2021/2022",
+    "season_key": "2021_2022",
+    "match": 3,
+    "date": "04 December 2021",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2021/res213.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sm213i.htm",
+      "filename": "2021_2022_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sl213i.htm",
+      "filename": "2021_2022_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2021/2022",
+    "season_key": "2021_2022",
+    "match": 4,
+    "date": "19 February 2022",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2021/res214.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sm214i.htm",
+      "filename": "2021_2022_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sl214i.htm",
+      "filename": "2021_2022_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2021/2022",
+    "season_key": "2021_2022",
+    "match": 5,
+    "date": "19 March 2022",
+    "venue": "Singleton Park, Swansea",
+    "hub_url": "https://www.gwent-league.org.uk/2021/res215.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sm215i.htm",
+      "filename": "2021_2022_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2021/sl215i.htm",
+      "filename": "2021_2022_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2019/2020",
+    "season_key": "2019_2020",
+    "match": 1,
+    "date": "12 October 2019",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2019/res191.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sm191i.htm",
+      "filename": "2019_2020_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sl191i.htm",
+      "filename": "2019_2020_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2019/2020",
+    "season_key": "2019_2020",
+    "match": 2,
+    "date": "9 November 2019",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2019/res192.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sm192i.htm",
+      "filename": "2019_2020_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sl192i.htm",
+      "filename": "2019_2020_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2019/2020",
+    "season_key": "2019_2020",
+    "match": 3,
+    "date": "7 December 2019",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2019/res193.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sm193i.htm",
+      "filename": "2019_2020_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sl193i.htm",
+      "filename": "2019_2020_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2019/2020",
+    "season_key": "2019_2020",
+    "match": 4,
+    "date": "08 February 2020",
+    "venue": "Chepstow Racecourse",
+    "hub_url": "https://www.gwent-league.org.uk/2019/res194.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sm194i.htm",
+      "filename": "2019_2020_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2019/sl194i.htm",
+      "filename": "2019_2020_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2018/2019",
+    "season_key": "2018_2019",
+    "match": 1,
+    "date": "13 October 2018",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2018/res181.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sm181i.htm",
+      "filename": "2018_2019_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sl181i.htm",
+      "filename": "2018_2019_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2018/2019",
+    "season_key": "2018_2019",
+    "match": 2,
+    "date": "10 November 2018",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2018/res182.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sm182i.htm",
+      "filename": "2018_2019_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sl182i.htm",
+      "filename": "2018_2019_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2018/2019",
+    "season_key": "2018_2019",
+    "match": 3,
+    "date": "02 December 2018",
+    "venue": "Parc Bryn Bach",
+    "hub_url": "https://www.gwent-league.org.uk/2018/res183.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sm183i.htm",
+      "filename": "2018_2019_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sl183i.htm",
+      "filename": "2018_2019_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2018/2019",
+    "season_key": "2018_2019",
+    "match": 4,
+    "date": "09 February 2019",
+    "venue": "Pontypool Park",
+    "hub_url": "https://www.gwent-league.org.uk/2018/res184.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sm184i.htm",
+      "filename": "2018_2019_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sl184i.htm",
+      "filename": "2018_2019_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2018/2019",
+    "season_key": "2018_2019",
+    "match": 5,
+    "date": "02 March 2019",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2018/res185.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sm185i.htm",
+      "filename": "2018_2019_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2018/sl185i.htm",
+      "filename": "2018_2019_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2017/2018",
+    "season_key": "2017_2018",
+    "match": 1,
+    "date": "14 October 2017",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2017/res171.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sm171i.htm",
+      "filename": "2017_2018_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sl171i.htm",
+      "filename": "2017_2018_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2017/2018",
+    "season_key": "2017_2018",
+    "match": 2,
+    "date": "11 November 2017",
+    "venue": "Brecon Leisure Centre, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2017/res172.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sm172i.htm",
+      "filename": "2017_2018_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sl172i.htm",
+      "filename": "2017_2018_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2017/2018",
+    "season_key": "2017_2018",
+    "match": 3,
+    "date": "3 December 2017",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2017/res173.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sm173i.htm",
+      "filename": "2017_2018_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sl173i.htm",
+      "filename": "2017_2018_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2017/2018",
+    "season_key": "2017_2018",
+    "match": 4,
+    "date": "11 February 2018",
+    "venue": "Pontypool Park",
+    "hub_url": "https://www.gwent-league.org.uk/2017/res174.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sm174i.htm",
+      "filename": "2017_2018_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2017/sl174i.htm",
+      "filename": "2017_2018_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2016/2017",
+    "season_key": "2016_2017",
+    "match": 1,
+    "date": "16 October 2016",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2016/res161.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sm161i.htm",
+      "filename": "2016_2017_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sl161i.htm",
+      "filename": "2016_2017_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2016/2017",
+    "season_key": "2016_2017",
+    "match": 2,
+    "date": "12 November 2016",
+    "venue": "Brecon Leisure Centre, Penlan",
+    "hub_url": "https://www.gwent-league.org.uk/2016/res162.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sm162i.htm",
+      "filename": "2016_2017_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sl162i.htm",
+      "filename": "2016_2017_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2016/2017",
+    "season_key": "2016_2017",
+    "match": 3,
+    "date": "03 December 2016",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2016/res163.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sm163i.htm",
+      "filename": "2016_2017_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sl163i.htm",
+      "filename": "2016_2017_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2016/2017",
+    "season_key": "2016_2017",
+    "match": 4,
+    "date": "12 February 2017",
+    "venue": "Glebelands, Newport",
+    "hub_url": "https://www.gwent-league.org.uk/2016/res164.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sm164i.htm",
+      "filename": "2016_2017_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sl164i.htm",
+      "filename": "2016_2017_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2016/2017",
+    "season_key": "2016_2017",
+    "match": 5,
+    "date": "04 March 2017",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2016/res165.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sm165i.htm",
+      "filename": "2016_2017_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2016/sl165i.htm",
+      "filename": "2016_2017_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2015/2016",
+    "season_key": "2015_2016",
+    "match": 1,
+    "date": "11 October 2015",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2015/res151.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sm151i.htm",
+      "filename": "2015_2016_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sl151i.htm",
+      "filename": "2015_2016_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2015/2016",
+    "season_key": "2015_2016",
+    "match": 2,
+    "date": "08 November 2015",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2015/res152.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sm152i.htm",
+      "filename": "2015_2016_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sl152i.htm",
+      "filename": "2015_2016_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2015/2016",
+    "season_key": "2015_2016",
+    "match": 3,
+    "date": "05 December 2015",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2015/res153.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sm153i.htm",
+      "filename": "2015_2016_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sl153i.htm",
+      "filename": "2015_2016_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2015/2016",
+    "season_key": "2015_2016",
+    "match": 4,
+    "date": "13 February 2016",
+    "venue": "Monmouth Showground",
+    "hub_url": "https://www.gwent-league.org.uk/2015/res154.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sm154i.htm",
+      "filename": "2015_2016_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sl154i.htm",
+      "filename": "2015_2016_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2015/2016",
+    "season_key": "2015_2016",
+    "match": 5,
+    "date": "05 March 2016",
+    "venue": "Brecon Leisure Centre, Penlan",
+    "hub_url": "https://www.gwent-league.org.uk/2015/res155.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sm155i.htm",
+      "filename": "2015_2016_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2015/sl155i.htm",
+      "filename": "2015_2016_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2014/2015",
+    "season_key": "2014_2015",
+    "match": 1,
+    "date": "12 October 2014",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2014/res141.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sm141i.htm",
+      "filename": "2014_2015_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sl141i.htm",
+      "filename": "2014_2015_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2014/2015",
+    "season_key": "2014_2015",
+    "match": 2,
+    "date": "09 November 2014",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2014/res142.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sm142i.htm",
+      "filename": "2014_2015_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sl142i.htm",
+      "filename": "2014_2015_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2014/2015",
+    "season_key": "2014_2015",
+    "match": 3,
+    "date": "06 December 2014",
+    "venue": "Brecon Leisure Centre, Penlan",
+    "hub_url": "https://www.gwent-league.org.uk/2014/res143.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sm143i.htm",
+      "filename": "2014_2015_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sl143i.htm",
+      "filename": "2014_2015_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2014/2015",
+    "season_key": "2014_2015",
+    "match": 4,
+    "date": "08 February 2015",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2014/res144.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sm144i.htm",
+      "filename": "2014_2015_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2014/sl144i.htm",
+      "filename": "2014_2015_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2013/2014",
+    "season_key": "2013_2014",
+    "match": 1,
+    "date": "19 October 2013",
+    "venue": "Pontypool Park, Pontypool",
+    "hub_url": "https://www.gwent-league.org.uk/2013/res131.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sm131i.htm",
+      "filename": "2013_2014_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sl131i.htm",
+      "filename": "2013_2014_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2013/2014",
+    "season_key": "2013_2014",
+    "match": 2,
+    "date": "10 November 2013",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2013/res132.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sm132i.htm",
+      "filename": "2013_2014_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sl132i.htm",
+      "filename": "2013_2014_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2013/2014",
+    "season_key": "2013_2014",
+    "match": 3,
+    "date": "08 December 2013",
+    "venue": "University of Bath",
+    "hub_url": "https://www.gwent-league.org.uk/2013/res133.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sm133i.htm",
+      "filename": "2013_2014_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sl133i.htm",
+      "filename": "2013_2014_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2013/2014",
+    "season_key": "2013_2014",
+    "match": 4,
+    "date": "08 February 2014",
+    "venue": "Penlan Leisure Centre, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2013/res134.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sm134i.htm",
+      "filename": "2013_2014_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sl134i.htm",
+      "filename": "2013_2014_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2013/2014",
+    "season_key": "2013_2014",
+    "match": 5,
+    "date": "01 March 2014",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2013/res135.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sm135i.htm",
+      "filename": "2013_2014_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2013/sl135i.htm",
+      "filename": "2013_2014_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2012/2013",
+    "season_key": "2012_2013",
+    "match": 1,
+    "date": "21 October 2012",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2012/res121.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sm121i.htm",
+      "filename": "2012_2013_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sl121i.htm",
+      "filename": "2012_2013_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2012/2013",
+    "season_key": "2012_2013",
+    "match": 2,
+    "date": "10 November 2012",
+    "venue": "Parc de Pugh, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2012/res122.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sm122i.htm",
+      "filename": "2012_2013_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sl122i.htm",
+      "filename": "2012_2013_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2012/2013",
+    "season_key": "2012_2013",
+    "match": 3,
+    "date": "1 December 2012",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2012/res123.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sm123i.htm",
+      "filename": "2012_2013_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sl123i.htm",
+      "filename": "2012_2013_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2012/2013",
+    "season_key": "2012_2013",
+    "match": 4,
+    "date": "9 February 2013",
+    "venue": "University of Bath",
+    "hub_url": "https://www.gwent-league.org.uk/2012/res124.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sm124i.htm",
+      "filename": "2012_2013_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sl124i.htm",
+      "filename": "2012_2013_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2012/2013",
+    "season_key": "2012_2013",
+    "match": 5,
+    "date": "2 March 2013",
+    "venue": "Penlan Leisure Centre, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2012/res125.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sm125i.htm",
+      "filename": "2012_2013_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2012/sl125i.htm",
+      "filename": "2012_2013_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2011/2012",
+    "season_key": "2011_2012",
+    "match": 1,
+    "date": "9 October 2011",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2011/res111.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sm111i.htm",
+      "filename": "2011_2012_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sl111i.htm",
+      "filename": "2011_2012_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2011/2012",
+    "season_key": "2011_2012",
+    "match": 2,
+    "date": "13 November 2011",
+    "venue": "University of Bath",
+    "hub_url": "https://www.gwent-league.org.uk/2011/res112.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sm112i.htm",
+      "filename": "2011_2012_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sl112i.htm",
+      "filename": "2011_2012_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2011/2012",
+    "season_key": "2011_2012",
+    "match": 3,
+    "date": "4 December 2011",
+    "venue": "Singleton Park, Swansea",
+    "hub_url": "https://www.gwent-league.org.uk/2011/res113.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sm113i.htm",
+      "filename": "2011_2012_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sl113i.htm",
+      "filename": "2011_2012_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2011/2012",
+    "season_key": "2011_2012",
+    "match": 4,
+    "date": "11 February 2012",
+    "venue": "Penlan Leisure Centre, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2011/res114.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sm114i.htm",
+      "filename": "2011_2012_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sl114i.htm",
+      "filename": "2011_2012_m4_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2011/2012",
+    "season_key": "2011_2012",
+    "match": 5,
+    "date": "3 March 2012",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2011/res115.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sm115i.htm",
+      "filename": "2011_2012_m5_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2011/sl115i.htm",
+      "filename": "2011_2012_m5_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2010/2011",
+    "season_key": "2010_2011",
+    "match": 1,
+    "date": "10 October 2010",
+    "venue": "Newbridge Fields, Bridgend",
+    "hub_url": "https://www.gwent-league.org.uk/2010/res101.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sm101i.htm",
+      "filename": "2010_2011_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sl101i.htm",
+      "filename": "2010_2011_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2010/2011",
+    "season_key": "2010_2011",
+    "match": 2,
+    "date": "4 December 2010",
+    "venue": "Blaise Castle, Bristol",
+    "hub_url": "https://www.gwent-league.org.uk/2010/res102.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sm102i.htm",
+      "filename": "2010_2011_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sl102i.htm",
+      "filename": "2010_2011_m2_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2010/2011",
+    "season_key": "2010_2011",
+    "match": 3,
+    "date": "12 February 2011",
+    "venue": "Penlan Leisure Centre, Brecon",
+    "hub_url": "https://www.gwent-league.org.uk/2010/res103.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sm103i.htm",
+      "filename": "2010_2011_m3_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sl103i.htm",
+      "filename": "2010_2011_m3_women.htm",
+      "cached": true
+    }
+  },
+  {
+    "season": "2010/2011",
+    "season_key": "2010_2011",
+    "match": 4,
+    "date": "13 March 2011",
+    "venue": "Singleton Park, Swansea",
+    "hub_url": "https://www.gwent-league.org.uk/2010/res104.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sm104i.htm",
+      "filename": "2010_2011_m4_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2010/sl104i.htm",
+      "filename": "2010_2011_m4_women.htm",
+      "cached": true
+    }
+  }
+]

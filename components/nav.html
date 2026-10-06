@@ -1,0 +1,48 @@
+<header class="border-b border-slate-200 bg-white/95 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        
+        <!-- Left: Brand Logo & Title -->
+        <a href="index.html" class="flex items-center space-x-3.5 group">
+            <div class="w-9 h-9 rounded bg-slate-900 text-white font-serif font-black text-sm flex items-center justify-center tracking-tighter shadow-sm group-hover:bg-emerald-900 transition-colors">
+                GL
+            </div>
+            <div>
+                <span class="text-sm font-serif font-bold text-slate-900 tracking-tight uppercase block leading-none group-hover:text-emerald-900 transition-colors">Gwent League</span>
+                <span class="text-[10px] font-mono font-medium text-slate-500 uppercase tracking-widest block mt-0.5">Historical Archive • 2010–2026</span>
+            </div>
+        </a>
+
+        <!-- Right: Nav Links & Quick Search -->
+        <div class="flex items-center space-x-3 md:space-x-6">
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center space-x-5 text-xs font-semibold tracking-wide text-slate-600 uppercase font-sans">
+                <a href="seasons.html" class="hover:text-slate-950 transition-colors py-1 border-b-2 border-transparent hover:border-slate-900">Seasons</a>
+                <a href="clubs.html" class="hover:text-slate-950 transition-colors py-1 border-b-2 border-transparent hover:border-slate-900">Clubs</a>
+                <a href="results.html?season=2025_2026&match=1" class="hover:text-slate-950 transition-colors py-1 border-b-2 border-transparent hover:border-slate-900">Latest Match</a>
+            </nav>
+
+            <!-- Search Trigger Button -->
+            <button id="nav-search-btn" aria-label="Search runners" class="flex items-center gap-2 px-3 py-1.5 text-xs text-slate-500 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 rounded-lg border border-slate-200 transition-colors focus:outline-none">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <span class="hidden sm:inline font-mono">Quick Search</span>
+                <kbd class="hidden sm:inline font-mono text-[9px] bg-white border border-slate-300 px-1.5 py-0.5 rounded text-slate-400">⌘K</kbd>
+            </button>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-nav-toggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 rounded-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Tray -->
+    <div id="mobile-nav-tray" class="hidden md:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-2 text-xs font-semibold text-slate-700">
+        <a href="seasons.html" class="block py-1.5 hover:text-slate-900">Seasons Directory</a>
+        <a href="clubs.html" class="block py-1.5 hover:text-slate-900">Clubs Directory</a>
+        <a href="results.html?season=2025_2026&match=1" class="block py-1.5 hover:text-slate-900">Latest Race Results</a>
+    </div>
+</header>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Archive — Gwent Cross Country League Results & Historical Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="data.js"></script>
+    <script src="site-layout.js"></script>
+    <style>
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- EDITORIAL MASTHEAD -->
+    <header class="border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center space-y-6">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-mono font-semibold uppercase tracking-widest border border-slate-200">
+                <span>John H Collins Gwent League</span>
+                <span>•</span>
+                <span>Historical Archive 2010–2026</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black text-slate-900 tracking-tight max-w-4xl mx-auto leading-[1.08]">
+                Fifteen Decades of Mud, Turf &amp; Spikes
+            </h1>
+
+            <p class="text-sm sm:text-base font-sans text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                A statistical record of the Gwent Cross Country League.
+                Search over <strong class="text-slate-900 font-semibold">40,000 race finishes</strong>, track individual runner profiles, and explore club turnout across past campaigns.
+            </p>
+
+            <!-- PROMINENT HERO SEARCH INPUT -->
+            <div class="max-w-xl mx-auto relative pt-4 text-left">
+                <div class="relative">
+                    <input type="text" id="hero-search-input" placeholder="Search runner name (e.g. Dewi Griffiths, Robert Gale) or club..." autocomplete="off"
+                        class="w-full bg-white border-2 border-slate-300 hover:border-slate-400 focus:border-slate-900 text-slate-900 placeholder-slate-400 rounded-xl px-5 py-4 pl-12 text-base font-medium focus:outline-none transition-all shadow-sm">
+                    <svg class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+
+                <!-- Instant Autocomplete Dropdown -->
+                <div id="hero-search-results" class="hidden absolute left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 max-h-80 overflow-y-auto divide-y divide-slate-100">
+                    <!-- Injected by script -->
+                </div>
+            </div>
+
+            <!-- LEAGUE MACRO STATS BAR -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-100 text-center">
+                <div>
+                    <span id="hero-stat-seasons" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">15</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Campaigns</span>
+                </div>
+                <div>
+                    <span id="hero-stat-fixtures" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">71</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Fixtures</span>
+                </div>
+                <div>
+                    <span id="hero-stat-finishes" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">40,922</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Finishes</span>
+                </div>
+                <div>
+                    <span id="hero-stat-runners" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">9,021</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Runners</span>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <span id="hero-stat-clubs" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">180+</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Clubs</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full flex-grow space-y-16">
+        
+        <!-- SECTION 1: LATEST CAMPAIGN FIXTURES (2025/2026) -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 pb-3 gap-2">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">Latest Season</span>
+                    <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">2025 / 2026 Fixture Series</h2>
+                </div>
+                <a href="seasons.html" class="text-xs font-semibold text-slate-600 hover:text-slate-900 underline decoration-slate-300">
+                    Browse All 15 Seasons &rarr;
+                </a>
+            </div>
+
+            <div id="latest-fixtures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Dynamically populated 2025/2026 fixture cards -->
+            </div>
+        </section>
+
+        <!-- SECTION 2: LEAGUE STALWARTS & PROLIFIC RACERS -->
+        <section class="space-y-6">
+            <div class="border-b border-slate-200 pb-3">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Hall of Endurance</span>
+                <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">League Stalwarts</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Athletes with the highest number of Gwent League finishes across all 71 fixtures since 2010.</p>
+            </div>
+
+            <div id="stalwarts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Dynamically populated stalwart cards -->
+            </div>
+        </section>
+
+        <!-- SECTION 3: MOST ACTIVE CLUBS -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 pb-3 gap-2">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Team Representation</span>
+                    <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">Leading Clubs</h2>
+                    <p class="text-xs text-slate-500 mt-0.5">Clubs with the largest cumulative turnouts across league history.</p>
+                </div>
+                <a href="clubs.html" class="text-xs font-semibold text-slate-600 hover:text-slate-900 underline decoration-slate-300">
+                    View All Member Clubs &rarr;
+                </a>
+            </div>
+
+            <div id="top-clubs-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                <!-- Dynamically populated club cards -->
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <script>
+        (() => {
+            const allData = window.glResults || [];
+            if (!allData.length) return;
+
+            // Compute macro stats
+            const uniqueSeasons = new Set(allData.map(r => r.season_key));
+            const uniqueFixtures = new Set(allData.map(r => `${r.season_key}_${r.match}`));
+            const uniqueRunners = new Set(allData.map(r => r.athlete));
+            const uniqueClubs = new Set(allData.map(r => r.club).filter(c => c && c !== 'Unattached'));
+
+            document.getElementById('hero-stat-seasons').textContent = uniqueSeasons.size;
+            document.getElementById('hero-stat-fixtures').textContent = uniqueFixtures.size;
+            document.getElementById('hero-stat-finishes').textContent = allData.length.toLocaleString();
+            document.getElementById('hero-stat-runners').textContent = uniqueRunners.size.toLocaleString();
+            document.getElementById('hero-stat-clubs').textContent = uniqueClubs.size;
+
+            // 1. RENDER LATEST SEASON FIXTURES (2025/2026)
+            const latestRecords = allData.filter(r => r.season_key === '2025_2026');
+            const matchMap = new Map();
+            latestRecords.forEach(r => {
+                if (!matchMap.has(r.match)) {
+                    matchMap.set(r.match, {
+                        match: r.match,
+                        venue: r.venue,
+                        date: r.date,
+                        season: r.season,
+                        season_key: r.season_key,
+                        menCount: 0,
+                        womenCount: 0,
+                        winnerMen: null,
+                        winnerWomen: null
+                    });
+                }
+                const m = matchMap.get(r.match);
+                if (r.gender === 'M') {
+                    m.menCount++;
+                    if (r.pos === 1) m.winnerMen = r;
+                } else {
+                    m.womenCount++;
+                    if (r.pos === 1) m.winnerWomen = r;
+                }
+            });
+
+            const fixtureCards = Array.from(matchMap.values()).sort((a, b) => a.match - b.match);
+            const fixturesContainer = document.getElementById('latest-fixtures-grid');
+            fixturesContainer.innerHTML = fixtureCards.map(f => `
+                <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 hover:shadow-md transition-all group shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white px-2 py-0.5 rounded">
+                            Match ${f.match}
+                        </span>
+                        <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-slate-900 group-hover:text-emerald-900 transition-colors">
+                        ${f.venue}
+                    </h3>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs font-mono text-slate-500">
+                        <span>Men: <strong class="text-slate-800">${f.menCount}</strong></span>
+                        <span>Women: <strong class="text-slate-800">${f.womenCount}</strong></span>
+                        <span>Total: <strong class="text-slate-900">${f.menCount + f.womenCount}</strong></span>
+                    </div>
+                </a>
+            `).join('');
+
+            // 2. RENDER STALWARTS (Top runners by appearances)
+            const runnerAppearances = new Map();
+            allData.forEach(r => {
+                if (!r.athlete || r.pos <= 0) return;
+                const k = r.athlete;
+                if (!runnerAppearances.has(k)) {
+                    runnerAppearances.set(k, {
+                        name: r.athlete,
+                        club: r.club,
+                        finishes: 0,
+                        wins: 0,
+                        catWins: 0,
+                        seasons: new Set(),
+                        gender: r.gender
+                    });
+                }
+                const entry = runnerAppearances.get(k);
+                entry.finishes++;
+                entry.club = r.club;
+                entry.seasons.add(r.season);
+                if (r.pos === 1) entry.wins++;
+                if (r.cat_pos === 1) entry.catWins++;
+            });
+
+            const topStalwarts = Array.from(runnerAppearances.values())
+                .sort((a, b) => b.finishes - a.finishes)
+                .slice(0, 8);
+
+            const stalwartsContainer = document.getElementById('stalwarts-grid');
+            stalwartsContainer.innerHTML = topStalwarts.map((s, idx) => `
+                <a href="athlete.html?name=${encodeURIComponent(s.name)}" class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-slate-400 transition-all block group">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[10px] font-mono font-bold text-slate-400 uppercase">#${idx + 1} All-Time</span>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-700">
+                            ${s.finishes} Races
+                        </span>
+                    </div>
+                    <div class="text-base font-serif font-bold text-slate-900 mt-2 group-hover:text-emerald-900 transition-colors truncate">
+                        ${s.name}
+                    </div>
+                    <div class="text-xs text-slate-500 truncate mt-0.5 font-sans">${s.club}</div>
+                    <div class="mt-3 pt-2.5 border-t border-slate-100 flex justify-between text-[11px] font-mono text-slate-400">
+                        <span>${s.seasons.size} Campaigns</span>
+                        ${s.catWins > 0 ? `<span class="text-emerald-800 font-semibold">${s.catWins} Cat Wins</span>` : '<span>Active</span>'}
+                    </div>
+                </a>
+            `).join('');
+
+            // 3. RENDER TOP CLUBS
+            const clubFinishes = new Map();
+            allData.forEach(r => {
+                if (!r.club || r.club === 'Unattached') return;
+                clubFinishes.set(r.club, (clubFinishes.get(r.club) || 0) + 1);
+            });
+
+            const topClubs = Array.from(clubFinishes.entries())
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 12);
+
+            const topClubsContainer = document.getElementById('top-clubs-grid');
+            topClubsContainer.innerHTML = topClubs.map(([club, count]) => `
+                <a href="club.html?club=${encodeURIComponent(club)}" class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm hover:border-slate-400 transition-all block group">
+                    <div class="text-xs font-semibold text-slate-900 group-hover:text-emerald-900 transition-colors truncate">
+                        ${club}
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-500 mt-1">
+                        ${count.toLocaleString()} finishes
+                    </div>
+                </a>
+            `).join('');
+
+            // 4. HERO SEARCH LIVE AUTOCOMPLETE
+            const heroInput = document.getElementById('hero-search-input');
+            const heroDropdown = document.getElementById('hero-search-results');
+
+            heroInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim().toLowerCase();
+                if (!query || query.length < 2) {
+                    heroDropdown.innerHTML = '';
+                    heroDropdown.classList.add('hidden');
+                    return;
+                }
+
+                const runnersList = Array.from(runnerAppearances.values());
+                const matches = runnersList.filter(r => 
+                    r.name.toLowerCase().includes(query) || r.club.toLowerCase().includes(query)
+                ).slice(0, 8);
+
+                if (!matches.length) {
+                    heroDropdown.innerHTML = `<div class="p-4 text-center text-xs text-slate-400">No runners found for "${query}".</div>`;
+                    heroDropdown.classList.remove('hidden');
+                    return;
+                }
+
+                heroDropdown.innerHTML = matches.map(r => `
+                    <a href="athlete.html?name=${encodeURIComponent(r.name)}" class="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group">
+                        <div>
+                            <div class="text-sm font-serif font-bold text-slate-900 group-hover:text-emerald-900">
+                                ${r.name}
+                            </div>
+                            <div class="text-xs text-slate-500">${r.club}</div>
+                        </div>
+                        <span class="text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded">
+                            ${r.finishes} finishes
+                        </span>
+                    </a>
+                `).join('');
+                heroDropdown.classList.remove('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!heroInput.contains(e.target) && !heroDropdown.contains(e.target)) {
+                    heroDropdown.classList.add('hidden');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

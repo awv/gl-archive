@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Archive — Season Campaign Overview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="data.js"></script>
+    <script src="site-layout.js"></script>
+    <style>
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- SEASON HEADER -->
+    <header class="border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+                Campaign Overview
+            </span>
+            <h1 id="season-title" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mt-2">
+                Loading Campaign...
+            </h1>
+            <p id="season-sub" class="text-xs md:text-sm text-slate-500 font-medium mt-1">
+                Calculating campaign metrics...
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-slate-100">
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Fixtures Held</span>
+                    <span id="stat-season-fixtures" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Total Finishes</span>
+                    <span id="stat-season-finishes" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Athletes Active</span>
+                    <span id="stat-season-runners" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Clubs Scoring</span>
+                    <span id="stat-season-clubs" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-12">
+        
+        <!-- FIXTURE CARDS -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-serif font-bold text-slate-900">Fixtures & Standings</h2>
+            <div id="season-fixtures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Dynamically populated fixture cards -->
+            </div>
+        </section>
+
+        <!-- TOP POINTS SCORERS THIS SEASON -->
+        <section class="space-y-4">
+            <h2 class="text-xl font-serif font-bold text-slate-900">Campaign Top Performers</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <!-- Men Top Scorers -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
+                        Top Senior Men Finishes
+                    </h3>
+                    <div id="top-men-list" class="divide-y divide-slate-100 text-xs">
+                        <!-- Populated -->
+                    </div>
+                </div>
+
+                <!-- Women Top Scorers -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
+                        Top Senior Women Finishes
+                    </h3>
+                    <div id="top-women-list" class="divide-y divide-slate-100 text-xs">
+                        <!-- Populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <script>
+        (() => {
+            const allData = window.glResults || [];
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetSeason = urlParams.get('season') || '2025_2026';
+
+            const seasonRecords = allData.filter(r => r.season_key === targetSeason);
+            if (!seasonRecords.length) {
+                document.getElementById('season-title').textContent = "Season Not Found";
+                return;
+            }
+
+            const seasonLabel = seasonRecords[0].season;
+            document.title = `GL Archive — ${seasonLabel} Campaign`;
+            document.getElementById('season-title').textContent = `${seasonLabel} Campaign`;
+            document.getElementById('season-sub').textContent = `Full five-match series metrics and individual results index.`;
+
+            // Metrics
+            const matchMap = new Map();
+            const uniqueRunners = new Set();
+            const uniqueClubs = new Set();
+
+            seasonRecords.forEach(r => {
+                uniqueRunners.add(r.athlete);
+                if (r.club && r.club !== 'Unattached') uniqueClubs.add(r.club);
+
+                if (!matchMap.has(r.match)) {
+                    matchMap.set(r.match, {
+                        match: r.match,
+                        venue: r.venue,
+                        date: r.date,
+                        season_key: r.season_key,
+                        men: 0,
+                        women: 0,
+                        winnerMen: null,
+                        winnerWomen: null
+                    });
+                }
+                const m = matchMap.get(r.match);
+                if (r.gender === 'M') {
+                    m.men++;
+                    if (r.pos === 1) m.winnerMen = r;
+                } else {
+                    m.women++;
+                    if (r.pos === 1) m.winnerWomen = r;
+                }
+            });
+
+            document.getElementById('stat-season-fixtures').textContent = matchMap.size;
+            document.getElementById('stat-season-finishes').textContent = seasonRecords.length.toLocaleString();
+            document.getElementById('stat-season-runners').textContent = uniqueRunners.size.toLocaleString();
+            document.getElementById('stat-season-clubs').textContent = uniqueClubs.size;
+
+            // Render Fixture Cards
+            const fixturesContainer = document.getElementById('season-fixtures-grid');
+            fixturesContainer.innerHTML = Array.from(matchMap.values()).sort((a,b) => a.match - b.match).map(m => `
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4 hover:border-slate-400 transition-all">
+                    <div class="flex justify-between items-start">
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white px-2 py-0.5 rounded">
+                            Match ${m.match}
+                        </span>
+                        <span class="text-xs font-mono text-slate-400">${m.date}</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-serif font-bold text-slate-900">${m.venue}</h3>
+                        <p class="text-xs text-slate-500 font-mono mt-1">${m.men + m.women} finishers (${m.men} Men / ${m.women} Women)</p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <a href="results.html?season=${m.season_key}&match=${m.match}&gender=M" class="text-xs font-semibold text-emerald-800 hover:underline">
+                            Men's Standings &rarr;
+                        </a>
+                        <a href="results.html?season=${m.season_key}&match=${m.match}&gender=F" class="text-xs font-semibold text-emerald-800 hover:underline">
+                            Women's Standings &rarr;
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Top performers this season (by total points)
+            const getTopScorers = (gender) => {
+                const map = new Map();
+                seasonRecords.filter(r => r.gender === gender).forEach(r => {
+                    if (!map.has(r.athlete)) {
+                        map.set(r.athlete, { name: r.athlete, club: r.club, races: 0, pts: 0, bestPos: 999 });
+                    }
+                    const e = map.get(r.athlete);
+                    e.races++;
+                    e.pts += (r.pts || 0);
+                    if (r.pos < e.bestPos) e.bestPos = r.pos;
+                });
+                return Array.from(map.values()).sort((a, b) => b.pts - a.pts).slice(0, 8);
+            };
+
+            const renderTopList = (containerId, list) => {
+                document.getElementById(containerId).innerHTML = list.map((s, idx) => `
+                    <div class="py-2.5 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-slate-400 font-bold w-4">${idx + 1}</span>
+                            <div>
+                                <a href="athlete.html?name=${encodeURIComponent(s.name)}" class="font-serif font-bold text-slate-900 hover:text-emerald-800">
+                                    ${s.name}
+                                </a>
+                                <div class="text-[11px] text-slate-500 font-sans">${s.club}</div>
+                            </div>
+                        </div>
+                        <div class="text-right font-mono text-[11px]">
+                            <span class="font-bold text-slate-900">${s.pts.toLocaleString()} pts</span>
+                            <div class="text-slate-400 text-[10px]">${s.races} races &bull; Best: #${s.bestPos}</div>
+                        </div>
+                    </div>
+                `).join('');
+            };
+
+            renderTopList('top-men-list', getTopScorers('M'));
+            renderTopList('top-women-list', getTopScorers('F'));
+        })();
+    </script>
+</body>
+</html>

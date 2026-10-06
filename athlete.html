@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Archive — Athlete Career Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="data.js"></script>
+    <script src="site-layout.js"></script>
+    <style>
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- ATHLETE HERO HEADER -->
+    <header class="border-b border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <div class="space-y-4">
+                
+                <!-- Category / League Tag -->
+                <div class="flex items-center gap-2">
+                    <span id="athlete-gender-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white">
+                        Senior Men
+                    </span>
+                    <span class="text-xs font-mono text-slate-400">•</span>
+                    <span id="athlete-club-badge" class="text-xs font-mono font-semibold text-emerald-800 uppercase tracking-wider">
+                        Club Name
+                    </span>
+                </div>
+
+                <!-- Runner Name -->
+                <h1 id="athlete-name" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+                    Loading Athlete...
+                </h1>
+
+                <!-- Secondary Metadata -->
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 font-mono">
+                    <span id="athlete-career-span">ACTIVE: —</span>
+                    <span>•</span>
+                    <span id="athlete-cat-span">CATEGORIES: —</span>
+                    <span>•</span>
+                    <span id="athlete-finishes-span">0 RACES FINISHED</span>
+                </div>
+            </div>
+
+            <!-- CAREER STATS METRIC GRID -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 pt-6 border-t border-slate-100">
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">League Appearances</span>
+                    <span id="stat-appearances" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Best Finish Pos</span>
+                    <span id="stat-best-pos" class="text-2xl font-bold font-serif text-emerald-800 block mt-0.5">—</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Category Wins</span>
+                    <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Outright Race Wins</span>
+                    <span id="stat-outright-wins" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Average Finish</span>
+                    <span id="stat-avg-pos" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">—</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Fastest Time</span>
+                    <span id="stat-fastest-time" class="text-2xl font-bold font-mono text-slate-900 block mt-0.5">—</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow space-y-10">
+        
+        <!-- CLUB AFFILIATIONS TIMELINE -->
+        <section class="space-y-2">
+            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                Club Affiliations & Representations
+            </h3>
+            <div id="athlete-clubs-list" class="flex flex-wrap gap-2">
+                <!-- Dynamically populated club pills -->
+            </div>
+        </section>
+
+        <!-- COMPLETE RACE-BY-RACE LOG -->
+        <section class="space-y-3">
+            <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
+                <div>
+                    Career Race Results Log (<span id="log-count" class="font-bold text-slate-900">0</span> fixtures)
+                </div>
+                <div>
+                    Chronological descending order
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                <th class="py-3 px-4 w-28">Season</th>
+                                <th class="py-3 px-3 w-16">Match</th>
+                                <th class="py-3 px-4">Venue</th>
+                                <th class="py-3 px-3 w-16 text-center">Pos</th>
+                                <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
+                                <th class="py-3 px-3">Division</th>
+                                <th class="py-3 px-4">Club Represented</th>
+                                <th class="py-3 px-4 w-24 text-right font-mono">Time</th>
+                                <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="athlete-history-body" class="divide-y divide-slate-100 font-sans">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <script>
+        (() => {
+            const allData = window.glResults || [];
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetName = urlParams.get('name');
+
+            if (!targetName) {
+                document.getElementById('athlete-name').textContent = "No Athlete Specified";
+                return;
+            }
+
+            // Case-insensitive match on athlete name
+            const q = targetName.toLowerCase();
+            const runnerRecords = allData.filter(r => r.athlete.toLowerCase() === q);
+
+            if (runnerRecords.length === 0) {
+                document.getElementById('athlete-name').textContent = targetName;
+                document.getElementById('athlete-history-body').innerHTML = `
+                    <tr><td colspan="9" class="py-12 text-center text-slate-400">No race finishes found in archive for this runner.</td></tr>
+                `;
+                return;
+            }
+
+            // Sort records: Season descending, match descending
+            runnerRecords.sort((a, b) => {
+                const yrA = parseInt(a.season_key.split('_')[0], 10);
+                const yrB = parseInt(b.season_key.split('_')[0], 10);
+                if (yrA !== yrB) return yrB - yrA;
+                return b.match - a.match;
+            });
+
+            const latest = runnerRecords[0];
+            const name = latest.athlete;
+            const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
+            
+            document.title = `GL Archive — ${name}`;
+            document.getElementById('athlete-name').textContent = name;
+            document.getElementById('athlete-gender-badge').textContent = genderLabel;
+            document.getElementById('athlete-club-badge').textContent = latest.club;
+
+            // Seasons & span
+            const seasons = [...new Set(runnerRecords.map(r => r.season))].sort();
+            const firstSeason = seasons[0];
+            const lastSeason = seasons[seasons.length - 1];
+            const spanText = firstSeason === lastSeason ? `${firstSeason}` : `${firstSeason} – ${lastSeason} (${seasons.length} ${seasons.length === 1 ? 'campaign' : 'campaigns'})`;
+            document.getElementById('athlete-career-span').textContent = `ACTIVE: ${spanText.toUpperCase()}`;
+
+            const categories = [...new Set(runnerRecords.map(r => r.age_cat))];
+            document.getElementById('athlete-cat-span').textContent = `CATEGORIES: ${categories.join(', ')}`;
+            document.getElementById('athlete-finishes-span').textContent = `${runnerRecords.length} RACES FINISHED`;
+
+            // Metrics
+            const bestPos = Math.min(...runnerRecords.map(r => r.pos));
+            const outrightWins = runnerRecords.filter(r => r.pos === 1).length;
+            const catWins = runnerRecords.filter(r => r.cat_pos === 1).length;
+            const avgPos = Math.round(runnerRecords.reduce((sum, r) => sum + r.pos, 0) / runnerRecords.length);
+            
+            const timedRaces = runnerRecords.filter(r => r.time && r.time.includes(':'));
+            timedRaces.sort((a, b) => a.time.localeCompare(b.time));
+            const fastestTime = timedRaces.length > 0 ? timedRaces[0].time : '—';
+
+            document.getElementById('stat-appearances').textContent = runnerRecords.length;
+            document.getElementById('stat-best-pos').textContent = `#${bestPos}`;
+            document.getElementById('stat-cat-wins').textContent = catWins;
+            document.getElementById('stat-outright-wins').textContent = outrightWins;
+            document.getElementById('stat-avg-pos').textContent = `#${avgPos}`;
+            document.getElementById('stat-fastest-time').textContent = fastestTime;
+
+            // Clubs list
+            const clubCounts = {};
+            runnerRecords.forEach(r => {
+                clubCounts[r.club] = (clubCounts[r.club] || 0) + 1;
+            });
+            const clubsContainer = document.getElementById('athlete-clubs-list');
+            clubsContainer.innerHTML = Object.entries(clubCounts).map(([club, count]) => `
+                <a href="club.html?club=${encodeURIComponent(club)}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-sm">
+                    <span class="text-xs font-semibold text-slate-900">${club}</span>
+                    <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">${count} ${count === 1 ? 'race' : 'races'}</span>
+                </a>
+            `).join('');
+
+            // Historical Log Table
+            document.getElementById('log-count').textContent = runnerRecords.length;
+            const tbody = document.getElementById('athlete-history-body');
+            tbody.innerHTML = runnerRecords.map(r => {
+                const isWin = r.pos === 1;
+                const posClass = isWin ? 'font-serif font-bold text-emerald-800' : 'font-mono text-slate-800';
+
+                return `
+                    <tr class="hover:bg-slate-50/80 transition-colors">
+                        <td class="py-2.5 px-4 font-mono font-medium text-slate-500">
+                            ${r.season}
+                        </td>
+                        <td class="py-2.5 px-3 font-mono font-bold text-slate-700">
+                            Match ${r.match}
+                        </td>
+                        <td class="py-2.5 px-4 font-serif font-bold text-slate-900">
+                            <a href="results.html?season=${r.season_key}&match=${r.match}&gender=${r.gender}" class="hover:text-emerald-800 transition-colors">
+                                ${r.venue}
+                            </a>
+                        </td>
+                        <td class="py-2.5 px-3 text-center tabular-nums ${posClass}">
+                            #${r.pos}
+                        </td>
+                        <td class="py-2.5 px-3 text-center tabular-nums font-mono text-slate-400">
+                            ${r.cat_pos > 0 ? `#${r.cat_pos}` : '—'}
+                        </td>
+                        <td class="py-2.5 px-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-700">
+                                ${r.age_cat}
+                            </span>
+                        </td>
+                        <td class="py-2.5 px-4 text-slate-600">
+                            <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-slate-900 transition-colors">
+                                ${r.club}
+                            </a>
+                        </td>
+                        <td class="py-2.5 px-4 text-right font-mono tabular-nums font-medium text-slate-700">
+                            ${r.time || '—'}
+                        </td>
+                        <td class="py-2.5 px-4 text-right font-mono tabular-nums text-slate-500 font-semibold">
+                            ${r.pts || '—'}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        })();
+    </script>
+</body>
+</html>
