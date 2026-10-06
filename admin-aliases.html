@@ -352,6 +352,14 @@
                 return false;
             };
 
+            const isTransferCandidateConfirmed = (c) => {
+                if (!c) return false;
+                const entry = confirmedTransfersMap[c.name];
+                if (!entry) return false;
+                const clubs = entry.clubs || [entry.from_club, entry.to_club];
+                return clubs.includes(c.from_club) && clubs.includes(c.to_club);
+            };
+
             // Clean candidate IDs and deduplicate
             const seenCandidateIds = new Set();
             rawCandidates.forEach((c, idx) => {
@@ -393,7 +401,7 @@
                         confirmed: true
                     };
                 }
-                if (confirmedTransfersMap[tc.name]) {
+                if (isTransferCandidateConfirmed(tc)) {
                     tc.status = 'confirmed';
                 }
             });
@@ -453,7 +461,7 @@
             const updateStats = () => {
                 // Pending counts for top tabs (inbox-zero workflow)
                 const pendingAliases = rawCandidates.filter(c => !isCandidateApproved(c) && !rejectedSet.has(c.id));
-                const pendingTransfers = rawTransferCandidates.filter(c => !confirmedTransfersMap[c.name] && !rejectedTransfersSet.has(c.id));
+                const pendingTransfers = rawTransferCandidates.filter(c => !isTransferCandidateConfirmed(c) && !rejectedTransfersSet.has(c.id));
                 
                 document.getElementById('badge-alias-count').textContent = pendingAliases.length.toLocaleString();
                 document.getElementById('badge-transfer-count').textContent = pendingTransfers.length.toLocaleString();
@@ -649,7 +657,7 @@
 
             const getFilteredTransferCandidates = () => {
                 return rawTransferCandidates.filter(c => {
-                    const isConfirmed = !!confirmedTransfersMap[c.name];
+                    const isConfirmed = isTransferCandidateConfirmed(c);
                     const isRejected = rejectedTransfersSet.has(c.id);
 
                     if (hideApproved && isConfirmed && currentTransferFilter !== 'confirmed') return false;
@@ -876,7 +884,7 @@
                     const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
 
                     container.innerHTML = pageSlice.map(c => {
-                        const isConfirmed = !!confirmedTransfersMap[c.name];
+                        const isConfirmed = isTransferCandidateConfirmed(c);
                         const isRejected = rejectedTransfersSet.has(c.id);
 
                         let cardBorder = 'border-slate-200';
@@ -1712,17 +1720,43 @@
                 const c = rawTransferCandidates.find(cand => cand.id === id);
                 if (!c) return;
 
+                const existing = confirmedTransfersMap[c.name];
+                const existingClubs = (existing && Array.isArray(existing.clubs)) ? existing.clubs : (existing ? [existing.from_club, existing.to_club] : []);
+                const mergedClubs = Array.from(new Set([...existingClubs, c.from_club, c.to_club]));
+
+                // Find all candidate records for this runner to find primary / latest club
+                const allForRunner = rawTransferCandidates.filter(rc => rc.name === c.name);
+                let primaryClub = c.to_club;
+                let maxYear = 0;
+                allForRunner.forEach(rc => {
+                    if (mergedClubs.includes(rc.to_club)) {
+                        const yr = rc.to_stats?.last_yr || 0;
+                        if (yr >= maxYear) {
+                            maxYear = yr;
+                            primaryClub = rc.to_club;
+                        }
+                    }
+                });
+
                 confirmedTransfersMap[c.name] = {
-                    gender: c.gender || 'M',
-                    clubs: [c.from_club, c.to_club],
-                    primary_club: c.to_club,
-                    from_club: c.from_club,
-                    to_club: c.to_club,
-                    transfer_season: c.handover_season || 'Unknown',
+                    gender: c.gender || existing?.gender || 'M',
+                    clubs: mergedClubs,
+                    primary_club: primaryClub,
+                    from_club: mergedClubs[0],
+                    to_club: primaryClub,
+                    transfer_season: c.handover_season || existing?.transfer_season || 'Unknown',
                     confirmed: true
                 };
                 c.status = 'confirmed';
                 rejectedTransfersSet.delete(c.id);
+
+                // Also mark any sister candidate pairs connecting any of mergedClubs as confirmed too
+                allForRunner.forEach(rc => {
+                    if (mergedClubs.includes(rc.from_club) && mergedClubs.includes(rc.to_club)) {
+                        rc.status = 'confirmed';
+                        rejectedTransfersSet.delete(rc.id);
+                    }
+                });
 
                 saveState();
 

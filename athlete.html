@@ -270,6 +270,9 @@
             if (targetGender) {
                 careerRecords = careerRecords.filter(r => r.gender === targetGender);
             }
+            if (isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0) {
+                careerRecords = careerRecords.filter(r => transferInfo.clubs.includes(r.club) || r.is_guest);
+            }
 
             // If verified transfer athlete:
             let selectedClubFilter = 'all'; // 'all' or specific club
@@ -288,7 +291,7 @@
                     if (!clubFirstYear[r.club] || yr < clubFirstYear[r.club]) clubFirstYear[r.club] = yr;
                     if (!clubLastYear[r.club] || yr > clubLastYear[r.club]) clubLastYear[r.club] = yr;
                 });
-                const chronClubs = Object.keys(clubCountsAll).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
+                const chronClubs = Object.keys(clubFirstYear).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
 
                 // Render visual pathway
                 transPath.innerHTML = chronClubs.map((cl, idx) => {
