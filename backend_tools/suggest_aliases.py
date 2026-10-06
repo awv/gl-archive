@@ -47,7 +47,7 @@ for key, data in summary.items():
             else:
                 scoped_data = dict(data)
                 scoped_data["scoped_club"] = data["clubs"][0] if data["clubs"] else "Unattached"
-                scoped_data["lookup_key"] = name  # unambiguous 1 club
+                scoped_data["lookup_key"] = f"{name} [{scoped_data['scoped_club']}]"
                 abbr_runners.append(scoped_data)
         else:
             full_runners.append(data)

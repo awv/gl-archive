@@ -238,17 +238,28 @@ def compile_database():
                 canonical_club = club_aliases.get(row["raw_club"], row["raw_club"])
 
                 # Check alias mapping: gender-and-club first, then club-only, then global
-                gender_club_key = f"{raw_name} [{sex_label}, {canonical_club}]"
-                club_key = f"{raw_name} [{canonical_club}]"
+                # Try exact, with-dot, and without-dot forms
+                raw_variants = [raw_name]
+                parts = raw_name.split()
+                if len(parts) >= 2 and len(parts[0].replace('.', '')) == 1:
+                    init = parts[0].replace('.', '').upper()
+                    rest = " ".join(parts[1:])
+                    raw_variants.append(f"{init}. {rest}")
+                    raw_variants.append(f"{init} {rest}")
 
-                if gender_club_key in athlete_corrections:
-                    canonical_name = athlete_corrections[gender_club_key]
-                elif club_key in athlete_corrections:
-                    canonical_name = athlete_corrections[club_key]
-                elif raw_name in athlete_corrections:
-                    canonical_name = athlete_corrections[raw_name]
-                else:
-                    canonical_name = raw_name
+                canonical_name = raw_name
+                for variant in raw_variants:
+                    gender_club_key = f"{variant} [{sex_label}, {canonical_club}]"
+                    club_key = f"{variant} [{canonical_club}]"
+                    if gender_club_key in athlete_corrections:
+                        canonical_name = athlete_corrections[gender_club_key]
+                        break
+                    elif club_key in athlete_corrections:
+                        canonical_name = athlete_corrections[club_key]
+                        break
+                    elif variant in athlete_corrections:
+                        canonical_name = athlete_corrections[variant]
+                        break
 
                 cat_code = row["cat_code"]
                 cat_counters[cat_code] += 1

@@ -27,7 +27,6 @@
     ],
     "clubs": [
       "Carmarthen & District Harriers AC",
-      "Newport Harriers Athletic Club",
       "Swansea Harriers Athletic Club",
       "University of Swansea"
     ],
@@ -35,9 +34,7 @@
       "2010/2011",
       "2011/2012",
       "2012/2013",
-      "2014/2015",
       "2017/2018",
-      "2019/2020",
       "2022/2023",
       "2023/2024",
       "2025/2026"
@@ -45,12 +42,9 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V40",
-      "V45",
-      "V50"
+      "U23"
     ],
-    "finishes": 24,
+    "finishes": 11,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -493,16 +487,15 @@
   "daniel bodman": {
     "canonical_name": "Daniel Bodman",
     "raw_names": [
+      "D Bodman",
       "D. Bodman",
       "Daniel Bodman"
     ],
     "clubs": [
       "Aberdare Valley AAC",
-      "Parc Bryn Bach Running Club",
-      "Pontypridd Roadents Athletic Club"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2010/2011",
       "2011/2012",
       "2012/2013",
       "2013/2014",
@@ -524,8 +517,8 @@
       "U23",
       "V35"
     ],
-    "finishes": 65,
-    "first_year": 2010,
+    "finishes": 61,
+    "first_year": 2011,
     "last_year": 2025
   },
   "badr alainzay": {
@@ -32271,8 +32264,7 @@
     ],
     "clubs": [
       "Parc Bryn Bach Running Club",
-      "Swansea Harriers Athletic Club",
-      "University of Swansea"
+      "Swansea Harriers Athletic Club"
     ],
     "seasons": [
       "2010/2011",
@@ -32292,12 +32284,11 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40",
       "V45"
     ],
-    "finishes": 42,
+    "finishes": 38,
     "first_year": 2010,
     "last_year": 2024
   },
@@ -39093,11 +39084,11 @@
   "lee aherne": {
     "canonical_name": "Lee Aherne",
     "raw_names": [
+      "L Aherne",
       "L. Aherne",
       "Lee Aherne"
     ],
     "clubs": [
-      "Lliswerry Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
@@ -39119,7 +39110,7 @@
       "V50",
       "V55"
     ],
-    "finishes": 43,
+    "finishes": 40,
     "first_year": 2013,
     "last_year": 2024
   },
@@ -67796,25 +67787,6 @@
     "first_year": 2021,
     "last_year": 2021
   },
-  "d bodman": {
-    "canonical_name": "D Bodman",
-    "raw_names": [
-      "D Bodman"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2021/2022"
-    ],
-    "gender": "M",
-    "categories": [
-      "Senior"
-    ],
-    "finishes": 1,
-    "first_year": 2021,
-    "last_year": 2021
-  },
   "j poulter": {
     "canonical_name": "J Poulter",
     "raw_names": [
@@ -69108,25 +69080,6 @@
     "gender": "M",
     "categories": [
       "V45"
-    ],
-    "finishes": 1,
-    "first_year": 2021,
-    "last_year": 2021
-  },
-  "l aherne": {
-    "canonical_name": "L Aherne",
-    "raw_names": [
-      "L Aherne"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2021/2022"
-    ],
-    "gender": "M",
-    "categories": [
-      "V55"
     ],
     "finishes": 1,
     "first_year": 2021,
@@ -106442,6 +106395,31 @@
     "first_year": 2018,
     "last_year": 2019
   },
+  "d. griffiths": {
+    "canonical_name": "D. Griffiths",
+    "raw_names": [
+      "D. Griffiths"
+    ],
+    "clubs": [
+      "Newport Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2014/2015",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40",
+      "V45",
+      "V50"
+    ],
+    "finishes": 13,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "t. phillips": {
     "canonical_name": "T. Phillips",
     "raw_names": [
@@ -114486,6 +114464,27 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "d. bodman": {
+    "canonical_name": "D. Bodman",
+    "raw_names": [
+      "D. Bodman"
+    ],
+    "clubs": [
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 5,
+    "first_year": 2010,
     "last_year": 2019
   },
   "s. wilson": {
@@ -144766,6 +144765,27 @@
     "first_year": 2016,
     "last_year": 2016
   },
+  "p. matthews": {
+    "canonical_name": "P. Matthews",
+    "raw_names": [
+      "P. Matthews"
+    ],
+    "clubs": [
+      "University of Swansea"
+    ],
+    "seasons": [
+      "2014/2015",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 4,
+    "first_year": 2014,
+    "last_year": 2016
+  },
   "c. ash": {
     "canonical_name": "C. Ash",
     "raw_names": [
@@ -150608,6 +150628,27 @@
     ],
     "finishes": 1,
     "first_year": 2016,
+    "last_year": 2016
+  },
+  "l. aherne": {
+    "canonical_name": "L. Aherne",
+    "raw_names": [
+      "L. Aherne"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45",
+      "V50"
+    ],
+    "finishes": 4,
+    "first_year": 2015,
     "last_year": 2016
   },
   "l. pretty": {
