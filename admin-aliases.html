@@ -201,8 +201,13 @@
 
             <!-- Quick Bulk Actions -->
             <div class="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
-                <div>
-                    Showing <span id="showing-count" class="font-bold text-slate-800">0</span> candidate pairs
+                <div class="flex items-center gap-3 flex-wrap">
+                    <span>Showing <span id="showing-count" class="font-bold text-slate-800">0</span> candidate pairs</span>
+                    <span class="text-slate-300">•</span>
+                    <label class="inline-flex items-center gap-1.5 cursor-pointer text-slate-600 select-none hover:text-slate-900">
+                        <input type="checkbox" id="toggle-hide-approved" class="rounded border-slate-300 text-slate-900 focus:ring-slate-900">
+                        <span>Hide approved items</span>
+                    </label>
                 </div>
                 <div class="flex items-center gap-3">
                     <button id="btn-approve-all-high" class="text-xs font-semibold text-emerald-700 hover:text-emerald-800 underline decoration-emerald-400">
@@ -314,6 +319,7 @@
 
             let currentFilter = 'all';
             let searchQuery = '';
+            let hideApproved = false;
             let currentPage = 1;
             const pageSize = 40;
 
@@ -362,6 +368,8 @@
                     const lk = c.lookup_key || c.legacy_name;
                     const isApproved = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
                     const isRejected = rejectedSet.has(c.id);
+
+                    if (hideApproved && isApproved && currentFilter !== 'approved') return false;
 
                     if (currentFilter === 'nicknames' && !c.is_nickname_variant) return false;
                     if (currentFilter === 'high' && c.confidence < 90) return false;
@@ -1044,9 +1052,20 @@
                 showToast(`Approved ${visible.length} high-confidence matches!`);
             });
 
+            const hideApprovedToggle = document.getElementById('toggle-hide-approved');
+            if (hideApprovedToggle) {
+                hideApprovedToggle.addEventListener('change', (e) => {
+                    hideApproved = e.target.checked;
+                    currentPage = 1;
+                    render();
+                });
+            }
+
             document.getElementById('btn-reset-filters').addEventListener('click', () => {
                 searchQuery = '';
                 document.getElementById('filter-search').value = '';
+                if (hideApprovedToggle) hideApprovedToggle.checked = false;
+                hideApproved = false;
                 currentFilter = 'all';
                 currentPage = 1;
                 document.querySelector('.filter-tab[data-filter="all"]').click();
