@@ -285,6 +285,48 @@
         </div>
     </div>
 
+    <!-- MANUAL NAME CHANGE MODAL -->
+    <div id="modal-namechange" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 class="font-serif font-bold text-lg text-slate-900 flex items-center gap-2">
+                    <span>💍</span>
+                    <span>Add Verified Name Change</span>
+                </h3>
+                <button id="modal-namechange-close" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+                Record a verified marriage or maiden surname transition (e.g. Alaw Beynon-Thomas ➔ Alaw Evans). The unified athlete dossier will automatically link all race results under the modern name.
+            </p>
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Maiden / Prior Name (Exact):</label>
+                    <input type="text" id="manual-nc-maiden" placeholder="e.g. Alaw Beynon-Thomas" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm font-medium">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Married / Primary Profile Name (Exact):</label>
+                    <input type="text" id="manual-nc-primary" placeholder="e.g. Alaw Evans" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm font-medium">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Club Name:</label>
+                    <input type="text" id="manual-nc-club" placeholder="e.g. Les Croupiers Running Club" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Effective Transition Season (optional):</label>
+                    <input type="text" id="manual-nc-season" placeholder="e.g. 2023/2024" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm font-mono">
+                </div>
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Verification Note (optional):</label>
+                    <input type="text" id="manual-nc-note" placeholder="e.g. Formerly competed as Alaw Beynon-Thomas" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm">
+                </div>
+            </div>
+            <div class="flex justify-end gap-2 pt-2">
+                <button id="modal-nc-cancel" class="px-3.5 py-1.5 text-xs text-slate-600 hover:bg-slate-100 rounded-lg">Cancel</button>
+                <button id="modal-nc-save" class="px-4 py-1.5 text-xs font-semibold text-white bg-purple-700 hover:bg-purple-800 rounded-lg shadow-sm">Save Verified Link</button>
+            </div>
+        </div>
+    </div>
+
     <!-- NOTIFICATION TOAST -->
     <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white text-xs font-medium px-4 py-2.5 rounded-lg shadow-xl transition-all duration-300">
         Action completed
@@ -607,8 +649,8 @@
                     const rejected = rejectedNameChangesSet.size;
 
                     const pending = pendingNameChanges.length;
-                    const cleanPending = pendingNameChanges.filter(c => c.overlap_count === 0 && c.confidence >= 80).length;
-                    const highPending = pendingNameChanges.filter(c => c.confidence >= 90).length;
+                    const cleanPending = pendingNameChanges.filter(c => c.overlap_count === 0).length;
+                    const highPending = pendingNameChanges.filter(c => c.confidence >= 85).length;
                     const conflictsPending = pendingNameChanges.filter(c => c.overlap_count > 0).length;
 
                     document.getElementById('stat-label-1').textContent = 'Name Change Pairs';
@@ -617,7 +659,7 @@
                     document.getElementById('stat-label-2').textContent = 'Clean Transitions (Pending)';
                     document.getElementById('stat-nicknames').textContent = cleanPending.toLocaleString();
 
-                    document.getElementById('stat-label-3').textContent = 'High Confidence (Pending)';
+                    document.getElementById('stat-label-3').textContent = 'High Conf. / Compound (Pending)';
                     document.getElementById('stat-high').textContent = highPending.toLocaleString();
 
                     document.getElementById('stat-label-4').textContent = 'Confirmed Name Changes';
@@ -664,8 +706,8 @@
                 } else {
                     container.innerHTML = `
                         <button data-filter="pending" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'pending' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Pending (<span id="count-nc-pending">0</span>)</button>
-                        <button data-filter="clean" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'clean' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-purple-700 hover:bg-purple-100'}">Clean Transitions (≥80%) (<span id="count-nc-clean">0</span>)</button>
-                        <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'high' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">High Confidence (≥90%) (<span id="count-nc-high">0</span>)</button>
+                        <button data-filter="high" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'high' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">High Confidence / Compound (≥85%) (<span id="count-nc-high">0</span>)</button>
+                        <button data-filter="clean" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'clean' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-purple-700 hover:bg-purple-100'}">Clean Transitions (0 Conflicts) (<span id="count-nc-clean">0</span>)</button>
                         <button data-filter="confirmed" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'confirmed' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-blue-700 hover:bg-blue-100'}">Confirmed (<span id="count-nc-confirmed">0</span>)</button>
                         <button data-filter="conflicts" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'conflicts' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-rose-700 hover:bg-rose-100'}">Overlapping Seasons (<span id="count-nc-conflicts">0</span>)</button>
                         <button data-filter="all" class="filter-tab px-3 py-1.5 rounded-lg transition-colors ${currentNameChangeFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">All (<span id="count-nc-all">0</span>)</button>
@@ -712,7 +754,9 @@
 
                     document.getElementById('page-title').textContent = 'Athlete Identity & Alias Review';
                     document.getElementById('page-subtitle').textContent = 'Resolve legacy abbreviated entries (2010–2022) to modern full runner profiles (2023–2026).';
-                    document.getElementById('btn-manual-add').classList.remove('hidden');
+                    const btnAdd = document.getElementById('btn-manual-add');
+                    btnAdd.textContent = '+ Add Alias Link';
+                    btnAdd.classList.remove('hidden');
                     document.getElementById('btn-copy-json').textContent = 'Copy JSON';
                     document.getElementById('btn-download-json').textContent = 'Download corrections.json';
                     document.getElementById('showing-unit').textContent = 'candidate pairs';
@@ -736,12 +780,14 @@
 
                     document.getElementById('page-title').textContent = 'Athlete Name Changes (Marriage / Maiden Names)';
                     document.getElementById('page-subtitle').textContent = 'Forensic detection and unification of female runners competing across maiden and married surnames.';
-                    document.getElementById('btn-manual-add').classList.add('hidden');
+                    const btnAdd = document.getElementById('btn-manual-add');
+                    btnAdd.textContent = '+ Add Name Change Link';
+                    btnAdd.classList.remove('hidden');
                     document.getElementById('btn-copy-json').textContent = 'Copy Name Changes JSON';
                     document.getElementById('btn-download-json').textContent = 'Download name_changes.json';
                     document.getElementById('showing-unit').textContent = 'name change candidates';
                     document.getElementById('hide-status-label').textContent = 'confirmed';
-                    document.getElementById('btn-approve-all-high').textContent = 'Confirm All Visible High Confidence (≥90%)';
+                    document.getElementById('btn-approve-all-high').textContent = 'Confirm All Visible High Confidence (≥85%)';
                 }
 
                 const newUrl = new URL(window.location);
@@ -814,8 +860,8 @@
                     if (hideApproved && isConfirmed && currentNameChangeFilter !== 'confirmed') return false;
 
                     if (currentNameChangeFilter === 'pending' && (isConfirmed || isRejected)) return false;
-                    if (currentNameChangeFilter === 'clean' && (c.overlap_count > 0 || c.confidence < 80 || (isConfirmed && hideApproved) || isRejected)) return false;
-                    if (currentNameChangeFilter === 'high' && (c.confidence < 90 || (isConfirmed && hideApproved) || isRejected)) return false;
+                    if (currentNameChangeFilter === 'clean' && (c.overlap_count > 0 || (isConfirmed && hideApproved) || isRejected)) return false;
+                    if (currentNameChangeFilter === 'high' && (c.confidence < 85 || (isConfirmed && hideApproved) || isRejected)) return false;
                     if (currentNameChangeFilter === 'confirmed' && !isConfirmed) return false;
                     if (currentNameChangeFilter === 'conflicts' && (c.overlap_count === 0 || (isConfirmed && hideApproved) || isRejected)) return false;
 
@@ -1255,7 +1301,7 @@
                                             </span>
                                         </div>
                                         <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2 flex-wrap">
-                                            <span>Athlete Name Change (e.g. Marriage / Maiden Name)</span>
+                                            <span class="font-semibold ${c.is_compound ? 'text-indigo-700' : 'text-slate-500'}">${c.is_compound ? '💍 Compound / Hyphenated Surname Transition' : '🔍 Speculative Career Timeline (Single Club Pair)'}</span>
                                             <span>•</span>
                                             <a href="athlete.html?name=${encodeURIComponent(c.later_name)}" target="_blank" class="text-purple-700 hover:underline font-semibold flex items-center gap-1">
                                                  <span>View Unified Profile</span>
@@ -2480,7 +2526,7 @@
                     render();
                     showToast(`Confirmed ${visible.length} high-confidence transfers!`);
                 } else {
-                    const visible = getFilteredNameChangeCandidates().filter(c => c.confidence >= 90 && !isNameChangeCandidateConfirmed(c));
+                    const visible = getFilteredNameChangeCandidates().filter(c => c.confidence >= 85 && !isNameChangeCandidateConfirmed(c));
                     if (!visible.length) {
                         showToast('No pending high-confidence name changes visible.');
                         return;
@@ -2598,11 +2644,18 @@
                 }
             });
 
-            // Manual Link Modal
+            // Manual Modals (Aliases & Name Changes)
             const manualModal = document.getElementById('modal-manual');
+            const nameChangeModal = document.getElementById('modal-namechange');
+
             document.getElementById('btn-manual-add').addEventListener('click', () => {
-                manualModal.classList.remove('hidden');
+                if (currentView === 'namechanges') {
+                    nameChangeModal.classList.remove('hidden');
+                } else {
+                    manualModal.classList.remove('hidden');
+                }
             });
+
             document.getElementById('modal-manual-close').addEventListener('click', () => {
                 manualModal.classList.add('hidden');
             });
@@ -2623,6 +2676,53 @@
                 document.getElementById('manual-full-input').value = '';
                 render();
                 showToast(`Saved manual link: ${leg} ➔ ${ful}`);
+            });
+
+            // Name Change Modal Listeners
+            document.getElementById('modal-namechange-close').addEventListener('click', () => {
+                nameChangeModal.classList.add('hidden');
+            });
+            document.getElementById('modal-nc-cancel').addEventListener('click', () => {
+                nameChangeModal.classList.add('hidden');
+            });
+            document.getElementById('modal-nc-save').addEventListener('click', () => {
+                const maiden = document.getElementById('manual-nc-maiden').value.trim();
+                const primary = document.getElementById('manual-nc-primary').value.trim();
+                const club = document.getElementById('manual-nc-club').value.trim();
+                const season = document.getElementById('manual-nc-season').value.trim() || '2023/2024';
+                const note = document.getElementById('manual-nc-note').value.trim() || `Formerly competed as ${maiden}`;
+
+                if (!maiden || !primary) {
+                    alert('Please provide both maiden and married names.');
+                    return;
+                }
+
+                confirmedNameChangesMap[maiden] = {
+                    primary_name: primary,
+                    maiden_name: maiden,
+                    club: club,
+                    effective_season: season,
+                    note: note,
+                    confirmed: true
+                };
+
+                rawNameChangeCandidates.forEach(c => {
+                    if ((c.earlier_name.toLowerCase() === maiden.toLowerCase() && c.later_name.toLowerCase() === primary.toLowerCase()) ||
+                        (c.later_name.toLowerCase() === maiden.toLowerCase() && c.earlier_name.toLowerCase() === primary.toLowerCase())) {
+                        c.status = 'confirmed';
+                        rejectedNameChangesSet.delete(c.id);
+                    }
+                });
+
+                saveState();
+                nameChangeModal.classList.add('hidden');
+                document.getElementById('manual-nc-maiden').value = '';
+                document.getElementById('manual-nc-primary').value = '';
+                document.getElementById('manual-nc-club').value = '';
+                document.getElementById('manual-nc-season').value = '';
+                document.getElementById('manual-nc-note').value = '';
+                render();
+                showToast(`Saved verified name change: ${maiden} ➔ ${primary}`);
             });
 
             // Admin Theme Toggle

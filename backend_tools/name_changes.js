@@ -1,0 +1,19 @@
+// Auto-generated verified name changes for GL Archive
+window.glNameChanges = {
+  "Alaw Beynon-Thomas": {
+    "primary_name": "Alaw Evans",
+    "maiden_name": "Alaw Beynon-Thomas",
+    "club": "Les Croupiers Running Club",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Alaw Beynon-Thomas",
+    "confirmed": true
+  },
+  "Antoinette Dumayne": {
+    "primary_name": "Antoinette Rose",
+    "maiden_name": "Antoinette Dumayne",
+    "club": "Lliswerry Runners",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Antoinette Dumayne",
+    "confirmed": true
+  }
+};
