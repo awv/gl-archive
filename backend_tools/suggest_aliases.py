@@ -292,7 +292,8 @@ for r in all_records:
         gender = r["gender"]
         
         if is_initial:
-            abbr_records_map[(raw, club, gender)].append(r)
+            canon_name = f"{first_token.upper()}. {' '.join(parts[1:])}"
+            abbr_records_map[(canon_name, club, gender)].append(r)
         else:
             full_records_map[(raw, club, gender)].append(r)
 
@@ -310,6 +311,7 @@ for (full_name, club, gender), recs in full_records_map.items():
 
 candidates = []
 seen_candidates = set()
+seen_cids = set()
 
 # ----------------------------------------------------
 # Pass A: Abbreviated Name ➔ Full Name Candidates
@@ -359,8 +361,14 @@ for (abbr_name, club, gender), recs in abbr_records_map.items():
             if p_check and p_check["formal"] == mod_name:
                 confidence = min(99, confidence + 5)
         
-        # Unique candidate ID
-        cid = f"{lookup_key.lower().replace(' ', '_').replace('.', '').replace('[', '').replace(']', '')}__{mod_name.lower().replace(' ', '_')}"
+        # Unique candidate ID (sanitized of quotes and special characters)
+        cid_base = re.sub(r'[^a-z0-9_]', '', f"{lookup_key.lower().replace(' ', '_')}__{mod_name.lower().replace(' ', '_')}")
+        cid = cid_base
+        counter = 1
+        while cid in seen_cids:
+            cid = f"{cid_base}_{counter}"
+            counter += 1
+        seen_cids.add(cid)
         
         # Check approved status
         is_approved = (
@@ -426,7 +434,13 @@ for (club, surname, gender), runner_list in full_by_club_surname.items():
                 nick_stats, formal_stats, shared_club=club, gender_match=True, nickname_info=pair_match
             )
             
-            cid = f"nick__{lookup_key.lower().replace(' ', '_').replace('.', '').replace('[', '').replace(']', '')}__{formal_name.lower().replace(' ', '_')}"
+            cid_base = re.sub(r'[^a-z0-9_]', '', f"nick__{lookup_key.lower().replace(' ', '_')}__{formal_name.lower().replace(' ', '_')}")
+            cid = cid_base
+            counter = 1
+            while cid in seen_cids:
+                cid = f"{cid_base}_{counter}"
+                counter += 1
+            seen_cids.add(cid)
             
             is_approved = (
                 existing_approved.get(lookup_key) == formal_name or
@@ -467,6 +481,12 @@ with open(CANDIDATES_PATH, "w", encoding="utf-8") as f:
 
 with open(CANDIDATES_JS_PATH, "w", encoding="utf-8") as f:
     f.write(f"// Auto-generated alias candidates with rich comparison analytics for admin review\nwindow.glAliasCandidates = {json.dumps(candidates)};\n")
+
+# Also ensure corrections.js is kept in sync with corrections.json
+if os.path.exists(EXISTING_CORRECTIONS_PATH):
+    CORRECTIONS_JS_PATH = os.path.join(SCRIPT_DIR, "corrections.js")
+    with open(CORRECTIONS_JS_PATH, "w", encoding="utf-8") as f:
+        f.write(f"// Auto-generated verified alias corrections map\nwindow.glCorrections = {json.dumps(existing_approved, indent=2)};\n")
 
 print(f"\nGenerated {len(candidates)} total candidate alias matches in:")
 print(f"  - {CANDIDATES_PATH}")

@@ -48,6 +48,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
     <script src="data.js"></script>
+    <script src="backend_tools/corrections.js"></script>
     <script src="backend_tools/alias_candidates.js"></script>
     <script src="backend_tools/transfer_candidates.js"></script>
     <script src="backend_tools/club_transfers.js"></script>
@@ -298,9 +299,14 @@
             let confirmedTransfersMap = {};
             let rejectedTransfersSet = new Set();
 
+            // Seed approvedMap from verified corrections.js if available
+            if (window.glCorrections && typeof window.glCorrections === 'object') {
+                Object.assign(approvedMap, window.glCorrections);
+            }
+
             try {
                 const saved = localStorage.getItem(STORAGE_KEY);
-                if (saved) approvedMap = JSON.parse(saved);
+                if (saved) Object.assign(approvedMap, JSON.parse(saved));
             } catch (e) {
                 console.error(e);
             }
@@ -321,20 +327,61 @@
                 });
             }
 
-            // Sync initial state from both compiled candidates and localStorage
-            rawCandidates.forEach(c => {
+            const normalizeLookupKey = (str) => {
+                if (!str) return '';
+                return str.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ').trim();
+            };
+
+            const isCandidateApproved = (c) => {
+                if (!c) return false;
+                if (c.status === 'approved') return true;
+                const lk = c.lookup_key || c.legacy_name;
+                if (!lk) return false;
+                if (approvedMap[lk]) return true;
+                if (c.legacy_name && approvedMap[c.legacy_name]) return true;
+
+                const normLk = normalizeLookupKey(lk);
+                const normLegacy = normalizeLookupKey(c.legacy_name);
+
+                for (const key of Object.keys(approvedMap)) {
+                    const normKey = normalizeLookupKey(key);
+                    if (normKey === normLk || normKey === normLegacy) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+
+            // Clean candidate IDs and deduplicate
+            const seenCandidateIds = new Set();
+            rawCandidates.forEach((c, idx) => {
+                let cleanId = (c.id || `alias_${idx}`).replace(/[^a-zA-Z0-9_-]/g, '_');
+                if (seenCandidateIds.has(cleanId)) {
+                    cleanId = `${cleanId}_${idx}`;
+                }
+                seenCandidateIds.add(cleanId);
+                c.id = cleanId;
+
                 const lk = c.lookup_key || c.legacy_name;
                 if (c.status === 'approved') {
                     if (!approvedMap[lk]) approvedMap[lk] = c.full_name;
                     if (!approvedMap[c.legacy_name]) approvedMap[c.legacy_name] = c.full_name;
                 }
-                if (approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name) {
+                if (isCandidateApproved(c)) {
                     c.status = 'approved';
                 }
             });
 
-            // Sync initial state from transfer candidates
-            rawTransferCandidates.forEach(tc => {
+            // Clean transfer candidate IDs and deduplicate
+            const seenTransferIds = new Set();
+            rawTransferCandidates.forEach((tc, idx) => {
+                let cleanId = (tc.id || `trans_${idx}`).replace(/[^a-zA-Z0-9_-]/g, '_');
+                if (seenTransferIds.has(cleanId)) {
+                    cleanId = `${cleanId}_${idx}`;
+                }
+                seenTransferIds.add(cleanId);
+                tc.id = cleanId;
+
                 if (tc.status === 'confirmed' && !confirmedTransfersMap[tc.name]) {
                     confirmedTransfersMap[tc.name] = {
                         gender: tc.gender,
@@ -353,7 +400,7 @@
 
             // If R. Gale is in legacy, ensure available for manual review
             if (!rawCandidates.some(c => c.legacy_name.toLowerCase() === 'r. gale')) {
-                rawCandidates.unshift({
+                const rGaleCand = {
                     id: 'r_gale__robert_gale',
                     lookup_key: 'R. Gale [Parc Bryn Bach Running Club]',
                     display_name: 'R. Gale [Parc Bryn Bach Running Club]',
@@ -372,8 +419,12 @@
                     legacy_finishes: 4,
                     full_finishes: 0,
                     gender: 'M',
-                    status: (approvedMap['R. Gale [Parc Bryn Bach Running Club]'] === 'Robert Gale' || approvedMap['R. Gale'] === 'Robert Gale') ? 'approved' : 'pending'
-                });
+                    status: 'pending'
+                };
+                if (isCandidateApproved(rGaleCand)) {
+                    rGaleCand.status = 'approved';
+                }
+                rawCandidates.unshift(rGaleCand);
             }
 
             // Navigation & View State
@@ -400,30 +451,30 @@
             };
 
             const updateStats = () => {
-                // Update badge counts on top tabs
-                document.getElementById('badge-alias-count').textContent = rawCandidates.length.toLocaleString();
-                document.getElementById('badge-transfer-count').textContent = rawTransferCandidates.length.toLocaleString();
+                // Pending counts for top tabs (inbox-zero workflow)
+                const pendingAliases = rawCandidates.filter(c => !isCandidateApproved(c) && !rejectedSet.has(c.id));
+                const pendingTransfers = rawTransferCandidates.filter(c => !confirmedTransfersMap[c.name] && !rejectedTransfersSet.has(c.id));
+                
+                document.getElementById('badge-alias-count').textContent = pendingAliases.length.toLocaleString();
+                document.getElementById('badge-transfer-count').textContent = pendingTransfers.length.toLocaleString();
 
                 if (currentView === 'aliases') {
                     const total = rawCandidates.length;
-                    const nicknames = rawCandidates.filter(c => c.is_nickname_variant).length;
-                    const high = rawCandidates.filter(c => c.confidence >= 90).length;
                     const approved = Object.keys(approvedMap).length;
                     const rejected = rejectedSet.size;
-                    const pending = rawCandidates.filter(c => {
-                        const lk = c.lookup_key || c.legacy_name;
-                        const isApp = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
-                        return !isApp && !rejectedSet.has(c.id);
-                    }).length;
+
+                    const pending = pendingAliases.length;
+                    const highPending = pendingAliases.filter(c => c.confidence >= 90).length;
+                    const nicknamesPending = pendingAliases.filter(c => c.is_nickname_variant).length;
 
                     document.getElementById('stat-label-1').textContent = 'Total Candidates';
                     document.getElementById('stat-total').textContent = total.toLocaleString();
 
-                    document.getElementById('stat-label-2').textContent = 'Nickname Variants';
-                    document.getElementById('stat-nicknames').textContent = nicknames.toLocaleString();
+                    document.getElementById('stat-label-2').textContent = 'Nickname Variants (Pending)';
+                    document.getElementById('stat-nicknames').textContent = nicknamesPending.toLocaleString();
 
-                    document.getElementById('stat-label-3').textContent = 'High Confidence (≥90%)';
-                    document.getElementById('stat-high').textContent = high.toLocaleString();
+                    document.getElementById('stat-label-3').textContent = 'High Confidence (Pending)';
+                    document.getElementById('stat-high').textContent = highPending.toLocaleString();
 
                     document.getElementById('stat-label-4').textContent = 'Approved Links';
                     document.getElementById('stat-approved').textContent = approved.toLocaleString();
@@ -434,9 +485,9 @@
                     const cAll = document.getElementById('count-all');
                     if (cAll) cAll.textContent = total;
                     const cNick = document.getElementById('count-nicknames');
-                    if (cNick) cNick.textContent = nicknames;
+                    if (cNick) cNick.textContent = nicknamesPending;
                     const cHigh = document.getElementById('count-high');
-                    if (cHigh) cHigh.textContent = high;
+                    if (cHigh) cHigh.textContent = highPending;
                     const cApp = document.getElementById('count-approved');
                     if (cApp) cApp.textContent = approved;
                     const cPend = document.getElementById('count-pending');
@@ -445,40 +496,39 @@
                     if (cRej) cRej.textContent = rejected;
                 } else {
                     const total = rawTransferCandidates.length;
-                    const clean = rawTransferCandidates.filter(c => c.overlap_count === 0 && c.confidence >= 80).length;
-                    const high = rawTransferCandidates.filter(c => c.confidence >= 90).length;
                     const confirmed = Object.keys(confirmedTransfersMap).length;
-                    const conflicts = rawTransferCandidates.filter(c => c.overlap_count > 0).length;
-                    const pending = rawTransferCandidates.filter(c => {
-                        const isConf = !!confirmedTransfersMap[c.name];
-                        return !isConf && !rejectedTransfersSet.has(c.id);
-                    }).length;
+                    const rejected = rejectedTransfersSet.size;
+
+                    const pending = pendingTransfers.length;
+                    const cleanPending = pendingTransfers.filter(c => c.overlap_count === 0 && c.confidence >= 80).length;
+                    const highPending = pendingTransfers.filter(c => c.confidence >= 90).length;
+                    const conflictsPending = pendingTransfers.filter(c => c.overlap_count > 0).length;
 
                     document.getElementById('stat-label-1').textContent = 'Multi-Club Pairs';
                     document.getElementById('stat-total').textContent = total.toLocaleString();
 
-                    document.getElementById('stat-label-2').textContent = 'Clean Transfers (≥80%)';
-                    document.getElementById('stat-nicknames').textContent = clean.toLocaleString();
+                    document.getElementById('stat-label-2').textContent = 'Clean Transfers (Pending)';
+                    document.getElementById('stat-nicknames').textContent = cleanPending.toLocaleString();
 
-                    document.getElementById('stat-label-3').textContent = 'High Confidence (≥90%)';
-                    document.getElementById('stat-high').textContent = high.toLocaleString();
+                    document.getElementById('stat-label-3').textContent = 'High Confidence (Pending)';
+                    document.getElementById('stat-high').textContent = highPending.toLocaleString();
 
                     document.getElementById('stat-label-4').textContent = 'Confirmed Transfers';
                     document.getElementById('stat-approved').textContent = confirmed.toLocaleString();
 
-                    document.getElementById('stat-label-5').textContent = 'Conflicting Overlaps';
-                    document.getElementById('stat-pending').textContent = conflicts.toLocaleString();
+                    document.getElementById('stat-label-5').textContent = 'Conflicting Overlaps (Pending)';
+                    document.getElementById('stat-pending').textContent = conflictsPending.toLocaleString();
 
                     const cPend = document.getElementById('count-transfers-pending');
                     if (cPend) cPend.textContent = pending;
                     const cClean = document.getElementById('count-transfers-clean');
-                    if (cClean) cClean.textContent = clean;
+                    if (cClean) cClean.textContent = cleanPending;
                     const cHigh = document.getElementById('count-transfers-high');
-                    if (cHigh) cHigh.textContent = high;
+                    if (cHigh) cHigh.textContent = highPending;
                     const cConf = document.getElementById('count-transfers-confirmed');
                     if (cConf) cConf.textContent = confirmed;
                     const cConflicts = document.getElementById('count-transfers-conflicts');
-                    if (cConflicts) cConflicts.textContent = conflicts;
+                    if (cConflicts) cConflicts.textContent = conflictsPending;
                     const cAll = document.getElementById('count-transfers-all');
                     if (cAll) cAll.textContent = total;
                 }
@@ -574,14 +624,13 @@
 
             const getFilteredCandidates = () => {
                 return rawCandidates.filter(c => {
-                    const lk = c.lookup_key || c.legacy_name;
-                    const isApproved = approvedMap[lk] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
+                    const isApproved = isCandidateApproved(c);
                     const isRejected = rejectedSet.has(c.id);
 
                     if (hideApproved && isApproved && currentFilter !== 'approved') return false;
 
-                    if (currentFilter === 'nicknames' && !c.is_nickname_variant) return false;
-                    if (currentFilter === 'high' && c.confidence < 90) return false;
+                    if (currentFilter === 'nicknames' && (!c.is_nickname_variant || (isApproved && hideApproved) || isRejected)) return false;
+                    if (currentFilter === 'high' && (c.confidence < 90 || (isApproved && hideApproved) || isRejected)) return false;
                     if (currentFilter === 'approved' && !isApproved) return false;
                     if (currentFilter === 'rejected' && !isRejected) return false;
                     if (currentFilter === 'pending' && (isApproved || isRejected)) return false;
@@ -606,10 +655,10 @@
                     if (hideApproved && isConfirmed && currentTransferFilter !== 'confirmed') return false;
 
                     if (currentTransferFilter === 'pending' && (isConfirmed || isRejected)) return false;
-                    if (currentTransferFilter === 'clean' && (c.overlap_count > 0 || c.confidence < 80)) return false;
-                    if (currentTransferFilter === 'high' && c.confidence < 90) return false;
+                    if (currentTransferFilter === 'clean' && (c.overlap_count > 0 || c.confidence < 80 || (isConfirmed && hideApproved) || isRejected)) return false;
+                    if (currentTransferFilter === 'high' && (c.confidence < 90 || (isConfirmed && hideApproved) || isRejected)) return false;
                     if (currentTransferFilter === 'confirmed' && !isConfirmed) return false;
-                    if (currentTransferFilter === 'conflicts' && c.overlap_count === 0) return false;
+                    if (currentTransferFilter === 'conflicts' && (c.overlap_count === 0 || (isConfirmed && hideApproved) || isRejected)) return false;
 
                     if (searchQuery) {
                         const q = searchQuery.toLowerCase();
@@ -706,7 +755,7 @@
                         const rightColHeader = c.is_nickname_variant ? `Formal Profile (${mod.name})` : 'Modern Candidate';
 
                         return `
-                            <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
+                            <div class="candidate-card bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
                                 
                                 <!-- Header Bar: Names, Lookup Key, Match Probability, Actions -->
                                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
@@ -729,11 +778,11 @@
                                             ${c.confidence}% Match
                                         </span>
                                         ${statusBadge}
-                                        <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
+                                        <button data-action="approve-alias" data-id="${c.id}" 
                                             class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
                                             ${isApproved ? 'Approved ✔' : 'Approve'}
                                         </button>
-                                        <button onclick="window.rejectCandidate('${c.id}')" 
+                                        <button data-action="reject-alias" data-id="${c.id}" 
                                             class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
                                             ${isRejected ? 'Rejected ✖' : 'Reject'}
                                         </button>
@@ -859,7 +908,7 @@
                         )).join('');
 
                         return `
-                            <div class="bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
+                            <div class="candidate-card bg-white border ${cardBorder} rounded-xl p-5 shadow-sm hover:shadow transition-all space-y-4" id="card-${c.id}">
                                 
                                 <!-- Header Bar -->
                                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-100 pb-3">
@@ -879,7 +928,7 @@
                                             <span>Career Transfer Record</span>
                                             <span>•</span>
                                             <a href="athlete.html?name=${encodeURIComponent(c.name)}" target="_blank" class="text-emerald-700 hover:underline font-semibold flex items-center gap-1">
-                                                <span>View Combined Profile</span>
+                                                 <span>View Combined Profile</span>
                                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                             </a>
                                         </div>
@@ -891,11 +940,11 @@
                                             ${c.confidence}% Match
                                         </span>
                                         ${statusBadge}
-                                        <button onclick="window.confirmTransfer('${c.name.replace(/'/g, "\\'")}', '${c.from_club.replace(/'/g, "\\'")}', '${c.to_club.replace(/'/g, "\\'")}', '${c.id}')" 
+                                        <button data-action="confirm-transfer" data-id="${c.id}" 
                                             class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isConfirmed ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
                                             ${isConfirmed ? 'Confirmed ✔' : 'Confirm Transfer'}
                                         </button>
-                                        <button onclick="window.rejectTransfer('${c.id}')" 
+                                        <button data-action="reject-transfer" data-id="${c.id}" 
                                             class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isRejected ? 'bg-slate-300 text-slate-700' : 'bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100'}">
                                             ${isRejected ? 'Marked Separate ✖' : 'Mark Separate'}
                                         </button>
@@ -1585,91 +1634,127 @@
                 renderSandbox();
             });
 
-            // Global Actions for Aliases
-            window.approveCandidate = (lookupKey, fullName, id) => {
-                approvedMap[lookupKey] = fullName;
-                rejectedSet.delete(id);
-                saveState();
-
-                const el = document.getElementById(`card-${id}`);
-                if (el && (hideApproved || currentFilter === 'pending')) {
-                    el.style.transition = 'all 0.22s ease-out';
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(-10px)';
-                    setTimeout(() => {
-                        render();
-                    }, 200);
-                } else {
-                    render();
-                }
-                showToast(`Approved: ${lookupKey} ➔ ${fullName}`);
-            };
-
-            window.rejectCandidate = (id) => {
+            // Action Controllers for Aliases
+            const handleApproveAlias = (id, cardEl) => {
                 const c = rawCandidates.find(cand => cand.id === id);
-                if (c) {
-                    const lk = c.lookup_key || c.legacy_name;
-                    if (approvedMap[lk]) delete approvedMap[lk];
-                    if (approvedMap[c.legacy_name]) delete approvedMap[c.legacy_name];
+                if (!c) return;
+
+                const lookupKey = c.lookup_key || c.legacy_name;
+                approvedMap[lookupKey] = c.full_name;
+                const noDot = lookupKey.replace(/\./g, '');
+                if (noDot !== lookupKey) approvedMap[noDot] = c.full_name;
+                if (c.legacy_name) {
+                    approvedMap[c.legacy_name] = c.full_name;
+                    const legNoDot = c.legacy_name.replace(/\./g, '');
+                    if (legNoDot !== c.legacy_name) approvedMap[legNoDot] = c.full_name;
                 }
-                rejectedSet.add(id);
+
+                rejectedSet.delete(c.id);
+                c.status = 'approved';
+
+                // Mark any sister candidate (e.g. A. Blair vs A Blair) as approved
+                const normLegacy = normalizeLookupKey(c.legacy_name);
+                rawCandidates.forEach(other => {
+                    if (normalizeLookupKey(other.legacy_name) === normLegacy &&
+                        other.full_name.toLowerCase() === c.full_name.toLowerCase()) {
+                        other.status = 'approved';
+                        rejectedSet.delete(other.id);
+                    }
+                });
+
                 saveState();
 
-                const el = document.getElementById(`card-${id}`);
-                if (el && (hideApproved || currentFilter === 'pending')) {
-                    el.style.transition = 'all 0.22s ease-out';
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(-10px)';
+                const shouldSlideOut = hideApproved || currentFilter === 'pending' || currentFilter === 'high' || currentFilter === 'nicknames';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
                     setTimeout(() => {
                         render();
                     }, 200);
                 } else {
                     render();
                 }
-                showToast(`Rejected match.`);
+                showToast(`Approved: ${c.legacy_name} ➔ ${c.full_name}`);
             };
 
-            // Global Actions for Transfers
-            window.confirmTransfer = (name, fromClub, toClub, id) => {
-                confirmedTransfersMap[name] = {
-                    gender: rawTransferCandidates.find(c => c.id === id)?.gender || 'M',
-                    clubs: [fromClub, toClub],
-                    primary_club: toClub,
-                    from_club: fromClub,
-                    to_club: toClub,
-                    transfer_season: rawTransferCandidates.find(c => c.id === id)?.handover_season || 'Unknown',
+            const handleRejectAlias = (id, cardEl) => {
+                const c = rawCandidates.find(cand => cand.id === id);
+                if (!c) return;
+
+                const lookupKey = c.lookup_key || c.legacy_name;
+                delete approvedMap[lookupKey];
+                delete approvedMap[c.legacy_name];
+                delete approvedMap[lookupKey.replace(/\./g, '')];
+                delete approvedMap[(c.legacy_name || '').replace(/\./g, '')];
+
+                c.status = 'pending';
+                rejectedSet.add(c.id);
+
+                saveState();
+
+                const shouldSlideOut = hideApproved || currentFilter === 'pending' || currentFilter === 'high' || currentFilter === 'nicknames';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        render();
+                    }, 200);
+                } else {
+                    render();
+                }
+                showToast(`Rejected candidate pair.`);
+            };
+
+            // Action Controllers for Transfers
+            const handleConfirmTransfer = (id, cardEl) => {
+                const c = rawTransferCandidates.find(cand => cand.id === id);
+                if (!c) return;
+
+                confirmedTransfersMap[c.name] = {
+                    gender: c.gender || 'M',
+                    clubs: [c.from_club, c.to_club],
+                    primary_club: c.to_club,
+                    from_club: c.from_club,
+                    to_club: c.to_club,
+                    transfer_season: c.handover_season || 'Unknown',
                     confirmed: true
                 };
-                rejectedTransfersSet.delete(id);
+                c.status = 'confirmed';
+                rejectedTransfersSet.delete(c.id);
+
                 saveState();
 
-                const el = document.getElementById(`card-${id}`);
-                if (el && (hideApproved || currentTransferFilter === 'pending')) {
-                    el.style.transition = 'all 0.22s ease-out';
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(-10px)';
+                const shouldSlideOut = hideApproved || currentTransferFilter === 'pending' || currentTransferFilter === 'high' || currentTransferFilter === 'clean';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
                     setTimeout(() => {
                         render();
                     }, 200);
                 } else {
                     render();
                 }
-                showToast(`Confirmed transfer: ${name} (${fromClub} ➔ ${toClub})`);
+                showToast(`Confirmed transfer: ${c.name} (${c.from_club} ➔ ${c.to_club})`);
             };
 
-            window.rejectTransfer = (id) => {
+            const handleRejectTransfer = (id, cardEl) => {
                 const c = rawTransferCandidates.find(cand => cand.id === id);
-                if (c && confirmedTransfersMap[c.name]) {
-                    delete confirmedTransfersMap[c.name];
-                }
-                rejectedTransfersSet.add(id);
+                if (!c) return;
+
+                delete confirmedTransfersMap[c.name];
+                c.status = 'pending';
+                rejectedTransfersSet.add(c.id);
+
                 saveState();
 
-                const el = document.getElementById(`card-${id}`);
-                if (el && (hideApproved || currentTransferFilter === 'pending')) {
-                    el.style.transition = 'all 0.22s ease-out';
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(-10px)';
+                const shouldSlideOut = hideApproved || currentTransferFilter === 'pending' || currentTransferFilter === 'high' || currentTransferFilter === 'clean';
+                if (cardEl && shouldSlideOut) {
+                    cardEl.style.transition = 'all 0.22s ease-out';
+                    cardEl.style.opacity = '0';
+                    cardEl.style.transform = 'translateY(-10px)';
                     setTimeout(() => {
                         render();
                     }, 200);
@@ -1677,6 +1762,59 @@
                     render();
                 }
                 showToast(`Marked as separate runners.`);
+            };
+
+            // Global Delegation Listener on Container
+            const candidatesContainer = document.getElementById('candidates-container');
+            if (candidatesContainer) {
+                candidatesContainer.addEventListener('click', (e) => {
+                    const btnApprove = e.target.closest('[data-action="approve-alias"]');
+                    if (btnApprove) {
+                        const id = btnApprove.dataset.id;
+                        const card = btnApprove.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleApproveAlias(id, card);
+                        return;
+                    }
+                    const btnReject = e.target.closest('[data-action="reject-alias"]');
+                    if (btnReject) {
+                        const id = btnReject.dataset.id;
+                        const card = btnReject.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleRejectAlias(id, card);
+                        return;
+                    }
+                    const btnConfirm = e.target.closest('[data-action="confirm-transfer"]');
+                    if (btnConfirm) {
+                        const id = btnConfirm.dataset.id;
+                        const card = btnConfirm.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleConfirmTransfer(id, card);
+                        return;
+                    }
+                    const btnRejectTrans = e.target.closest('[data-action="reject-transfer"]');
+                    if (btnRejectTrans) {
+                        const id = btnRejectTrans.dataset.id;
+                        const card = btnRejectTrans.closest('.candidate-card') || document.getElementById(`card-${id}`);
+                        handleRejectTransfer(id, card);
+                        return;
+                    }
+                });
+            }
+
+            // Backward compatibility window bindings
+            window.approveCandidate = (lookupKey, fullName, id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleApproveAlias(id, card);
+            };
+            window.rejectCandidate = (id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleRejectAlias(id, card);
+            };
+            window.confirmTransfer = (name, fromClub, toClub, id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleConfirmTransfer(id, card);
+            };
+            window.rejectTransfer = (id) => {
+                const card = document.getElementById(`card-${id}`);
+                handleRejectTransfer(id, card);
             };
 
             // Search input listener
@@ -1689,7 +1827,7 @@
             // Bulk Approve
             document.getElementById('btn-approve-all-high').addEventListener('click', () => {
                 if (currentView === 'aliases') {
-                    const visible = getFilteredCandidates().filter(c => c.confidence >= 90);
+                    const visible = getFilteredCandidates().filter(c => c.confidence >= 90 && !isCandidateApproved(c));
                     if (!visible.length) {
                         showToast('No pending high-confidence matches visible.');
                         return;
@@ -1697,27 +1835,36 @@
                     visible.forEach(c => {
                         const lk = c.lookup_key || c.legacy_name;
                         approvedMap[lk] = c.full_name;
+                        const noDot = lk.replace(/\./g, '');
+                        if (noDot !== lk) approvedMap[noDot] = c.full_name;
+                        if (c.legacy_name) {
+                            approvedMap[c.legacy_name] = c.full_name;
+                            const legNoDot = c.legacy_name.replace(/\./g, '');
+                            if (legNoDot !== c.legacy_name) approvedMap[legNoDot] = c.full_name;
+                        }
+                        c.status = 'approved';
                         rejectedSet.delete(c.id);
                     });
                     saveState();
                     render();
                     showToast(`Approved ${visible.length} high-confidence alias matches!`);
                 } else {
-                    const visible = getFilteredTransferCandidates().filter(c => c.confidence >= 90);
+                    const visible = getFilteredTransferCandidates().filter(c => c.confidence >= 90 && !confirmedTransfersMap[c.name]);
                     if (!visible.length) {
                         showToast('No pending high-confidence transfers visible.');
                         return;
                     }
                     visible.forEach(c => {
                         confirmedTransfersMap[c.name] = {
-                            gender: c.gender,
+                            gender: c.gender || 'M',
                             clubs: [c.from_club, c.to_club],
                             primary_club: c.to_club,
                             from_club: c.from_club,
                             to_club: c.to_club,
-                            transfer_season: c.handover_season,
+                            transfer_season: c.handover_season || 'Unknown',
                             confirmed: true
                         };
+                        c.status = 'confirmed';
                         rejectedTransfersSet.delete(c.id);
                     });
                     saveState();
@@ -1747,6 +1894,7 @@
                 }
                 currentPage = 1;
                 renderFilterPills();
+                updateStats();
                 render();
             });
 
