@@ -235,10 +235,20 @@ def compile_database():
 
             for row in parsed_rows:
                 raw_name = row["raw_name"]
-                
-                # Check alias mapping
-                canonical_name = athlete_corrections.get(raw_name, raw_name)
                 canonical_club = club_aliases.get(row["raw_club"], row["raw_club"])
+
+                # Check alias mapping: gender-and-club first, then club-only, then global
+                gender_club_key = f"{raw_name} [{sex_label}, {canonical_club}]"
+                club_key = f"{raw_name} [{canonical_club}]"
+
+                if gender_club_key in athlete_corrections:
+                    canonical_name = athlete_corrections[gender_club_key]
+                elif club_key in athlete_corrections:
+                    canonical_name = athlete_corrections[club_key]
+                elif raw_name in athlete_corrections:
+                    canonical_name = athlete_corrections[raw_name]
+                else:
+                    canonical_name = raw_name
 
                 cat_code = row["cat_code"]
                 cat_counters[cat_code] += 1

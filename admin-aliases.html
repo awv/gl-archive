@@ -313,7 +313,8 @@
                 const pageSlice = filtered.slice(startIdx, startIdx + pageSize);
 
                 container.innerHTML = pageSlice.map(c => {
-                    const isApproved = approvedMap[c.legacy_name] === c.full_name;
+                    const lookupKey = c.lookup_key || c.legacy_name;
+                    const isApproved = approvedMap[lookupKey] === c.full_name || approvedMap[c.legacy_name] === c.full_name;
                     const isRejected = rejectedSet.has(c.id);
 
                     let cardBorder = 'border-slate-200';
@@ -335,7 +336,7 @@
                             <!-- Names & Connection -->
                             <div class="space-y-1.5 flex-grow">
                                 <div class="flex items-center gap-3 flex-wrap">
-                                    <span class="text-base font-serif font-bold text-slate-900">${c.legacy_name}</span>
+                                    <span class="text-base font-serif font-bold text-slate-900">${c.display_name || c.legacy_name}</span>
                                     <span class="text-slate-400 font-bold">&rarr;</span>
                                     <span class="text-base font-serif font-bold text-slate-900">${c.full_name}</span>
                                     
@@ -360,7 +361,7 @@
 
                             <!-- Action Buttons -->
                             <div class="flex items-center gap-2 shrink-0 self-end md:self-center">
-                                <button onclick="window.approveCandidate('${c.legacy_name}', '${c.full_name}', '${c.id}')" 
+                                <button onclick="window.approveCandidate('${lookupKey.replace(/'/g, "\\'")}', '${c.full_name.replace(/'/g, "\\'")}', '${c.id}')" 
                                     class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isApproved ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'}">
                                     ${isApproved ? 'Approved ✔' : 'Approve'}
                                 </button>
@@ -375,18 +376,20 @@
             };
 
             // Global Actions
-            window.approveCandidate = (legacyName, fullName, id) => {
-                approvedMap[legacyName] = fullName;
+            window.approveCandidate = (lookupKey, fullName, id) => {
+                approvedMap[lookupKey] = fullName;
                 rejectedSet.delete(id);
                 saveState();
                 render();
-                showToast(`Approved: ${legacyName} ➔ ${fullName}`);
+                showToast(`Approved: ${lookupKey} ➔ ${fullName}`);
             };
 
             window.rejectCandidate = (id) => {
                 const c = rawCandidates.find(cand => cand.id === id);
-                if (c && approvedMap[c.legacy_name]) {
-                    delete approvedMap[c.legacy_name];
+                if (c) {
+                    const lk = c.lookup_key || c.legacy_name;
+                    if (approvedMap[lk]) delete approvedMap[lk];
+                    if (approvedMap[c.legacy_name]) delete approvedMap[c.legacy_name];
                 }
                 rejectedSet.add(id);
                 saveState();
@@ -422,7 +425,8 @@
                     return;
                 }
                 visible.forEach(c => {
-                    approvedMap[c.legacy_name] = c.full_name;
+                    const lk = c.lookup_key || c.legacy_name;
+                    approvedMap[lk] = c.full_name;
                     rejectedSet.delete(c.id);
                 });
                 saveState();

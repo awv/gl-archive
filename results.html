@@ -362,7 +362,7 @@
                             <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded w-max">
                                 ${groupLabels[grp]}
                             </span>
-                            <a href="athlete.html?name=${encodeURIComponent(winner.athlete)}" class="block text-xs font-serif font-bold text-slate-900 mt-1.5 hover:text-emerald-800 truncate">
+                            <a href="athlete.html?name=${encodeURIComponent(winner.athlete)}&club=${encodeURIComponent(winner.club)}&gender=${winner.gender}" class="block text-xs font-serif font-bold text-slate-900 mt-1.5 hover:text-emerald-800 truncate">
                                 ${winner.athlete}
                             </a>
                             <div class="flex justify-between items-center text-[10px] font-mono text-slate-500 mt-1">
@@ -413,7 +413,7 @@
                                 ${r.cat_pos > 0 ? `#${r.cat_pos}` : '—'}
                             </td>
                             <td class="py-2.5 px-4 font-serif font-bold text-slate-900">
-                                <a href="athlete.html?name=${encodeURIComponent(r.athlete)}" class="hover:text-emerald-800 hover:underline transition-colors">
+                                <a href="athlete.html?name=${encodeURIComponent(r.athlete)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="hover:text-emerald-800 hover:underline transition-colors">
                                     ${r.athlete}
                                 </a>
                                 ${r.is_guest ? '<span class="ml-1 text-[9px] font-mono text-amber-700 font-normal">[Guest]</span>' : ''}

@@ -244,7 +244,7 @@
 
             const stalwartsContainer = document.getElementById('stalwarts-grid');
             stalwartsContainer.innerHTML = topStalwarts.map((s, idx) => `
-                <a href="athlete.html?name=${encodeURIComponent(s.name)}" class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-slate-400 transition-all block group">
+                <a href="athlete.html?name=${encodeURIComponent(s.name)}&club=${encodeURIComponent(s.club)}" class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-slate-400 transition-all block group">
                     <div class="flex justify-between items-center">
                         <span class="text-[10px] font-mono font-bold text-slate-400 uppercase">#${idx + 1} All-Time</span>
                         <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-700">
@@ -309,7 +309,7 @@
                 }
 
                 heroDropdown.innerHTML = matches.map(r => `
-                    <a href="athlete.html?name=${encodeURIComponent(r.name)}" class="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group">
+                    <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}" class="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group">
                         <div>
                             <div class="text-sm font-serif font-bold text-slate-900 group-hover:text-emerald-900">
                                 ${r.name}

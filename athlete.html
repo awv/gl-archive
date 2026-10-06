@@ -62,6 +62,24 @@
                     <span>•</span>
                     <span id="athlete-finishes-span">0 RACES FINISHED</span>
                 </div>
+
+                <!-- MULTI-CLUB DISAMBIGUATION BANNER -->
+                <div id="disambiguation-banner" class="hidden pt-2">
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs space-y-2">
+                        <div class="flex items-center gap-2 font-semibold text-amber-900">
+                            <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Disambiguation: Multiple runners share this name across different clubs</span>
+                        </div>
+                        <p class="text-amber-800 text-[11px] leading-relaxed">
+                            Because historical records often used initials, athletes from different clubs may share this abbreviation. Filter by club below to isolate a specific runner's career:
+                        </p>
+                        <div id="disambiguation-pills" class="flex flex-wrap gap-2 pt-1">
+                            <!-- Populated with club pills -->
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- CAREER STATS METRIC GRID -->
@@ -100,7 +118,7 @@
         <!-- CLUB AFFILIATIONS TIMELINE -->
         <section class="space-y-2">
             <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-                Club Affiliations & Representations
+                Club Affiliations in this Profile
             </h3>
             <div id="athlete-clubs-list" class="flex flex-wrap gap-2">
                 <!-- Dynamically populated club pills -->
@@ -151,22 +169,72 @@
             const allData = window.glResults || [];
             const urlParams = new URLSearchParams(window.location.search);
             const targetName = urlParams.get('name');
+            let targetClub = urlParams.get('club');
+            const targetGender = urlParams.get('gender');
 
             if (!targetName) {
                 document.getElementById('athlete-name').textContent = "No Athlete Specified";
                 return;
             }
 
-            // Case-insensitive match on athlete name
+            // Find all raw matches by athlete name
             const q = targetName.toLowerCase();
-            const runnerRecords = allData.filter(r => r.athlete.toLowerCase() === q);
+            let allMatches = allData.filter(r => r.athlete.toLowerCase() === q);
 
-            if (runnerRecords.length === 0) {
+            if (allMatches.length === 0) {
                 document.getElementById('athlete-name').textContent = targetName;
                 document.getElementById('athlete-history-body').innerHTML = `
                     <tr><td colspan="9" class="py-12 text-center text-slate-400">No race finishes found in archive for this runner.</td></tr>
                 `;
                 return;
+            }
+
+            // Group all clubs that appear under this name
+            const clubCountsAll = {};
+            allMatches.forEach(r => {
+                clubCountsAll[r.club] = (clubCountsAll[r.club] || 0) + 1;
+            });
+            const uniqueClubs = Object.keys(clubCountsAll);
+
+            // Is this an abbreviated name?
+            const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
+
+            // If name is abbreviated and spans multiple clubs:
+            if (isAbbreviated && uniqueClubs.length > 1) {
+                const banner = document.getElementById('disambiguation-banner');
+                const pillsContainer = document.getElementById('disambiguation-pills');
+                banner.classList.remove('hidden');
+
+                // If no targetClub was provided in URL, default to the one with the most finishes
+                if (!targetClub) {
+                    uniqueClubs.sort((a, b) => clubCountsAll[b] - clubCountsAll[a]);
+                    targetClub = uniqueClubs[0];
+                }
+
+                pillsContainer.innerHTML = uniqueClubs.map(cl => {
+                    const isSelected = targetClub && cl.toLowerCase() === targetClub.toLowerCase();
+                    const activeClass = isSelected ? 'bg-slate-900 text-white font-bold' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300';
+                    return `
+                        <a href="athlete.html?name=${encodeURIComponent(targetName)}&club=${encodeURIComponent(cl)}" 
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs transition-colors shadow-sm ${activeClass}">
+                            <span>${cl}</span>
+                            <span class="text-[10px] font-mono opacity-80">(${clubCountsAll[cl]} races)</span>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            // Now filter records for this specific athlete profile
+            let runnerRecords = allMatches;
+            if (targetClub) {
+                runnerRecords = runnerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase());
+            }
+            if (targetGender) {
+                runnerRecords = runnerRecords.filter(r => r.gender === targetGender);
+            }
+
+            if (runnerRecords.length === 0) {
+                runnerRecords = allMatches; // fallback
             }
 
             // Sort records: Season descending, match descending
@@ -181,10 +249,10 @@
             const name = latest.athlete;
             const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
             
-            document.title = `GL Archive — ${name}`;
+            document.title = `GL Archive — ${name} (${latest.club})`;
             document.getElementById('athlete-name').textContent = name;
             document.getElementById('athlete-gender-badge').textContent = genderLabel;
-            document.getElementById('athlete-club-badge').textContent = latest.club;
+            document.getElementById('athlete-club-badge').textContent = targetClub || latest.club;
 
             // Seasons & span
             const seasons = [...new Set(runnerRecords.map(r => r.season))].sort();
@@ -214,13 +282,13 @@
             document.getElementById('stat-avg-pos').textContent = `#${avgPos}`;
             document.getElementById('stat-fastest-time').textContent = fastestTime;
 
-            // Clubs list
-            const clubCounts = {};
+            // Clubs list for this athlete profile
+            const profileClubs = {};
             runnerRecords.forEach(r => {
-                clubCounts[r.club] = (clubCounts[r.club] || 0) + 1;
+                profileClubs[r.club] = (profileClubs[r.club] || 0) + 1;
             });
             const clubsContainer = document.getElementById('athlete-clubs-list');
-            clubsContainer.innerHTML = Object.entries(clubCounts).map(([club, count]) => `
+            clubsContainer.innerHTML = Object.entries(profileClubs).map(([club, count]) => `
                 <a href="club.html?club=${encodeURIComponent(club)}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-sm">
                     <span class="text-xs font-semibold text-slate-900">${club}</span>
                     <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">${count} ${count === 1 ? 'race' : 'races'}</span>

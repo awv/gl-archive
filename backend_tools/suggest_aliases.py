@@ -21,6 +21,8 @@ with open(SUMMARY_PATH, "r", encoding="utf-8") as f:
     summary = json.load(f)
 
 # Classify into abbreviated vs full names
+# For abbreviated runners, explode by club if they have multiple clubs,
+# so that e.g. A. Lewis at Aberdare and A. Lewis at PBB are evaluated independently!
 abbr_runners = []
 full_runners = []
 
@@ -32,17 +34,28 @@ for key, data in summary.items():
     parts = name.split()
     if len(parts) >= 2:
         first_token = parts[0].replace('.', '')
-        # Check if first token is 1 letter (initial)
-        if len(first_token) == 1 and first_token.isalpha():
-            abbr_runners.append(data)
+        is_initial = len(first_token) == 1 and first_token.isalpha()
+        
+        if is_initial:
+            # If runner has multiple clubs, create club-scoped entries
+            if len(data["clubs"]) > 1:
+                for club in data["clubs"]:
+                    scoped_data = dict(data)
+                    scoped_data["scoped_club"] = club
+                    scoped_data["lookup_key"] = f"{name} [{club}]"
+                    abbr_runners.append(scoped_data)
+            else:
+                scoped_data = dict(data)
+                scoped_data["scoped_club"] = data["clubs"][0] if data["clubs"] else "Unattached"
+                scoped_data["lookup_key"] = name  # unambiguous 1 club
+                abbr_runners.append(scoped_data)
         else:
             full_runners.append(data)
 
-print(f"Total Abbreviated Names (e.g. 'R. Gale'): {len(abbr_runners)}")
-print(f"Total Full Names (e.g. 'Robert Gale'): {len(full_runners)}")
+print(f"Total Abbreviated Runner Entities (club-scoped): {len(abbr_runners)}")
+print(f"Total Full Names: {len(full_runners)}")
 
 # Index full runners by surname and initial
-# surname -> initial -> list of runners
 full_by_surname_initial = {}
 for fr in full_runners:
     name = fr["canonical_name"]
@@ -60,6 +73,8 @@ candidates = []
 
 for ar in abbr_runners:
     name = ar["canonical_name"]
+    lookup_key = ar["lookup_key"]
+    scoped_club = ar["scoped_club"]
     parts = name.split()
     initial = parts[0].replace('.', '').upper()
     surname = " ".join(parts[1:]).lower()
@@ -69,55 +84,51 @@ for ar in abbr_runners:
     if not potential_matches:
         continue
     
-    ar_clubs = set(ar["clubs"])
     ar_gender = ar["gender"]
     
     for fm in potential_matches:
-        # Must match gender
         if fm["gender"] != ar_gender:
             continue
         
         full_name = fm["canonical_name"]
         fm_clubs = set(fm["clubs"])
         
-        # Calculate shared clubs
-        shared = ar_clubs.intersection(fm_clubs)
-        shared_clubs_list = sorted(list(shared))
+        # Check club match
+        has_club_match = scoped_club in fm_clubs
         
-        # Confidence scoring
         confidence = 50
         confidence_reasons = []
         
-        if shared:
-            confidence += 40
-            confidence_reasons.append(f"Shared club(s): {', '.join(shared_clubs_list)}")
+        if has_club_match:
+            confidence += 45
+            confidence_reasons.append(f"Direct club match: {scoped_club}")
+        else:
+            # If this initial only has 1 club or different club
+            if len(ar["clubs"]) > 1:
+                # Abbreviated runner was seen at multiple clubs, and this isn't one of them -> skip
+                continue
+            confidence -= 15
+            confidence_reasons.append(f"Different clubs ({scoped_club} vs {', '.join(fm_clubs)})")
         
-        # Chronology check: Abbreviated active before/up to 2023, Full name active 2023 onwards
         if ar["first_year"] <= 2022 and fm["last_year"] >= 2023:
-            confidence += 5
-            confidence_reasons.append("Historical chronological link (Legacy era -> Modern era)")
-            
-        # Unique surname bonus
-        if len(potential_matches) == 1:
             confidence += 4
-            confidence_reasons.append("Unique match for this surname & initial")
-        elif len(potential_matches) > 1:
-            confidence -= 10
-            confidence_reasons.append(f"Multiple full names match this initial ({len(potential_matches)})")
+            confidence_reasons.append("Historical progression (Legacy ➔ Modern era)")
 
         confidence = min(max(confidence, 10), 99)
 
-        cid = f"{name.lower().replace(' ', '_').replace('.', '')}__{full_name.lower().replace(' ', '_')}"
-        status = "approved" if existing_approved.get(name) == full_name else "pending"
+        cid = f"{lookup_key.lower().replace(' ', '_').replace('.', '').replace('[', '').replace(']', '')}__{full_name.lower().replace(' ', '_')}"
+        status = "approved" if existing_approved.get(lookup_key) == full_name or existing_approved.get(name) == full_name else "pending"
 
         candidates.append({
             "id": cid,
+            "lookup_key": lookup_key,
             "legacy_name": name,
+            "display_name": lookup_key if "[" in lookup_key else name,
             "full_name": full_name,
             "confidence": confidence,
             "confidence_reasons": confidence_reasons,
-            "shared_clubs": shared_clubs_list,
-            "legacy_clubs": ar["clubs"],
+            "shared_clubs": [scoped_club] if has_club_match else [],
+            "legacy_clubs": [scoped_club],
             "full_clubs": fm["clubs"],
             "legacy_seasons": ar["seasons"],
             "full_seasons": fm["seasons"],
@@ -129,8 +140,8 @@ for ar in abbr_runners:
             "status": status
         })
 
-# Sort candidates by confidence descending, then surname
-candidates.sort(key=lambda c: (-c["confidence"], c["legacy_name"]))
+# Sort candidates by confidence descending, then name
+candidates.sort(key=lambda c: (-c["confidence"], c["display_name"]))
 
 with open(CANDIDATES_PATH, "w", encoding="utf-8") as f:
     json.dump(candidates, f, indent=2)
@@ -146,5 +157,4 @@ high_conf = [c for c in candidates if c["confidence"] >= 90]
 print(f"High-confidence candidate matches (>= 90%): {len(high_conf)}")
 print("\nSample top candidates:")
 for c in high_conf[:15]:
-    clubs_str = ", ".join(c["shared_clubs"]) if c["shared_clubs"] else "No direct club overlap"
-    print(f"  {c['legacy_name']:<18} ➔ {c['full_name']:<22} [{c['confidence']}%] ({clubs_str})")
+    print(f"  {c['display_name']:<42} ➔ {c['full_name']:<22} [{c['confidence']}%]")

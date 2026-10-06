@@ -190,7 +190,7 @@ function initSearchPalette() {
         if (matchedRunners.length > 0) {
             html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Athletes</div>`;
             html += matchedRunners.map(r => `
-                <a href="athlete.html?name=${encodeURIComponent(r.name)}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 transition-colors group">
+                <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 transition-colors group">
                     <div>
                         <div class="text-xs font-serif font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                             ${r.name}
