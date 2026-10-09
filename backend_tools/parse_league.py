@@ -209,6 +209,13 @@ def compile_database():
         venue = fixture["venue"]
         date = fixture["date"]
 
+        # Ensure date and venue are clean if fused together
+        if not date and venue:
+            date_match = re.match(r'^(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+\d{4})\s*(?:[-–—]\s*)?(.*)$', venue)
+            if date_match:
+                date = date_match.group(1).strip()
+                venue = date_match.group(2).strip() or "Chepstow Racecourse"
+
         yr_start = int(season.split('/')[0])
 
         for gender_key, sex_label in [("men", "M"), ("women", "F")]:

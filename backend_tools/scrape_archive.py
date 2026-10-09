@@ -77,11 +77,15 @@ def run_scraper(force=False):
             # Parse venue and date from description (e.g. "11 October 2025 - Margam Park, Port Talbot")
             desc_clean = re.sub(r'^\s*\d+\.\s*&nbsp;\s*', '', desc).strip()
             date_part, venue_part = "", ""
-            if " - " in desc_clean:
-                parts = desc_clean.split(" - ", 1)
+            if " - " in desc_clean or " – " in desc_clean or " — " in desc_clean:
+                parts = re.split(r'\s+[-–—]\s+', desc_clean, 1)
                 date_part, venue_part = parts[0].strip(), parts[1].strip()
             else:
-                venue_part = desc_clean
+                date_match = re.match(r'^(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+\d{4})\s*(?:[-–—]\s*)?(.*)$', desc_clean)
+                if date_match:
+                    date_part, venue_part = date_match.group(1).strip(), date_match.group(2).strip()
+                else:
+                    venue_part = desc_clean
 
             # Full URL to the match hub
             hub_url = urllib.parse.urljoin(BASE_URL, href)

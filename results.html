@@ -307,10 +307,22 @@
                 }
 
                 const sample = matchRecords[0];
+                let venueText = sample.venue || `Match ${selectedMatch}`;
+                let dateText = sample.date || '';
+
+                // Defensive check if date was prepended into venue string
+                if (!dateText && venueText) {
+                    const dateMatch = venueText.match(/^(\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]+\s+\d{4})\s*(?:[-–—]\s*)?(.*)$/);
+                    if (dateMatch) {
+                        dateText = dateMatch[1].trim();
+                        venueText = dateMatch[2].trim() || 'Chepstow Racecourse';
+                    }
+                }
+
                 document.getElementById('fixture-badge').textContent = `Match ${selectedMatch}`;
                 document.getElementById('fixture-season-text').textContent = `${sample.season} Season`;
-                document.getElementById('fixture-venue').textContent = sample.venue || `Match ${selectedMatch}`;
-                document.getElementById('fixture-date').textContent = sample.date || 'Date not recorded';
+                document.getElementById('fixture-venue').textContent = venueText;
+                document.getElementById('fixture-date').textContent = dateText || 'Date not recorded';
 
                 const menRecords = matchRecords.filter(r => r.gender === 'M');
                 const womenRecords = matchRecords.filter(r => r.gender === 'F');
