@@ -176,6 +176,7 @@ def compute_stats(name, club, records):
     cat_positions = [r["cat_pos"] for r in records if r.get("cat_pos", 0) > 0]
     seasons = sorted(list(set(r["season"] for r in records)))
     cats = sorted(list(set(r["age_cat"] for r in records)))
+    fixtures = set((r.get("season_key"), r.get("match")) for r in records)
     first_yr = min(int(s.split("/")[0]) for s in seasons)
     last_yr = max(int(s.split("/")[0]) for s in seasons)
     
@@ -186,6 +187,7 @@ def compute_stats(name, club, records):
         "seasons": seasons,
         "years_span": f"{first_yr}–{last_yr + 1} ({len(seasons)} {'season' if len(seasons) == 1 else 'seasons'})",
         "categories": cats,
+        "fixtures": fixtures,
         "avg_pos": round(sum(positions) / len(positions), 1) if positions else 0,
         "best_pos": min(positions) if positions else 0,
         "avg_cat_pos": round(sum(cat_positions) / len(cat_positions), 1) if cat_positions else 0,
@@ -199,10 +201,15 @@ def calculate_match_probability(leg_stats, mod_stats, shared_club, gender_match,
     if not gender_match:
         return 0, ["Gender mismatch"]
     
+    # 0. Fixture Conflict Hard Disqualification
+    overlap_fixtures = leg_stats.get("fixtures", set()).intersection(mod_stats.get("fixtures", set()))
+    if overlap_fixtures:
+        return 0, [f"Conflicting active fixtures ({len(overlap_fixtures)} matches run concurrently): verified separate runners"]
+
     score = 50.0
     reasons = []
 
-    # 0. Nickname / Diminutive match boost
+    # 0b. Nickname / Diminutive match boost
     if nickname_info:
         score += 25.0
         reasons.append(f"✔ Known diminutive nickname ({nickname_info['nick_first']} ➔ {nickname_info['formal_first']})")
@@ -239,7 +246,7 @@ def calculate_match_probability(leg_stats, mod_stats, shared_club, gender_match,
         elif cat_diff <= 12:
             score += 4.0
 
-    # 4. Age Progression & Category Coherence
+    # 4. Age Progression & Category Coherence (Hard Disqualification on Biological Regression)
     def parse_age(cat):
         if "U23" in cat: return 22
         if "Senior" in cat: return 28
@@ -252,12 +259,15 @@ def calculate_match_probability(leg_stats, mod_stats, shared_club, gender_match,
     if leg_ages and mod_ages:
         max_leg_age = max(leg_ages)
         min_mod_age = min(mod_ages)
-        if min_mod_age >= max_leg_age:
+        # Biological impossibility: earlier runner was older than later runner by > 5 years
+        if min_mod_age < max_leg_age - 5 and not (max_leg_age == 28 and min_mod_age == 22 and leg_stats["last_year"] >= mod_stats["first_year"]):
+            return 0, [f"Impossible age category regression ({'/'.join(leg_stats['categories'])} ➔ {'/'.join(mod_stats['categories'])}): biological mismatch"]
+        elif min_mod_age >= max_leg_age:
             score += 12.0
             reasons.append(f"Age trajectory verified ({'/'.join(leg_stats['categories'])} ➔ {'/'.join(mod_stats['categories'])})")
-        elif min_mod_age < max_leg_age - 5:
-            score -= 35.0
-            reasons.append(f"Age regression flag ({'/'.join(leg_stats['categories'])} vs {'/'.join(mod_stats['categories'])})")
+        else:
+            score -= 10.0
+            reasons.append(f"Minor age fluctuation ({'/'.join(leg_stats['categories'])} vs {'/'.join(mod_stats['categories'])})")
 
     # 5. Era Timeline Handover
     if leg_stats["last_year"] <= 2024 and mod_stats["first_year"] >= 2021:
@@ -356,10 +366,11 @@ for (abbr_name, club, gender), recs in abbr_records_map.items():
                     family_variants.append(other["name"])
         if family_variants:
             reasons.append(f"Name family candidate ({mod_name} / related: {', '.join(family_variants)})")
-            # If mod_name is the formal root, give priority boost
-            p_check = check_nickname_pair(mod_name, family_variants[0])
-            if p_check and p_check["formal"] == mod_name:
-                confidence = min(99, confidence + 5)
+            # If mod_name is the formal root, give priority boost only if not disqualified
+            if confidence > 0:
+                p_check = check_nickname_pair(mod_name, family_variants[0])
+                if p_check and p_check["formal"] == mod_name:
+                    confidence = min(99, confidence + 5)
         
         # Unique candidate ID (sanitized of quotes and special characters)
         cid_base = re.sub(r'[^a-z0-9_]', '', f"{lookup_key.lower().replace(' ', '_')}__{mod_name.lower().replace(' ', '_')}")
@@ -378,6 +389,9 @@ for (abbr_name, club, gender), recs in abbr_records_map.items():
         )
         status = "approved" if is_approved else "pending"
         
+        clean_leg = {k: v for k, v in leg_stats.items() if k != "fixtures"}
+        clean_mod = {k: v for k, v in mod_stats.items() if k != "fixtures"}
+        
         candidates.append({
             "id": cid,
             "lookup_key": lookup_key,
@@ -387,8 +401,8 @@ for (abbr_name, club, gender), recs in abbr_records_map.items():
             "is_nickname_variant": False,
             "confidence": confidence,
             "confidence_reasons": reasons,
-            "legacy": leg_stats,
-            "modern": mod_stats,
+            "legacy": clean_leg,
+            "modern": clean_mod,
             "gender": gender,
             "status": status
         })
@@ -449,6 +463,9 @@ for (club, surname, gender), runner_list in full_by_club_surname.items():
             )
             status = "approved" if is_approved else "pending"
             
+            clean_nick = {k: v for k, v in nick_stats.items() if k != "fixtures"}
+            clean_formal = {k: v for k, v in formal_stats.items() if k != "fixtures"}
+
             candidates.append({
                 "id": cid,
                 "lookup_key": lookup_key,
@@ -459,8 +476,8 @@ for (club, surname, gender), runner_list in full_by_club_surname.items():
                 "nickname_detail": f"{pair_match['nick_first']} ➔ {pair_match['formal_first']}",
                 "confidence": confidence,
                 "confidence_reasons": reasons,
-                "legacy": nick_stats,
-                "modern": formal_stats,
+                "legacy": clean_nick,
+                "modern": clean_formal,
                 "gender": gender,
                 "status": status
             })

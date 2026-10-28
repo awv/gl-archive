@@ -159,6 +159,7 @@ def analyze_transfers():
                     flags.append(f"Conflicting active fixtures ({overlap_count} matches run concurrently: likely separate runners)")
 
                 # 2. Age Progression
+                is_severe_regression = False
                 if age_diff >= 0:
                     score += 15.0
                     reasons.append(f"Valid age trajectory: {', '.join(ca['categories'])} ➔ {', '.join(cb['categories'])}")
@@ -170,8 +171,9 @@ def analyze_transfers():
                         score -= 10.0
                         flags.append(f"Minor age bracket regression ({', '.join(ca['categories'])} vs {', '.join(cb['categories'])})")
                 else:
-                    score -= 35.0
-                    flags.append(f"Severe age regression flag ({', '.join(ca['categories'])} vs {', '.join(cb['categories'])})")
+                    is_severe_regression = True
+                    score = 0.0
+                    flags.append(f"Impossible biological age regression: {', '.join(ca['categories'])} ➔ {', '.join(cb['categories'])} (cannot be same runner)")
 
                 # 3. Pace & Category Position Similarity
                 if ca["avg_pos"] > 0 and cb["avg_pos"] > 0:
@@ -198,7 +200,7 @@ def analyze_transfers():
                     score += 5.0
                     reasons.append(f"Strong sample ({ca['count']} races at {ca['club']} + {cb['count']} at {cb['club']})")
 
-                final_score = int(min(max(score, 5.0), 99.0))
+                final_score = int(min(max(score, 0.0), 99.0)) if not is_severe_regression else 0
 
                 candidate_id = f"transfer__{name.lower().replace(' ', '_')}__{ca['club'].lower()[:12].replace(' ', '_')}__{cb['club'].lower()[:12].replace(' ', '_')}"
 
@@ -214,9 +216,9 @@ def analyze_transfers():
                        (ca["club"] in c_info.get("clubs", []) and cb["club"] in c_info.get("clubs", [])):
                         is_confirmed = True
 
-                if is_confirmed:
+                if is_confirmed and not is_severe_regression and overlap_count == 0:
                     status = "confirmed"
-                elif overlap_count >= 1:
+                elif overlap_count >= 1 or is_severe_regression:
                     status = "separate_runners"
                 elif final_score >= 70:
                     status = "pending"

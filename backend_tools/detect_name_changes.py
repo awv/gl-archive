@@ -189,6 +189,12 @@ def analyze_name_changes():
                 best_pos_a = min(pos_a) if pos_a else 0
                 best_pos_b = min(pos_b) if pos_b else 0
 
+                # Gate 5: Hard Disqualification on Biological Age Regression
+                max_age_a = max(parse_age(c) for c in cat_a) if cat_a else 28
+                min_age_b = min(parse_age(c) for c in cat_b) if cat_b else 28
+                if not is_confirmed and min_age_b < max_age_a - 5 and not (max_age_a == 28 and min_age_b == 22 and yr_a[-1] >= yr_b[0]):
+                    continue  # Biological impossibility: later identity is younger than earlier identity
+
                 reasons = []
                 flags = []
 
@@ -206,8 +212,6 @@ def analyze_name_changes():
                         flags.append(f"{overlap_count} overlapping fixture (verify mid-season change)")
 
                     # Age check
-                    max_age_a = max(parse_age(c) for c in cat_a) if cat_a else 28
-                    min_age_b = min(parse_age(c) for c in cat_b) if cat_b else 28
                     if min_age_b >= max_age_a:
                         score += 3.0
                         reasons.append(f"Age progression consistent: {', '.join(cat_a)} ➔ {', '.join(cat_b)}")
@@ -223,8 +227,6 @@ def analyze_name_changes():
                         score += 4.0
                         reasons.append(f"Potential mid-season surname change during {overlapping_seasons[0]}")
 
-                    max_age_a = max(parse_age(c) for c in cat_a) if cat_a else 28
-                    min_age_b = min(parse_age(c) for c in cat_b) if cat_b else 28
                     if min_age_b >= max_age_a:
                         score += 4.0
                         reasons.append(f"Category consistency: {', '.join(cat_a)} ➔ {', '.join(cat_b)}")
