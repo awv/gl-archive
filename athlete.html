@@ -131,6 +131,23 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- NAMESAKE DISAMBIGUATION BANNER -->
+                <div id="namesake-banner" class="hidden pt-2">
+                    <div class="bg-sky-50/80 border border-sky-200/90 rounded-xl p-3.5 text-xs space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-sky-100 text-sky-800 border border-sky-200 px-2 py-1 rounded">
+                                👥 Same / Similar Name in Gwent League:
+                            </span>
+                            <div id="namesake-pills" class="flex flex-wrap items-center gap-1.5">
+                                <!-- Populated dynamically with namesake links -->
+                            </div>
+                        </div>
+                        <p class="text-sky-800/80 text-[11px] leading-relaxed">
+                            Athletes above share this name but are verified or identified as separate runners at different clubs. Click any runner to view their distinct profile.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <!-- CAREER STATS METRIC GRID -->
@@ -302,29 +319,91 @@
             // Is this an abbreviated name?
             const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
 
+            // If not a confirmed transfer, establish targetClub default
+            if (!isConfirmedTransfer) {
+                if (!targetClub && uniqueClubs.length > 0) {
+                    // Default to club with the most finishes
+                    const sortedClubs = [...uniqueClubs].sort((a, b) => (clubCountsAll[b] || 0) - (clubCountsAll[a] || 0));
+                    targetClub = sortedClubs[0];
+                }
+            }
+
+            // Recognized clubs for this athlete's primary profile
+            const recognizedClubs = new Set(
+                isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0
+                    ? transferInfo.clubs.map(c => c.toLowerCase())
+                    : (targetClub ? [targetClub.toLowerCase()] : uniqueClubs.map(c => c.toLowerCase()))
+            );
+
             // If name is abbreviated and spans multiple clubs:
             if (isAbbreviated && uniqueClubs.length > 1) {
                 const banner = document.getElementById('disambiguation-banner');
                 const pillsContainer = document.getElementById('disambiguation-pills');
-                banner.classList.remove('hidden');
+                if (banner && pillsContainer) {
+                    banner.classList.remove('hidden');
 
-                // If no targetClub was provided in URL, default to the one with the most finishes
-                if (!targetClub) {
-                    uniqueClubs.sort((a, b) => clubCountsAll[b] - clubCountsAll[a]);
-                    targetClub = uniqueClubs[0];
+                    pillsContainer.innerHTML = uniqueClubs.map(cl => {
+                        const isSelected = targetClub && cl.toLowerCase() === targetClub.toLowerCase();
+                        const activeClass = isSelected ? 'bg-slate-900 text-white font-bold' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300';
+                        return `
+                            <a href="athlete.html?name=${encodeURIComponent(targetName)}&club=${encodeURIComponent(cl)}" 
+                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs transition-colors shadow-sm ${activeClass}">
+                                <span>${cl}</span>
+                                <span class="text-[10px] font-mono opacity-80">(${clubCountsAll[cl]} races)</span>
+                            </a>
+                        `;
+                    }).join('');
                 }
+            }
 
-                pillsContainer.innerHTML = uniqueClubs.map(cl => {
-                    const isSelected = targetClub && cl.toLowerCase() === targetClub.toLowerCase();
-                    const activeClass = isSelected ? 'bg-slate-900 text-white font-bold' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300';
-                    return `
-                        <a href="athlete.html?name=${encodeURIComponent(targetName)}&club=${encodeURIComponent(cl)}" 
-                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs transition-colors shadow-sm ${activeClass}">
-                            <span>${cl}</span>
-                            <span class="text-[10px] font-mono opacity-80">(${clubCountsAll[cl]} races)</span>
-                        </a>
-                    `;
-                }).join('');
+            // Namesake Disambiguation Banner (for full-name runners who share this name across other clubs)
+            const namesakeMap = new Map();
+            allMatches.forEach(r => {
+                if (!r.club || r.is_guest) return;
+                const cLower = r.club.toLowerCase();
+                if (recognizedClubs.has(cLower)) return;
+
+                const nKey = `${cLower}|${r.gender || ''}`;
+                const yr = parseInt(r.season_key.split('_')[0], 10);
+                if (!namesakeMap.has(nKey)) {
+                    namesakeMap.set(nKey, {
+                        name: r.athlete,
+                        club: r.club,
+                        gender: r.gender,
+                        age_cat: r.age_cat || '',
+                        latestYear: yr,
+                        races: 1
+                    });
+                } else {
+                    const ex = namesakeMap.get(nKey);
+                    ex.races++;
+                    if (yr >= ex.latestYear) {
+                        ex.latestYear = yr;
+                        if (r.age_cat) ex.age_cat = r.age_cat;
+                    }
+                }
+            });
+
+            if (namesakeMap.size > 0 && !isAbbreviated) {
+                const nsBanner = document.getElementById('namesake-banner');
+                const nsPills = document.getElementById('namesake-pills');
+                if (nsBanner && nsPills) {
+                    nsBanner.classList.remove('hidden');
+                    const sortedNamesakes = Array.from(namesakeMap.values()).sort((a, b) => b.races - a.races);
+                    nsPills.innerHTML = sortedNamesakes.map(ns => {
+                        const catLabel = ns.age_cat ? ns.age_cat : '';
+                        const metaLabel = `${catLabel ? catLabel + ' • ' : ''}${ns.races} ${ns.races === 1 ? 'race' : 'races'}`;
+                        const genderParam = ns.gender ? `&gender=${encodeURIComponent(ns.gender)}` : '';
+                        return `
+                            <a href="athlete.html?name=${encodeURIComponent(ns.name)}&club=${encodeURIComponent(ns.club)}${genderParam}"
+                               class="inline-flex items-center gap-1.5 bg-white hover:bg-sky-50 border border-sky-300 text-sky-900 hover:text-sky-950 text-xs font-mono font-medium px-2.5 py-1 rounded-lg transition-colors shadow-xs">
+                                <span class="font-bold">${ns.club}</span>
+                                <span class="text-[10px] text-sky-700 opacity-90">(${metaLabel})</span>
+                                <span class="text-sky-500 font-bold">→</span>
+                            </a>
+                        `;
+                    }).join('');
+                }
             }
 
             // Determine records for this athlete
@@ -334,6 +413,8 @@
             }
             if (isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0) {
                 careerRecords = careerRecords.filter(r => transferInfo.clubs.includes(r.club) || r.is_guest);
+            } else if (targetClub) {
+                careerRecords = careerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase() || r.is_guest);
             }
 
             // If verified transfer athlete:
@@ -398,11 +479,6 @@
                 };
 
                 renderFilterPills();
-            } else {
-                // If not confirmed transfer, but targetClub was specified:
-                if (targetClub) {
-                    careerRecords = careerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase());
-                }
             }
 
             function renderAthleteProfile() {

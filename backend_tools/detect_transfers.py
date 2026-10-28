@@ -214,7 +214,14 @@ def analyze_transfers():
                        (ca["club"] in c_info.get("clubs", []) and cb["club"] in c_info.get("clubs", [])):
                         is_confirmed = True
 
-                status = "confirmed" if is_confirmed else "pending"
+                if is_confirmed:
+                    status = "confirmed"
+                elif overlap_count >= 1:
+                    status = "separate_runners"
+                elif final_score >= 70:
+                    status = "pending"
+                else:
+                    status = "unlikely"
 
                 candidates.append({
                     "id": candidate_id,
@@ -233,9 +240,9 @@ def analyze_transfers():
                     "flags": flags
                 })
 
-    # Sort candidates: Confirmed first, then Pending high confidence first, then lowest overlap
+    # Sort candidates: Confirmed first, then Pending high confidence first, then Separate Runners, then Unlikely
     candidates.sort(key=lambda c: (
-        0 if c["status"] == "confirmed" else (1 if c["status"] == "pending" else 2),
+        0 if c["status"] == "confirmed" else (1 if c["status"] == "pending" else (2 if c["status"] == "separate_runners" else 3)),
         c["overlap_count"],
         -c["confidence"],
         c["name"]

@@ -57,8 +57,23 @@ html.dark .bg-amber-50 {
     background-color: rgba(120, 53, 15, 0.25) !important;
 }
 
-html.dark .bg-blue-50 {
-    background-color: rgba(30, 58, 138, 0.25) !important;
+html.dark .bg-blue-50,
+html.dark .bg-sky-50,
+html.dark .bg-sky-50\/80 {
+    background-color: rgba(14, 116, 144, 0.2) !important;
+}
+
+html.dark .bg-purple-50,
+html.dark .bg-purple-50\/80 {
+    background-color: rgba(107, 33, 168, 0.2) !important;
+}
+
+html.dark .bg-sky-100 {
+    background-color: rgba(14, 116, 144, 0.35) !important;
+}
+
+html.dark .bg-purple-100 {
+    background-color: rgba(107, 33, 168, 0.35) !important;
 }
 
 /* Borders */
@@ -70,6 +85,18 @@ html.dark .border-slate-200\/80 {
 
 html.dark .border-slate-300 {
     border-color: #334155 !important;
+}
+
+html.dark .border-sky-200,
+html.dark .border-sky-200\/90,
+html.dark .border-sky-300 {
+    border-color: rgba(56, 189, 248, 0.3) !important;
+}
+
+html.dark .border-purple-100,
+html.dark .border-purple-200,
+html.dark .border-purple-200\/90 {
+    border-color: rgba(192, 132, 252, 0.3) !important;
 }
 
 html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
@@ -115,8 +142,24 @@ html.dark .text-amber-800 {
 }
 
 html.dark .text-blue-700,
-html.dark .text-blue-800 {
-    color: #60a5fa !important;
+html.dark .text-blue-800,
+html.dark .text-sky-700,
+html.dark .text-sky-800 {
+    color: #38bdf8 !important;
+}
+
+html.dark .text-sky-900,
+html.dark .text-sky-950 {
+    color: #e0f2fe !important;
+}
+
+html.dark .text-purple-700,
+html.dark .text-purple-800 {
+    color: #c084fc !important;
+}
+
+html.dark .text-purple-950 {
+    color: #f3e8ff !important;
 }
 
 /* Hover States */

@@ -10,5 +10,285 @@
     "to_club": "Parc Bryn Bach Running Club",
     "transfer_season": "2022/2023",
     "confirmed": true
+  },
+  "Haydn Hartnell": {
+    "gender": "M",
+    "clubs": [
+      "Islwyn Running Club",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Islwyn Running Club",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2018/2019",
+    "confirmed": true
+  },
+  "Jane Lewis": {
+    "gender": "F",
+    "clubs": [
+      "Fairwater Runners",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Fairwater Runners",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Marina Wright": {
+    "gender": "F",
+    "clubs": [
+      "Lliswerry Runners",
+      "Spirit of Monmouth RC"
+    ],
+    "primary_club": "Spirit of Monmouth RC",
+    "from_club": "Lliswerry Runners",
+    "to_club": "Spirit of Monmouth RC",
+    "transfer_season": "2018/2019",
+    "confirmed": true
+  },
+  "Emma King": {
+    "gender": "F",
+    "clubs": [
+      "Spirit of Monmouth RC",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Spirit of Monmouth RC",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2022/2023",
+    "confirmed": true
+  },
+  "Sarah Coote": {
+    "gender": "F",
+    "clubs": [
+      "Pont-y-Pwl & District Runners",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2017/2018",
+    "confirmed": true
+  },
+  "Sam Skelton": {
+    "gender": "M",
+    "clubs": [
+      "Lliswerry Runners",
+      "Caerleon RC"
+    ],
+    "primary_club": "Caerleon RC",
+    "from_club": "Lliswerry Runners",
+    "to_club": "Caerleon RC",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Carly Stone": {
+    "gender": "F",
+    "clubs": [
+      "Griffithstown Harriers AAC",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Griffithstown Harriers AAC",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2024/2025",
+    "confirmed": true
+  },
+  "Harri Like": {
+    "gender": "F",
+    "clubs": [
+      "Pont-y-Pwl & District Runners",
+      "Torfaen Runners",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2022/2023",
+    "confirmed": true
+  },
+  "Clare Patterson": {
+    "gender": "F",
+    "clubs": [
+      "Pont-y-Pwl & District Runners",
+      "Torfaen Runners",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2023/2024",
+    "confirmed": true
+  },
+  "Paul White": {
+    "gender": "M",
+    "clubs": [
+      "Pont-y-Pwl & District Runners",
+      "Caldicot Running Club",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Chris O'Brien": {
+    "gender": "M",
+    "clubs": [
+      "Pont-y-Pwl & District Runners",
+      "Fairwater Runners",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Stephen Williams": {
+    "gender": "M",
+    "clubs": [
+      "Parc Bryn Bach Running Club",
+      "Port Talbot Harriers & AC",
+      "Fairwater Runners"
+    ],
+    "primary_club": "Fairwater Runners",
+    "from_club": "Parc Bryn Bach Running Club",
+    "to_club": "Fairwater Runners",
+    "transfer_season": "2024/2025",
+    "confirmed": true
+  },
+  "Julian Howe": {
+    "gender": "M",
+    "clubs": [
+      "Spirit of Monmouth RC",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Spirit of Monmouth RC",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2024/2025",
+    "confirmed": true
+  },
+  "Ross Matthews": {
+    "gender": "M",
+    "clubs": [
+      "Chepstow Harriers",
+      "Cardiff Amateur Athletic Club",
+      "Islwyn Running Club",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Chepstow Harriers",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2021/2022",
+    "confirmed": true
+  },
+  "Martin Clayton": {
+    "gender": "M",
+    "clubs": [
+      "Chepstow Harriers",
+      "Pont-y-Pwl & District Runners",
+      "Westbury Harriers"
+    ],
+    "primary_club": "Westbury Harriers",
+    "from_club": "Chepstow Harriers",
+    "to_club": "Westbury Harriers",
+    "transfer_season": "2024/2025",
+    "confirmed": true
+  },
+  "Martin Croucher": {
+    "gender": "M",
+    "clubs": [
+      "Caerleon RC",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Caerleon RC",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Lorna Thurston": {
+    "gender": "F",
+    "clubs": [
+      "Caerleon RC",
+      "Lliswerry Runners"
+    ],
+    "primary_club": "Lliswerry Runners",
+    "from_club": "Caerleon RC",
+    "to_club": "Lliswerry Runners",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Mark Hobbs": {
+    "gender": "M",
+    "clubs": [
+      "Griffithstown Harriers AAC",
+      "Micky Morris Racing Team",
+      "Pont-y-Pwl & District Runners"
+    ],
+    "primary_club": "Pont-y-Pwl & District Runners",
+    "from_club": "Griffithstown Harriers AAC",
+    "to_club": "Pont-y-Pwl & District Runners",
+    "transfer_season": "2025/2026",
+    "confirmed": true
+  },
+  "Alun Wood": {
+    "gender": "M",
+    "clubs": [
+      "San Domenico Road Runners Club",
+      "Bridgend Athletic Club",
+      "Bristol and West Athletic Club",
+      "Islwyn Running Club",
+      "Pont-y-Pwl & District Runners",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "San Domenico Road Runners Club",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2024/2025",
+    "confirmed": true
+  },
+  "Sharon Woods": {
+    "gender": "F",
+    "clubs": [
+      "Griffithstown Harriers AAC",
+      "Pont-y-Pwl & District Runners",
+      "Parc Bryn Bach Running Club"
+    ],
+    "primary_club": "Parc Bryn Bach Running Club",
+    "from_club": "Griffithstown Harriers AAC",
+    "to_club": "Parc Bryn Bach Running Club",
+    "transfer_season": "2017/2018",
+    "confirmed": true
+  },
+  "Alaw Evans": {
+    "gender": "F",
+    "clubs": [
+      "Carmarthen & District Harriers AC",
+      "Swansea Harriers Athletic Club",
+      "Les Croupiers Running Club"
+    ],
+    "primary_club": "Les Croupiers Running Club",
+    "from_club": "Carmarthen & District Harriers AC",
+    "to_club": "Les Croupiers Running Club",
+    "transfer_season": "2021/2022",
+    "confirmed": true
+  },
+  "Alaw Beynon-Thomas": {
+    "gender": "F",
+    "clubs": [
+      "Carmarthen & District Harriers AC",
+      "Swansea Harriers Athletic Club",
+      "Les Croupiers Running Club"
+    ],
+    "primary_club": "Les Croupiers Running Club",
+    "from_club": "Carmarthen & District Harriers AC",
+    "to_club": "Les Croupiers Running Club",
+    "transfer_season": "2021/2022",
+    "confirmed": true
   }
 }
