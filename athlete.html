@@ -261,8 +261,6 @@
                 );
             }
 
-            const displayMasterName = (nameChangeInfo && nameChangeInfo.primary_name) ? nameChangeInfo.primary_name : targetName;
-
             // Set of all names associated with this athlete (maiden and married)
             const searchNames = new Set([q]);
             if (nameChangeInfo) {
@@ -270,8 +268,19 @@
                 if (nameChangeInfo.primary_name) searchNames.add(nameChangeInfo.primary_name.toLowerCase());
             }
 
-            // Find all raw matches across all recognized names for this athlete
-            let allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()));
+            // Find all raw matches across all recognized names for this athlete (matching canonical athlete or raw_name alias)
+            let allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()) || (r.raw_name && searchNames.has(r.raw_name.toLowerCase())));
+
+            // If targetName matched via raw_name or nickname, resolve canonical display name and expand search
+            if (!nameChangeInfo && allMatches.length > 0 && allMatches[0].athlete.toLowerCase() !== q) {
+                const canonicalFromRaw = allMatches[0].athlete;
+                searchNames.add(canonicalFromRaw.toLowerCase());
+                allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()) || (r.raw_name && searchNames.has(r.raw_name.toLowerCase())));
+            }
+
+            const displayMasterName = (nameChangeInfo && nameChangeInfo.primary_name) 
+                ? nameChangeInfo.primary_name 
+                : (allMatches.length > 0 ? allMatches[0].athlete : targetName);
 
             if (allMatches.length === 0) {
                 document.getElementById('athlete-name').textContent = targetName;

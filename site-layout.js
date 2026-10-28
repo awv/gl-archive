@@ -186,6 +186,7 @@ function initSearchPalette() {
         const results = window.glResults || [];
         const runnerMap = new Map();
         const clubMap = new Map();
+        const nameChanges = window.glNameChanges || {};
 
         results.forEach(r => {
             // Runner
@@ -198,13 +199,17 @@ function initSearchPalette() {
                         club: r.club,
                         finishes: 0,
                         gender: r.gender,
-                        latestSeason: r.season
+                        latestSeason: r.season,
+                        aliases: new Set()
                     });
                 }
                 const entry = runnerMap.get(key);
                 entry.finishes++;
                 entry.club = r.club; // latest club
                 entry.latestSeason = r.season;
+                if (r.raw_name && r.raw_name.toLowerCase() !== key) {
+                    entry.aliases.add(r.raw_name);
+                }
             }
 
             // Club
@@ -215,6 +220,16 @@ function initSearchPalette() {
                     clubMap.set(cKey, { club: club, finishes: 0 });
                 }
                 clubMap.get(cKey).finishes++;
+            }
+        });
+
+        // Add confirmed maiden/former names into runner aliases
+        Object.values(nameChanges).forEach(nc => {
+            if (nc.primary_name && nc.maiden_name) {
+                const pKey = nc.primary_name.toLowerCase();
+                if (runnerMap.has(pKey)) {
+                    runnerMap.get(pKey).aliases.add(nc.maiden_name);
+                }
             }
         });
 
@@ -233,10 +248,17 @@ function initSearchPalette() {
 
         emptyState.classList.add('hidden');
 
-        // Match runners
-        const matchedRunners = indexedRunners.filter(r => 
-            r.name.toLowerCase().includes(query) || r.club.toLowerCase().includes(query)
-        ).slice(0, 10);
+        // Match runners (primary name, club, or alias/maiden name)
+        const matchedRunners = indexedRunners.filter(r => {
+            if (r.name.toLowerCase().includes(query)) return true;
+            if (r.club.toLowerCase().includes(query)) return true;
+            if (r.aliases) {
+                for (const alias of r.aliases) {
+                    if (alias.toLowerCase().includes(query)) return true;
+                }
+            }
+            return false;
+        }).slice(0, 10);
 
         // Match clubs
         const matchedClubs = indexedClubs.filter(c => 
@@ -247,11 +269,22 @@ function initSearchPalette() {
 
         if (matchedRunners.length > 0) {
             html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Athletes</div>`;
-            html += matchedRunners.map(r => `
+            html += matchedRunners.map(r => {
+                let aliasBadge = '';
+                if (r.aliases && r.aliases.size > 0 && !r.name.toLowerCase().includes(query)) {
+                    for (const alias of r.aliases) {
+                        if (alias.toLowerCase().includes(query)) {
+                            aliasBadge = `<span class="text-[9px] font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200 ml-1.5 font-normal">matches: ${alias}</span>`;
+                            break;
+                        }
+                    }
+                }
+                return `
                 <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 transition-colors group">
                     <div>
-                        <div class="text-xs font-serif font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
-                            ${r.name}
+                        <div class="text-xs font-serif font-bold text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center">
+                            <span>${r.name}</span>
+                            ${aliasBadge}
                         </div>
                         <div class="text-[11px] text-slate-500 font-sans">
                             ${r.club}
@@ -263,6 +296,8 @@ function initSearchPalette() {
                         </span>
                     </div>
                 </a>
+            `;
+            }).join('');
             `).join('');
         }
 

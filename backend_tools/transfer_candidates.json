@@ -5741,7 +5741,7 @@
     "id": "transfer__arwel_davies__newport_harr__thornbury_ru",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Thornbury Running Club",
     "confidence": 99,
     "status": "pending",
@@ -5749,7 +5749,7 @@
     "overlapping_seasons": [],
     "handover_season": "2012/2013",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -6717,10 +6717,10 @@
     "flags": []
   },
   {
-    "id": "transfer__ceri_davies__sarn_helen_o__brecon_athle",
+    "id": "transfer__ceri_davies__sarn_helen__brecon_athle",
     "name": "Ceri Davies",
     "gender": "F",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Brecon Athletic Club",
     "confidence": 99,
     "status": "pending",
@@ -6728,7 +6728,7 @@
     "overlapping_seasons": [],
     "handover_season": "2025/2026",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 16,
       "seasons": [
         "2010/2011",
@@ -6779,7 +6779,7 @@
       "Break between clubs (8 seasons)",
       "Valid age trajectory: Senior, U23 \u2794 Senior",
       "Consistent standard (Avg #71.9 vs #95.8)",
-      "Strong sample (16 races at Sarn Helen Orienteering & R. C. + 4 at Brecon Athletic Club)"
+      "Strong sample (16 races at Sarn Helen + 4 at Brecon Athletic Club)"
     ],
     "flags": []
   },
@@ -7333,65 +7333,6 @@
       "Valid age trajectory: U23 \u2794 U23",
       "Very consistent pace (Avg #59.0 vs #47.0, \u0394 12.0)",
       "Category rank alignment (Avg #15.0 vs #11.0)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__chris_mcmillan__weston_athle__weston_athle",
-    "name": "Chris McMillan",
-    "gender": "M",
-    "from_club": "Weston Athletic Club",
-    "to_club": "Weston Athletics Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "Weston Athletic Club",
-      "count": 5,
-      "seasons": [
-        "2015/2016",
-        "2016/2017"
-      ],
-      "first_yr": 2015,
-      "last_yr": 2016,
-      "years_span": "2015\u20132017 (2 seasons)",
-      "avg_pos": 19.2,
-      "best_pos": 5,
-      "avg_cat_pos": 7.6,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Weston Athletics Club",
-      "count": 1,
-      "seasons": [
-        "2022/2023"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2022,
-      "years_span": "2022\u20132023 (1 season)",
-      "avg_pos": 12.0,
-      "best_pos": 12,
-      "avg_cat_pos": 1.0,
-      "best_cat_pos": 1,
-      "categories": [
-        "V35"
-      ],
-      "ages": [
-        35
-      ]
-    },
-    "reasons": [
-      "Break between clubs (6 seasons)",
-      "Valid age trajectory: Senior \u2794 V35",
-      "Very consistent pace (Avg #19.2 vs #12.0, \u0394 7.2)"
     ],
     "flags": []
   },
@@ -8413,76 +8354,6 @@
     "flags": []
   },
   {
-    "id": "transfer__darryn_mcatee__newport_harr__newport_harr",
-    "name": "Darryn McAtee",
-    "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
-    "to_club": "Newport Harriers",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2021/2022",
-    "from_stats": {
-      "club": "Newport Harriers Athletic Club",
-      "count": 32,
-      "seasons": [
-        "2010/2011",
-        "2011/2012",
-        "2012/2013",
-        "2013/2014",
-        "2014/2015",
-        "2015/2016",
-        "2016/2017",
-        "2017/2018"
-      ],
-      "first_yr": 2010,
-      "last_yr": 2017,
-      "years_span": "2010\u20132018 (8 seasons)",
-      "avg_pos": 219.6,
-      "best_pos": 114,
-      "avg_cat_pos": 20.1,
-      "best_cat_pos": 9,
-      "categories": [
-        "V45",
-        "V50",
-        "V55"
-      ],
-      "ages": [
-        45,
-        50,
-        55
-      ]
-    },
-    "to_stats": {
-      "club": "Newport Harriers",
-      "count": 4,
-      "seasons": [
-        "2021/2022"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2021,
-      "years_span": "2021\u20132022 (1 season)",
-      "avg_pos": 283.2,
-      "best_pos": 207,
-      "avg_cat_pos": 16.2,
-      "best_cat_pos": 13,
-      "categories": [
-        "V60"
-      ],
-      "ages": [
-        60
-      ]
-    },
-    "reasons": [
-      "Break between clubs (4 seasons)",
-      "Valid age trajectory: V45, V50, V55 \u2794 V60",
-      "Category rank alignment (Avg #20.1 vs #16.2)",
-      "Strong sample (32 races at Newport Harriers Athletic Club + 4 at Newport Harriers)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__dewi_griffiths__carmarthen_&__university_o",
     "name": "Dewi Griffiths",
     "gender": "M",
@@ -8610,10 +8481,10 @@
     "flags": []
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__san_domenico",
+    "id": "transfer__dominic_davies__sarn_helen__san_domenico",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "San Domenico Road Runners Club",
     "confidence": 99,
     "status": "pending",
@@ -8621,7 +8492,7 @@
     "overlapping_seasons": [],
     "handover_season": "2013/2014",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -8672,10 +8543,10 @@
     "flags": []
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__pembrokeshir",
+    "id": "transfer__dominic_davies__sarn_helen__pembrokeshir",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Pembrokeshire Harriers",
     "confidence": 99,
     "status": "pending",
@@ -8683,7 +8554,7 @@
     "overlapping_seasons": [],
     "handover_season": "2015/2016",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -12748,64 +12619,6 @@
     "flags": []
   },
   {
-    "id": "transfer__kevin_bale__weston_athle__weston_athle",
-    "name": "Kevin Bale",
-    "gender": "M",
-    "from_club": "Weston Athletics Club",
-    "to_club": "Weston Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Weston Athletics Club",
-      "count": 1,
-      "seasons": [
-        "2021/2022"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2021,
-      "years_span": "2021\u20132022 (1 season)",
-      "avg_pos": 40.0,
-      "best_pos": 40,
-      "avg_cat_pos": 10.0,
-      "best_cat_pos": 10,
-      "categories": [
-        "V35"
-      ],
-      "ages": [
-        35
-      ]
-    },
-    "to_stats": {
-      "club": "Weston Athletic Club",
-      "count": 1,
-      "seasons": [
-        "2024/2025"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2024,
-      "years_span": "2024\u20132025 (1 season)",
-      "avg_pos": 80.0,
-      "best_pos": 80,
-      "avg_cat_pos": 5.0,
-      "best_cat_pos": 5,
-      "categories": [
-        "V40"
-      ],
-      "ages": [
-        40
-      ]
-    },
-    "reasons": [
-      "Clean handover with 3-year break (2021\u20132022 \u2794 2024\u20132025)",
-      "Valid age trajectory: V35 \u2794 V40",
-      "Consistent standard (Avg #40.0 vs #80.0)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__kym_price__cardiff_univ__parc_bryn_ba",
     "name": "Kym Price",
     "gender": "F",
@@ -16345,7 +16158,7 @@
     "name": "Randal Jones",
     "gender": "F",
     "from_club": "Cardiff Amateur Athletic Club",
-    "to_club": "Newport Harriers Athletic Club",
+    "to_club": "Newport Harriers",
     "confidence": 99,
     "status": "pending",
     "overlap_count": 0,
@@ -16372,7 +16185,7 @@
       ]
     },
     "to_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 2,
       "seasons": [
         "2011/2012",
@@ -16403,7 +16216,7 @@
     "id": "transfer__randal_jones__newport_harr__forest_of_de",
     "name": "Randal Jones",
     "gender": "F",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Forest of Dean Athletic Club",
     "confidence": 99,
     "status": "pending",
@@ -16411,7 +16224,7 @@
     "overlapping_seasons": [],
     "handover_season": "2019/2020",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 2,
       "seasons": [
         "2011/2012",
@@ -18126,64 +17939,6 @@
     "flags": []
   },
   {
-    "id": "transfer__steve_lovell__weston_athle__weston_athle",
-    "name": "Steve Lovell",
-    "gender": "M",
-    "from_club": "Weston Athletics Club",
-    "to_club": "Weston Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Weston Athletics Club",
-      "count": 1,
-      "seasons": [
-        "2022/2023"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2022,
-      "years_span": "2022\u20132023 (1 season)",
-      "avg_pos": 211.0,
-      "best_pos": 211,
-      "avg_cat_pos": 66.0,
-      "best_cat_pos": 66,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Weston Athletic Club",
-      "count": 1,
-      "seasons": [
-        "2024/2025"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2024,
-      "years_span": "2024\u20132025 (1 season)",
-      "avg_pos": 198.0,
-      "best_pos": 198,
-      "avg_cat_pos": 61.0,
-      "best_cat_pos": 61,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean handover with 2-year break (2022\u20132023 \u2794 2024\u20132025)",
-      "Valid age trajectory: Senior \u2794 Senior",
-      "Very consistent pace (Avg #211.0 vs #198.0, \u0394 13.0)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__stuart_nash__chepstow_har__wells_city_h",
     "name": "Stuart Nash",
     "gender": "M",
@@ -18432,10 +18187,10 @@
     "flags": []
   },
   {
-    "id": "transfer__svetlana_jones__sarn_helen_o__3m_gorseinon",
+    "id": "transfer__svetlana_jones__sarn_helen__3m_gorseinon",
     "name": "Svetlana Jones",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "3M Gorseinon Road Runners",
     "confidence": 99,
     "status": "pending",
@@ -18443,7 +18198,7 @@
     "overlapping_seasons": [],
     "handover_season": "2021/2022",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -18794,7 +18549,7 @@
     "id": "transfer__arwel_davies__newport_harr__white_rock_r",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "White Rock Runners",
     "confidence": 98,
     "status": "pending",
@@ -18802,7 +18557,7 @@
     "overlapping_seasons": [],
     "handover_season": "2018/2019",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -20579,10 +20334,10 @@
     "flags": []
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__neath_harrie",
+    "id": "transfer__dominic_davies__sarn_helen__neath_harrie",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Neath Harriers",
     "confidence": 95,
     "status": "pending",
@@ -20592,7 +20347,7 @@
     ],
     "handover_season": "2010/2011",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -21020,10 +20775,10 @@
     "flags": []
   },
   {
-    "id": "transfer__svetlana_jones__sarn_helen_o__aberdare_val",
+    "id": "transfer__svetlana_jones__sarn_helen__aberdare_val",
     "name": "Svetlana Jones",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Aberdare Valley AAC",
     "confidence": 95,
     "status": "pending",
@@ -21031,7 +20786,7 @@
     "overlapping_seasons": [],
     "handover_season": "2013/2014",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -21293,72 +21048,10 @@
     ]
   },
   {
-    "id": "transfer__abed_teweldebrhan__newport_harr__newport_harr",
-    "name": "Abed Teweldebrhan",
-    "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
-    "to_club": "Newport Harriers",
-    "confidence": 90,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2025/2026",
-    "from_stats": {
-      "club": "Newport Harriers Athletic Club",
-      "count": 9,
-      "seasons": [
-        "2015/2016",
-        "2016/2017",
-        "2017/2018",
-        "2018/2019"
-      ],
-      "first_yr": 2015,
-      "last_yr": 2018,
-      "years_span": "2015\u20132019 (4 seasons)",
-      "avg_pos": 6.2,
-      "best_pos": 2,
-      "avg_cat_pos": 2.8,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Newport Harriers",
-      "count": 1,
-      "seasons": [
-        "2025/2026"
-      ],
-      "first_yr": 2025,
-      "last_yr": 2025,
-      "years_span": "2025\u20132026 (1 season)",
-      "avg_pos": 71.0,
-      "best_pos": 71,
-      "avg_cat_pos": 30.0,
-      "best_cat_pos": 30,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Break between clubs (7 seasons)",
-      "Valid age trajectory: Senior, U23 \u2794 Senior"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__arwel_davies__newport_harr__llanelli_ama",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Llanelli Amateur Athletic Club",
     "confidence": 90,
     "status": "pending",
@@ -21366,7 +21059,7 @@
     "overlapping_seasons": [],
     "handover_season": "2016/2017",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -21415,7 +21108,7 @@
     "id": "transfer__arwel_davies__newport_harr__amman_valley",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Amman Valley Harriers",
     "confidence": 90,
     "status": "pending",
@@ -21423,7 +21116,7 @@
     "overlapping_seasons": [],
     "handover_season": "2024/2025",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -21813,10 +21506,10 @@
     "flags": []
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__parc_bryn_ba",
+    "id": "transfer__dominic_davies__sarn_helen__parc_bryn_ba",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Parc Bryn Bach Running Club",
     "confidence": 90,
     "status": "pending",
@@ -21824,7 +21517,7 @@
     "overlapping_seasons": [],
     "handover_season": "2022/2023",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -22234,72 +21927,6 @@
     "flags": []
   },
   {
-    "id": "transfer__katie_gormley__weston_athle__weston_athle",
-    "name": "Katie Gormley",
-    "gender": "F",
-    "from_club": "Weston Athletic Club",
-    "to_club": "Weston Athletics Club",
-    "confidence": 90,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2021/2022",
-    "from_stats": {
-      "club": "Weston Athletic Club",
-      "count": 4,
-      "seasons": [
-        "2014/2015",
-        "2018/2019",
-        "2024/2025"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2024,
-      "years_span": "2014\u20132025 (3 seasons)",
-      "avg_pos": 80.2,
-      "best_pos": 50,
-      "avg_cat_pos": 18.5,
-      "best_cat_pos": 8,
-      "categories": [
-        "Senior",
-        "V35",
-        "V40"
-      ],
-      "ages": [
-        28,
-        35,
-        40
-      ]
-    },
-    "to_stats": {
-      "club": "Weston Athletics Club",
-      "count": 2,
-      "seasons": [
-        "2021/2022",
-        "2022/2023"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2022,
-      "years_span": "2021\u20132023 (2 seasons)",
-      "avg_pos": 64.5,
-      "best_pos": 62,
-      "avg_cat_pos": 12.0,
-      "best_cat_pos": 12,
-      "categories": [
-        "V35"
-      ],
-      "ages": [
-        35
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2014\u20132025 \u2794 2021\u20132023) with 0 overlap",
-      "Very consistent pace (Avg #80.2 vs #64.5, \u0394 15.7)"
-    ],
-    "flags": [
-      "Minor age bracket regression (Senior, V35, V40 vs V35)"
-    ]
-  },
-  {
     "id": "transfer__martin_thomas__university_o__parc_bryn_ba",
     "name": "Martin Thomas",
     "gender": "M",
@@ -22546,7 +22173,7 @@
     "name": "Randal Jones",
     "gender": "M",
     "from_club": "Bridgend Athletic Club",
-    "to_club": "Newport Harriers Athletic Club",
+    "to_club": "Newport Harriers",
     "confidence": 90,
     "status": "pending",
     "overlap_count": 0,
@@ -22573,7 +22200,7 @@
       ]
     },
     "to_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2017/2018"
@@ -22907,10 +22534,10 @@
     "flags": []
   },
   {
-    "id": "transfer__svetlana_jones__sarn_helen_o__parc_bryn_ba",
+    "id": "transfer__svetlana_jones__sarn_helen__parc_bryn_ba",
     "name": "Svetlana Jones",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Parc Bryn Bach Running Club",
     "confidence": 90,
     "status": "pending",
@@ -22918,7 +22545,7 @@
     "overlapping_seasons": [],
     "handover_season": "2021/2022",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -24432,10 +24059,10 @@
     ]
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__les_croupier",
+    "id": "transfer__dominic_davies__sarn_helen__les_croupier",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Les Croupiers Running Club",
     "confidence": 80,
     "status": "pending",
@@ -24445,7 +24072,7 @@
     ],
     "handover_season": "2010/2011",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -25445,7 +25072,7 @@
     "name": "Randal Jones",
     "gender": "M",
     "from_club": "Swansea Harriers Athletic Club",
-    "to_club": "Newport Harriers Athletic Club",
+    "to_club": "Newport Harriers",
     "confidence": 80,
     "status": "pending",
     "overlap_count": 0,
@@ -25473,7 +25100,7 @@
       ]
     },
     "to_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2017/2018"
@@ -25504,7 +25131,7 @@
     "id": "transfer__randal_jones__newport_harr__lliswerry_ru",
     "name": "Randal Jones",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Lliswerry Runners",
     "confidence": 80,
     "status": "pending",
@@ -25512,7 +25139,7 @@
     "overlapping_seasons": [],
     "handover_season": "2018/2019",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2017/2018"
@@ -25751,11 +25378,11 @@
     ]
   },
   {
-    "id": "transfer__svetlana_jones__university_o__sarn_helen_o",
+    "id": "transfer__svetlana_jones__university_o__sarn_helen",
     "name": "Svetlana Jones",
     "gender": "M",
     "from_club": "University of Swansea",
-    "to_club": "Sarn Helen Orienteering & R. C.",
+    "to_club": "Sarn Helen",
     "confidence": 80,
     "status": "pending",
     "overlap_count": 0,
@@ -25787,7 +25414,7 @@
       ]
     },
     "to_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -25813,10 +25440,10 @@
     "flags": []
   },
   {
-    "id": "transfer__svetlana_jones__sarn_helen_o__swansea_harr",
+    "id": "transfer__svetlana_jones__sarn_helen__swansea_harr",
     "name": "Svetlana Jones",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Swansea Harriers Athletic Club",
     "confidence": 80,
     "status": "pending",
@@ -25824,7 +25451,7 @@
     "overlapping_seasons": [],
     "handover_season": "2012/2013",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -25940,7 +25567,7 @@
     "id": "transfer__arwel_davies__newport_harr__caerleon_rc",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Caerleon RC",
     "confidence": 78,
     "status": "pending",
@@ -25948,7 +25575,7 @@
     "overlapping_seasons": [],
     "handover_season": "2016/2017",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -26249,7 +25876,7 @@
     "id": "transfer__arwel_davies__newport_harr__cardiff_univ",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Cardiff University AC",
     "confidence": 75,
     "status": "pending",
@@ -26257,7 +25884,7 @@
     "overlapping_seasons": [],
     "handover_season": "2013/2014",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -28619,10 +28246,10 @@
     ]
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__lliswerry_ru",
+    "id": "transfer__dominic_davies__sarn_helen__lliswerry_ru",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Lliswerry Runners",
     "confidence": 70,
     "status": "pending",
@@ -28630,7 +28257,7 @@
     "overlapping_seasons": [],
     "handover_season": "2017/2018",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -29178,10 +28805,10 @@
     ]
   },
   {
-    "id": "transfer__justin_jones__sarn_helen_o__port_talbot_",
+    "id": "transfer__justin_jones__sarn_helen__port_talbot_",
     "name": "Justin Jones",
     "gender": "F",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Port Talbot Harriers & AC",
     "confidence": 70,
     "status": "pending",
@@ -29189,7 +28816,7 @@
     "overlapping_seasons": [],
     "handover_season": "2019/2020",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -31047,10 +30674,10 @@
     ]
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__brecon_athle",
+    "id": "transfer__dominic_davies__sarn_helen__brecon_athle",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Brecon Athletic Club",
     "confidence": 25,
     "status": "separate_runners",
@@ -31060,7 +30687,7 @@
     ],
     "handover_season": "2010/2011",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -31712,7 +31339,7 @@
     "name": "Dewi Griffiths",
     "gender": "M",
     "from_club": "University of Swansea",
-    "to_club": "Newport Harriers Athletic Club",
+    "to_club": "Newport Harriers",
     "confidence": 10,
     "status": "separate_runners",
     "overlap_count": 1,
@@ -31742,7 +31369,7 @@
       ]
     },
     "to_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 13,
       "seasons": [
         "2010/2011",
@@ -31771,7 +31398,7 @@
     },
     "reasons": [
       "Valid age trajectory: U23 \u2794 V40, V45, V50",
-      "Strong sample (3 races at University of Swansea + 13 at Newport Harriers Athletic Club)"
+      "Strong sample (3 races at University of Swansea + 13 at Newport Harriers)"
     ],
     "flags": [
       "Conflicting active fixtures (1 matches run concurrently: likely separate runners)",
@@ -31854,7 +31481,7 @@
     "id": "transfer__arwel_davies__newport_harr__les_croupier",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Les Croupiers Running Club",
     "confidence": 5,
     "status": "separate_runners",
@@ -31864,7 +31491,7 @@
     ],
     "handover_season": "2011/2012",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -32670,7 +32297,7 @@
     "id": "transfer__dewi_griffiths__newport_harr__swansea_harr",
     "name": "Dewi Griffiths",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Swansea Harriers Athletic Club",
     "confidence": 5,
     "status": "separate_runners",
@@ -32681,7 +32308,7 @@
     ],
     "handover_season": "2011/2012",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 13,
       "seasons": [
         "2010/2011",
@@ -32735,7 +32362,7 @@
       ]
     },
     "reasons": [
-      "Strong sample (13 races at Newport Harriers Athletic Club + 7 at Swansea Harriers Athletic Club)"
+      "Strong sample (13 races at Newport Harriers + 7 at Swansea Harriers Athletic Club)"
     ],
     "flags": [
       "Conflicting active fixtures (1 matches run concurrently: likely separate runners)",
@@ -33701,7 +33328,7 @@
     "id": "transfer__lewis_richards__newport_harr__pontypridd_r",
     "name": "Lewis Richards",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Pontypridd Roadents Athletic Club",
     "confidence": 5,
     "status": "separate_runners",
@@ -33711,7 +33338,7 @@
     ],
     "handover_season": "2015/2016",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 11,
       "seasons": [
         "2010/2011",
@@ -33770,7 +33397,7 @@
     "id": "transfer__lewis_richards__newport_harr__aberdare_val",
     "name": "Lewis Richards",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Aberdare Valley AAC",
     "confidence": 5,
     "status": "separate_runners",
@@ -33781,7 +33408,7 @@
     ],
     "handover_season": "2017/2018",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 11,
       "seasons": [
         "2010/2011",
@@ -33837,7 +33464,7 @@
     "reasons": [
       "Consistent standard (Avg #215.4 vs #240.6)",
       "Category rank alignment (Avg #61.5 vs #64.2)",
-      "Strong sample (11 races at Newport Harriers Athletic Club + 9 at Aberdare Valley AAC)"
+      "Strong sample (11 races at Newport Harriers + 9 at Aberdare Valley AAC)"
     ],
     "flags": [
       "Conflicting active fixtures (1 matches run concurrently: likely separate runners)",
@@ -39470,10 +39097,10 @@
     ]
   },
   {
-    "id": "transfer__ceri_davies__sarn_helen_o__white_rock_r",
+    "id": "transfer__ceri_davies__sarn_helen__white_rock_r",
     "name": "Ceri Davies",
     "gender": "F",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "White Rock Runners",
     "confidence": 65,
     "status": "unlikely",
@@ -39483,7 +39110,7 @@
     ],
     "handover_season": "2017/2018",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 16,
       "seasons": [
         "2010/2011",
@@ -39534,7 +39161,7 @@
     "reasons": [
       "Mid-season transfer during 2017/2018 (0 fixture conflicts)",
       "Valid age trajectory: Senior, U23 \u2794 Senior",
-      "Strong sample (16 races at Sarn Helen Orienteering & R. C. + 5 at White Rock Runners)"
+      "Strong sample (16 races at Sarn Helen + 5 at White Rock Runners)"
     ],
     "flags": [
       "Significant pace divergence (Avg #71.9 vs #235.4)"
@@ -40313,10 +39940,10 @@
     ]
   },
   {
-    "id": "transfer__justin_jones__sarn_helen_o__islwyn_runni",
+    "id": "transfer__justin_jones__sarn_helen__islwyn_runni",
     "name": "Justin Jones",
     "gender": "F",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Islwyn Running Club",
     "confidence": 61,
     "status": "unlikely",
@@ -40324,7 +39951,7 @@
     "overlapping_seasons": [],
     "handover_season": "2013/2014",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -40760,7 +40387,7 @@
     "name": "Dewi Griffiths",
     "gender": "M",
     "from_club": "Carmarthen & District Harriers AC",
-    "to_club": "Newport Harriers Athletic Club",
+    "to_club": "Newport Harriers",
     "confidence": 60,
     "status": "unlikely",
     "overlap_count": 0,
@@ -40789,7 +40416,7 @@
       ]
     },
     "to_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 13,
       "seasons": [
         "2010/2011",
@@ -43888,10 +43515,10 @@
     ]
   },
   {
-    "id": "transfer__dominic_davies__sarn_helen_o__university_o",
+    "id": "transfer__dominic_davies__sarn_helen__university_o",
     "name": "Dominic Davies",
     "gender": "M",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "University of Swansea",
     "confidence": 48,
     "status": "unlikely",
@@ -43899,7 +43526,7 @@
     "overlapping_seasons": [],
     "handover_season": "2014/2015",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -45560,7 +45187,7 @@
     "id": "transfer__arwel_davies__newport_harr__university_o",
     "name": "Arwel Davies",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "University of the West of England",
     "confidence": 40,
     "status": "unlikely",
@@ -45568,7 +45195,7 @@
     "overlapping_seasons": [],
     "handover_season": "2019/2020",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 1,
       "seasons": [
         "2011/2012"
@@ -45867,10 +45494,10 @@
     ]
   },
   {
-    "id": "transfer__justin_jones__sarn_helen_o__cardiff_tria",
+    "id": "transfer__justin_jones__sarn_helen__cardiff_tria",
     "name": "Justin Jones",
     "gender": "F",
-    "from_club": "Sarn Helen Orienteering & R. C.",
+    "from_club": "Sarn Helen",
     "to_club": "Cardiff Triathletes",
     "confidence": 40,
     "status": "unlikely",
@@ -45878,7 +45505,7 @@
     "overlapping_seasons": [],
     "handover_season": "2015/2016",
     "from_stats": {
-      "club": "Sarn Helen Orienteering & R. C.",
+      "club": "Sarn Helen",
       "count": 1,
       "seasons": [
         "2010/2011"
@@ -49958,7 +49585,7 @@
     "id": "transfer__lewis_richards__newport_harr__islwyn_runni",
     "name": "Lewis Richards",
     "gender": "M",
-    "from_club": "Newport Harriers Athletic Club",
+    "from_club": "Newport Harriers",
     "to_club": "Islwyn Running Club",
     "confidence": 10,
     "status": "unlikely",
@@ -49968,7 +49595,7 @@
     ],
     "handover_season": "2015/2016",
     "from_stats": {
-      "club": "Newport Harriers Athletic Club",
+      "club": "Newport Harriers",
       "count": 11,
       "seasons": [
         "2010/2011",
