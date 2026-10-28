@@ -14,5 +14,53 @@
     "effective_season": "2023/2024",
     "note": "Formerly competed as Antoinette Dumayne",
     "confirmed": true
+  },
+  "Catherine Stephens": {
+    "primary_name": "Catherine Morgan-Stephens",
+    "maiden_name": "Catherine Stephens",
+    "club": "Bridgend Athletic Club",
+    "effective_season": "2025/2026",
+    "note": "Formerly competed as Catherine Stephens",
+    "confirmed": true
+  },
+  "Jemima Osborne": {
+    "primary_name": "Jemima Osborne-Nash",
+    "maiden_name": "Jemima Osborne",
+    "club": "Swansea Harriers Athletic Club",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Jemima Osborne",
+    "confirmed": true
+  },
+  "Sarah Tucker": {
+    "primary_name": "Sarah Gregory-Tucker",
+    "maiden_name": "Sarah Tucker",
+    "club": "Islwyn Running Club",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Sarah Tucker",
+    "confirmed": true
+  },
+  "Angharad Dew": {
+    "primary_name": "Angharad Harry Dew",
+    "maiden_name": "Angharad Dew",
+    "club": "Taf Running & Orienteering Teams",
+    "effective_season": "2024/2025",
+    "note": "Formerly competed as Angharad Dew",
+    "confirmed": true
+  },
+  "Elaina Gard": {
+    "primary_name": "Elaina Rose Gard",
+    "maiden_name": "Elaina Gard",
+    "club": "Bristol and West Athletic Club",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Elaina Gard",
+    "confirmed": true
+  },
+  "Graciela Diaz de la Fuente": {
+    "primary_name": "Graciela Diaz",
+    "maiden_name": "Graciela Diaz de la Fuente",
+    "club": "Swansea Harriers Athletic Club",
+    "effective_season": "2022/2023",
+    "note": "Formerly competed as Graciela Diaz de la Fuente",
+    "confirmed": true
   }
 }

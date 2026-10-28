@@ -202,6 +202,71 @@
     "flags": []
   },
   {
+    "id": "transfer__alex_stewart__bristol_univ__bristol_and_",
+    "name": "Alex Stewart",
+    "gender": "M",
+    "from_club": "Bristol University",
+    "to_club": "Bristol and West Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2023/2024",
+    "from_stats": {
+      "club": "Bristol University",
+      "count": 7,
+      "seasons": [
+        "2019/2020",
+        "2022/2023",
+        "2025/2026"
+      ],
+      "first_yr": 2019,
+      "last_yr": 2025,
+      "years_span": "2019\u20132026 (3 seasons)",
+      "avg_pos": 21.4,
+      "best_pos": 1,
+      "avg_cat_pos": 7.0,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Bristol and West Athletic Club",
+      "count": 3,
+      "seasons": [
+        "2023/2024",
+        "2024/2025"
+      ],
+      "first_yr": 2023,
+      "last_yr": 2024,
+      "years_span": "2023\u20132025 (2 seasons)",
+      "avg_pos": 9.7,
+      "best_pos": 4,
+      "avg_cat_pos": 6.3,
+      "best_cat_pos": 3,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2019\u20132026 \u2794 2023\u20132025) with 0 overlap",
+      "Valid age trajectory: Senior, U23 \u2794 Senior",
+      "Very consistent pace (Avg #21.4 vs #9.7, \u0394 11.7)",
+      "Category rank alignment (Avg #7.0 vs #6.3)",
+      "Strong sample (7 races at Bristol University + 3 at Bristol and West Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
     "id": "transfer__alun_wood__san_domenico__parc_bryn_ba",
     "name": "Alun Wood",
     "gender": "M",
@@ -320,6 +385,266 @@
       "Clean handover with 2-year break (2013\u20132014 \u2794 2015\u20132018)",
       "Valid age trajectory: Senior \u2794 Senior, V35",
       "Strong sample (5 races at Islwyn Running Club + 4 at Pont-y-Pwl & District Runners)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__anthony_smets__cardiff_amat__les_croupier",
+    "name": "Anthony Smets",
+    "gender": "M",
+    "from_club": "Cardiff Amateur Athletic Club",
+    "to_club": "Les Croupiers Running Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2024/2025",
+    "from_stats": {
+      "club": "Cardiff Amateur Athletic Club",
+      "count": 7,
+      "seasons": [
+        "2021/2022",
+        "2022/2023"
+      ],
+      "first_yr": 2021,
+      "last_yr": 2022,
+      "years_span": "2021\u20132023 (2 seasons)",
+      "avg_pos": 90.6,
+      "best_pos": 47,
+      "avg_cat_pos": 33.1,
+      "best_cat_pos": 20,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "Les Croupiers Running Club",
+      "count": 5,
+      "seasons": [
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2025,
+      "years_span": "2024\u20132026 (2 seasons)",
+      "avg_pos": 64.2,
+      "best_pos": 32,
+      "avg_cat_pos": 24.4,
+      "best_cat_pos": 14,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean handover with 2-year break (2021\u20132023 \u2794 2024\u20132026)",
+      "Valid age trajectory: Senior \u2794 Senior",
+      "Consistent standard (Avg #90.6 vs #64.2)",
+      "Strong sample (7 races at Cardiff Amateur Athletic Club + 5 at Les Croupiers Running Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__antonia_gooder__bristol_and___westbury_har",
+    "name": "Antonia Gooder",
+    "gender": "F",
+    "from_club": "Bristol and West Athletic Club",
+    "to_club": "Westbury Harriers",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2022/2023",
+    "from_stats": {
+      "club": "Bristol and West Athletic Club",
+      "count": 10,
+      "seasons": [
+        "2016/2017",
+        "2017/2018",
+        "2019/2020",
+        "2021/2022"
+      ],
+      "first_yr": 2016,
+      "last_yr": 2021,
+      "years_span": "2016\u20132022 (4 seasons)",
+      "avg_pos": 94.6,
+      "best_pos": 50,
+      "avg_cat_pos": 6.2,
+      "best_cat_pos": 2,
+      "categories": [
+        "V50",
+        "V55"
+      ],
+      "ages": [
+        50,
+        55
+      ]
+    },
+    "to_stats": {
+      "club": "Westbury Harriers",
+      "count": 13,
+      "seasons": [
+        "2022/2023",
+        "2023/2024",
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2025,
+      "years_span": "2022\u20132026 (4 seasons)",
+      "avg_pos": 104.9,
+      "best_pos": 61,
+      "avg_cat_pos": 5.4,
+      "best_cat_pos": 2,
+      "categories": [
+        "V55",
+        "V60"
+      ],
+      "ages": [
+        55,
+        60
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2016\u20132022 \u2794 2022\u20132026) with 0 overlap",
+      "Valid age trajectory: V50, V55 \u2794 V55, V60",
+      "Very consistent pace (Avg #94.6 vs #104.9, \u0394 10.3)",
+      "Category rank alignment (Avg #6.2 vs #5.4)",
+      "Strong sample (10 races at Bristol and West Athletic Club + 13 at Westbury Harriers)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__ben_butler-madden__penarth_and___pontypridd_r",
+    "name": "Ben Butler-Madden",
+    "gender": "M",
+    "from_club": "Penarth and Dinas Runners",
+    "to_club": "Pontypridd Roadents Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2019/2020",
+    "from_stats": {
+      "club": "Penarth and Dinas Runners",
+      "count": 16,
+      "seasons": [
+        "2014/2015",
+        "2015/2016",
+        "2016/2017",
+        "2017/2018",
+        "2018/2019"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2018,
+      "years_span": "2014\u20132019 (5 seasons)",
+      "avg_pos": 64.5,
+      "best_pos": 11,
+      "avg_cat_pos": 20.9,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior",
+        "V35"
+      ],
+      "ages": [
+        28,
+        35
+      ]
+    },
+    "to_stats": {
+      "club": "Pontypridd Roadents Athletic Club",
+      "count": 4,
+      "seasons": [
+        "2019/2020",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2019,
+      "last_yr": 2023,
+      "years_span": "2019\u20132024 (4 seasons)",
+      "avg_pos": 74.5,
+      "best_pos": 37,
+      "avg_cat_pos": 13.0,
+      "best_cat_pos": 3,
+      "categories": [
+        "V35",
+        "V40"
+      ],
+      "ages": [
+        35,
+        40
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2014\u20132019 \u2794 2019\u20132024) with 0 overlap",
+      "Valid age trajectory: Senior, V35 \u2794 V35, V40",
+      "Very consistent pace (Avg #64.5 vs #74.5, \u0394 10.0)",
+      "Strong sample (16 races at Penarth and Dinas Runners + 4 at Pontypridd Roadents Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__bethan_moor__ogmore_phoen__cdf_runners",
+    "name": "Bethan Moor",
+    "gender": "F",
+    "from_club": "Ogmore Phoenix Runners",
+    "to_club": "CDF Runners",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2025/2026",
+    "from_stats": {
+      "club": "Ogmore Phoenix Runners",
+      "count": 2,
+      "seasons": [
+        "2024/2025"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2024,
+      "years_span": "2024\u20132025 (1 season)",
+      "avg_pos": 64.0,
+      "best_pos": 64,
+      "avg_cat_pos": 21.0,
+      "best_cat_pos": 21,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "CDF Runners",
+      "count": 5,
+      "seasons": [
+        "2025/2026"
+      ],
+      "first_yr": 2025,
+      "last_yr": 2025,
+      "years_span": "2025\u20132026 (1 season)",
+      "avg_pos": 44.0,
+      "best_pos": 28,
+      "avg_cat_pos": 17.2,
+      "best_cat_pos": 12,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
+      "Valid age trajectory: Senior \u2794 Senior",
+      "Very consistent pace (Avg #64.0 vs #44.0, \u0394 20.0)",
+      "Category rank alignment (Avg #21.0 vs #17.2)"
     ],
     "flags": []
   },
@@ -510,6 +835,73 @@
       "Valid age trajectory: V35, V40 \u2794 V40, V45",
       "Consistent standard (Avg #50.9 vs #22.2)",
       "Strong sample (11 races at Torfaen Runners + 12 at Parc Bryn Bach Running Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__dewi_griffiths__university_o__swansea_harr",
+    "name": "Dewi Griffiths",
+    "gender": "M",
+    "from_club": "University of Swansea",
+    "to_club": "Swansea Harriers Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2011/2012",
+    "from_stats": {
+      "club": "University of Swansea",
+      "count": 3,
+      "seasons": [
+        "2010/2011",
+        "2012/2013"
+      ],
+      "first_yr": 2010,
+      "last_yr": 2012,
+      "years_span": "2010\u20132013 (2 seasons)",
+      "avg_pos": 1.3,
+      "best_pos": 1,
+      "avg_cat_pos": 1.3,
+      "best_cat_pos": 1,
+      "categories": [
+        "U23"
+      ],
+      "ages": [
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Swansea Harriers Athletic Club",
+      "count": 7,
+      "seasons": [
+        "2011/2012",
+        "2017/2018",
+        "2022/2023",
+        "2023/2024",
+        "2025/2026"
+      ],
+      "first_yr": 2011,
+      "last_yr": 2025,
+      "years_span": "2011\u20132026 (5 seasons)",
+      "avg_pos": 1.7,
+      "best_pos": 1,
+      "avg_cat_pos": 1.6,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2010\u20132013 \u2794 2011\u20132026) with 0 overlap",
+      "Valid age trajectory: U23 \u2794 Senior, U23",
+      "Very consistent pace (Avg #1.3 vs #1.7, \u0394 0.4)",
+      "Category rank alignment (Avg #1.3 vs #1.6)",
+      "Strong sample (3 races at University of Swansea + 7 at Swansea Harriers Athletic Club)"
     ],
     "flags": []
   },
@@ -765,6 +1157,71 @@
     "flags": []
   },
   {
+    "id": "transfer__helen_wilcox__newport_harr__caldicot_run",
+    "name": "Helen Wilcox",
+    "gender": "F",
+    "from_club": "Newport Harriers",
+    "to_club": "Caldicot Running Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2024/2025",
+    "from_stats": {
+      "club": "Newport Harriers",
+      "count": 14,
+      "seasons": [
+        "2021/2022",
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2021,
+      "last_yr": 2023,
+      "years_span": "2021\u20132024 (3 seasons)",
+      "avg_pos": 247.0,
+      "best_pos": 165,
+      "avg_cat_pos": 27.5,
+      "best_cat_pos": 20,
+      "categories": [
+        "V55"
+      ],
+      "ages": [
+        55
+      ]
+    },
+    "to_stats": {
+      "club": "Caldicot Running Club",
+      "count": 7,
+      "seasons": [
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2025,
+      "years_span": "2024\u20132026 (2 seasons)",
+      "avg_pos": 239.3,
+      "best_pos": 170,
+      "avg_cat_pos": 24.4,
+      "best_cat_pos": 17,
+      "categories": [
+        "V55",
+        "V60"
+      ],
+      "ages": [
+        55,
+        60
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2021\u20132024 \u2794 2024\u20132026) with 0 overlap",
+      "Valid age trajectory: V55 \u2794 V55, V60",
+      "Very consistent pace (Avg #247.0 vs #239.3, \u0394 7.7)",
+      "Category rank alignment (Avg #27.5 vs #24.4)",
+      "Strong sample (14 races at Newport Harriers + 7 at Caldicot Running Club)"
+    ],
+    "flags": []
+  },
+  {
     "id": "transfer__huw_evans__les_croupier__parc_bryn_ba",
     "name": "Huw Evans",
     "gender": "M",
@@ -837,6 +1294,200 @@
       "Very consistent pace (Avg #27.6 vs #41.1, \u0394 13.5)",
       "Category rank alignment (Avg #2.0 vs #1.1)",
       "Strong sample (36 races at Les Croupiers Running Club + 15 at Parc Bryn Bach Running Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__james_hunt__cardiff_amat__bridgend_ath",
+    "name": "James Hunt",
+    "gender": "M",
+    "from_club": "Cardiff Amateur Athletic Club",
+    "to_club": "Bridgend Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2023/2024",
+    "from_stats": {
+      "club": "Cardiff Amateur Athletic Club",
+      "count": 10,
+      "seasons": [
+        "2016/2017",
+        "2017/2018",
+        "2018/2019",
+        "2019/2020",
+        "2021/2022"
+      ],
+      "first_yr": 2016,
+      "last_yr": 2021,
+      "years_span": "2016\u20132022 (5 seasons)",
+      "avg_pos": 4.7,
+      "best_pos": 1,
+      "avg_cat_pos": 2.1,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Bridgend Athletic Club",
+      "count": 3,
+      "seasons": [
+        "2023/2024",
+        "2025/2026"
+      ],
+      "first_yr": 2023,
+      "last_yr": 2025,
+      "years_span": "2023\u20132026 (2 seasons)",
+      "avg_pos": 18.0,
+      "best_pos": 7,
+      "avg_cat_pos": 7.3,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean handover with 2-year break (2016\u20132022 \u2794 2023\u20132026)",
+      "Valid age trajectory: Senior, U23 \u2794 Senior",
+      "Very consistent pace (Avg #4.7 vs #18.0, \u0394 13.3)",
+      "Strong sample (10 races at Cardiff Amateur Athletic Club + 3 at Bridgend Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__james_palmer__university_o__bristol_and_",
+    "name": "James Palmer",
+    "gender": "M",
+    "from_club": "University of the West of England",
+    "to_club": "Bristol and West Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2025/2026",
+    "from_stats": {
+      "club": "University of the West of England",
+      "count": 3,
+      "seasons": [
+        "2024/2025"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2024,
+      "years_span": "2024\u20132025 (1 season)",
+      "avg_pos": 32.3,
+      "best_pos": 19,
+      "avg_cat_pos": 8.0,
+      "best_cat_pos": 5,
+      "categories": [
+        "U23"
+      ],
+      "ages": [
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Bristol and West Athletic Club",
+      "count": 5,
+      "seasons": [
+        "2025/2026"
+      ],
+      "first_yr": 2025,
+      "last_yr": 2025,
+      "years_span": "2025\u20132026 (1 season)",
+      "avg_pos": 32.8,
+      "best_pos": 14,
+      "avg_cat_pos": 10.4,
+      "best_cat_pos": 4,
+      "categories": [
+        "U23"
+      ],
+      "ages": [
+        22
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
+      "Valid age trajectory: U23 \u2794 U23",
+      "Very consistent pace (Avg #32.3 vs #32.8, \u0394 0.5)",
+      "Category rank alignment (Avg #8.0 vs #10.4)",
+      "Strong sample (3 races at University of the West of England + 5 at Bristol and West Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__james_thie__cardiff_metr__cardiff_amat",
+    "name": "James Thie",
+    "gender": "M",
+    "from_club": "Cardiff Metropolitan University",
+    "to_club": "Cardiff Amateur Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2013/2014",
+    "from_stats": {
+      "club": "Cardiff Metropolitan University",
+      "count": 5,
+      "seasons": [
+        "2011/2012",
+        "2012/2013"
+      ],
+      "first_yr": 2011,
+      "last_yr": 2012,
+      "years_span": "2011\u20132013 (2 seasons)",
+      "avg_pos": 11.0,
+      "best_pos": 4,
+      "avg_cat_pos": 7.0,
+      "best_cat_pos": 4,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "Cardiff Amateur Athletic Club",
+      "count": 13,
+      "seasons": [
+        "2013/2014",
+        "2016/2017",
+        "2017/2018",
+        "2018/2019",
+        "2019/2020"
+      ],
+      "first_yr": 2013,
+      "last_yr": 2019,
+      "years_span": "2013\u20132020 (5 seasons)",
+      "avg_pos": 14.6,
+      "best_pos": 4,
+      "avg_cat_pos": 2.5,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "V35",
+        "V40"
+      ],
+      "ages": [
+        28,
+        35,
+        40
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2011\u20132013 \u2794 2013\u20132020) with 0 overlap",
+      "Valid age trajectory: Senior \u2794 Senior, V35, V40",
+      "Very consistent pace (Avg #11.0 vs #14.6, \u0394 3.6)",
+      "Strong sample (5 races at Cardiff Metropolitan University + 13 at Cardiff Amateur Athletic Club)"
     ],
     "flags": []
   },
@@ -1016,6 +1667,327 @@
     "reasons": [
       "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
       "Valid age trajectory: V50 \u2794 V50"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__lou_summers__pont-y-pwl_&__torfaen_runn",
+    "name": "Lou Summers",
+    "gender": "F",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Torfaen Runners",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2018/2019",
+    "from_stats": {
+      "club": "Pont-y-Pwl & District Runners",
+      "count": 14,
+      "seasons": [
+        "2014/2015",
+        "2015/2016",
+        "2016/2017",
+        "2017/2018"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2017,
+      "years_span": "2014\u20132018 (4 seasons)",
+      "avg_pos": 55.6,
+      "best_pos": 32,
+      "avg_cat_pos": 6.5,
+      "best_cat_pos": 1,
+      "categories": [
+        "V45",
+        "V50"
+      ],
+      "ages": [
+        45,
+        50
+      ]
+    },
+    "to_stats": {
+      "club": "Torfaen Runners",
+      "count": 13,
+      "seasons": [
+        "2018/2019",
+        "2019/2020",
+        "2021/2022"
+      ],
+      "first_yr": 2018,
+      "last_yr": 2021,
+      "years_span": "2018\u20132022 (3 seasons)",
+      "avg_pos": 76.6,
+      "best_pos": 45,
+      "avg_cat_pos": 4.6,
+      "best_cat_pos": 3,
+      "categories": [
+        "V50"
+      ],
+      "ages": [
+        50
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2014\u20132018 \u2794 2018\u20132022) with 0 overlap",
+      "Valid age trajectory: V45, V50 \u2794 V50",
+      "Consistent standard (Avg #55.6 vs #76.6)",
+      "Category rank alignment (Avg #6.5 vs #4.6)",
+      "Strong sample (14 races at Pont-y-Pwl & District Runners + 13 at Torfaen Runners)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__lou_summers__pont-y-pwl_&__sarn_helen",
+    "name": "Lou Summers",
+    "gender": "F",
+    "from_club": "Pont-y-Pwl & District Runners",
+    "to_club": "Sarn Helen",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2022/2023",
+    "from_stats": {
+      "club": "Pont-y-Pwl & District Runners",
+      "count": 14,
+      "seasons": [
+        "2014/2015",
+        "2015/2016",
+        "2016/2017",
+        "2017/2018"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2017,
+      "years_span": "2014\u20132018 (4 seasons)",
+      "avg_pos": 55.6,
+      "best_pos": 32,
+      "avg_cat_pos": 6.5,
+      "best_cat_pos": 1,
+      "categories": [
+        "V45",
+        "V50"
+      ],
+      "ages": [
+        45,
+        50
+      ]
+    },
+    "to_stats": {
+      "club": "Sarn Helen",
+      "count": 5,
+      "seasons": [
+        "2022/2023",
+        "2023/2024",
+        "2024/2025"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2024,
+      "years_span": "2022\u20132025 (3 seasons)",
+      "avg_pos": 88.0,
+      "best_pos": 58,
+      "avg_cat_pos": 4.2,
+      "best_cat_pos": 2,
+      "categories": [
+        "V55"
+      ],
+      "ages": [
+        55
+      ]
+    },
+    "reasons": [
+      "Break between clubs (5 seasons)",
+      "Valid age trajectory: V45, V50 \u2794 V55",
+      "Consistent standard (Avg #55.6 vs #88.0)",
+      "Category rank alignment (Avg #6.5 vs #4.2)",
+      "Strong sample (14 races at Pont-y-Pwl & District Runners + 5 at Sarn Helen)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__lou_summers__torfaen_runn__sarn_helen",
+    "name": "Lou Summers",
+    "gender": "F",
+    "from_club": "Torfaen Runners",
+    "to_club": "Sarn Helen",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2022/2023",
+    "from_stats": {
+      "club": "Torfaen Runners",
+      "count": 13,
+      "seasons": [
+        "2018/2019",
+        "2019/2020",
+        "2021/2022"
+      ],
+      "first_yr": 2018,
+      "last_yr": 2021,
+      "years_span": "2018\u20132022 (3 seasons)",
+      "avg_pos": 76.6,
+      "best_pos": 45,
+      "avg_cat_pos": 4.6,
+      "best_cat_pos": 3,
+      "categories": [
+        "V50"
+      ],
+      "ages": [
+        50
+      ]
+    },
+    "to_stats": {
+      "club": "Sarn Helen",
+      "count": 5,
+      "seasons": [
+        "2022/2023",
+        "2023/2024",
+        "2024/2025"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2024,
+      "years_span": "2022\u20132025 (3 seasons)",
+      "avg_pos": 88.0,
+      "best_pos": 58,
+      "avg_cat_pos": 4.2,
+      "best_cat_pos": 2,
+      "categories": [
+        "V55"
+      ],
+      "ages": [
+        55
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2018\u20132022 \u2794 2022\u20132025) with 0 overlap",
+      "Valid age trajectory: V50 \u2794 V55",
+      "Very consistent pace (Avg #76.6 vs #88.0, \u0394 11.4)",
+      "Category rank alignment (Avg #4.6 vs #4.2)",
+      "Strong sample (13 races at Torfaen Runners + 5 at Sarn Helen)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__lucy_marland__neath_harrie__cardiff_amat",
+    "name": "Lucy Marland",
+    "gender": "F",
+    "from_club": "Neath Harriers",
+    "to_club": "Cardiff Amateur Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2015/2016",
+    "from_stats": {
+      "club": "Neath Harriers",
+      "count": 3,
+      "seasons": [
+        "2014/2015"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2014,
+      "years_span": "2014\u20132015 (1 season)",
+      "avg_pos": 9.7,
+      "best_pos": 9,
+      "avg_cat_pos": 5.0,
+      "best_cat_pos": 3,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "Cardiff Amateur Athletic Club",
+      "count": 8,
+      "seasons": [
+        "2015/2016",
+        "2016/2017"
+      ],
+      "first_yr": 2015,
+      "last_yr": 2016,
+      "years_span": "2015\u20132017 (2 seasons)",
+      "avg_pos": 3.2,
+      "best_pos": 2,
+      "avg_cat_pos": 2.5,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2014\u20132015 \u2794 2015\u20132017) with 0 overlap",
+      "Valid age trajectory: Senior \u2794 Senior",
+      "Very consistent pace (Avg #9.7 vs #3.2, \u0394 6.5)",
+      "Category rank alignment (Avg #5.0 vs #2.5)",
+      "Strong sample (3 races at Neath Harriers + 8 at Cardiff Amateur Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__luke_burgess__university_o__bristol_and_",
+    "name": "Luke Burgess",
+    "gender": "M",
+    "from_club": "University of the West of England",
+    "to_club": "Bristol and West Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2022/2023",
+    "from_stats": {
+      "club": "University of the West of England",
+      "count": 4,
+      "seasons": [
+        "2021/2022"
+      ],
+      "first_yr": 2021,
+      "last_yr": 2021,
+      "years_span": "2021\u20132022 (1 season)",
+      "avg_pos": 4.5,
+      "best_pos": 1,
+      "avg_cat_pos": 1.8,
+      "best_cat_pos": 1,
+      "categories": [
+        "U23"
+      ],
+      "ages": [
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Bristol and West Athletic Club",
+      "count": 8,
+      "seasons": [
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2023,
+      "years_span": "2022\u20132024 (2 seasons)",
+      "avg_pos": 14.8,
+      "best_pos": 2,
+      "avg_cat_pos": 6.2,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2021\u20132022 \u2794 2022\u20132024) with 0 overlap",
+      "Valid age trajectory: U23 \u2794 Senior, U23",
+      "Very consistent pace (Avg #4.5 vs #14.8, \u0394 10.3)",
+      "Strong sample (4 races at University of the West of England + 8 at Bristol and West Athletic Club)"
     ],
     "flags": []
   },
@@ -1327,6 +2299,205 @@
       "Valid age trajectory: V35 \u2794 V35",
       "Consistent standard (Avg #386.3 vs #410.7)",
       "Strong sample (3 races at Pont-y-Pwl & District Runners + 3 at Westbury Harriers)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__matt_grantham__micky_morris__parc_bryn_ba",
+    "name": "Matt Grantham",
+    "gender": "M",
+    "from_club": "Micky Morris Racing Team",
+    "to_club": "Parc Bryn Bach Running Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2024/2025",
+    "from_stats": {
+      "club": "Micky Morris Racing Team",
+      "count": 21,
+      "seasons": [
+        "2017/2018",
+        "2019/2020",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2017,
+      "last_yr": 2023,
+      "years_span": "2017\u20132024 (5 seasons)",
+      "avg_pos": 26.0,
+      "best_pos": 4,
+      "avg_cat_pos": 10.0,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Parc Bryn Bach Running Club",
+      "count": 6,
+      "seasons": [
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2025,
+      "years_span": "2024\u20132026 (2 seasons)",
+      "avg_pos": 8.7,
+      "best_pos": 2,
+      "avg_cat_pos": 5.2,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2017\u20132024 \u2794 2024\u20132026) with 0 overlap",
+      "Valid age trajectory: Senior, U23 \u2794 Senior",
+      "Very consistent pace (Avg #26.0 vs #8.7, \u0394 17.3)",
+      "Strong sample (21 races at Micky Morris Racing Team + 6 at Parc Bryn Bach Running Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__matthew_harvey__neath_harrie__swansea_harr",
+    "name": "Matthew Harvey",
+    "gender": "M",
+    "from_club": "Neath Harriers",
+    "to_club": "Swansea Harriers Athletic Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2014/2015",
+    "from_stats": {
+      "club": "Neath Harriers",
+      "count": 13,
+      "seasons": [
+        "2010/2011",
+        "2011/2012",
+        "2012/2013",
+        "2013/2014"
+      ],
+      "first_yr": 2010,
+      "last_yr": 2013,
+      "years_span": "2010\u20132014 (4 seasons)",
+      "avg_pos": 16.1,
+      "best_pos": 6,
+      "avg_cat_pos": 9.1,
+      "best_cat_pos": 4,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "Swansea Harriers Athletic Club",
+      "count": 10,
+      "seasons": [
+        "2014/2015",
+        "2015/2016",
+        "2017/2018",
+        "2023/2024",
+        "2025/2026"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2025,
+      "years_span": "2014\u20132026 (5 seasons)",
+      "avg_pos": 19.5,
+      "best_pos": 9,
+      "avg_cat_pos": 4.5,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior",
+        "V35",
+        "V40",
+        "V45"
+      ],
+      "ages": [
+        28,
+        35,
+        40,
+        45
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2010\u20132014 \u2794 2014\u20132026) with 0 overlap",
+      "Valid age trajectory: Senior \u2794 Senior, V35, V40, V45",
+      "Very consistent pace (Avg #16.1 vs #19.5, \u0394 3.4)",
+      "Strong sample (13 races at Neath Harriers + 10 at Swansea Harriers Athletic Club)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__nynke_kuiper__cdf_runners__les_croupier",
+    "name": "Nynke Kuiper",
+    "gender": "F",
+    "from_club": "CDF Runners",
+    "to_club": "Les Croupiers Running Club",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2024/2025",
+    "from_stats": {
+      "club": "CDF Runners",
+      "count": 3,
+      "seasons": [
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2023,
+      "years_span": "2022\u20132024 (2 seasons)",
+      "avg_pos": 29.3,
+      "best_pos": 10,
+      "avg_cat_pos": 14.3,
+      "best_cat_pos": 6,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "to_stats": {
+      "club": "Les Croupiers Running Club",
+      "count": 6,
+      "seasons": [
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2025,
+      "years_span": "2024\u20132026 (2 seasons)",
+      "avg_pos": 7.8,
+      "best_pos": 3,
+      "avg_cat_pos": 4.0,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior"
+      ],
+      "ages": [
+        28
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2022\u20132024 \u2794 2024\u20132026) with 0 overlap",
+      "Valid age trajectory: Senior \u2794 Senior",
+      "Consistent standard (Avg #29.3 vs #7.8)",
+      "Strong sample (3 races at CDF Runners + 6 at Les Croupiers Running Club)"
     ],
     "flags": []
   },
@@ -1779,6 +2950,72 @@
       "Clean immediate handover (2023\u20132026 \u2794 2024\u20132025) with 0 overlap",
       "Valid age trajectory: V50 \u2794 V60",
       "Strong sample (5 races at Port Talbot Harriers & AC + 3 at Fairwater Runners)"
+    ],
+    "flags": []
+  },
+  {
+    "id": "transfer__wendy_price__carmarthen_&__amman_valley",
+    "name": "Wendy Price",
+    "gender": "F",
+    "from_club": "Carmarthen & District Harriers AC",
+    "to_club": "Amman Valley Harriers",
+    "confidence": 99,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2022/2023",
+    "from_stats": {
+      "club": "Carmarthen & District Harriers AC",
+      "count": 3,
+      "seasons": [
+        "2021/2022"
+      ],
+      "first_yr": 2021,
+      "last_yr": 2021,
+      "years_span": "2021\u20132022 (1 season)",
+      "avg_pos": 35.3,
+      "best_pos": 27,
+      "avg_cat_pos": 6.0,
+      "best_cat_pos": 5,
+      "categories": [
+        "V35",
+        "V40"
+      ],
+      "ages": [
+        35,
+        40
+      ]
+    },
+    "to_stats": {
+      "club": "Amman Valley Harriers",
+      "count": 8,
+      "seasons": [
+        "2022/2023",
+        "2023/2024",
+        "2024/2025"
+      ],
+      "first_yr": 2022,
+      "last_yr": 2024,
+      "years_span": "2022\u20132025 (3 seasons)",
+      "avg_pos": 49.5,
+      "best_pos": 25,
+      "avg_cat_pos": 6.4,
+      "best_cat_pos": 2,
+      "categories": [
+        "V40",
+        "V45"
+      ],
+      "ages": [
+        40,
+        45
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2021\u20132022 \u2794 2022\u20132025) with 0 overlap",
+      "Valid age trajectory: V35, V40 \u2794 V40, V45",
+      "Very consistent pace (Avg #35.3 vs #49.5, \u0394 14.2)",
+      "Category rank alignment (Avg #6.0 vs #6.4)",
+      "Strong sample (3 races at Carmarthen & District Harriers AC + 8 at Amman Valley Harriers)"
     ],
     "flags": []
   },
@@ -2462,6 +3699,161 @@
     ]
   },
   {
+    "id": "transfer__cari_hughes__les_croupier__cardiff_amat",
+    "name": "Cari Hughes",
+    "gender": "F",
+    "from_club": "Les Croupiers Running Club",
+    "to_club": "Cardiff Amateur Athletic Club",
+    "confidence": 78,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2016/2017",
+    "from_stats": {
+      "club": "Les Croupiers Running Club",
+      "count": 7,
+      "seasons": [
+        "2012/2013",
+        "2013/2014",
+        "2014/2015",
+        "2015/2016"
+      ],
+      "first_yr": 2012,
+      "last_yr": 2015,
+      "years_span": "2012\u20132016 (4 seasons)",
+      "avg_pos": 15.1,
+      "best_pos": 7,
+      "avg_cat_pos": 6.1,
+      "best_cat_pos": 2,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Cardiff Amateur Athletic Club",
+      "count": 6,
+      "seasons": [
+        "2016/2017",
+        "2018/2019",
+        "2021/2022",
+        "2023/2024"
+      ],
+      "first_yr": 2016,
+      "last_yr": 2023,
+      "years_span": "2016\u20132024 (4 seasons)",
+      "avg_pos": 4.0,
+      "best_pos": 2,
+      "avg_cat_pos": 2.8,
+      "best_cat_pos": 1,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2012\u20132016 \u2794 2016\u20132024) with 0 overlap",
+      "Very consistent pace (Avg #15.1 vs #4.0, \u0394 11.1)",
+      "Category rank alignment (Avg #6.1 vs #2.8)",
+      "Strong sample (7 races at Les Croupiers Running Club + 6 at Cardiff Amateur Athletic Club)"
+    ],
+    "flags": [
+      "Severe age regression flag (Senior, U23 vs Senior, U23)"
+    ]
+  },
+  {
+    "id": "transfer__cath_tailby__les_croupier__penarth_and_",
+    "name": "Cath Tailby",
+    "gender": "F",
+    "from_club": "Les Croupiers Running Club",
+    "to_club": "Penarth and Dinas Runners",
+    "confidence": 78,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2014/2015",
+    "from_stats": {
+      "club": "Les Croupiers Running Club",
+      "count": 40,
+      "seasons": [
+        "2010/2011",
+        "2011/2012",
+        "2012/2013",
+        "2013/2014",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024",
+        "2024/2025",
+        "2025/2026"
+      ],
+      "first_yr": 2010,
+      "last_yr": 2025,
+      "years_span": "2010\u20132026 (9 seasons)",
+      "avg_pos": 92.2,
+      "best_pos": 30,
+      "avg_cat_pos": 9.0,
+      "best_cat_pos": 2,
+      "categories": [
+        "V35",
+        "V40",
+        "V50",
+        "V55"
+      ],
+      "ages": [
+        35,
+        40,
+        50,
+        55
+      ]
+    },
+    "to_stats": {
+      "club": "Penarth and Dinas Runners",
+      "count": 27,
+      "seasons": [
+        "2014/2015",
+        "2015/2016",
+        "2016/2017",
+        "2017/2018",
+        "2018/2019",
+        "2019/2020"
+      ],
+      "first_yr": 2014,
+      "last_yr": 2019,
+      "years_span": "2014\u20132020 (6 seasons)",
+      "avg_pos": 75.1,
+      "best_pos": 50,
+      "avg_cat_pos": 10.3,
+      "best_cat_pos": 5,
+      "categories": [
+        "V35",
+        "V40",
+        "V45"
+      ],
+      "ages": [
+        35,
+        40,
+        45
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2010\u20132026 \u2794 2014\u20132020) with 0 overlap",
+      "Very consistent pace (Avg #92.2 vs #75.1, \u0394 17.1)",
+      "Category rank alignment (Avg #9.0 vs #10.3)",
+      "Strong sample (40 races at Les Croupiers Running Club + 27 at Penarth and Dinas Runners)"
+    ],
+    "flags": [
+      "Severe age regression flag (V35, V40, V50, V55 vs V35, V40, V45)"
+    ]
+  },
+  {
     "id": "transfer__chris_o'brien__pont-y-pwl_&__lliswerry_ru",
     "name": "Chris O'Brien",
     "gender": "M",
@@ -2579,6 +3971,70 @@
     ],
     "flags": [
       "Significant pace divergence (Avg #367.3 vs #76.8)"
+    ]
+  },
+  {
+    "id": "transfer__amy_tucker__llanelli_ama__carmarthen_&",
+    "name": "Amy Tucker",
+    "gender": "F",
+    "from_club": "Llanelli Amateur Athletic Club",
+    "to_club": "Carmarthen & District Harriers AC",
+    "confidence": 70,
+    "status": "confirmed",
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "handover_season": "2024/2025",
+    "from_stats": {
+      "club": "Llanelli Amateur Athletic Club",
+      "count": 12,
+      "seasons": [
+        "2021/2022",
+        "2022/2023",
+        "2023/2024"
+      ],
+      "first_yr": 2021,
+      "last_yr": 2023,
+      "years_span": "2021\u20132024 (3 seasons)",
+      "avg_pos": 143.8,
+      "best_pos": 84,
+      "avg_cat_pos": 25.8,
+      "best_cat_pos": 10,
+      "categories": [
+        "Senior",
+        "U23"
+      ],
+      "ages": [
+        28,
+        22
+      ]
+    },
+    "to_stats": {
+      "club": "Carmarthen & District Harriers AC",
+      "count": 3,
+      "seasons": [
+        "2024/2025"
+      ],
+      "first_yr": 2024,
+      "last_yr": 2024,
+      "years_span": "2024\u20132025 (1 season)",
+      "avg_pos": 143.3,
+      "best_pos": 109,
+      "avg_cat_pos": 13.7,
+      "best_cat_pos": 8,
+      "categories": [
+        "U23"
+      ],
+      "ages": [
+        22
+      ]
+    },
+    "reasons": [
+      "Clean immediate handover (2021\u20132024 \u2794 2024\u20132025) with 0 overlap",
+      "Very consistent pace (Avg #143.8 vs #143.3, \u0394 0.5)",
+      "Strong sample (12 races at Llanelli Amateur Athletic Club + 3 at Carmarthen & District Harriers AC)"
+    ],
+    "flags": [
+      "Severe age regression flag (Senior, U23 vs U23)"
     ]
   },
   {
@@ -3907,71 +5363,6 @@
     "flags": []
   },
   {
-    "id": "transfer__alex_stewart__bristol_univ__bristol_and_",
-    "name": "Alex Stewart",
-    "gender": "M",
-    "from_club": "Bristol University",
-    "to_club": "Bristol and West Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2023/2024",
-    "from_stats": {
-      "club": "Bristol University",
-      "count": 7,
-      "seasons": [
-        "2019/2020",
-        "2022/2023",
-        "2025/2026"
-      ],
-      "first_yr": 2019,
-      "last_yr": 2025,
-      "years_span": "2019\u20132026 (3 seasons)",
-      "avg_pos": 21.4,
-      "best_pos": 1,
-      "avg_cat_pos": 7.0,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Bristol and West Athletic Club",
-      "count": 3,
-      "seasons": [
-        "2023/2024",
-        "2024/2025"
-      ],
-      "first_yr": 2023,
-      "last_yr": 2024,
-      "years_span": "2023\u20132025 (2 seasons)",
-      "avg_pos": 9.7,
-      "best_pos": 4,
-      "avg_cat_pos": 6.3,
-      "best_cat_pos": 3,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2019\u20132026 \u2794 2023\u20132025) with 0 overlap",
-      "Valid age trajectory: Senior, U23 \u2794 Senior",
-      "Very consistent pace (Avg #21.4 vs #9.7, \u0394 11.7)",
-      "Category rank alignment (Avg #7.0 vs #6.3)",
-      "Strong sample (7 races at Bristol University + 3 at Bristol and West Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__alice_premier__women_runnin__goodgym_race",
     "name": "Alice Premier",
     "gender": "F",
@@ -4347,137 +5738,6 @@
     "flags": []
   },
   {
-    "id": "transfer__anthony_smets__cardiff_amat__les_croupier",
-    "name": "Anthony Smets",
-    "gender": "M",
-    "from_club": "Cardiff Amateur Athletic Club",
-    "to_club": "Les Croupiers Running Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Cardiff Amateur Athletic Club",
-      "count": 7,
-      "seasons": [
-        "2021/2022",
-        "2022/2023"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2022,
-      "years_span": "2021\u20132023 (2 seasons)",
-      "avg_pos": 90.6,
-      "best_pos": 47,
-      "avg_cat_pos": 33.1,
-      "best_cat_pos": 20,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Les Croupiers Running Club",
-      "count": 5,
-      "seasons": [
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2025,
-      "years_span": "2024\u20132026 (2 seasons)",
-      "avg_pos": 64.2,
-      "best_pos": 32,
-      "avg_cat_pos": 24.4,
-      "best_cat_pos": 14,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean handover with 2-year break (2021\u20132023 \u2794 2024\u20132026)",
-      "Valid age trajectory: Senior \u2794 Senior",
-      "Consistent standard (Avg #90.6 vs #64.2)",
-      "Strong sample (7 races at Cardiff Amateur Athletic Club + 5 at Les Croupiers Running Club)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__antonia_gooder__bristol_and___westbury_har",
-    "name": "Antonia Gooder",
-    "gender": "F",
-    "from_club": "Bristol and West Athletic Club",
-    "to_club": "Westbury Harriers",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "Bristol and West Athletic Club",
-      "count": 10,
-      "seasons": [
-        "2016/2017",
-        "2017/2018",
-        "2019/2020",
-        "2021/2022"
-      ],
-      "first_yr": 2016,
-      "last_yr": 2021,
-      "years_span": "2016\u20132022 (4 seasons)",
-      "avg_pos": 94.6,
-      "best_pos": 50,
-      "avg_cat_pos": 6.2,
-      "best_cat_pos": 2,
-      "categories": [
-        "V50",
-        "V55"
-      ],
-      "ages": [
-        50,
-        55
-      ]
-    },
-    "to_stats": {
-      "club": "Westbury Harriers",
-      "count": 13,
-      "seasons": [
-        "2022/2023",
-        "2023/2024",
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2025,
-      "years_span": "2022\u20132026 (4 seasons)",
-      "avg_pos": 104.9,
-      "best_pos": 61,
-      "avg_cat_pos": 5.4,
-      "best_cat_pos": 2,
-      "categories": [
-        "V55",
-        "V60"
-      ],
-      "ages": [
-        55,
-        60
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2016\u20132022 \u2794 2022\u20132026) with 0 overlap",
-      "Valid age trajectory: V50, V55 \u2794 V55, V60",
-      "Very consistent pace (Avg #94.6 vs #104.9, \u0394 10.3)",
-      "Category rank alignment (Avg #6.2 vs #5.4)",
-      "Strong sample (10 races at Bristol and West Athletic Club + 13 at Westbury Harriers)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__arwel_davies__newport_harr__thornbury_ru",
     "name": "Arwel Davies",
     "gender": "M",
@@ -4841,76 +6101,6 @@
     "flags": []
   },
   {
-    "id": "transfer__ben_butler-madden__penarth_and___pontypridd_r",
-    "name": "Ben Butler-Madden",
-    "gender": "M",
-    "from_club": "Penarth and Dinas Runners",
-    "to_club": "Pontypridd Roadents Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2019/2020",
-    "from_stats": {
-      "club": "Penarth and Dinas Runners",
-      "count": 16,
-      "seasons": [
-        "2014/2015",
-        "2015/2016",
-        "2016/2017",
-        "2017/2018",
-        "2018/2019"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2018,
-      "years_span": "2014\u20132019 (5 seasons)",
-      "avg_pos": 64.5,
-      "best_pos": 11,
-      "avg_cat_pos": 20.9,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior",
-        "V35"
-      ],
-      "ages": [
-        28,
-        35
-      ]
-    },
-    "to_stats": {
-      "club": "Pontypridd Roadents Athletic Club",
-      "count": 4,
-      "seasons": [
-        "2019/2020",
-        "2021/2022",
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2019,
-      "last_yr": 2023,
-      "years_span": "2019\u20132024 (4 seasons)",
-      "avg_pos": 74.5,
-      "best_pos": 37,
-      "avg_cat_pos": 13.0,
-      "best_cat_pos": 3,
-      "categories": [
-        "V35",
-        "V40"
-      ],
-      "ages": [
-        35,
-        40
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2014\u20132019 \u2794 2019\u20132024) with 0 overlap",
-      "Valid age trajectory: Senior, V35 \u2794 V35, V40",
-      "Very consistent pace (Avg #64.5 vs #74.5, \u0394 10.0)",
-      "Strong sample (16 races at Penarth and Dinas Runners + 4 at Pontypridd Roadents Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__ben_demellweek__caerphilly_r__pontypridd_r",
     "name": "Ben Demellweek",
     "gender": "M",
@@ -5024,65 +6214,6 @@
       "Valid age trajectory: U23 \u2794 U23",
       "Very consistent pace (Avg #17.0 vs #13.0, \u0394 4.0)",
       "Category rank alignment (Avg #6.0 vs #3.0)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__bethan_moor__ogmore_phoen__cdf_runners",
-    "name": "Bethan Moor",
-    "gender": "F",
-    "from_club": "Ogmore Phoenix Runners",
-    "to_club": "CDF Runners",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2025/2026",
-    "from_stats": {
-      "club": "Ogmore Phoenix Runners",
-      "count": 2,
-      "seasons": [
-        "2024/2025"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2024,
-      "years_span": "2024\u20132025 (1 season)",
-      "avg_pos": 64.0,
-      "best_pos": 64,
-      "avg_cat_pos": 21.0,
-      "best_cat_pos": 21,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "CDF Runners",
-      "count": 5,
-      "seasons": [
-        "2025/2026"
-      ],
-      "first_yr": 2025,
-      "last_yr": 2025,
-      "years_span": "2025\u20132026 (1 season)",
-      "avg_pos": 44.0,
-      "best_pos": 28,
-      "avg_cat_pos": 17.2,
-      "best_cat_pos": 12,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
-      "Valid age trajectory: Senior \u2794 Senior",
-      "Very consistent pace (Avg #64.0 vs #44.0, \u0394 20.0)",
-      "Category rank alignment (Avg #21.0 vs #17.2)"
     ],
     "flags": []
   },
@@ -7479,73 +8610,6 @@
     "flags": []
   },
   {
-    "id": "transfer__dewi_griffiths__university_o__swansea_harr",
-    "name": "Dewi Griffiths",
-    "gender": "M",
-    "from_club": "University of Swansea",
-    "to_club": "Swansea Harriers Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2011/2012",
-    "from_stats": {
-      "club": "University of Swansea",
-      "count": 3,
-      "seasons": [
-        "2010/2011",
-        "2012/2013"
-      ],
-      "first_yr": 2010,
-      "last_yr": 2012,
-      "years_span": "2010\u20132013 (2 seasons)",
-      "avg_pos": 1.3,
-      "best_pos": 1,
-      "avg_cat_pos": 1.3,
-      "best_cat_pos": 1,
-      "categories": [
-        "U23"
-      ],
-      "ages": [
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Swansea Harriers Athletic Club",
-      "count": 7,
-      "seasons": [
-        "2011/2012",
-        "2017/2018",
-        "2022/2023",
-        "2023/2024",
-        "2025/2026"
-      ],
-      "first_yr": 2011,
-      "last_yr": 2025,
-      "years_span": "2011\u20132026 (5 seasons)",
-      "avg_pos": 1.7,
-      "best_pos": 1,
-      "avg_cat_pos": 1.6,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2010\u20132013 \u2794 2011\u20132026) with 0 overlap",
-      "Valid age trajectory: U23 \u2794 Senior, U23",
-      "Very consistent pace (Avg #1.3 vs #1.7, \u0394 0.4)",
-      "Category rank alignment (Avg #1.3 vs #1.6)",
-      "Strong sample (3 races at University of Swansea + 7 at Swansea Harriers Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__dominic_davies__sarn_helen_o__san_domenico",
     "name": "Dominic Davies",
     "gender": "M",
@@ -9794,71 +10858,6 @@
     "flags": []
   },
   {
-    "id": "transfer__helen_wilcox__newport_harr__caldicot_run",
-    "name": "Helen Wilcox",
-    "gender": "F",
-    "from_club": "Newport Harriers",
-    "to_club": "Caldicot Running Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Newport Harriers",
-      "count": 14,
-      "seasons": [
-        "2021/2022",
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2023,
-      "years_span": "2021\u20132024 (3 seasons)",
-      "avg_pos": 247.0,
-      "best_pos": 165,
-      "avg_cat_pos": 27.5,
-      "best_cat_pos": 20,
-      "categories": [
-        "V55"
-      ],
-      "ages": [
-        55
-      ]
-    },
-    "to_stats": {
-      "club": "Caldicot Running Club",
-      "count": 7,
-      "seasons": [
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2025,
-      "years_span": "2024\u20132026 (2 seasons)",
-      "avg_pos": 239.3,
-      "best_pos": 170,
-      "avg_cat_pos": 24.4,
-      "best_cat_pos": 17,
-      "categories": [
-        "V55",
-        "V60"
-      ],
-      "ages": [
-        55,
-        60
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2021\u20132024 \u2794 2024\u20132026) with 0 overlap",
-      "Valid age trajectory: V55 \u2794 V55, V60",
-      "Very consistent pace (Avg #247.0 vs #239.3, \u0394 7.7)",
-      "Category rank alignment (Avg #27.5 vs #24.4)",
-      "Strong sample (14 races at Newport Harriers + 7 at Caldicot Running Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__helen_williams__parc_bryn_ba__llanelli_ama",
     "name": "Helen Williams",
     "gender": "F",
@@ -10432,72 +11431,6 @@
     "flags": []
   },
   {
-    "id": "transfer__james_hunt__cardiff_amat__bridgend_ath",
-    "name": "James Hunt",
-    "gender": "M",
-    "from_club": "Cardiff Amateur Athletic Club",
-    "to_club": "Bridgend Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2023/2024",
-    "from_stats": {
-      "club": "Cardiff Amateur Athletic Club",
-      "count": 10,
-      "seasons": [
-        "2016/2017",
-        "2017/2018",
-        "2018/2019",
-        "2019/2020",
-        "2021/2022"
-      ],
-      "first_yr": 2016,
-      "last_yr": 2021,
-      "years_span": "2016\u20132022 (5 seasons)",
-      "avg_pos": 4.7,
-      "best_pos": 1,
-      "avg_cat_pos": 2.1,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Bridgend Athletic Club",
-      "count": 3,
-      "seasons": [
-        "2023/2024",
-        "2025/2026"
-      ],
-      "first_yr": 2023,
-      "last_yr": 2025,
-      "years_span": "2023\u20132026 (2 seasons)",
-      "avg_pos": 18.0,
-      "best_pos": 7,
-      "avg_cat_pos": 7.3,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean handover with 2-year break (2016\u20132022 \u2794 2023\u20132026)",
-      "Valid age trajectory: Senior, U23 \u2794 Senior",
-      "Very consistent pace (Avg #4.7 vs #18.0, \u0394 13.3)",
-      "Strong sample (10 races at Cardiff Amateur Athletic Club + 3 at Bridgend Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__james_kemp__pont-y-pwl_&__micky_morris",
     "name": "James Kemp",
     "gender": "M",
@@ -10614,134 +11547,6 @@
       "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
       "Valid age trajectory: V40 \u2794 V50",
       "Very consistent pace (Avg #266.0 vs #263.0, \u0394 3.0)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__james_palmer__university_o__bristol_and_",
-    "name": "James Palmer",
-    "gender": "M",
-    "from_club": "University of the West of England",
-    "to_club": "Bristol and West Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2025/2026",
-    "from_stats": {
-      "club": "University of the West of England",
-      "count": 3,
-      "seasons": [
-        "2024/2025"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2024,
-      "years_span": "2024\u20132025 (1 season)",
-      "avg_pos": 32.3,
-      "best_pos": 19,
-      "avg_cat_pos": 8.0,
-      "best_cat_pos": 5,
-      "categories": [
-        "U23"
-      ],
-      "ages": [
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Bristol and West Athletic Club",
-      "count": 5,
-      "seasons": [
-        "2025/2026"
-      ],
-      "first_yr": 2025,
-      "last_yr": 2025,
-      "years_span": "2025\u20132026 (1 season)",
-      "avg_pos": 32.8,
-      "best_pos": 14,
-      "avg_cat_pos": 10.4,
-      "best_cat_pos": 4,
-      "categories": [
-        "U23"
-      ],
-      "ages": [
-        22
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2024\u20132025 \u2794 2025\u20132026) with 0 overlap",
-      "Valid age trajectory: U23 \u2794 U23",
-      "Very consistent pace (Avg #32.3 vs #32.8, \u0394 0.5)",
-      "Category rank alignment (Avg #8.0 vs #10.4)",
-      "Strong sample (3 races at University of the West of England + 5 at Bristol and West Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__james_thie__cardiff_metr__cardiff_amat",
-    "name": "James Thie",
-    "gender": "M",
-    "from_club": "Cardiff Metropolitan University",
-    "to_club": "Cardiff Amateur Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2013/2014",
-    "from_stats": {
-      "club": "Cardiff Metropolitan University",
-      "count": 5,
-      "seasons": [
-        "2011/2012",
-        "2012/2013"
-      ],
-      "first_yr": 2011,
-      "last_yr": 2012,
-      "years_span": "2011\u20132013 (2 seasons)",
-      "avg_pos": 11.0,
-      "best_pos": 4,
-      "avg_cat_pos": 7.0,
-      "best_cat_pos": 4,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Cardiff Amateur Athletic Club",
-      "count": 13,
-      "seasons": [
-        "2013/2014",
-        "2016/2017",
-        "2017/2018",
-        "2018/2019",
-        "2019/2020"
-      ],
-      "first_yr": 2013,
-      "last_yr": 2019,
-      "years_span": "2013\u20132020 (5 seasons)",
-      "avg_pos": 14.6,
-      "best_pos": 4,
-      "avg_cat_pos": 2.5,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "V35",
-        "V40"
-      ],
-      "ages": [
-        28,
-        35,
-        40
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2011\u20132013 \u2794 2013\u20132020) with 0 overlap",
-      "Valid age trajectory: Senior \u2794 Senior, V35, V40",
-      "Very consistent pace (Avg #11.0 vs #14.6, \u0394 3.6)",
-      "Strong sample (5 races at Cardiff Metropolitan University + 13 at Cardiff Amateur Athletic Club)"
     ],
     "flags": []
   },
@@ -12655,204 +13460,6 @@
     "flags": []
   },
   {
-    "id": "transfer__lou_summers__pont-y-pwl_&__torfaen_runn",
-    "name": "Lou Summers",
-    "gender": "F",
-    "from_club": "Pont-y-Pwl & District Runners",
-    "to_club": "Torfaen Runners",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2018/2019",
-    "from_stats": {
-      "club": "Pont-y-Pwl & District Runners",
-      "count": 14,
-      "seasons": [
-        "2014/2015",
-        "2015/2016",
-        "2016/2017",
-        "2017/2018"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2017,
-      "years_span": "2014\u20132018 (4 seasons)",
-      "avg_pos": 55.6,
-      "best_pos": 32,
-      "avg_cat_pos": 6.5,
-      "best_cat_pos": 1,
-      "categories": [
-        "V45",
-        "V50"
-      ],
-      "ages": [
-        45,
-        50
-      ]
-    },
-    "to_stats": {
-      "club": "Torfaen Runners",
-      "count": 13,
-      "seasons": [
-        "2018/2019",
-        "2019/2020",
-        "2021/2022"
-      ],
-      "first_yr": 2018,
-      "last_yr": 2021,
-      "years_span": "2018\u20132022 (3 seasons)",
-      "avg_pos": 76.6,
-      "best_pos": 45,
-      "avg_cat_pos": 4.6,
-      "best_cat_pos": 3,
-      "categories": [
-        "V50"
-      ],
-      "ages": [
-        50
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2014\u20132018 \u2794 2018\u20132022) with 0 overlap",
-      "Valid age trajectory: V45, V50 \u2794 V50",
-      "Consistent standard (Avg #55.6 vs #76.6)",
-      "Category rank alignment (Avg #6.5 vs #4.6)",
-      "Strong sample (14 races at Pont-y-Pwl & District Runners + 13 at Torfaen Runners)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__lou_summers__pont-y-pwl_&__sarn_helen",
-    "name": "Lou Summers",
-    "gender": "F",
-    "from_club": "Pont-y-Pwl & District Runners",
-    "to_club": "Sarn Helen",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "Pont-y-Pwl & District Runners",
-      "count": 14,
-      "seasons": [
-        "2014/2015",
-        "2015/2016",
-        "2016/2017",
-        "2017/2018"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2017,
-      "years_span": "2014\u20132018 (4 seasons)",
-      "avg_pos": 55.6,
-      "best_pos": 32,
-      "avg_cat_pos": 6.5,
-      "best_cat_pos": 1,
-      "categories": [
-        "V45",
-        "V50"
-      ],
-      "ages": [
-        45,
-        50
-      ]
-    },
-    "to_stats": {
-      "club": "Sarn Helen",
-      "count": 5,
-      "seasons": [
-        "2022/2023",
-        "2023/2024",
-        "2024/2025"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2024,
-      "years_span": "2022\u20132025 (3 seasons)",
-      "avg_pos": 88.0,
-      "best_pos": 58,
-      "avg_cat_pos": 4.2,
-      "best_cat_pos": 2,
-      "categories": [
-        "V55"
-      ],
-      "ages": [
-        55
-      ]
-    },
-    "reasons": [
-      "Break between clubs (5 seasons)",
-      "Valid age trajectory: V45, V50 \u2794 V55",
-      "Consistent standard (Avg #55.6 vs #88.0)",
-      "Category rank alignment (Avg #6.5 vs #4.2)",
-      "Strong sample (14 races at Pont-y-Pwl & District Runners + 5 at Sarn Helen)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__lou_summers__torfaen_runn__sarn_helen",
-    "name": "Lou Summers",
-    "gender": "F",
-    "from_club": "Torfaen Runners",
-    "to_club": "Sarn Helen",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "Torfaen Runners",
-      "count": 13,
-      "seasons": [
-        "2018/2019",
-        "2019/2020",
-        "2021/2022"
-      ],
-      "first_yr": 2018,
-      "last_yr": 2021,
-      "years_span": "2018\u20132022 (3 seasons)",
-      "avg_pos": 76.6,
-      "best_pos": 45,
-      "avg_cat_pos": 4.6,
-      "best_cat_pos": 3,
-      "categories": [
-        "V50"
-      ],
-      "ages": [
-        50
-      ]
-    },
-    "to_stats": {
-      "club": "Sarn Helen",
-      "count": 5,
-      "seasons": [
-        "2022/2023",
-        "2023/2024",
-        "2024/2025"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2024,
-      "years_span": "2022\u20132025 (3 seasons)",
-      "avg_pos": 88.0,
-      "best_pos": 58,
-      "avg_cat_pos": 4.2,
-      "best_cat_pos": 2,
-      "categories": [
-        "V55"
-      ],
-      "ages": [
-        55
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2018\u20132022 \u2794 2022\u20132025) with 0 overlap",
-      "Valid age trajectory: V50 \u2794 V55",
-      "Very consistent pace (Avg #76.6 vs #88.0, \u0394 11.4)",
-      "Category rank alignment (Avg #4.6 vs #4.2)",
-      "Strong sample (13 races at Torfaen Runners + 5 at Sarn Helen)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__louis_shingles__cardiff_univ__pontypridd_r",
     "name": "Louis Shingles",
     "gender": "M",
@@ -13027,67 +13634,6 @@
     "flags": []
   },
   {
-    "id": "transfer__lucy_marland__neath_harrie__cardiff_amat",
-    "name": "Lucy Marland",
-    "gender": "F",
-    "from_club": "Neath Harriers",
-    "to_club": "Cardiff Amateur Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2015/2016",
-    "from_stats": {
-      "club": "Neath Harriers",
-      "count": 3,
-      "seasons": [
-        "2014/2015"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2014,
-      "years_span": "2014\u20132015 (1 season)",
-      "avg_pos": 9.7,
-      "best_pos": 9,
-      "avg_cat_pos": 5.0,
-      "best_cat_pos": 3,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Cardiff Amateur Athletic Club",
-      "count": 8,
-      "seasons": [
-        "2015/2016",
-        "2016/2017"
-      ],
-      "first_yr": 2015,
-      "last_yr": 2016,
-      "years_span": "2015\u20132017 (2 seasons)",
-      "avg_pos": 3.2,
-      "best_pos": 2,
-      "avg_cat_pos": 2.5,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2014\u20132015 \u2794 2015\u20132017) with 0 overlap",
-      "Valid age trajectory: Senior \u2794 Senior",
-      "Very consistent pace (Avg #9.7 vs #3.2, \u0394 6.5)",
-      "Category rank alignment (Avg #5.0 vs #2.5)",
-      "Strong sample (3 races at Neath Harriers + 8 at Cardiff Amateur Athletic Club)"
-    ],
-    "flags": []
-  },
-  {
     "id": "transfer__lucy_marland__neath_harrie__les_croupier",
     "name": "Lucy Marland",
     "gender": "F",
@@ -13209,68 +13755,6 @@
       "Very consistent pace (Avg #3.2 vs #3.2, \u0394 0.0)",
       "Category rank alignment (Avg #2.5 vs #1.2)",
       "Strong sample (8 races at Cardiff Amateur Athletic Club + 5 at Les Croupiers Running Club)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__luke_burgess__university_o__bristol_and_",
-    "name": "Luke Burgess",
-    "gender": "M",
-    "from_club": "University of the West of England",
-    "to_club": "Bristol and West Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "University of the West of England",
-      "count": 4,
-      "seasons": [
-        "2021/2022"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2021,
-      "years_span": "2021\u20132022 (1 season)",
-      "avg_pos": 4.5,
-      "best_pos": 1,
-      "avg_cat_pos": 1.8,
-      "best_cat_pos": 1,
-      "categories": [
-        "U23"
-      ],
-      "ages": [
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Bristol and West Athletic Club",
-      "count": 8,
-      "seasons": [
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2023,
-      "years_span": "2022\u20132024 (2 seasons)",
-      "avg_pos": 14.8,
-      "best_pos": 2,
-      "avg_cat_pos": 6.2,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2021\u20132022 \u2794 2022\u20132024) with 0 overlap",
-      "Valid age trajectory: U23 \u2794 Senior, U23",
-      "Very consistent pace (Avg #4.5 vs #14.8, \u0394 10.3)",
-      "Strong sample (4 races at University of the West of England + 8 at Bristol and West Athletic Club)"
     ],
     "flags": []
   },
@@ -13836,144 +14320,6 @@
       "Valid age trajectory: U23 \u2794 Senior, U23",
       "Very consistent pace (Avg #40.0 vs #26.0, \u0394 14.0)",
       "Category rank alignment (Avg #11.0 vs #10.0)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__matt_grantham__micky_morris__parc_bryn_ba",
-    "name": "Matt Grantham",
-    "gender": "M",
-    "from_club": "Micky Morris Racing Team",
-    "to_club": "Parc Bryn Bach Running Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Micky Morris Racing Team",
-      "count": 21,
-      "seasons": [
-        "2017/2018",
-        "2019/2020",
-        "2021/2022",
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2017,
-      "last_yr": 2023,
-      "years_span": "2017\u20132024 (5 seasons)",
-      "avg_pos": 26.0,
-      "best_pos": 4,
-      "avg_cat_pos": 10.0,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Parc Bryn Bach Running Club",
-      "count": 6,
-      "seasons": [
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2025,
-      "years_span": "2024\u20132026 (2 seasons)",
-      "avg_pos": 8.7,
-      "best_pos": 2,
-      "avg_cat_pos": 5.2,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2017\u20132024 \u2794 2024\u20132026) with 0 overlap",
-      "Valid age trajectory: Senior, U23 \u2794 Senior",
-      "Very consistent pace (Avg #26.0 vs #8.7, \u0394 17.3)",
-      "Strong sample (21 races at Micky Morris Racing Team + 6 at Parc Bryn Bach Running Club)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__matthew_harvey__neath_harrie__swansea_harr",
-    "name": "Matthew Harvey",
-    "gender": "M",
-    "from_club": "Neath Harriers",
-    "to_club": "Swansea Harriers Athletic Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2014/2015",
-    "from_stats": {
-      "club": "Neath Harriers",
-      "count": 13,
-      "seasons": [
-        "2010/2011",
-        "2011/2012",
-        "2012/2013",
-        "2013/2014"
-      ],
-      "first_yr": 2010,
-      "last_yr": 2013,
-      "years_span": "2010\u20132014 (4 seasons)",
-      "avg_pos": 16.1,
-      "best_pos": 6,
-      "avg_cat_pos": 9.1,
-      "best_cat_pos": 4,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Swansea Harriers Athletic Club",
-      "count": 10,
-      "seasons": [
-        "2014/2015",
-        "2015/2016",
-        "2017/2018",
-        "2023/2024",
-        "2025/2026"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2025,
-      "years_span": "2014\u20132026 (5 seasons)",
-      "avg_pos": 19.5,
-      "best_pos": 9,
-      "avg_cat_pos": 4.5,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior",
-        "V35",
-        "V40",
-        "V45"
-      ],
-      "ages": [
-        28,
-        35,
-        40,
-        45
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2010\u20132014 \u2794 2014\u20132026) with 0 overlap",
-      "Valid age trajectory: Senior \u2794 Senior, V35, V40, V45",
-      "Very consistent pace (Avg #16.1 vs #19.5, \u0394 3.4)",
-      "Strong sample (13 races at Neath Harriers + 10 at Swansea Harriers Athletic Club)"
     ],
     "flags": []
   },
@@ -15549,67 +15895,6 @@
       "Clean handover with 2-year break (2016\u20132022 \u2794 2023\u20132024)",
       "Valid age trajectory: Senior \u2794 Senior",
       "Very consistent pace (Avg #23.3 vs #16.0, \u0394 7.3)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__nynke_kuiper__cdf_runners__les_croupier",
-    "name": "Nynke Kuiper",
-    "gender": "F",
-    "from_club": "CDF Runners",
-    "to_club": "Les Croupiers Running Club",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "CDF Runners",
-      "count": 3,
-      "seasons": [
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2023,
-      "years_span": "2022\u20132024 (2 seasons)",
-      "avg_pos": 29.3,
-      "best_pos": 10,
-      "avg_cat_pos": 14.3,
-      "best_cat_pos": 6,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "to_stats": {
-      "club": "Les Croupiers Running Club",
-      "count": 6,
-      "seasons": [
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2025,
-      "years_span": "2024\u20132026 (2 seasons)",
-      "avg_pos": 7.8,
-      "best_pos": 3,
-      "avg_cat_pos": 4.0,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior"
-      ],
-      "ages": [
-        28
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2022\u20132024 \u2794 2024\u20132026) with 0 overlap",
-      "Valid age trajectory: Senior \u2794 Senior",
-      "Consistent standard (Avg #29.3 vs #7.8)",
-      "Strong sample (3 races at CDF Runners + 6 at Les Croupiers Running Club)"
     ],
     "flags": []
   },
@@ -18387,72 +18672,6 @@
       "Clean immediate handover (2021\u20132022 \u2794 2022\u20132024) with 0 overlap",
       "Valid age trajectory: Senior \u2794 Senior",
       "Very consistent pace (Avg #96.5 vs #103.5, \u0394 7.0)"
-    ],
-    "flags": []
-  },
-  {
-    "id": "transfer__wendy_price__carmarthen_&__amman_valley",
-    "name": "Wendy Price",
-    "gender": "F",
-    "from_club": "Carmarthen & District Harriers AC",
-    "to_club": "Amman Valley Harriers",
-    "confidence": 99,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2022/2023",
-    "from_stats": {
-      "club": "Carmarthen & District Harriers AC",
-      "count": 3,
-      "seasons": [
-        "2021/2022"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2021,
-      "years_span": "2021\u20132022 (1 season)",
-      "avg_pos": 35.3,
-      "best_pos": 27,
-      "avg_cat_pos": 6.0,
-      "best_cat_pos": 5,
-      "categories": [
-        "V35",
-        "V40"
-      ],
-      "ages": [
-        35,
-        40
-      ]
-    },
-    "to_stats": {
-      "club": "Amman Valley Harriers",
-      "count": 8,
-      "seasons": [
-        "2022/2023",
-        "2023/2024",
-        "2024/2025"
-      ],
-      "first_yr": 2022,
-      "last_yr": 2024,
-      "years_span": "2022\u20132025 (3 seasons)",
-      "avg_pos": 49.5,
-      "best_pos": 25,
-      "avg_cat_pos": 6.4,
-      "best_cat_pos": 2,
-      "categories": [
-        "V40",
-        "V45"
-      ],
-      "ages": [
-        40,
-        45
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2021\u20132022 \u2794 2022\u20132025) with 0 overlap",
-      "Valid age trajectory: V35, V40 \u2794 V40, V45",
-      "Very consistent pace (Avg #35.3 vs #49.5, \u0394 14.2)",
-      "Category rank alignment (Avg #6.0 vs #6.4)",
-      "Strong sample (3 races at Carmarthen & District Harriers AC + 8 at Amman Valley Harriers)"
     ],
     "flags": []
   },
@@ -25778,161 +25997,6 @@
     ]
   },
   {
-    "id": "transfer__cari_hughes__les_croupier__cardiff_amat",
-    "name": "Cari Hughes",
-    "gender": "F",
-    "from_club": "Les Croupiers Running Club",
-    "to_club": "Cardiff Amateur Athletic Club",
-    "confidence": 78,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2016/2017",
-    "from_stats": {
-      "club": "Les Croupiers Running Club",
-      "count": 7,
-      "seasons": [
-        "2012/2013",
-        "2013/2014",
-        "2014/2015",
-        "2015/2016"
-      ],
-      "first_yr": 2012,
-      "last_yr": 2015,
-      "years_span": "2012\u20132016 (4 seasons)",
-      "avg_pos": 15.1,
-      "best_pos": 7,
-      "avg_cat_pos": 6.1,
-      "best_cat_pos": 2,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Cardiff Amateur Athletic Club",
-      "count": 6,
-      "seasons": [
-        "2016/2017",
-        "2018/2019",
-        "2021/2022",
-        "2023/2024"
-      ],
-      "first_yr": 2016,
-      "last_yr": 2023,
-      "years_span": "2016\u20132024 (4 seasons)",
-      "avg_pos": 4.0,
-      "best_pos": 2,
-      "avg_cat_pos": 2.8,
-      "best_cat_pos": 1,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2012\u20132016 \u2794 2016\u20132024) with 0 overlap",
-      "Very consistent pace (Avg #15.1 vs #4.0, \u0394 11.1)",
-      "Category rank alignment (Avg #6.1 vs #2.8)",
-      "Strong sample (7 races at Les Croupiers Running Club + 6 at Cardiff Amateur Athletic Club)"
-    ],
-    "flags": [
-      "Severe age regression flag (Senior, U23 vs Senior, U23)"
-    ]
-  },
-  {
-    "id": "transfer__cath_tailby__les_croupier__penarth_and_",
-    "name": "Cath Tailby",
-    "gender": "F",
-    "from_club": "Les Croupiers Running Club",
-    "to_club": "Penarth and Dinas Runners",
-    "confidence": 78,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2014/2015",
-    "from_stats": {
-      "club": "Les Croupiers Running Club",
-      "count": 40,
-      "seasons": [
-        "2010/2011",
-        "2011/2012",
-        "2012/2013",
-        "2013/2014",
-        "2021/2022",
-        "2022/2023",
-        "2023/2024",
-        "2024/2025",
-        "2025/2026"
-      ],
-      "first_yr": 2010,
-      "last_yr": 2025,
-      "years_span": "2010\u20132026 (9 seasons)",
-      "avg_pos": 92.2,
-      "best_pos": 30,
-      "avg_cat_pos": 9.0,
-      "best_cat_pos": 2,
-      "categories": [
-        "V35",
-        "V40",
-        "V50",
-        "V55"
-      ],
-      "ages": [
-        35,
-        40,
-        50,
-        55
-      ]
-    },
-    "to_stats": {
-      "club": "Penarth and Dinas Runners",
-      "count": 27,
-      "seasons": [
-        "2014/2015",
-        "2015/2016",
-        "2016/2017",
-        "2017/2018",
-        "2018/2019",
-        "2019/2020"
-      ],
-      "first_yr": 2014,
-      "last_yr": 2019,
-      "years_span": "2014\u20132020 (6 seasons)",
-      "avg_pos": 75.1,
-      "best_pos": 50,
-      "avg_cat_pos": 10.3,
-      "best_cat_pos": 5,
-      "categories": [
-        "V35",
-        "V40",
-        "V45"
-      ],
-      "ages": [
-        35,
-        40,
-        45
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2010\u20132026 \u2794 2014\u20132020) with 0 overlap",
-      "Very consistent pace (Avg #92.2 vs #75.1, \u0394 17.1)",
-      "Category rank alignment (Avg #9.0 vs #10.3)",
-      "Strong sample (40 races at Les Croupiers Running Club + 27 at Penarth and Dinas Runners)"
-    ],
-    "flags": [
-      "Severe age regression flag (V35, V40, V50, V55 vs V35, V40, V45)"
-    ]
-  },
-  {
     "id": "transfer__corinna_jones__westbury_har__lliswerry_ru",
     "name": "Corinna Jones",
     "gender": "M",
@@ -28133,70 +28197,6 @@
     ],
     "flags": [
       "Severe age regression flag (Senior, V35, V45 vs U23)"
-    ]
-  },
-  {
-    "id": "transfer__amy_tucker__llanelli_ama__carmarthen_&",
-    "name": "Amy Tucker",
-    "gender": "F",
-    "from_club": "Llanelli Amateur Athletic Club",
-    "to_club": "Carmarthen & District Harriers AC",
-    "confidence": 70,
-    "status": "pending",
-    "overlap_count": 0,
-    "overlapping_seasons": [],
-    "handover_season": "2024/2025",
-    "from_stats": {
-      "club": "Llanelli Amateur Athletic Club",
-      "count": 12,
-      "seasons": [
-        "2021/2022",
-        "2022/2023",
-        "2023/2024"
-      ],
-      "first_yr": 2021,
-      "last_yr": 2023,
-      "years_span": "2021\u20132024 (3 seasons)",
-      "avg_pos": 143.8,
-      "best_pos": 84,
-      "avg_cat_pos": 25.8,
-      "best_cat_pos": 10,
-      "categories": [
-        "Senior",
-        "U23"
-      ],
-      "ages": [
-        28,
-        22
-      ]
-    },
-    "to_stats": {
-      "club": "Carmarthen & District Harriers AC",
-      "count": 3,
-      "seasons": [
-        "2024/2025"
-      ],
-      "first_yr": 2024,
-      "last_yr": 2024,
-      "years_span": "2024\u20132025 (1 season)",
-      "avg_pos": 143.3,
-      "best_pos": 109,
-      "avg_cat_pos": 13.7,
-      "best_cat_pos": 8,
-      "categories": [
-        "U23"
-      ],
-      "ages": [
-        22
-      ]
-    },
-    "reasons": [
-      "Clean immediate handover (2021\u20132024 \u2794 2024\u20132025) with 0 overlap",
-      "Very consistent pace (Avg #143.8 vs #143.3, \u0394 0.5)",
-      "Strong sample (12 races at Llanelli Amateur Athletic Club + 3 at Carmarthen & District Harriers AC)"
-    ],
-    "flags": [
-      "Severe age regression flag (Senior, U23 vs U23)"
     ]
   },
   {

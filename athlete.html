@@ -314,7 +314,15 @@
             if (!transferInfo && nameChangeInfo) {
                 transferInfo = confirmedTransfers[nameChangeInfo.maiden_name] || confirmedTransfers[nameChangeInfo.primary_name];
             }
-            const isConfirmedTransfer = !!transferInfo;
+            let isConfirmedTransfer = !!transferInfo;
+            // If a specific club was requested via URL and it is NOT part of the confirmed transfer dossier,
+            // treat this page view as the namesake runner at that specific club!
+            if (isConfirmedTransfer && targetClub && transferInfo.clubs) {
+                const clubsNorm = transferInfo.clubs.map(c => c.toLowerCase());
+                if (!clubsNorm.includes(targetClub.toLowerCase())) {
+                    isConfirmedTransfer = false;
+                }
+            }
 
             // Is this an abbreviated name?
             const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
