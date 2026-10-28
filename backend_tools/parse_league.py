@@ -254,11 +254,30 @@ def compile_database():
                     raw_variants.append(f"{init}. {rest}")
                     raw_variants.append(f"{init} {rest}")
 
+                cat_code = row["cat_code"]
+
                 canonical_name = raw_name
                 for variant in raw_variants:
+                    cat_gender_key = f"{variant} [{sex_label}, {canonical_club}, {cat_code}]"
+                    cat_key = f"{variant} [{canonical_club}, {cat_code}]"
+                    season_gender_key = f"{variant} [{sex_label}, {canonical_club}, {season}]"
+                    season_key_str = f"{variant} [{canonical_club}, {season}]"
                     gender_club_key = f"{variant} [{sex_label}, {canonical_club}]"
                     club_key = f"{variant} [{canonical_club}]"
-                    if gender_club_key in athlete_corrections:
+
+                    if cat_gender_key in athlete_corrections:
+                        canonical_name = athlete_corrections[cat_gender_key]
+                        break
+                    elif cat_key in athlete_corrections:
+                        canonical_name = athlete_corrections[cat_key]
+                        break
+                    elif season_gender_key in athlete_corrections:
+                        canonical_name = athlete_corrections[season_gender_key]
+                        break
+                    elif season_key_str in athlete_corrections:
+                        canonical_name = athlete_corrections[season_key_str]
+                        break
+                    elif gender_club_key in athlete_corrections:
                         canonical_name = athlete_corrections[gender_club_key]
                         break
                     elif club_key in athlete_corrections:
@@ -271,7 +290,13 @@ def compile_database():
                 # Transitive alias resolution (e.g. A. Blair -> Andy Blair -> Andrew Blair)
                 for _ in range(3):
                     next_name = None
-                    for key in [f"{canonical_name} [{sex_label}, {canonical_club}]", f"{canonical_name} [{canonical_club}]", canonical_name]:
+                    for key in [
+                        f"{canonical_name} [{sex_label}, {canonical_club}, {cat_code}]",
+                        f"{canonical_name} [{canonical_club}, {cat_code}]",
+                        f"{canonical_name} [{sex_label}, {canonical_club}]",
+                        f"{canonical_name} [{canonical_club}]",
+                        canonical_name
+                    ]:
                         if key in athlete_corrections and athlete_corrections[key] != canonical_name:
                             next_name = athlete_corrections[key]
                             break
@@ -280,7 +305,6 @@ def compile_database():
                     else:
                         break
 
-                cat_code = row["cat_code"]
                 cat_counters[cat_code] += 1
                 cat_pos = cat_counters[cat_code]
 

@@ -12347,7 +12347,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -13312,7 +13312,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -13727,7 +13727,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -14011,7 +14011,7 @@
       "2022/2023",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -14202,7 +14202,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -14259,7 +14259,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -15021,7 +15021,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -19627,18 +19627,12 @@
     "canonical_name": "Dane Williams",
     "raw_names": [
       "D Williams",
-      "D. Williams",
       "Dane Williams"
     ],
     "clubs": [
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -19647,12 +19641,10 @@
     ],
     "gender": "M",
     "categories": [
-      "Senior",
-      "V45",
-      "V50"
+      "Senior"
     ],
-    "finishes": 28,
-    "first_year": 2014,
+    "finishes": 12,
+    "first_year": 2021,
     "last_year": 2025
   },
   "henry fagan": {
@@ -25500,7 +25492,7 @@
       "2019/2020",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -27464,7 +27456,7 @@
       "2018/2019",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -28107,7 +28099,7 @@
       "2023/2024",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -28272,7 +28264,7 @@
       "2021/2022",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -34679,37 +34671,24 @@
     "first_year": 2019,
     "last_year": 2025
   },
-  "ray davies": {
-    "canonical_name": "Ray Davies",
+  "ray davies (snr)": {
+    "canonical_name": "Ray Davies (Snr)",
     "raw_names": [
-      "R Davies",
-      "R. Davies",
       "Ray Davies"
     ],
     "clubs": [
       "Aberdare Valley AAC"
     ],
     "seasons": [
-      "2013/2014",
-      "2015/2016",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
-      "2021/2022",
-      "2022/2023",
-      "2023/2024",
       "2024/2025",
       "2025/2026"
     ],
     "gender": "M",
     "categories": [
-      "U23",
-      "V55",
-      "V60",
       "V65"
     ],
-    "finishes": 21,
-    "first_year": 2013,
+    "finishes": 2,
+    "first_year": 2024,
     "last_year": 2025
   },
   "jessie benjamin": {
@@ -41525,7 +41504,7 @@
       "2023/2024",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -50142,6 +50121,34 @@
     "first_year": 2022,
     "last_year": 2023
   },
+  "ray davies": {
+    "canonical_name": "Ray Davies",
+    "raw_names": [
+      "R Davies",
+      "R. Davies",
+      "Ray Davies"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020",
+      "2021/2022",
+      "2022/2023",
+      "2023/2024"
+    ],
+    "gender": "M",
+    "categories": [
+      "V55",
+      "V60"
+    ],
+    "finishes": 18,
+    "first_year": 2015,
+    "last_year": 2023
+  },
   "andrew fairclough-edwards": {
     "canonical_name": "Andrew Fairclough-Edwards",
     "raw_names": [
@@ -50784,7 +50791,7 @@
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -51254,7 +51261,7 @@
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -55961,7 +55968,7 @@
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -63665,8 +63672,8 @@
     "first_year": 2022,
     "last_year": 2022
   },
-  "chris jones": {
-    "canonical_name": "Chris Jones",
+  "christopher jones (snr)": {
+    "canonical_name": "Christopher Jones (Snr)",
     "raw_names": [
       "Chris Jones"
     ],
@@ -63674,16 +63681,14 @@
       "Lliswerry Runners"
     ],
     "seasons": [
-      "2021/2022",
       "2022/2023"
     ],
     "gender": "M",
     "categories": [
-      "V40",
       "V60"
     ],
-    "finishes": 2,
-    "first_year": 2021,
+    "finishes": 1,
+    "first_year": 2022,
     "last_year": 2022
   },
   "steve bridges": {
@@ -65405,7 +65410,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -65937,7 +65942,7 @@
       "2019/2020",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -69353,7 +69358,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -77371,7 +77376,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -78165,7 +78170,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -79220,6 +79225,25 @@
     ],
     "finishes": 7,
     "first_year": 2014,
+    "last_year": 2021
+  },
+  "christopher jones (jnr)": {
+    "canonical_name": "Christopher Jones (Jnr)",
+    "raw_names": [
+      "Chris Jones"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
     "last_year": 2021
   },
   "scott wheeldon": {
@@ -82105,7 +82129,7 @@
       "2018/2019",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -82953,7 +82977,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40"
@@ -89888,7 +89912,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -90352,7 +90376,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -90481,7 +90505,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -91777,7 +91801,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -91826,7 +91850,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -91931,7 +91955,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -92289,7 +92313,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -92467,7 +92491,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -92685,7 +92709,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -93413,7 +93437,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -93570,7 +93594,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -95615,7 +95639,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -95664,7 +95688,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -95880,7 +95904,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -96186,7 +96210,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -96274,7 +96298,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -96351,7 +96375,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -96575,7 +96599,7 @@
       "2010/2011",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -96643,7 +96667,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -96886,7 +96910,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -100016,7 +100040,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -101872,7 +101896,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -102103,7 +102127,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -102143,7 +102167,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -102407,7 +102431,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -104031,6 +104055,30 @@
     "first_year": 2018,
     "last_year": 2018
   },
+  "damian williams": {
+    "canonical_name": "Damian Williams",
+    "raw_names": [
+      "D. Williams"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "V45",
+      "V50"
+    ],
+    "finishes": 16,
+    "first_year": 2014,
+    "last_year": 2018
+  },
   "i. shest": {
     "canonical_name": "I. Shest",
     "raw_names": [
@@ -105379,7 +105427,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23"
     ],
@@ -105648,7 +105696,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -106035,7 +106083,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -106621,7 +106669,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50"
@@ -106644,7 +106692,7 @@
       "2011/2012",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -106764,7 +106812,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50"
@@ -106993,7 +107041,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V55"
@@ -108512,7 +108560,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -108737,7 +108785,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -109377,7 +109425,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -109407,7 +109455,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -109452,7 +109500,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -113411,7 +113459,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50",
@@ -116419,7 +116467,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -116564,7 +116612,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50"
@@ -116687,7 +116735,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -116813,7 +116861,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -117573,7 +117621,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -117599,7 +117647,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45",
@@ -119317,7 +119365,7 @@
       "2012/2013",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -119339,7 +119387,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -119778,7 +119826,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -120082,7 +120130,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -121473,7 +121521,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -125497,7 +125545,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -125832,7 +125880,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -126368,7 +126416,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -126532,7 +126580,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -126575,7 +126623,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V50"
@@ -129935,7 +129983,7 @@
       "2012/2013",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -130300,7 +130348,7 @@
       "2013/2014",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40",
@@ -131221,7 +131269,7 @@
       "2010/2011",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23"
     ],
@@ -131309,7 +131357,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -135278,7 +135326,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -137432,7 +137480,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -140361,7 +140409,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -142595,7 +142643,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V70"
@@ -143267,7 +143315,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -144554,7 +144602,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V50"
@@ -145763,7 +145811,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -149049,7 +149097,7 @@
       "2012/2013",
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -150680,6 +150728,25 @@
     ],
     "finishes": 2,
     "first_year": 2012,
+    "last_year": 2013
+  },
+  "ray davies (jnr)": {
+    "canonical_name": "Ray Davies (Jnr)",
+    "raw_names": [
+      "R. Davies"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC"
+    ],
+    "seasons": [
+      "2013/2014"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 1,
+    "first_year": 2013,
     "last_year": 2013
   },
   "l. treadmill": {
@@ -153671,7 +153738,7 @@
       "2010/2011",
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
