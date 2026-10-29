@@ -1,4 +1,4 @@
-/* theme.css — Editorial Styling & Midnight Dark Theme for GL Archive */
+/* theme.css — Editorial Styling & Heritage Dark Theme for GL Archive */
 
 /* 1. Base Typography & Font Features */
 body {
@@ -18,350 +18,330 @@ html:not(.dark) body {
     color: #1e293b;
 }
 
-/* 3. Midnight Dark Theme (Editorial Dark Slate) */
+/* 3. Heritage Editorial Dark Theme (Not pitch black, not AI-neon — warm athletic charcoal) */
 html.dark {
     color-scheme: dark;
-    background-color: #0b0f19;
+    background-color: #131722;
 }
 
 html.dark body {
-    background-color: #0b0f19 !important;
+    background-color: #131722 !important;
     color: #cbd5e1 !important;
 }
 
-/* Background Elevations */
+/* Primary Elevated Surfaces (Headers, Cards, Modals) */
 html.dark header,
 html.dark footer,
-html.dark .bg-white {
-    background-color: #111827 !important;
+html.dark .bg-white,
+html.dark .dark\:bg-slate-900,
+html.dark .dark\:bg-slate-900\/60,
+html.dark .dark\:bg-slate-900\/95 {
+    background-color: #1c2230 !important;
 }
 
+/* Page Background & Base Tints */
 html.dark .bg-slate-50,
-html.dark .bg-\[\#fbfcfd\] {
-    background-color: #0b0f19 !important;
+html.dark .bg-\[\#fbfcfd\],
+html.dark .dark\:bg-slate-950 {
+    background-color: #131722 !important;
 }
 
-html.dark .bg-slate-100 {
-    background-color: #1a2234 !important;
+/* Secondary Wells / Stat Tiles / Filter Containers */
+html.dark .bg-slate-100,
+html.dark .dark\:bg-slate-800,
+html.dark .dark\:bg-slate-800\/60,
+html.dark .dark\:bg-slate-800\/80,
+html.dark .dark\:bg-slate-800\/50 {
+    background-color: #222a3b !important;
 }
 
 html.dark .bg-slate-200 {
-    background-color: #242f44 !important;
+    background-color: #2b354a !important;
 }
 
-html.dark .bg-emerald-50 {
-    background-color: rgba(6, 78, 59, 0.25) !important;
-}
-
-html.dark .bg-amber-50 {
-    background-color: rgba(120, 53, 15, 0.25) !important;
-}
-
-html.dark .bg-blue-50,
-html.dark .bg-sky-50,
-html.dark .bg-sky-50\/80 {
-    background-color: rgba(14, 116, 144, 0.2) !important;
-}
-
-html.dark .bg-purple-50,
-html.dark .bg-purple-50\/80 {
-    background-color: rgba(107, 33, 168, 0.2) !important;
-}
-
-html.dark .bg-sky-100 {
-    background-color: rgba(14, 116, 144, 0.35) !important;
-}
-
-html.dark .bg-purple-100 {
-    background-color: rgba(107, 33, 168, 0.35) !important;
-}
-
-/* Borders */
+/* Quiet, Editorial Borders (Soft charcoal-slate, no neon glare) */
 html.dark .border-slate-100,
 html.dark .border-slate-200,
-html.dark .border-slate-200\/80 {
-    border-color: #1e293b !important;
+html.dark .border-slate-200\/80,
+html.dark .border-slate-200\/90,
+html.dark .dark\:border-slate-800,
+html.dark .dark\:border-slate-800\/60,
+html.dark .dark\:border-slate-700 {
+    border-color: #283347 !important;
 }
 
 html.dark .border-slate-300 {
-    border-color: #334155 !important;
-}
-
-html.dark .border-sky-200,
-html.dark .border-sky-200\/90,
-html.dark .border-sky-300 {
-    border-color: rgba(56, 189, 248, 0.3) !important;
-}
-
-html.dark .border-purple-100,
-html.dark .border-purple-200,
-html.dark .border-purple-200\/90 {
-    border-color: rgba(192, 132, 252, 0.3) !important;
+    border-color: #37445c !important;
 }
 
 html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
-html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
-    border-color: #1e293b !important;
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .dark\:divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
+    border-color: #242e40 !important;
 }
 
-/* Text Hierarchy */
+/* Typography Hierarchy (Refined, legible, warm contrast) */
 html.dark .text-slate-950,
-html.dark .text-slate-900 {
-    color: #f8fafc !important;
+html.dark .text-slate-900,
+html.dark .dark\:text-slate-100 {
+    color: #f1f5f9 !important;
 }
 
-html.dark .text-slate-800 {
+html.dark .text-slate-800,
+html.dark .dark\:text-slate-200 {
     color: #e2e8f0 !important;
 }
 
-html.dark .text-slate-700 {
+html.dark .text-slate-700,
+html.dark .dark\:text-slate-300 {
     color: #cbd5e1 !important;
 }
 
-html.dark .text-slate-600 {
+html.dark .text-slate-600,
+html.dark .dark\:text-slate-400 {
     color: #94a3b8 !important;
 }
 
 html.dark .text-slate-500 {
-    color: #64748b !important;
+    color: #78889e !important;
 }
 
 html.dark .text-slate-400 {
-    color: #475569 !important;
+    color: #627289 !important;
 }
 
+/* British Racing Green / Forest Emerald Accents */
+html.dark .text-emerald-600,
 html.dark .text-emerald-700,
 html.dark .text-emerald-800,
-html.dark .text-emerald-900 {
+html.dark .text-emerald-900,
+html.dark .dark\:text-emerald-400,
+html.dark .dark\:text-emerald-300 {
     color: #34d399 !important;
 }
 
+html.dark .bg-emerald-50,
+html.dark .dark\:bg-emerald-950,
+html.dark .dark\:bg-emerald-950\/40,
+html.dark .dark\:bg-emerald-950\/60 {
+    background-color: rgba(6, 78, 59, 0.3) !important;
+}
+
+html.dark .border-emerald-200,
+html.dark .border-emerald-300,
+html.dark .dark\:border-emerald-700,
+html.dark .dark\:border-emerald-800,
+html.dark .dark\:border-emerald-800\/60 {
+    border-color: rgba(52, 211, 153, 0.3) !important;
+}
+
+/* Warm Amber / Heritage Gold (Category Wins, Stalwarts, Podiums) */
+html.dark .text-amber-500,
+html.dark .text-amber-600,
 html.dark .text-amber-700,
-html.dark .text-amber-800 {
+html.dark .text-amber-800,
+html.dark .text-amber-900,
+html.dark .dark\:text-amber-300,
+html.dark .dark\:text-amber-400 {
     color: #fbbf24 !important;
 }
 
-html.dark .text-blue-700,
-html.dark .text-blue-800,
+html.dark .bg-amber-50,
+html.dark .bg-amber-100,
+html.dark .dark\:bg-amber-950,
+html.dark .dark\:bg-amber-950\/40,
+html.dark .dark\:bg-amber-950\/60 {
+    background-color: rgba(146, 64, 14, 0.25) !important;
+}
+
+html.dark .border-amber-200,
+html.dark .border-amber-300,
+html.dark .dark\:border-amber-700,
+html.dark .dark\:border-amber-800 {
+    border-color: rgba(251, 191, 36, 0.3) !important;
+}
+
+/* Subtle Steel Blue for Secondary Context (Disambiguation/Namesakes - NOT electric cyan) */
+html.dark .text-sky-600,
 html.dark .text-sky-700,
-html.dark .text-sky-800 {
-    color: #38bdf8 !important;
+html.dark .text-sky-800,
+html.dark .dark\:text-sky-300,
+html.dark .dark\:text-sky-400 {
+    color: #7dd3fc !important;
 }
 
-html.dark .text-sky-900,
-html.dark .text-sky-950 {
-    color: #e0f2fe !important;
+html.dark .bg-sky-50,
+html.dark .bg-sky-100,
+html.dark .dark\:bg-sky-950\/40,
+html.dark .dark\:bg-sky-900 {
+    background-color: rgba(12, 74, 110, 0.3) !important;
 }
 
+html.dark .border-sky-200,
+html.dark .dark\:border-sky-700,
+html.dark .dark\:border-sky-800\/60 {
+    border-color: rgba(125, 211, 252, 0.25) !important;
+}
+
+/* Muted Plum for Verified Name Changes (Wedding Ring Alert) */
+html.dark .text-purple-600,
 html.dark .text-purple-700,
-html.dark .text-purple-800 {
-    color: #c084fc !important;
+html.dark .text-purple-800,
+html.dark .dark\:text-purple-300,
+html.dark .dark\:text-purple-400 {
+    color: #d8b4fe !important;
 }
 
-html.dark .text-purple-950 {
-    color: #f3e8ff !important;
+html.dark .bg-purple-50,
+html.dark .bg-purple-100,
+html.dark .dark\:bg-purple-950\/40,
+html.dark .dark\:bg-purple-900 {
+    background-color: rgba(88, 28, 135, 0.25) !important;
 }
 
-/* Hover States */
-html.dark .hover\:bg-slate-50:hover {
-    background-color: #151d2e !important;
+html.dark .border-purple-200,
+html.dark .dark\:border-purple-700,
+html.dark .dark\:border-purple-800\/60 {
+    border-color: rgba(216, 180, 254, 0.25) !important;
 }
 
-html.dark .hover\:bg-slate-100:hover {
-    background-color: #1e293b !important;
+/* Hover States across elements */
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-50\/80:hover,
+html.dark .hover\:bg-slate-100:hover,
+html.dark .hover\:bg-slate-100\/50:hover,
+html.dark .dark\:hover\:bg-slate-800\/50:hover {
+    background-color: #252e42 !important;
 }
 
-html.dark .hover\:bg-slate-200:hover {
-    background-color: #2a374f !important;
+html.dark .hover\:bg-slate-200:hover,
+html.dark .dark\:hover\:bg-slate-700:hover {
+    background-color: #2e3952 !important;
 }
 
 html.dark .hover\:text-slate-900:hover,
-html.dark .hover\:text-slate-950:hover {
+html.dark .hover\:text-slate-950:hover,
+html.dark .dark\:hover\:text-white:hover {
     color: #ffffff !important;
 }
 
-/* Tables */
+html.dark .hover\:text-emerald-700:hover,
+html.dark .hover\:text-emerald-800:hover,
+html.dark .dark\:hover\:text-emerald-400:hover {
+    color: #6ee7b7 !important;
+}
+
+/* Tables Styling */
 html.dark table thead th {
-    background-color: #151d2e !important;
-    color: #94a3b8 !important;
-    border-color: #1e293b !important;
+    background-color: #19202e !important;
+    color: #8b9bb2 !important;
+    border-color: #283347 !important;
 }
 
 html.dark table tbody tr {
-    border-color: #1e293b !important;
+    border-color: #242e40 !important;
 }
 
 html.dark table tbody tr:hover {
-    background-color: #151d2e !important;
+    background-color: #222b3d !important;
 }
 
-/* Form Inputs & Selects */
+/* Form Inputs, Dropdowns & Selects */
 html.dark input[type="text"],
 html.dark input[type="search"],
 html.dark select {
-    background-color: #111827 !important;
-    border-color: #334155 !important;
-    color: #f8fafc !important;
+    background-color: #181f2c !important;
+    border-color: #2f3d54 !important;
+    color: #f1f5f9 !important;
 }
 
 html.dark input::placeholder {
-    color: #64748b !important;
+    color: #5b6c82 !important;
 }
 
 html.dark input:focus,
 html.dark select:focus {
-    border-color: #38bdf8 !important;
-    background-color: #151d2e !important;
+    border-color: #10b981 !important;
+    background-color: #1c2434 !important;
+    box-shadow: 0 0 0 1px #10b981 !important;
 }
 
 /* Search Palette Modal */
 html.dark #search-palette-modal .bg-white {
-    background-color: #111827 !important;
+    background-color: #1c2230 !important;
+    border-color: #2f3d54 !important;
 }
 
 html.dark #search-palette-modal .border-slate-100,
 html.dark #search-palette-modal .border-slate-200 {
-    border-color: #1e293b !important;
+    border-color: #283347 !important;
 }
 
 html.dark #search-palette-modal kbd {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
-    color: #94a3b8 !important;
+    background-color: #222a3b !important;
+    border-color: #2f3d54 !important;
+    color: #8b9bb2 !important;
 }
 
 html.dark #search-palette-modal input {
     background-color: transparent !important;
-    color: #f8fafc !important;
+    color: #f1f5f9 !important;
 }
 
 /* Navigation & Mobile Tray */
-html.dark header.bg-white\/95 {
-    background-color: rgba(17, 24, 39, 0.95) !important;
+html.dark header.bg-white\/95,
+html.dark header.dark\:bg-slate-900\/95 {
+    background-color: rgba(28, 34, 48, 0.95) !important;
+    border-color: #283347 !important;
 }
 
 html.dark #mobile-nav-tray {
-    background-color: #111827 !important;
+    background-color: #1c2230 !important;
+    border-color: #283347 !important;
 }
 
-/* Nav Brand Badge */
-html.dark .w-9.h-9.bg-slate-900 {
-    background-color: #065f46 !important;
+/* Nav Brand Logo Badge */
+html.dark .w-9.h-9.bg-slate-900,
+html.dark .w-9.h-9.dark\:bg-emerald-950 {
+    background-color: #064e3b !important;
     color: #ecfdf5 !important;
-    border: 1px solid rgba(52, 211, 153, 0.3) !important;
+    border: 1px solid rgba(52, 211, 153, 0.35) !important;
 }
 
-/* Active Category Tabs & Pills */
-html.dark .cat-pill.active,
-html.dark .gender-tab.active,
-html.dark .tab-btn.active,
-html.dark .nav-tab-active {
-    background-color: #1e293b !important;
-    color: #f8fafc !important;
-    border-color: #334155 !important;
-}
-
-/* Inactive tabs */
-html.dark .cat-pill:not(.active),
-html.dark .gender-tab:not(.active),
-html.dark .tab-btn:not(.active) {
-    color: #94a3b8 !important;
-}
-
-html.dark .cat-pill:not(.active):hover,
-html.dark .gender-tab:not(.active):hover,
-html.dark .tab-btn:not(.active):hover {
-    background-color: #1a2234 !important;
-    color: #f8fafc !important;
-}
-
-/* Stat Widgets & Well Cards */
-html.dark .stat-card,
-html.dark div[class*="bg-slate-50"][class*="border"] {
-    background-color: #151d2e !important;
-    border-color: #1e293b !important;
-}
-
-/* Gender Controls & Active Pills */
+/* Gender Controls & Active Switchers */
 html.dark #btn-gender-m.bg-white, 
 html.dark #btn-gender-f.bg-white {
-    background-color: #1e293b !important;
-    color: #f8fafc !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+    background-color: #252e42 !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
 }
 
 html.dark #btn-gender-m:not(.bg-white), 
 html.dark #btn-gender-f:not(.bg-white) {
-    color: #94a3b8 !important;
+    color: #8b9bb2 !important;
 }
 
+/* Category Filter Pills */
 html.dark .cat-pill.bg-slate-900,
 html.dark .filter-tab.bg-slate-900 {
     background-color: #f1f5f9 !important;
-    color: #0b0f19 !important;
+    color: #131722 !important;
 }
 
 html.dark .cat-pill.bg-slate-100,
 html.dark .filter-tab.bg-slate-100 {
-    background-color: #1a2234 !important;
-    color: #94a3b8 !important;
+    background-color: #222a3b !important;
+    color: #8b9bb2 !important;
 }
 
-/* Badges & Guest Flags */
-html.dark .bg-amber-100 {
-    background-color: rgba(217, 119, 6, 0.25) !important;
-}
-html.dark .text-amber-900 {
-    color: #fcd34d !important;
-}
-html.dark .text-amber-700 {
-    color: #fbbf24 !important;
-}
-
-/* Hero Search on Homepage */
-html.dark #hero-search-input {
-    background-color: #111827 !important;
-    border-color: #334155 !important;
-    color: #f8fafc !important;
-}
-html.dark #hero-search-input:focus {
-    border-color: #10b981 !important;
-    box-shadow: 0 0 0 1px #10b981 !important;
-}
-
-/* Athlete Page Club Badges */
-html.dark #athlete-clubs-list span,
-html.dark #athlete-clubs-list a {
-    background-color: #151d2e !important;
-    border-color: #1e293b !important;
-    color: #cbd5e1 !important;
-}
-
-/* Theme Toggle Button Styling */
+/* Theme Toggle Button */
 #theme-toggle-btn {
     cursor: pointer;
 }
 html.dark #theme-toggle-btn {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+    background-color: #222a3b !important;
+    border-color: #2f3d54 !important;
 }
 html.dark #theme-toggle-btn:hover {
-    background-color: #2a374f !important;
+    background-color: #2a354b !important;
 }
-
-/* Nickname & Variant Badges */
-html.dark .bg-purple-100 {
-    background-color: rgba(147, 51, 234, 0.22) !important;
-}
-html.dark .text-purple-700,
-html.dark .text-purple-800 {
-    color: #c084fc !important;
-}
-html.dark .border-purple-200,
-html.dark .border-purple-300 {
-    border-color: rgba(168, 85, 247, 0.35) !important;
-}
-html.dark .bg-purple-50\/20 {
-    background-color: rgba(147, 51, 234, 0.08) !important;
-}
-

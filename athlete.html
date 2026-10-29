@@ -46,7 +46,18 @@
 
     <!-- ATHLETE HERO HEADER -->
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <a href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Clubs</a>
+                <span>/</span>
+                <a id="athlete-breadcrumb-club" href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Club</a>
+                <span>/</span>
+                <span id="athlete-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Athlete Profile</span>
+            </nav>
+
             <div class="space-y-4">
                 
                 <!-- Category / League Tag -->
@@ -572,6 +583,16 @@
             const clubBadge = document.getElementById('athlete-club-badge');
             clubBadge.textContent = primaryClub;
             clubBadge.href = `club.html?club=${encodeURIComponent(primaryClub)}`;
+
+            const bcClub = document.getElementById('athlete-breadcrumb-club');
+            if (bcClub) {
+                bcClub.textContent = primaryClub;
+                bcClub.href = `club.html?club=${encodeURIComponent(primaryClub)}`;
+            }
+            const bcName = document.getElementById('athlete-breadcrumb-name');
+            if (bcName) {
+                bcName.textContent = displayName;
+            }
 
             const primaryGender = careerRecords[0]?.gender === 'F' ? 'Women' : 'Men';
             document.getElementById('athlete-gender-badge').textContent = `Senior / Vet ${primaryGender}`;

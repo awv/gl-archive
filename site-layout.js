@@ -101,6 +101,19 @@ function initNavEvents() {
         mobileThemeBtn.addEventListener('click', toggleTheme);
     }
     updateThemeUI();
+
+    // Highlight active nav item
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#global-nav nav a, #mobile-nav-tray a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        const hrefBase = href.split('?')[0];
+        const isDirect = hrefBase === currentPath || (currentPath === '' && hrefBase === 'index.html');
+        if (isDirect) {
+            a.classList.add('text-emerald-700', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-500', 'font-bold');
+            a.classList.remove('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+        }
+    });
 }
 
 function initSearchPalette() {
@@ -298,7 +311,6 @@ function initSearchPalette() {
                 </a>
             `;
             }).join('');
-            `).join('');
         }
 
         if (matchedClubs.length > 0) {

@@ -40,8 +40,17 @@
     <div id="global-nav"></div>
 
     <!-- FIXTURE MASTHEAD / HEADER -->
-    <header class="border-b border-slate-200 bg-white">
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <a href="seasons.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Seasons</a>
+                <span>/</span>
+                <span id="results-breadcrumb-season" class="text-slate-800 dark:text-slate-200 font-bold truncate">Fixture Results</span>
+            </nav>
+
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                 <div>
                     <div class="flex items-center gap-2 mb-2">

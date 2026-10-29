@@ -40,9 +40,18 @@
     <div id="global-nav"></div>
 
     <!-- SEASON HEADER -->
-    <header class="border-b border-slate-200 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <a href="seasons.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Seasons</a>
+                <span>/</span>
+                <span id="season-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Campaign</span>
+            </nav>
+
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2.5 py-1 rounded-md">
                 Campaign Overview
             </span>
             <h1 id="season-title" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mt-2">
@@ -130,6 +139,8 @@
             const seasonLabel = seasonRecords[0].season;
             document.title = `GL Archive — ${seasonLabel} Campaign`;
             document.getElementById('season-title').textContent = `${seasonLabel} Campaign`;
+            const sBc = document.getElementById('season-breadcrumb-name');
+            if (sBc) sBc.textContent = `${seasonLabel} Campaign`;
             document.getElementById('season-sub').textContent = `Full five-match series metrics and individual results index.`;
 
             // Metrics

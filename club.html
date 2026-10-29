@@ -44,7 +44,16 @@
 
     <!-- CLUB HERO HEADER -->
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <a href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Clubs</a>
+                <span>/</span>
+                <span id="club-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Club Profile</span>
+            </nav>
+
             <div class="space-y-4">
                 
                 <!-- Category Tag -->
@@ -264,6 +273,8 @@
 
             document.getElementById('club-title').textContent = targetClub;
             document.title = `${targetClub} — GL Archive Profile`;
+            const bcName = document.getElementById('club-breadcrumb-name');
+            if (bcName) bcName.textContent = targetClub;
 
             // Filter finishes for this club
             const clubRecords = allData.filter(r => r.club && r.club.toLowerCase() === targetClub.toLowerCase());
