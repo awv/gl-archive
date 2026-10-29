@@ -78,7 +78,7 @@
                     <span>•</span>
                     <span id="club-seasons-span">0 CAMPAIGNS ACTIVE</span>
                     <span>•</span>
-                    <span id="club-current-squad-span">0 ACTIVE IN 2025/2026</span>
+                    <span id="club-current-team-span">0 ACTIVE IN 2025/2026</span>
                 </div>
             </div>
 
@@ -105,8 +105,8 @@
                     <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-amber-500 block mt-0.5">0</span>
                 </div>
                 <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active '25/'26</span>
-                    <span id="stat-active-squad" class="text-2xl font-bold font-serif text-sky-600 dark:text-sky-400 block mt-0.5">0</span>
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active Team</span>
+                    <span id="stat-active-team" class="text-2xl font-bold font-serif text-sky-600 dark:text-sky-400 block mt-0.5">0</span>
                 </div>
             </div>
         </div>
@@ -172,19 +172,19 @@
             </div>
         </section>
 
-        <!-- SECTION 3: SQUAD LEADERBOARDS (MEN & WOMEN CORE ACTIVE STANDINGS) -->
+        <!-- SECTION 3: TEAM LEADERBOARDS (MEN & WOMEN CORE ACTIVE STANDINGS) -->
         <section class="space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div>
                     <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
-                        ROSTER & SQUAD DEPTH
+                        ROSTER & TEAM DEPTH
                     </span>
                     <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-                        All-Time Squad Leaderboards
+                        All-Time Team Leaderboards
                     </h2>
                 </div>
 
-                <!-- Squad Search & Gender Filter Toggle -->
+                <!-- Team Search & Gender Filter Toggle -->
                 <div class="flex items-center gap-3">
                     <input type="text" id="squad-search" placeholder="Search runners..." 
                         class="px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
@@ -197,14 +197,14 @@
                 </div>
             </div>
 
-            <!-- Two-Column Squad Tables or Unified Grid -->
+            <!-- Two-Column Team Tables or Unified Grid -->
             <div id="squad-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
-                <!-- Men's Squad Card -->
+                <!-- Men's Team Card -->
                 <div id="men-squad-card" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col">
                     <div class="px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <span class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                            <span>🏃‍♂️</span> Men's Squad Standings
+                            <span>🏃‍♂️</span> Men's Team Standings
                         </span>
                         <span id="men-squad-count" class="text-[10px] font-mono text-slate-500 dark:text-slate-400">0 runners</span>
                     </div>
@@ -226,11 +226,11 @@
                     </div>
                 </div>
 
-                <!-- Women's Squad Card -->
+                <!-- Women's Team Card -->
                 <div id="women-squad-card" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col">
                     <div class="px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <span class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                            <span>🏃‍♀️</span> Women's Squad Standings
+                            <span>🏃‍♀️</span> Women's Team Standings
                         </span>
                         <span id="women-squad-count" class="text-[10px] font-mono text-slate-500 dark:text-slate-400">0 runners</span>
                     </div>
@@ -417,7 +417,7 @@
                                     ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800' 
                                     : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                             }">
-                                ${isActive ? 'Active Squad' : 'Club Veteran'}
+                                ${isActive ? 'Active Team' : 'Club Veteran'}
                             </span>
                             <span class="text-[10px] font-mono text-slate-400 font-bold">
                                 ${s.firstYear}–${s.lastYear + 1}

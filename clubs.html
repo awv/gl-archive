@@ -100,7 +100,7 @@
                         Most Finishes
                     </button>
                     <button data-sort="active" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
-                        Active Squad
+                        Active Team
                     </button>
                     <button data-sort="wins" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
                         Category Wins
@@ -312,7 +312,7 @@
                     currentSort = btn.dataset.sort;
 
                     if (currentSort === 'turnout') sortDesc.textContent = 'Sorted by cumulative race finishes';
-                    if (currentSort === 'active') sortDesc.textContent = `Sorted by active squad size in ${latestSeason}`;
+                    if (currentSort === 'active') sortDesc.textContent = `Sorted by active team size in ${latestSeason}`;
                     if (currentSort === 'wins') sortDesc.textContent = 'Sorted by age category wins';
                     if (currentSort === 'alpha') sortDesc.textContent = 'Sorted alphabetically (A–Z)';
 
