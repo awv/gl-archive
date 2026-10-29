@@ -1,4 +1,4 @@
-// Auto-generated verified name changes for GL Archive
+// Auto-generated verified name changes registry
 window.glNameChanges = {
   "Alaw Beynon-Thomas": {
     "primary_name": "Alaw Evans",
@@ -62,6 +62,30 @@ window.glNameChanges = {
     "club": "Swansea Harriers Athletic Club",
     "effective_season": "2022/2023",
     "note": "Formerly competed as Graciela Diaz de la Fuente",
+    "confirmed": true
+  },
+  "Nicola Gething": {
+    "primary_name": "Nicola Jukes",
+    "maiden_name": "Nicola Gething",
+    "club": "Parc Bryn Bach Running Club",
+    "effective_season": "2017/2018",
+    "note": "Formerly competed as Nicola Gething",
+    "confirmed": true
+  },
+  "Ruth Butterfield": {
+    "primary_name": "Ruth Carter",
+    "maiden_name": "Ruth Butterfield",
+    "club": "Parc Bryn Bach Running Club",
+    "effective_season": "2018/2019",
+    "note": "Formerly competed as Ruth Butterfield",
+    "confirmed": true
+  },
+  "Rachel Lewis-Burr": {
+    "primary_name": "Rachel Lewis",
+    "maiden_name": "Rachel Lewis-Burr",
+    "club": "Parc Bryn Bach Running Club",
+    "effective_season": "2021/2022",
+    "note": "Formerly competed as Rachel Lewis-Burr",
     "confirmed": true
   }
 };

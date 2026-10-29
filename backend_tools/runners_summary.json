@@ -2410,15 +2410,21 @@
     "first_year": 2025,
     "last_year": 2025
   },
-  "sam lewis jones": {
-    "canonical_name": "Sam Lewis Jones",
+  "sam jones": {
+    "canonical_name": "Sam Jones",
     "raw_names": [
+      "S. Lewis-Jones",
+      "Sam Jones",
       "Sam Lewis Jones"
     ],
     "clubs": [
+      "Aberdare Valley AAC",
+      "CDF Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2015/2016",
+      "2019/2020",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -2427,11 +2433,12 @@
     ],
     "gender": "M",
     "categories": [
+      "Senior",
       "V35",
       "V40"
     ],
-    "finishes": 13,
-    "first_year": 2021,
+    "finishes": 24,
+    "first_year": 2015,
     "last_year": 2025
   },
   "tom callard": {
@@ -3499,7 +3506,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -5417,7 +5424,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -12842,12 +12849,16 @@
   "kimberley price": {
     "canonical_name": "Kimberley Price",
     "raw_names": [
-      "Kimberley Price"
+      "K. Price",
+      "Kimberley Price",
+      "Kym Price"
     ],
     "clubs": [
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2016/2017",
+      "2017/2018",
       "2018/2019",
       "2021/2022",
       "2023/2024",
@@ -12859,8 +12870,8 @@
       "V35",
       "V40"
     ],
-    "finishes": 13,
-    "first_year": 2018,
+    "finishes": 22,
+    "first_year": 2016,
     "last_year": 2025
   },
   "katy thomas": {
@@ -13639,7 +13650,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -13918,7 +13929,7 @@
       "2022/2023",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -14107,7 +14118,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -14904,7 +14915,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -15138,6 +15149,7 @@
     "canonical_name": "Rachel Lewis",
     "raw_names": [
       "R. Lewis",
+      "R. Lewis-Burr",
       "Rachel Lewis"
     ],
     "clubs": [
@@ -15160,7 +15172,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 24,
+    "finishes": 25,
     "first_year": 2014,
     "last_year": 2025
   },
@@ -22843,13 +22855,17 @@
   "owen davies": {
     "canonical_name": "Owen Davies",
     "raw_names": [
+      "O. Davies",
       "Owen Davies"
     ],
     "clubs": [
       "Les Croupiers Running Club",
+      "Parc Bryn Bach Running Club",
       "Swansea Harriers Athletic Club"
     ],
     "seasons": [
+      "2017/2018",
+      "2018/2019",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -22863,8 +22879,8 @@
       "V45",
       "V50"
     ],
-    "finishes": 19,
-    "first_year": 2021,
+    "finishes": 26,
+    "first_year": 2017,
     "last_year": 2025
   },
   "martin williams": {
@@ -23399,32 +23415,6 @@
     ],
     "finishes": 4,
     "first_year": 2023,
-    "last_year": 2025
-  },
-  "sam jones": {
-    "canonical_name": "Sam Jones",
-    "raw_names": [
-      "Sam Jones"
-    ],
-    "clubs": [
-      "Aberdare Valley AAC",
-      "CDF Runners",
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2015/2016",
-      "2021/2022",
-      "2022/2023",
-      "2024/2025",
-      "2025/2026"
-    ],
-    "gender": "M",
-    "categories": [
-      "Senior",
-      "V35"
-    ],
-    "finishes": 9,
-    "first_year": 2015,
     "last_year": 2025
   },
   "andrew dawe": {
@@ -25302,7 +25292,7 @@
       "2019/2020",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -25838,6 +25828,8 @@
   "nicola jukes": {
     "canonical_name": "Nicola Jukes",
     "raw_names": [
+      "N. Gethin",
+      "N. Gething",
       "N. Jukes",
       "Nicola Jukes"
     ],
@@ -25845,6 +25837,12 @@
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2019/2020",
@@ -25854,12 +25852,13 @@
     ],
     "gender": "F",
     "categories": [
+      "V40",
       "V45",
       "V50",
       "V55"
     ],
-    "finishes": 23,
-    "first_year": 2017,
+    "finishes": 43,
+    "first_year": 2011,
     "last_year": 2025
   },
   "hannah batchelor": {
@@ -27906,7 +27905,7 @@
       "2023/2024",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -28401,12 +28400,18 @@
   "kathryn collins": {
     "canonical_name": "Kathryn Collins",
     "raw_names": [
+      "K. Collins",
       "Kathryn Collins"
     ],
     "clubs": [
-      "Lliswerry Runners"
+      "Lliswerry Runners",
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
       "2022/2023",
       "2023/2024",
       "2024/2025",
@@ -28416,8 +28421,8 @@
     "categories": [
       "V35"
     ],
-    "finishes": 10,
-    "first_year": 2022,
+    "finishes": 18,
+    "first_year": 2015,
     "last_year": 2025
   },
   "mikiko minty": {
@@ -42041,6 +42046,7 @@
     "canonical_name": "Lee Aherne",
     "raw_names": [
       "L Aherne",
+      "L. Ahearne",
       "L. Aherne",
       "Lee Aherne"
     ],
@@ -42066,7 +42072,7 @@
       "V50",
       "V55"
     ],
-    "finishes": 40,
+    "finishes": 41,
     "first_year": 2013,
     "last_year": 2024
   },
@@ -49694,7 +49700,8 @@
     "canonical_name": "Anthony Lewis",
     "raw_names": [
       "A. Lewis",
-      "Anthony Lewis"
+      "Anthony Lewis",
+      "T. Lewis"
     ],
     "clubs": [
       "Bristol and West Athletic Club",
@@ -49702,7 +49709,9 @@
     ],
     "seasons": [
       "2015/2016",
+      "2016/2017",
       "2017/2018",
+      "2018/2019",
       "2019/2020",
       "2021/2022",
       "2023/2024"
@@ -49714,7 +49723,7 @@
       "V50",
       "V55"
     ],
-    "finishes": 12,
+    "finishes": 18,
     "first_year": 2015,
     "last_year": 2023
   },
@@ -63731,7 +63740,7 @@
       "2018/2019",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -64995,7 +65004,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -65527,7 +65536,7 @@
       "2019/2020",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -68897,7 +68906,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -76471,31 +76480,6 @@
     "first_year": 2021,
     "last_year": 2021
   },
-  "kym price": {
-    "canonical_name": "Kym Price",
-    "raw_names": [
-      "K. Price",
-      "Kym Price"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
-      "2021/2022"
-    ],
-    "gender": "F",
-    "categories": [
-      "V35",
-      "V40",
-      "V50"
-    ],
-    "finishes": 10,
-    "first_year": 2016,
-    "last_year": 2021
-  },
   "rachel garrod": {
     "canonical_name": "Rachel Garrod",
     "raw_names": [
@@ -76997,7 +76981,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -77791,7 +77775,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -81746,7 +81730,7 @@
       "2018/2019",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -82574,7 +82558,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40"
@@ -83854,7 +83838,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -83882,7 +83866,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -83993,7 +83977,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -84167,7 +84151,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -84255,7 +84239,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -84364,7 +84348,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -84485,7 +84469,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -84526,8 +84510,7 @@
       "Islwyn Running Club",
       "Micky Morris Racing Team",
       "Neath Harriers",
-      "Newport Harriers",
-      "Parc Bryn Bach Running Club"
+      "Newport Harriers"
     ],
     "seasons": [
       "2010/2011",
@@ -84535,19 +84518,17 @@
       "2012/2013",
       "2015/2016",
       "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
       "V35",
-      "V40",
-      "V60"
+      "V40"
     ],
-    "finishes": 33,
+    "finishes": 21,
     "first_year": 2010,
     "last_year": 2019
   },
@@ -84637,7 +84618,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -84780,7 +84761,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -84812,7 +84793,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -85449,7 +85430,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -85477,7 +85458,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45",
@@ -85664,7 +85645,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V45"
@@ -85768,7 +85749,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -85847,7 +85828,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -86059,7 +86040,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -86083,7 +86064,7 @@
       "2011/2012",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V60"
@@ -86188,8 +86169,8 @@
     "first_year": 2012,
     "last_year": 2019
   },
-  "r. sheehy": {
-    "canonical_name": "R. Sheehy",
+  "richard sheehy": {
+    "canonical_name": "Richard Sheehy",
     "raw_names": [
       "R. Sheehy"
     ],
@@ -86278,7 +86259,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -86472,7 +86453,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -86507,7 +86488,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -86528,7 +86509,6 @@
     ],
     "clubs": [
       "Lliswerry Runners",
-      "Parc Bryn Bach Running Club",
       "Swansea Harriers Athletic Club",
       "University of Swansea"
     ],
@@ -86547,7 +86527,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 29,
+    "finishes": 22,
     "first_year": 2012,
     "last_year": 2019
   },
@@ -86562,7 +86542,7 @@
     "seasons": [
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35"
     ],
@@ -86670,8 +86650,8 @@
     "first_year": 2013,
     "last_year": 2019
   },
-  "n. webb": {
-    "canonical_name": "N. Webb",
+  "nick webb": {
+    "canonical_name": "Nick Webb",
     "raw_names": [
       "N. Webb"
     ],
@@ -86811,7 +86791,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -86904,7 +86884,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -87299,7 +87279,6 @@
     "clubs": [
       "Cardiff University AC",
       "Islwyn Running Club",
-      "Parc Bryn Bach Running Club",
       "Pontyclun Road Runners",
       "Taf Running & Orienteering Teams"
     ],
@@ -87307,11 +87286,10 @@
       "2010/2011",
       "2015/2016",
       "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -87319,7 +87297,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 15,
+    "finishes": 11,
     "first_year": 2010,
     "last_year": 2019
   },
@@ -87384,7 +87362,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -87422,7 +87400,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -87861,7 +87839,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -87938,22 +87916,18 @@
       "C. Matthews"
     ],
     "clubs": [
-      "Lliswerry Runners",
-      "Parc Bryn Bach Running Club"
+      "Lliswerry Runners"
     ],
     "seasons": [
       "2015/2016",
-      "2017/2018",
-      "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "V45",
       "V50",
       "V55"
     ],
-    "finishes": 10,
+    "finishes": 5,
     "first_year": 2015,
     "last_year": 2019
   },
@@ -88020,7 +87994,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -88140,8 +88114,8 @@
     "first_year": 2019,
     "last_year": 2019
   },
-  "s. dallow": {
-    "canonical_name": "S. Dallow",
+  "steven dallow": {
+    "canonical_name": "Steven Dallow",
     "raw_names": [
       "S. Dallow"
     ],
@@ -88253,7 +88227,7 @@
       "2014/2015",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -88367,7 +88341,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -88381,8 +88355,8 @@
     "first_year": 2010,
     "last_year": 2019
   },
-  "c. cummings": {
-    "canonical_name": "C. Cummings",
+  "chris cummings": {
+    "canonical_name": "Chris Cummings",
     "raw_names": [
       "C. Cummings"
     ],
@@ -88497,7 +88471,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -88610,7 +88584,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50",
@@ -88774,7 +88748,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -88947,8 +88921,8 @@
     "first_year": 2010,
     "last_year": 2019
   },
-  "d. kempton": {
-    "canonical_name": "D. Kempton",
+  "david kempton": {
+    "canonical_name": "David Kempton",
     "raw_names": [
       "D. Kempton"
     ],
@@ -89096,7 +89070,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -89127,6 +89101,28 @@
     ],
     "finishes": 6,
     "first_year": 2015,
+    "last_year": 2019
+  },
+  "cyril williams": {
+    "canonical_name": "Cyril Williams",
+    "raw_names": [
+      "C. Williams"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V60"
+    ],
+    "finishes": 12,
+    "first_year": 2016,
     "last_year": 2019
   },
   "m. layton": {
@@ -89338,7 +89334,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -89471,7 +89467,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -89605,7 +89601,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -89862,7 +89858,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -89899,7 +89895,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -90435,7 +90431,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -90512,7 +90508,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -90605,7 +90601,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -90989,8 +90985,8 @@
     "first_year": 2018,
     "last_year": 2019
   },
-  "h. jackson": {
-    "canonical_name": "H. Jackson",
+  "harry jackson": {
+    "canonical_name": "Harry Jackson",
     "raw_names": [
       "H. Jackson"
     ],
@@ -91659,7 +91655,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -91864,8 +91860,8 @@
     "first_year": 2019,
     "last_year": 2019
   },
-  "l. atkin-smith": {
-    "canonical_name": "L. Atkin-Smith",
+  "lucy atkin-smith": {
+    "canonical_name": "Lucy Atkin-Smith",
     "raw_names": [
       "L. Atkin-Smith"
     ],
@@ -91961,7 +91957,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -92010,7 +92006,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -92115,7 +92111,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -92352,28 +92348,25 @@
     "first_year": 2015,
     "last_year": 2019
   },
-  "b. james": {
-    "canonical_name": "B. James",
+  "beth james": {
+    "canonical_name": "Beth James",
     "raw_names": [
       "B. James"
     ],
     "clubs": [
-      "Bristol and West Athletic Club",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2013/2014",
       "2018/2019",
       "2019/2020"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
       "V35",
       "V40"
     ],
-    "finishes": 8,
-    "first_year": 2013,
+    "finishes": 5,
+    "first_year": 2018,
     "last_year": 2019
   },
   "c. best": {
@@ -92473,7 +92466,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -92490,7 +92483,6 @@
     "clubs": [
       "Aberdare Valley AAC",
       "Cardiff Amateur Athletic Club",
-      "Parc Bryn Bach Running Club",
       "Wells City Harriers",
       "Westbury Harriers"
     ],
@@ -92510,7 +92502,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 18,
+    "finishes": 17,
     "first_year": 2010,
     "last_year": 2019
   },
@@ -92637,7 +92629,6 @@
     ],
     "clubs": [
       "Blaenau Gwent",
-      "Parc Bryn Bach Running Club",
       "Pontypridd Roadents Athletic Club",
       "San Domenico Road Runners Club",
       "Westbury Harriers"
@@ -92658,7 +92649,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 31,
+    "finishes": 23,
     "first_year": 2011,
     "last_year": 2019
   },
@@ -92895,7 +92886,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -93081,8 +93072,8 @@
     "first_year": 2019,
     "last_year": 2019
   },
-  "s. steadman": {
-    "canonical_name": "S. Steadman",
+  "sian steadman": {
+    "canonical_name": "Sian Steadman",
     "raw_names": [
       "S. Steadman"
     ],
@@ -93151,7 +93142,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -93663,7 +93654,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -93820,7 +93811,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -93830,23 +93821,29 @@
     "first_year": 2012,
     "last_year": 2019
   },
-  "m. jenkinsbelohgrors": {
-    "canonical_name": "M. JenkinsBelohGrors",
+  "maricel jenkins-belahorska": {
+    "canonical_name": "Maricel Jenkins-Belahorska",
     "raw_names": [
+      "M. Jenkins-Belhorska",
+      "M. Jenkins-Belohorsk",
+      "M. Jenkins-Belohrska",
       "M. JenkinsBelohGrors"
     ],
     "clubs": [
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
       "2019/2020"
     ],
     "gender": "F",
     "categories": [
       "Senior"
     ],
-    "finishes": 1,
-    "first_year": 2019,
+    "finishes": 10,
+    "first_year": 2016,
     "last_year": 2019
   },
   "l. evans": {
@@ -93903,7 +93900,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -94241,8 +94238,8 @@
     "first_year": 2018,
     "last_year": 2019
   },
-  "h. diplock": {
-    "canonical_name": "H. Diplock",
+  "hywel diplock": {
+    "canonical_name": "Hywel Diplock",
     "raw_names": [
       "H. Diplock"
     ],
@@ -94295,7 +94292,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -94386,7 +94383,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -95073,7 +95070,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -95155,7 +95152,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45"
     ],
@@ -95294,7 +95291,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -95353,29 +95350,24 @@
     "first_year": 2017,
     "last_year": 2019
   },
-  "s. phillips": {
-    "canonical_name": "S. Phillips",
+  "steven phillips": {
+    "canonical_name": "Steven Phillips",
     "raw_names": [
       "S. Phillips"
     ],
     "clubs": [
-      "Islwyn Running Club",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "V35",
       "V40"
     ],
-    "finishes": 10,
-    "first_year": 2016,
+    "finishes": 4,
+    "first_year": 2018,
     "last_year": 2019
   },
   "c. hopkins": {
@@ -95438,7 +95430,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -95482,7 +95474,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -95935,7 +95927,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -95984,7 +95976,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -96200,7 +96192,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -96506,7 +96498,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -96594,7 +96586,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -96605,8 +96597,8 @@
     "first_year": 2010,
     "last_year": 2019
   },
-  "c. caswell": {
-    "canonical_name": "C. Caswell",
+  "ceri caswell": {
+    "canonical_name": "Ceri Caswell",
     "raw_names": [
       "C. Caswell"
     ],
@@ -96671,7 +96663,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -96828,7 +96820,8 @@
     ],
     "clubs": [
       "Cardiff University AC",
-      "Llanelli Amateur Athletic Club"
+      "Llanelli Amateur Athletic Club",
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
       "2015/2016",
@@ -96841,7 +96834,7 @@
       "V45",
       "V50"
     ],
-    "finishes": 5,
+    "finishes": 6,
     "first_year": 2015,
     "last_year": 2019
   },
@@ -96919,7 +96912,7 @@
       "2010/2011",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -96947,8 +96940,8 @@
     "first_year": 2019,
     "last_year": 2019
   },
-  "z. tovey-shaw": {
-    "canonical_name": "Z. Tovey-Shaw",
+  "zoey tovey-shaw": {
+    "canonical_name": "Zoey Tovey-Shaw",
     "raw_names": [
       "Z. Tovey-Shaw"
     ],
@@ -96987,7 +96980,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -97230,7 +97223,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -97264,6 +97257,27 @@
     ],
     "finishes": 7,
     "first_year": 2012,
+    "last_year": 2019
+  },
+  "caroline matthews": {
+    "canonical_name": "Caroline Matthews",
+    "raw_names": [
+      "C. Matthews"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45"
+    ],
+    "finishes": 5,
+    "first_year": 2017,
     "last_year": 2019
   },
   "m. woods": {
@@ -97336,7 +97350,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -97504,7 +97518,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -97725,7 +97739,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -97966,25 +97980,6 @@
     "first_year": 2019,
     "last_year": 2019
   },
-  "s. lewis-jones": {
-    "canonical_name": "S. Lewis-Jones",
-    "raw_names": [
-      "S. Lewis-Jones"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2019/2020"
-    ],
-    "gender": "M",
-    "categories": [
-      "Senior"
-    ],
-    "finishes": 2,
-    "first_year": 2019,
-    "last_year": 2019
-  },
   "m. holding": {
     "canonical_name": "M. Holding",
     "raw_names": [
@@ -98185,7 +98180,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -98412,22 +98407,18 @@
     "clubs": [
       "Bridgend Athletic Club",
       "Les Croupiers Running Club",
-      "Parc Bryn Bach Running Club",
       "Westbury Harriers"
     ],
     "seasons": [
       "2015/2016",
-      "2016/2017",
-      "2018/2019",
       "2019/2020"
     ],
     "gender": "M",
     "categories": [
       "Senior",
-      "V45",
-      "V50"
+      "V45"
     ],
-    "finishes": 9,
+    "finishes": 3,
     "first_year": 2015,
     "last_year": 2019
   },
@@ -98562,7 +98553,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V45",
@@ -99040,7 +99031,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -99623,7 +99614,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -100453,7 +100444,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -101061,7 +101052,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -101189,7 +101180,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35"
     ],
@@ -101380,7 +101371,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -101663,7 +101654,7 @@
     "seasons": [
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V50"
@@ -101852,7 +101843,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45",
@@ -101928,7 +101919,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V45"
@@ -102306,7 +102297,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -102403,7 +102394,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -102440,7 +102431,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -102562,7 +102553,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -102725,12 +102716,36 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
     "finishes": 2,
     "first_year": 2012,
+    "last_year": 2019
+  },
+  "s. phillips": {
+    "canonical_name": "S. Phillips",
+    "raw_names": [
+      "S. Phillips"
+    ],
+    "clubs": [
+      "Islwyn Running Club",
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40"
+    ],
+    "finishes": 6,
+    "first_year": 2016,
     "last_year": 2019
   },
   "m. tyrrell": {
@@ -102765,7 +102780,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -103029,7 +103044,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -103092,7 +103107,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -103213,7 +103228,6 @@
     ],
     "clubs": [
       "Barry & Vale Harriers A. A. C.",
-      "Parc Bryn Bach Running Club",
       "Westbury Harriers"
     ],
     "seasons": [
@@ -103221,8 +103235,6 @@
       "2011/2012",
       "2013/2014",
       "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2018/2019"
     ],
     "gender": "M",
@@ -103231,7 +103243,7 @@
       "V35",
       "V40"
     ],
-    "finishes": 19,
+    "finishes": 11,
     "first_year": 2010,
     "last_year": 2018
   },
@@ -103387,7 +103399,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -104121,20 +104133,17 @@
       "M. Cope"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Parc Bryn Bach Running Club"
+      "Aberdare Valley AAC"
     ],
     "seasons": [
-      "2016/2017",
-      "2017/2018",
       "2018/2019"
     ],
     "gender": "M",
     "categories": [
       "V40"
     ],
-    "finishes": 3,
-    "first_year": 2016,
+    "finishes": 1,
+    "first_year": 2018,
     "last_year": 2018
   },
   "g. hampton": {
@@ -104176,7 +104185,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -104377,7 +104386,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55",
@@ -104647,7 +104656,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -104814,7 +104823,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -104890,7 +104899,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -105016,7 +105025,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -105049,27 +105058,24 @@
     "first_year": 2012,
     "last_year": 2018
   },
-  "k. hale": {
-    "canonical_name": "K. Hale",
+  "kevin hale": {
+    "canonical_name": "Kevin Hale",
     "raw_names": [
       "K. Hale"
     ],
     "clubs": [
-      "Blaenau Gwent",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2016/2017",
       "2017/2018",
       "2018/2019"
     ],
     "gender": "M",
     "categories": [
-      "Senior",
       "V40"
     ],
-    "finishes": 6,
-    "first_year": 2016,
+    "finishes": 2,
+    "first_year": 2017,
     "last_year": 2018
   },
   "m. williamson": {
@@ -105219,8 +105225,31 @@
     "first_year": 2017,
     "last_year": 2018
   },
-  "d. kippest": {
-    "canonical_name": "D. Kippest",
+  "lee phillips": {
+    "canonical_name": "Lee Phillips",
+    "raw_names": [
+      "L. Phillips"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V40",
+      "V45"
+    ],
+    "finishes": 8,
+    "first_year": 2016,
+    "last_year": 2018
+  },
+  "darren kippest": {
+    "canonical_name": "Darren Kippest",
     "raw_names": [
       "D. Kippest"
     ],
@@ -105590,7 +105619,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -105843,8 +105872,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "r. rist": {
-    "canonical_name": "R. Rist",
+  "rob rist": {
+    "canonical_name": "Rob Rist",
     "raw_names": [
       "R. Rist"
     ],
@@ -105917,7 +105946,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -106125,7 +106154,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23"
     ],
@@ -106210,7 +106239,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -106354,7 +106383,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -106447,7 +106476,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -106796,8 +106825,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "c. sullivan": {
-    "canonical_name": "C. Sullivan",
+  "claire sullivan": {
+    "canonical_name": "Claire Sullivan",
     "raw_names": [
       "C. Sullivan"
     ],
@@ -106834,7 +106863,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -107125,8 +107154,8 @@
     "first_year": 2015,
     "last_year": 2018
   },
-  "j. rist": {
-    "canonical_name": "J. Rist",
+  "jayne rist": {
+    "canonical_name": "Jayne Rist",
     "raw_names": [
       "J. Rist"
     ],
@@ -107166,8 +107195,8 @@
     "first_year": 2013,
     "last_year": 2018
   },
-  "l. carpenter-davies": {
-    "canonical_name": "L. Carpenter-Davies",
+  "liz carpenter davies": {
+    "canonical_name": "Liz Carpenter Davies",
     "raw_names": [
       "L. Carpenter-Davies"
     ],
@@ -107270,8 +107299,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "c. aherne": {
-    "canonical_name": "C. Aherne",
+  "claire aherne": {
+    "canonical_name": "Claire Aherne",
     "raw_names": [
       "C. Aherne"
     ],
@@ -107289,8 +107318,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "l-a. taylor": {
-    "canonical_name": "L-A. Taylor",
+  "lee-anne taylor": {
+    "canonical_name": "Lee-Anne Taylor",
     "raw_names": [
       "L-A. Taylor"
     ],
@@ -107420,7 +107449,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50"
@@ -107443,7 +107472,7 @@
       "2011/2012",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -107471,8 +107500,8 @@
     "first_year": 2017,
     "last_year": 2018
   },
-  "l. hire": {
-    "canonical_name": "L. Hire",
+  "laura hire": {
+    "canonical_name": "Laura Hire",
     "raw_names": [
       "L. Hire"
     ],
@@ -107563,7 +107592,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50"
@@ -107591,8 +107620,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "m. monk": {
-    "canonical_name": "M. Monk",
+  "margaret monk": {
+    "canonical_name": "Margaret Monk",
     "raw_names": [
       "M. Monk"
     ],
@@ -107698,8 +107727,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "l-a. vowles": {
-    "canonical_name": "L-A. Vowles",
+  "leigh-anne vowles": {
+    "canonical_name": "Leigh-Anne Vowles",
     "raw_names": [
       "L-A. Vowles"
     ],
@@ -107792,7 +107821,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V55"
@@ -107902,27 +107931,6 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "m. jenkins-belohorsk": {
-    "canonical_name": "M. Jenkins-Belohorsk",
-    "raw_names": [
-      "M. Jenkins-Belohorsk"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2016/2017",
-      "2017/2018",
-      "2018/2019"
-    ],
-    "gender": "F",
-    "categories": [
-      "Senior"
-    ],
-    "finishes": 6,
-    "first_year": 2016,
-    "last_year": 2018
-  },
   "a. teweldebrhan": {
     "canonical_name": "A. Teweldebrhan",
     "raw_names": [
@@ -107960,7 +107968,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -108272,7 +108280,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40",
@@ -108900,7 +108908,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50",
@@ -108943,19 +108951,17 @@
       "G. Bartram"
     ],
     "clubs": [
-      "Brecon Athletic Club",
-      "Parc Bryn Bach Running Club"
+      "Brecon Athletic Club"
     ],
     "seasons": [
-      "2017/2018",
       "2018/2019"
     ],
     "gender": "M",
     "categories": [
       "V40"
     ],
-    "finishes": 3,
-    "first_year": 2017,
+    "finishes": 2,
+    "first_year": 2018,
     "last_year": 2018
   },
   "k. powell": {
@@ -108971,7 +108977,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V55",
@@ -109036,7 +109042,7 @@
       "2012/2013",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -109359,7 +109365,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -109584,7 +109590,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -109915,23 +109921,25 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "r. carter": {
-    "canonical_name": "R. Carter",
+  "ruth carter": {
+    "canonical_name": "Ruth Carter",
     "raw_names": [
+      "R. Butterfield",
       "R. Carter"
     ],
     "clubs": [
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
+      "2017/2018",
       "2018/2019"
     ],
     "gender": "F",
     "categories": [
       "V35"
     ],
-    "finishes": 2,
-    "first_year": 2018,
+    "finishes": 4,
+    "first_year": 2017,
     "last_year": 2018
   },
   "w. sharp-nash": {
@@ -110224,7 +110232,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -110254,7 +110262,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -110299,7 +110307,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -110873,8 +110881,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "i. kent": {
-    "canonical_name": "I. Kent",
+  "ian kent": {
+    "canonical_name": "Ian Kent",
     "raw_names": [
       "I. Kent"
     ],
@@ -110927,7 +110935,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -111081,6 +111089,28 @@
     "first_year": 2017,
     "last_year": 2018
   },
+  "matthew ellis": {
+    "canonical_name": "Matthew Ellis",
+    "raw_names": [
+      "M. Ellis"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 8,
+    "first_year": 2015,
+    "last_year": 2018
+  },
   "m. ahearne": {
     "canonical_name": "M. Ahearne",
     "raw_names": [
@@ -111135,7 +111165,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -111162,7 +111192,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -111260,8 +111290,8 @@
     "first_year": 2010,
     "last_year": 2018
   },
-  "d. smout": {
-    "canonical_name": "D. Smout",
+  "david smout": {
+    "canonical_name": "David Smout",
     "raw_names": [
       "D. Smout"
     ],
@@ -111647,7 +111677,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V60"
@@ -111656,8 +111686,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "t. vaughan": {
-    "canonical_name": "T. Vaughan",
+  "terry vaughan": {
+    "canonical_name": "Terry Vaughan",
     "raw_names": [
       "T. Vaughan"
     ],
@@ -111947,28 +111977,6 @@
       "Senior"
     ],
     "finishes": 7,
-    "first_year": 2015,
-    "last_year": 2018
-  },
-  "k. collins": {
-    "canonical_name": "K. Collins",
-    "raw_names": [
-      "K. Collins"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019"
-    ],
-    "gender": "F",
-    "categories": [
-      "V35"
-    ],
-    "finishes": 8,
     "first_year": 2015,
     "last_year": 2018
   },
@@ -112348,7 +112356,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -112378,8 +112386,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "s. gray": {
-    "canonical_name": "S. Gray",
+  "sue gray": {
+    "canonical_name": "Sue Gray",
     "raw_names": [
       "S. Gray"
     ],
@@ -112413,25 +112421,6 @@
       "V40"
     ],
     "finishes": 1,
-    "first_year": 2018,
-    "last_year": 2018
-  },
-  "m. jenkins-belhorska": {
-    "canonical_name": "M. Jenkins-Belhorska",
-    "raw_names": [
-      "M. Jenkins-Belhorska"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2018/2019"
-    ],
-    "gender": "F",
-    "categories": [
-      "Senior"
-    ],
-    "finishes": 2,
     "first_year": 2018,
     "last_year": 2018
   },
@@ -112494,7 +112483,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -112580,8 +112569,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "n. chard": {
-    "canonical_name": "N. Chard",
+  "nicky chard": {
+    "canonical_name": "Nicky Chard",
     "raw_names": [
       "N. Chard"
     ],
@@ -113111,8 +113100,8 @@
     "first_year": 2018,
     "last_year": 2018
   },
-  "m. bates": {
-    "canonical_name": "M. Bates",
+  "michelle bates": {
+    "canonical_name": "Michelle Bates",
     "raw_names": [
       "M. Bates"
     ],
@@ -113222,26 +113211,23 @@
     "first_year": 2017,
     "last_year": 2018
   },
-  "h. edwards": {
-    "canonical_name": "H. Edwards",
+  "harry edwards": {
+    "canonical_name": "Harry Edwards",
     "raw_names": [
       "H. Edwards"
     ],
     "clubs": [
-      "Lliswerry Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2015/2016",
       "2018/2019"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
       "V35"
     ],
-    "finishes": 3,
-    "first_year": 2015,
+    "finishes": 2,
+    "first_year": 2018,
     "last_year": 2018
   },
   "w. holder": {
@@ -113561,7 +113547,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -113824,7 +113810,7 @@
       "2014/2015",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V50"
@@ -114370,7 +114356,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50",
@@ -114949,8 +114935,8 @@
     "first_year": 2014,
     "last_year": 2017
   },
-  "s. mathers": {
-    "canonical_name": "S. Mathers",
+  "stephen mathers": {
+    "canonical_name": "Stephen Mathers",
     "raw_names": [
       "S. Mathers"
     ],
@@ -115687,7 +115673,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -115714,7 +115700,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -115871,8 +115857,8 @@
     "first_year": 2016,
     "last_year": 2017
   },
-  "p. miles": {
-    "canonical_name": "P. Miles",
+  "phillip miles": {
+    "canonical_name": "Phillip Miles",
     "raw_names": [
       "P. Miles"
     ],
@@ -115980,8 +115966,8 @@
     "first_year": 2016,
     "last_year": 2017
   },
-  "s. jackson": {
-    "canonical_name": "S. Jackson",
+  "sam jackson": {
+    "canonical_name": "Sam Jackson",
     "raw_names": [
       "S. Jackson"
     ],
@@ -116232,7 +116218,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -116289,8 +116275,8 @@
     "first_year": 2015,
     "last_year": 2017
   },
-  "s. thomasson": {
-    "canonical_name": "S. Thomasson",
+  "sean thomasson": {
+    "canonical_name": "Sean Thomasson",
     "raw_names": [
       "S. Thomasson"
     ],
@@ -116475,8 +116461,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "j. ashley": {
-    "canonical_name": "J. Ashley",
+  "james ashley": {
+    "canonical_name": "James Ashley",
     "raw_names": [
       "J. Ashley"
     ],
@@ -116711,7 +116697,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -116760,7 +116746,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -117049,7 +117035,7 @@
       "2014/2015",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -117205,8 +117191,8 @@
     "first_year": 2015,
     "last_year": 2017
   },
-  "d. swift": {
-    "canonical_name": "D. Swift",
+  "darren swift": {
+    "canonical_name": "Darren Swift",
     "raw_names": [
       "D. Swift"
     ],
@@ -117472,7 +117458,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -117617,7 +117603,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50"
@@ -117727,8 +117713,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "j. cashell": {
-    "canonical_name": "J. Cashell",
+  "julie cashell": {
+    "canonical_name": "Julie Cashell",
     "raw_names": [
       "J. Cashell"
     ],
@@ -117742,11 +117728,10 @@
     ],
     "gender": "F",
     "categories": [
-      "U23",
       "V35",
       "V40"
     ],
-    "finishes": 12,
+    "finishes": 11,
     "first_year": 2015,
     "last_year": 2017
   },
@@ -117896,7 +117881,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -118031,7 +118016,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -118351,8 +118336,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "b. swift": {
-    "canonical_name": "B. Swift",
+  "bobbie swift": {
+    "canonical_name": "Bobbie Swift",
     "raw_names": [
       "B. Swift"
     ],
@@ -118685,7 +118670,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -118711,7 +118696,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45",
@@ -118852,7 +118837,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -118946,6 +118931,26 @@
     ],
     "finishes": 14,
     "first_year": 2010,
+    "last_year": 2017
+  },
+  "alex thomas": {
+    "canonical_name": "Alex Thomas",
+    "raw_names": [
+      "A. Thomas"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 4,
+    "first_year": 2016,
     "last_year": 2017
   },
   "a-m. littlestone": {
@@ -119242,6 +119247,25 @@
       "V45"
     ],
     "finishes": 4,
+    "first_year": 2017,
+    "last_year": 2017
+  },
+  "emily smith": {
+    "canonical_name": "Emily Smith",
+    "raw_names": [
+      "E. Smith"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
     "first_year": 2017,
     "last_year": 2017
   },
@@ -119562,7 +119586,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -119654,7 +119678,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -119739,6 +119763,26 @@
     ],
     "finishes": 1,
     "first_year": 2017,
+    "last_year": 2017
+  },
+  "michael cope": {
+    "canonical_name": "Michael Cope",
+    "raw_names": [
+      "M. Cope"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40"
+    ],
+    "finishes": 2,
+    "first_year": 2016,
     "last_year": 2017
   },
   "j. hutchesson": {
@@ -119879,8 +119923,8 @@
     "first_year": 2016,
     "last_year": 2017
   },
-  "d. cook": {
-    "canonical_name": "D. Cook",
+  "darryl cook": {
+    "canonical_name": "Darryl Cook",
     "raw_names": [
       "D. Cook"
     ],
@@ -119897,6 +119941,25 @@
     ],
     "finishes": 5,
     "first_year": 2016,
+    "last_year": 2017
+  },
+  "j. cashell": {
+    "canonical_name": "J. Cashell",
+    "raw_names": [
+      "J. Cashell"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 1,
+    "first_year": 2017,
     "last_year": 2017
   },
   "w. daniels": {
@@ -120000,6 +120063,25 @@
     ],
     "finishes": 2,
     "first_year": 2014,
+    "last_year": 2017
+  },
+  "gary bartram": {
+    "canonical_name": "Gary Bartram",
+    "raw_names": [
+      "G. Bartram"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40"
+    ],
+    "finishes": 1,
+    "first_year": 2017,
     "last_year": 2017
   },
   "j. ashton": {
@@ -120499,7 +120581,7 @@
       "2012/2013",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -120521,7 +120603,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -120731,8 +120813,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "r. griffin": {
-    "canonical_name": "R. Griffin",
+  "rhiannon griffin": {
+    "canonical_name": "Rhiannon Griffin",
     "raw_names": [
       "R. Griffin"
     ],
@@ -120939,35 +121021,23 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "k. young": {
-    "canonical_name": "K. Young",
+  "keri young": {
+    "canonical_name": "Keri Young",
     "raw_names": [
       "K. Young"
     ],
     "clubs": [
-      "Cardiff University AC",
-      "Parc Bryn Bach Running Club",
-      "Pont-y-Pwl & District Runners",
-      "Wells City Harriers",
-      "Westbury Harriers"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
       "2017/2018"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
-      "U23",
       "V35"
     ],
-    "finishes": 15,
-    "first_year": 2011,
+    "finishes": 1,
+    "first_year": 2017,
     "last_year": 2017
   },
   "i. goodrich": {
@@ -121264,7 +121334,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35",
@@ -121492,7 +121562,7 @@
       "2010/2011",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V45"
@@ -121520,7 +121590,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -121568,7 +121638,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -121996,8 +122066,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "a. nash": {
-    "canonical_name": "A. Nash",
+  "alan nash": {
+    "canonical_name": "Alan Nash",
     "raw_names": [
       "A. Nash"
     ],
@@ -122270,25 +122340,6 @@
       "Senior"
     ],
     "finishes": 1,
-    "first_year": 2017,
-    "last_year": 2017
-  },
-  "r. butterfield": {
-    "canonical_name": "R. Butterfield",
-    "raw_names": [
-      "R. Butterfield"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2017/2018"
-    ],
-    "gender": "F",
-    "categories": [
-      "V35"
-    ],
-    "finishes": 2,
     "first_year": 2017,
     "last_year": 2017
   },
@@ -122589,8 +122640,8 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "s. standerwick": {
-    "canonical_name": "S. Standerwick",
+  "sam standerwick": {
+    "canonical_name": "Sam Standerwick",
     "raw_names": [
       "S. Standerwick"
     ],
@@ -122623,7 +122674,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -122967,7 +123018,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -123100,8 +123151,8 @@
     "first_year": 2014,
     "last_year": 2017
   },
-  "a. marlog": {
-    "canonical_name": "A. Marlog",
+  "andrew marlog": {
+    "canonical_name": "Andrew Marlog",
     "raw_names": [
       "A. Marlog"
     ],
@@ -123394,25 +123445,6 @@
     "first_year": 2017,
     "last_year": 2017
   },
-  "m. jenkins-belohrska": {
-    "canonical_name": "M. Jenkins-Belohrska",
-    "raw_names": [
-      "M. Jenkins-Belohrska"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2017/2018"
-    ],
-    "gender": "F",
-    "categories": [
-      "Senior"
-    ],
-    "finishes": 1,
-    "first_year": 2017,
-    "last_year": 2017
-  },
   "l. lockett": {
     "canonical_name": "L. Lockett",
     "raw_names": [
@@ -123635,7 +123667,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -123744,7 +123776,7 @@
       "2010/2011",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45"
@@ -123867,7 +123899,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -124291,7 +124323,7 @@
       "2013/2014",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -124513,7 +124545,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -125050,7 +125082,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -125203,6 +125235,26 @@
     ],
     "finishes": 13,
     "first_year": 2012,
+    "last_year": 2016
+  },
+  "k. hale": {
+    "canonical_name": "K. Hale",
+    "raw_names": [
+      "K. Hale"
+    ],
+    "clubs": [
+      "Blaenau Gwent"
+    ],
+    "seasons": [
+      "2016/2017"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V40"
+    ],
+    "finishes": 4,
+    "first_year": 2016,
     "last_year": 2016
   },
   "c. de mooi": {
@@ -126078,7 +126130,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50"
@@ -126372,31 +126424,6 @@
     ],
     "finishes": 2,
     "first_year": 2016,
-    "last_year": 2016
-  },
-  "n. gething": {
-    "canonical_name": "N. Gething",
-    "raw_names": [
-      "N. Gething"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017"
-    ],
-    "gender": "F",
-    "categories": [
-      "V40",
-      "V45"
-    ],
-    "finishes": 19,
-    "first_year": 2011,
     "last_year": 2016
   },
   "g. roche-clarke": {
@@ -126800,7 +126827,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -127156,7 +127183,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -127692,7 +127719,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -127856,7 +127883,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -127899,7 +127926,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V50"
@@ -129082,7 +129109,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45",
@@ -129528,6 +129555,35 @@
     ],
     "finishes": 1,
     "first_year": 2016,
+    "last_year": 2016
+  },
+  "k. young": {
+    "canonical_name": "K. Young",
+    "raw_names": [
+      "K. Young"
+    ],
+    "clubs": [
+      "Cardiff University AC",
+      "Pont-y-Pwl & District Runners",
+      "Wells City Harriers",
+      "Westbury Harriers"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35"
+    ],
+    "finishes": 14,
+    "first_year": 2011,
     "last_year": 2016
   },
   "r. keeling": {
@@ -130263,7 +130319,7 @@
     "seasons": [
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -131298,7 +131354,7 @@
       "2012/2013",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V45"
@@ -131663,7 +131719,7 @@
       "2013/2014",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40",
@@ -132584,7 +132640,7 @@
       "2010/2011",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23"
     ],
@@ -132672,7 +132728,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -133129,7 +133185,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V40",
       "V45"
@@ -135093,7 +135149,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V35",
       "V40",
@@ -135509,7 +135565,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40"
@@ -135608,7 +135664,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45"
     ],
@@ -136726,7 +136782,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35",
@@ -137973,7 +138029,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V40",
@@ -138880,7 +138936,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45",
@@ -141683,7 +141739,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V50"
@@ -141828,7 +141884,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -141897,8 +141953,8 @@
     "first_year": 2010,
     "last_year": 2015
   },
-  "j. miles": {
-    "canonical_name": "J. Miles",
+  "jackie miles": {
+    "canonical_name": "Jackie Miles",
     "raw_names": [
       "J. Miles"
     ],
@@ -141974,6 +142030,25 @@
     ],
     "finishes": 2,
     "first_year": 2010,
+    "last_year": 2015
+  },
+  "h. edwards": {
+    "canonical_name": "H. Edwards",
+    "raw_names": [
+      "H. Edwards"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2015/2016"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2015,
     "last_year": 2015
   },
   "a. maclean": {
@@ -142157,25 +142232,6 @@
     ],
     "finishes": 5,
     "first_year": 2013,
-    "last_year": 2014
-  },
-  "l. ahearne": {
-    "canonical_name": "L. Ahearne",
-    "raw_names": [
-      "L. Ahearne"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2014/2015"
-    ],
-    "gender": "M",
-    "categories": [
-      "V45"
-    ],
-    "finishes": 1,
-    "first_year": 2014,
     "last_year": 2014
   },
   "s. rayall": {
@@ -142866,7 +142922,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V35"
@@ -143421,7 +143477,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -144100,7 +144156,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V70"
@@ -144344,25 +144400,6 @@
       "Senior"
     ],
     "finishes": 2,
-    "first_year": 2014,
-    "last_year": 2014
-  },
-  "r. lewis-burr": {
-    "canonical_name": "R. Lewis-Burr",
-    "raw_names": [
-      "R. Lewis-Burr"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2014/2015"
-    ],
-    "gender": "F",
-    "categories": [
-      "V35"
-    ],
-    "finishes": 1,
     "first_year": 2014,
     "last_year": 2014
   },
@@ -144772,7 +144809,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V55"
@@ -145194,7 +145231,7 @@
       "2012/2013",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior"
     ],
@@ -146059,7 +146096,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V50"
@@ -147287,7 +147324,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V35"
@@ -148729,7 +148766,7 @@
       "2012/2013",
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
@@ -149415,7 +149452,7 @@
     "seasons": [
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "U23",
       "V40"
@@ -150599,7 +150636,7 @@
       "2012/2013",
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23"
@@ -154973,6 +155010,25 @@
     "first_year": 2013,
     "last_year": 2013
   },
+  "b. james": {
+    "canonical_name": "B. James",
+    "raw_names": [
+      "B. James"
+    ],
+    "clubs": [
+      "Bristol and West Athletic Club"
+    ],
+    "seasons": [
+      "2013/2014"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 3,
+    "first_year": 2013,
+    "last_year": 2013
+  },
   "d. hier": {
     "canonical_name": "D. Hier",
     "raw_names": [
@@ -155260,7 +155316,7 @@
       "2010/2011",
       "2013/2014"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "V45"
@@ -158640,8 +158696,8 @@
     "first_year": 2012,
     "last_year": 2012
   },
-  "m. jayne": {
-    "canonical_name": "M. Jayne",
+  "michelle jayne": {
+    "canonical_name": "Michelle Jayne",
     "raw_names": [
       "M. Jayne"
     ],
@@ -165506,25 +165562,6 @@
     "first_year": 2011,
     "last_year": 2011
   },
-  "n. gethin": {
-    "canonical_name": "N. Gethin",
-    "raw_names": [
-      "N. Gethin"
-    ],
-    "clubs": [
-      "Parc Bryn Bach Running Club"
-    ],
-    "seasons": [
-      "2011/2012"
-    ],
-    "gender": "F",
-    "categories": [
-      "V40"
-    ],
-    "finishes": 1,
-    "first_year": 2011,
-    "last_year": 2011
-  },
   "z. wildgoose": {
     "canonical_name": "Z. Wildgoose",
     "raw_names": [
@@ -167171,8 +167208,8 @@
     "first_year": 2010,
     "last_year": 2010
   },
-  "b. monk": {
-    "canonical_name": "B. Monk",
+  "bernie monk": {
+    "canonical_name": "Bernie Monk",
     "raw_names": [
       "B. Monk"
     ],
