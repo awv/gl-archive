@@ -1688,8 +1688,8 @@ window.glCorrections = {
   "R Sheehy [Parc Bryn Bach Running Club]": "Richard Sheehy",
   "D. Kempton [Parc Bryn Bach Running Club]": "David Kempton",
   "D Kempton [Parc Bryn Bach Running Club]": "David Kempton",
-  "H. Jackson [Parc Bryn Bach Running Club]": "Harry Jackson",
-  "H Jackson [Parc Bryn Bach Running Club]": "Harry Jackson",
+  "H. Jackson [Parc Bryn Bach Running Club]": "Hayley Jackson",
+  "H Jackson [Parc Bryn Bach Running Club]": "Hayley Jackson",
   "C. Williams [Parc Bryn Bach Running Club]": "Cyril Williams",
   "C Williams [Parc Bryn Bach Running Club]": "Cyril Williams",
   "C. Caswell [Parc Bryn Bach Running Club]": "Ceri Caswell",
@@ -1774,8 +1774,8 @@ window.glCorrections = {
   "M JenkinsBelohGrors [Parc Bryn Bach Running Club]": "Maricel Jenkins-Belahorska",
   "M. Jenkins-Belohrska [Parc Bryn Bach Running Club]": "Maricel Jenkins-Belahorska",
   "M Jenkins-Belohrska [Parc Bryn Bach Running Club]": "Maricel Jenkins-Belahorska",
-  "H. Edwards [Parc Bryn Bach Running Club]": "Harry Edwards",
-  "H Edwards [Parc Bryn Bach Running Club]": "Harry Edwards",
+  "H. Edwards [Parc Bryn Bach Running Club]": "Hayley Edwards",
+  "H Edwards [Parc Bryn Bach Running Club]": "Hayley Edwards",
   "M. Cope [Parc Bryn Bach Running Club]": "Michael Cope",
   "M Cope [Parc Bryn Bach Running Club]": "Michael Cope",
   "R. Butterfield [Parc Bryn Bach Running Club]": "Ruth Carter",
@@ -1833,5 +1833,9 @@ window.glCorrections = {
   "K. Price [F, Parc Bryn Bach Running Club, V35]": "Kimberley Price",
   "K. Price [F, Parc Bryn Bach Running Club, V40]": "Kimberley Price",
   "K Price [F, Parc Bryn Bach Running Club, V35]": "Kimberley Price",
-  "K Price [F, Parc Bryn Bach Running Club, V40]": "Kimberley Price"
+  "K Price [F, Parc Bryn Bach Running Club, V40]": "Kimberley Price",
+  "J. Cashell [M, Parc Bryn Bach Running Club]": "Josh Cashell",
+  "J Cashell [M, Parc Bryn Bach Running Club]": "Josh Cashell",
+  "J. Cashell [Parc Bryn Bach Running Club, U23]": "Josh Cashell",
+  "J Cashell [Parc Bryn Bach Running Club, U23]": "Josh Cashell"
 };
