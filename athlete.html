@@ -827,6 +827,8 @@
                 return (b.match || 0) - (a.match || 0);
             });
 
+            const isMultiClub = isConfirmedTransfer || (new Set(careerRecords.map(r => r.club).filter(Boolean)).size > 1);
+
             historyBody.innerHTML = descendingHistory.map(r => {
                 const isCatWin = r.cat_pos === 1;
                 const isRaceWin = r.pos === 1;
@@ -843,7 +845,7 @@
                 const seasonUrl = `season.html?season=${encodeURIComponent(sKey)}`;
 
                 // Multi-club or maiden-name context subline under fixture (if applicable)
-                const isDiffClub = isMultiClubAthlete && r.club && r.club !== primaryClub;
+                const isDiffClub = isMultiClub && r.club && r.club !== primaryClub;
                 const isDiffName = isNameChangeAthlete && r.raw_name && r.raw_name !== resolvedName;
                 
                 let subline = '';
