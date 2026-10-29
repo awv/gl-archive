@@ -829,6 +829,7 @@
                             season: ra.season,
                             seasonKey: ra.season_key,
                             match: ra.match,
+                            gender: ra.gender,
                             venue: ra.venue || matchInB.venue || 'Gwent League',
                             posA: ra.pos,
                             timeA: ra.time,
@@ -840,16 +841,19 @@
                     }
                 });
 
-                document.getElementById('rivalry-name-a').textContent = runnerA;
-                document.getElementById('rivalry-name-b').textContent = runnerB;
-                document.getElementById('rivalry-club-a').textContent = Array.from(runnerMap[runnerA]?.clubs || [])[0] || '';
-                document.getElementById('rivalry-club-b').textContent = Array.from(runnerMap[runnerB]?.clubs || [])[0] || '';
+                const clubA = Array.from(runnerMap[runnerA]?.clubs || [])[0] || '';
+                const clubB = Array.from(runnerMap[runnerB]?.clubs || [])[0] || '';
+
+                document.getElementById('rivalry-name-a').innerHTML = `<a href="athlete.html?name=${encodeURIComponent(runnerA)}&club=${encodeURIComponent(clubA)}" class="hover:underline hover:text-emerald-600">${runnerA}</a>`;
+                document.getElementById('rivalry-name-b').innerHTML = `<a href="athlete.html?name=${encodeURIComponent(runnerB)}&club=${encodeURIComponent(clubB)}" class="hover:underline hover:text-sky-600">${runnerB}</a>`;
+                document.getElementById('rivalry-club-a').innerHTML = clubA ? `<a href="club.html?club=${encodeURIComponent(clubA)}" class="hover:underline">${clubA}</a>` : '';
+                document.getElementById('rivalry-club-b').innerHTML = clubB ? `<a href="club.html?club=${encodeURIComponent(clubB)}" class="hover:underline">${clubB}</a>` : '';
                 document.getElementById('rivalry-score-a').textContent = winsA;
                 document.getElementById('rivalry-score-b').textContent = winsB;
                 document.getElementById('rivalry-total-matches').textContent = directEncounters.length;
 
-                document.getElementById('th-runner-a').textContent = runnerA;
-                document.getElementById('th-runner-b').textContent = runnerB;
+                document.getElementById('th-runner-a').innerHTML = `<a href="athlete.html?name=${encodeURIComponent(runnerA)}&club=${encodeURIComponent(clubA)}" class="hover:underline">${runnerA}</a>`;
+                document.getElementById('th-runner-b').innerHTML = `<a href="athlete.html?name=${encodeURIComponent(runnerB)}&club=${encodeURIComponent(clubB)}" class="hover:underline">${runnerB}</a>`;
 
                 const tbody = document.getElementById('rivalry-fixtures-body');
                 tbody.innerHTML = '';
@@ -863,16 +867,25 @@
                             ? `<span class="text-emerald-600 dark:text-emerald-400 font-bold">← ${runnerA.split(' ')[0]} +${enc.margin} pos</span>`
                             : `<span class="text-sky-600 dark:text-sky-400 font-bold">${runnerB.split(' ')[0]} +${enc.margin} pos →</span>`;
 
+                        const fixUrl = `results.html?season=${encodeURIComponent(enc.seasonKey)}&match=${enc.match}&gender=${enc.gender || 'M'}&highlight=${encodeURIComponent(enc.ahead)}`;
+                        const seasonUrl = `season.html?season=${encodeURIComponent(enc.seasonKey)}`;
+
                         const row = `
                             <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td class="py-2.5 px-4 font-bold">${enc.season}</td>
-                                <td class="py-2.5 px-3 text-center">M${enc.match}</td>
-                                <td class="py-2.5 px-4">${enc.venue}</td>
+                                <td class="py-2.5 px-4 font-bold">
+                                    <a href="${seasonUrl}" class="hover:underline hover:text-emerald-600">${enc.season}</a>
+                                </td>
+                                <td class="py-2.5 px-3 text-center">
+                                    <a href="${fixUrl}" class="inline-block px-1.5 py-0.5 rounded font-mono text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-100 hover:text-emerald-800 transition-colors">M${enc.match}</a>
+                                </td>
+                                <td class="py-2.5 px-4">
+                                    <a href="${fixUrl}" class="hover:underline hover:text-emerald-600 font-medium">${enc.venue}</a>
+                                </td>
                                 <td class="py-2.5 px-4 text-center ${enc.ahead === runnerA ? 'font-black text-emerald-600 dark:text-emerald-400' : 'text-slate-500'}">
-                                    #${enc.posA} ${enc.timeA ? '(' + enc.timeA + ')' : ''}
+                                    <a href="${fixUrl}" class="hover:underline">#${enc.posA}</a> ${enc.timeA ? '(' + enc.timeA + ')' : ''}
                                 </td>
                                 <td class="py-2.5 px-4 text-center ${enc.ahead === runnerB ? 'font-black text-sky-600 dark:text-sky-400' : 'text-slate-500'}">
-                                    #${enc.posB} ${enc.timeB ? '(' + enc.timeB + ')' : ''}
+                                    <a href="${fixUrl}" class="hover:underline">#${enc.posB}</a> ${enc.timeB ? '(' + enc.timeB + ')' : ''}
                                 </td>
                                 <td class="py-2.5 px-4 text-right">${winnerBadge}</td>
                             </tr>
@@ -991,8 +1004,8 @@
 
                     if (matchA || matchB) {
                         comparedCount++;
-                        const posAStr = matchA ? `Pos #${matchA.pos} ${matchA.time ? '(' + matchA.time + ')' : ''}` : '— (Did not race)';
-                        const posBStr = matchB ? `Pos #${matchB.pos} ${matchB.time ? '(' + matchB.time + ')' : ''}` : '— (Did not race)';
+                        const posAStr = matchA ? `<a href="results.html?season=${encodeURIComponent(matchA.season_key)}&match=${matchA.match}&gender=${matchA.gender}&highlight=${encodeURIComponent(progRunner)}" class="hover:underline hover:text-emerald-600">Pos #${matchA.pos}</a> ${matchA.time ? '(' + matchA.time + ')' : ''}` : '— (Did not race)';
+                        const posBStr = matchB ? `<a href="results.html?season=${encodeURIComponent(matchB.season_key)}&match=${matchB.match}&gender=${matchB.gender}&highlight=${encodeURIComponent(progRunner)}" class="hover:underline hover:text-emerald-600">Pos #${matchB.pos}</a> ${matchB.time ? '(' + matchB.time + ')' : ''}` : '— (Did not race)';
 
                         let deltaStr = '—';
                         if (matchA && matchB && matchA.pos > 0 && matchB.pos > 0) {
@@ -1006,9 +1019,12 @@
                             }
                         }
 
+                        const refMatch = matchA || matchB;
+                        const matchLink = `<a href="results.html?season=${encodeURIComponent(refMatch.season_key)}&match=${refMatch.match}&gender=${refMatch.gender}&highlight=${encodeURIComponent(progRunner)}" class="hover:underline hover:text-emerald-600 font-bold">Match ${m}</a>`;
+
                         const row = `
                             <tr class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td class="py-3 px-4 font-bold text-slate-800 dark:text-slate-200">Match ${m}</td>
+                                <td class="py-3 px-4 font-bold text-slate-800 dark:text-slate-200">${matchLink}</td>
                                 <td class="py-3 px-4 text-slate-600 dark:text-slate-300">${posAStr}</td>
                                 <td class="py-3 px-4 text-slate-600 dark:text-slate-300 font-bold">${posBStr}</td>
                                 <td class="py-3 px-4 text-right">${deltaStr}</td>

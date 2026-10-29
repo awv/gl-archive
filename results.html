@@ -217,11 +217,13 @@
             // Available seasons
             const seasons = [...new Set(allData.map(r => r.season_key))].sort().reverse();
             
-            let selectedSeason = urlParams.get('season') || (seasons[0] || '2025_2026');
+            const rawSeason = (urlParams.get('season') || '').replace('/', '_');
+            let selectedSeason = (rawSeason && seasons.includes(rawSeason)) ? rawSeason : (seasons[0] || '2025_2026');
             let selectedMatch = parseInt(urlParams.get('match') || '1', 10);
             let selectedGender = urlParams.get('gender') || 'M';
             let selectedCat = 'all';
             let searchQuery = '';
+            const highlightRunner = (urlParams.get('highlight') || urlParams.get('athlete') || '').trim();
 
             // Populate seasons dropdown
             const seasonSelect = document.getElementById('season-selector');
@@ -422,8 +424,13 @@
                     const posColor = isPodium ? 'font-serif font-bold text-emerald-800' : 'font-mono text-slate-600';
                     const catBadgeColor = r.cat_group === 'Senior' ? 'bg-slate-100 text-slate-700' : 'bg-amber-100 text-amber-900';
 
+                    const isHighlight = highlightRunner && r.athlete.toLowerCase() === highlightRunner.toLowerCase();
+                    const rowHighlightClass = isHighlight 
+                        ? 'bg-emerald-50 dark:bg-emerald-950/60 ring-2 ring-emerald-500 font-semibold shadow-xs' 
+                        : 'hover:bg-slate-50/80 transition-colors';
+
                     return `
-                        <tr class="hover:bg-slate-50/80 transition-colors">
+                        <tr class="${rowHighlightClass}" ${isHighlight ? 'data-highlighted="true"' : ''}>
                             <td class="py-2.5 px-4 text-center tabular-nums ${posColor}">
                                 ${r.pos}
                             </td>
@@ -455,6 +462,15 @@
                         </tr>
                     `;
                 }).join('');
+
+                if (highlightRunner) {
+                    const highlightedEl = document.querySelector('[data-highlighted="true"]');
+                    if (highlightedEl) {
+                        setTimeout(() => {
+                            highlightedEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 120);
+                    }
+                }
             };
 
             // Set initial gender button highlight

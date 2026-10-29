@@ -315,11 +315,10 @@
                             <tr class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
                                 <th class="py-3 px-4 w-28">Season</th>
                                 <th class="py-3 px-3 w-16 text-center">Match</th>
-                                <th class="py-3 px-4">Venue</th>
+                                <th class="py-3 px-4">Fixture</th>
                                 <th class="py-3 px-3 w-16 text-center">Pos</th>
                                 <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
                                 <th class="py-3 px-3">Division</th>
-                                <th class="py-3 px-4">Club Represented</th>
                                 <th class="py-3 px-4 w-24 text-right font-mono">Time</th>
                                 <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
                             </tr>
@@ -734,6 +733,11 @@
                         tooltip.classList.add('hidden');
                     });
 
+                    circle.addEventListener('click', () => {
+                        const sKey = pt.record.season_key || pt.record.season.replace('/', '_');
+                        window.location.href = `results.html?season=${encodeURIComponent(sKey)}&match=${pt.record.match}&gender=${pt.record.gender}&highlight=${encodeURIComponent(pt.record.athlete)}`;
+                    });
+
                     trendPoints.appendChild(circle);
                 });
             } else {
@@ -795,13 +799,13 @@
                                 ${c.count} races
                             </td>
                             <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400">
-                                Pos #${c.debut.pos} <span class="text-[10px] opacity-75">(${c.debut.season.split('/')[0]})</span>
+                                <a href="results.html?season=${encodeURIComponent(c.debut.season_key || c.debut.season.replace('/', '_'))}&match=${c.debut.match}&gender=${c.debut.gender}&highlight=${encodeURIComponent(c.debut.athlete)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">Pos #${c.debut.pos}</a> <span class="text-[10px] opacity-75">(${c.debut.season.split('/')[0]})</span>
                             </td>
                             <td class="py-3 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400">
-                                Pos #${c.best.pos} <span class="text-[10px] opacity-75">(${c.best.season.split('/')[0]})</span>
+                                <a href="results.html?season=${encodeURIComponent(c.best.season_key || c.best.season.replace('/', '_'))}&match=${c.best.match}&gender=${c.best.gender}&highlight=${encodeURIComponent(c.best.athlete)}" class="hover:underline">Pos #${c.best.pos}</a> <span class="text-[10px] opacity-75">(${c.best.season.split('/')[0]})</span>
                             </td>
                             <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400">
-                                Pos #${c.recent.pos} <span class="text-[10px] opacity-75">(${c.recent.season.split('/')[0]})</span>
+                                <a href="results.html?season=${encodeURIComponent(c.recent.season_key || c.recent.season.replace('/', '_'))}&match=${c.recent.match}&gender=${c.recent.gender}&highlight=${encodeURIComponent(c.recent.athlete)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">Pos #${c.recent.pos}</a> <span class="text-[10px] opacity-75">(${c.recent.season.split('/')[0]})</span>
                             </td>
                             <td class="py-3 px-4 text-right font-mono">
                                 ${deltaBadge}
@@ -834,19 +838,45 @@
                     ? `<span class="px-1.5 py-0.5 rounded font-bold text-[10px] bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">1st</span>`
                     : (r.cat_pos > 0 ? `#${r.cat_pos}` : '—');
 
+                const sKey = r.season_key || r.season.replace('/', '_');
+                const fixtureUrl = `results.html?season=${encodeURIComponent(sKey)}&match=${r.match}&gender=${r.gender}&highlight=${encodeURIComponent(r.athlete)}`;
+                const seasonUrl = `season.html?season=${encodeURIComponent(sKey)}`;
+
+                // Multi-club or maiden-name context subline under fixture (if applicable)
+                const isDiffClub = isMultiClubAthlete && r.club && r.club !== primaryClub;
+                const isDiffName = isNameChangeAthlete && r.raw_name && r.raw_name !== resolvedName;
+                
+                let subline = '';
+                if (isDiffClub && isDiffName) {
+                    subline = `<span class="block text-[10px] font-mono text-slate-400 dark:text-slate-500 mt-0.5">Ran as <span class="text-purple-600 dark:text-purple-400">${r.raw_name}</span> for <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:underline hover:text-slate-600 dark:hover:text-slate-300">${r.club}</a></span>`;
+                } else if (isDiffClub) {
+                    subline = `<span class="block text-[10px] font-mono text-slate-400 dark:text-slate-500 mt-0.5">Ran for <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:underline hover:text-slate-600 dark:hover:text-slate-300">${r.club}</a></span>`;
+                } else if (isDiffName) {
+                    subline = `<span class="block text-[10px] font-mono text-purple-600 dark:text-purple-400 mt-0.5">Competed as ${r.raw_name}</span>`;
+                }
+
                 return `
                     <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400 font-bold">${r.season}</td>
-                        <td class="py-3 px-3 text-center font-mono text-slate-700 dark:text-slate-300">M${r.match}</td>
-                        <td class="py-3 px-4 font-medium text-slate-800 dark:text-slate-200">${r.venue || 'Gwent League Match'}</td>
-                        <td class="py-3 px-3 text-center font-mono font-bold">${posBadge}</td>
-                        <td class="py-3 px-3 text-center font-mono">${catPosBadge}</td>
-                        <td class="py-3 px-3 font-mono text-[11px] text-slate-500">${r.age_cat || 'Senior'}</td>
-                        <td class="py-3 px-4">
-                            <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors font-medium">
-                                ${r.club}
+                        <td class="py-3 px-4 font-mono font-bold">
+                            <a href="${seasonUrl}" class="text-slate-600 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline transition-colors">
+                                ${r.season}
                             </a>
                         </td>
+                        <td class="py-3 px-3 text-center">
+                            <a href="${fixtureUrl}" class="inline-block px-1.5 py-0.5 rounded font-mono text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-emerald-100 hover:text-emerald-800 dark:hover:bg-emerald-950 dark:hover:text-emerald-300 transition-colors">
+                                M${r.match}
+                            </a>
+                        </td>
+                        <td class="py-3 px-4">
+                            <a href="${fixtureUrl}" class="group font-medium text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5">
+                                <span>${r.venue || 'Gwent League Match'}</span>
+                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-600 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                            ${subline}
+                        </td>
+                        <td class="py-3 px-3 text-center font-mono font-bold">${posBadge}</td>
+                        <td class="py-3 px-3 text-center font-mono">${catPosBadge}</td>
+                        <td class="py-3 px-3 font-mono text-[11px] text-slate-500 dark:text-slate-400">${r.age_cat || 'Senior'}</td>
                         <td class="py-3 px-4 text-right font-mono text-slate-600 dark:text-slate-300">${r.time || '—'}</td>
                         <td class="py-3 px-4 text-right font-mono font-bold text-slate-800 dark:text-slate-200">${r.pts || '0'}</td>
                     </tr>

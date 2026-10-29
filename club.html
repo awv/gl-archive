@@ -364,7 +364,9 @@
 
                 athleteHistoryMap[aName].push({
                     seasonKey: r.season_key,
+                    season: r.season,
                     match: r.match,
+                    gender: r.gender,
                     pos: r.pos,
                     fieldSize: fSize,
                     score: score
@@ -449,8 +451,14 @@
                         name: aName,
                         debutPos: debut.pos,
                         debutField: debut.fieldSize,
+                        debutSeasonKey: debut.seasonKey,
+                        debutMatch: debut.match,
+                        debutGender: debut.gender,
                         peakPos: peak.pos,
                         peakField: peak.fieldSize,
+                        peakSeasonKey: peak.seasonKey,
+                        peakMatch: peak.match,
+                        peakGender: peak.gender,
                         gainPct: Math.round(gain)
                     });
                 }
@@ -475,8 +483,18 @@
                                     ${imp.name}
                                 </a>
                             </td>
-                            <td class="py-3 px-4 font-mono text-slate-500">Pos #${imp.debutPos} <span class="text-[10px] opacity-75">/ ${imp.debutField}</span></td>
-                            <td class="py-3 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400">Pos #${imp.peakPos} <span class="text-[10px] opacity-75">/ ${imp.peakField}</span></td>
+                            <td class="py-3 px-4 font-mono text-slate-500">
+                                <a href="results.html?season=${imp.debutSeasonKey}&match=${imp.debutMatch}&gender=${imp.debutGender}&highlight=${encodeURIComponent(imp.name)}" class="hover:underline hover:text-emerald-700 dark:hover:text-emerald-400">
+                                    Pos #${imp.debutPos}
+                                </a>
+                                <span class="text-[10px] opacity-75">/ ${imp.debutField}</span>
+                            </td>
+                            <td class="py-3 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                                <a href="results.html?season=${imp.peakSeasonKey}&match=${imp.peakMatch}&gender=${imp.peakGender}&highlight=${encodeURIComponent(imp.name)}" class="hover:underline">
+                                    Pos #${imp.peakPos}
+                                </a>
+                                <span class="text-[10px] opacity-75">/ ${imp.peakField}</span>
+                            </td>
                             <td class="py-3 px-4 text-right font-mono font-black text-emerald-600 dark:text-emerald-400">+${imp.gainPct}% gain</td>
                         </tr>
                     `;
