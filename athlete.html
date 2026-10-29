@@ -21,6 +21,9 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    colors: {
+                        brand: { 500: '#10b981', 600: '#059669' }
+                    },
                     fontFamily: {
                         serif: ['Newsreader', 'Georgia', 'serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
@@ -36,34 +39,34 @@
     <script src="backend_tools/name_changes.js"></script>
     <script src="site-layout.js"></script>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950">
 
     <!-- GLOBAL NAVIGATION CONTAINER -->
     <div id="global-nav"></div>
 
     <!-- ATHLETE HERO HEADER -->
-    <header class="border-b border-slate-200 bg-white">
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
             <div class="space-y-4">
                 
                 <!-- Category / League Tag -->
                 <div class="flex items-center gap-2">
-                    <span id="athlete-gender-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white">
+                    <span id="athlete-gender-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 dark:bg-emerald-950 text-white dark:text-emerald-300 border border-transparent dark:border-emerald-800">
                         Senior Men
                     </span>
                     <span class="text-xs font-mono text-slate-400">•</span>
-                    <span id="athlete-club-badge" class="text-xs font-mono font-semibold text-emerald-800 uppercase tracking-wider">
+                    <a id="athlete-club-badge" href="#" class="text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider hover:underline">
                         Club Name
-                    </span>
+                    </a>
                 </div>
 
                 <!-- Runner Name -->
-                <h1 id="athlete-name" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+                <h1 id="athlete-name" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
                     Loading Athlete...
                 </h1>
 
                 <!-- Secondary Metadata -->
-                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 font-mono">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
                     <span id="athlete-career-span">ACTIVE: —</span>
                     <span>•</span>
                     <span id="athlete-cat-span">CATEGORIES: —</span>
@@ -73,15 +76,15 @@
 
                 <!-- MULTI-CLUB DISAMBIGUATION BANNER -->
                 <div id="disambiguation-banner" class="hidden pt-2">
-                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs space-y-2">
-                        <div class="flex items-center gap-2 font-semibold text-amber-900">
-                            <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-xl p-4 text-xs space-y-2">
+                        <div class="flex items-center gap-2 font-semibold text-amber-900 dark:text-amber-200">
+                            <svg class="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            <span>Disambiguation: Multiple runners share this name across different clubs</span>
+                            <span>Disambiguation: Multiple runners share this abbreviated name</span>
                         </div>
-                        <p class="text-amber-800 text-[11px] leading-relaxed">
-                            Because historical records often used initials, athletes from different clubs may share this abbreviation. Filter by club below to isolate a specific runner's career:
+                        <p class="text-amber-800 dark:text-amber-300 text-[11px] leading-relaxed">
+                            Because historical records often used initials, runners from different clubs may share this abbreviation. Filter by club below to isolate a specific runner's career:
                         </p>
                         <div id="disambiguation-pills" class="flex flex-wrap gap-2 pt-1">
                             <!-- Populated with club pills -->
@@ -91,23 +94,23 @@
 
                 <!-- CAREER CLUB TRANSFER BANNER -->
                 <div id="transfer-banner" class="hidden pt-2">
-                    <div class="bg-emerald-50/80 border border-emerald-200/90 rounded-xl p-4 text-xs space-y-3">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 pb-2.5">
-                            <div class="flex items-center gap-2 font-semibold text-emerald-950">
-                                <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200/90 dark:border-emerald-800/60 rounded-xl p-4 text-xs space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 dark:border-emerald-800 pb-2.5">
+                            <div class="flex items-center gap-2 font-semibold text-emerald-950 dark:text-emerald-200">
+                                <svg class="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
                                 </svg>
                                 <span class="text-xs font-serif font-bold uppercase tracking-tight">Verified Multi-Club Career History</span>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Unified Dossier</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-700">Unified Dossier</span>
                             </div>
                             <div id="transfer-filter-pills" class="flex flex-wrap items-center gap-1.5 text-xs font-mono">
                                 <!-- Populated dynamically with Club filter buttons -->
                             </div>
                         </div>
-                        <div id="transfer-timeline-path" class="text-xs font-medium text-emerald-900 flex items-center gap-2 flex-wrap">
+                        <div id="transfer-timeline-path" class="text-xs font-medium text-emerald-900 dark:text-emerald-200 flex items-center gap-2 flex-wrap">
                             <!-- Populated with: Club A (2021–2022) ➔ Club B (2022–Present) -->
                         </div>
-                        <p class="text-emerald-700 text-[11px] leading-relaxed">
+                        <p class="text-emerald-700 dark:text-emerald-300 text-[11px] leading-relaxed">
                             This athlete transferred clubs. All finishes across their entire Gwent League career are unified into this single profile. Use the filter buttons above to isolate a specific club spell.
                         </p>
                     </div>
@@ -115,18 +118,18 @@
 
                 <!-- VERIFIED NAME CHANGE (MARRIAGE/MAIDEN) BANNER -->
                 <div id="name-change-banner" class="hidden pt-2">
-                    <div class="bg-purple-50/80 border border-purple-200/90 rounded-xl p-4 text-xs space-y-2">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-100 pb-2">
-                            <div class="flex items-center gap-2 font-semibold text-purple-950">
+                    <div class="bg-purple-50/80 dark:bg-purple-950/40 border border-purple-200/90 dark:border-purple-800/60 rounded-xl p-4 text-xs space-y-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-100 dark:border-purple-800 pb-2">
+                            <div class="flex items-center gap-2 font-semibold text-purple-950 dark:text-purple-200">
                                 <span class="text-base">💍</span>
                                 <span class="text-xs font-serif font-bold uppercase tracking-tight">Verified Athlete Name Change</span>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 text-purple-800 border border-purple-200">Unified Dossier</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-700">Unified Dossier</span>
                             </div>
-                            <span id="name-change-effective-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-white text-purple-800 border border-purple-200">
+                            <span id="name-change-effective-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-white dark:bg-purple-900 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-700">
                                 Effective Season
                             </span>
                         </div>
-                        <p id="name-change-note" class="text-purple-800 text-[11px] leading-relaxed">
+                        <p id="name-change-note" class="text-purple-800 dark:text-purple-300 text-[11px] leading-relaxed">
                             <!-- Populated dynamically with note -->
                         </p>
                     </div>
@@ -134,83 +137,184 @@
 
                 <!-- NAMESAKE DISAMBIGUATION BANNER -->
                 <div id="namesake-banner" class="hidden pt-2">
-                    <div class="bg-sky-50/80 border border-sky-200/90 rounded-xl p-3.5 text-xs space-y-2">
+                    <div class="bg-sky-50/80 dark:bg-sky-950/40 border border-sky-200/90 dark:border-sky-800/60 rounded-xl p-3.5 text-xs space-y-2">
                         <div class="flex flex-wrap items-center gap-2">
-                            <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-sky-100 text-sky-800 border border-sky-200 px-2 py-1 rounded">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 border border-sky-200 dark:border-sky-700 px-2 py-1 rounded">
                                 👥 Same / Similar Name in Gwent League:
                             </span>
                             <div id="namesake-pills" class="flex flex-wrap items-center gap-1.5">
                                 <!-- Populated dynamically with namesake links -->
                             </div>
                         </div>
-                        <p class="text-sky-800/80 text-[11px] leading-relaxed">
-                            Athletes above share this name but are verified or identified as separate runners at different clubs. Click any runner to view their distinct profile.
+                        <p class="text-sky-800/80 dark:text-sky-300/80 text-[11px] leading-relaxed">
+                            Athletes above share this name but are verified as separate runners at different clubs. Click any runner to view their distinct profile.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- CAREER STATS METRIC GRID -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 pt-6 border-t border-slate-100">
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">League Appearances</span>
-                    <span id="stat-appearances" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+            <!-- CAREER STATS METRIC GRID (6 HIGH-IMPACT TILES) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">League Races</span>
+                    <span id="stat-appearances" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Best Finish Pos</span>
-                    <span id="stat-best-pos" class="text-2xl font-bold font-serif text-emerald-800 block mt-0.5">—</span>
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Campaigns</span>
+                    <span id="stat-campaigns" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Category Wins</span>
-                    <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Venues Raced</span>
+                    <span id="stat-venues" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Outright Race Wins</span>
-                    <span id="stat-outright-wins" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">0</span>
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Best Finish Pos</span>
+                    <span id="stat-best-pos" class="text-2xl font-bold font-serif text-emerald-700 dark:text-emerald-400 block mt-0.5">—</span>
                 </div>
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Average Finish</span>
-                    <span id="stat-avg-pos" class="text-2xl font-bold font-serif text-slate-900 block mt-0.5">—</span>
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Category Wins</span>
+                    <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-amber-500 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500">Fastest Time</span>
-                    <span id="stat-fastest-time" class="text-2xl font-bold font-mono text-slate-900 block mt-0.5">—</span>
+                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Average Finish</span>
+                    <span id="stat-avg-pos" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">—</span>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- MAIN BODY -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow space-y-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-12">
         
-        <!-- CLUB AFFILIATIONS TIMELINE -->
-        <section class="space-y-2">
-            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-                Club Affiliations in this Profile
-            </h3>
-            <div id="athlete-clubs-list" class="flex flex-wrap gap-2">
-                <!-- Dynamically populated club pills -->
+        <!-- SECTION: INSIGHTS & CAREER PERFORMANCE TREND CHART -->
+        <section id="insights-section" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Career Narrative Insights Card -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        CAREER NARRATIVE
+                    </span>
+                    <h3 id="insight-card-title" class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 mt-1">
+                        Historical Form Profile
+                    </h3>
+                    <span id="insight-card-value" class="text-2xl font-black font-serif text-slate-900 dark:text-slate-100 block mt-3">—</span>
+                </div>
+                <p id="insight-card-subtext" class="text-xs text-slate-500 dark:text-slate-400 mt-4 leading-relaxed font-medium">
+                    Analysing career finishes and category trajectory across Gwent League campaigns...
+                </p>
+            </div>
+
+            <!-- Dynamic SVG Career Finishing Trajectory Chart -->
+            <div id="trend-chart-container" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm flex flex-col justify-between lg:col-span-2 relative">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                            PERFORMANCE TRAJECTORY
+                        </span>
+                        <h3 class="text-sm font-bold font-serif text-slate-900 dark:text-slate-100">
+                            Overall Finishing Position Trend Across Career
+                        </h3>
+                    </div>
+                    <span class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                        Oldest ➔ Most Recent
+                    </span>
+                </div>
+                
+                <!-- Chart Area with Axis and SVG Canvas -->
+                <div class="flex h-36 mt-4 relative items-stretch">
+                    <!-- Y Axis Labels -->
+                    <div class="flex flex-col justify-between text-[10px] font-mono font-bold text-slate-400 pr-3 border-r border-slate-100 dark:border-slate-800 select-none">
+                        <span id="chart-y-max">Best</span>
+                        <span id="chart-y-mid">Mid</span>
+                        <span id="chart-y-min">Lowest</span>
+                    </div>
+
+                    <!-- SVG Canvas -->
+                    <div class="flex-grow h-full pl-3 relative">
+                        <svg id="trend-svg" class="w-full h-full overflow-visible" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"></stop>
+                                    <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path id="trend-area" fill="url(#trendGradient)"></path>
+                            <path id="trend-line" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <g id="trend-points"></g>
+                        </svg>
+
+                        <!-- Hover Tooltip -->
+                        <div id="chart-tooltip" class="hidden absolute pointer-events-none z-30 bg-slate-900 text-white border border-slate-700 px-3 py-2 rounded-lg text-xs font-mono shadow-xl -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap">
+                            <span id="tooltip-fixture" class="font-bold text-emerald-400 block"></span>
+                            <span id="tooltip-meta" class="text-slate-300 block text-[11px]"></span>
+                            <span id="tooltip-pos" class="font-bold block text-white mt-0.5"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- COMPLETE RACE-BY-RACE LOG -->
-        <section class="space-y-3">
-            <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
+        <!-- SECTION: REPEATING COURSE PROGRESS BREAKDOWN -->
+        <section id="course-progress-section" class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div>
-                    Career Race Results Log (<span id="log-count" class="font-bold text-slate-900">0</span> fixtures)
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        VENUE PROGRESSION
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+                        Repeating Course Progress Breakdown
+                    </h2>
                 </div>
-                <div>
-                    Chronological descending order
-                </div>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    Positional and time deltas on recurring Gwent League courses
+                </span>
             </div>
 
-            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs">
                         <thead>
-                            <tr class="bg-slate-50 border-b border-slate-200 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                            <tr class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
+                                <th class="py-3 px-4">Course / Venue</th>
+                                <th class="py-3 px-3 text-center">Appearances</th>
+                                <th class="py-3 px-4">Debut Finish</th>
+                                <th class="py-3 px-4">Course Personal Best</th>
+                                <th class="py-3 px-4">Most Recent Finish</th>
+                                <th class="py-3 px-4 text-right font-mono">Course Progression</th>
+                            </tr>
+                        </thead>
+                        <tbody id="course-progress-rows" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: COMPLETE RACE-BY-RACE LOG -->
+        <section class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        CHRONOLOGICAL DOSSIER
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+                        Complete Career Race History
+                    </h2>
+                </div>
+                <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                    <span id="log-count" class="font-bold text-slate-900 dark:text-slate-100">0</span> finishes recorded
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
                                 <th class="py-3 px-4 w-28">Season</th>
-                                <th class="py-3 px-3 w-16">Match</th>
+                                <th class="py-3 px-3 w-16 text-center">Match</th>
                                 <th class="py-3 px-4">Venue</th>
                                 <th class="py-3 px-3 w-16 text-center">Pos</th>
                                 <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
@@ -220,7 +324,7 @@
                                 <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
                             </tr>
                         </thead>
-                        <tbody id="athlete-history-body" class="divide-y divide-slate-100 font-sans">
+                        <tbody id="athlete-history-body" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
                             <!-- Populated dynamically -->
                         </tbody>
                     </table>
@@ -241,130 +345,107 @@
             const targetGender = urlParams.get('gender');
 
             if (!targetName) {
-                document.getElementById('athlete-name').textContent = "No Athlete Specified";
+                document.getElementById('athlete-name').textContent = "Athlete Not Found";
                 return;
             }
 
-            // Load verified name changes (e.g., marriage / maiden name transitions)
-            let confirmedNameChanges = window.glNameChanges || {};
+            // 1. Check for Name Changes (Maiden/Married)
+            let confirmedNameChanges = {};
             try {
-                const savedNC = localStorage.getItem('gl_name_changes_v1');
-                if (savedNC) Object.assign(confirmedNameChanges, JSON.parse(savedNC));
+                confirmedNameChanges = window.glNameChanges || {};
             } catch (e) {}
 
-            const q = targetName.toLowerCase();
-            let nameChangeInfo = confirmedNameChanges[targetName];
-            if (!nameChangeInfo) {
-                nameChangeInfo = Object.values(confirmedNameChanges).find(nc => 
-                    (nc.primary_name && nc.primary_name.toLowerCase() === q) ||
-                    (nc.maiden_name && nc.maiden_name.toLowerCase() === q)
-                );
+            let nameChangeInfo = null;
+            let resolvedName = targetName;
+            let isNameChangeAthlete = false;
+
+            for (const [maiden, info] of Object.entries(confirmedNameChanges)) {
+                if (maiden.toLowerCase() === targetName.toLowerCase() || 
+                    info.primary_name.toLowerCase() === targetName.toLowerCase()) {
+                    nameChangeInfo = info;
+                    isNameChangeAthlete = true;
+                    resolvedName = info.primary_name;
+                    break;
+                }
             }
 
-            // Set of all names associated with this athlete (maiden and married)
-            const searchNames = new Set([q]);
-            if (nameChangeInfo) {
-                if (nameChangeInfo.maiden_name) searchNames.add(nameChangeInfo.maiden_name.toLowerCase());
-                if (nameChangeInfo.primary_name) searchNames.add(nameChangeInfo.primary_name.toLowerCase());
+            if (isNameChangeAthlete && nameChangeInfo) {
+                const banner = document.getElementById('name-change-banner');
+                const badge = document.getElementById('name-change-effective-badge');
+                const note = document.getElementById('name-change-note');
+                if (banner) {
+                    banner.classList.remove('hidden');
+                    if (badge) badge.textContent = `Effective: ${nameChangeInfo.effective_season || 'Verified'}`;
+                    if (note) {
+                        note.innerHTML = `This profile unifies records across a name change: competed as <strong>${nameChangeInfo.maiden_name}</strong> prior to ${nameChangeInfo.effective_season}, and <strong>${nameChangeInfo.primary_name}</strong> thereafter.`;
+                    }
+                }
             }
 
-            // Find all raw matches across all recognized names for this athlete (matching canonical athlete or raw_name alias)
-            let allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()) || (r.raw_name && searchNames.has(r.raw_name.toLowerCase())));
-
-            // If targetName matched via raw_name or nickname, resolve canonical display name and expand search
-            if (!nameChangeInfo && allMatches.length > 0 && allMatches[0].athlete.toLowerCase() !== q) {
-                const canonicalFromRaw = allMatches[0].athlete;
-                searchNames.add(canonicalFromRaw.toLowerCase());
-                allMatches = allData.filter(r => searchNames.has(r.athlete.toLowerCase()) || (r.raw_name && searchNames.has(r.raw_name.toLowerCase())));
-            }
-
-            const displayMasterName = (nameChangeInfo && nameChangeInfo.primary_name) 
-                ? nameChangeInfo.primary_name 
-                : (allMatches.length > 0 ? allMatches[0].athlete : targetName);
+            // 2. Match finishes
+            let allMatches = allData.filter(r => {
+                if (r.athlete && r.athlete.toLowerCase() === resolvedName.toLowerCase()) return true;
+                if (r.raw_name && r.raw_name.toLowerCase() === resolvedName.toLowerCase()) return true;
+                if (isNameChangeAthlete && nameChangeInfo) {
+                    if (r.athlete && r.athlete.toLowerCase() === nameChangeInfo.maiden_name.toLowerCase()) return true;
+                    if (r.raw_name && r.raw_name.toLowerCase() === nameChangeInfo.maiden_name.toLowerCase()) return true;
+                }
+                return false;
+            });
 
             if (allMatches.length === 0) {
-                document.getElementById('athlete-name').textContent = targetName;
-                document.getElementById('athlete-history-body').innerHTML = `
-                    <tr><td colspan="9" class="py-12 text-center text-slate-400">No race finishes found in archive for this runner.</td></tr>
-                `;
+                document.getElementById('athlete-name').textContent = `${targetName} (0 Finishes)`;
                 return;
             }
 
-            // Show Name Change Banner if verified
-            if (nameChangeInfo) {
-                const ncBanner = document.getElementById('name-change-banner');
-                const ncNote = document.getElementById('name-change-note');
-                const ncBadge = document.getElementById('name-change-effective-badge');
-                if (ncBanner) ncBanner.classList.remove('hidden');
-                if (ncNote) {
-                    const maiden = nameChangeInfo.maiden_name || 'earlier name';
-                    ncNote.innerHTML = `${nameChangeInfo.note || `Formerly competed as <strong>${maiden}</strong>`}. All race finishes across both surnames are unified into this single profile.`;
-                }
-                if (ncBadge && nameChangeInfo.effective_season) {
-                    ncBadge.textContent = `Effective ${nameChangeInfo.effective_season}`;
-                }
-            }
-
-            // Group all clubs that appear under this athlete
-            const clubCountsAll = {};
-            allMatches.forEach(r => {
-                clubCountsAll[r.club] = (clubCountsAll[r.club] || 0) + 1;
-            });
-            const uniqueClubs = Object.keys(clubCountsAll);
-
-            // Check for verified multi-club transfer (check under targetName, maiden, and primary)
-            let confirmedTransfers = window.glClubTransfers || {};
+            // Check multi-club verified transfers
+            let confirmedTransfers = {};
             try {
-                const saved = localStorage.getItem('gl_club_transfers_v1');
-                if (saved) Object.assign(confirmedTransfers, JSON.parse(saved));
+                confirmedTransfers = window.glClubTransfers || {};
             } catch (e) {}
 
-            let transferInfo = confirmedTransfers[targetName];
+            let transferInfo = confirmedTransfers[resolvedName];
             if (!transferInfo && nameChangeInfo) {
                 transferInfo = confirmedTransfers[nameChangeInfo.maiden_name] || confirmedTransfers[nameChangeInfo.primary_name];
             }
             let isConfirmedTransfer = !!transferInfo;
-            // If a specific club was requested via URL and it is NOT part of the confirmed transfer dossier,
-            // treat this page view as the namesake runner at that specific club!
-            if (isConfirmedTransfer && targetClub && transferInfo.clubs) {
-                const clubsNorm = transferInfo.clubs.map(c => c.toLowerCase());
-                if (!clubsNorm.includes(targetClub.toLowerCase())) {
-                    isConfirmedTransfer = false;
+
+            // Gather clubs
+            const clubCountsAll = {};
+            allMatches.forEach(r => {
+                if (r.club && !r.is_guest) {
+                    clubCountsAll[r.club] = (clubCountsAll[r.club] || 0) + 1;
                 }
-            }
+            });
+            const uniqueClubs = Object.keys(clubCountsAll);
 
             // Is this an abbreviated name?
             const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
 
-            // If not a confirmed transfer, establish targetClub default
-            if (!isConfirmedTransfer) {
-                if (!targetClub && uniqueClubs.length > 0) {
-                    // Default to club with the most finishes
-                    const sortedClubs = [...uniqueClubs].sort((a, b) => (clubCountsAll[b] || 0) - (clubCountsAll[a] || 0));
-                    targetClub = sortedClubs[0];
-                }
+            if (!isConfirmedTransfer && !targetClub && uniqueClubs.length > 0) {
+                const sortedClubs = [...uniqueClubs].sort((a, b) => (clubCountsAll[b] || 0) - (clubCountsAll[a] || 0));
+                targetClub = sortedClubs[0];
             }
 
-            // Recognized clubs for this athlete's primary profile
+            // Recognized clubs for primary profile
             const recognizedClubs = new Set(
                 isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0
                     ? transferInfo.clubs.map(c => c.toLowerCase())
                     : (targetClub ? [targetClub.toLowerCase()] : uniqueClubs.map(c => c.toLowerCase()))
             );
 
-            // If name is abbreviated and spans multiple clubs:
+            // Multi-club Disambiguation Banner (for abbreviated initial names)
             if (isAbbreviated && uniqueClubs.length > 1) {
                 const banner = document.getElementById('disambiguation-banner');
                 const pillsContainer = document.getElementById('disambiguation-pills');
                 if (banner && pillsContainer) {
                     banner.classList.remove('hidden');
-
                     pillsContainer.innerHTML = uniqueClubs.map(cl => {
                         const isSelected = targetClub && cl.toLowerCase() === targetClub.toLowerCase();
-                        const activeClass = isSelected ? 'bg-slate-900 text-white font-bold' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300';
+                        const activeClass = isSelected ? 'bg-slate-900 text-white font-bold' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700';
                         return `
                             <a href="athlete.html?name=${encodeURIComponent(targetName)}&club=${encodeURIComponent(cl)}" 
-                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs transition-colors shadow-sm ${activeClass}">
+                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs transition-colors shadow-xs ${activeClass}">
                                 <span>${cl}</span>
                                 <span class="text-[10px] font-mono opacity-80">(${clubCountsAll[cl]} races)</span>
                             </a>
@@ -373,7 +454,7 @@
                 }
             }
 
-            // Namesake Disambiguation Banner (for full-name runners who share this name across other clubs)
+            // Namesake Banner (for full-name runners sharing the same name at other clubs)
             const namesakeMap = new Map();
             allMatches.forEach(r => {
                 if (!r.club || r.is_guest) return;
@@ -413,9 +494,9 @@
                         const genderParam = ns.gender ? `&gender=${encodeURIComponent(ns.gender)}` : '';
                         return `
                             <a href="athlete.html?name=${encodeURIComponent(ns.name)}&club=${encodeURIComponent(ns.club)}${genderParam}"
-                               class="inline-flex items-center gap-1.5 bg-white hover:bg-sky-50 border border-sky-300 text-sky-900 hover:text-sky-950 text-xs font-mono font-medium px-2.5 py-1 rounded-lg transition-colors shadow-xs">
+                               class="inline-flex items-center gap-1.5 bg-white dark:bg-slate-800 hover:bg-sky-50 dark:hover:bg-slate-700 border border-sky-300 dark:border-sky-700 text-sky-900 dark:text-sky-200 text-xs font-mono font-medium px-2.5 py-1 rounded-lg transition-colors shadow-xs">
                                 <span class="font-bold">${ns.club}</span>
-                                <span class="text-[10px] text-sky-700 opacity-90">(${metaLabel})</span>
+                                <span class="text-[10px] text-sky-700 dark:text-sky-300 opacity-90">(${metaLabel})</span>
                                 <span class="text-sky-500 font-bold">→</span>
                             </a>
                         `;
@@ -423,7 +504,7 @@
                 }
             }
 
-            // Determine records for this athlete
+            // Determine career finishes for this specific profile
             let careerRecords = allMatches;
             if (targetGender) {
                 careerRecords = careerRecords.filter(r => r.gender === targetGender);
@@ -434,16 +515,13 @@
                 careerRecords = careerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase() || r.is_guest);
             }
 
-            // If verified transfer athlete:
-            let selectedClubFilter = 'all'; // 'all' or specific club
+            // Transfer banner display
             if (isConfirmedTransfer) {
-                // Show transfer banner
                 const transBanner = document.getElementById('transfer-banner');
                 const transPath = document.getElementById('transfer-timeline-path');
                 const transPills = document.getElementById('transfer-filter-pills');
-                transBanner.classList.remove('hidden');
+                if (transBanner) transBanner.classList.remove('hidden');
 
-                // Determine chronological clubs
                 const clubFirstYear = {};
                 const clubLastYear = {};
                 careerRecords.forEach(r => {
@@ -451,171 +529,329 @@
                     if (!clubFirstYear[r.club] || yr < clubFirstYear[r.club]) clubFirstYear[r.club] = yr;
                     if (!clubLastYear[r.club] || yr > clubLastYear[r.club]) clubLastYear[r.club] = yr;
                 });
-                const chronClubs = Object.keys(clubFirstYear).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
 
-                // Render visual pathway
-                transPath.innerHTML = chronClubs.map((cl, idx) => {
-                    const cnt = clubCountsAll[cl] || 0;
-                    const span = `${clubFirstYear[cl] || ''}–${(clubLastYear[cl] || 0) + 1}`;
-                    const isCurrent = idx === chronClubs.length - 1;
-                    return `
-                        <span class="inline-flex items-center gap-1.5 bg-white border border-emerald-200 px-2.5 py-1 rounded-lg text-xs shadow-xs">
-                            <span class="font-bold text-slate-900">${cl}</span>
-                            <span class="text-[10px] font-mono text-emerald-800 font-semibold">(${span} • ${cnt} ${cnt === 1 ? 'race' : 'races'}${isCurrent ? ' • Present' : ''})</span>
-                        </span>
-                        ${idx < chronClubs.length - 1 ? '<span class="text-emerald-600 font-bold text-sm">&rarr;</span>' : ''}
-                    `;
-                }).join('');
-
-                // Render filter buttons
-                const renderFilterPills = () => {
-                    let pillsHtml = `
-                        <button data-club="all" class="club-filter-pill px-3 py-1 rounded-lg border text-xs font-semibold transition-colors shadow-xs ${selectedClubFilter === 'all' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}">
-                            All Clubs (${careerRecords.length})
-                        </button>
-                    `;
-                    chronClubs.forEach(cl => {
-                        const cnt = clubCountsAll[cl] || 0;
-                        const isSel = selectedClubFilter.toLowerCase() === cl.toLowerCase();
-                        pillsHtml += `
-                            <button data-club="${encodeURIComponent(cl)}" class="club-filter-pill px-3 py-1 rounded-lg border text-xs font-semibold transition-colors shadow-xs ${isSel ? 'bg-emerald-800 text-white border-emerald-800' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}">
-                                ${cl} (${cnt})
-                            </button>
+                const sortedClubsChron = Object.keys(clubFirstYear).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
+                if (transPath) {
+                    transPath.innerHTML = sortedClubsChron.map((c, i) => {
+                        const span = `${clubFirstYear[c]}–${clubLastYear[c] + 1}`;
+                        const isLast = i === sortedClubsChron.length - 1;
+                        return `
+                            <span class="inline-flex items-center gap-1 font-mono">
+                                <strong>${c}</strong> <span class="text-slate-500">(${span})</span>
+                                ${!isLast ? '<span class="text-emerald-500 font-bold mx-1">➔</span>' : ''}
+                            </span>
                         `;
-                    });
-                    transPills.innerHTML = pillsHtml;
+                    }).join('');
+                }
 
-                    transPills.querySelectorAll('.club-filter-pill').forEach(btn => {
-                        btn.addEventListener('click', () => {
-                            const clAttr = decodeURIComponent(btn.getAttribute('data-club'));
-                            selectedClubFilter = clAttr;
-                            renderFilterPills();
-                            renderAthleteProfile();
-                        });
-                    });
-                };
-
-                renderFilterPills();
+                if (transPills) {
+                    transPills.innerHTML = `
+                        <a href="athlete.html?name=${encodeURIComponent(resolvedName)}" 
+                           class="px-2 py-0.5 rounded font-bold ${!targetClub ? 'bg-emerald-800 text-white' : 'bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200'}">
+                            All Clubs (${careerRecords.length})
+                        </a>
+                        ${sortedClubsChron.map(cl => {
+                            const isSelected = targetClub && targetClub.toLowerCase() === cl.toLowerCase();
+                            const cnt = careerRecords.filter(r => r.club === cl).length;
+                            return `
+                                <a href="athlete.html?name=${encodeURIComponent(resolvedName)}&club=${encodeURIComponent(cl)}" 
+                                   class="px-2 py-0.5 rounded font-medium ${isSelected ? 'bg-emerald-800 text-white' : 'bg-white dark:bg-slate-800 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-700'}">
+                                    ${cl} (${cnt})
+                                </a>
+                            `;
+                        }).join('')}
+                    `;
+                }
             }
 
-            function renderAthleteProfile() {
-                let displayedRecords = careerRecords;
-                if (selectedClubFilter !== 'all') {
-                    displayedRecords = careerRecords.filter(r => r.club.toLowerCase() === selectedClubFilter.toLowerCase());
-                }
+            // Set Title & Header Meta
+            const displayName = isNameChangeAthlete ? resolvedName : (targetClub ? `${resolvedName}` : resolvedName);
+            document.getElementById('athlete-name').textContent = displayName;
+            document.title = `${displayName} — GL Archive Profile`;
 
-                if (displayedRecords.length === 0) {
-                    displayedRecords = careerRecords;
-                }
+            const primaryClub = targetClub || (careerRecords[0] ? careerRecords[0].club : 'Gwent League');
+            const clubBadge = document.getElementById('athlete-club-badge');
+            clubBadge.textContent = primaryClub;
+            clubBadge.href = `club.html?club=${encodeURIComponent(primaryClub)}`;
 
-                // Sort records: Season descending, match descending
-                displayedRecords.sort((a, b) => {
-                    const yrA = parseInt(a.season_key.split('_')[0], 10);
-                    const yrB = parseInt(b.season_key.split('_')[0], 10);
-                    if (yrA !== yrB) return yrB - yrA;
-                    return b.match - a.match;
+            const primaryGender = careerRecords[0]?.gender === 'F' ? 'Women' : 'Men';
+            document.getElementById('athlete-gender-badge').textContent = `Senior / Vet ${primaryGender}`;
+
+            // Aggregate metrics
+            const seasons = Array.from(new Set(careerRecords.map(r => r.season).filter(Boolean))).sort();
+            const categories = Array.from(new Set(careerRecords.map(r => r.age_cat).filter(Boolean)));
+            const venues = Array.from(new Set(careerRecords.map(r => r.venue).filter(Boolean)));
+
+            let bestPos = 9999;
+            let bestPosMatch = null;
+            let catWins = 0;
+            let outrightWins = 0;
+            let posSum = 0;
+            let posCount = 0;
+
+            careerRecords.forEach(r => {
+                if (r.pos > 0) {
+                    posSum += r.pos;
+                    posCount++;
+                    if (r.pos < bestPos) {
+                        bestPos = r.pos;
+                        bestPosMatch = r;
+                    }
+                    if (r.pos === 1) outrightWins++;
+                }
+                if (r.cat_pos === 1) catWins++;
+            });
+
+            const avgPos = posCount > 0 ? (posSum / posCount).toFixed(1) : '—';
+            const yrFirst = seasons[0] ? parseInt(seasons[0].split('/')[0], 10) : null;
+            const yrLast = seasons[seasons.length - 1] ? parseInt(seasons[seasons.length - 1].split('/')[0], 10) : null;
+            const spanText = (yrFirst && yrLast) ? `${yrFirst}–${yrLast + 1} (${seasons.length} ${seasons.length === 1 ? 'season' : 'seasons'})` : `${seasons.length} seasons`;
+
+            document.getElementById('athlete-career-span').textContent = `ACTIVE: ${spanText.toUpperCase()}`;
+            document.getElementById('athlete-cat-span').textContent = `CATEGORIES: ${categories.join(', ') || 'SENIOR'}`;
+            document.getElementById('athlete-finishes-span').textContent = `${careerRecords.length} RACES FINISHED`;
+
+            document.getElementById('stat-appearances').textContent = careerRecords.length;
+            document.getElementById('stat-campaigns').textContent = seasons.length;
+            document.getElementById('stat-venues').textContent = venues.length;
+            document.getElementById('stat-best-pos').textContent = bestPos !== 9999 ? `#${bestPos}` : '—';
+            document.getElementById('stat-cat-wins').textContent = catWins;
+            document.getElementById('stat-avg-pos').textContent = avgPos !== '—' ? `#${avgPos}` : '—';
+
+            // 3. INSIGHTS CARD NARRATIVE
+            const titleEl = document.getElementById('insight-card-title');
+            const valEl = document.getElementById('insight-card-value');
+            const subEl = document.getElementById('insight-card-subtext');
+
+            if (careerRecords.length >= 3) {
+                const venueCounts = {};
+                careerRecords.forEach(r => {
+                    if (r.venue) venueCounts[r.venue] = (venueCounts[r.venue] || 0) + 1;
+                });
+                const topVenue = Object.entries(venueCounts).sort((a, b) => b[1] - a[1])[0];
+
+                if (catWins >= 3) {
+                    titleEl.textContent = "Category Champion";
+                    valEl.textContent = `${catWins} Category Victories`;
+                    subEl.textContent = `Proven age-group winner across Gwent League campaigns, claiming ${catWins} individual category victories with an all-time peak finish of #${bestPos}.`;
+                } else if (careerRecords.length >= 15) {
+                    titleEl.textContent = "League Stalwart";
+                    valEl.textContent = `${careerRecords.length} League Appearances`;
+                    subEl.textContent = `Exceptional cross-country commitment spanning ${seasons.length} seasons, with ${topVenue ? topVenue[0] : 'multiple courses'} being their most frequented venue (${topVenue ? topVenue[1] : 0} races).`;
+                } else {
+                    titleEl.textContent = "Career Overview";
+                    valEl.textContent = `Peak Finish #${bestPos}`;
+                    subEl.textContent = `Active across ${seasons.length} league seasons with an average finishing rank of #${avgPos} across ${careerRecords.length} total fixtures.`;
+                }
+            } else {
+                titleEl.textContent = "Emerging Runner";
+                valEl.textContent = `${careerRecords.length} Finishes`;
+                subEl.textContent = `Early Gwent League career profile. More fixture data will populate extended career trend trajectories.`;
+            }
+
+            // 4. CHRONOLOGICAL RACE LOG & FORM TRAJECTORY DATA
+            // Sort chronologically for trend chart
+            const chronologicalHistory = [...careerRecords].sort((a, b) => {
+                const cmp = a.season_key.localeCompare(b.season_key);
+                if (cmp !== 0) return cmp;
+                return (a.match || 0) - (b.match || 0);
+            });
+
+            // Populate Trend Chart
+            const trendContainer = document.getElementById('trend-chart-container');
+            const trendSvg = document.getElementById('trend-svg');
+            const trendLine = document.getElementById('trend-line');
+            const trendArea = document.getElementById('trend-area');
+            const trendPoints = document.getElementById('trend-points');
+            const yMax = document.getElementById('chart-y-max');
+            const yMid = document.getElementById('chart-y-mid');
+            const yMin = document.getElementById('chart-y-min');
+
+            const tooltip = document.getElementById('chart-tooltip');
+            const tooltipFixture = document.getElementById('tooltip-fixture');
+            const tooltipMeta = document.getElementById('tooltip-meta');
+            const tooltipPos = document.getElementById('tooltip-pos');
+
+            const validPosPoints = chronologicalHistory.filter(r => r.pos > 0);
+
+            if (validPosPoints.length >= 2) {
+                const posValues = validPosPoints.map(r => r.pos);
+                const minPos = Math.min(...posValues);
+                const maxPos = Math.max(...posValues);
+                const midPos = Math.round((minPos + maxPos) / 2);
+
+                yMax.textContent = `#${minPos}`;
+                yMid.textContent = `#${midPos}`;
+                yMin.textContent = `#${maxPos}`;
+
+                const svgWidth = 600;
+                const svgHeight = 140;
+                trendSvg.setAttribute('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
+
+                const padY = 14;
+                const usableHeight = svgHeight - (padY * 2);
+                const posRange = (maxPos - minPos) || 1;
+
+                const coords = validPosPoints.map((r, i) => {
+                    const x = (i / (validPosPoints.length - 1)) * (svgWidth - 20) + 10;
+                    // Invert: lower pos number is higher up on screen
+                    const y = padY + ((r.pos - minPos) / posRange) * usableHeight;
+                    return { x, y, record: r };
                 });
 
-                const latest = displayedRecords[0];
-                const name = displayMasterName || latest.athlete;
-                const genderLabel = latest.gender === 'M' ? 'Senior Men' : 'Senior Women';
-                
-                const primaryClub = (transferInfo && transferInfo.primary_club) || targetClub || latest.club;
-                document.title = `GL Archive — ${name} (${primaryClub})`;
-                document.getElementById('athlete-name').textContent = name;
-                document.getElementById('athlete-gender-badge').textContent = genderLabel;
-                document.getElementById('athlete-club-badge').textContent = (selectedClubFilter !== 'all') ? selectedClubFilter : primaryClub;
+                // Line path
+                const lineD = coords.map((c, i) => `${i === 0 ? 'M' : 'L'} ${c.x.toFixed(1)} ${c.y.toFixed(1)}`).join(' ');
+                trendLine.setAttribute('d', lineD);
 
-                // Seasons & span
-                const seasons = [...new Set(displayedRecords.map(r => r.season))].sort();
-                const firstSeason = seasons[0];
-                const lastSeason = seasons[seasons.length - 1];
-                const spanText = firstSeason === lastSeason ? `${firstSeason}` : `${firstSeason} – ${lastSeason} (${seasons.length} ${seasons.length === 1 ? 'campaign' : 'campaigns'})`;
-                document.getElementById('athlete-career-span').textContent = `ACTIVE: ${spanText.toUpperCase()}`;
+                // Area path
+                const areaD = `${lineD} L ${coords[coords.length - 1].x.toFixed(1)} ${svgHeight} L ${coords[0].x.toFixed(1)} ${svgHeight} Z`;
+                trendArea.setAttribute('d', areaD);
 
-                const categories = [...new Set(displayedRecords.map(r => r.age_cat))];
-                document.getElementById('athlete-cat-span').textContent = `CATEGORIES: ${categories.join(', ')}`;
-                document.getElementById('athlete-finishes-span').textContent = `${displayedRecords.length} RACES FINISHED`;
+                // Points & hover events
+                trendPoints.innerHTML = '';
+                coords.forEach(pt => {
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', pt.x.toFixed(1));
+                    circle.setAttribute('cy', pt.y.toFixed(1));
+                    circle.setAttribute('r', '4');
+                    circle.setAttribute('class', 'fill-emerald-500 stroke-white dark:stroke-slate-900 stroke-2 hover:r-6 cursor-pointer transition-all');
 
-                // Metrics
-                const bestPos = Math.min(...displayedRecords.map(r => r.pos));
-                const outrightWins = displayedRecords.filter(r => r.pos === 1).length;
-                const catWins = displayedRecords.filter(r => r.cat_pos === 1).length;
-                const avgPos = Math.round(displayedRecords.reduce((sum, r) => sum + r.pos, 0) / displayedRecords.length);
-                
-                const timedRaces = displayedRecords.filter(r => r.time && r.time.includes(':'));
-                timedRaces.sort((a, b) => a.time.localeCompare(b.time));
-                const fastestTime = timedRaces.length > 0 ? timedRaces[0].time : '—';
+                    circle.addEventListener('mouseenter', (e) => {
+                        const rect = trendSvg.getBoundingClientRect();
+                        const clientX = (pt.x / svgWidth) * rect.width;
+                        const clientY = (pt.y / svgHeight) * rect.height;
 
-                document.getElementById('stat-appearances').textContent = displayedRecords.length;
-                document.getElementById('stat-best-pos').textContent = `#${bestPos}`;
-                document.getElementById('stat-cat-wins').textContent = catWins;
-                document.getElementById('stat-outright-wins').textContent = outrightWins;
-                document.getElementById('stat-avg-pos').textContent = `#${avgPos}`;
-                document.getElementById('stat-fastest-time').textContent = fastestTime;
+                        tooltipFixture.textContent = `${pt.record.season} Match ${pt.record.match}`;
+                        tooltipMeta.textContent = `${pt.record.venue || 'Gwent League'} • ${pt.record.age_cat || 'Senior'}`;
+                        tooltipPos.textContent = `Finished: #${pt.record.pos} Overall ${pt.record.time ? '(' + pt.record.time + ')' : ''}`;
 
-                // Clubs list for this athlete profile
-                const profileClubs = {};
-                displayedRecords.forEach(r => {
-                    profileClubs[r.club] = (profileClubs[r.club] || 0) + 1;
+                        tooltip.style.left = `${clientX + 16}px`;
+                        tooltip.style.top = `${clientY}px`;
+                        tooltip.classList.remove('hidden');
+                    });
+
+                    circle.addEventListener('mouseleave', () => {
+                        tooltip.classList.add('hidden');
+                    });
+
+                    trendPoints.appendChild(circle);
                 });
-                const clubsContainer = document.getElementById('athlete-clubs-list');
-                clubsContainer.innerHTML = Object.entries(profileClubs).map(([club, count]) => `
-                    <a href="club.html?club=${encodeURIComponent(club)}" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 transition-colors shadow-sm">
-                        <span class="text-xs font-semibold text-slate-900">${club}</span>
-                        <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">${count} ${count === 1 ? 'race' : 'races'}</span>
-                    </a>
-                `).join('');
+            } else {
+                if (trendContainer) trendContainer.classList.add('hidden');
+            }
 
-                // Historical Log Table
-                document.getElementById('log-count').textContent = displayedRecords.length;
-                const tbody = document.getElementById('athlete-history-body');
-                tbody.innerHTML = displayedRecords.map(r => {
-                    const isWin = r.pos === 1;
-                    const posClass = isWin ? 'font-serif font-bold text-emerald-800' : 'font-mono text-slate-800';
+            // 5. REPEATING COURSE PROGRESS BREAKDOWN
+            const courseMap = {};
+            careerRecords.forEach(r => {
+                if (!r.venue || r.pos <= 0) return;
+                // Normalize venue name (strip city or clean formatting)
+                const vNorm = r.venue.trim();
+                if (!courseMap[vNorm]) courseMap[vNorm] = [];
+                courseMap[vNorm].push(r);
+            });
+
+            const repeatingCourses = Object.entries(courseMap)
+                .filter(([_, list]) => list.length >= 2)
+                .map(([venue, list]) => {
+                    list.sort((a, b) => a.season_key.localeCompare(b.season_key) || a.match - b.match);
+                    const debut = list[0];
+                    const recent = list[list.length - 1];
+                    let best = list[0];
+                    list.forEach(item => {
+                        if (item.pos < best.pos) best = item;
+                    });
+
+                    // Positional Delta: positive number means improvement (lower finishing pos)
+                    const delta = debut.pos - recent.pos;
+
+                    return {
+                        venue,
+                        count: list.length,
+                        debut,
+                        recent,
+                        best,
+                        delta
+                    };
+                });
+
+            const courseRows = document.getElementById('course-progress-rows');
+            const courseSection = document.getElementById('course-progress-section');
+
+            if (repeatingCourses.length > 0) {
+                repeatingCourses.sort((a, b) => b.delta - a.delta || b.count - a.count);
+                courseRows.innerHTML = repeatingCourses.map(c => {
+                    const deltaBadge = c.delta > 0 
+                        ? `<span class="inline-flex items-center gap-1 font-bold text-emerald-600 dark:text-emerald-400">↑ ${c.delta} places gain</span>`
+                        : (c.delta < 0 
+                            ? `<span class="inline-flex items-center gap-1 text-slate-400">↓ ${Math.abs(c.delta)} places</span>`
+                            : `<span class="text-slate-400">Stable</span>`);
 
                     return `
-                        <tr class="hover:bg-slate-50/80 transition-colors">
-                            <td class="py-2.5 px-4 font-mono font-medium text-slate-500">
-                                ${r.season}
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <td class="py-3 px-4 font-bold text-slate-900 dark:text-slate-100">
+                                ${c.venue}
                             </td>
-                            <td class="py-2.5 px-3 font-mono font-bold text-slate-700">
-                                Match ${r.match}
+                            <td class="py-3 px-3 text-center font-mono font-bold text-slate-800 dark:text-slate-200">
+                                ${c.count} races
                             </td>
-                            <td class="py-2.5 px-4 font-serif font-bold text-slate-900">
-                                <a href="results.html?season=${r.season_key}&match=${r.match}&gender=${r.gender}" class="hover:text-emerald-800 transition-colors">
-                                    ${r.venue}
-                                </a>
+                            <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400">
+                                Pos #${c.debut.pos} <span class="text-[10px] opacity-75">(${c.debut.season.split('/')[0]})</span>
                             </td>
-                            <td class="py-2.5 px-3 text-center tabular-nums ${posClass}">
-                                #${r.pos}
+                            <td class="py-3 px-4 font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                                Pos #${c.best.pos} <span class="text-[10px] opacity-75">(${c.best.season.split('/')[0]})</span>
                             </td>
-                            <td class="py-2.5 px-3 text-center tabular-nums font-mono text-slate-400">
-                                ${r.cat_pos > 0 ? `#${r.cat_pos}` : '—'}
+                            <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400">
+                                Pos #${c.recent.pos} <span class="text-[10px] opacity-75">(${c.recent.season.split('/')[0]})</span>
                             </td>
-                            <td class="py-2.5 px-3">
-                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 text-slate-700">
-                                    ${r.age_cat}
-                                </span>
-                            </td>
-                            <td class="py-2.5 px-4 text-slate-600">
-                                <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-slate-900 transition-colors">
-                                    ${r.club}
-                                </a>
-                                ${nameChangeInfo && r.athlete && r.athlete.toLowerCase() !== displayMasterName.toLowerCase() ? `<div class="text-[10px] font-mono text-purple-700 font-semibold mt-0.5">Ran as ${r.athlete}</div>` : ''}
-                            </td>
-                            <td class="py-2.5 px-4 text-right font-mono tabular-nums font-medium text-slate-700">
-                                ${r.time || '—'}
-                            </td>
-                            <td class="py-2.5 px-4 text-right font-mono tabular-nums text-slate-500 font-semibold">
-                                ${r.pts || '—'}
+                            <td class="py-3 px-4 text-right font-mono">
+                                ${deltaBadge}
                             </td>
                         </tr>
                     `;
                 }).join('');
+            } else {
+                if (courseSection) courseSection.classList.add('hidden');
             }
 
-            renderAthleteProfile();
+            // 6. POPULATE RACE-BY-RACE HISTORY TABLE (Descending)
+            const historyBody = document.getElementById('athlete-history-body');
+            document.getElementById('log-count').textContent = careerRecords.length;
+
+            const descendingHistory = [...careerRecords].sort((a, b) => {
+                const cmp = b.season_key.localeCompare(a.season_key);
+                if (cmp !== 0) return cmp;
+                return (b.match || 0) - (a.match || 0);
+            });
+
+            historyBody.innerHTML = descendingHistory.map(r => {
+                const isCatWin = r.cat_pos === 1;
+                const isRaceWin = r.pos === 1;
+                const posBadge = isRaceWin 
+                    ? `<span class="px-2 py-0.5 rounded font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700">🥇 1st</span>`
+                    : `#${r.pos}`;
+
+                const catPosBadge = isCatWin
+                    ? `<span class="px-1.5 py-0.5 rounded font-bold text-[10px] bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">1st</span>`
+                    : (r.cat_pos > 0 ? `#${r.cat_pos}` : '—');
+
+                return `
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400 font-bold">${r.season}</td>
+                        <td class="py-3 px-3 text-center font-mono text-slate-700 dark:text-slate-300">M${r.match}</td>
+                        <td class="py-3 px-4 font-medium text-slate-800 dark:text-slate-200">${r.venue || 'Gwent League Match'}</td>
+                        <td class="py-3 px-3 text-center font-mono font-bold">${posBadge}</td>
+                        <td class="py-3 px-3 text-center font-mono">${catPosBadge}</td>
+                        <td class="py-3 px-3 font-mono text-[11px] text-slate-500">${r.age_cat || 'Senior'}</td>
+                        <td class="py-3 px-4">
+                            <a href="club.html?club=${encodeURIComponent(r.club)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors font-medium">
+                                ${r.club}
+                            </a>
+                        </td>
+                        <td class="py-3 px-4 text-right font-mono text-slate-600 dark:text-slate-300">${r.time || '—'}</td>
+                        <td class="py-3 px-4 text-right font-mono font-bold text-slate-800 dark:text-slate-200">${r.pts || '0'}</td>
+                    </tr>
+                `;
+            }).join('');
         })();
     </script>
 </body>
