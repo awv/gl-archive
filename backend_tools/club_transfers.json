@@ -125,7 +125,6 @@
     "gender": "M",
     "clubs": [
       "Pont-y-Pwl & District Runners",
-      "Caldicot Running Club",
       "Parc Bryn Bach Running Club"
     ],
     "primary_club": "Parc Bryn Bach Running Club",
@@ -175,13 +174,11 @@
   "Ross Matthews": {
     "gender": "M",
     "clubs": [
-      "Chepstow Harriers",
-      "Cardiff Amateur Athletic Club",
       "Islwyn Running Club",
       "Parc Bryn Bach Running Club"
     ],
     "primary_club": "Parc Bryn Bach Running Club",
-    "from_club": "Chepstow Harriers",
+    "from_club": "Islwyn Running Club",
     "to_club": "Parc Bryn Bach Running Club",
     "transfer_season": "2021/2022",
     "confirmed": true
@@ -239,15 +236,11 @@
   "Alun Wood": {
     "gender": "M",
     "clubs": [
-      "San Domenico Road Runners Club",
-      "Bridgend Athletic Club",
-      "Bristol and West Athletic Club",
-      "Islwyn Running Club",
       "Pont-y-Pwl & District Runners",
       "Parc Bryn Bach Running Club"
     ],
     "primary_club": "Parc Bryn Bach Running Club",
-    "from_club": "San Domenico Road Runners Club",
+    "from_club": "Pont-y-Pwl & District Runners",
     "to_club": "Parc Bryn Bach Running Club",
     "transfer_season": "2024/2025",
     "confirmed": true

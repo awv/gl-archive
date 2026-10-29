@@ -27,7 +27,6 @@
     ],
     "clubs": [
       "Carmarthen & District Harriers AC",
-      "Newport Harriers",
       "Swansea Harriers Athletic Club",
       "University of Swansea"
     ],
@@ -35,9 +34,7 @@
       "2010/2011",
       "2011/2012",
       "2012/2013",
-      "2014/2015",
       "2017/2018",
-      "2019/2020",
       "2022/2023",
       "2023/2024",
       "2025/2026"
@@ -45,12 +42,9 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V40",
-      "V45",
-      "V50"
+      "U23"
     ],
-    "finishes": 24,
+    "finishes": 11,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -108,8 +102,7 @@
     ],
     "clubs": [
       "Parc Bryn Bach Running Club",
-      "Swansea Harriers Athletic Club",
-      "University of Swansea"
+      "Swansea Harriers Athletic Club"
     ],
     "seasons": [
       "2010/2011",
@@ -127,15 +120,14 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40",
       "V45"
     ],
-    "finishes": 51,
+    "finishes": 47,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -191,12 +183,10 @@
       "Matt Grantham"
     ],
     "clubs": [
-      "Lliswerry Runners",
       "Micky Morris Racing Team",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2015/2016",
       "2017/2018",
       "2019/2020",
       "2021/2022",
@@ -210,8 +200,8 @@
       "Senior",
       "U23"
     ],
-    "finishes": 28,
-    "first_year": 2015,
+    "finishes": 27,
+    "first_year": 2017,
     "last_year": 2025
   },
   "ethan esteban": {
@@ -329,15 +319,12 @@
     ],
     "clubs": [
       "Aberdare Valley AAC",
-      "Parc Bryn Bach Running Club",
       "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
-      "2010/2011",
       "2013/2014",
       "2014/2015",
       "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2019/2020",
@@ -349,11 +336,10 @@
       "Senior",
       "V35",
       "V40",
-      "V45",
-      "V50"
+      "V45"
     ],
-    "finishes": 29,
-    "first_year": 2010,
+    "finishes": 14,
+    "first_year": 2013,
     "last_year": 2025
   },
   "jack eggington": {
@@ -568,11 +554,9 @@
     ],
     "clubs": [
       "Aberdare Valley AAC",
-      "Parc Bryn Bach Running Club",
-      "Pontypridd Roadents Athletic Club"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2010/2011",
       "2011/2012",
       "2012/2013",
       "2013/2014",
@@ -594,8 +578,8 @@
       "U23",
       "V35"
     ],
-    "finishes": 66,
-    "first_year": 2010,
+    "finishes": 61,
+    "first_year": 2011,
     "last_year": 2025
   },
   "badr alainzay": {
@@ -626,12 +610,9 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Cardiff Metropolitan University",
       "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
-      "2011/2012",
-      "2012/2013",
       "2013/2014",
       "2016/2017",
       "2017/2018",
@@ -648,8 +629,8 @@
       "V40",
       "V45"
     ],
-    "finishes": 22,
-    "first_year": 2011,
+    "finishes": 17,
+    "first_year": 2013,
     "last_year": 2025
   },
   "james palmer": {
@@ -1119,7 +1100,6 @@
       "Matthew Harvey"
     ],
     "clubs": [
-      "Chepstow Harriers",
       "Neath Harriers",
       "Swansea Harriers Athletic Club"
     ],
@@ -1131,7 +1111,6 @@
       "2014/2015",
       "2015/2016",
       "2017/2018",
-      "2019/2020",
       "2023/2024",
       "2025/2026"
     ],
@@ -1142,7 +1121,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 38,
+    "finishes": 23,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -1176,7 +1155,6 @@
     ],
     "clubs": [
       "Les Croupiers Running Club",
-      "Lliswerry Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
@@ -1203,7 +1181,7 @@
       "V45",
       "V50"
     ],
-    "finishes": 53,
+    "finishes": 52,
     "first_year": 2011,
     "last_year": 2025
   },
@@ -1583,36 +1561,25 @@
       "Martin Thomas"
     ],
     "clubs": [
-      "Cardiff Amateur Athletic Club",
       "Cardiff University AC",
-      "Lliswerry Runners",
-      "Parc Bryn Bach Running Club",
-      "Taf Running & Orienteering Teams",
-      "University of Bath"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
       "2012/2013",
-      "2013/2014",
       "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
-      "V35",
-      "V45"
+      "V35"
     ],
-    "finishes": 37,
-    "first_year": 2010,
+    "finishes": 20,
+    "first_year": 2012,
     "last_year": 2025
   },
   "daniel james": {
@@ -3373,17 +3340,10 @@
       "Alun Wood"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
-      "Bristol and West Athletic Club",
-      "Islwyn Running Club",
       "Parc Bryn Bach Running Club",
-      "Pont-y-Pwl & District Runners",
-      "San Domenico Road Runners Club"
+      "Pont-y-Pwl & District Runners"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2013/2014",
       "2015/2016",
       "2016/2017",
       "2017/2018",
@@ -3394,11 +3354,10 @@
     "categories": [
       "Senior",
       "V35",
-      "V40",
-      "V45"
+      "V40"
     ],
-    "finishes": 19,
-    "first_year": 2010,
+    "finishes": 6,
+    "first_year": 2015,
     "last_year": 2025
   },
   "liam moore": {
@@ -3521,7 +3480,6 @@
     ],
     "clubs": [
       "Les Croupiers Running Club",
-      "Pont-y-Pwl & District Runners",
       "Torfaen Runners"
     ],
     "seasons": [
@@ -3549,7 +3507,7 @@
       "V45",
       "V50"
     ],
-    "finishes": 54,
+    "finishes": 52,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -4911,12 +4869,14 @@
     "canonical_name": "Luke Evans",
     "raw_names": [
       "L Evans",
+      "L. Evans",
       "Luke Evans"
     ],
     "clubs": [
       "Taf Running & Orienteering Teams"
     ],
     "seasons": [
+      "2018/2019",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -4928,8 +4888,8 @@
       "Senior",
       "U23"
     ],
-    "finishes": 24,
-    "first_year": 2021,
+    "finishes": 26,
+    "first_year": 2018,
     "last_year": 2025
   },
   "craig hopkins": {
@@ -5140,16 +5100,9 @@
       "Adrian Lewis"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Cardiff University AC",
-      "Neath Harriers",
-      "Taf Running & Orienteering Teams",
-      "University of the West of England",
-      "Wells City Harriers"
+      "Aberdare Valley AAC"
     ],
     "seasons": [
-      "2010/2011",
-      "2012/2013",
       "2013/2014",
       "2014/2015",
       "2015/2016",
@@ -5163,17 +5116,15 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "U23",
       "V35",
       "V40",
       "V45",
       "V50"
     ],
-    "finishes": 99,
-    "first_year": 2010,
+    "finishes": 56,
+    "first_year": 2013,
     "last_year": 2025
   },
   "mark taylor": {
@@ -8686,29 +8637,23 @@
       "David Rees"
     ],
     "clubs": [
-      "Cardiff Amateur Athletic Club",
-      "Les Croupiers Running Club",
       "Llanelli Amateur Athletic Club",
       "Swansea Harriers Athletic Club"
     ],
     "seasons": [
-      "2010/2011",
       "2011/2012",
-      "2012/2013",
-      "2018/2019",
       "2021/2022",
       "2023/2024",
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
       "V35",
       "V45"
     ],
-    "finishes": 16,
-    "first_year": 2010,
+    "finishes": 5,
+    "first_year": 2011,
     "last_year": 2025
   },
   "richard self": {
@@ -9409,13 +9354,9 @@
       "Gareth Jenkins"
     ],
     "clubs": [
-      "Cwm Ogwr",
-      "Lliswerry Runners",
       "Ogmore Phoenix Runners"
     ],
     "seasons": [
-      "2014/2015",
-      "2015/2016",
       "2019/2020",
       "2022/2023",
       "2023/2024",
@@ -9426,11 +9367,10 @@
     "categories": [
       "Senior",
       "V35",
-      "V40",
-      "V45"
+      "V40"
     ],
-    "finishes": 12,
-    "first_year": 2014,
+    "finishes": 8,
+    "first_year": 2019,
     "last_year": 2025
   },
   "chris davies": {
@@ -11144,11 +11084,9 @@
     ],
     "clubs": [
       "Brecon Athletic Club",
-      "Builth & District RC",
-      "Guest"
+      "Builth & District RC"
     ],
     "seasons": [
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2021/2022",
@@ -11162,8 +11100,8 @@
       "V35",
       "V40"
     ],
-    "finishes": 16,
-    "first_year": 2016,
+    "finishes": 15,
+    "first_year": 2017,
     "last_year": 2025
   },
   "hannah blundy": {
@@ -11549,11 +11487,9 @@
     "clubs": [
       "Guest",
       "Parc Bryn Bach Running Club",
-      "Pont-y-Pwl & District Runners",
       "Torfaen Runners"
     ],
     "seasons": [
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
@@ -11569,8 +11505,8 @@
       "V40",
       "V45"
     ],
-    "finishes": 25,
-    "first_year": 2017,
+    "finishes": 24,
+    "first_year": 2018,
     "last_year": 2025
   },
   "amy griffiths": {
@@ -11914,7 +11850,6 @@
     ],
     "clubs": [
       "Bristol and West Athletic Club",
-      "Fife A.C.",
       "Penarth and Dinas Runners"
     ],
     "seasons": [
@@ -11922,7 +11857,6 @@
       "2013/2014",
       "2015/2016",
       "2016/2017",
-      "2018/2019",
       "2022/2023",
       "2023/2024",
       "2024/2025",
@@ -11934,7 +11868,7 @@
       "V35",
       "V40"
     ],
-    "finishes": 17,
+    "finishes": 16,
     "first_year": 2012,
     "last_year": 2025
   },
@@ -12330,31 +12264,26 @@
       "Laura Jones"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
       "Amman Valley Harriers",
-      "Islwyn Running Club",
-      "Les Croupiers Running Club",
-      "Rhondda Valley Runners",
-      "Taf Running & Orienteering Teams"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
       "2013/2014",
       "2015/2016",
       "2016/2017",
       "2017/2018",
-      "2018/2019",
       "2022/2023",
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
       "V40",
       "V45"
     ],
-    "finishes": 22,
+    "finishes": 16,
     "first_year": 2013,
     "last_year": 2025
   },
@@ -13286,25 +13215,10 @@
       "Corinna Jones"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Amman Valley Harriers",
-      "Cardiff Amateur Athletic Club",
-      "Les Croupiers Running Club",
-      "Lliswerry Runners",
-      "Swansea Harriers Athletic Club",
-      "Taf Running & Orienteering Teams",
-      "Westbury Harriers",
-      "Women Running Penarth"
+      "Aberdare Valley AAC"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
       "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
@@ -13312,17 +13226,14 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior",
       "V35",
       "V40",
-      "V45",
-      "V50",
-      "V55"
+      "V45"
     ],
-    "finishes": 40,
-    "first_year": 2010,
+    "finishes": 15,
+    "first_year": 2013,
     "last_year": 2025
   },
   "jenny morgan": {
@@ -13710,6 +13621,7 @@
   "sian jones": {
     "canonical_name": "Sian Jones",
     "raw_names": [
+      "S Jones",
       "S. Jones",
       "Sian Jones"
     ],
@@ -13727,11 +13639,12 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior"
+      "Senior",
+      "V35"
     ],
-    "finishes": 39,
+    "finishes": 40,
     "first_year": 2015,
     "last_year": 2025
   },
@@ -13990,13 +13903,8 @@
       "Ceri Davies"
     ],
     "clubs": [
-      "Avon Valley Runners",
       "Brecon Athletic Club",
-      "Islwyn Running Club",
-      "Lliswerry Runners",
-      "San Domenico Road Runners Club",
-      "Sarn Helen",
-      "White Rock Runners"
+      "San Domenico Road Runners Club"
     ],
     "seasons": [
       "2010/2011",
@@ -14007,20 +13915,17 @@
       "2015/2016",
       "2016/2017",
       "2017/2018",
-      "2018/2019",
       "2022/2023",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40",
-      "V45",
-      "V50"
+      "V45"
     ],
-    "finishes": 44,
+    "finishes": 20,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -14202,7 +14107,7 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -14240,33 +14145,23 @@
       "Cheryl Evans"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Cardiff Amateur Athletic Club",
-      "Cardiff University AC",
-      "Les Croupiers Running Club",
-      "Pontypridd Roadents Athletic Club",
-      "Swansea Harriers Athletic Club"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
       "2013/2014",
       "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
       "2019/2020",
       "2023/2024",
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V45"
     ],
-    "finishes": 51,
+    "finishes": 23,
     "first_year": 2013,
     "last_year": 2025
   },
@@ -14588,33 +14483,26 @@
       "Nia Davies"
     ],
     "clubs": [
-      "Bristol and West Athletic Club",
       "Carmarthen & District Harriers AC",
       "Thornbury Running Club",
-      "Weston Athletic Club",
-      "White Rock Runners"
+      "Weston Athletic Club"
     ],
     "seasons": [
       "2012/2013",
       "2013/2014",
       "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2019/2020",
       "2023/2024",
       "2024/2025",
       "2025/2026"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
       "V35",
       "V40",
       "V45",
       "V50"
     ],
-    "finishes": 27,
+    "finishes": 16,
     "first_year": 2012,
     "last_year": 2025
   },
@@ -14776,8 +14664,6 @@
     ],
     "seasons": [
       "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -14789,7 +14675,7 @@
       "V35",
       "V40"
     ],
-    "finishes": 23,
+    "finishes": 18,
     "first_year": 2017,
     "last_year": 2025
   },
@@ -15005,10 +14891,7 @@
     ],
     "clubs": [
       "Bristol and West Athletic Club",
-      "Les Croupiers Running Club",
-      "Llanelli Amateur Athletic Club",
-      "Taf Running & Orienteering Teams",
-      "Women Running Penarth"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
       "2014/2015",
@@ -15021,14 +14904,14 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
       "V50",
       "V55"
     ],
-    "finishes": 44,
+    "finishes": 29,
     "first_year": 2014,
     "last_year": 2025
   },
@@ -16694,7 +16577,6 @@
       "Linda Woodland"
     ],
     "clubs": [
-      "Guest",
       "Neath Harriers",
       "Port Talbot Harriers & AC"
     ],
@@ -16714,7 +16596,7 @@
       "V60",
       "V65"
     ],
-    "finishes": 27,
+    "finishes": 26,
     "first_year": 2015,
     "last_year": 2025
   },
@@ -19712,24 +19594,11 @@
       "Dominic Davies"
     ],
     "clubs": [
-      "Brecon Athletic Club",
-      "Les Croupiers Running Club",
-      "Lliswerry Runners",
-      "Neath Harriers",
       "Parc Bryn Bach Running Club",
-      "Pembrokeshire Harriers",
-      "San Domenico Road Runners Club",
-      "Sarn Helen",
       "University of Swansea"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
       "2014/2015",
-      "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2022/2023",
       "2024/2025",
@@ -19738,15 +19607,10 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V35",
-      "V50",
-      "V55",
-      "V60",
-      "V65"
+      "U23"
     ],
-    "finishes": 41,
-    "first_year": 2010,
+    "finishes": 8,
+    "first_year": 2014,
     "last_year": 2025
   },
   "andy gardiner": {
@@ -19855,26 +19719,20 @@
   "abed teweldebrhan": {
     "canonical_name": "Abed Teweldebrhan",
     "raw_names": [
-      "A. Teweldebrhan",
       "Abed Teweldebrhan"
     ],
     "clubs": [
       "Newport Harriers"
     ],
     "seasons": [
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
       "2025/2026"
     ],
     "gender": "M",
     "categories": [
-      "Senior",
-      "U23"
+      "Senior"
     ],
-    "finishes": 10,
-    "first_year": 2015,
+    "finishes": 1,
+    "first_year": 2025,
     "last_year": 2025
   },
   "alex keeble": {
@@ -20042,22 +19900,14 @@
   "harry davies": {
     "canonical_name": "Harry Davies",
     "raw_names": [
-      "H Davies",
       "H. Davies",
       "Harry Davies"
     ],
     "clubs": [
-      "Carmarthen & District Harriers AC",
-      "Islwyn Running Club",
       "Newport Harriers",
-      "Parc Bryn Bach Running Club",
-      "University of Swansea"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2019/2020",
@@ -20066,17 +19916,13 @@
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V35",
-      "V45",
-      "V50",
-      "V55"
+      "U23"
     ],
-    "finishes": 36,
-    "first_year": 2013,
+    "finishes": 17,
+    "first_year": 2017,
     "last_year": 2025
   },
   "ryan pugsley": {
@@ -20287,7 +20133,6 @@
       "Paul White"
     ],
     "clubs": [
-      "Caldicot Running Club",
       "Parc Bryn Bach Running Club",
       "Pont-y-Pwl & District Runners"
     ],
@@ -20305,7 +20150,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 17,
+    "finishes": 14,
     "first_year": 2014,
     "last_year": 2025
   },
@@ -20549,23 +20394,20 @@
     ],
     "clubs": [
       "Micky Morris Racing Team",
-      "Pont-y-Pwl & District Runners",
-      "Torfaen Runners"
+      "Pont-y-Pwl & District Runners"
     ],
     "seasons": [
       "2014/2015",
       "2015/2016",
-      "2018/2019",
       "2025/2026"
     ],
     "gender": "M",
     "categories": [
       "V35",
-      "V40",
       "V45",
       "V50"
     ],
-    "finishes": 7,
+    "finishes": 5,
     "first_year": 2014,
     "last_year": 2025
   },
@@ -21226,8 +21068,7 @@
       "Mark Emery"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
-      "University of Bath"
+      "Bridgend Athletic Club"
     ],
     "seasons": [
       "2010/2011",
@@ -21247,11 +21088,10 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40"
     ],
-    "finishes": 29,
+    "finishes": 26,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -23524,23 +23364,20 @@
     ],
     "clubs": [
       "Fairwater Runners",
-      "Lliswerry Runners",
-      "Pont-y-Pwl & District Runners"
+      "Lliswerry Runners"
     ],
     "seasons": [
-      "2014/2015",
       "2019/2020",
       "2021/2022",
       "2025/2026"
     ],
     "gender": "M",
     "categories": [
-      "V40",
       "V45",
       "V50"
     ],
-    "finishes": 9,
-    "first_year": 2014,
+    "finishes": 7,
+    "first_year": 2019,
     "last_year": 2025
   },
   "peter denness": {
@@ -23820,18 +23657,10 @@
   "rhodri evans": {
     "canonical_name": "Rhodri Evans",
     "raw_names": [
-      "R Evans",
       "R. Evans",
       "Rhodri Evans"
     ],
     "clubs": [
-      "Cardiff University AC",
-      "Islwyn Running Club",
-      "Les Croupiers Running Club",
-      "Neath Harriers",
-      "Ogmore Phoenix Runners",
-      "Parc Bryn Bach Running Club",
-      "Penarth and Dinas Runners",
       "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
@@ -23844,19 +23673,16 @@
       "2017/2018",
       "2018/2019",
       "2019/2020",
-      "2021/2022",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40",
-      "V45",
-      "V60"
+      "V45"
     ],
-    "finishes": 49,
+    "finishes": 20,
     "first_year": 2010,
     "last_year": 2025
   },
@@ -24599,40 +24425,24 @@
       "Julian Lewis"
     ],
     "clubs": [
-      "Barry & Vale Harriers A. A. C.",
-      "Bristol University",
-      "Cardiff Archers",
-      "Fairwater Runners",
-      "Islwyn Running Club",
-      "Llanelli Amateur Athletic Club",
-      "Penarth and Dinas Runners",
       "San Domenico Road Runners Club",
       "Taf Running & Orienteering Teams"
     ],
     "seasons": [
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2019/2020",
       "2024/2025",
       "2025/2026"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "U23",
       "V35",
-      "V40",
       "V45",
-      "V50",
-      "V60"
+      "V50"
     ],
-    "finishes": 52,
-    "first_year": 2012,
+    "finishes": 15,
+    "first_year": 2017,
     "last_year": 2025
   },
   "timothy snell": {
@@ -25492,7 +25302,7 @@
       "2019/2020",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -27447,23 +27257,20 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Cardiff University AC",
       "Spirit of Monmouth RC"
     ],
     "seasons": [
-      "2012/2013",
       "2016/2017",
       "2018/2019",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior",
       "V40",
       "V50"
     ],
-    "finishes": 5,
-    "first_year": 2012,
+    "finishes": 3,
+    "first_year": 2016,
     "last_year": 2025
   },
   "tirion pryce": {
@@ -28099,7 +27906,7 @@
       "2023/2024",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -28234,48 +28041,30 @@
   "svetlana jones": {
     "canonical_name": "Svetlana Jones",
     "raw_names": [
-      "S Jones",
       "S. Jones",
       "Svetlana Jones"
     ],
     "clubs": [
-      "3M Gorseinon Road Runners",
-      "Aberdare Valley AAC",
-      "Cardiff University AC",
-      "Parc Bryn Bach Running Club",
-      "San Domenico Road Runners Club",
-      "Sarn Helen",
-      "Swansea Harriers Athletic Club",
-      "University of Swansea",
-      "Westbury Harriers",
-      "White Rock Runners"
+      "Westbury Harriers"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
       "2012/2013",
       "2013/2014",
       "2014/2015",
       "2015/2016",
       "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020",
-      "2021/2022",
       "2025/2026"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior",
-      "U23",
-      "V35",
       "V45",
-      "V50",
       "V55",
       "V60"
     ],
-    "finishes": 44,
-    "first_year": 2010,
+    "finishes": 22,
+    "first_year": 2012,
     "last_year": 2025
   },
   "barbara maddison": {
@@ -28657,25 +28446,18 @@
       "Laura Grey"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Fairwater Runners",
-      "Spirit of Monmouth RC"
+      "Fairwater Runners"
     ],
     "seasons": [
       "2014/2015",
-      "2016/2017",
-      "2018/2019",
-      "2019/2020",
       "2025/2026"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
-      "V35",
       "V50",
       "V60"
     ],
-    "finishes": 6,
+    "finishes": 2,
     "first_year": 2014,
     "last_year": 2025
   },
@@ -32579,7 +32361,6 @@
       "Doug Nicholls"
     ],
     "clubs": [
-      "Les Croupiers Running Club",
       "Pontypridd Roadents Athletic Club",
       "San Domenico Road Runners Club"
     ],
@@ -32588,10 +32369,6 @@
       "2013/2014",
       "2014/2015",
       "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2021/2022",
       "2022/2023",
       "2023/2024",
@@ -32605,7 +32382,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 35,
+    "finishes": 29,
     "first_year": 2012,
     "last_year": 2025
   },
@@ -34919,12 +34696,9 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Les Croupiers Running Club",
-      "Parc Bryn Bach Running Club",
-      "San Domenico Road Runners Club"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
-      "2013/2014",
       "2015/2016",
       "2016/2017",
       "2017/2018",
@@ -34934,14 +34708,13 @@
       "2023/2024",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V45"
+      "U23"
     ],
-    "finishes": 19,
-    "first_year": 2013,
+    "finishes": 15,
+    "first_year": 2015,
     "last_year": 2024
   },
   "luke hamley": {
@@ -35119,18 +34892,10 @@
       "Mike Lewis"
     ],
     "clubs": [
-      "Cwmbran Harriers",
       "Fairwater Runners",
-      "Islwyn Running Club",
-      "Les Croupiers Running Club",
-      "Parc Bryn Bach Running Club",
-      "Wells City Harriers",
-      "Westbury Harriers"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
       "2019/2020",
       "2023/2024",
       "2024/2025"
@@ -35138,50 +34903,40 @@
     "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V35",
-      "V40",
-      "V45",
-      "V50"
+      "U23"
     ],
-    "finishes": 22,
-    "first_year": 2010,
+    "finishes": 11,
+    "first_year": 2019,
     "last_year": 2024
   },
   "oliver williams": {
     "canonical_name": "Oliver Williams",
     "raw_names": [
-      "O Williams",
       "O. Williams",
       "Oliver Williams"
     ],
     "clubs": [
-      "Guest",
       "Les Croupiers Running Club",
-      "Parc Bryn Bach Running Club",
       "Pontypridd Roadents Athletic Club",
       "White Rock Runners"
     ],
     "seasons": [
-      "2010/2011",
       "2012/2013",
       "2013/2014",
       "2014/2015",
       "2015/2016",
       "2016/2017",
       "2018/2019",
-      "2019/2020",
       "2021/2022",
       "2024/2025"
     ],
     "gender": "M",
     "categories": [
       "Senior",
-      "V35",
-      "V50"
+      "V35"
     ],
-    "finishes": 32,
-    "first_year": 2010,
+    "finishes": 27,
+    "first_year": 2012,
     "last_year": 2024
   },
   "tobin rose": {
@@ -35800,48 +35555,23 @@
       "Arwel Davies"
     ],
     "clubs": [
-      "3M Gorseinon Road Runners",
       "Amman Valley Harriers",
-      "Bristol and West Athletic Club",
-      "Caerleon RC",
-      "Cardiff University AC",
-      "Carmarthen & District Harriers AC",
-      "Les Croupiers Running Club",
-      "Llanelli Amateur Athletic Club",
-      "Newport Harriers",
-      "Ogmore Phoenix Runners",
-      "Taf Running & Orienteering Teams",
-      "Thornbury Running Club",
-      "University of Bath",
-      "University of the West of England",
-      "White Rock Runners"
+      "Thornbury Running Club"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
       "2012/2013",
       "2013/2014",
       "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "U23",
-      "V35",
       "V40",
       "V45",
-      "V50",
-      "V55",
-      "V60"
+      "V50"
     ],
-    "finishes": 55,
-    "first_year": 2010,
+    "finishes": 12,
+    "first_year": 2012,
     "last_year": 2024
   },
   "dylan barratt": {
@@ -37264,30 +36994,20 @@
       "Jamie Edwards"
     ],
     "clubs": [
-      "Les Croupiers Running Club",
-      "Pont-y-Pwl & District Runners",
-      "Pontypridd Roadents Athletic Club"
+      "Pont-y-Pwl & District Runners"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2015/2016",
-      "2016/2017",
       "2019/2020",
       "2021/2022",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "V35",
-      "V40",
-      "V45"
+      "V35"
     ],
-    "finishes": 25,
-    "first_year": 2010,
+    "finishes": 6,
+    "first_year": 2019,
     "last_year": 2024
   },
   "david waters": {
@@ -39946,20 +39666,10 @@
       "Lou Summers"
     ],
     "clubs": [
-      "Chepstow Harriers",
-      "Pont-y-Pwl & District Runners",
       "Sarn Helen",
       "Torfaen Runners"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
@@ -39969,14 +39679,11 @@
     ],
     "gender": "F",
     "categories": [
-      "V35",
-      "V40",
-      "V45",
       "V50",
       "V55"
     ],
-    "finishes": 47,
-    "first_year": 2010,
+    "finishes": 18,
+    "first_year": 2018,
     "last_year": 2024
   },
   "unknown_ws carmarthen_harriers": {
@@ -40784,26 +40491,20 @@
       "Emma Blow"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
       "Cardiff Amateur Athletic Club",
       "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
       "2015/2016",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2023/2024",
       "2024/2025"
     ],
     "gender": "F",
     "categories": [
-      "Senior",
       "V40",
-      "V45",
       "V50"
     ],
-    "finishes": 13,
+    "finishes": 4,
     "first_year": 2015,
     "last_year": 2024
   },
@@ -41491,9 +41192,7 @@
     ],
     "clubs": [
       "Les Croupiers Running Club",
-      "North Somerset AC",
-      "Pontypridd Roadents Athletic Club",
-      "Swansea Harriers Athletic Club"
+      "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
       "2015/2016",
@@ -41504,15 +41203,14 @@
       "2023/2024",
       "2024/2025"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40",
       "V45"
     ],
-    "finishes": 20,
+    "finishes": 15,
     "first_year": 2015,
     "last_year": 2024
   },
@@ -42221,33 +41919,22 @@
       "Ross Matthews"
     ],
     "clubs": [
-      "Cardiff Amateur Athletic Club",
-      "Chepstow Harriers",
       "Islwyn Running Club",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2019/2020",
       "2021/2022",
       "2022/2023",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
       "V35",
-      "V40",
-      "V45"
+      "V40"
     ],
-    "finishes": 37,
-    "first_year": 2011,
+    "finishes": 12,
+    "first_year": 2019,
     "last_year": 2024
   },
   "tom halling": {
@@ -42358,7 +42045,6 @@
       "Lee Aherne"
     ],
     "clubs": [
-      "Lliswerry Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
@@ -42374,13 +42060,13 @@
       "2023/2024",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50",
       "V55"
     ],
-    "finishes": 44,
+    "finishes": 40,
     "first_year": 2013,
     "last_year": 2024
   },
@@ -43989,11 +43675,9 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Les Croupiers Running Club",
-      "Neath Harriers"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
-      "2014/2015",
       "2015/2016",
       "2016/2017",
       "2022/2023",
@@ -44005,8 +43689,8 @@
       "Senior",
       "V35"
     ],
-    "finishes": 16,
-    "first_year": 2014,
+    "finishes": 13,
+    "first_year": 2015,
     "last_year": 2024
   },
   "jessie sanzo": {
@@ -47361,22 +47045,19 @@
     ],
     "clubs": [
       "Bitton Road Runners",
-      "Bristol and West Athletic Club",
-      "University of Swansea"
+      "Bristol and West Athletic Club"
     ],
     "seasons": [
-      "2016/2017",
       "2019/2020",
       "2022/2023",
       "2023/2024"
     ],
     "gender": "M",
     "categories": [
-      "Senior",
-      "U23"
+      "Senior"
     ],
-    "finishes": 15,
-    "first_year": 2016,
+    "finishes": 14,
+    "first_year": 2019,
     "last_year": 2023
   },
   "james hockin": {
@@ -48050,12 +47731,10 @@
       "Nathan Christoforato"
     ],
     "clubs": [
-      "Barry & Vale Harriers A. A. C.",
       "Les Croupiers Running Club",
       "Penarth and Dinas Runners"
     ],
     "seasons": [
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
@@ -48064,12 +47743,11 @@
     ],
     "gender": "M",
     "categories": [
-      "Senior",
       "V35",
       "V40"
     ],
-    "finishes": 14,
-    "first_year": 2017,
+    "finishes": 13,
+    "first_year": 2018,
     "last_year": 2023
   },
   "gavin patterson": {
@@ -49077,34 +48755,22 @@
       "Randal Jones"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
-      "Cardiff Amateur Athletic Club",
-      "Forest of Dean Athletic Club",
-      "Lliswerry Runners",
-      "Newport Harriers",
-      "Swansea Harriers Athletic Club"
+      "Lliswerry Runners"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2014/2015",
-      "2017/2018",
       "2018/2019",
-      "2019/2020",
       "2021/2022",
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "V35",
       "V45",
       "V50",
       "V60"
     ],
-    "finishes": 19,
-    "first_year": 2010,
+    "finishes": 11,
+    "first_year": 2018,
     "last_year": 2023
   },
   "jeffrey cox": {
@@ -50775,33 +50441,23 @@
       "Cherry Fowler"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
-      "Bristol University",
       "Chepstow Harriers",
       "Forest of Dean Athletic Club"
     ],
     "seasons": [
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
       "2015/2016",
-      "2016/2017",
       "2019/2020",
       "2021/2022",
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior",
-      "U23",
-      "V40",
       "V45",
-      "V50",
-      "V55"
+      "V50"
     ],
-    "finishes": 26,
-    "first_year": 2012,
+    "finishes": 12,
+    "first_year": 2015,
     "last_year": 2023
   },
   "catrin davies": {
@@ -51234,45 +50890,26 @@
   "sophie williams": {
     "canonical_name": "Sophie Williams",
     "raw_names": [
-      "S Williams",
       "S. Williams",
       "Sophie Williams"
     ],
     "clubs": [
-      "Llanelli Amateur Athletic Club",
       "MonRoss Trailblazers",
-      "Neath Harriers",
-      "Ogmore Phoenix Runners",
-      "Parc Bryn Bach Running Club",
-      "Pembroke Tri Club",
-      "Pontypridd Roadents Athletic Club",
       "Spirit of Monmouth RC"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2017/2018",
       "2018/2019",
       "2019/2020",
-      "2021/2022",
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
-      "Senior",
       "V35",
-      "V40",
-      "V45",
-      "V50",
-      "V55",
-      "V60"
+      "V40"
     ],
-    "finishes": 42,
-    "first_year": 2010,
+    "finishes": 11,
+    "first_year": 2018,
     "last_year": 2023
   },
   "hayley bennett": {
@@ -51659,13 +51296,11 @@
     ],
     "clubs": [
       "Les Croupiers Running Club",
-      "Pegasus Running Club Cardiff",
-      "White Rock Runners"
+      "Pegasus Running Club Cardiff"
     ],
     "seasons": [
       "2015/2016",
       "2016/2017",
-      "2019/2020",
       "2022/2023",
       "2023/2024"
     ],
@@ -51675,7 +51310,7 @@
       "V40",
       "V45"
     ],
-    "finishes": 10,
+    "finishes": 9,
     "first_year": 2015,
     "last_year": 2023
   },
@@ -53892,11 +53527,9 @@
     ],
     "clubs": [
       "Les Croupiers Running Club",
-      "Pegasus Running Club Cardiff",
       "White Rock Runners"
     ],
     "seasons": [
-      "2018/2019",
       "2019/2020",
       "2023/2024"
     ],
@@ -53905,8 +53538,8 @@
       "Senior",
       "V35"
     ],
-    "finishes": 5,
-    "first_year": 2018,
+    "finishes": 4,
+    "first_year": 2019,
     "last_year": 2023
   },
   "rob nicholls": {
@@ -54125,19 +53758,15 @@
   "craig cheedy": {
     "canonical_name": "Craig Cheedy",
     "raw_names": [
-      "C Cheedy",
       "C. Cheedy",
       "Craig Cheedy"
     ],
     "clubs": [
       "Griffithstown Harriers AAC",
-      "Pont-y-Pwl & District Runners",
-      "Torfaen Runners"
+      "Pont-y-Pwl & District Runners"
     ],
     "seasons": [
       "2017/2018",
-      "2019/2020",
-      "2021/2022",
       "2022/2023",
       "2023/2024"
     ],
@@ -54146,7 +53775,7 @@
       "Senior",
       "V35"
     ],
-    "finishes": 7,
+    "finishes": 5,
     "first_year": 2017,
     "last_year": 2023
   },
@@ -55067,26 +54696,19 @@
       "Ian Williams"
     ],
     "clubs": [
-      "Islwyn Running Club",
-      "Pontypridd Roadents Athletic Club",
-      "Port Talbot Harriers & AC"
+      "Pontypridd Roadents Athletic Club"
     ],
     "seasons": [
-      "2012/2013",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
       "2019/2020",
       "2023/2024"
     ],
     "gender": "M",
     "categories": [
-      "V35",
       "V40",
       "V45"
     ],
-    "finishes": 7,
-    "first_year": 2012,
+    "finishes": 2,
+    "first_year": 2019,
     "last_year": 2023
   },
   "mike bessell": {
@@ -55727,15 +55349,9 @@
       "Cari Hughes"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
-      "Cardiff Amateur Athletic Club",
-      "Les Croupiers Running Club"
+      "Cardiff Amateur Athletic Club"
     ],
     "seasons": [
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
       "2016/2017",
       "2018/2019",
       "2021/2022",
@@ -55744,11 +55360,10 @@
     "gender": "F",
     "categories": [
       "Senior",
-      "U23",
-      "V35"
+      "U23"
     ],
-    "finishes": 14,
-    "first_year": 2012,
+    "finishes": 6,
+    "first_year": 2016,
     "last_year": 2023
   },
   "madeline williams": {
@@ -55950,31 +55565,26 @@
     ],
     "clubs": [
       "Bridgend Athletic Club",
-      "Carmarthen & District Harriers AC",
-      "Les Croupiers Running Club",
-      "Rhondda Valley Runners",
       "Swansea Harriers Athletic Club"
     ],
     "seasons": [
       "2010/2011",
       "2011/2012",
       "2012/2013",
-      "2013/2014",
       "2014/2015",
       "2015/2016",
       "2016/2017",
-      "2018/2019",
       "2021/2022",
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
       "V35"
     ],
-    "finishes": 29,
+    "finishes": 20,
     "first_year": 2010,
     "last_year": 2023
   },
@@ -59462,7 +59072,6 @@
     "clubs": [
       "Cardiff University AC",
       "Guest",
-      "San Domenico Road Runners Club",
       "Southville Running Club"
     ],
     "seasons": [
@@ -59478,7 +59087,7 @@
       "Senior",
       "U23"
     ],
-    "finishes": 15,
+    "finishes": 13,
     "first_year": 2016,
     "last_year": 2023
   },
@@ -60929,23 +60538,21 @@
     "clubs": [
       "Cardiff University AC",
       "Guest",
-      "Parc Bryn Bach Running Club",
-      "Westbury Harriers"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2014/2015",
       "2017/2018",
       "2022/2023",
       "2023/2024"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
       "U23",
       "V35"
     ],
-    "finishes": 7,
-    "first_year": 2014,
+    "finishes": 4,
+    "first_year": 2017,
     "last_year": 2023
   },
   "joseph ezard": {
@@ -61325,11 +60932,9 @@
       "Chris McMillan"
     ],
     "clubs": [
-      "Royal Engineers A.C.",
       "Weston Athletic Club"
     ],
     "seasons": [
-      "2013/2014",
       "2015/2016",
       "2016/2017",
       "2022/2023"
@@ -61339,8 +60944,8 @@
       "Senior",
       "V35"
     ],
-    "finishes": 7,
-    "first_year": 2013,
+    "finishes": 6,
+    "first_year": 2015,
     "last_year": 2022
   },
   "ellis garamszegi": {
@@ -61482,14 +61087,11 @@
     ],
     "clubs": [
       "Lliswerry Runners",
-      "Micky Morris Racing Team",
       "Newport Harriers"
     ],
     "seasons": [
       "2012/2013",
       "2013/2014",
-      "2018/2019",
-      "2019/2020",
       "2022/2023"
     ],
     "gender": "M",
@@ -61497,7 +61099,7 @@
       "Senior",
       "V35"
     ],
-    "finishes": 8,
+    "finishes": 5,
     "first_year": 2012,
     "last_year": 2022
   },
@@ -61508,27 +61110,22 @@
       "Andrew Hunt"
     ],
     "clubs": [
-      "Bristol and West Athletic Club",
       "Cardiff Amateur Athletic Club",
-      "Micky Morris Racing Team",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
       "2011/2012",
       "2012/2013",
       "2013/2014",
-      "2016/2017",
-      "2018/2019",
       "2022/2023"
     ],
     "gender": "M",
     "categories": [
       "Senior",
       "V35",
-      "V40",
       "V45"
     ],
-    "finishes": 12,
+    "finishes": 9,
     "first_year": 2011,
     "last_year": 2022
   },
@@ -63552,20 +63149,18 @@
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2015/2016",
       "2018/2019",
       "2019/2020",
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
       "V50",
       "V55"
     ],
-    "finishes": 14,
-    "first_year": 2015,
+    "finishes": 11,
+    "first_year": 2018,
     "last_year": 2022
   },
   "jon portelli": {
@@ -64704,20 +64299,10 @@
     ],
     "clubs": [
       "Carmarthen & District Harriers AC",
-      "Les Croupiers Running Club",
-      "Swansea Harriers Athletic Club"
+      "Les Croupiers Running Club"
     ],
     "seasons": [
       "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2021/2022",
       "2022/2023"
     ],
@@ -64726,7 +64311,7 @@
       "Senior",
       "U23"
     ],
-    "finishes": 26,
+    "finishes": 7,
     "first_year": 2010,
     "last_year": 2022
   },
@@ -65410,7 +64995,7 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -65942,7 +65527,7 @@
       "2019/2020",
       "2022/2023"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -66298,11 +65883,9 @@
       "Louise Hunt"
     ],
     "clubs": [
-      "Cardiff University AC",
       "Penarth and Dinas Runners"
     ],
     "seasons": [
-      "2012/2013",
       "2013/2014",
       "2014/2015",
       "2015/2016",
@@ -66316,12 +65899,11 @@
     "gender": "F",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40"
     ],
-    "finishes": 24,
-    "first_year": 2012,
+    "finishes": 22,
+    "first_year": 2013,
     "last_year": 2022
   },
   "rebecca foley": {
@@ -66715,12 +66297,10 @@
       "Sharon Woods"
     ],
     "clubs": [
-      "Griffithstown Harriers AAC",
       "Parc Bryn Bach Running Club",
       "Pont-y-Pwl & District Runners"
     ],
     "seasons": [
-      "2010/2011",
       "2016/2017",
       "2017/2018",
       "2018/2019",
@@ -66730,12 +66310,11 @@
     ],
     "gender": "F",
     "categories": [
-      "V50",
       "V55",
       "V60"
     ],
-    "finishes": 13,
-    "first_year": 2010,
+    "finishes": 12,
+    "first_year": 2016,
     "last_year": 2022
   },
   "megan stark": {
@@ -67459,15 +67038,13 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Cardiff University AC",
-      "East Cornwall"
+      "Cardiff University AC"
     ],
     "seasons": [
       "2012/2013",
       "2013/2014",
       "2014/2015",
       "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2021/2022",
@@ -67478,7 +67055,7 @@
       "Senior",
       "U23"
     ],
-    "finishes": 22,
+    "finishes": 19,
     "first_year": 2012,
     "last_year": 2022
   },
@@ -67651,34 +67228,22 @@
       "Lewis Richards"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Islwyn Running Club",
-      "Newport Harriers",
-      "Pontypridd Roadents Athletic Club",
-      "Porthcawl Runners"
+      "Aberdare Valley AAC"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
       "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "V35",
-      "V45",
-      "V50"
+      "V35"
     ],
-    "finishes": 24,
-    "first_year": 2010,
+    "finishes": 9,
+    "first_year": 2017,
     "last_year": 2022
   },
   "ben stone": {
@@ -68141,41 +67706,19 @@
       "Henry Williams"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Bridgend Athletic Club",
-      "Bristol and West Athletic Club",
-      "Caldicot Running Club",
-      "Fairwater Runners",
-      "Guest",
-      "Islwyn Running Club",
-      "Les Croupiers Running Club",
-      "Parc Bryn Bach Running Club",
-      "Taf Running & Orienteering Teams"
+      "Caldicot Running Club"
     ],
     "seasons": [
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
-      "2016/2017",
-      "2017/2018",
       "2018/2019",
-      "2019/2020",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
-      "V35",
-      "V40",
-      "V45",
-      "V50",
-      "V55"
+      "U23"
     ],
-    "finishes": 47,
-    "first_year": 2011,
+    "finishes": 2,
+    "first_year": 2018,
     "last_year": 2022
   },
   "steve emery": {
@@ -69343,28 +68886,23 @@
       "Danielle Phillips"
     ],
     "clubs": [
-      "Bristol and West Athletic Club",
       "Les Croupiers Running Club",
-      "Lliswerry Runners",
-      "Parc Bryn Bach Running Club",
-      "Pont-y-Pwl & District Runners"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
       "2015/2016",
       "2016/2017",
       "2017/2018",
-      "2018/2019",
       "2019/2020",
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
-      "V35",
-      "V45"
+      "V35"
     ],
-    "finishes": 24,
+    "finishes": 15,
     "first_year": 2015,
     "last_year": 2022
   },
@@ -69487,12 +69025,9 @@
     ],
     "clubs": [
       "Cardiff Amateur Athletic Club",
-      "Cardiff Metropolitan University",
       "Lliswerry Runners"
     ],
     "seasons": [
-      "2010/2011",
-      "2011/2012",
       "2013/2014",
       "2014/2015",
       "2015/2016",
@@ -69507,8 +69042,8 @@
       "Senior",
       "U23"
     ],
-    "finishes": 25,
-    "first_year": 2010,
+    "finishes": 23,
+    "first_year": 2013,
     "last_year": 2022
   },
   "liz lovelock": {
@@ -72155,19 +71690,10 @@
       "Bleddyn Jones"
     ],
     "clubs": [
-      "Brecon Athletic Club",
-      "Guest",
       "Islwyn Running Club",
-      "Lliswerry Runners",
-      "Parc Bryn Bach Running Club",
-      "Pontypridd Roadents Athletic Club",
-      "Usk Runners"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
       "2016/2017",
       "2017/2018",
       "2018/2019",
@@ -72175,16 +71701,13 @@
       "2021/2022",
       "2022/2023"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "U23",
       "V35",
-      "V40",
-      "V50"
+      "V40"
     ],
-    "finishes": 34,
-    "first_year": 2012,
+    "finishes": 10,
+    "first_year": 2016,
     "last_year": 2022
   },
   "steve duggan": {
@@ -73064,6 +72587,25 @@
     ],
     "finishes": 7,
     "first_year": 2019,
+    "last_year": 2021
+  },
+  "o williams": {
+    "canonical_name": "O Williams",
+    "raw_names": [
+      "O Williams"
+    ],
+    "clubs": [
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
     "last_year": 2021
   },
   "m griffiths": {
@@ -74008,6 +73550,25 @@
     "first_year": 2021,
     "last_year": 2021
   },
+  "s jones": {
+    "canonical_name": "S Jones",
+    "raw_names": [
+      "S Jones"
+    ],
+    "clubs": [
+      "3M Gorseinon Road Runners"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
+    "last_year": 2021
+  },
   "stuart penny": {
     "canonical_name": "Stuart Penny",
     "raw_names": [
@@ -74274,6 +73835,25 @@
     "first_year": 2021,
     "last_year": 2021
   },
+  "c cheedy": {
+    "canonical_name": "C Cheedy",
+    "raw_names": [
+      "C Cheedy"
+    ],
+    "clubs": [
+      "Torfaen Runners"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
+    "last_year": 2021
+  },
   "daniel totterdale": {
     "canonical_name": "Daniel Totterdale",
     "raw_names": [
@@ -74442,6 +74022,25 @@
     "gender": "M",
     "categories": [
       "V50"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
+    "last_year": 2021
+  },
+  "h davies": {
+    "canonical_name": "H Davies",
+    "raw_names": [
+      "H Davies"
+    ],
+    "clubs": [
+      "Carmarthen & District Harriers AC"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V45"
     ],
     "finishes": 1,
     "first_year": 2021,
@@ -74629,6 +74228,25 @@
     ],
     "finishes": 3,
     "first_year": 2019,
+    "last_year": 2021
+  },
+  "r evans": {
+    "canonical_name": "R Evans",
+    "raw_names": [
+      "R Evans"
+    ],
+    "clubs": [
+      "Cardiff University AC"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
     "last_year": 2021
   },
   "a thomas": {
@@ -75327,6 +74945,25 @@
     "first_year": 2021,
     "last_year": 2021
   },
+  "s williams": {
+    "canonical_name": "S Williams",
+    "raw_names": [
+      "S Williams"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2021/2022"
+    ],
+    "gender": "M",
+    "categories": [
+      "V60"
+    ],
+    "finishes": 1,
+    "first_year": 2021,
+    "last_year": 2021
+  },
   "c richards": {
     "canonical_name": "C Richards",
     "raw_names": [
@@ -75374,8 +75011,7 @@
     ],
     "clubs": [
       "Blaenau Gwent",
-      "Parc Bryn Bach Running Club",
-      "Pontypridd Roadents Athletic Club"
+      "Parc Bryn Bach Running Club"
     ],
     "seasons": [
       "2013/2014",
@@ -75387,14 +75023,13 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "Senior",
-      "U23",
       "V35",
       "V40"
     ],
-    "finishes": 30,
+    "finishes": 28,
     "first_year": 2013,
     "last_year": 2021
   },
@@ -75585,11 +75220,9 @@
     ],
     "clubs": [
       "Blaenau Gwent",
-      "Crickhowell Running Club",
-      "Parc Bryn Bach Running Club"
+      "Crickhowell Running Club"
     ],
     "seasons": [
-      "2017/2018",
       "2018/2019",
       "2019/2020",
       "2021/2022"
@@ -75598,8 +75231,8 @@
     "categories": [
       "V55"
     ],
-    "finishes": 10,
-    "first_year": 2017,
+    "finishes": 6,
+    "first_year": 2018,
     "last_year": 2021
   },
   "christopher nellins": {
@@ -76407,7 +76040,6 @@
       "Faye Johnson"
     ],
     "clubs": [
-      "Bristol University",
       "Pont-y-Pwl & District Runners",
       "Spirit of Monmouth RC"
     ],
@@ -76420,10 +76052,9 @@
     ],
     "gender": "F",
     "categories": [
-      "Senior",
-      "U23"
+      "Senior"
     ],
-    "finishes": 12,
+    "finishes": 11,
     "first_year": 2016,
     "last_year": 2021
   },
@@ -76669,14 +76300,10 @@
     ],
     "clubs": [
       "Pembrokeshire Harriers",
-      "Swansea Harriers Athletic Club",
       "University of Swansea"
     ],
     "seasons": [
       "2016/2017",
-      "2017/2018",
-      "2018/2019",
-      "2019/2020",
       "2021/2022"
     ],
     "gender": "F",
@@ -76684,7 +76311,7 @@
       "Senior",
       "U23"
     ],
-    "finishes": 15,
+    "finishes": 5,
     "first_year": 2016,
     "last_year": 2021
   },
@@ -76851,28 +76478,22 @@
       "Kym Price"
     ],
     "clubs": [
-      "Cardiff University AC",
-      "Llanelli Amateur Athletic Club",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
-      "2015/2016",
       "2016/2017",
       "2017/2018",
       "2018/2019",
-      "2019/2020",
       "2021/2022"
     ],
     "gender": "F",
     "categories": [
-      "U23",
       "V35",
       "V40",
-      "V45",
       "V50"
     ],
-    "finishes": 15,
-    "first_year": 2015,
+    "finishes": 10,
+    "first_year": 2016,
     "last_year": 2021
   },
   "rachel garrod": {
@@ -77376,7 +76997,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -78170,7 +77791,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35"
@@ -78976,12 +78597,9 @@
     ],
     "clubs": [
       "Forest of Dean Athletic Club",
-      "Lliswerry Runners",
-      "University of the West of England"
+      "Lliswerry Runners"
     ],
     "seasons": [
-      "2014/2015",
-      "2015/2016",
       "2016/2017",
       "2018/2019",
       "2019/2020",
@@ -78989,11 +78607,10 @@
     ],
     "gender": "M",
     "categories": [
-      "Senior",
-      "U23"
+      "Senior"
     ],
-    "finishes": 22,
-    "first_year": 2014,
+    "finishes": 13,
+    "first_year": 2016,
     "last_year": 2021
   },
   "ross jones": {
@@ -82129,7 +81746,7 @@
       "2018/2019",
       "2021/2022"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -82847,42 +82464,22 @@
       "Justin Jones"
     ],
     "clubs": [
-      "Aberdare Valley AAC",
-      "Aberystwyth Athletic Club",
-      "Cardiff Triathletes",
-      "Carmarthen & District Harriers AC",
-      "Griffithstown Harriers AAC",
-      "Islwyn Running Club",
       "Pontypridd Roadents Athletic Club",
-      "Port Talbot Harriers & AC",
-      "Rhondda Valley Runners",
-      "Sarn Helen",
-      "Swansea Harriers Athletic Club",
-      "Taf Running & Orienteering Teams"
+      "Rhondda Valley Runners"
     ],
     "seasons": [
-      "2010/2011",
       "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2015/2016",
       "2016/2017",
-      "2018/2019",
-      "2019/2020",
       "2021/2022"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
-      "Senior",
-      "V35",
       "V40",
       "V45",
-      "V50",
-      "V55"
+      "V50"
     ],
-    "finishes": 34,
-    "first_year": 2010,
+    "finishes": 9,
+    "first_year": 2011,
     "last_year": 2021
   },
   "gareth ponting": {
@@ -82977,7 +82574,7 @@
       "2019/2020",
       "2021/2022"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40"
@@ -84243,6 +83840,29 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "c. smith": {
+    "canonical_name": "C. Smith",
+    "raw_names": [
+      "C. Smith"
+    ],
+    "clubs": [
+      "North Somerset AC",
+      "Swansea Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 5,
+    "first_year": 2015,
+    "last_year": 2019
+  },
   "g. smith": {
     "canonical_name": "G. Smith",
     "raw_names": [
@@ -84784,6 +84404,27 @@
     "first_year": 2010,
     "last_year": 2019
   },
+  "m. edmonds": {
+    "canonical_name": "M. Edmonds",
+    "raw_names": [
+      "M. Edmonds"
+    ],
+    "clubs": [
+      "Micky Morris Racing Team"
+    ],
+    "seasons": [
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V35"
+    ],
+    "finishes": 3,
+    "first_year": 2018,
+    "last_year": 2019
+  },
   "g. fletcher": {
     "canonical_name": "G. Fletcher",
     "raw_names": [
@@ -85263,6 +84904,29 @@
     ],
     "finishes": 2,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "d. nicholls": {
+    "canonical_name": "D. Nicholls",
+    "raw_names": [
+      "D. Nicholls"
+    ],
+    "clubs": [
+      "Les Croupiers Running Club"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35",
+      "V40"
+    ],
+    "finishes": 6,
+    "first_year": 2016,
     "last_year": 2019
   },
   "n. thorne": {
@@ -86079,6 +85743,44 @@
     "first_year": 2017,
     "last_year": 2019
   },
+  "r. evans": {
+    "canonical_name": "R. Evans",
+    "raw_names": [
+      "R. Evans"
+    ],
+    "clubs": [
+      "Cardiff University AC",
+      "Islwyn Running Club",
+      "Les Croupiers Running Club",
+      "Neath Harriers",
+      "Ogmore Phoenix Runners",
+      "Parc Bryn Bach Running Club",
+      "Penarth and Dinas Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V40",
+      "V45",
+      "V60"
+    ],
+    "finishes": 28,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "a. fox": {
     "canonical_name": "A. Fox",
     "raw_names": [
@@ -86554,6 +86256,39 @@
     "first_year": 2016,
     "last_year": 2019
   },
+  "a. lewis": {
+    "canonical_name": "A. Lewis",
+    "raw_names": [
+      "A. Lewis"
+    ],
+    "clubs": [
+      "Cardiff University AC",
+      "Neath Harriers",
+      "Taf Running & Orienteering Teams",
+      "University of the West of England",
+      "Wells City Harriers"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V45"
+    ],
+    "finishes": 43,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "l. bono": {
     "canonical_name": "L. Bono",
     "raw_names": [
@@ -86596,6 +86331,33 @@
     ],
     "finishes": 4,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "s. lewis": {
+    "canonical_name": "S. Lewis",
+    "raw_names": [
+      "S. Lewis"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2013/2014",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35",
+      "V45",
+      "V50"
+    ],
+    "finishes": 15,
+    "first_year": 2010,
     "last_year": 2019
   },
   "m. o'regan": {
@@ -86720,6 +86482,43 @@
     ],
     "finishes": 46,
     "first_year": 2013,
+    "last_year": 2019
+  },
+  "s. williams": {
+    "canonical_name": "S. Williams",
+    "raw_names": [
+      "S. Williams"
+    ],
+    "clubs": [
+      "Llanelli Amateur Athletic Club",
+      "Neath Harriers",
+      "Ogmore Phoenix Runners",
+      "Parc Bryn Bach Running Club",
+      "Pembroke Tri Club",
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45",
+      "V50",
+      "V55",
+      "V60"
+    ],
+    "finishes": 30,
+    "first_year": 2010,
     "last_year": 2019
   },
   "o. davies": {
@@ -87086,6 +86885,38 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "h. davies": {
+    "canonical_name": "H. Davies",
+    "raw_names": [
+      "H. Davies"
+    ],
+    "clubs": [
+      "Carmarthen & District Harriers AC",
+      "Islwyn Running Club",
+      "University of Swansea"
+    ],
+    "seasons": [
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V45",
+      "V50",
+      "V55"
+    ],
+    "finishes": 18,
+    "first_year": 2013,
+    "last_year": 2019
+  },
   "g. burkitt": {
     "canonical_name": "G. Burkitt",
     "raw_names": [
@@ -87148,6 +86979,29 @@
     "first_year": 2018,
     "last_year": 2019
   },
+  "o. williams": {
+    "canonical_name": "O. Williams",
+    "raw_names": [
+      "O. Williams"
+    ],
+    "clubs": [
+      "Guest",
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V50"
+    ],
+    "finishes": 4,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "d. waters": {
     "canonical_name": "D. Waters",
     "raw_names": [
@@ -87162,6 +87016,25 @@
     "gender": "M",
     "categories": [
       "V45"
+    ],
+    "finishes": 1,
+    "first_year": 2019,
+    "last_year": 2019
+  },
+  "c. cheedy": {
+    "canonical_name": "C. Cheedy",
+    "raw_names": [
+      "C. Cheedy"
+    ],
+    "clubs": [
+      "Torfaen Runners"
+    ],
+    "seasons": [
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
     ],
     "finishes": 1,
     "first_year": 2019,
@@ -87998,14 +87871,12 @@
     "first_year": 2010,
     "last_year": 2019
   },
-  "jeff thomas": {
-    "canonical_name": "Jeff Thomas",
+  "j. thomas": {
+    "canonical_name": "J. Thomas",
     "raw_names": [
-      "J. Thomas",
-      "Jeff Thomas"
+      "J. Thomas"
     ],
     "clubs": [
-      "Bridgend Athletic Club",
       "Cardiff Amateur Athletic Club",
       "Chepstow Harriers",
       "Parc Bryn Bach Running Club",
@@ -88014,8 +87885,6 @@
     "seasons": [
       "2010/2011",
       "2011/2012",
-      "2013/2014",
-      "2014/2015",
       "2015/2016",
       "2016/2017",
       "2017/2018",
@@ -88026,12 +87895,9 @@
     "categories": [
       "Senior",
       "U23",
-      "V35",
-      "V40",
-      "V45",
-      "V50"
+      "V40"
     ],
-    "finishes": 34,
+    "finishes": 20,
     "first_year": 2010,
     "last_year": 2019
   },
@@ -88883,6 +88749,43 @@
     "first_year": 2010,
     "last_year": 2019
   },
+  "s. jones": {
+    "canonical_name": "S. Jones",
+    "raw_names": [
+      "S. Jones"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Cardiff University AC",
+      "San Domenico Road Runners Club",
+      "Sarn Helen",
+      "Swansea Harriers Athletic Club",
+      "University of Swansea",
+      "White Rock Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V45",
+      "V50",
+      "V55"
+    ],
+    "finishes": 20,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "s. gopal": {
     "canonical_name": "S. Gopal",
     "raw_names": [
@@ -89323,6 +89226,36 @@
     "first_year": 2010,
     "last_year": 2019
   },
+  "m. lewis": {
+    "canonical_name": "M. Lewis",
+    "raw_names": [
+      "M. Lewis"
+    ],
+    "clubs": [
+      "Cwmbran Harriers",
+      "Islwyn Running Club",
+      "Les Croupiers Running Club",
+      "Wells City Harriers",
+      "Westbury Harriers"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45",
+      "V50"
+    ],
+    "finishes": 11,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "k. spiers": {
     "canonical_name": "K. Spiers",
     "raw_names": [
@@ -89343,6 +89276,29 @@
     ],
     "finishes": 7,
     "first_year": 2018,
+    "last_year": 2019
+  },
+  "g. jenkins": {
+    "canonical_name": "G. Jenkins",
+    "raw_names": [
+      "G. Jenkins"
+    ],
+    "clubs": [
+      "Cwm Ogwr",
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2014/2015",
+      "2015/2016",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V45"
+    ],
+    "finishes": 4,
+    "first_year": 2014,
     "last_year": 2019
   },
   "a. bowen": {
@@ -89885,6 +89841,37 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "c. evans": {
+    "canonical_name": "C. Evans",
+    "raw_names": [
+      "C. Evans"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Cardiff Amateur Athletic Club",
+      "Cardiff University AC",
+      "Pontypridd Roadents Athletic Club",
+      "Swansea Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35"
+    ],
+    "finishes": 28,
+    "first_year": 2013,
+    "last_year": 2019
+  },
   "j. williams": {
     "canonical_name": "J. Williams",
     "raw_names": [
@@ -89912,7 +89899,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -89987,6 +89974,34 @@
     "first_year": 2016,
     "last_year": 2019
   },
+  "a. beynon-thomas": {
+    "canonical_name": "A. Beynon-Thomas",
+    "raw_names": [
+      "A. Beynon-Thomas"
+    ],
+    "clubs": [
+      "Swansea Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 19,
+    "first_year": 2011,
+    "last_year": 2019
+  },
   "i. talbot-price": {
     "canonical_name": "I. Talbot-Price",
     "raw_names": [
@@ -90044,6 +90059,27 @@
     ],
     "finishes": 4,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "a. goodrick-latham": {
+    "canonical_name": "A. Goodrick-Latham",
+    "raw_names": [
+      "A. Goodrick-Latham"
+    ],
+    "clubs": [
+      "Swansea Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 10,
+    "first_year": 2017,
     "last_year": 2019
   },
   "h-m. davies": {
@@ -90341,6 +90377,29 @@
     "first_year": 2017,
     "last_year": 2019
   },
+  "l. grey": {
+    "canonical_name": "L. Grey",
+    "raw_names": [
+      "L. Grey"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Spirit of Monmouth RC"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35"
+    ],
+    "finishes": 4,
+    "first_year": 2016,
+    "last_year": 2019
+  },
   "l. macdonald": {
     "canonical_name": "L. MacDonald",
     "raw_names": [
@@ -90376,7 +90435,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -90424,6 +90483,47 @@
     ],
     "finishes": 3,
     "first_year": 2018,
+    "last_year": 2019
+  },
+  "h. williams": {
+    "canonical_name": "H. Williams",
+    "raw_names": [
+      "H. Williams"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Bridgend Athletic Club",
+      "Bristol and West Athletic Club",
+      "Fairwater Runners",
+      "Guest",
+      "Islwyn Running Club",
+      "Les Croupiers Running Club",
+      "Parc Bryn Bach Running Club",
+      "Taf Running & Orienteering Teams"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V40",
+      "V45",
+      "V50",
+      "V55"
+    ],
+    "finishes": 45,
+    "first_year": 2011,
     "last_year": 2019
   },
   "l. griffin": {
@@ -90505,7 +90605,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -91350,6 +91450,29 @@
     "first_year": 2018,
     "last_year": 2019
   },
+  "e. blow": {
+    "canonical_name": "E. Blow",
+    "raw_names": [
+      "E. Blow"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC"
+    ],
+    "seasons": [
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V40",
+      "V45"
+    ],
+    "finishes": 9,
+    "first_year": 2017,
+    "last_year": 2019
+  },
   "e-j. orchard": {
     "canonical_name": "E-J. Orchard",
     "raw_names": [
@@ -91510,6 +91633,43 @@
     ],
     "finishes": 2,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "j. lewis": {
+    "canonical_name": "J. Lewis",
+    "raw_names": [
+      "J. Lewis"
+    ],
+    "clubs": [
+      "Barry & Vale Harriers A. A. C.",
+      "Bristol University",
+      "Cardiff Archers",
+      "Fairwater Runners",
+      "Islwyn Running Club",
+      "Llanelli Amateur Athletic Club",
+      "Penarth and Dinas Runners"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V40",
+      "V45",
+      "V50",
+      "V60"
+    ],
+    "finishes": 37,
+    "first_year": 2012,
     "last_year": 2019
   },
   "k-l. jones": {
@@ -91801,7 +91961,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -91850,7 +92010,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -91955,7 +92115,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -92313,7 +92473,7 @@
       "2016/2017",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55"
@@ -92491,7 +92651,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -92560,6 +92720,32 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "n. davies": {
+    "canonical_name": "N. Davies",
+    "raw_names": [
+      "N. Davies"
+    ],
+    "clubs": [
+      "Bristol and West Athletic Club",
+      "White Rock Runners"
+    ],
+    "seasons": [
+      "2013/2014",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V40",
+      "V45"
+    ],
+    "finishes": 11,
+    "first_year": 2013,
     "last_year": 2019
   },
   "l. sullivan": {
@@ -92709,7 +92895,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -92935,6 +93121,46 @@
     ],
     "finishes": 4,
     "first_year": 2018,
+    "last_year": 2019
+  },
+  "j. jones": {
+    "canonical_name": "J. Jones",
+    "raw_names": [
+      "J. Jones"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Aberystwyth Athletic Club",
+      "Cardiff Triathletes",
+      "Carmarthen & District Harriers AC",
+      "Griffithstown Harriers AAC",
+      "Islwyn Running Club",
+      "Port Talbot Harriers & AC",
+      "Sarn Helen",
+      "Swansea Harriers Athletic Club",
+      "Taf Running & Orienteering Teams"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45",
+      "V55"
+    ],
+    "finishes": 25,
+    "first_year": 2010,
     "last_year": 2019
   },
   "g. lugg": {
@@ -93437,7 +93663,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -93594,7 +93820,7 @@
       "2015/2016",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -93621,6 +93847,30 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "l. evans": {
+    "canonical_name": "L. Evans",
+    "raw_names": [
+      "L. Evans"
+    ],
+    "clubs": [
+      "Llanelli Amateur Athletic Club",
+      "Women Running Penarth"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45",
+      "V50"
+    ],
+    "finishes": 13,
+    "first_year": 2016,
     "last_year": 2019
   },
   "m. davies": {
@@ -94892,6 +95142,27 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "c. lewis": {
+    "canonical_name": "C. Lewis",
+    "raw_names": [
+      "C. Lewis"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club",
+      "San Domenico Road Runners Club"
+    ],
+    "seasons": [
+      "2013/2014",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45"
+    ],
+    "finishes": 4,
+    "first_year": 2013,
+    "last_year": 2019
+  },
   "j. cox": {
     "canonical_name": "J. Cox",
     "raw_names": [
@@ -94974,6 +95245,31 @@
     ],
     "finishes": 2,
     "first_year": 2018,
+    "last_year": 2019
+  },
+  "d. griffiths": {
+    "canonical_name": "D. Griffiths",
+    "raw_names": [
+      "D. Griffiths"
+    ],
+    "clubs": [
+      "Newport Harriers"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2014/2015",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40",
+      "V45",
+      "V50"
+    ],
+    "finishes": 13,
+    "first_year": 2010,
     "last_year": 2019
   },
   "t. phillips": {
@@ -95639,7 +95935,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -95688,7 +95984,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -95904,7 +96200,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -96210,7 +96506,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -96298,7 +96594,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -96375,7 +96671,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -96525,6 +96821,30 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "k. price": {
+    "canonical_name": "K. Price",
+    "raw_names": [
+      "K. Price"
+    ],
+    "clubs": [
+      "Cardiff University AC",
+      "Llanelli Amateur Athletic Club"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23",
+      "V45",
+      "V50"
+    ],
+    "finishes": 5,
+    "first_year": 2015,
+    "last_year": 2019
+  },
   "s. lisk": {
     "canonical_name": "S. Lisk",
     "raw_names": [
@@ -96599,7 +96919,7 @@
       "2010/2011",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -96667,7 +96987,7 @@
       "2017/2018",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -96910,7 +97230,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55"
@@ -96982,6 +97302,50 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "a. davies": {
+    "canonical_name": "A. Davies",
+    "raw_names": [
+      "A. Davies"
+    ],
+    "clubs": [
+      "3M Gorseinon Road Runners",
+      "Bristol and West Athletic Club",
+      "Caerleon RC",
+      "Cardiff University AC",
+      "Carmarthen & District Harriers AC",
+      "Les Croupiers Running Club",
+      "Llanelli Amateur Athletic Club",
+      "Newport Harriers",
+      "Ogmore Phoenix Runners",
+      "Taf Running & Orienteering Teams",
+      "University of Bath",
+      "University of the West of England",
+      "White Rock Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V55",
+      "V60"
+    ],
+    "finishes": 43,
+    "first_year": 2010,
     "last_year": 2019
   },
   "k. sweetman": {
@@ -97257,6 +97621,36 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "jeff thomas": {
+    "canonical_name": "Jeff Thomas",
+    "raw_names": [
+      "J. Thomas",
+      "Jeff Thomas"
+    ],
+    "clubs": [
+      "Bridgend Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35",
+      "V40",
+      "V45",
+      "V50"
+    ],
+    "finishes": 14,
+    "first_year": 2010,
     "last_year": 2019
   },
   "d. warren": {
@@ -99548,6 +99942,25 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "h. spelman": {
+    "canonical_name": "H. Spelman",
+    "raw_names": [
+      "H. Spelman"
+    ],
+    "clubs": [
+      "San Domenico Road Runners Club"
+    ],
+    "seasons": [
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 2,
+    "first_year": 2019,
+    "last_year": 2019
+  },
   "r. tredgett": {
     "canonical_name": "R. Tredgett",
     "raw_names": [
@@ -100040,7 +100453,7 @@
       "2013/2014",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -100408,6 +100821,27 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "d. bodman": {
+    "canonical_name": "D. Bodman",
+    "raw_names": [
+      "D. Bodman"
+    ],
+    "clubs": [
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 5,
+    "first_year": 2010,
     "last_year": 2019
   },
   "s. wilson": {
@@ -100804,6 +101238,31 @@
     ],
     "finishes": 2,
     "first_year": 2017,
+    "last_year": 2019
+  },
+  "m. harvey": {
+    "canonical_name": "M. Harvey",
+    "raw_names": [
+      "M. Harvey"
+    ],
+    "clubs": [
+      "Chepstow Harriers"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2019/2020"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 15,
+    "first_year": 2010,
     "last_year": 2019
   },
   "j. gale": {
@@ -101730,6 +102189,26 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "h. like": {
+    "canonical_name": "H. Like",
+    "raw_names": [
+      "H. Like"
+    ],
+    "clubs": [
+      "Torfaen Runners"
+    ],
+    "seasons": [
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 5,
+    "first_year": 2018,
+    "last_year": 2019
+  },
   "e. kreetch": {
     "canonical_name": "E. Kreetch",
     "raw_names": [
@@ -101808,6 +102287,36 @@
     "first_year": 2017,
     "last_year": 2019
   },
+  "r. jones": {
+    "canonical_name": "R. Jones",
+    "raw_names": [
+      "R. Jones"
+    ],
+    "clubs": [
+      "Bridgend Athletic Club",
+      "Cardiff Amateur Athletic Club",
+      "Forest of Dean Athletic Club",
+      "Newport Harriers",
+      "Swansea Harriers Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2014/2015",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V45",
+      "V50"
+    ],
+    "finishes": 8,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "e. caldwell": {
     "canonical_name": "E. Caldwell",
     "raw_names": [
@@ -101871,6 +102380,41 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "s. price": {
+    "canonical_name": "S. Price",
+    "raw_names": [
+      "S. Price"
+    ],
+    "clubs": [
+      "Bristol and West Athletic Club",
+      "Parc Bryn Bach Running Club",
+      "Rhondda AC",
+      "University of Bath",
+      "Wells City Harriers",
+      "Westbury Harriers"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2017/2018",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V40",
+      "V50"
+    ],
+    "finishes": 10,
+    "first_year": 2010,
+    "last_year": 2019
+  },
   "p. williams": {
     "canonical_name": "P. Williams",
     "raw_names": [
@@ -101896,7 +102440,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -101957,6 +102501,25 @@
     "first_year": 2019,
     "last_year": 2019
   },
+  "s. pryor": {
+    "canonical_name": "S. Pryor",
+    "raw_names": [
+      "S. Pryor"
+    ],
+    "clubs": [
+      "White Rock Runners"
+    ],
+    "seasons": [
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45"
+    ],
+    "finishes": 1,
+    "first_year": 2019,
+    "last_year": 2019
+  },
   "k. southwell": {
     "canonical_name": "K. Southwell",
     "raw_names": [
@@ -101974,6 +102537,41 @@
     ],
     "finishes": 1,
     "first_year": 2019,
+    "last_year": 2019
+  },
+  "b. jones": {
+    "canonical_name": "B. Jones",
+    "raw_names": [
+      "B. Jones"
+    ],
+    "clubs": [
+      "Brecon Athletic Club",
+      "Guest",
+      "Lliswerry Runners",
+      "Parc Bryn Bach Running Club",
+      "Pontypridd Roadents Athletic Club",
+      "Usk Runners"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019",
+      "2019/2020"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V40",
+      "V50"
+    ],
+    "finishes": 24,
+    "first_year": 2012,
     "last_year": 2019
   },
   "a. whale": {
@@ -102127,7 +102725,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -102167,7 +102765,7 @@
       "2018/2019",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40"
@@ -102431,7 +103029,7 @@
       "2012/2013",
       "2019/2020"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -102477,6 +103075,30 @@
     "finishes": 1,
     "first_year": 2019,
     "last_year": 2019
+  },
+  "k. roberts": {
+    "canonical_name": "K. Roberts",
+    "raw_names": [
+      "K. Roberts"
+    ],
+    "clubs": [
+      "Carmarthen & District Harriers AC",
+      "Les Croupiers Running Club",
+      "Rhondda Valley Runners"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 9,
+    "first_year": 2011,
+    "last_year": 2018
   },
   "c. carpanini": {
     "canonical_name": "C. Carpanini",
@@ -103851,6 +104473,25 @@
     "first_year": 2016,
     "last_year": 2018
   },
+  "d. hanley-crofts": {
+    "canonical_name": "D. Hanley-Crofts",
+    "raw_names": [
+      "D. Hanley-Crofts"
+    ],
+    "clubs": [
+      "Pegasus Running Club Cardiff"
+    ],
+    "seasons": [
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2018,
+    "last_year": 2018
+  },
   "p. welsh": {
     "canonical_name": "P. Welsh",
     "raw_names": [
@@ -104228,6 +104869,38 @@
     "first_year": 2016,
     "last_year": 2018
   },
+  "l. richards": {
+    "canonical_name": "L. Richards",
+    "raw_names": [
+      "L. Richards"
+    ],
+    "clubs": [
+      "Islwyn Running Club",
+      "Newport Harriers",
+      "Pontypridd Roadents Athletic Club",
+      "Porthcawl Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V45",
+      "V50"
+    ],
+    "finishes": 15,
+    "first_year": 2010,
+    "last_year": 2018
+  },
   "p. lynock": {
     "canonical_name": "P. Lynock",
     "raw_names": [
@@ -104477,6 +105150,31 @@
     ],
     "finishes": 1,
     "first_year": 2018,
+    "last_year": 2018
+  },
+  "i. williams": {
+    "canonical_name": "I. Williams",
+    "raw_names": [
+      "I. Williams"
+    ],
+    "clubs": [
+      "Islwyn Running Club",
+      "Port Talbot Harriers & AC"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "V35",
+      "V40",
+      "V45"
+    ],
+    "finishes": 5,
+    "first_year": 2012,
     "last_year": 2018
   },
   "d. mcminn": {
@@ -105427,7 +106125,7 @@
       "2015/2016",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23"
     ],
@@ -105494,6 +106192,31 @@
     ],
     "finishes": 5,
     "first_year": 2016,
+    "last_year": 2018
+  },
+  "d. phillips": {
+    "canonical_name": "D. Phillips",
+    "raw_names": [
+      "D. Phillips"
+    ],
+    "clubs": [
+      "Bristol and West Athletic Club",
+      "Lliswerry Runners",
+      "Pont-y-Pwl & District Runners"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V45"
+    ],
+    "finishes": 9,
+    "first_year": 2015,
     "last_year": 2018
   },
   "d. goule": {
@@ -105614,6 +106337,34 @@
     "first_year": 2018,
     "last_year": 2018
   },
+  "l. jones": {
+    "canonical_name": "L. Jones",
+    "raw_names": [
+      "L. Jones"
+    ],
+    "clubs": [
+      "Aberdare Valley AAC",
+      "Islwyn Running Club",
+      "Rhondda Valley Runners",
+      "Taf Running & Orienteering Teams"
+    ],
+    "seasons": [
+      "2013/2014",
+      "2015/2016",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45"
+    ],
+    "finishes": 6,
+    "first_year": 2013,
+    "last_year": 2018
+  },
   "i. dawson": {
     "canonical_name": "I. Dawson",
     "raw_names": [
@@ -105696,7 +106447,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -106083,7 +106834,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -106669,7 +107420,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50"
@@ -106692,7 +107443,7 @@
       "2011/2012",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -106812,7 +107563,7 @@
     "seasons": [
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V45",
       "V50"
@@ -107041,7 +107792,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V55"
@@ -107170,6 +107921,29 @@
     ],
     "finishes": 6,
     "first_year": 2016,
+    "last_year": 2018
+  },
+  "a. teweldebrhan": {
+    "canonical_name": "A. Teweldebrhan",
+    "raw_names": [
+      "A. Teweldebrhan"
+    ],
+    "clubs": [
+      "Newport Harriers"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 9,
+    "first_year": 2015,
     "last_year": 2018
   },
   "m. davis": {
@@ -108246,6 +109020,31 @@
     "first_year": 2017,
     "last_year": 2018
   },
+  "d. rees": {
+    "canonical_name": "D. Rees",
+    "raw_names": [
+      "D. Rees"
+    ],
+    "clubs": [
+      "Cardiff Amateur Athletic Club",
+      "Les Croupiers Running Club",
+      "Llanelli Amateur Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35"
+    ],
+    "finishes": 11,
+    "first_year": 2010,
+    "last_year": 2018
+  },
   "r. wilkins": {
     "canonical_name": "R. Wilkins",
     "raw_names": [
@@ -108560,7 +109359,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -108785,7 +109584,7 @@
       "2013/2014",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V35",
       "V40",
@@ -109425,7 +110224,7 @@
       "2017/2018",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -109455,7 +110254,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V40",
@@ -109500,7 +110299,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -110221,6 +111020,28 @@
     "first_year": 2010,
     "last_year": 2018
   },
+  "a. hunt": {
+    "canonical_name": "A. Hunt",
+    "raw_names": [
+      "A. Hunt"
+    ],
+    "clubs": [
+      "Bristol and West Athletic Club",
+      "Micky Morris Racing Team"
+    ],
+    "seasons": [
+      "2016/2017",
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V40"
+    ],
+    "finishes": 3,
+    "first_year": 2016,
+    "last_year": 2018
+  },
   "j. howe": {
     "canonical_name": "J. Howe",
     "raw_names": [
@@ -110880,6 +111701,25 @@
     "first_year": 2015,
     "last_year": 2018
   },
+  "h. sharpe": {
+    "canonical_name": "H. Sharpe",
+    "raw_names": [
+      "H. Sharpe"
+    ],
+    "clubs": [
+      "Fife A.C."
+    ],
+    "seasons": [
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "V35"
+    ],
+    "finishes": 1,
+    "first_year": 2018,
+    "last_year": 2018
+  },
   "r. pierce": {
     "canonical_name": "R. Pierce",
     "raw_names": [
@@ -111486,6 +112326,39 @@
     "first_year": 2015,
     "last_year": 2018
   },
+  "c. davies": {
+    "canonical_name": "C. Davies",
+    "raw_names": [
+      "C. Davies"
+    ],
+    "clubs": [
+      "Avon Valley Runners",
+      "Islwyn Running Club",
+      "Lliswerry Runners",
+      "Sarn Helen",
+      "White Rock Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2017/2018",
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V50"
+    ],
+    "finishes": 24,
+    "first_year": 2010,
+    "last_year": 2018
+  },
   "p. parker": {
     "canonical_name": "P. Parker",
     "raw_names": [
@@ -111557,6 +112430,25 @@
     "gender": "F",
     "categories": [
       "Senior"
+    ],
+    "finishes": 2,
+    "first_year": 2018,
+    "last_year": 2018
+  },
+  "i. morton": {
+    "canonical_name": "I. Morton",
+    "raw_names": [
+      "I. Morton"
+    ],
+    "clubs": [
+      "Torfaen Runners"
+    ],
+    "seasons": [
+      "2018/2019"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40"
     ],
     "finishes": 2,
     "first_year": 2018,
@@ -113063,6 +113955,25 @@
     "first_year": 2018,
     "last_year": 2018
   },
+  "f. johnson": {
+    "canonical_name": "F. Johnson",
+    "raw_names": [
+      "F. Johnson"
+    ],
+    "clubs": [
+      "Bristol University"
+    ],
+    "seasons": [
+      "2018/2019"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 1,
+    "first_year": 2018,
+    "last_year": 2018
+  },
   "s. duncan": {
     "canonical_name": "S. Duncan",
     "raw_names": [
@@ -113459,7 +114370,7 @@
       "2016/2017",
       "2018/2019"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50",
@@ -114339,6 +115250,25 @@
     ],
     "finishes": 4,
     "first_year": 2013,
+    "last_year": 2017
+  },
+  "n. christoforato": {
+    "canonical_name": "N. Christoforato",
+    "raw_names": [
+      "N. Christoforato"
+    ],
+    "clubs": [
+      "Barry & Vale Harriers A. A. C."
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2017,
     "last_year": 2017
   },
   "j. corkey": {
@@ -115565,6 +116495,43 @@
     "first_year": 2016,
     "last_year": 2017
   },
+  "d. davies": {
+    "canonical_name": "D. Davies",
+    "raw_names": [
+      "D. Davies"
+    ],
+    "clubs": [
+      "Brecon Athletic Club",
+      "Les Croupiers Running Club",
+      "Lliswerry Runners",
+      "Neath Harriers",
+      "Pembrokeshire Harriers",
+      "San Domenico Road Runners Club",
+      "Sarn Helen"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V35",
+      "V50",
+      "V55",
+      "V60",
+      "V65"
+    ],
+    "finishes": 33,
+    "first_year": 2010,
+    "last_year": 2017
+  },
   "l. pryce": {
     "canonical_name": "L. Pryce",
     "raw_names": [
@@ -115645,6 +116612,25 @@
     ],
     "finishes": 11,
     "first_year": 2011,
+    "last_year": 2017
+  },
+  "g. palfrey": {
+    "canonical_name": "G. Palfrey",
+    "raw_names": [
+      "G. Palfrey"
+    ],
+    "clubs": [
+      "Parc Bryn Bach Running Club"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "V55"
+    ],
+    "finishes": 4,
+    "first_year": 2017,
     "last_year": 2017
   },
   "j. clode": {
@@ -116099,6 +117085,25 @@
     "first_year": 2013,
     "last_year": 2017
   },
+  "p. white": {
+    "canonical_name": "P. White",
+    "raw_names": [
+      "P. White"
+    ],
+    "clubs": [
+      "Caldicot Running Club"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 3,
+    "first_year": 2017,
+    "last_year": 2017
+  },
   "l. bonifacio": {
     "canonical_name": "L. Bonifacio",
     "raw_names": [
@@ -116467,7 +117472,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -116612,7 +117617,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V50"
@@ -116735,7 +117740,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -116743,6 +117748,36 @@
     ],
     "finishes": 12,
     "first_year": 2015,
+    "last_year": 2017
+  },
+  "l. summers": {
+    "canonical_name": "L. Summers",
+    "raw_names": [
+      "L. Summers"
+    ],
+    "clubs": [
+      "Chepstow Harriers",
+      "Pont-y-Pwl & District Runners"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "V35",
+      "V40",
+      "V45",
+      "V50"
+    ],
+    "finishes": 29,
+    "first_year": 2010,
     "last_year": 2017
   },
   "a. goodrick": {
@@ -116861,7 +117896,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -116976,6 +118011,35 @@
     ],
     "finishes": 9,
     "first_year": 2014,
+    "last_year": 2017
+  },
+  "r. matthews": {
+    "canonical_name": "R. Matthews",
+    "raw_names": [
+      "R. Matthews"
+    ],
+    "clubs": [
+      "Cardiff Amateur Athletic Club",
+      "Chepstow Harriers"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45"
+    ],
+    "finishes": 25,
+    "first_year": 2011,
     "last_year": 2017
   },
   "n. oldroyd": {
@@ -117621,7 +118685,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -117647,7 +118711,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V45",
@@ -117761,6 +118825,44 @@
     ],
     "finishes": 3,
     "first_year": 2016,
+    "last_year": 2017
+  },
+  "c. jones": {
+    "canonical_name": "C. Jones",
+    "raw_names": [
+      "C. Jones"
+    ],
+    "clubs": [
+      "Amman Valley Harriers",
+      "Cardiff Amateur Athletic Club",
+      "Les Croupiers Running Club",
+      "Lliswerry Runners",
+      "Swansea Harriers Athletic Club",
+      "Taf Running & Orienteering Teams",
+      "Westbury Harriers",
+      "Women Running Penarth"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35",
+      "V40",
+      "V45",
+      "V50",
+      "V55"
+    ],
+    "finishes": 25,
+    "first_year": 2010,
     "last_year": 2017
   },
   "h. hopes": {
@@ -118529,6 +119631,38 @@
     ],
     "finishes": 1,
     "first_year": 2017,
+    "last_year": 2017
+  },
+  "m. thomas": {
+    "canonical_name": "M. Thomas",
+    "raw_names": [
+      "M. Thomas"
+    ],
+    "clubs": [
+      "Cardiff Amateur Athletic Club",
+      "Lliswerry Runners",
+      "Taf Running & Orienteering Teams",
+      "University of Bath"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017",
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35",
+      "V45"
+    ],
+    "finishes": 17,
+    "first_year": 2010,
     "last_year": 2017
   },
   "g. garmen": {
@@ -119365,7 +120499,7 @@
       "2012/2013",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -119387,7 +120521,7 @@
       "2015/2016",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -119826,7 +120960,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -120130,7 +121264,7 @@
       "2016/2017",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V35",
@@ -120557,38 +121691,6 @@
     ],
     "finishes": 1,
     "first_year": 2017,
-    "last_year": 2017
-  },
-  "s. price": {
-    "canonical_name": "S. Price",
-    "raw_names": [
-      "S. Price"
-    ],
-    "clubs": [
-      "Bristol and West Athletic Club",
-      "Rhondda AC",
-      "University of Bath",
-      "Wells City Harriers",
-      "Westbury Harriers"
-    ],
-    "seasons": [
-      "2010/2011",
-      "2011/2012",
-      "2012/2013",
-      "2013/2014",
-      "2014/2015",
-      "2017/2018"
-    ],
-    "gender": "F",
-    "categories": [
-      "Senior",
-      "U23",
-      "V35",
-      "V40",
-      "V50"
-    ],
-    "finishes": 7,
-    "first_year": 2010,
     "last_year": 2017
   },
   "n. stoker": {
@@ -121521,7 +122623,7 @@
       "2013/2014",
       "2017/2018"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40"
@@ -121957,6 +123059,25 @@
     "first_year": 2017,
     "last_year": 2017
   },
+  "h. evans": {
+    "canonical_name": "H. Evans",
+    "raw_names": [
+      "H. Evans"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "M",
+    "categories": [
+      "V45"
+    ],
+    "finishes": 1,
+    "first_year": 2017,
+    "last_year": 2017
+  },
   "l. hammond": {
     "canonical_name": "L. Hammond",
     "raw_names": [
@@ -122114,6 +123235,25 @@
     "gender": "F",
     "categories": [
       "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2017,
+    "last_year": 2017
+  },
+  "c. patterson": {
+    "canonical_name": "C. Patterson",
+    "raw_names": [
+      "C. Patterson"
+    ],
+    "clubs": [
+      "Pont-y-Pwl & District Runners"
+    ],
+    "seasons": [
+      "2017/2018"
+    ],
+    "gender": "F",
+    "categories": [
+      "V35"
     ],
     "finishes": 1,
     "first_year": 2017,
@@ -122311,6 +123451,25 @@
     "first_year": 2016,
     "last_year": 2016
   },
+  "d. nash": {
+    "canonical_name": "D. Nash",
+    "raw_names": [
+      "D. Nash"
+    ],
+    "clubs": [
+      "East Cornwall"
+    ],
+    "seasons": [
+      "2016/2017"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 3,
+    "first_year": 2016,
+    "last_year": 2016
+  },
   "k. wood": {
     "canonical_name": "K. Wood",
     "raw_names": [
@@ -122457,6 +123616,33 @@
     ],
     "finishes": 2,
     "first_year": 2014,
+    "last_year": 2016
+  },
+  "j. edwards": {
+    "canonical_name": "J. Edwards",
+    "raw_names": [
+      "J. Edwards"
+    ],
+    "clubs": [
+      "Les Croupiers Running Club",
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2012/2013",
+      "2013/2014",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "V35",
+      "V40",
+      "V45"
+    ],
+    "finishes": 19,
+    "first_year": 2010,
     "last_year": 2016
   },
   "m. gaunt": {
@@ -123309,6 +124495,35 @@
     ],
     "finishes": 11,
     "first_year": 2014,
+    "last_year": 2016
+  },
+  "c. fowler": {
+    "canonical_name": "C. Fowler",
+    "raw_names": [
+      "C. Fowler"
+    ],
+    "clubs": [
+      "Bridgend Athletic Club",
+      "Bristol University"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V40",
+      "V45",
+      "V50",
+      "V55"
+    ],
+    "finishes": 14,
+    "first_year": 2012,
     "last_year": 2016
   },
   "h. hunt": {
@@ -124248,6 +125463,27 @@
     "first_year": 2016,
     "last_year": 2016
   },
+  "r. cronin": {
+    "canonical_name": "R. Cronin",
+    "raw_names": [
+      "R. Cronin"
+    ],
+    "clubs": [
+      "University of the West of England"
+    ],
+    "seasons": [
+      "2014/2015",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 9,
+    "first_year": 2014,
+    "last_year": 2016
+  },
   "s. sheards": {
     "canonical_name": "S. Sheards",
     "raw_names": [
@@ -124376,6 +125612,25 @@
     ],
     "finishes": 28,
     "first_year": 2010,
+    "last_year": 2016
+  },
+  "r. farley": {
+    "canonical_name": "R. Farley",
+    "raw_names": [
+      "R. Farley"
+    ],
+    "clubs": [
+      "University of Swansea"
+    ],
+    "seasons": [
+      "2016/2017"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 1,
+    "first_year": 2016,
     "last_year": 2016
   },
   "c. ceaser": {
@@ -125545,7 +126800,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior"
     ],
@@ -125866,6 +127121,27 @@
     "first_year": 2010,
     "last_year": 2016
   },
+  "p. matthews": {
+    "canonical_name": "P. Matthews",
+    "raw_names": [
+      "P. Matthews"
+    ],
+    "clubs": [
+      "University of Swansea"
+    ],
+    "seasons": [
+      "2014/2015",
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 4,
+    "first_year": 2014,
+    "last_year": 2016
+  },
   "c. ash": {
     "canonical_name": "C. Ash",
     "raw_names": [
@@ -125880,7 +127156,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -126416,7 +127692,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -126580,7 +127856,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -126623,7 +127899,7 @@
       "2014/2015",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "V40",
       "V50"
@@ -128976,6 +130252,26 @@
     "first_year": 2010,
     "last_year": 2016
   },
+  "m. hurford": {
+    "canonical_name": "M. Hurford",
+    "raw_names": [
+      "M. Hurford"
+    ],
+    "clubs": [
+      "Pont-y-Pwl & District Runners"
+    ],
+    "seasons": [
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "V35"
+    ],
+    "finishes": 2,
+    "first_year": 2016,
+    "last_year": 2016
+  },
   "j. russell": {
     "canonical_name": "J. Russell",
     "raw_names": [
@@ -129870,6 +131166,25 @@
     "first_year": 2016,
     "last_year": 2016
   },
+  "d. morris": {
+    "canonical_name": "D. Morris",
+    "raw_names": [
+      "D. Morris"
+    ],
+    "clubs": [
+      "Guest"
+    ],
+    "seasons": [
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2016,
+    "last_year": 2016
+  },
   "c. knowles": {
     "canonical_name": "C. Knowles",
     "raw_names": [
@@ -129983,7 +131298,7 @@
       "2012/2013",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V45"
@@ -130348,7 +131663,7 @@
       "2013/2014",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V40",
@@ -131269,7 +132584,7 @@
       "2010/2011",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23"
     ],
@@ -131357,7 +132672,7 @@
       "2015/2016",
       "2016/2017"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23",
@@ -131638,6 +132953,27 @@
     ],
     "finishes": 1,
     "first_year": 2016,
+    "last_year": 2016
+  },
+  "l. aherne": {
+    "canonical_name": "L. Aherne",
+    "raw_names": [
+      "L. Aherne"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45",
+      "V50"
+    ],
+    "finishes": 4,
+    "first_year": 2015,
     "last_year": 2016
   },
   "l. pretty": {
@@ -134535,6 +135871,31 @@
     "first_year": 2012,
     "last_year": 2015
   },
+  "c. hughes": {
+    "canonical_name": "C. Hughes",
+    "raw_names": [
+      "C. Hughes"
+    ],
+    "clubs": [
+      "Bridgend Athletic Club",
+      "Les Croupiers Running Club"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2013/2014",
+      "2014/2015",
+      "2015/2016"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23",
+      "V35"
+    ],
+    "finishes": 8,
+    "first_year": 2012,
+    "last_year": 2015
+  },
   "r. jinney-jones": {
     "canonical_name": "R. Jinney-Jones",
     "raw_names": [
@@ -134914,6 +136275,25 @@
     "first_year": 2013,
     "last_year": 2015
   },
+  "l. woodland": {
+    "canonical_name": "L. Woodland",
+    "raw_names": [
+      "L. Woodland"
+    ],
+    "clubs": [
+      "Guest"
+    ],
+    "seasons": [
+      "2015/2016"
+    ],
+    "gender": "F",
+    "categories": [
+      "V55"
+    ],
+    "finishes": 1,
+    "first_year": 2015,
+    "last_year": 2015
+  },
   "a. earl": {
     "canonical_name": "A. Earl",
     "raw_names": [
@@ -135290,6 +136670,26 @@
     "first_year": 2010,
     "last_year": 2015
   },
+  "g. richards": {
+    "canonical_name": "G. Richards",
+    "raw_names": [
+      "G. Richards"
+    ],
+    "clubs": [
+      "Pontypridd Roadents Athletic Club"
+    ],
+    "seasons": [
+      "2015/2016"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior",
+      "U23"
+    ],
+    "finishes": 2,
+    "first_year": 2015,
+    "last_year": 2015
+  },
   "r. junaideen": {
     "canonical_name": "R. Junaideen",
     "raw_names": [
@@ -135326,7 +136726,7 @@
       "2013/2014",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35",
@@ -137480,7 +138880,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45",
@@ -139506,6 +140906,25 @@
     "first_year": 2012,
     "last_year": 2015
   },
+  "m. grantham": {
+    "canonical_name": "M. Grantham",
+    "raw_names": [
+      "M. Grantham"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2015/2016"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 1,
+    "first_year": 2015,
+    "last_year": 2015
+  },
   "m. rees": {
     "canonical_name": "M. Rees",
     "raw_names": [
@@ -140409,7 +141828,7 @@
       "2014/2015",
       "2015/2016"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -142196,6 +143615,25 @@
     "first_year": 2012,
     "last_year": 2014
   },
+  "l. marland": {
+    "canonical_name": "L. Marland",
+    "raw_names": [
+      "L. Marland"
+    ],
+    "clubs": [
+      "Neath Harriers"
+    ],
+    "seasons": [
+      "2014/2015"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 3,
+    "first_year": 2014,
+    "last_year": 2014
+  },
   "c. beatty": {
     "canonical_name": "C. Beatty",
     "raw_names": [
@@ -142256,6 +143694,25 @@
       "U23"
     ],
     "finishes": 1,
+    "first_year": 2014,
+    "last_year": 2014
+  },
+  "b. white": {
+    "canonical_name": "B. White",
+    "raw_names": [
+      "B. White"
+    ],
+    "clubs": [
+      "Westbury Harriers"
+    ],
+    "seasons": [
+      "2014/2015"
+    ],
+    "gender": "F",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 3,
     "first_year": 2014,
     "last_year": 2014
   },
@@ -142643,7 +144100,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V70"
@@ -143315,7 +144772,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V55"
@@ -144602,7 +146059,7 @@
       "2013/2014",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V50"
@@ -145555,6 +147012,25 @@
     "first_year": 2012,
     "last_year": 2014
   },
+  "c. o'brien": {
+    "canonical_name": "C. O'Brien",
+    "raw_names": [
+      "C. O'Brien"
+    ],
+    "clubs": [
+      "Pont-y-Pwl & District Runners"
+    ],
+    "seasons": [
+      "2014/2015"
+    ],
+    "gender": "M",
+    "categories": [
+      "V40"
+    ],
+    "finishes": 2,
+    "first_year": 2014,
+    "last_year": 2014
+  },
   "a. gillard": {
     "canonical_name": "A. Gillard",
     "raw_names": [
@@ -145811,7 +147287,7 @@
       "2011/2012",
       "2014/2015"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "U23",
       "V35"
@@ -147208,6 +148684,32 @@
       "V45"
     ],
     "finishes": 9,
+    "first_year": 2010,
+    "last_year": 2013
+  },
+  "a. wood": {
+    "canonical_name": "A. Wood",
+    "raw_names": [
+      "A. Wood"
+    ],
+    "clubs": [
+      "Bridgend Athletic Club",
+      "Bristol and West Athletic Club",
+      "Islwyn Running Club",
+      "San Domenico Road Runners Club"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012",
+      "2013/2014"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior",
+      "V40",
+      "V45"
+    ],
+    "finishes": 13,
     "first_year": 2010,
     "last_year": 2013
   },
@@ -149097,7 +150599,7 @@
       "2012/2013",
       "2013/2014"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "U23"
@@ -151322,6 +152824,26 @@
       "U23"
     ],
     "finishes": 6,
+    "first_year": 2012,
+    "last_year": 2013
+  },
+  "l. hunt": {
+    "canonical_name": "L. Hunt",
+    "raw_names": [
+      "L. Hunt"
+    ],
+    "clubs": [
+      "Cardiff University AC"
+    ],
+    "seasons": [
+      "2012/2013",
+      "2013/2014"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 2,
     "first_year": 2012,
     "last_year": 2013
   },
@@ -153738,7 +155260,7 @@
       "2010/2011",
       "2013/2014"
     ],
-    "gender": "M",
+    "gender": "F",
     "categories": [
       "Senior",
       "V45"
@@ -154382,6 +155904,25 @@
     "gender": "F",
     "categories": [
       "V35"
+    ],
+    "finishes": 1,
+    "first_year": 2013,
+    "last_year": 2013
+  },
+  "c. mcmillan": {
+    "canonical_name": "C. McMillan",
+    "raw_names": [
+      "C. McMillan"
+    ],
+    "clubs": [
+      "Royal Engineers A.C."
+    ],
+    "seasons": [
+      "2013/2014"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
     ],
     "finishes": 1,
     "first_year": 2013,
@@ -155087,6 +156628,26 @@
     "first_year": 2012,
     "last_year": 2012
   },
+  "j. thie": {
+    "canonical_name": "J. Thie",
+    "raw_names": [
+      "J. Thie"
+    ],
+    "clubs": [
+      "Cardiff Metropolitan University"
+    ],
+    "seasons": [
+      "2011/2012",
+      "2012/2013"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 5,
+    "first_year": 2011,
+    "last_year": 2012
+  },
   "p. hart": {
     "canonical_name": "P. Hart",
     "raw_names": [
@@ -155143,6 +156704,25 @@
       "U23"
     ],
     "finishes": 3,
+    "first_year": 2012,
+    "last_year": 2012
+  },
+  "r. edwards": {
+    "canonical_name": "R. Edwards",
+    "raw_names": [
+      "R. Edwards"
+    ],
+    "clubs": [
+      "Cardiff University AC"
+    ],
+    "seasons": [
+      "2012/2013"
+    ],
+    "gender": "M",
+    "categories": [
+      "Senior"
+    ],
+    "finishes": 2,
     "first_year": 2012,
     "last_year": 2012
   },
@@ -162727,6 +164307,26 @@
     "first_year": 2010,
     "last_year": 2011
   },
+  "m. emery": {
+    "canonical_name": "M. Emery",
+    "raw_names": [
+      "M. Emery"
+    ],
+    "clubs": [
+      "University of Bath"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012"
+    ],
+    "gender": "M",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 3,
+    "first_year": 2010,
+    "last_year": 2011
+  },
   "c. hudson": {
     "canonical_name": "C. Hudson",
     "raw_names": [
@@ -163439,6 +165039,26 @@
       "V45"
     ],
     "finishes": 3,
+    "first_year": 2010,
+    "last_year": 2011
+  },
+  "h. pretty": {
+    "canonical_name": "H. Pretty",
+    "raw_names": [
+      "H. Pretty"
+    ],
+    "clubs": [
+      "Cardiff Metropolitan University"
+    ],
+    "seasons": [
+      "2010/2011",
+      "2011/2012"
+    ],
+    "gender": "F",
+    "categories": [
+      "U23"
+    ],
+    "finishes": 2,
     "first_year": 2010,
     "last_year": 2011
   },
@@ -166935,6 +168555,25 @@
     "gender": "F",
     "categories": [
       "Senior"
+    ],
+    "finishes": 1,
+    "first_year": 2010,
+    "last_year": 2010
+  },
+  "s. woods": {
+    "canonical_name": "S. Woods",
+    "raw_names": [
+      "S. Woods"
+    ],
+    "clubs": [
+      "Griffithstown Harriers AAC"
+    ],
+    "seasons": [
+      "2010/2011"
+    ],
+    "gender": "F",
+    "categories": [
+      "V50"
     ],
     "finishes": 1,
     "first_year": 2010,
