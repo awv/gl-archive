@@ -345,3 +345,25 @@ html.dark #theme-toggle-btn {
 html.dark #theme-toggle-btn:hover {
     background-color: #2a354b !important;
 }
+
+/* Seasons Directory & Fixture Cards */
+html.dark .season-card {
+    background-color: #1c2230 !important;
+    border-color: #283347 !important;
+}
+
+html.dark .season-fixture-card {
+    background-color: #151b27 !important;
+    border-color: #263143 !important;
+}
+
+html.dark .season-fixture-card:hover {
+    background-color: #1e2637 !important;
+    border-color: rgba(52, 211, 153, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Ensure no translucent milky white backgrounds in dark mode */
+html.dark [class*="bg-slate-50/"] {
+    background-color: #151b27 !important;
+}
