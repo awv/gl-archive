@@ -40,6 +40,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/fixture_team_standings.js"></script>
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
@@ -141,96 +142,147 @@
     <!-- MAIN RACE BOARD -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-grow space-y-8">
 
-        <!-- PRIMARY DIVISION TOGGLE (MEN vs WOMEN) -->
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 pb-4">
-            
-            <!-- Gender Segmented Controls -->
-            <div class="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200/80">
-                <button id="btn-gender-m" class="px-5 py-2 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-sm transition-all">
-                    Senior Men
+        <!-- VIEW MODE TOGGLE (INDIVIDUALS vs TEAMS) -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div class="inline-flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700">
+                <button id="view-mode-indiv" class="px-5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm transition-all flex items-center gap-2">
+                    <span>🏃</span>
+                    <span>Individual Results</span>
                 </button>
-                <button id="btn-gender-f" class="px-5 py-2 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all">
-                    Senior Women
+                <button id="view-mode-teams" class="px-5 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all flex items-center gap-2">
+                    <span>🏆</span>
+                    <span>Official Team Standings</span>
                 </button>
             </div>
-
-            <!-- Table Filter Search -->
-            <div class="relative w-full sm:w-72">
-                <input type="text" id="race-search-input" placeholder="Filter this race..." 
-                    class="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 transition-all">
-                <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                </svg>
+            <div id="team-division-status" class="text-xs font-mono text-slate-400">
+                Official Gwent League Division Scores
             </div>
         </div>
 
-        <!-- AGE CATEGORY SUB-TABS -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-medium border-b border-slate-100">
-            <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-2 shrink-0">Category Filter:</span>
-            <button data-cat="all" class="cat-pill px-3 py-1 rounded-full bg-slate-900 text-white shrink-0 transition-colors">
-                All Starters (<span id="count-cat-all">0</span>)
-            </button>
-            <button data-cat="Senior" class="cat-pill px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition-colors">
-                Senior / Open (<span id="count-cat-senior">0</span>)
-            </button>
-            <button data-cat="35" class="cat-pill px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition-colors">
-                Masters 35+ (<span id="count-cat-35">0</span>)
-            </button>
-            <button data-cat="45" class="cat-pill px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition-colors">
-                Masters 45+ (<span id="count-cat-45">0</span>)
-            </button>
-            <button data-cat="55" class="cat-pill px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition-colors">
-                Masters 55+ (<span id="count-cat-55">0</span>)
-            </button>
-            <button data-cat="65" class="cat-pill px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0 transition-colors">
-                Masters 65+ (<span id="count-cat-65">0</span>)
-            </button>
+        <!-- INDIVIDUAL RESULTS CONTAINER -->
+        <div id="individual-results-container" class="space-y-8">
+            <!-- PRIMARY DIVISION TOGGLE (MEN vs WOMEN) -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+
+                <!-- Gender Segmented Controls -->
+                <div class="inline-flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-slate-700">
+                    <button id="btn-gender-m" class="px-5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm transition-all">
+                        Senior Men
+                    </button>
+                    <button id="btn-gender-f" class="px-5 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all">
+                        Senior Women
+                    </button>
+                </div>
+
+                <!-- Table Filter Search -->
+                <div class="relative w-full sm:w-72">
+                    <input type="text" id="race-search-input" placeholder="Filter this race..."
+                        class="w-full pl-8 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 transition-all">
+                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- AGE CATEGORY SUB-TABS -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-medium border-b border-slate-100 dark:border-slate-800">
+                <span class="text-[10px] font-mono uppercase font-bold text-slate-400 mr-2 shrink-0">Category Filter:</span>
+                <button data-cat="all" class="cat-pill px-3 py-1 rounded-full bg-slate-900 text-white shrink-0 transition-colors">
+                    All Starters (<span id="count-cat-all">0</span>)
+                </button>
+                <button data-cat="Senior" class="cat-pill px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0 transition-colors">
+                    Senior / Open (<span id="count-cat-senior">0</span>)
+                </button>
+                <button data-cat="35" class="cat-pill px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0 transition-colors">
+                    Masters 35+ (<span id="count-cat-35">0</span>)
+                </button>
+                <button data-cat="45" class="cat-pill px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0 transition-colors">
+                    Masters 45+ (<span id="count-cat-45">0</span>)
+                </button>
+                <button data-cat="55" class="cat-pill px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0 transition-colors">
+                    Masters 55+ (<span id="count-cat-55">0</span>)
+                </button>
+                <button data-cat="65" class="cat-pill px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 shrink-0 transition-colors">
+                    Masters 65+ (<span id="count-cat-65">0</span>)
+                </button>
+            </div>
+
+            <!-- CATEGORY WINNERS PODIUM STRIP -->
+            <section class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                        Category Leaders / Winners
+                    </h3>
+                </div>
+                <div id="category-winners-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <!-- Dynamically populated category winner cards -->
+                </div>
+            </section>
+
+            <!-- OFFICIAL RESULTS STANDINGS TABLE -->
+            <section class="space-y-3">
+                <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
+                    <div>
+                        Displaying <span id="table-showing-count" class="font-bold text-slate-900 dark:text-slate-100">0</span> official finishers
+                    </div>
+                    <div class="hidden sm:block text-[11px] text-slate-400">
+                        Click any athlete for career archive profile
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                    <th class="py-3 px-4 w-14 text-center">Pos</th>
+                                    <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
+                                    <th class="py-3 px-4">Athlete</th>
+                                    <th class="py-3 px-3">Division</th>
+                                    <th class="py-3 px-4">Club</th>
+                                    <th class="py-3 px-4 w-24 text-right font-mono">Time</th>
+                                    <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table-body" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <!-- CATEGORY WINNERS PODIUM STRIP -->
-        <section class="space-y-3">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-                    Category Leaders / Winners
-                </h3>
+        <!-- TEAM & DIVISION STANDINGS CONTAINER -->
+        <div id="team-results-container" class="space-y-6 hidden">
+            <!-- Team Filter Controls -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                <div class="flex flex-wrap items-center gap-2" id="team-div-filters">
+                    <button type="button" data-team-gender="all" class="team-gender-filter-pill px-4 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs">
+                        All Divisions
+                    </button>
+                    <button type="button" data-team-gender="M" class="team-gender-filter-pill px-4 py-1.5 text-xs font-semibold rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700">
+                        Senior Men Divisions
+                    </button>
+                    <button type="button" data-team-gender="F" class="team-gender-filter-pill px-4 py-1.5 text-xs font-semibold rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700">
+                        Senior Women Divisions
+                    </button>
+                </div>
+                <!-- Club search in team standings -->
+                <div class="relative w-full sm:w-64">
+                    <input type="text" id="team-search-input" placeholder="Find club in standings..."
+                        class="w-full pl-8 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
             </div>
-            <div id="category-winners-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                <!-- Dynamically populated category winner cards -->
-            </div>
-        </section>
 
-        <!-- OFFICIAL RESULTS STANDINGS TABLE -->
-        <section class="space-y-3">
-            <div class="flex justify-between items-center text-xs text-slate-500 font-mono">
-                <div>
-                    Displaying <span id="table-showing-count" class="font-bold text-slate-900">0</span> official finishers
-                </div>
-                <div class="hidden sm:block text-[11px] text-slate-400">
-                    Click any athlete for career archive profile
-                </div>
+            <!-- Division Tables Grid -->
+            <div id="team-divisions-grid" class="space-y-6">
+                <!-- Dynamically populated division cards with standings tables -->
             </div>
-
-            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-xs">
-                        <thead>
-                            <tr class="bg-slate-50 border-b border-slate-200 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
-                                <th class="py-3 px-4 w-14 text-center">Pos</th>
-                                <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
-                                <th class="py-3 px-4">Athlete</th>
-                                <th class="py-3 px-3">Division</th>
-                                <th class="py-3 px-4">Club</th>
-                                <th class="py-3 px-4 w-24 text-right font-mono">Time</th>
-                                <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
-                            </tr>
-                        </thead>
-                        <tbody id="results-table-body" class="divide-y divide-slate-100 font-sans">
-                            <!-- Populated dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
     <!-- GLOBAL FOOTER CONTAINER -->
@@ -308,7 +360,8 @@
                     btn.classList.add('bg-slate-900', 'text-white');
                     btn.classList.remove('bg-slate-100', 'text-slate-600');
                     selectedCat = btn.dataset.cat;
-                    renderTable();
+                    renderTeamStandings();
+                renderTable();
                 });
             });
 
@@ -525,6 +578,173 @@
                         }, 120);
                     }
                 }
+            };
+
+            // View Mode Toggle (Individual Results vs Official Team Standings)
+            let currentViewMode = 'indiv'; // 'indiv' or 'teams'
+            let activeTeamGenderFilter = 'all';
+            let teamSearchQuery = '';
+
+            const btnViewIndiv = document.getElementById('view-mode-indiv');
+            const btnViewTeams = document.getElementById('view-mode-teams');
+            const indivContainer = document.getElementById('individual-results-container');
+            const teamContainer = document.getElementById('team-results-container');
+
+            const setViewMode = (mode) => {
+                currentViewMode = mode;
+                if (mode === 'indiv') {
+                    btnViewIndiv.className = "px-5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm transition-all flex items-center gap-2";
+                    btnViewTeams.className = "px-5 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all flex items-center gap-2";
+                    indivContainer.classList.remove('hidden');
+                    teamContainer.classList.add('hidden');
+                } else {
+                    btnViewTeams.className = "px-5 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm transition-all flex items-center gap-2";
+                    btnViewIndiv.className = "px-5 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all flex items-center gap-2";
+                    indivContainer.classList.add('hidden');
+                    teamContainer.classList.remove('hidden');
+                    renderTeamStandings();
+                }
+            };
+
+            btnViewIndiv.addEventListener('click', () => setViewMode('indiv'));
+            btnViewTeams.addEventListener('click', () => setViewMode('teams'));
+
+            // Team Gender Filter Pills
+            const teamFilterPills = document.querySelectorAll('.team-gender-filter-pill');
+            teamFilterPills.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    teamFilterPills.forEach(b => {
+                        b.className = "team-gender-filter-pill px-4 py-1.5 text-xs font-semibold rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700";
+                    });
+                    btn.className = "team-gender-filter-pill px-4 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs";
+                    activeTeamGenderFilter = btn.dataset.teamGender;
+                    renderTeamStandings();
+                });
+            });
+
+            // Team Search Input
+            const teamSearchInput = document.getElementById('team-search-input');
+            if (teamSearchInput) {
+                teamSearchInput.addEventListener('input', (e) => {
+                    teamSearchQuery = e.target.value.trim().toLowerCase();
+                    renderTeamStandings();
+                });
+            }
+
+            const renderTeamStandings = () => {
+                const fixKey = `${selectedSeason}_m${selectedMatch}`;
+                const fixtureMap = window.FIXTURE_TEAM_STANDINGS || {};
+                const fixData = fixtureMap[fixKey];
+                const grid = document.getElementById('team-divisions-grid');
+                const statusEl = document.getElementById('team-division-status');
+
+                if (!fixData || !fixData.divisions || fixData.divisions.length === 0) {
+                    if (statusEl) statusEl.textContent = "Official division standings not published for this historical fixture.";
+                    if (grid) {
+                        grid.innerHTML = `
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-10 text-center text-slate-400 font-mono text-xs">
+                                No official division standings published for this fixture.
+                            </div>
+                        `;
+                    }
+                    return;
+                }
+
+                if (statusEl) statusEl.textContent = `${fixData.divisions.length} Official Divisions Recorded`;
+
+                // Filter divisions by gender
+                let divs = fixData.divisions;
+                if (activeTeamGenderFilter === 'M') {
+                    divs = divs.filter(d => d.gender === 'M');
+                } else if (activeTeamGenderFilter === 'F') {
+                    divs = divs.filter(d => d.gender === 'F');
+                }
+
+                if (divs.length === 0) {
+                    grid.innerHTML = `
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-10 text-center text-slate-400 font-mono text-xs">
+                            No divisions found matching the selected gender filter.
+                        </div>
+                    `;
+                    return;
+                }
+
+                grid.innerHTML = divs.map(d => {
+                    const isMen = d.gender === 'M';
+                    const isDiv1 = d.division.toLowerCase().includes('division 1');
+                    const divBadge = isDiv1
+                        ? (isMen ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' : 'bg-purple-50 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800')
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700';
+
+                    // Filter standings by search query if present
+                    let standings = d.standings || [];
+                    if (teamSearchQuery) {
+                        standings = standings.filter(s => s.team.toLowerCase().includes(teamSearchQuery));
+                    }
+
+                    if (standings.length === 0 && teamSearchQuery) {
+                        return ''; // skip empty division
+                    }
+
+                    const rowsHtml = standings.map(s => {
+                        const isWinner = s.pos === 1;
+                        const isPBB = s.team.toLowerCase().includes('parc bryn bach');
+                        const cleanClub = s.team.replace(/\s+['"]?[B-Z]['"]?$/i, '').trim();
+
+                        return `
+                            <tr class="transition-colors ${isWinner ? 'bg-amber-50/40 dark:bg-amber-950/20 font-semibold' : ''} ${isPBB ? 'bg-emerald-50/50 dark:bg-emerald-950/30' : 'hover:bg-slate-50/80 dark:hover:bg-slate-800/50'}">
+                                <td class="py-2.5 px-4 text-center font-mono font-bold ${isWinner ? 'text-amber-600' : 'text-slate-400'}">
+                                    ${isWinner ? '🏆 1' : s.pos}
+                                </td>
+                                <td class="py-2.5 px-4 font-sans font-medium">
+                                    <a href="club.html?club=${encodeURIComponent(cleanClub)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors ${isPBB ? 'font-bold text-emerald-800 dark:text-emerald-300' : 'text-slate-900 dark:text-slate-100'}">
+                                        ${s.team}
+                                    </a>
+                                </td>
+                                <td class="py-2.5 px-4 text-right font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                                    ${s.pts.toLocaleString()}
+                                </td>
+                                <td class="py-2.5 px-4 text-right font-mono text-slate-600 dark:text-slate-400">
+                                    ${s.cum_pts !== null && s.cum_pts !== undefined ? s.cum_pts.toLocaleString() : '—'}
+                                </td>
+                                <td class="py-2.5 px-4 text-right font-mono text-xs text-slate-500">
+                                    ${s.cum_pos ? `<span class="${s.cum_pos.toString().includes('1') ? 'font-bold text-amber-600' : ''}">${s.cum_pos}</span>` : '—'}
+                                    ${s.note ? `<span class="ml-1 text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">${s.note}</span>` : ''}
+                                </td>
+                            </tr>
+                        `;
+                    }).join('');
+
+                    return `
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-xs">
+                            <div class="px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/60 dark:bg-slate-800/40">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${divBadge}">
+                                        ${isMen ? "Men's" : "Women's"}
+                                    </span>
+                                    <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100">${d.division}</h3>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">${d.standings.length} Teams</span>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                            <th class="py-2.5 px-4 w-16 text-center">Pos</th>
+                                            <th class="py-2.5 px-4">Club / Team</th>
+                                            <th class="py-2.5 px-4 w-28 text-right font-mono">Match Pts</th>
+                                            <th class="py-2.5 px-4 w-28 text-right font-mono">Cum Pts</th>
+                                            <th class="py-2.5 px-4 w-36 text-right font-mono">Cum Rank</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                                        ${rowsHtml}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
             };
 
             // Set initial gender button highlight
