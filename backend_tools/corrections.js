@@ -1,4 +1,3 @@
-// Auto-generated verified alias corrections map
 window.glCorrections = {
   "R. Gale [Parc Bryn Bach Running Club]": "Robert Gale",
   "R. Gale [M, Parc Bryn Bach Running Club]": "Robert Gale",
@@ -1846,9 +1845,7 @@ window.glCorrections = {
   "S. Price [Parc Bryn Bach Running Club]": "Stephen Price",
   "Andy Blair": "Andrew Blair",
   "A Blair": "Andrew Blair",
-  "A Lewis": "Adrian Lewis",
   "A. Blair": "Andrew Blair",
-  "A. Lewis": "Adrian Lewis",
   "D Bodman": "Daniel Bodman",
   "D. Griffiths": "Dewi Griffiths",
   "L Aherne": "Lee Aherne",
@@ -3017,15 +3014,15 @@ window.glCorrections = {
   "C. Evans [Cardiff University AC]": "Cheryl Evans",
   "L. Summers [Chepstow Harriers]": "Lou Summers",
   "L. Summers [Pont-y-Pwl & District Runners]": "Lou Summers",
-  "A. Lewis [Cardiff University AC]": "Adrian Lewis",
+  "A. Lewis [Cardiff University AC]": "A. Lewis (Cardiff Uni)",
   "H. Like [Torfaen Runners]": "Harri Like",
   "M. Edmonds [Micky Morris Racing Team]": "Matt Edmonds",
   "A. Hunt [Micky Morris Racing Team]": "Andrew Hunt",
-  "A. Lewis [University of the West of England]": "Adrian Lewis",
+  "A. Lewis [University of the West of England]": "A. Lewis (UWE)",
   "G. Palfrey [Parc Bryn Bach Running Club]": "Gwynfor Palfrey",
   "A. Wood [San Domenico Road Runners Club]": "Alun Wood",
   "D. Nicholls [Les Croupiers Running Club]": "Doug Nicholls",
-  "A. Lewis [Neath Harriers]": "Adrian Lewis",
+  "A. Lewis [Neath Harriers]": "Alex Lewis",
   "C. Jones [Les Croupiers Running Club]": "Corinna Jones",
   "D. Phillips [Pont-y-Pwl & District Runners]": "Danielle Phillips",
   "K. Price [Cardiff University AC]": "Kym Price",
@@ -3178,5 +3175,12 @@ window.glCorrections = {
   "A. Cole [University of Swansea]": "Ashley Cole",
   "A Cole [University of Swansea]": "Ashley Cole",
   "A. Cole": "Ashley Cole",
-  "A Cole": "Ashley Cole"
+  "A Cole": "Ashley Cole",
+  "A Lewis [Neath Harriers]": "Alex Lewis",
+  "A Lewis [University of the West of England]": "A. Lewis (UWE)",
+  "A Lewis [Cardiff University AC]": "A. Lewis (Cardiff Uni)",
+  "A. Lewis [Wells City Harriers]": "A. Lewis (Wells City)",
+  "A Lewis [Wells City Harriers]": "A. Lewis (Wells City)",
+  "A. Lewis [Taf Running & Orienteering Teams]": "A. Lewis (Taf RATS)",
+  "A Lewis [Taf Running & Orienteering Teams]": "A. Lewis (Taf RATS)"
 };
