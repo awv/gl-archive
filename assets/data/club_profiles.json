@@ -22,6 +22,8 @@
     "primary": "#1d4ed8",
     "secondary": "#ffffff",
     "accent": "#1d4ed8",
+    "vestBody": "#ffffff",
+    "vestBand": "#1d4ed8",
     "vestStyle": "horizontal-band",
     "description": "White with Badminton Blue band",
     "banner": ""
@@ -30,7 +32,9 @@
     "short": "Bristol & West AC",
     "primary": "#b91c1c",
     "secondary": "#ffffff",
-    "accent": "#1e293b",
+    "accent": "#b91c1c",
+    "vestBody": "#ffffff",
+    "vestBand": "#b91c1c",
     "vestStyle": "horizontal-band",
     "description": "White with Red band",
     "banner": ""
@@ -40,6 +44,8 @@
     "primary": "#047857",
     "secondary": "#ffffff",
     "accent": "#047857",
+    "vestBody": "#ffffff",
+    "vestBand": "#047857",
     "vestStyle": "dual-hoop",
     "description": "White with two Green hoops",
     "banner": ""

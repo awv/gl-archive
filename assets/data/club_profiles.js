@@ -24,6 +24,8 @@ window.glClubProfiles = {
     "primary": "#1d4ed8",       // Badminton Blue
     "secondary": "#ffffff",     // White
     "accent": "#1d4ed8",
+    "vestBody": "#ffffff",      // White vest body
+    "vestBand": "#1d4ed8",      // Badminton Blue band
     "vestStyle": "horizontal-band",
     "description": "White with Badminton Blue band",
     "banner": ""
@@ -32,7 +34,9 @@ window.glClubProfiles = {
     "short": "Bristol & West AC",
     "primary": "#b91c1c",       // Red
     "secondary": "#ffffff",     // White
-    "accent": "#1e293b",
+    "accent": "#b91c1c",
+    "vestBody": "#ffffff",      // White vest body
+    "vestBand": "#b91c1c",      // Red band
     "vestStyle": "horizontal-band",
     "description": "White with Red band",
     "banner": ""
@@ -42,6 +46,8 @@ window.glClubProfiles = {
     "primary": "#047857",       // Bottle Green
     "secondary": "#ffffff",     // White
     "accent": "#047857",
+    "vestBody": "#ffffff",      // White vest body
+    "vestBand": "#047857",      // Green hoops
     "vestStyle": "dual-hoop",
     "description": "White with two Green hoops",
     "banner": ""

@@ -375,36 +375,41 @@
 
                 const pri = meta.primary || '#334155';
                 const sec = meta.secondary || meta.primary;
-                const acc = meta.accent || '#ffffff';
+                const bodyColor = meta.vestBody || pri;
+                const bandColor = meta.vestBand || sec;
+                const acc = meta.accent || (bodyColor === '#ffffff' ? '#94a3b8' : '#ffffff');
                 const style = meta.vestStyle || 'horizontal-band';
 
                 let pattern = '';
                 if (style === 'dual-stripe' || style === 'horizontal-band' || style === 'hoop') {
-                    pattern = `<path d="M8 20H32V27H8V20Z" fill="${sec}" />`;
+                    pattern = `<path d="M8 20H32V27H8V20Z" fill="${bandColor}" />`;
                 } else if (style === 'dual-hoop') {
                     pattern = `
-                        <path d="M8 18H32V22H8V18Z" fill="${sec}" />
-                        <path d="M8 25H32V29H8V25Z" fill="${sec}" />
+                        <path d="M8 18H32V22H8V18Z" fill="${bandColor}" />
+                        <path d="M8 25H32V29H8V25Z" fill="${bandColor}" />
                     `;
                 } else if (style === 'vertical-stripes') {
                     pattern = `
-                        <path d="M14 6L14 42H18L18 7Z" fill="${sec}" />
-                        <path d="M22 7L22 42H26L26 6Z" fill="${sec}" />
+                        <path d="M14 6L14 42H18L18 7Z" fill="${bandColor}" />
+                        <path d="M22 7L22 42H26L26 6Z" fill="${bandColor}" />
                     `;
                 } else if (style === 'quarters') {
                     pattern = `
-                        <path d="M20 7L20 42H31L30 20C30 18 31 16 33 16L36 6L28 2C28 5 25 7 20 7Z" fill="${sec}" />
+                        <path d="M20 7L20 42H31L30 20C30 18 31 16 33 16L36 6L28 2C28 5 25 7 20 7Z" fill="${bandColor}" />
                     `;
                 } else if (style === 'diagonal-sash') {
                     pattern = `
-                        <path d="M8 36L32 12V18L14 36H8Z" fill="${sec}" />
+                        <path d="M8 36L32 12V18L14 36H8Z" fill="${bandColor}" />
                     `;
                 }
+
+                const bodyStroke = (bodyColor === '#ffffff' || bodyColor.toLowerCase() === '#fff') ? '#cbd5e1' : 'none';
+                const bodyStrokeWidth = bodyStroke !== 'none' ? '1' : '0';
 
                 return `
                     <svg class="w-10 h-11 shrink-0 drop-shadow-md" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${meta.short || 'Club'} Racing Vest">
                         <!-- Vest Body -->
-                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" fill="${pri}" />
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" fill="${bodyColor}" stroke="${bodyStroke}" stroke-width="${bodyStrokeWidth}" />
                         <!-- Pattern -->
                         ${pattern}
                         <!-- Collar & Trim -->
