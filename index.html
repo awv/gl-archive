@@ -34,67 +34,100 @@
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950">
 
     <!-- GLOBAL NAVIGATION CONTAINER -->
     <div id="global-nav"></div>
 
-    <!-- EDITORIAL MASTHEAD -->
-    <header class="border-b border-slate-200 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center space-y-6">
+    <!-- ATMOSPHERIC EDITORIAL HERO HEADER -->
+    <header class="hero-atmosphere border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors overflow-hidden relative">
+        
+        <!-- Subtle Ambient Lighting Backdrop -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden select-none">
+            <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-emerald-500/15 via-emerald-600/5 to-transparent blur-3xl rounded-full"></div>
+            <!-- Topographic elevation contours motif -->
+            <svg class="absolute inset-0 w-full h-full opacity-[0.035] dark:opacity-[0.07] text-slate-900 dark:text-emerald-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                <defs>
+                    <pattern id="contour-pattern" width="160" height="160" patternUnits="userSpaceOnUse">
+                        <path d="M0 40 Q40 15, 80 40 T160 40 M0 80 Q40 55, 80 80 T160 80 M0 120 Q40 95, 80 120 T160 120 M0 160 Q40 135, 80 160 T160 160" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#contour-pattern)" />
+            </svg>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center space-y-6">
             
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] font-mono font-semibold uppercase tracking-widest border border-slate-200">
+            <!-- Series Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 text-[11px] font-mono font-semibold uppercase tracking-widest border border-slate-200 dark:border-slate-700 shadow-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>John H Collins Gwent League</span>
                 <span>•</span>
                 <span>Historical Archive 2010–2026</span>
             </div>
 
+            <!-- Main Heading -->
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-[1.08]">
                 Gwent League Archive
             </h1>
 
-            <p class="text-sm sm:text-base font-sans text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                A statistical record of the Gwent Cross Country League.
-                Search over <strong class="text-slate-900 font-semibold">40,000 race finishes</strong>, track individual runner profiles, and explore club turnout across past campaigns.
+            <!-- Editorial Subtitle -->
+            <p class="text-sm sm:text-base font-sans text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                A definitive statistical record of the Gwent Cross Country League.
+                Search over <strong class="text-slate-900 dark:text-slate-100 font-semibold">40,000 race finishes</strong>, track individual career trajectories, and explore all-time club standings across past campaigns.
             </p>
 
             <!-- PROMINENT HERO SEARCH INPUT -->
-            <div class="max-w-xl mx-auto relative pt-4 text-left">
+            <div class="max-w-xl mx-auto relative pt-2 text-left">
                 <div class="relative">
                     <input type="text" id="hero-search-input" placeholder="Search runner name (e.g. Dewi Griffiths, Robert Gale) or club..." autocomplete="off"
-                        class="w-full bg-white border-2 border-slate-300 hover:border-slate-400 focus:border-slate-900 text-slate-900 placeholder-slate-400 rounded-xl px-5 py-4 pl-12 text-base font-medium focus:outline-none transition-all shadow-sm">
+                        class="w-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 focus:border-emerald-600 dark:focus:border-emerald-500 text-slate-900 dark:text-slate-100 placeholder-slate-400 rounded-xl px-5 py-4 pl-12 text-base font-medium focus:outline-none transition-all shadow-md">
                     <svg class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                 </div>
 
+                <!-- Quick Search Shortcut Pills -->
+                <div class="flex flex-wrap items-center gap-1.5 mt-2.5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <span class="uppercase tracking-wider text-[10px] text-slate-400 dark:text-slate-500">Trending:</span>
+                    <button type="button" class="quick-search-btn hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-slate-300 dark:decoration-slate-700">Parc Bryn Bach</button>
+                    <span>•</span>
+                    <button type="button" class="quick-search-btn hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-slate-300 dark:decoration-slate-700">Swansea Harriers</button>
+                    <span>•</span>
+                    <button type="button" class="quick-search-btn hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-slate-300 dark:decoration-slate-700">Les Croupiers</button>
+                    <span>•</span>
+                    <button type="button" class="quick-search-btn hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-slate-300 dark:decoration-slate-700">Westbury Harriers</button>
+                    <span>•</span>
+                    <button type="button" class="quick-search-btn hover:text-emerald-700 dark:hover:text-emerald-400 underline decoration-slate-300 dark:decoration-slate-700">Bristol and West</button>
+                </div>
+
                 <!-- Instant Autocomplete Dropdown -->
-                <div id="hero-search-results" class="hidden absolute left-0 right-0 mt-2 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 max-h-80 overflow-y-auto divide-y divide-slate-100">
+                <div id="hero-search-results" class="hidden absolute left-0 right-0 mt-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl z-50 max-h-80 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800">
                     <!-- Injected by script -->
                 </div>
             </div>
 
             <!-- LEAGUE MACRO STATS BAR -->
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-100 text-center">
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-200/80 dark:border-slate-800 text-center">
                 <div>
-                    <span id="hero-stat-seasons" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">15</span>
-                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Campaigns</span>
+                    <span id="hero-stat-seasons" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100">15</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">Campaigns</span>
                 </div>
                 <div>
-                    <span id="hero-stat-fixtures" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">71</span>
-                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Fixtures</span>
+                    <span id="hero-stat-fixtures" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100">71</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">Fixtures</span>
                 </div>
                 <div>
-                    <span id="hero-stat-finishes" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">40,922</span>
-                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Finishes</span>
+                    <span id="hero-stat-finishes" class="block text-2xl sm:text-3xl font-serif font-bold text-emerald-700 dark:text-emerald-400">40,922</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">Finishes</span>
                 </div>
                 <div>
-                    <span id="hero-stat-runners" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">9,021</span>
-                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Runners</span>
+                    <span id="hero-stat-runners" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100">9,021</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">Runners</span>
                 </div>
                 <div class="col-span-2 sm:col-span-1">
-                    <span id="hero-stat-clubs" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900">180+</span>
-                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider mt-0.5">Clubs</span>
+                    <span id="hero-stat-clubs" class="block text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100">154</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider mt-0.5">Member Clubs</span>
                 </div>
             </div>
         </div>
@@ -103,29 +136,155 @@
     <!-- MAIN BODY -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full flex-grow space-y-16">
         
+        <!-- FEATURED SHOWCASE: LATEST FIXTURE & PODIUM LEADERS -->
+        <section class="space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-800 dark:text-emerald-400 block">
+                            CURRENT CAMPAIGN SPOTLIGHT
+                        </span>
+                        <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+                            Latest Fixture &amp; Podium
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Interactive Fixture Switcher Buttons -->
+                <div id="showcase-match-pills" class="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-mono font-semibold overflow-x-auto max-w-full">
+                    <!-- Populated dynamically with Match 1..5 buttons -->
+                </div>
+            </div>
+
+            <!-- The Hero Showcase Card -->
+            <div id="latest-showcase-card" class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white border border-slate-800 shadow-xl p-6 md:p-8">
+                <!-- Ambient Background Glow & Topography -->
+                <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -top-20 w-80 h-80 bg-emerald-700/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left Info Panel (Col 1-7) -->
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span id="showcase-match-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-500 text-slate-950 font-black">
+                                Match 5
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">•</span>
+                            <span id="showcase-date" class="text-xs font-mono text-slate-300">
+                                28 February 2026
+                            </span>
+                            <span class="text-xs font-mono text-slate-400">•</span>
+                            <span class="text-xs font-mono text-slate-400">
+                                2025/2026 Campaign
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3 id="showcase-venue" class="text-2xl md:text-4xl font-serif font-black tracking-tight text-white leading-tight">
+                                Parc Bryn Bach
+                            </h3>
+                            <p id="showcase-location-sub" class="text-xs md:text-sm font-sans text-slate-300 mt-1 font-medium">
+                                Cross Country Championship Course • Rolling Terrain
+                            </p>
+                        </div>
+
+                        <!-- Field Telemetry Counters -->
+                        <div class="grid grid-cols-3 gap-3 pt-2 font-mono">
+                            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
+                                <span class="block text-[9px] uppercase tracking-wider text-slate-400">Total Field</span>
+                                <span id="showcase-total-field" class="text-xl md:text-2xl font-black text-emerald-400 block mt-0.5">468</span>
+                            </div>
+                            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
+                                <span class="block text-[9px] uppercase tracking-wider text-slate-400">Gender Split</span>
+                                <span id="showcase-gender-split" class="text-xs md:text-sm font-bold text-slate-200 block mt-1">273M / 195F</span>
+                            </div>
+                            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
+                                <span class="block text-[9px] uppercase tracking-wider text-slate-400">Member Clubs</span>
+                                <span id="showcase-clubs-count" class="text-xl md:text-2xl font-black text-slate-200 block mt-0.5">53</span>
+                            </div>
+                        </div>
+
+                        <!-- Action CTA -->
+                        <div class="pt-2">
+                            <a id="showcase-results-link" href="results.html?season=2025_2026&match=5" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-bold tracking-wide transition-all shadow-md hover:shadow-emerald-500/20">
+                                <span>Browse Full Match Results</span>
+                                <span class="text-sm">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Podium Showcase Panel (Col 8-12) -->
+                    <div class="lg:col-span-5 space-y-3">
+                        <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 flex items-center justify-between">
+                            <span>Podium Champions</span>
+                            <span class="text-emerald-400">Race Victors</span>
+                        </div>
+
+                        <!-- First Man Card -->
+                        <div class="bg-slate-800/70 border border-slate-700/70 rounded-xl p-4 transition-all hover:border-emerald-500/50">
+                            <div class="flex items-center justify-between text-[10px] font-mono mb-1.5">
+                                <span class="inline-flex items-center gap-1.5 font-bold text-amber-400 uppercase tracking-wider">
+                                    <span>🥇</span> First Man
+                                </span>
+                                <span id="showcase-men-time" class="font-bold text-slate-300">33:35</span>
+                            </div>
+                            <a id="showcase-men-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-emerald-400 block transition-colors leading-snug">
+                                Ben Rawlins
+                            </a>
+                            <a id="showcase-men-club" href="#" class="text-xs text-slate-400 hover:text-slate-200 font-sans block mt-0.5 transition-colors">
+                                Westbury Harriers
+                            </a>
+                        </div>
+
+                        <!-- First Woman Card -->
+                        <div class="bg-slate-800/70 border border-slate-700/70 rounded-xl p-4 transition-all hover:border-emerald-500/50">
+                            <div class="flex items-center justify-between text-[10px] font-mono mb-1.5">
+                                <span class="inline-flex items-center gap-1.5 font-bold text-amber-400 uppercase tracking-wider">
+                                    <span>🥇</span> First Woman
+                                </span>
+                                <span id="showcase-women-time" class="font-bold text-slate-300">24:31</span>
+                            </div>
+                            <a id="showcase-women-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-emerald-400 block transition-colors leading-snug">
+                                Sian Duval
+                            </a>
+                            <a id="showcase-women-club" href="#" class="text-xs text-slate-400 hover:text-slate-200 font-sans block mt-0.5 transition-colors">
+                                University of the West of England
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 1: LATEST CAMPAIGN FIXTURES (2025/2026) -->
         <section class="space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 pb-3 gap-2">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 dark:border-slate-800 pb-3 gap-2">
                 <div>
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">Latest Season</span>
-                    <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">2025 / 2026 Fixture Series</h2>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 rounded">Current Campaign</span>
+                    <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">2025 / 2026 Fixture Series</h2>
                 </div>
-                <a href="seasons.html" class="text-xs font-semibold text-slate-600 hover:text-slate-900 underline decoration-slate-300">
+                <a href="seasons.html" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 dark:decoration-slate-700">
                     Browse All 15 Seasons &rarr;
                 </a>
             </div>
 
-            <div id="latest-fixtures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div id="latest-fixtures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
                 <!-- Dynamically populated 2025/2026 fixture cards -->
             </div>
         </section>
 
         <!-- SECTION 2: LEAGUE STALWARTS & PROLIFIC RACERS -->
         <section class="space-y-6">
-            <div class="border-b border-slate-200 pb-3">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Hall of Endurance</span>
-                <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">League Stalwarts</h2>
-                <p class="text-xs text-slate-500 mt-0.5">Athletes with the highest number of Gwent League finishes across all 71 fixtures since 2010.</p>
+            <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Hall of Endurance</span>
+                <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">League Stalwarts</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Athletes with the highest number of Gwent League finishes across all 71 fixtures since 2010.</p>
             </div>
 
             <div id="stalwarts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -135,13 +294,13 @@
 
         <!-- SECTION 3: MOST ACTIVE CLUBS -->
         <section class="space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 pb-3 gap-2">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 dark:border-slate-800 pb-3 gap-2">
                 <div>
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Team Representation</span>
-                    <h2 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mt-1">Leading Clubs</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">Clubs with the largest cumulative turnouts across league history.</p>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Team Representation</span>
+                    <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">Leading Clubs</h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Clubs with the largest cumulative turnouts across league history.</p>
                 </div>
-                <a href="clubs.html" class="text-xs font-semibold text-slate-600 hover:text-slate-900 underline decoration-slate-300">
+                <a href="clubs.html" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 dark:decoration-slate-700">
                     View All Member Clubs &rarr;
                 </a>
             </div>
@@ -172,7 +331,7 @@
             document.getElementById('hero-stat-runners').textContent = uniqueRunners.size.toLocaleString();
             document.getElementById('hero-stat-clubs').textContent = uniqueClubs.size;
 
-            // 1. RENDER LATEST SEASON FIXTURES (2025/2026)
+            // 1. GATHER LATEST SEASON FIXTURES (2025/2026)
             const latestRecords = allData.filter(r => r.season_key === '2025_2026');
             const matchMap = new Map();
             latestRecords.forEach(r => {
@@ -186,10 +345,14 @@
                         menCount: 0,
                         womenCount: 0,
                         winnerMen: null,
-                        winnerWomen: null
+                        winnerWomen: null,
+                        clubs: new Set()
                     });
                 }
                 const m = matchMap.get(r.match);
+                if (r.club && r.club !== 'Unattached') {
+                    m.clubs.add(r.club);
+                }
                 if (r.gender === 'M') {
                     m.menCount++;
                     if (r.pos === 1) m.winnerMen = r;
@@ -200,27 +363,105 @@
             });
 
             const fixtureCards = Array.from(matchMap.values()).sort((a, b) => a.match - b.match);
+
+            // 2. FEATURED SHOWCASE LOGIC (Interactive Match Switching)
+            const showcasePills = document.getElementById('showcase-match-pills');
+            let activeShowcaseMatch = 5; // Default to latest match (Parc Bryn Bach)
+
+            function updateShowcase(mNum) {
+                activeShowcaseMatch = mNum;
+                const f = matchMap.get(mNum) || fixtureCards[fixtureCards.length - 1];
+                if (!f) return;
+
+                const total = f.menCount + f.womenCount;
+                document.getElementById('showcase-match-badge').textContent = `Match ${f.match}`;
+                document.getElementById('showcase-date').textContent = f.date || 'TBD';
+                document.getElementById('showcase-venue').textContent = f.venue;
+                document.getElementById('showcase-total-field').textContent = total.toLocaleString();
+                document.getElementById('showcase-gender-split').textContent = `${f.menCount}M / ${f.womenCount}F`;
+                document.getElementById('showcase-clubs-count').textContent = f.clubs.size;
+                document.getElementById('showcase-results-link').href = `results.html?season=${f.season_key}&match=${f.match}`;
+
+                // Winner Men
+                const mWin = f.winnerMen;
+                const mWinEl = document.getElementById('showcase-men-winner');
+                const mClubEl = document.getElementById('showcase-men-club');
+                const mTimeEl = document.getElementById('showcase-men-time');
+                if (mWin) {
+                    mWinEl.textContent = mWin.athlete;
+                    mWinEl.href = `athlete.html?name=${encodeURIComponent(mWin.athlete)}&club=${encodeURIComponent(mWin.club)}&gender=M`;
+                    mClubEl.textContent = mWin.club;
+                    mClubEl.href = `club.html?club=${encodeURIComponent(mWin.club)}`;
+                    mTimeEl.textContent = mWin.time || '—';
+                }
+
+                // Winner Women
+                const wWin = f.winnerWomen;
+                const wWinEl = document.getElementById('showcase-women-winner');
+                const wClubEl = document.getElementById('showcase-women-club');
+                const wTimeEl = document.getElementById('showcase-women-time');
+                if (wWin) {
+                    wWinEl.textContent = wWin.athlete;
+                    wWinEl.href = `athlete.html?name=${encodeURIComponent(wWin.athlete)}&club=${encodeURIComponent(wWin.club)}&gender=F`;
+                    wClubEl.textContent = wWin.club;
+                    wClubEl.href = `club.html?club=${encodeURIComponent(wWin.club)}`;
+                    wTimeEl.textContent = wWin.time || '—';
+                }
+
+                // Update Switcher Pills active state
+                document.querySelectorAll('.showcase-pill-btn').forEach(btn => {
+                    const btnMatch = parseInt(btn.dataset.match, 10);
+                    if (btnMatch === mNum) {
+                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold shadow-xs transition-all shrink-0';
+                    } else {
+                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all shrink-0';
+                    }
+                });
+            }
+
+            // Populate match switcher pills
+            if (showcasePills) {
+                showcasePills.innerHTML = fixtureCards.map(f => {
+                    const shortVenue = f.venue.split(',')[0].trim();
+                    return `
+                        <button type="button" data-match="${f.match}" class="showcase-pill-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all shrink-0">
+                            M${f.match} ${shortVenue}
+                        </button>
+                    `;
+                }).join('');
+
+                showcasePills.querySelectorAll('.showcase-pill-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const m = parseInt(btn.dataset.match, 10);
+                        updateShowcase(m);
+                    });
+                });
+
+                // Initialize showcase with Match 5
+                updateShowcase(5);
+            }
+
+            // 3. RENDER FIXTURE CARDS ROW (2025/2026)
             const fixturesContainer = document.getElementById('latest-fixtures-grid');
             fixturesContainer.innerHTML = fixtureCards.map(f => `
-                <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white border border-slate-200 rounded-xl p-5 hover:border-slate-400 hover:shadow-md transition-all group shadow-sm">
+                <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-md transition-all group shadow-xs">
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white px-2 py-0.5 rounded">
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800 px-2 py-0.5 rounded">
                             Match ${f.match}
                         </span>
                         <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
                     </div>
-                    <h3 class="text-lg font-serif font-bold text-slate-900 group-hover:text-emerald-900 transition-colors">
+                    <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1" title="${f.venue}">
                         ${f.venue}
                     </h3>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs font-mono text-slate-500">
-                        <span>Men: <strong class="text-slate-800">${f.menCount}</strong></span>
-                        <span>Women: <strong class="text-slate-800">${f.womenCount}</strong></span>
-                        <span>Total: <strong class="text-slate-900">${f.menCount + f.womenCount}</strong></span>
+                    <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        <span>${f.menCount + f.womenCount} total</span>
+                        <span>(${f.menCount}M / ${f.womenCount}F)</span>
                     </div>
                 </a>
             `).join('');
 
-            // 2. RENDER STALWARTS (Top runners by appearances)
+            // 4. RENDER STALWARTS (Top runners by appearances)
             const runnerAppearances = new Map();
             allData.forEach(r => {
                 if (!r.athlete || r.pos <= 0) return;
@@ -250,25 +491,25 @@
 
             const stalwartsContainer = document.getElementById('stalwarts-grid');
             stalwartsContainer.innerHTML = topStalwarts.map((s, idx) => `
-                <a href="athlete.html?name=${encodeURIComponent(s.name)}&club=${encodeURIComponent(s.club)}" class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:border-slate-400 transition-all block group">
+                <a href="athlete.html?name=${encodeURIComponent(s.name)}&club=${encodeURIComponent(s.club)}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all block group">
                     <div class="flex justify-between items-center">
                         <span class="text-[10px] font-mono font-bold text-slate-400 uppercase">#${idx + 1} All-Time</span>
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-700">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                             ${s.finishes} Races
                         </span>
                     </div>
-                    <div class="text-base font-serif font-bold text-slate-900 mt-2 group-hover:text-emerald-900 transition-colors truncate">
+                    <div class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 mt-2 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors truncate">
                         ${s.name}
                     </div>
-                    <div class="text-xs text-slate-500 truncate mt-0.5 font-sans">${s.club}</div>
-                    <div class="mt-3 pt-2.5 border-t border-slate-100 flex justify-between text-[11px] font-mono text-slate-400">
+                    <div class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5 font-sans">${s.club}</div>
+                    <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex justify-between text-[11px] font-mono text-slate-400">
                         <span>${s.seasons.size} Campaigns</span>
-                        ${s.catWins > 0 ? `<span class="text-emerald-800 font-semibold">${s.catWins} Cat Wins</span>` : '<span>Active</span>'}
+                        ${s.catWins > 0 ? `<span class="text-amber-500 font-semibold">${s.catWins} Cat Wins</span>` : '<span>Active</span>'}
                     </div>
                 </a>
             `).join('');
 
-            // 3. RENDER TOP CLUBS
+            // 5. RENDER TOP CLUBS
             const clubFinishes = new Map();
             allData.forEach(r => {
                 if (!r.club || r.club === 'Unattached') return;
@@ -281,17 +522,17 @@
 
             const topClubsContainer = document.getElementById('top-clubs-grid');
             topClubsContainer.innerHTML = topClubs.map(([club, count]) => `
-                <a href="club.html?club=${encodeURIComponent(club)}" class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm hover:border-slate-400 transition-all block group">
-                    <div class="text-xs font-semibold text-slate-900 group-hover:text-emerald-900 transition-colors truncate">
+                <a href="club.html?club=${encodeURIComponent(club)}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 shadow-xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all block group">
+                    <div class="text-xs font-semibold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors truncate">
                         ${club}
                     </div>
-                    <div class="text-[11px] font-mono text-slate-500 mt-1">
+                    <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-1">
                         ${count.toLocaleString()} finishes
                     </div>
                 </a>
             `).join('');
 
-            // 4. HERO SEARCH LIVE AUTOCOMPLETE
+            // 6. HERO SEARCH LIVE AUTOCOMPLETE
             const heroInput = document.getElementById('hero-search-input');
             const heroDropdown = document.getElementById('hero-search-results');
 
@@ -315,19 +556,29 @@
                 }
 
                 heroDropdown.innerHTML = matches.map(r => `
-                    <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}" class="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group">
+                    <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
                         <div>
-                            <div class="text-sm font-serif font-bold text-slate-900 group-hover:text-emerald-900">
+                            <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
                                 ${r.name}
                             </div>
-                            <div class="text-xs text-slate-500">${r.club}</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">${r.club}</div>
                         </div>
-                        <span class="text-xs font-mono font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded">
+                        <span class="text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded">
                             ${r.finishes} finishes
                         </span>
                     </a>
                 `).join('');
                 heroDropdown.classList.remove('hidden');
+            });
+
+            // Quick search button triggers
+            document.querySelectorAll('.quick-search-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const term = btn.textContent.trim();
+                    heroInput.value = term;
+                    heroInput.dispatchEvent(new Event('input'));
+                    heroInput.focus();
+                });
             });
 
             document.addEventListener('click', (e) => {
