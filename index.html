@@ -21,6 +21,15 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    colors: {
+                        gwent: {
+                            green: "#004942",
+                            "green-light": "#00685e",
+                            maroon: "#903A3D",
+                            "maroon-light": "#ab484c",
+                            "maroon-dark": "#6b2729"
+                        }
+                    },
                     fontFamily: {
                         serif: ['Newsreader', 'Georgia', 'serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
@@ -141,11 +150,11 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div class="flex items-center gap-2.5">
                     <span class="relative flex h-2.5 w-2.5">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#903A3D] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#903A3D]"></span>
                     </span>
                     <div>
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-800 dark:text-emerald-400 block">
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#903A3D] dark:text-[#f87171] block">
                             CURRENT CAMPAIGN SPOTLIGHT
                         </span>
                         <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
@@ -160,18 +169,18 @@
                 </div>
             </div>
 
-            <!-- The Hero Showcase Card -->
-            <div id="latest-showcase-card" class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white border border-slate-800 shadow-xl p-6 md:p-8">
-                <!-- Ambient Background Glow & Topography -->
-                <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-20 -top-20 w-80 h-80 bg-emerald-700/10 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- The Hero Showcase Card with Gwent League Colours (#004942 & #903A3D) -->
+            <div id="latest-showcase-card" class="relative overflow-hidden rounded-2xl text-white border shadow-xl p-6 md:p-8">
+                <!-- Ambient Background Glow in Gwent Brand Colours -->
+                <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-[#903A3D]/25 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -top-20 w-80 h-80 bg-[#004942]/35 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
                     <!-- Left Info Panel (Col 1-7) -->
                     <div class="lg:col-span-7 space-y-4">
                         <div class="flex flex-wrap items-center gap-2">
-                            <span id="showcase-match-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-500 text-slate-950 font-black">
+                            <span id="showcase-match-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#903A3D] text-white shadow-xs border border-[#ab484c]/50 font-black">
                                 Match 5
                             </span>
                             <span class="text-xs font-mono text-slate-400">•</span>
@@ -211,7 +220,7 @@
 
                         <!-- Action CTA -->
                         <div class="pt-2">
-                            <a id="showcase-results-link" href="results.html?season=2025_2026&match=5" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-bold tracking-wide transition-all shadow-md hover:shadow-emerald-500/20">
+                            <a id="showcase-results-link" href="results.html?season=2025_2026&match=5" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004942] hover:bg-[#00685e] text-white text-xs font-mono font-bold tracking-wide transition-all shadow-md hover:shadow-[#004942]/40 border border-[#903A3D]/50">
                                 <span>Browse Full Match Results</span>
                                 <span class="text-sm">&rarr;</span>
                             </a>
@@ -222,37 +231,37 @@
                     <div class="lg:col-span-5 space-y-3">
                         <div class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 flex items-center justify-between">
                             <span>Podium Champions</span>
-                            <span class="text-emerald-400">Race Victors</span>
+                            <span class="text-amber-400 font-bold">Race Victors</span>
                         </div>
 
-                        <!-- First Man Card -->
-                        <div class="bg-slate-800/70 border border-slate-700/70 rounded-xl p-4 transition-all hover:border-emerald-500/50">
+                        <!-- First Man Card (Gwent Forest Green Themed) -->
+                        <div class="first-man-card rounded-xl p-4 transition-all border">
                             <div class="flex items-center justify-between text-[10px] font-mono mb-1.5">
-                                <span class="inline-flex items-center gap-1.5 font-bold text-amber-400 uppercase tracking-wider">
+                                <span class="inline-flex items-center gap-1.5 font-bold text-emerald-300 uppercase tracking-wider">
                                     <span>🥇</span> First Man
                                 </span>
                                 <span id="showcase-men-time" class="font-bold text-slate-300">33:35</span>
                             </div>
-                            <a id="showcase-men-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-emerald-400 block transition-colors leading-snug">
+                            <a id="showcase-men-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-emerald-300 block transition-colors leading-snug">
                                 Ben Rawlins
                             </a>
-                            <a id="showcase-men-club" href="#" class="text-xs text-slate-400 hover:text-slate-200 font-sans block mt-0.5 transition-colors">
+                            <a id="showcase-men-club" href="#" class="text-xs text-slate-300/80 hover:text-white font-sans block mt-0.5 transition-colors">
                                 Westbury Harriers
                             </a>
                         </div>
 
-                        <!-- First Woman Card -->
-                        <div class="bg-slate-800/70 border border-slate-700/70 rounded-xl p-4 transition-all hover:border-emerald-500/50">
+                        <!-- First Woman Card (Gwent Maroon Themed) -->
+                        <div class="first-woman-card rounded-xl p-4 transition-all border">
                             <div class="flex items-center justify-between text-[10px] font-mono mb-1.5">
-                                <span class="inline-flex items-center gap-1.5 font-bold text-amber-400 uppercase tracking-wider">
+                                <span class="inline-flex items-center gap-1.5 font-bold text-rose-300 uppercase tracking-wider">
                                     <span>🥇</span> First Woman
                                 </span>
                                 <span id="showcase-women-time" class="font-bold text-slate-300">24:31</span>
                             </div>
-                            <a id="showcase-women-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-emerald-400 block transition-colors leading-snug">
+                            <a id="showcase-women-winner" href="#" class="font-serif font-bold text-lg text-white hover:text-rose-200 block transition-colors leading-snug">
                                 Sian Duval
                             </a>
-                            <a id="showcase-women-club" href="#" class="text-xs text-slate-400 hover:text-slate-200 font-sans block mt-0.5 transition-colors">
+                            <a id="showcase-women-club" href="#" class="text-xs text-slate-300/80 hover:text-white font-sans block mt-0.5 transition-colors">
                                 University of the West of England
                             </a>
                         </div>
@@ -412,9 +421,9 @@
                 document.querySelectorAll('.showcase-pill-btn').forEach(btn => {
                     const btnMatch = parseInt(btn.dataset.match, 10);
                     if (btnMatch === mNum) {
-                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-bold shadow-xs transition-all shrink-0';
+                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg bg-[#004942] text-white font-bold shadow-xs border border-[#903A3D]/70 transition-all shrink-0';
                     } else {
-                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all shrink-0';
+                        btn.className = 'showcase-pill-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-all shrink-0';
                     }
                 });
             }

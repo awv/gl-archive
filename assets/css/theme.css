@@ -370,13 +370,15 @@ html.dark [class*="bg-slate-50/"] {
 
 /* Homepage Featured Showcase & Atmospheric Hero */
 #latest-showcase-card {
-    background: linear-gradient(135deg, #182232 0%, #101520 100%) !important;
-    border-color: #2b3952 !important;
+    background: linear-gradient(135deg, #0d1a18 0%, #13171d 50%, #1a1012 100%) !important;
+    border-color: rgba(144, 58, 61, 0.4) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 73, 66, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.45) !important;
 }
 
 html:not(.dark) #latest-showcase-card {
-    background: linear-gradient(135deg, #1c2638 0%, #0f172a 100%) !important;
+    background: linear-gradient(135deg, #0d1e1b 0%, #141b24 50%, #221215 100%) !important;
     color: #ffffff !important;
+    border-color: rgba(144, 58, 61, 0.45) !important;
 }
 
 html:not(.dark) #latest-showcase-card .text-slate-400,
@@ -390,16 +392,39 @@ html:not(.dark) #latest-showcase-card .text-slate-200 {
 
 html:not(.dark) #latest-showcase-card .bg-slate-800\/60,
 html:not(.dark) #latest-showcase-card .bg-slate-800\/70 {
-    background-color: rgba(30, 41, 59, 0.75) !important;
+    background-color: rgba(22, 30, 42, 0.75) !important;
     border-color: rgba(51, 65, 85, 0.8) !important;
 }
 
-/* Hero Section Ambient Backdrop */
+/* Winner Card Accents using Gwent Colours */
+.first-man-card {
+    background: rgba(0, 73, 66, 0.22) !important;
+    border-color: rgba(0, 73, 66, 0.6) !important;
+}
+.first-man-card:hover {
+    border-color: #00685e !important;
+    background: rgba(0, 73, 66, 0.35) !important;
+    box-shadow: 0 4px 16px rgba(0, 73, 66, 0.3) !important;
+}
+
+.first-woman-card {
+    background: rgba(144, 58, 61, 0.22) !important;
+    border-color: rgba(144, 58, 61, 0.6) !important;
+}
+.first-woman-card:hover {
+    border-color: #ab484c !important;
+    background: rgba(144, 58, 61, 0.35) !important;
+    box-shadow: 0 4px 16px rgba(144, 58, 61, 0.3) !important;
+}
+
+/* Hero Section Ambient Backdrop with Gwent Colours */
 .hero-atmosphere {
     position: relative;
-    background: radial-gradient(circle at 50% -10%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+    background: radial-gradient(circle at 30% -10%, rgba(0, 73, 66, 0.10) 0%, transparent 55%),
+                radial-gradient(circle at 70% -10%, rgba(144, 58, 61, 0.08) 0%, transparent 55%);
 }
 
 html.dark .hero-atmosphere {
-    background: radial-gradient(circle at 50% -15%, rgba(16, 185, 129, 0.12) 0%, rgba(6, 78, 59, 0.03) 45%, transparent 70%);
+    background: radial-gradient(circle at 30% -15%, rgba(0, 73, 66, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 70% -15%, rgba(144, 58, 61, 0.14) 0%, transparent 60%);
 }
