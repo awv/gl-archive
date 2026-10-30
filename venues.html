@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Venues • John H Collins Gwent Cross Country League</title>
+    <meta name="description" content="All-time course records, terrain dossiers, historic battles, and venue statistics across the iconic championship courses of the Gwent Cross Country League.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gwent: {
+                            green: "#004942",
+                            "green-light": "#00685e",
+                            maroon: "#903A3D",
+                            "maroon-light": "#ab484c"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/venue_profiles.js"></script>
+    <script src="site-layout.js"></script>
+</head>
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950 transition-colors">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- VENUES EDITORIAL HERO HEADER -->
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-slate-900 dark:text-slate-100 font-bold">Courses & Venues</span>
+            </nav>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-slate-900 dark:bg-slate-800 text-white">
+                        <span>Championship Grounds</span>
+                        <span>•</span>
+                        <span class="text-emerald-400">14 Iconic Courses</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-slate-100 tracking-tight">
+                        Courses & Venues
+                    </h1>
+                    <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
+                        From the mud of Blaise Castle and the high lakeside winds of Parc Bryn Bach to the flat speedways of Llandaff Fields—explore all-time course records, terrain dossiers, and historic fixture honours.
+                    </p>
+                </div>
+
+                <!-- Macro Stat Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full md:w-auto shrink-0">
+                    <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3 min-w-[120px]">
+                        <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Courses</span>
+                        <span id="hero-stat-venues" class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 block mt-0.5">14</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3 min-w-[120px]">
+                        <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Fixtures</span>
+                        <span id="hero-stat-fixtures" class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 block mt-0.5">71</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3 min-w-[120px] col-span-2 sm:col-span-1">
+                        <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Finishes</span>
+                        <span id="hero-stat-finishes" class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400 block mt-0.5">40,922</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-8">
+
+        <!-- FILTER & SEARCH BAR -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs">
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2" id="venue-filter-container">
+                <button type="button" data-filter="all" class="venue-filter-pill px-4 py-1.5 text-xs font-semibold rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs transition-all">
+                    All Courses (14)
+                </button>
+                <button type="button" data-filter="active" class="venue-filter-pill px-4 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700 transition-all">
+                    Active '25/'26 Season (5)
+                </button>
+                <button type="button" data-filter="frequent" class="venue-filter-pill px-4 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700 transition-all">
+                    Core Venues (4+ Fixtures)
+                </button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative w-full sm:w-72">
+                <input type="text" id="venue-search-input" placeholder="Search course, region, terrain..."
+                    class="w-full pl-8 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- VENUES GRID -->
+        <div id="venues-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Populated dynamically -->
+        </div>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <!-- RUNTIME LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const venuesData = window.VENUE_PROFILES || [];
+            const grid = document.getElementById('venues-grid');
+            const searchInput = document.getElementById('venue-search-input');
+            const filterContainer = document.getElementById('venue-filter-container');
+
+            let activeFilter = 'all';
+            let searchQuery = '';
+
+            const active2026Venues = [
+                'Margam Park, Port Talbot',
+                'Llandaff Fields, Cardiff',
+                'Blaise Castle, Bristol',
+                'Chepstow Racecourse',
+                'Parc Bryn Bach'
+            ];
+
+            function render() {
+                let filtered = venuesData;
+
+                if (activeFilter === 'active') {
+                    filtered = filtered.filter(v => active2026Venues.some(av => v.name.toLowerCase().includes(av.toLowerCase())));
+                } else if (activeFilter === 'frequent') {
+                    filtered = filtered.filter(v => v.fixture_count >= 4);
+                }
+
+                if (searchQuery) {
+                    filtered = filtered.filter(v => 
+                        v.name.toLowerCase().includes(searchQuery) ||
+                        v.region.toLowerCase().includes(searchQuery) ||
+                        v.terrain.toLowerCase().includes(searchQuery) ||
+                        v.tagline.toLowerCase().includes(searchQuery)
+                    );
+                }
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-span-2 py-16 text-center bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 text-slate-400 font-mono text-xs">
+                            No courses match your filter or search query.
+                        </div>
+                    `;
+                    return;
+                }
+
+                grid.innerHTML = filtered.map((v, idx) => {
+                    const mCr = v.men_course_record;
+                    const wCr = v.women_course_record;
+
+                    const mTopWinner = v.men_most_wins && v.men_most_wins.length > 0 ? v.men_most_wins[0] : null;
+                    const wTopWinner = v.women_most_wins && v.women_most_wins.length > 0 ? v.women_most_wins[0] : null;
+
+                    const cardId = `venue-card-${idx}`;
+                    const top10Id = `venue-top10-${idx}`;
+                    const fixHistId = `venue-fix-${idx}`;
+
+                    return `
+                        <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs flex flex-col justify-between space-y-5 hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                            
+                            <!-- Header & Tagline -->
+                            <div>
+                                <div class="flex items-start justify-between gap-3 mb-2">
+                                    <div>
+                                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                                            ${v.region}
+                                        </span>
+                                        <h2 class="text-xl font-serif font-black text-slate-900 dark:text-slate-100 mt-2">
+                                            ${v.name}
+                                        </h2>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <span class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 block leading-tight">
+                                            ${v.fixture_count}
+                                        </span>
+                                        <span class="text-[9px] font-mono text-slate-400 uppercase tracking-wider block">Fixtures Hosted</span>
+                                    </div>
+                                </div>
+
+                                <p class="text-xs font-serif italic text-emerald-800 dark:text-emerald-400 font-medium">
+                                    "${v.tagline}"
+                                </p>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                                    ${v.terrain}
+                                </p>
+                            </div>
+
+                            <!-- Course Records Dual Card -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                                <!-- Men's CR -->
+                                <div class="p-3 bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800/80 rounded-xl">
+                                    <div class="flex items-center justify-between text-[10px] font-mono font-bold uppercase text-emerald-800 dark:text-emerald-300 mb-1">
+                                        <span>⚡ Men's Record</span>
+                                        <span class="text-xs font-serif font-bold">${mCr ? mCr.time : '—'}</span>
+                                    </div>
+                                    ${mCr ? `
+                                        <a href="athlete.html?name=${encodeURIComponent(mCr.athlete)}&club=${encodeURIComponent(mCr.club)}" 
+                                           class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 block truncate transition-colors">
+                                            ${mCr.athlete}
+                                        </a>
+                                        <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 block truncate mt-0.5">
+                                            ${mCr.club} • ${mCr.season}
+                                        </span>
+                                    ` : '<span class="text-xs text-slate-400 font-mono">No record time</span>'}
+                                </div>
+
+                                <!-- Women's CR -->
+                                <div class="p-3 bg-purple-50/50 dark:bg-purple-950/30 border border-purple-200/80 dark:border-purple-800/80 rounded-xl">
+                                    <div class="flex items-center justify-between text-[10px] font-mono font-bold uppercase text-purple-800 dark:text-purple-300 mb-1">
+                                        <span>⚡ Women's Record</span>
+                                        <span class="text-xs font-serif font-bold">${wCr ? wCr.time : '—'}</span>
+                                    </div>
+                                    ${wCr ? `
+                                        <a href="athlete.html?name=${encodeURIComponent(wCr.athlete)}&club=${encodeURIComponent(wCr.club)}" 
+                                           class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-purple-700 dark:hover:text-purple-400 block truncate transition-colors">
+                                            ${wCr.athlete}
+                                        </a>
+                                        <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 block truncate mt-0.5">
+                                            ${wCr.club} • ${wCr.season}
+                                        </span>
+                                    ` : '<span class="text-xs text-slate-400 font-mono">No record time</span>'}
+                                </div>
+                            </div>
+
+                            <!-- Course Dominators Summary -->
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono py-2 border-y border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-400">
+                                <div class="truncate">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Course Dominators</span>
+                                    <span class="text-slate-900 dark:text-slate-200 font-medium">
+                                        ${mTopWinner ? `${mTopWinner.athlete} (${mTopWinner.wins} wins)` : '—'} 
+                                        ${wTopWinner ? `• ${wTopWinner.athlete} (${wTopWinner.wins} wins)` : ''}
+                                    </span>
+                                </div>
+                                <span class="text-slate-400 shrink-0 text-[11px]">
+                                    ${v.total_finishes.toLocaleString()} finishes catalogued
+                                </span>
+                            </div>
+
+                            <!-- Expandable Buttons -->
+                            <div class="flex items-center gap-2 pt-1">
+                                <button type="button" class="toggle-top10-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-target="${top10Id}">
+                                    🏆 Fastest Times
+                                </button>
+                                <button type="button" class="toggle-fix-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-target="${fixHistId}">
+                                    📜 Fixture History (${v.fixture_count})
+                                </button>
+                            </div>
+
+                            <!-- Expandable Drawer 1: Top 10 Fastest Times -->
+                            <div id="${top10Id}" class="hidden space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+                                <h4 class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                                    All-Time Fastest Marks on this Course
+                                </h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+                                    <!-- Men Top 5 -->
+                                    <div class="space-y-1">
+                                        <span class="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 uppercase block mb-1">Top Men</span>
+                                        ${v.men_top10.slice(0, 5).map((m, i) => `
+                                            <div class="flex items-center justify-between py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800/50">
+                                                <span class="text-slate-400 font-bold">${i+1}.</span>
+                                                <a href="athlete.html?name=${encodeURIComponent(m.athlete)}&club=${encodeURIComponent(m.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 ml-1.5">${m.athlete}</a>
+                                                <span class="font-bold text-emerald-700 dark:text-emerald-400 ml-auto shrink-0">${m.time}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <!-- Women Top 5 -->
+                                    <div class="space-y-1">
+                                        <span class="text-[9px] font-bold text-purple-700 dark:text-purple-400 uppercase block mb-1">Top Women</span>
+                                        ${v.women_top10.slice(0, 5).map((w, i) => `
+                                            <div class="flex items-center justify-between py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800/50">
+                                                <span class="text-slate-400 font-bold">${i+1}.</span>
+                                                <a href="athlete.html?name=${encodeURIComponent(w.athlete)}&club=${encodeURIComponent(w.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 ml-1.5">${w.athlete}</a>
+                                                <span class="font-bold text-purple-700 dark:text-purple-400 ml-auto shrink-0">${w.time}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Expandable Drawer 2: Fixture History -->
+                            <div id="${fixHistId}" class="hidden space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
+                                <h4 class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                                    All-Time League Fixtures Hosted
+                                </h4>
+                                <div class="max-h-48 overflow-y-auto space-y-1 divide-y divide-slate-100 dark:divide-slate-800 text-xs font-mono">
+                                    ${v.fixtures.map(f => {
+                                        const resUrl = `results.html?season=${encodeURIComponent(f.season_key)}&match=${f.match}`;
+                                        return `
+                                            <div class="py-1.5 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/40 px-1 rounded transition-colors">
+                                                <div>
+                                                    <a href="${resUrl}" class="font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
+                                                        ${f.season} Match ${f.match}
+                                                    </a>
+                                                    <span class="text-[10px] text-slate-400 block">${f.date || 'Date not recorded'}</span>
+                                                </div>
+                                                <div class="text-right shrink-0">
+                                                    <span class="font-bold text-slate-700 dark:text-slate-300">${f.starters} runners</span>
+                                                    ${f.men_winner ? `<span class="block text-[10px] text-emerald-700 dark:text-emerald-400">🥇 ${f.men_winner.athlete} (${f.men_winner.time})</span>` : ''}
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                // Hook up expandable drawers
+                document.querySelectorAll('.toggle-top10-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const targetId = btn.dataset.target;
+                        const el = document.getElementById(targetId);
+                        if (el) el.classList.toggle('hidden');
+                    });
+                });
+
+                document.querySelectorAll('.toggle-fix-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const targetId = btn.dataset.target;
+                        const el = document.getElementById(targetId);
+                        if (el) el.classList.toggle('hidden');
+                    });
+                });
+            }
+
+            // Filter pills logic
+            filterContainer.querySelectorAll('.venue-filter-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterContainer.querySelectorAll('.venue-filter-pill').forEach(b => {
+                        b.className = 'venue-filter-pill px-4 py-1.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 border border-slate-200 dark:border-slate-700 transition-all';
+                    });
+                    btn.className = 'venue-filter-pill px-4 py-1.5 text-xs font-semibold rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs transition-all';
+                    activeFilter = btn.dataset.filter;
+                    render();
+                });
+            });
+
+            // Search input logic
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    searchQuery = e.target.value.trim().toLowerCase();
+                    render();
+                });
+            }
+
+            render();
+        });
+    </script>
+</body>
+</html>

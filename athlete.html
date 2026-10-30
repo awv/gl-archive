@@ -312,6 +312,45 @@
             </div>
         </section>
 
+        <!-- SECTION: HEAD-TO-HEAD RIVALRY INDEX -->
+        <section id="rivalry-section" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        RIVALRY & HEAD-TO-HEAD MATRIX
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
+                        <span>Head-to-Head Comparison</span>
+                        <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">Lifetime Matchups</span>
+                    </h2>
+                </div>
+                <div class="relative w-full sm:w-72">
+                    <input type="text" id="rival-search-input" placeholder="Compare against any runner..."
+                        class="w-full pl-8 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900">
+                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <!-- Search Autocomplete Dropdown -->
+                    <div id="rival-search-dropdown" class="hidden absolute top-full left-0 right-0 mt-1 max-h-56 overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl z-50 divide-y divide-slate-100 dark:divide-slate-800 text-xs font-sans"></div>
+                </div>
+            </div>
+
+            <!-- Frequent Competitors Quick Select -->
+            <div class="space-y-2">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                    Most Frequent Competitors (Shared Starting Line)
+                </span>
+                <div id="frequent-rivals-container" class="flex flex-wrap items-center gap-2">
+                    <!-- Populated dynamically with top rivals -->
+                </div>
+            </div>
+
+            <!-- Rivalry Scoreboard Display (Active Rival) -->
+            <div id="rivalry-scoreboard" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
+                <!-- Dynamically rendered head-to-head scoreboard & race-by-race table -->
+            </div>
+        </section>
+
         <!-- SECTION: COMPLETE RACE-BY-RACE LOG -->
         <section class="space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
@@ -914,6 +953,340 @@
                     </tr>
                 `;
             }).join('');
+
+            // 7. HEAD-TO-HEAD RIVALRY ENGINE
+            const initRivalryEngine = () => {
+                const rivalrySection = document.getElementById('rivalry-section');
+                if (!rivalrySection || careerRecords.length === 0) return;
+
+                // Index all fixtures run by the current target athlete
+                const myFixtures = {};
+                careerRecords.forEach(r => {
+                    const fixKey = `${r.season_key}_m${r.match}_${r.gender}`;
+                    myFixtures[fixKey] = r;
+                });
+
+                // Scan allData to find all competitors who shared a starting line
+                const competitorStats = {};
+                allData.forEach(r => {
+                    if (r.athlete === resolvedName) return;
+                    const fixKey = `${r.season_key}_m${r.match}_${r.gender}`;
+                    const myRecord = myFixtures[fixKey];
+                    if (!myRecord) return;
+
+                    const rivalName = r.athlete;
+                    if (!competitorStats[rivalName]) {
+                        competitorStats[rivalName] = {
+                            name: rivalName,
+                            club: r.club,
+                            gender: r.gender,
+                            together: 0,
+                            wins: 0,
+                            losses: 0,
+                            ties: 0,
+                            encounters: []
+                        };
+                    }
+
+                    const comp = competitorStats[rivalName];
+                    comp.together++;
+                    comp.club = r.club; // latest club
+
+                    let outcome = 'tie';
+                    if (myRecord.pos > 0 && r.pos > 0) {
+                        if (myRecord.pos < r.pos) {
+                            comp.wins++;
+                            outcome = 'win';
+                        } else if (myRecord.pos > r.pos) {
+                            comp.losses++;
+                            outcome = 'loss';
+                        } else {
+                            comp.ties++;
+                        }
+                    }
+
+                    comp.encounters.push({
+                        season: myRecord.season,
+                        season_key: myRecord.season_key,
+                        match: myRecord.match,
+                        venue: myRecord.venue,
+                        date: myRecord.date,
+                        myPos: myRecord.pos,
+                        myTime: myRecord.time,
+                        rivalPos: r.pos,
+                        rivalTime: r.time,
+                        outcome: outcome
+                    });
+                });
+
+                const sortedCompetitors = Object.values(competitorStats).sort((a, b) => b.together - a.together);
+
+                if (sortedCompetitors.length === 0) {
+                    rivalrySection.classList.add('hidden');
+                    return;
+                }
+
+                // Render Top Frequent Rivals Pills
+                const frequentContainer = document.getElementById('frequent-rivals-container');
+                let currentRivalName = sortedCompetitors[0].name;
+
+                const renderFrequentPills = () => {
+                    frequentContainer.innerHTML = sortedCompetitors.slice(0, 6).map(comp => {
+                        const isSelected = comp.name === currentRivalName;
+                        const winPct = Math.round((comp.wins / comp.together) * 100);
+                        const activeCls = isSelected 
+                            ? 'bg-emerald-700 text-white shadow-xs font-bold' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium';
+
+                        return `
+                            <button type="button" data-rival="${encodeURIComponent(comp.name)}" class="frequent-rival-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs transition-colors ${activeCls}">
+                                <span>${comp.name}</span>
+                                <span class="text-[10px] font-mono opacity-80">(${comp.together} races • ${comp.wins}-${comp.losses})</span>
+                            </button>
+                        `;
+                    }).join('');
+
+                    frequentContainer.querySelectorAll('.frequent-rival-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            currentRivalName = decodeURIComponent(btn.dataset.rival);
+                            renderFrequentPills();
+                            renderScoreboard(currentRivalName);
+                        });
+                    });
+                };
+
+                // Time delta formatter helper
+                const parseTimeToSeconds = (tStr) => {
+                    if (!tStr) return null;
+                    const parts = tStr.split(':').map(Number);
+                    if (parts.length === 2) return parts[0] * 60 + parts[1];
+                    if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+                    const num = parseFloat(tStr);
+                    return isNaN(num) ? null : num;
+                };
+
+                const formatSeconds = (sec) => {
+                    const absSec = Math.abs(sec);
+                    const m = Math.floor(absSec / 60);
+                    const s = Math.round(absSec % 60);
+                    const str = m > 0 ? `${m}m ${s.toString().padStart(2, '0')}s` : `${s}s`;
+                    return (sec >= 0 ? `+${str}` : `-${str}`);
+                };
+
+                // Render Active Rival Scoreboard
+                const scoreboardEl = document.getElementById('rivalry-scoreboard');
+
+                const renderScoreboard = (rivalName) => {
+                    const rival = competitorStats[rivalName];
+                    if (!rival) return;
+
+                    const total = rival.together;
+                    const wins = rival.wins;
+                    const losses = rival.losses;
+                    const ties = rival.ties;
+                    const winPct = total > 0 ? Math.round((wins / total) * 100) : 50;
+                    const lossPct = 100 - winPct;
+
+                    // Sort encounters descending
+                    const sortedEncounters = [...rival.encounters].sort((a, b) => {
+                        const cmp = b.season_key.localeCompare(a.season_key);
+                        if (cmp !== 0) return cmp;
+                        return b.match - a.match;
+                    });
+
+                    // Compute closest encounter
+                    let closestMatch = null;
+                    let minDeltaSec = Infinity;
+
+                    sortedEncounters.forEach(enc => {
+                        const myS = parseTimeToSeconds(enc.myTime);
+                        const rivS = parseTimeToSeconds(enc.rivalTime);
+                        if (myS !== null && rivS !== null) {
+                            const diff = Math.abs(myS - rivS);
+                            if (diff < minDeltaSec) {
+                                minDeltaSec = diff;
+                                closestMatch = { ...enc, diffSec: diff };
+                            }
+                        }
+                    });
+
+                    scoreboardEl.innerHTML = `
+                        <!-- Head-to-Head Banner -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center p-6 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700/80">
+                            <!-- Left: Target Athlete -->
+                            <div class="text-center md:text-left">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block">Current Athlete</span>
+                                <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100 truncate">${resolvedName}</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">${primaryClub}</p>
+                                <div class="mt-3">
+                                    <span class="text-3xl font-serif font-black text-emerald-700 dark:text-emerald-400">${wins}</span>
+                                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 ml-1">Wins (${winPct}%)</span>
+                                </div>
+                            </div>
+
+                            <!-- Center: VS & Win Bar -->
+                            <div class="flex flex-col items-center justify-center space-y-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 shadow-xs">
+                                    ${total} Encounters
+                                </span>
+                                <!-- Dual Progress Bar -->
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-3 rounded-full overflow-hidden flex">
+                                    <div class="bg-emerald-600 h-full transition-all duration-500" style="width: ${winPct}%;"></div>
+                                    <div class="bg-amber-600 h-full transition-all duration-500" style="width: ${lossPct}%;"></div>
+                                </div>
+                                <div class="flex justify-between w-full text-[10px] font-mono font-bold text-slate-400">
+                                    <span class="text-emerald-600">${winPct}% Won</span>
+                                    <span class="text-amber-600">${lossPct}% Won</span>
+                                </div>
+                            </div>
+
+                            <!-- Right: Rival Athlete -->
+                            <div class="text-center md:text-right">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Competitor</span>
+                                <a href="athlete.html?name=${encodeURIComponent(rival.name)}&club=${encodeURIComponent(rival.club)}" 
+                                   class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors truncate block">
+                                    ${rival.name}
+                                </a>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">${rival.club}</p>
+                                <div class="mt-3">
+                                    <span class="text-3xl font-serif font-black text-amber-600 dark:text-amber-400">${losses}</span>
+                                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 ml-1">Wins (${lossPct}%)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${closestMatch ? `
+                            <div class="flex items-center justify-between text-xs font-mono p-3 bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800 rounded-xl">
+                                <span class="text-emerald-900 dark:text-emerald-200 font-semibold">Closest Battle:</span>
+                                <span class="text-emerald-700 dark:text-emerald-400">${closestMatch.season} M${closestMatch.match} (${closestMatch.venue}) • Decided by just ${closestMatch.diffSec} seconds!</span>
+                            </div>
+                        ` : ''}
+
+                        <!-- Detailed Encounter Log Table -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                                Race-by-Race Direct Matchups (${total} fixtures)
+                            </h4>
+                            <div class="overflow-x-auto border border-slate-200 dark:border-slate-800 rounded-xl">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                            <th class="py-2.5 px-4">Season & Match</th>
+                                            <th class="py-2.5 px-4">Venue</th>
+                                            <th class="py-2.5 px-3 text-center">${resolvedName}</th>
+                                            <th class="py-2.5 px-3 text-center">${rival.name}</th>
+                                            <th class="py-2.5 px-4 text-right font-mono">Time Delta</th>
+                                            <th class="py-2.5 px-4 text-center">Result</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                                        ${sortedEncounters.map(enc => {
+                                            const isWin = enc.outcome === 'win';
+                                            const isLoss = enc.outcome === 'loss';
+                                            const myS = parseTimeToSeconds(enc.myTime);
+                                            const rivS = parseTimeToSeconds(enc.rivalTime);
+                                            let deltaText = '—';
+                                            if (myS !== null && rivS !== null) {
+                                                const diff = rivS - myS; // positive means myTime was faster
+                                                deltaText = formatSeconds(diff);
+                                            }
+
+                                            const resultBadge = isWin
+                                                ? `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">WON</span>`
+                                                : (isLoss 
+                                                    ? `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">LOST</span>` 
+                                                    : `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-500">TIED</span>`);
+
+                                            const fixtureLink = `results.html?season=${encodeURIComponent(enc.season_key)}&match=${enc.match}&gender=${targetGender}&highlight=${encodeURIComponent(resolvedName)}`;
+
+                                            return `
+                                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                                    <td class="py-2.5 px-4 font-mono">
+                                                        <a href="${fixtureLink}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
+                                                            ${enc.season} M${enc.match}
+                                                        </a>
+                                                    </td>
+                                                    <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">
+                                                        ${enc.venue || '—'}
+                                                    </td>
+                                                    <td class="py-2.5 px-3 text-center font-mono ${isWin ? 'font-bold text-emerald-700 dark:text-emerald-400' : 'text-slate-500'}">
+                                                        #${enc.myPos} ${enc.myTime ? `<span class="text-[11px] block text-slate-400">${enc.myTime}</span>` : ''}
+                                                    </td>
+                                                    <td class="py-2.5 px-3 text-center font-mono ${isLoss ? 'font-bold text-amber-600 dark:text-amber-400' : 'text-slate-500'}">
+                                                        #${enc.rivalPos} ${enc.rivalTime ? `<span class="text-[11px] block text-slate-400">${enc.rivalTime}</span>` : ''}
+                                                    </td>
+                                                    <td class="py-2.5 px-4 text-right font-mono font-bold ${isWin ? 'text-emerald-700 dark:text-emerald-400' : 'text-slate-400'}">
+                                                        ${deltaText}
+                                                    </td>
+                                                    <td class="py-2.5 px-4 text-center">
+                                                        ${resultBadge}
+                                                    </td>
+                                                </tr>
+                                            `;
+                                        }).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    `;
+                };
+
+                // Search Autocomplete Handler
+                const searchInput = document.getElementById('rival-search-input');
+                const dropdown = document.getElementById('rival-search-dropdown');
+
+                if (searchInput && dropdown) {
+                    searchInput.addEventListener('input', (e) => {
+                        const q = e.target.value.trim().toLowerCase();
+                        if (!q || q.length < 2) {
+                            dropdown.classList.add('hidden');
+                            return;
+                        }
+
+                        // Search among all competitors who have raced with target athlete, or all competitors
+                        const matches = sortedCompetitors.filter(c => c.name.toLowerCase().includes(q)).slice(0, 8);
+                        if (matches.length === 0) {
+                            dropdown.innerHTML = `<div class="p-3 text-slate-400 font-mono text-center">No shared competitors found</div>`;
+                        } else {
+                            dropdown.innerHTML = matches.map(c => `
+                                <div class="p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer flex items-center justify-between rival-dropdown-item" data-rival="${encodeURIComponent(c.name)}">
+                                    <div>
+                                        <span class="font-bold text-slate-900 dark:text-slate-100 block">${c.name}</span>
+                                        <span class="text-[10px] text-slate-400 font-mono">${c.club}</span>
+                                    </div>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                                        ${c.together} races
+                                    </span>
+                                </div>
+                            `).join('');
+
+                            dropdown.querySelectorAll('.rival-dropdown-item').forEach(item => {
+                                item.addEventListener('click', () => {
+                                    currentRivalName = decodeURIComponent(item.dataset.rival);
+                                    searchInput.value = '';
+                                    dropdown.classList.add('hidden');
+                                    renderFrequentPills();
+                                    renderScoreboard(currentRivalName);
+                                    scoreboardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                });
+                            });
+                        }
+                        dropdown.classList.remove('hidden');
+                    });
+
+                    document.addEventListener('click', (e) => {
+                        if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+                            dropdown.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Initial render with #1 rival
+                renderFrequentPills();
+                renderScoreboard(currentRivalName);
+            };
+
+            initRivalryEngine();
         })();
     </script>
 </body>

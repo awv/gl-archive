@@ -278,7 +278,34 @@ function initSearchPalette() {
             c.club.toLowerCase().includes(query)
         ).slice(0, 5);
 
+        // Match venues
+        const venuesData = window.VENUE_PROFILES || [];
+        const matchedVenues = venuesData.filter(v =>
+            v.name.toLowerCase().includes(query) || (v.region && v.region.toLowerCase().includes(query))
+        ).slice(0, 3);
+
         let html = '';
+
+        if (matchedVenues.length > 0) {
+            html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Courses & Venues</div>`;
+            html += matchedVenues.map(v => `
+                <a href="venues.html" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
+                    <div>
+                        <div class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                            📍 ${v.name}
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">
+                            ${v.region} • ${v.tagline}
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">
+                            ${v.fixture_count} fixtures
+                        </span>
+                    </div>
+                </a>
+            `).join('');
+        }
 
         if (matchedRunners.length > 0) {
             html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Athletes</div>`;
@@ -327,8 +354,8 @@ function initSearchPalette() {
             `).join('');
         }
 
-        if (matchedRunners.length === 0 && matchedClubs.length === 0) {
-            html = `<div class="p-6 text-center text-xs text-slate-400">No athletes or clubs found matching "${query}".</div>`;
+        if (matchedRunners.length === 0 && matchedClubs.length === 0 && matchedVenues.length === 0) {
+            html = `<div class="p-6 text-center text-xs text-slate-400">No athletes, clubs, or courses found matching "${query}".</div>`;
         }
 
         resultsContainer.innerHTML = html;
