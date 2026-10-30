@@ -1,4 +1,3 @@
-// Auto-generated verified name changes registry
 window.glNameChanges = {
   "Alaw Beynon-Thomas": {
     "primary_name": "Alaw Evans",
@@ -86,6 +85,46 @@ window.glNameChanges = {
     "club": "Parc Bryn Bach Running Club",
     "effective_season": "2021/2022",
     "note": "Formerly competed as Rachel Lewis-Burr",
+    "confirmed": true
+  },
+  "Ellen Harrison": {
+    "primary_name": "Ellen Raymond",
+    "maiden_name": "Ellen Harrison",
+    "club": "Bristol and West Athletic Club",
+    "effective_season": "2025/2026",
+    "note": "Formerly competed as Ellen Harrison",
+    "confirmed": true
+  },
+  "Cath Tailby": {
+    "primary_name": "Cath Barker",
+    "maiden_name": "Cath Tailby",
+    "club": "Penarth and Dinas Runners",
+    "effective_season": "2021/2022",
+    "note": "Formerly competed as Cath Tailby",
+    "confirmed": true
+  },
+  "Cez Probert": {
+    "primary_name": "Cez Palser",
+    "maiden_name": "Cez Probert",
+    "club": "Les Croupiers Running Club",
+    "effective_season": "2023/2024",
+    "note": "Formerly competed as Cez Probert",
+    "confirmed": true
+  },
+  "Georgie Parnell": {
+    "primary_name": "Georgie Dobbs",
+    "maiden_name": "Georgie Parnell",
+    "club": "Newport Harriers",
+    "effective_season": "2024/2025",
+    "note": "Formerly competed as Georgie Parnell",
+    "confirmed": true
+  },
+  "Emma Price-Stevens": {
+    "primary_name": "Emma Bagley",
+    "maiden_name": "Emma Price-Stevens",
+    "club": "Fairwater Runners",
+    "effective_season": "2022/2023",
+    "note": "Formerly competed as Emma Price-Stevens",
     "confirmed": true
   }
 };
