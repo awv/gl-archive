@@ -43,6 +43,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/club_profiles.js"></script>
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
@@ -91,32 +92,42 @@
                 </div>
             </div>
 
-            <!-- Controls: Search Input & Sort Options -->
-            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+            <!-- Controls: Search Input, Quick Filters & Sort Options -->
+            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
                 <div class="relative flex-grow max-w-md">
                     <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </div>
-                    <input type="text" id="club-search" placeholder="Search clubs by name or alias..." 
+                    <input type="text" id="club-search" placeholder="Search clubs by name or kit description..." 
                         class="w-full pl-10 pr-4 py-2 text-xs bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 </div>
 
-                <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 text-xs font-mono">
-                    <span class="text-slate-400 text-[11px] uppercase tracking-wider shrink-0 hidden md:inline">Sort:</span>
-                    <button data-sort="turnout" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 transition-colors shrink-0">
-                        Most Finishes
-                    </button>
-                    <button data-sort="active" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
-                        Active Team
-                    </button>
-                    <button data-sort="wins" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
-                        Category Wins
-                    </button>
-                    <button data-sort="alpha" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
-                        A–Z
-                    </button>
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Quick Roster Filter Pills -->
+                    <div class="flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-xs font-mono font-semibold shrink-0">
+                        <button data-filter="all" class="filter-btn px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-xs">All Teams</button>
+                        <button data-filter="active" class="filter-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900">Active '25/'26</button>
+                        <button data-filter="top25" class="filter-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900">Top 25 Turnout</button>
+                    </div>
+
+                    <!-- Sort Options -->
+                    <div class="flex items-center gap-1.5 overflow-x-auto text-xs font-mono">
+                        <span class="text-slate-400 text-[11px] uppercase tracking-wider shrink-0 hidden md:inline">Sort:</span>
+                        <button data-sort="turnout" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 transition-colors shrink-0">
+                            Most Finishes
+                        </button>
+                        <button data-sort="active" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
+                            Active Team
+                        </button>
+                        <button data-sort="wins" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
+                            Category Wins
+                        </button>
+                        <button data-sort="alpha" class="sort-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shrink-0">
+                            A–Z
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,6 +212,7 @@
             document.getElementById('hero-active-clubs').textContent = activeClubsCount;
 
             let currentSort = 'turnout';
+            let currentFilter = 'all';
             let currentSearch = '';
 
             const gridContainer = document.getElementById('clubs-grid');
@@ -208,15 +220,86 @@
             const countDisplay = document.getElementById('club-showing-count');
             const sortDesc = document.getElementById('sort-description');
             const sortButtons = document.querySelectorAll('.sort-btn');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const profiles = window.glClubProfiles || {};
 
-            function getSortedFilteredClubs() {
-                let filtered = clubsArray;
-
-                if (currentSearch.trim()) {
-                    const q = currentSearch.toLowerCase().trim();
-                    filtered = filtered.filter(c => c.name.toLowerCase().includes(q));
+            function renderMiniVest(meta, isVerified) {
+                if (!isVerified || !meta) {
+                    // Dignified neutral running singlet for unverified clubs (no guessed colours)
+                    return `
+                        <svg class="w-8 h-9 shrink-0 drop-shadow-xs" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Athletic Club Vest">
+                            <path d="M10 2C10 4 12 6 16 6C20 6 22 4 22 2L29 5L26 13C25 13 24 14 24 16L25 34H7L8 16C8 14 7 13 6 13L3 5L10 2Z" fill="#334155" />
+                            <path d="M10 2C10 4 12 6 16 6C20 6 22 4 22 2" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+                            <path d="M3 5L6 13" stroke="#64748b" stroke-width="1"/>
+                            <path d="M29 5L26 13" stroke="#64748b" stroke-width="1"/>
+                        </svg>
+                    `;
                 }
 
+                const pri = meta.primary || '#334155';
+                const sec = meta.secondary || meta.primary;
+                const acc = meta.accent || '#ffffff';
+                const style = meta.vestStyle || 'horizontal-band';
+
+                let pattern = '';
+                if (style === 'horizontal-band' || style === 'hoop' || style === 'dual-stripe') {
+                    pattern = `<path d="M7 17H25V23H7V17Z" fill="${sec}" />`;
+                } else if (style === 'dual-hoop') {
+                    pattern = `
+                        <path d="M7 15H25V18.5H7V15Z" fill="${sec}" />
+                        <path d="M7 21H25V24.5H7V21Z" fill="${sec}" />
+                    `;
+                } else if (style === 'vertical-stripes') {
+                    pattern = `
+                        <path d="M11 5L11 34H14L14 6Z" fill="${sec}" />
+                        <path d="M18 6L18 34H21L21 5Z" fill="${sec}" />
+                    `;
+                } else if (style === 'quarters') {
+                    pattern = `
+                        <path d="M16 6L16 34H25L24 16C24 14 25 13 26 13L29 5L22 2C22 4 20 6 16 6Z" fill="${sec}" />
+                    `;
+                } else if (style === 'diagonal-sash') {
+                    pattern = `
+                        <path d="M7 29L25 10V15L12 29H7Z" fill="${sec}" />
+                    `;
+                }
+
+                return `
+                    <svg class="w-8 h-9 shrink-0 drop-shadow-sm" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${meta.short || 'Club'} Racing Vest">
+                        <path d="M10 2C10 4 12 6 16 6C20 6 22 4 22 2L29 5L26 13C25 13 24 14 24 16L25 34H7L8 16C8 14 7 13 6 13L3 5L10 2Z" fill="${pri}" />
+                        ${pattern}
+                        <path d="M10 2C10 4 12 6 16 6C20 6 22 4 22 2" stroke="${acc}" stroke-width="1.1" stroke-linecap="round"/>
+                        <path d="M3 5L6 13" stroke="${acc}" stroke-width="1"/>
+                        <path d="M29 5L26 13" stroke="${acc}" stroke-width="1"/>
+                    </svg>
+                `;
+            }
+
+            function getSortedFilteredClubs() {
+                let filtered = [...clubsArray];
+
+                // Search query filter (matches club name or kit description)
+                if (currentSearch.trim()) {
+                    const q = currentSearch.toLowerCase().trim();
+                    filtered = filtered.filter(c => {
+                        const meta = profiles[c.name];
+                        const matchName = c.name.toLowerCase().includes(q);
+                        const matchKit = meta && meta.description && meta.description.toLowerCase().includes(q);
+                        return matchName || matchKit;
+                    });
+                }
+
+                // Quick Category Roster filter
+                if (currentFilter === 'active') {
+                    filtered = filtered.filter(c => c.activeSeasonRunners.size > 0);
+                } else if (currentFilter === 'top25') {
+                    const top25Names = new Set(
+                        [...clubsArray].sort((a, b) => b.totalFinishes - a.totalFinishes).slice(0, 25).map(c => c.name)
+                    );
+                    filtered = filtered.filter(c => top25Names.has(c.name));
+                }
+
+                // Sort
                 if (currentSort === 'turnout') {
                     filtered.sort((a, b) => b.totalFinishes - a.totalFinishes);
                 } else if (currentSort === 'active') {
@@ -250,53 +333,83 @@
                         ? `${c.firstYear}–${c.lastYear + 1}` 
                         : `${c.seasons.size} seasons`;
 
+                    const isVerified = Boolean(c.name && profiles[c.name]);
+                    const meta = isVerified ? profiles[c.name] : null;
+
+                    // Top ribbon: dual colour for verified clubs, subtle border for unverified
+                    const ribbonHtml = isVerified 
+                        ? `<div class="h-1.5 w-full flex shrink-0">
+                               <div class="flex-1 h-full" style="background-color: ${meta.primary};"></div>
+                               <div class="flex-1 h-full" style="background-color: ${meta.secondary};"></div>
+                           </div>`
+                        : `<div class="h-1 w-full bg-slate-200 dark:bg-slate-800 shrink-0"></div>`;
+
+                    const vestSvg = renderMiniVest(meta, isVerified);
+                    const kitDescription = isVerified && meta.description 
+                        ? `<span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono block mt-0.5 truncate" title="${meta.description}">${meta.description}</span>`
+                        : `<span class="text-[10px] text-slate-400/70 dark:text-slate-500 font-mono block mt-0.5">${yearsSpan}</span>`;
+
+                    const hoverBorderColor = isVerified ? meta.primary : 'rgba(52, 211, 153, 0.5)';
+
                     const cardHtml = `
                         <a href="club.html?club=${encodeURIComponent(c.name)}" 
-                           class="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-500 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:shadow-emerald-950/20 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden">
+                           class="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
+                           style="--hover-border: ${hoverBorderColor};"
+                           onmouseenter="this.style.borderColor='${hoverBorderColor}'"
+                           onmouseleave="this.style.borderColor=''">
                             
-                            <!-- Subtle top accent line -->
-                            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            ${ribbonHtml}
 
-                            <div>
-                                <!-- Header Badges -->
-                                <div class="flex items-center justify-between gap-2 mb-3">
-                                    <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold px-2 py-0.5 rounded ${
-                                        isActive 
-                                            ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800' 
-                                            : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
-                                    }">
-                                        <span class="w-1.5 h-1.5 rounded-full ${isActive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}"></span>
-                                        ${isActive ? `Active '25/'26` : 'Historic Team'}
-                                    </span>
+                            <div class="p-5 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <!-- Header Badges -->
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold px-2 py-0.5 rounded ${
+                                            isActive 
+                                                ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800' 
+                                                : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
+                                        }">
+                                            <span class="w-1.5 h-1.5 rounded-full ${isActive ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}"></span>
+                                            ${isActive ? `Active '25/'26` : 'Historic Team'}
+                                        </span>
 
-                                    <span class="text-[10px] font-mono font-medium text-slate-400">
-                                        ${yearsSpan}
-                                    </span>
+                                        <span class="text-[10px] font-mono font-medium text-slate-400">
+                                            ${c.seasons.size} campaigns
+                                        </span>
+                                    </div>
+
+                                    <!-- Club Title & Mini Vest -->
+                                    <div class="flex items-start gap-3 mt-1">
+                                        <div class="p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shrink-0">
+                                            ${vestSvg}
+                                        </div>
+                                        <div class="min-w-0 flex-1">
+                                            <h2 class="text-base font-bold font-serif text-slate-900 dark:text-slate-100 tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                                                ${c.name}
+                                            </h2>
+                                            ${kitDescription}
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <!-- Club Title -->
-                                <h2 class="text-lg font-bold font-serif text-slate-900 dark:text-slate-100 tracking-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2">
-                                    ${c.name}
-                                </h2>
-                            </div>
-
-                            <!-- Metrics Grid -->
-                            <div class="grid grid-cols-3 gap-2 pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 font-mono text-left">
-                                <div>
-                                    <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Finishes</span>
-                                    <span class="text-base font-black text-slate-900 dark:text-slate-100 block mt-0.5">${c.totalFinishes.toLocaleString()}</span>
-                                </div>
-                                <div>
-                                    <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Active</span>
-                                    <span class="text-base font-black ${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'} block mt-0.5">
-                                        ${c.activeSeasonRunners.size}
-                                    </span>
-                                </div>
-                                <div>
-                                    <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Cat Wins</span>
-                                    <span class="text-base font-black ${c.catWins > 0 ? 'text-amber-500' : 'text-slate-400'} block mt-0.5">
-                                        ${c.catWins}
-                                    </span>
+                                <!-- Metrics Grid -->
+                                <div class="grid grid-cols-3 gap-2 pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 font-mono text-left">
+                                    <div>
+                                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Finishes</span>
+                                        <span class="text-base font-black text-slate-900 dark:text-slate-100 block mt-0.5">${c.totalFinishes.toLocaleString()}</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Active</span>
+                                        <span class="text-base font-black ${isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'} block mt-0.5">
+                                            ${c.activeSeasonRunners.size}
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-wider">Cat Wins</span>
+                                        <span class="text-base font-black ${c.catWins > 0 ? 'text-amber-500' : 'text-slate-400'} block mt-0.5">
+                                            ${c.catWins}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </a>
@@ -309,6 +422,18 @@
             searchInput.addEventListener('input', (e) => {
                 currentSearch = e.target.value;
                 renderClubs();
+            });
+
+            // Filter button listeners
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => {
+                        b.className = 'filter-btn px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-colors';
+                    });
+                    btn.className = 'filter-btn px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-xs font-bold transition-colors';
+                    currentFilter = btn.dataset.filter;
+                    renderClubs();
+                });
             });
 
             // Sort event listeners

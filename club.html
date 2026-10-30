@@ -314,44 +314,69 @@
             const bcName = document.getElementById('club-breadcrumb-name');
             if (bcName) bcName.textContent = targetClub;
 
-            // 0. CLUB VISUAL IDENTITY, COLOURS & BANNER
+            // 0. CLUB VISUAL IDENTITY, COLOURS & BANNER (Verified Profiles Only)
             const profiles = window.glClubProfiles || {};
-            const clubMeta = profiles[targetClub] || {
-                short: targetClub,
-                primary: "#004942",   // Default Gwent Green
-                secondary: "#903A3D", // Default Gwent Maroon
-                accent: "#ffffff",
-                vestStyle: "dual-stripe",
-                banner: ""
-            };
+            const isVerified = Boolean(targetClub && profiles[targetClub]);
+            const clubMeta = isVerified ? profiles[targetClub] : null;
 
-            // Set CSS custom properties on root
-            document.documentElement.style.setProperty('--club-primary', clubMeta.primary);
-            document.documentElement.style.setProperty('--club-secondary', clubMeta.secondary);
-            document.documentElement.style.setProperty('--club-accent', clubMeta.accent || '#ffffff');
+            // Set CSS custom properties or neutral defaults
+            const primaryColor = isVerified ? clubMeta.primary : '#334155';
+            const secondaryColor = isVerified ? clubMeta.secondary : '#475569';
+            const accentColor = isVerified ? (clubMeta.accent || '#ffffff') : '#94a3b8';
 
-            // Set Ribbon & Ambient Glows
+            document.documentElement.style.setProperty('--club-primary', primaryColor);
+            document.documentElement.style.setProperty('--club-secondary', secondaryColor);
+            document.documentElement.style.setProperty('--club-accent', accentColor);
+
+            // Ribbon: only show dual-colour racing ribbon if club colors are verified
+            const ribbonEl = document.getElementById('club-racing-ribbon');
             const ribbonPri = document.getElementById('club-ribbon-primary');
             const ribbonSec = document.getElementById('club-ribbon-secondary');
-            if (ribbonPri) ribbonPri.style.backgroundColor = clubMeta.primary;
-            if (ribbonSec) ribbonSec.style.backgroundColor = clubMeta.secondary;
+            if (isVerified) {
+                if (ribbonPri) ribbonPri.style.backgroundColor = clubMeta.primary;
+                if (ribbonSec) ribbonSec.style.backgroundColor = clubMeta.secondary;
+            } else if (ribbonEl) {
+                ribbonEl.classList.add('hidden');
+            }
 
+            // Ambient Glows
             const ambPri = document.getElementById('club-ambient-primary');
             const ambSec = document.getElementById('club-ambient-secondary');
-            if (ambPri) ambPri.style.backgroundColor = clubMeta.primary;
-            if (ambSec) ambSec.style.backgroundColor = clubMeta.secondary;
+            if (isVerified) {
+                if (ambPri) ambPri.style.backgroundColor = clubMeta.primary;
+                if (ambSec) ambSec.style.backgroundColor = clubMeta.secondary;
+            } else {
+                if (ambPri) ambPri.style.backgroundColor = '#1e293b';
+                if (ambSec) ambSec.style.backgroundColor = '#0f172a';
+            }
 
             const catPill = document.getElementById('club-category-pill');
-            if (catPill) catPill.style.borderColor = clubMeta.primary;
+            if (catPill) {
+                catPill.style.borderColor = isVerified ? clubMeta.primary : '#475569';
+            }
 
             const statWinsCard = document.getElementById('stat-card-wins');
-            if (statWinsCard) statWinsCard.style.borderLeftColor = clubMeta.secondary || clubMeta.primary;
+            if (statWinsCard) {
+                statWinsCard.style.borderLeftColor = isVerified ? (clubMeta.secondary || clubMeta.primary) : '#f59e0b';
+            }
 
-            function renderClubVest(meta) {
-                const pri = meta.primary || '#004942';
-                const sec = meta.secondary || '#903A3D';
+            function renderClubVest(meta, verified) {
+                if (!verified || !meta) {
+                    // Clean, dignified neutral athletic singlet (no unverified colours)
+                    return `
+                        <svg class="w-10 h-11 shrink-0 drop-shadow-sm" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Athletic Club Vest">
+                            <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" fill="#334155" />
+                            <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2" stroke="#64748b" stroke-width="1.3" stroke-linecap="round"/>
+                            <path d="M4 6L7 16" stroke="#64748b" stroke-width="1.3"/>
+                            <path d="M36 6L33 16" stroke="#64748b" stroke-width="1.3"/>
+                        </svg>
+                    `;
+                }
+
+                const pri = meta.primary || '#334155';
+                const sec = meta.secondary || meta.primary;
                 const acc = meta.accent || '#ffffff';
-                const style = meta.vestStyle || 'dual-stripe';
+                const style = meta.vestStyle || 'horizontal-band';
 
                 let pattern = '';
                 if (style === 'dual-stripe' || style === 'horizontal-band' || style === 'hoop') {
@@ -393,12 +418,12 @@
             // Render Racing Singlet / Vest SVG
             const vestBadge = document.getElementById('club-vest-badge');
             if (vestBadge) {
-                vestBadge.innerHTML = renderClubVest(clubMeta);
+                vestBadge.innerHTML = renderClubVest(clubMeta, isVerified);
             }
 
             // Banner Image setup
             const bannerImg = document.getElementById('club-banner-img');
-            if (bannerImg && clubMeta.banner) {
+            if (bannerImg && isVerified && clubMeta.banner) {
                 bannerImg.src = clubMeta.banner;
                 bannerImg.classList.remove('hidden');
                 bannerImg.onload = () => {
