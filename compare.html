@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head-to-Head Rivalry Comparator • Gwent Cross Country League</title>
+    <meta name="description" content="Compare career head-to-head records between any two athletes across 15 seasons of the Gwent Cross Country League.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gwent: {
+                            green: "#004942",
+                            "green-light": "#00685e",
+                            maroon: "#903A3D",
+                            "maroon-light": "#ab484c"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="data.js"></script>
+    <script src="site-layout.js"></script>
+</head>
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950 transition-colors">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- COMPARATOR HERO HEADER -->
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-slate-900 dark:text-slate-100 font-bold">Rivalry Comparator</span>
+            </nav>
+
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-slate-900 dark:bg-slate-800 text-white">
+                    <span>Direct Matchup Intelligence</span>
+                    <span>•</span>
+                    <span class="text-emerald-400">Lifetime Cross-Country Battles</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-serif font-black text-slate-900 dark:text-slate-100 tracking-tight">
+                    Head-to-Head Comparator
+                </h1>
+                <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-medium max-w-2xl leading-relaxed">
+                    Compare any two athletes across 71 fixtures since 2010. Settle the score on lifetime records, average margins, and course-by-course supremacy.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-10">
+
+        <!-- DUAL ATHLETE SELECTOR CARD -->
+        <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                <!-- Athlete A Input -->
+                <div class="md:col-span-5 relative">
+                    <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1.5">
+                        First Athlete (Runner A)
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="input-athlete-a" placeholder="Type athlete name..." autocomplete="off"
+                            class="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl font-medium text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                        <span class="absolute left-3 top-2.5 text-xs">🏃</span>
+                    </div>
+                    <div id="dropdown-a" class="hidden absolute top-full left-0 right-0 mt-1 max-h-56 overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl z-50 divide-y divide-slate-100 dark:divide-slate-800 text-xs"></div>
+                </div>
+
+                <!-- Swap Button -->
+                <div class="md:col-span-2 flex justify-center pt-4 md:pt-0">
+                    <button type="button" id="btn-swap-athletes" aria-label="Swap athletes" title="Swap athletes"
+                        class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors border border-slate-200 dark:border-slate-700">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Athlete B Input -->
+                <div class="md:col-span-5 relative">
+                    <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1.5">
+                        Second Athlete (Runner B)
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="input-athlete-b" placeholder="Type athlete name..." autocomplete="off"
+                            class="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl font-medium text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        <span class="absolute left-3 top-2.5 text-xs">🏃</span>
+                    </div>
+                    <div id="dropdown-b" class="hidden absolute top-full left-0 right-0 mt-1 max-h-56 overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl z-50 divide-y divide-slate-100 dark:divide-slate-800 text-xs"></div>
+                </div>
+            </div>
+
+            <!-- Quick Matchup Pills -->
+            <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-2">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Featured Matchups:</span>
+                <button type="button" class="quick-match-pill text-xs font-mono font-medium px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-a="Phillip Matthews" data-b="Daniel Bodman">
+                    Phil Matthews vs Daniel Bodman (44 races)
+                </button>
+                <button type="button" class="quick-match-pill text-xs font-mono font-medium px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-a="Lauren Cooper" data-b="Alaw Evans">
+                    Lauren Cooper vs Alaw Evans (19 races)
+                </button>
+                <button type="button" class="quick-match-pill text-xs font-mono font-medium px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" data-a="Dewi Griffiths" data-b="Owain Jones">
+                    Dewi Griffiths vs Owain Jones (12 races)
+                </button>
+            </div>
+        </section>
+
+        <!-- SCOREBOARD CONTAINER -->
+        <section id="compare-result-container" class="space-y-8">
+            <!-- Populated dynamically -->
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <!-- RUNTIME LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const allData = window.glResults || [];
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const inputA = document.getElementById('input-athlete-a');
+            const inputB = document.getElementById('input-athlete-b');
+            const dropdownA = document.getElementById('dropdown-a');
+            const dropdownB = document.getElementById('dropdown-b');
+            const btnSwap = document.getElementById('btn-swap-athletes');
+            const resultContainer = document.getElementById('compare-result-container');
+
+            // Unique athlete names map
+            const athletesMap = new Map();
+            allData.forEach(r => {
+                if (r.athlete && r.pos > 0) {
+                    if (!athletesMap.has(r.athlete)) {
+                        athletesMap.set(r.athlete, { name: r.athlete, club: r.club, finishes: 1 });
+                    } else {
+                        athletesMap.get(r.athlete).finishes++;
+                    }
+                }
+            });
+            const allAthletes = Array.from(athletesMap.values()).sort((a, b) => b.finishes - a.finishes);
+
+            let currentA = urlParams.get('a1') || urlParams.get('athlete1') || 'Phillip Matthews';
+            let currentB = urlParams.get('a2') || urlParams.get('athlete2') || 'Daniel Bodman';
+
+            inputA.value = currentA;
+            inputB.value = currentB;
+
+            function updateUrl() {
+                const newUrl = `compare.html?a1=${encodeURIComponent(currentA)}&a2=${encodeURIComponent(currentB)}`;
+                window.history.replaceState({}, '', newUrl);
+            }
+
+            function setupAutocomplete(input, dropdown, onSelect) {
+                input.addEventListener('input', (e) => {
+                    const q = e.target.value.trim().toLowerCase();
+                    if (!q || q.length < 2) {
+                        dropdown.classList.add('hidden');
+                        return;
+                    }
+                    const matches = allAthletes.filter(a => a.name.toLowerCase().includes(q)).slice(0, 8);
+                    if (matches.length === 0) {
+                        dropdown.innerHTML = `<div class="p-3 text-slate-400 font-mono text-center">No athletes found</div>`;
+                    } else {
+                        dropdown.innerHTML = matches.map(a => `
+                            <div class="p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer flex items-center justify-between match-item" data-name="${encodeURIComponent(a.name)}">
+                                <div>
+                                    <span class="font-bold text-slate-900 dark:text-slate-100 block">${a.name}</span>
+                                    <span class="text-[10px] text-slate-400 font-mono">${a.club}</span>
+                                </div>
+                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                    ${a.finishes} races
+                                </span>
+                            </div>
+                        `).join('');
+
+                        dropdown.querySelectorAll('.match-item').forEach(item => {
+                            item.addEventListener('click', () => {
+                                const name = decodeURIComponent(item.dataset.name);
+                                input.value = name;
+                                dropdown.classList.add('hidden');
+                                onSelect(name);
+                            });
+                        });
+                    }
+                    dropdown.classList.remove('hidden');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+                        dropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            setupAutocomplete(inputA, dropdownA, (name) => {
+                currentA = name;
+                updateUrl();
+                compareAthletes();
+            });
+
+            setupAutocomplete(inputB, dropdownB, (name) => {
+                currentB = name;
+                updateUrl();
+                compareAthletes();
+            });
+
+            btnSwap.addEventListener('click', () => {
+                const temp = currentA;
+                currentA = currentB;
+                currentB = temp;
+                inputA.value = currentA;
+                inputB.value = currentB;
+                updateUrl();
+                compareAthletes();
+            });
+
+            document.querySelectorAll('.quick-match-pill').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentA = btn.dataset.a;
+                    currentB = btn.dataset.b;
+                    inputA.value = currentA;
+                    inputB.value = currentB;
+                    updateUrl();
+                    compareAthletes();
+                });
+            });
+
+            function parseTimeToSeconds(tStr) {
+                if (!tStr) return null;
+                const parts = tStr.split(':').map(Number);
+                if (parts.length === 2) return parts[0] * 60 + parts[1];
+                if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+                const num = parseFloat(tStr);
+                return isNaN(num) ? null : num;
+            }
+
+            function formatSeconds(sec) {
+                const absSec = Math.abs(sec);
+                const m = Math.floor(absSec / 60);
+                const s = Math.round(absSec % 60);
+                const str = m > 0 ? `${m}m ${s.toString().padStart(2, '0')}s` : `${s}s`;
+                return (sec >= 0 ? `+${str}` : `-${str}`);
+            }
+
+            function compareAthletes() {
+                if (!currentA || !currentB) {
+                    resultContainer.innerHTML = `
+                        <div class="p-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-slate-400 font-mono text-xs">
+                            Select both athletes above to compare their head-to-head record.
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Gather records
+                const recordsA = allData.filter(r => r.athlete === currentA && r.pos > 0);
+                const recordsB = allData.filter(r => r.athlete === currentB && r.pos > 0);
+
+                const clubA = recordsA[0]?.club || 'Unattached';
+                const clubB = recordsB[0]?.club || 'Unattached';
+
+                // Map fixtures
+                const fixMapA = {};
+                recordsA.forEach(r => {
+                    fixMapA[`${r.season_key}_m${r.match}_${r.gender}`] = r;
+                });
+
+                const commonMatches = [];
+                let winsA = 0;
+                let winsB = 0;
+                let ties = 0;
+
+                recordsB.forEach(rB => {
+                    const fixKey = `${rB.season_key}_m${rB.match}_${rB.gender}`;
+                    const rA = fixMapA[fixKey];
+                    if (rA) {
+                        let outcome = 'tie';
+                        if (rA.pos < rB.pos) {
+                            winsA++;
+                            outcome = 'A';
+                        } else if (rA.pos > rB.pos) {
+                            winsB++;
+                            outcome = 'B';
+                        } else {
+                            ties++;
+                        }
+                        commonMatches.push({
+                            season: rA.season,
+                            season_key: rA.season_key,
+                            match: rA.match,
+                            gender: rA.gender,
+                            venue: rA.venue,
+                            date: rA.date,
+                            rA: rA,
+                            rB: rB,
+                            outcome: outcome
+                        });
+                    }
+                });
+
+                if (commonMatches.length === 0) {
+                    resultContainer.innerHTML = `
+                        <div class="p-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-slate-400 font-mono text-xs space-y-3">
+                            <span class="text-3xl block">🏁</span>
+                            <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100">Zero Shared Fixtures Found</h3>
+                            <p class="max-w-md mx-auto text-slate-500">
+                                <strong>${currentA}</strong> (${recordsA.length} races) and <strong>${currentB}</strong> (${recordsB.length} races) have never competed in the same official Gwent League fixture race.
+                            </p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                commonMatches.sort((a, b) => b.season_key.localeCompare(a.season_key) || b.match - a.match);
+
+                const total = commonMatches.length;
+                const winPctA = Math.round((winsA / total) * 100);
+                const winPctB = Math.round((winsB / total) * 100);
+
+                // Course breakdown
+                const courseWins = {};
+                commonMatches.forEach(m => {
+                    const v = m.venue || 'Unknown Course';
+                    if (!courseWins[v]) courseWins[v] = { a: 0, b: 0, total: 0 };
+                    courseWins[v].total++;
+                    if (m.outcome === 'A') courseWins[v].a++;
+                    if (m.outcome === 'B') courseWins[v].b++;
+                });
+
+                resultContainer.innerHTML = `
+                    <!-- 1. HEAD-TO-HEAD SCOREBOARD HERO -->
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                            <!-- Athlete A -->
+                            <div class="text-center md:text-left">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block">Runner A</span>
+                                <a href="athlete.html?name=${encodeURIComponent(currentA)}&club=${encodeURIComponent(clubA)}"
+                                   class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors block mt-1">
+                                    ${currentA}
+                                </a>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">${clubA}</p>
+                                <div class="mt-4">
+                                    <span class="text-4xl sm:text-5xl font-serif font-black text-emerald-700 dark:text-emerald-400">${winsA}</span>
+                                    <span class="text-xs font-mono font-bold uppercase text-slate-400 ml-1.5">Victories (${winPctA}%)</span>
+                                </div>
+                            </div>
+
+                            <!-- VS Indicator & Dual Win Bar -->
+                            <div class="flex flex-col items-center justify-center space-y-3">
+                                <span class="px-4 py-1.5 rounded-full text-xs font-mono font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 shadow-xs">
+                                    ${total} Shared Fixtures
+                                </span>
+                                <div class="w-full bg-slate-200 dark:bg-slate-700 h-3.5 rounded-full overflow-hidden flex shadow-inner">
+                                    <div class="bg-emerald-600 h-full transition-all duration-500" style="width: ${winPctA}%;"></div>
+                                    <div class="bg-amber-600 h-full transition-all duration-500" style="width: ${winPctB}%;"></div>
+                                </div>
+                                <div class="flex justify-between w-full text-xs font-mono font-bold text-slate-400 px-1">
+                                    <span class="text-emerald-600">${winPctA}%</span>
+                                    <span class="text-slate-400 font-normal">Head-to-Head</span>
+                                    <span class="text-amber-600">${winPctB}%</span>
+                                </div>
+                            </div>
+
+                            <!-- Athlete B -->
+                            <div class="text-center md:text-right">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Runner B</span>
+                                <a href="athlete.html?name=${encodeURIComponent(currentB)}&club=${encodeURIComponent(clubB)}"
+                                   class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors block mt-1">
+                                    ${currentB}
+                                </a>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">${clubB}</p>
+                                <div class="mt-4">
+                                    <span class="text-4xl sm:text-5xl font-serif font-black text-amber-600 dark:text-amber-400">${winsB}</span>
+                                    <span class="text-xs font-mono font-bold uppercase text-slate-400 ml-1.5">Victories (${winPctB}%)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Dominance Pills -->
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                                Head-to-Head by Course
+                            </span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-xs font-mono">
+                                ${Object.entries(courseWins).map(([course, stats]) => `
+                                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between">
+                                        <span class="truncate font-sans font-medium text-slate-800 dark:text-slate-200">${course}</span>
+                                        <div class="shrink-0 flex items-center gap-1.5 ml-2 font-bold">
+                                            <span class="text-emerald-700 dark:text-emerald-400">${stats.a}</span>
+                                            <span class="text-slate-400">-</span>
+                                            <span class="text-amber-600 dark:text-amber-400">${stats.b}</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. DIRECT RACE-BY-RACE TABLE -->
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                        <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">Dossier</span>
+                                <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100">
+                                    Complete Shared Fixture History (${total} Races)
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                        <th class="py-3 px-4">Season & Match</th>
+                                        <th class="py-3 px-4">Venue & Date</th>
+                                        <th class="py-3 px-4 text-center text-emerald-800 dark:text-emerald-300">${currentA}</th>
+                                        <th class="py-3 px-4 text-center text-amber-700 dark:text-amber-300">${currentB}</th>
+                                        <th class="py-3 px-4 text-right font-mono">Time Delta</th>
+                                        <th class="py-3 px-4 text-center">Outcome</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                                    ${commonMatches.map(m => {
+                                        const isWinA = m.outcome === 'A';
+                                        const isWinB = m.outcome === 'B';
+                                        const sA = parseTimeToSeconds(m.rA.time);
+                                        const sB = parseTimeToSeconds(m.rB.time);
+                                        let deltaText = '—';
+                                        if (sA !== null && sB !== null) {
+                                            const diff = sB - sA;
+                                            deltaText = formatSeconds(diff);
+                                        }
+
+                                        const resUrl = `results.html?season=${encodeURIComponent(m.season_key)}&match=${m.match}&gender=${m.gender}&highlight=${encodeURIComponent(currentA)}`;
+
+                                        return `
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                                <td class="py-3 px-4 font-mono font-semibold">
+                                                    <a href="${resUrl}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
+                                                        ${m.season} Match ${m.match}
+                                                    </a>
+                                                </td>
+                                                <td class="py-3 px-4 text-slate-600 dark:text-slate-300">
+                                                    ${m.venue || '—'}
+                                                    ${m.date ? `<span class="block text-[10px] text-slate-400 font-mono">${m.date}</span>` : ''}
+                                                </td>
+                                                <td class="py-3 px-4 text-center font-mono ${isWinA ? 'font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50/40 dark:bg-emerald-950/20' : 'text-slate-500'}">
+                                                    #${m.rA.pos}
+                                                    ${m.rA.time ? `<span class="block text-[11px] text-slate-400">${m.rA.time}</span>` : ''}
+                                                </td>
+                                                <td class="py-3 px-4 text-center font-mono ${isWinB ? 'font-bold text-amber-600 dark:text-amber-400 bg-amber-50/40 dark:bg-amber-950/20' : 'text-slate-500'}">
+                                                    #${m.rB.pos}
+                                                    ${m.rB.time ? `<span class="block text-[11px] text-slate-400">${m.rB.time}</span>` : ''}
+                                                </td>
+                                                <td class="py-3 px-4 text-right font-mono font-bold ${isWinA ? 'text-emerald-700 dark:text-emerald-400' : (isWinB ? 'text-amber-600 dark:text-amber-400' : 'text-slate-400')}">
+                                                    ${deltaText}
+                                                </td>
+                                                <td class="py-3 px-4 text-center">
+                                                    ${isWinA ? `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">${currentA.split(' ')[0]} Won</span>` : (isWinB ? `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">${currentB.split(' ')[0]} Won</span>` : `<span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-500">Tied</span>`)}
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            compareAthletes();
+        });
+    </script>
+</body>
+</html>
