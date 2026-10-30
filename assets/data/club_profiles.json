@@ -1,0 +1,98 @@
+{
+  "Parc Bryn Bach Running Club": {
+    "short": "Parc Bryn Bach RC",
+    "primary": "#1d4ed8",
+    "secondary": "#dc2626",
+    "accent": "#ffffff",
+    "vestStyle": "dual-stripe",
+    "banner": "assets/img/clubs/banners/parc-bryn-bach.svg"
+  },
+  "Les Croupiers Running Club": {
+    "short": "Les Croups",
+    "primary": "#881337",
+    "secondary": "#ffffff",
+    "accent": "#0f172a",
+    "vestStyle": "hoop",
+    "banner": ""
+  },
+  "Westbury Harriers": {
+    "short": "Westbury Harriers",
+    "primary": "#1e3a8a",
+    "secondary": "#ffffff",
+    "accent": "#ffffff",
+    "vestStyle": "hoop",
+    "banner": ""
+  },
+  "Bristol and West Athletic Club": {
+    "short": "Bristol & West AC",
+    "primary": "#b91c1c",
+    "secondary": "#ffffff",
+    "accent": "#1e293b",
+    "vestStyle": "vertical-stripes",
+    "banner": ""
+  },
+  "Swansea Harriers Athletic Club": {
+    "short": "Swansea Harriers",
+    "primary": "#047857",
+    "secondary": "#ffffff",
+    "accent": "#047857",
+    "vestStyle": "dual-hoop",
+    "banner": ""
+  },
+  "Lliswerry Runners": {
+    "short": "Lliswerry Runners",
+    "primary": "#2563eb",
+    "secondary": "#ea580c",
+    "accent": "#ffffff",
+    "vestStyle": "dual-stripe",
+    "banner": ""
+  },
+  "Chepstow Harriers": {
+    "short": "Chepstow Harriers",
+    "primary": "#1d4ed8",
+    "secondary": "#eab308",
+    "accent": "#ffffff",
+    "vestStyle": "hoop",
+    "banner": ""
+  },
+  "Neath Harriers": {
+    "short": "Neath Harriers",
+    "primary": "#0f172a",
+    "secondary": "#f59e0b",
+    "accent": "#ffffff",
+    "vestStyle": "hoop",
+    "banner": ""
+  },
+  "Pontypridd Roadents Athletic Club": {
+    "short": "Ponty Roadents",
+    "primary": "#0f172a",
+    "secondary": "#ffffff",
+    "accent": "#dc2626",
+    "vestStyle": "quarters",
+    "banner": ""
+  },
+  "Aberdare Valley AAC": {
+    "short": "Aberdare Valley",
+    "primary": "#0284c7",
+    "secondary": "#ffffff",
+    "accent": "#0f172a",
+    "vestStyle": "hoop",
+    "banner": ""
+  },
+  "San Domenico Road Runners Club": {
+    "short": "San Domenico",
+    "primary": "#3b82f6",
+    "secondary": "#ffffff",
+    "accent": "#f59e0b",
+    "vestStyle": "diagonal-sash",
+    "banner": ""
+  },
+  "Penarth and Dinas Runners": {
+    "short": "Penarth & Dinas",
+    "primary": "#1e40af",
+    "secondary": "#f59e0b",
+    "accent": "#ffffff",
+    "vestStyle": "hoop",
+    "banner": ""
+  }
+}

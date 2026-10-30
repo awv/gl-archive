@@ -43,6 +43,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/club_profiles.js"></script>
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
@@ -51,71 +52,99 @@
     <!-- GLOBAL NAVIGATION CONTAINER -->
     <div id="global-nav"></div>
 
-    <!-- CLUB HERO HEADER -->
-    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <!-- CLUB HERO HEADER (With Dynamic Banner & Official Club Colours) -->
+    <header id="club-hero-header" class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors">
+        
+        <!-- Club Vest Racing Ribbon / Stripe (Dual-tone) -->
+        <div id="club-racing-ribbon" class="relative z-20 h-1.5 w-full flex">
+            <div id="club-ribbon-primary" class="flex-1 h-full" style="background-color: var(--club-primary, #004942);"></div>
+            <div id="club-ribbon-secondary" class="flex-1 h-full" style="background-color: var(--club-secondary, #903A3D);"></div>
+        </div>
+
+        <!-- Banner & Atmosphere Container -->
+        <div id="club-banner-bg" class="absolute inset-0 z-0 overflow-hidden">
+            <!-- Dynamic Banner Image -->
+            <img id="club-banner-img" src="" alt="Club Banner" class="w-full h-full object-cover hidden transition-opacity duration-700 opacity-0" />
+            
+            <!-- Dark Atmospheric Overlay (ensures high contrast for text in both dark & light modes) -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-900/60"></div>
+            <div class="absolute inset-0 bg-slate-950/30"></div>
+            
+            <!-- Club Ambient Radial Glows -->
+            <div id="club-ambient-primary" class="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-25" style="background-color: var(--club-primary, #004942);"></div>
+            <div id="club-ambient-secondary" class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20" style="background-color: var(--club-secondary, #903A3D);"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8">
             <!-- Breadcrumb Navigation -->
-            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
-                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
-                <span>/</span>
-                <a href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Clubs</a>
-                <span>/</span>
-                <span id="club-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Club Profile</span>
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-300 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span class="text-slate-500">/</span>
+                <a href="clubs.html" class="hover:text-white transition-colors">Clubs</a>
+                <span class="text-slate-500">/</span>
+                <span id="club-breadcrumb-name" class="text-white font-bold truncate">Club Profile</span>
             </nav>
 
             <div class="space-y-4">
                 
-                <!-- Category Tag -->
-                <div class="flex items-center gap-2">
-                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2.5 py-1 rounded-md">
+                <!-- Category Tag & Club Kit Badge -->
+                <div class="flex items-center gap-2.5">
+                    <span id="club-category-pill" class="text-xs font-mono font-bold uppercase tracking-widest text-white px-2.5 py-1 rounded-md border shadow-xs" style="background-color: rgba(15, 23, 42, 0.7); border-color: var(--club-primary, #004942);">
                         MEMBER CLUB PROFILE
                     </span>
                     <span class="text-xs font-mono text-slate-400">•</span>
-                    <span id="club-span-badge" class="text-xs font-mono text-slate-500">
+                    <span id="club-span-badge" class="text-xs font-mono text-slate-300">
                         2010–2026 Archive
                     </span>
                 </div>
 
-                <!-- Club Title -->
-                <h1 id="club-title" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-                    Loading Club...
-                </h1>
-
-                <!-- Secondary Metadata -->
-                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
-                    <span id="club-athletes-span">0 RUNNERS REGISTERED</span>
-                    <span>•</span>
-                    <span id="club-seasons-span">0 CAMPAIGNS ACTIVE</span>
-                    <span>•</span>
-                    <span id="club-current-team-span">0 ACTIVE IN 2025/2026</span>
+                <!-- Club Title & Racing Singlet Crest -->
+                <div class="flex items-center gap-4">
+                    <div id="club-vest-badge" class="shrink-0 flex items-center justify-center p-2 rounded-xl bg-slate-900/60 border border-slate-700/60 shadow-lg backdrop-blur-md">
+                        <!-- Dynamically populated SVG Vest -->
+                    </div>
+                    <div>
+                        <h1 id="club-title" class="text-3xl md:text-5xl font-serif font-black text-white tracking-tight leading-tight">
+                            Loading Club...
+                        </h1>
+                        <!-- Secondary Metadata -->
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-300 font-mono mt-1.5">
+                            <span id="club-athletes-span">0 RUNNERS REGISTERED</span>
+                            <span class="text-slate-500">•</span>
+                            <span id="club-seasons-span">0 CAMPAIGNS ACTIVE</span>
+                            <span class="text-slate-500">•</span>
+                            <span id="club-current-team-span">0 ACTIVE IN 2025/2026</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <!-- CLUB TELEMETRY METRIC GRID -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Total Finishes</span>
-                    <span id="stat-turnout" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
+            <!-- CLUB TELEMETRY METRIC GRID (Frosted Glass with Club Accents) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8 pt-6 border-t border-slate-800/80">
+                <div class="club-telemetry-card rounded-xl p-3 border">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Total Finishes</span>
+                    <span id="stat-turnout" class="text-2xl font-bold font-serif text-white block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Men's Finishes</span>
-                    <span id="stat-men-finishes" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
+                <div class="club-telemetry-card rounded-xl p-3 border">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Men's Finishes</span>
+                    <span id="stat-men-finishes" class="text-2xl font-bold font-serif text-white block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Women's Finishes</span>
-                    <span id="stat-women-finishes" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
+                <div class="club-telemetry-card rounded-xl p-3 border">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Women's Finishes</span>
+                    <span id="stat-women-finishes" class="text-2xl font-bold font-serif text-white block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Race Victories</span>
-                    <span id="stat-wins" class="text-2xl font-bold font-serif text-emerald-700 dark:text-emerald-400 block mt-0.5">0</span>
+                <div id="stat-card-wins" class="club-telemetry-card rounded-xl p-3 border border-l-4" style="border-left-color: var(--club-secondary, #dc2626);">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Race Victories</span>
+                    <span id="stat-wins" class="text-2xl font-bold font-serif text-amber-400 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Category Wins</span>
-                    <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-amber-500 block mt-0.5">0</span>
+                <div class="club-telemetry-card rounded-xl p-3 border">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Category Wins</span>
+                    <span id="stat-cat-wins" class="text-2xl font-bold font-serif text-amber-400 block mt-0.5">0</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Active Team</span>
-                    <span id="stat-active-team" class="text-2xl font-bold font-serif text-sky-600 dark:text-sky-400 block mt-0.5">0</span>
+                <div class="club-telemetry-card rounded-xl p-3 border">
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Active Team</span>
+                    <span id="stat-active-team" class="text-2xl font-bold font-serif text-sky-400 block mt-0.5">0</span>
                 </div>
             </div>
         </div>
@@ -285,6 +314,99 @@
             const bcName = document.getElementById('club-breadcrumb-name');
             if (bcName) bcName.textContent = targetClub;
 
+            // 0. CLUB VISUAL IDENTITY, COLOURS & BANNER
+            const profiles = window.glClubProfiles || {};
+            const clubMeta = profiles[targetClub] || {
+                short: targetClub,
+                primary: "#004942",   // Default Gwent Green
+                secondary: "#903A3D", // Default Gwent Maroon
+                accent: "#ffffff",
+                vestStyle: "dual-stripe",
+                banner: ""
+            };
+
+            // Set CSS custom properties on root
+            document.documentElement.style.setProperty('--club-primary', clubMeta.primary);
+            document.documentElement.style.setProperty('--club-secondary', clubMeta.secondary);
+            document.documentElement.style.setProperty('--club-accent', clubMeta.accent || '#ffffff');
+
+            // Set Ribbon & Ambient Glows
+            const ribbonPri = document.getElementById('club-ribbon-primary');
+            const ribbonSec = document.getElementById('club-ribbon-secondary');
+            if (ribbonPri) ribbonPri.style.backgroundColor = clubMeta.primary;
+            if (ribbonSec) ribbonSec.style.backgroundColor = clubMeta.secondary;
+
+            const ambPri = document.getElementById('club-ambient-primary');
+            const ambSec = document.getElementById('club-ambient-secondary');
+            if (ambPri) ambPri.style.backgroundColor = clubMeta.primary;
+            if (ambSec) ambSec.style.backgroundColor = clubMeta.secondary;
+
+            const catPill = document.getElementById('club-category-pill');
+            if (catPill) catPill.style.borderColor = clubMeta.primary;
+
+            const statWinsCard = document.getElementById('stat-card-wins');
+            if (statWinsCard) statWinsCard.style.borderLeftColor = clubMeta.secondary || clubMeta.primary;
+
+            function renderClubVest(meta) {
+                const pri = meta.primary || '#004942';
+                const sec = meta.secondary || '#903A3D';
+                const acc = meta.accent || '#ffffff';
+                const style = meta.vestStyle || 'dual-stripe';
+
+                let pattern = '';
+                if (style === 'dual-stripe' || style === 'horizontal-band' || style === 'hoop') {
+                    pattern = `<path d="M8 20H32V27H8V20Z" fill="${sec}" />`;
+                } else if (style === 'dual-hoop') {
+                    pattern = `
+                        <path d="M8 18H32V22H8V18Z" fill="${sec}" />
+                        <path d="M8 25H32V29H8V25Z" fill="${sec}" />
+                    `;
+                } else if (style === 'vertical-stripes') {
+                    pattern = `
+                        <path d="M14 6L14 42H18L18 7Z" fill="${sec}" />
+                        <path d="M22 7L22 42H26L26 6Z" fill="${sec}" />
+                    `;
+                } else if (style === 'quarters') {
+                    pattern = `
+                        <path d="M20 7L20 42H31L30 20C30 18 31 16 33 16L36 6L28 2C28 5 25 7 20 7Z" fill="${sec}" />
+                    `;
+                } else if (style === 'diagonal-sash') {
+                    pattern = `
+                        <path d="M8 36L32 12V18L14 36H8Z" fill="${sec}" />
+                    `;
+                }
+
+                return `
+                    <svg class="w-10 h-11 shrink-0 drop-shadow-md" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${meta.short || 'Club'} Racing Vest">
+                        <!-- Vest Body -->
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" fill="${pri}" />
+                        <!-- Pattern -->
+                        ${pattern}
+                        <!-- Collar & Trim -->
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2" stroke="${acc}" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M4 6L7 16" stroke="${acc}" stroke-width="1.3"/>
+                        <path d="M36 6L33 16" stroke="${acc}" stroke-width="1.3"/>
+                    </svg>
+                `;
+            }
+
+            // Render Racing Singlet / Vest SVG
+            const vestBadge = document.getElementById('club-vest-badge');
+            if (vestBadge) {
+                vestBadge.innerHTML = renderClubVest(clubMeta);
+            }
+
+            // Banner Image setup
+            const bannerImg = document.getElementById('club-banner-img');
+            if (bannerImg && clubMeta.banner) {
+                bannerImg.src = clubMeta.banner;
+                bannerImg.classList.remove('hidden');
+                bannerImg.onload = () => {
+                    bannerImg.classList.remove('opacity-0');
+                    bannerImg.classList.add('opacity-70');
+                };
+            }
+
             // Filter finishes for this club
             const clubRecords = allData.filter(r => r.club && r.club.toLowerCase() === targetClub.toLowerCase());
 
@@ -399,11 +521,13 @@
             document.getElementById('stat-women-finishes').textContent = womenFinishes.toLocaleString();
             document.getElementById('stat-wins').textContent = raceWins.toLocaleString();
             document.getElementById('stat-cat-wins').textContent = catWins.toLocaleString();
-            document.getElementById('stat-active-squad').textContent = activeRunnersThisSeason.size;
+            const statActiveTeamEl = document.getElementById('stat-active-team') || document.getElementById('stat-active-squad');
+            if (statActiveTeamEl) statActiveTeamEl.textContent = activeRunnersThisSeason.size;
 
             document.getElementById('club-athletes-span').textContent = `${Object.keys(athletesMap).length.toLocaleString()} RUNNERS REGISTERED`;
             document.getElementById('club-seasons-span').textContent = `${seasonsSet.size} CAMPAIGNS ACTIVE`;
-            document.getElementById('club-current-squad-span').textContent = `${activeRunnersThisSeason.size} ACTIVE IN ${currentSeason}`;
+            const clubCurrentTeamEl = document.getElementById('club-current-team-span') || document.getElementById('club-current-squad-span');
+            if (clubCurrentTeamEl) clubCurrentTeamEl.textContent = `${activeRunnersThisSeason.size} ACTIVE IN ${currentSeason}`;
             if (firstYear <= lastYear && firstYear !== 9999) {
                 document.getElementById('club-span-badge').textContent = `${firstYear}–${lastYear + 1} Archive`;
             }
@@ -582,10 +706,16 @@
 
             function setActiveTab(btn) {
                 [btnBoth, btnMen, btnWomen].forEach(b => {
-                    b.className = 'px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900';
+                    b.className = 'px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-colors';
+                    b.style.backgroundColor = '';
+                    b.style.color = '';
                 });
-                btn.className = 'px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-xs';
+                btn.className = 'px-2.5 py-1 rounded-md text-white font-bold shadow-xs transition-colors';
+                btn.style.backgroundColor = clubMeta.primary || '#004942';
             }
+
+            // Initialize active tab styling with club colour
+            setActiveTab(btnBoth);
 
             btnBoth.addEventListener('click', () => {
                 setActiveTab(btnBoth);

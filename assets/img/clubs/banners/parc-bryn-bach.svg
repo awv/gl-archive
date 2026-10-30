@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="45%" stop-color="#1e293b" />
+      <stop offset="85%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Distant Valley Hills -->
+    <linearGradient id="distHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Parc Bryn Bach Lake & Turf -->
+    <linearGradient id="midHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b382b" />
+      <stop offset="100%" stop-color="#0b1e16" />
+    </linearGradient>
+
+    <linearGradient id="lakeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="foreHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#162e24" />
+      <stop offset="100%" stop-color="#09140f" />
+    </linearGradient>
+
+    <!-- Dark Vignette Overlay -->
+    <linearGradient id="vignetteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.5" />
+      <stop offset="40%" stop-color="#020617" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Base -->
+  <rect width="1600" height="500" fill="url(#skyGrad)" />
+
+  <!-- Sun Glow behind hills -->
+  <circle cx="1150" cy="220" r="180" fill="#f59e0b" opacity="0.12" filter="blur(40px)" />
+  <circle cx="1150" cy="220" r="80" fill="#fef08a" opacity="0.08" filter="blur(20px)" />
+
+  <!-- Distant Mountain Ridges (Welsh Valleys / Brecon Beacons fringe) -->
+  <path d="M0 320 Q280 180 580 260 T1100 200 Q1350 150 1600 240 L1600 500 L0 500 Z" fill="url(#distHillGrad)" />
+  <path d="M0 340 Q350 240 750 300 Q1150 230 1600 310 L1600 500 L0 500 Z" fill="#13232f" opacity="0.85" />
+
+  <!-- Midground Rolling Terrain -->
+  <path d="M0 370 Q300 310 650 360 Q1050 280 1600 380 L1600 500 L0 500 Z" fill="url(#midHillGrad)" />
+
+  <!-- Parc Bryn Bach Lake Water Feature -->
+  <ellipse cx="980" cy="410" rx="420" ry="45" fill="url(#lakeGrad)" />
+  <path d="M600 415 Q950 405 1380 412 Q1250 435 720 425 Z" fill="#0284c7" opacity="0.15" />
+
+  <!-- Foreground XC Cross Country Turf Ridge -->
+  <path d="M0 420 Q220 370 520 410 Q850 360 1200 420 Q1450 390 1600 430 L1600 500 L0 500 Z" fill="url(#foreHillGrad)" />
+
+  <!-- Silhouette of Cross Country Runners along ridge -->
+  <g fill="#020617" opacity="0.85" transform="translate(680, 325) scale(0.65)">
+    <!-- Runner 1 (Leading) -->
+    <g transform="translate(180, 0)">
+      <circle cx="10" cy="8" r="4" />
+      <path d="M6 14 L12 24 L20 36 M12 24 L4 34 M10 12 L18 18 L24 14 M10 12 L2 18" stroke="#020617" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Runner 2 (Chasing) -->
+    <g transform="translate(110, 8)">
+      <circle cx="10" cy="8" r="4" />
+      <path d="M8 14 L11 25 L5 37 M11 25 L19 35 M9 12 L16 19 M9 12 L3 16" stroke="#020617" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Runner 3 (Pack) -->
+    <g transform="translate(40, 14)">
+      <circle cx="10" cy="8" r="4" />
+      <path d="M7 14 L12 24 L18 36 M12 24 L6 34 M10 12 L17 17 M10 12 L2 17" stroke="#020617" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Course Marker Flag -->
+    <path d="M260 20 L260 55 M260 20 L275 27 L260 34" stroke="#dc2626" stroke-width="2" fill="#dc2626" />
+  </g>
+
+  <!-- Full Vignette & Mood Shading -->
+  <rect width="1600" height="500" fill="url(#vignetteGrad)" />
+</svg>

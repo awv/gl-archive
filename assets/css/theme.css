@@ -428,3 +428,38 @@ html.dark .hero-atmosphere {
     background: radial-gradient(circle at 30% -15%, rgba(0, 73, 66, 0.18) 0%, transparent 60%),
                 radial-gradient(circle at 70% -15%, rgba(144, 58, 61, 0.14) 0%, transparent 60%);
 }
+
+/* Club Page Visual Identity & Theming */
+#club-hero-header {
+    background-color: #090e17;
+    color: #ffffff;
+}
+
+#club-hero-header .text-slate-900,
+#club-hero-header .text-slate-800 {
+    color: #ffffff !important;
+}
+
+#club-hero-header .text-slate-500,
+#club-hero-header .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+.club-telemetry-card {
+    background-color: rgba(15, 23, 42, 0.65) !important;
+    border-color: rgba(51, 65, 85, 0.7) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.2s ease-in-out;
+}
+
+.club-telemetry-card:hover {
+    border-color: var(--club-primary, #004942) !important;
+    transform: translateY(-1px);
+}
+
+.club-active-tab {
+    background-color: var(--club-primary, #004942) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
