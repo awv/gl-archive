@@ -43,8 +43,49 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        @media print {
+            #global-nav, #global-footer, .no-print,
+            #command-palette, #search-input-box,
+            button, select, input {
+                display: none !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 1.2cm 1.5cm;
+            }
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 10pt !important;
+            }
+            header, main, section, div, table {
+                box-shadow: none !important;
+                border-color: #cbd5e1 !important;
+            }
+            .print-only-club-header {
+                display: block !important;
+                border-bottom: 2px solid #004942;
+                padding-bottom: 8px;
+                margin-bottom: 16px;
+            }
+            .print-only-club-footer {
+                display: block !important;
+                border-top: 1px solid #cbd5e1;
+                margin-top: 24px;
+                padding-top: 8px;
+                font-size: 8pt;
+                color: #64748b;
+                text-align: center;
+            }
+        }
+        .print-only-club-header, .print-only-club-footer {
+            display: none;
+        }
+    </style>
     <script src="assets/data/club_profiles.js"></script>
     <script src="assets/data/club_team_honours.js"></script>
+    <script src="assets/data/fixture_team_standings.js"></script>
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
@@ -77,14 +118,21 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8">
-            <!-- Breadcrumb Navigation -->
-            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-300 mb-6" aria-label="Breadcrumb">
-                <a href="index.html" class="hover:text-white transition-colors">Home</a>
-                <span class="text-slate-500">/</span>
-                <a href="clubs.html" class="hover:text-white transition-colors">Clubs</a>
-                <span class="text-slate-500">/</span>
-                <span id="club-breadcrumb-name" class="text-white font-bold truncate">Club Profile</span>
-            </nav>
+            <!-- Breadcrumb Navigation & AGM Dossier Action -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <nav class="flex items-center space-x-2 text-xs font-mono text-slate-300" aria-label="Breadcrumb">
+                    <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                    <span class="text-slate-500">/</span>
+                    <a href="clubs.html" class="hover:text-white transition-colors">Clubs</a>
+                    <span class="text-slate-500">/</span>
+                    <span id="club-breadcrumb-name" class="text-white font-bold truncate">Club Profile</span>
+                </nav>
+
+                <button type="button" onclick="window.print()" class="no-print self-start sm:self-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-xs font-mono font-semibold text-slate-200 hover:text-white hover:border-slate-500 shadow-xs transition-all">
+                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                    <span>Export Club AGM Dossier (PDF)</span>
+                </button>
+            </div>
 
             <div class="space-y-4">
                 
@@ -160,6 +208,20 @@
     <!-- MAIN BODY -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-12">
 
+        <!-- PRINT ONLY CERTIFIED CLUB AGM DOSSIER HEADER -->
+        <div class="print-only-club-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-800 font-bold">GWENT CROSS COUNTRY LEAGUE &bull; OFFICIAL CLUB DOSSIER</span>
+                    <h2 id="print-club-heading" class="text-xl font-serif font-bold text-slate-900 mt-0.5">Club Historical Record &amp; AGM Report (2010–2026 Archive)</h2>
+                </div>
+                <div class="text-right text-[10px] font-mono text-slate-500">
+                    <div>Certified League Archive</div>
+                    <div>15 Seasons Documented</div>
+                </div>
+            </div>
+        </div>
+
         <!-- SECTION: OFFICIAL GWENT LEAGUE TEAM HONOURS & MATCH VICTORIES -->
         <section id="section-team-honours" class="space-y-6 hidden">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
@@ -206,6 +268,60 @@
 
             <div id="stalwarts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Dynamically populated stalwart cards -->
+            </div>
+        </section>
+
+        <!-- SECTION: ALL-TIME CLUB DREAM TEAM (CHAMPIONSHIP SCORING LINEUPS) -->
+        <section id="section-dream-team" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl">⭐</span>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">
+                            CLUB FOLKLORE &bull; ALL-TIME SCORING LINEUPS
+                        </span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+                        The All-Time Club Dream Team
+                    </h2>
+                </div>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    Championship Scoring 5 Men &amp; Scoring 4 Women ranked by career points &amp; peak performance
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Men's Scoring 5 Quintet -->
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🏃‍♂️</span>
+                            <h3 class="font-serif font-bold text-base text-slate-900 dark:text-slate-100">Men's All-Time Scoring 5 (The Quintet)</h3>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                            Div 1 Scoring Format
+                        </span>
+                    </div>
+                    <div id="dream-team-men-list" class="space-y-2.5">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Women's Scoring 4 Quartet -->
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🏃‍♀️</span>
+                            <h3 class="font-serif font-bold text-base text-slate-900 dark:text-slate-100">Women's All-Time Scoring 4 (The Quartet)</h3>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                            Div 1 Scoring Format
+                        </span>
+                    </div>
+                    <div id="dream-team-women-list" class="space-y-2.5">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -328,6 +444,33 @@
             </div>
         </section>
 
+        <!-- SECTION 4: CLUB RIVALRY MATRIX (HEAD-TO-HEAD VS TRADITIONAL RIVALS) -->
+        <section id="section-club-rivalries" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        INTER-CLUB RIVALRIES
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
+                        <span>Club Rivalry Matrix</span>
+                        <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Head-to-Head Encounters</span>
+                    </h2>
+                </div>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    Direct fixture turnout and head-to-head match wins against key historical rivals
+                </span>
+            </div>
+
+            <!-- Rivalry Cards Grid -->
+            <div id="club-rivalry-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- PRINT ONLY CERTIFIED CLUB AGM DOSSIER FOOTER -->
+        <div class="print-only-club-footer">
+            <p class="font-mono text-slate-500">Official Gwent Cross Country League Historical Record &bull; Certified Authenticated Club Archive Dossier (2010–2026)</p>
+        </div>
     </main>
 
     <!-- GLOBAL FOOTER CONTAINER -->
@@ -755,6 +898,79 @@
             renderSquadTable(menSquad, 'men-squad-rows');
             renderSquadTable(womenSquad, 'women-squad-rows');
 
+            // RENDER ALL-TIME CLUB DREAM TEAM
+            const renderDreamTeam = () => {
+                const menListEl = document.getElementById('dream-team-men-list');
+                const womenListEl = document.getElementById('dream-team-women-list');
+                if (!menListEl || !womenListEl) return;
+
+                const scoreFn = (a) => (a.totalPts || 0) + (a.raceWins * 500) + (a.catWins * 100);
+                const sortedMen = [...menSquad].sort((a, b) => scoreFn(b) - scoreFn(a)).slice(0, 5);
+                const sortedWomen = [...womenSquad].sort((a, b) => scoreFn(b) - scoreFn(a)).slice(0, 4);
+
+                const counterLabels = [
+                    '#1 Lead Counter',
+                    '#2 Second Counter',
+                    '#3 Third Counter',
+                    '#4 Fourth Counter',
+                    '#5 Anchor Counter'
+                ];
+
+                if (sortedMen.length === 0) {
+                    menListEl.innerHTML = `<div class="py-4 text-center text-slate-400 font-mono text-xs">No men's records catalogued.</div>`;
+                } else {
+                    menListEl.innerHTML = sortedMen.map((m, idx) => `
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-500 transition-colors">
+                            <div class="flex items-center gap-3 truncate">
+                                <span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] ${idx === 0 ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'}">
+                                    ${counterLabels[idx]}
+                                </span>
+                                <div class="truncate">
+                                    <a href="athlete.html?name=${encodeURIComponent(m.name)}&club=${encodeURIComponent(targetClub)}" class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 truncate block">
+                                        ${m.name}
+                                    </a>
+                                    <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                                        ${m.firstSeason === m.lastSeason ? m.firstSeason : `${m.firstSeason}–${m.lastSeason}`} &bull; ${m.finishes} races
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right font-mono shrink-0">
+                                <span class="font-bold text-emerald-700 dark:text-emerald-400 text-xs">${m.totalPts ? m.totalPts.toLocaleString() + ' pts' : 'Peak: #' + m.bestPos}</span>
+                                <div class="text-[10px] text-slate-400">Best: #${m.bestPos} ${m.raceWins > 0 ? `&bull; 🥇 ${m.raceWins}` : ''}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+                if (sortedWomen.length === 0) {
+                    womenListEl.innerHTML = `<div class="py-4 text-center text-slate-400 font-mono text-xs">No women's records catalogued.</div>`;
+                } else {
+                    womenListEl.innerHTML = sortedWomen.map((w, idx) => `
+                        <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 hover:border-purple-500 transition-colors">
+                            <div class="flex items-center gap-3 truncate">
+                                <span class="px-2 py-0.5 rounded font-mono font-bold text-[10px] ${idx === 0 ? 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'}">
+                                    ${counterLabels[idx]}
+                                </span>
+                                <div class="truncate">
+                                    <a href="athlete.html?name=${encodeURIComponent(w.name)}&club=${encodeURIComponent(targetClub)}" class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 hover:text-purple-700 dark:hover:text-purple-400 truncate block">
+                                        ${w.name}
+                                    </a>
+                                    <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                                        ${w.firstSeason === w.lastSeason ? w.firstSeason : `${w.firstSeason}–${w.lastSeason}`} &bull; ${w.finishes} races
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-right font-mono shrink-0">
+                                <span class="font-bold text-purple-700 dark:text-purple-400 text-xs">${w.totalPts ? w.totalPts.toLocaleString() + ' pts' : 'Peak: #' + w.bestPos}</span>
+                                <div class="text-[10px] text-slate-400">Best: #${w.bestPos} ${w.raceWins > 0 ? `&bull; 🥇 ${w.raceWins}` : ''}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            };
+
+            renderDreamTeam();
+
             // Render Official Team Honours & Match Victories
             function renderTeamHonours(clubName) {
                 const honoursData = window.CLUB_TEAM_HONOURS || {};
@@ -1000,6 +1216,172 @@
                 menCard.classList.add('hidden');
                 womenCard.classList.remove('hidden');
             });
+
+            // ==========================================
+            // SECTION 4: CLUB RIVALRY MATRIX COMPUTATION
+            // ==========================================
+            const renderClubRivalries = () => {
+                const rivalryGrid = document.getElementById('club-rivalry-grid');
+                if (!rivalryGrid) return;
+
+                // Group all records by fixture key: season_key + '_' + match
+                const fixtureClubMap = new Map(); // fixKey -> Map(clubName -> { men: 0, women: 0, total: 0, bestPos: 9999 })
+                const targetFixtures = new Set();
+
+                allData.forEach(r => {
+                    if (!r.club || r.club === 'Unattached' || r.club === 'Guest') return;
+                    const fixKey = `${r.season_key}_m${r.match}`;
+                    if (!fixtureClubMap.has(fixKey)) {
+                        fixtureClubMap.set(fixKey, new Map());
+                    }
+                    const cMap = fixtureClubMap.get(fixKey);
+                    if (!cMap.has(r.club)) {
+                        cMap.set(r.club, { club: r.club, men: 0, women: 0, total: 0, bestPos: 9999 });
+                    }
+                    const entry = cMap.get(r.club);
+                    entry.total++;
+                    if (r.gender === 'M') entry.men++;
+                    if (r.gender === 'F') entry.women++;
+                    if (r.pos > 0 && r.pos < entry.bestPos) entry.bestPos = r.pos;
+
+                    if (r.club === targetClub) {
+                        targetFixtures.add(fixKey);
+                    }
+                });
+
+                if (targetFixtures.size === 0) {
+                    const secRivalry = document.getElementById('section-club-rivalries');
+                    if (secRivalry) secRivalry.classList.add('hidden');
+                    return;
+                }
+
+                // Compute rivalry stats for every other club
+                const rivalStats = new Map(); // rivalName -> { shared: 0, myWins: 0, rivalWins: 0, ties: 0, myTurnout: 0, rivalTurnout: 0, recentMatches: [] }
+
+                targetFixtures.forEach(fixKey => {
+                    const cMap = fixtureClubMap.get(fixKey);
+                    const myStats = cMap.get(targetClub);
+                    if (!myStats) return;
+
+                    cMap.forEach((rStats, cName) => {
+                        if (cName === targetClub) return;
+                        if (!rivalStats.has(cName)) {
+                            rivalStats.set(cName, {
+                                name: cName,
+                                shared: 0,
+                                myWins: 0,
+                                rivalWins: 0,
+                                ties: 0,
+                                myTurnout: 0,
+                                rivalTurnout: 0,
+                                recentMatches: []
+                            });
+                        }
+                        const st = rivalStats.get(cName);
+                        st.shared++;
+                        st.myTurnout += myStats.total;
+                        st.rivalTurnout += rStats.total;
+
+                        let result = 'tie';
+                        if (myStats.total > rStats.total) {
+                            st.myWins++;
+                            result = 'win';
+                        } else if (rStats.total > myStats.total) {
+                            st.rivalWins++;
+                            result = 'loss';
+                        } else {
+                            st.ties++;
+                        }
+
+                        st.recentMatches.push({
+                            fixKey: fixKey,
+                            myTotal: myStats.total,
+                            rivalTotal: rStats.total,
+                            result: result
+                        });
+                    });
+                });
+
+                // Filter rivals with at least 5 shared fixtures, sort by shared encounters descending
+                const sortedRivals = Array.from(rivalStats.values())
+                    .filter(r => r.shared >= 5)
+                    .sort((a, b) => b.shared - a.shared || (b.myWins + b.rivalWins) - (a.myWins + a.rivalWins))
+                    .slice(0, 6);
+
+                if (sortedRivals.length === 0) {
+                    const secRivalry = document.getElementById('section-club-rivalries');
+                    if (secRivalry) secRivalry.classList.add('hidden');
+                    return;
+                }
+
+                rivalryGrid.innerHTML = sortedRivals.map(r => {
+                    const winPct = Math.round((r.myWins / r.shared) * 100);
+                    const lossPct = Math.round((r.rivalWins / r.shared) * 100);
+                    const tiePct = 100 - winPct - lossPct;
+                    const isWinning = r.myWins > r.rivalWins;
+                    const rProfile = profiles[r.name] || null;
+
+                    return `
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-all space-y-5">
+                            <div>
+                                <div class="flex items-center justify-between gap-3 mb-2">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                        ${r.shared} Fixtures Contested
+                                    </span>
+                                    <span class="text-xs font-mono font-bold ${isWinning ? 'text-emerald-700 dark:text-emerald-400' : 'text-slate-600 dark:text-slate-300'}">
+                                        ${r.myWins}W - ${r.rivalWins}L ${r.ties > 0 ? `(${r.ties}T)` : ''}
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100">
+                                    <a href="club.html?club=${encodeURIComponent(r.name)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline transition-colors">
+                                        vs ${r.name}
+                                    </a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-1">
+                                    Turnout battle across ${r.shared} concurrent fixtures
+                                </p>
+                            </div>
+
+                            <!-- Head-to-Head Percentage Bar -->
+                            <div class="space-y-1.5">
+                                <div class="flex justify-between text-[11px] font-mono font-bold">
+                                    <span class="text-emerald-700 dark:text-emerald-400">${targetClub}: ${winPct}%</span>
+                                    <span class="text-slate-500">${r.name}: ${lossPct}%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden flex">
+                                    <div class="bg-emerald-600 h-full" style="width: ${winPct}%;"></div>
+                                    <div class="bg-slate-300 dark:bg-slate-600 h-full" style="width: ${tiePct}%;"></div>
+                                    <div class="bg-rose-500 dark:bg-rose-600 h-full" style="width: ${lossPct}%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Turnout Comparison Stats -->
+                            <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-mono">
+                                <div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-400 block">${targetClub} Finishes</span>
+                                    <span class="font-bold text-slate-900 dark:text-slate-100 text-sm">${r.myTurnout.toLocaleString()}</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] uppercase tracking-wider text-slate-400 block">${r.name} Finishes</span>
+                                    <span class="font-bold text-slate-900 dark:text-slate-100 text-sm">${r.rivalTurnout.toLocaleString()}</span>
+                                </div>
+                            </div>
+
+                            <!-- Action Link -->
+                            <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                                <a href="club.html?club=${encodeURIComponent(r.name)}" class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline">
+                                    View Rival Profile &rarr;
+                                </a>
+                                <a href="compare.html" class="text-xs font-mono text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+                                    Rivalry Hub &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            };
+
+            renderClubRivalries();
         });
     </script>
 </body>

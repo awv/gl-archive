@@ -284,7 +284,31 @@ function initSearchPalette() {
             v.name.toLowerCase().includes(query) || (v.region && v.region.toLowerCase().includes(query))
         ).slice(0, 3);
 
+        // Match Quick Tools & Curated Portals
+        const tools = [
+            { title: "Head-to-Head Rivalry Comparator", subtitle: "Compare any two athletes across 71 fixtures", href: "compare.html", icon: "⚔️", keywords: "compare rivalry head to head vs matchup comparator" },
+            { title: "All-Time Hall of Fame & Century Club", subtitle: "50+ finishes, race winners & unbroken streaks", href: "analytics.html?tab=hof", icon: "🏆", keywords: "hall of fame century club winners streak iron immortals" },
+            { title: "Courses & Championship Grounds", subtitle: "Course records and terrain profiles", href: "venues.html", icon: "📍", keywords: "venues courses terrain track" },
+            { title: "Official Division Standings", subtitle: "Division 1-4 promotion & relegation standings", href: "results.html?season=2025_2026&match=5", icon: "📊", keywords: "divisions standings champions promotion table" }
+        ];
+        const matchedTools = tools.filter(t => t.title.toLowerCase().includes(query) || t.keywords.toLowerCase().includes(query)).slice(0, 2);
+
         let html = '';
+
+        if (matchedTools.length > 0) {
+            html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">Features &amp; Tools</div>`;
+            html += matchedTools.map(t => `
+                <a href="${t.href}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
+                    <div>
+                        <div class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                            ${t.icon} ${t.title}
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">${t.subtitle}</div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200">Jump &rarr;</span>
+                </a>
+            `).join('');
+        }
 
         if (matchedVenues.length > 0) {
             html += `<div class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Courses & Venues</div>`;

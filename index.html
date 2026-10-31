@@ -289,61 +289,89 @@
         </section>
 
         <!-- SECTION: FEATURED ARCHIVE HUBS -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- 1. Courses & Venues Portal -->
-            <a href="venues.html" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-xl">
-                        📍
-                    </span>
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">14 Courses</span>
+            <a href="venues.html" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-center text-xl">
+                            📍
+                        </span>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">14 Courses</span>
+                    </div>
+                    <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                        Courses &amp; Venues
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        All-time course records, terrain dossiers, elevation profiles, and historic fixture battles.
+                    </p>
                 </div>
-                <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
-                    Courses &amp; Venues
-                </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                    All-time course records, terrain dossiers, elevation profiles, and historic fixture battles.
-                </p>
                 <div class="mt-4 flex items-center gap-1 text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 group-hover:translate-x-1 transition-transform">
                     <span>Explore Venues</span>
                     <span>&rarr;</span>
                 </div>
             </a>
 
-            <!-- 2. Official Division Standings Portal -->
-            <a href="results.html?season=2025_2026&match=5" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800/80 flex items-center justify-center text-xl">
-                        🏆
-                    </span>
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Official Tables</span>
+            <!-- 2. Head-to-Head Rivalry Comparator Portal -->
+            <a href="compare.html" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 flex items-center justify-center text-xl">
+                            ⚔️
+                        </span>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">Head-to-Head</span>
+                    </div>
+                    <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-700 dark:group-hover:text-sky-400 transition-colors">
+                        Rivalry Comparator
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Compare any two athletes across 71 fixtures: direct encounters, course deltas, and lifetime wins.
+                    </p>
                 </div>
-                <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
-                    Team &amp; Division Standings
-                </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                    Official Gwent League Senior Men &amp; Women division standings, points scores, and league champions.
-                </p>
-                <div class="mt-4 flex items-center gap-1 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">
-                    <span>View Standings</span>
+                <div class="mt-4 flex items-center gap-1 text-xs font-mono font-semibold text-sky-700 dark:text-sky-400 group-hover:translate-x-1 transition-transform">
+                    <span>Launch Matchup</span>
                     <span>&rarr;</span>
                 </div>
             </a>
 
-            <!-- 3. Clubs Directory & Singlets Portal -->
-            <a href="clubs.html" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800/80 flex items-center justify-center text-xl">
-                        🎽
-                    </span>
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">154 Clubs</span>
+            <!-- 3. All-Time Hall of Fame Portal -->
+            <a href="analytics.html?tab=hof" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800/80 flex items-center justify-center text-xl">
+                            🏆
+                        </span>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Immortal Ranks</span>
+                    </div>
+                    <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+                        All-Time Hall of Fame
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Century Club 50+ finishes, all-time race winners leaderboard, and unbroken ironman streaks.
+                    </p>
                 </div>
-                <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
-                    Club Directory &amp; Kits
-                </h3>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                    Verified registered racing singlets, club colours, all-time turnout records, and team rosters.
-                </p>
+                <div class="mt-4 flex items-center gap-1 text-xs font-mono font-semibold text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">
+                    <span>View Hall of Fame</span>
+                    <span>&rarr;</span>
+                </div>
+            </a>
+
+            <!-- 4. Clubs Directory & Singlets Portal -->
+            <a href="clubs.html" class="group relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs hover:border-emerald-500 dark:hover:border-emerald-500 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800/80 flex items-center justify-center text-xl">
+                            🎽
+                        </span>
+                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">154 Clubs</span>
+                    </div>
+                    <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors">
+                        Club Directory &amp; Kits
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                        Verified registered racing singlets, club colours, all-time turnout records, and team rosters.
+                    </p>
+                </div>
                 <div class="mt-4 flex items-center gap-1 text-xs font-mono font-semibold text-purple-700 dark:text-purple-400 group-hover:translate-x-1 transition-transform">
                     <span>Browse Clubs</span>
                     <span>&rarr;</span>

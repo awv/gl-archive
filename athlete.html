@@ -43,6 +43,68 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <style>
+        @media print {
+            /* Hide interactive and navigational chrome */
+            #global-nav, #global-footer, .no-print, 
+            #command-palette, #search-input-box, 
+            button, select, input, .season-filter-pill,
+            #h2h-search-box {
+                display: none !important;
+            }
+            
+            @page {
+                size: A4 portrait;
+                margin: 1.2cm 1.5cm;
+            }
+            
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 10pt !important;
+                line-height: 1.4 !important;
+            }
+            
+            header, main, section, div, table {
+                box-shadow: none !important;
+                border-color: #cbd5e1 !important;
+            }
+
+            /* Ensure text contrast on print */
+            h1, h2, h3, h4, span, p, td, th {
+                color: #0f172a !important;
+            }
+            
+            .print-break-inside-avoid, 
+            tr, 
+            .grid > div {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            
+            /* Print Dossier Masthead */
+            .print-only-header {
+                display: block !important;
+                border-bottom: 2px solid #004942;
+                padding-bottom: 8px;
+                margin-bottom: 16px;
+            }
+            
+            .print-only-footer {
+                display: block !important;
+                border-top: 1px solid #cbd5e1;
+                margin-top: 24px;
+                padding-top: 8px;
+                font-size: 8pt;
+                color: #64748b;
+                text-align: center;
+            }
+        }
+        
+        .print-only-header, .print-only-footer {
+            display: none;
+        }
+    </style>
     <script src="data.js"></script>
     <script src="backend_tools/club_transfers.js"></script>
     <script src="backend_tools/name_changes.js"></script>
@@ -56,16 +118,23 @@
     <!-- ATHLETE HERO HEADER -->
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-            <!-- Breadcrumb Navigation -->
-            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
-                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
-                <span>/</span>
-                <a href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Clubs</a>
-                <span>/</span>
-                <a id="athlete-breadcrumb-club" href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Club</a>
-                <span>/</span>
-                <span id="athlete-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Athlete Profile</span>
-            </nav>
+            <!-- Breadcrumb Navigation & Export Dossier Action -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400" aria-label="Breadcrumb">
+                    <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                    <span>/</span>
+                    <a href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Clubs</a>
+                    <span>/</span>
+                    <a id="athlete-breadcrumb-club" href="clubs.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Club</a>
+                    <span>/</span>
+                    <span id="athlete-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Athlete Profile</span>
+                </nav>
+
+                <button type="button" onclick="window.print()" class="no-print self-start sm:self-auto inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-300 dark:hover:border-emerald-600 shadow-xs transition-all">
+                    <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                    <span>Export Career Dossier (PDF)</span>
+                </button>
+            </div>
 
             <div class="space-y-4">
                 
@@ -205,6 +274,20 @@
 
     <!-- MAIN BODY -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-12">
+        
+        <!-- PRINT ONLY CERTIFIED DOSSIER MASTHEAD -->
+        <div class="print-only-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-800 font-bold">GWENT CROSS COUNTRY LEAGUE &bull; OFFICIAL CAREER DOSSIER</span>
+                    <h2 class="text-xl font-serif font-bold text-slate-900 mt-0.5">Certified Athlete Career Record (2010–2026 Archive)</h2>
+                </div>
+                <div class="text-right text-[10px] font-mono text-slate-500">
+                    <div>Official League Verification</div>
+                    <div id="print-timestamp">Archive Certified</div>
+                </div>
+            </div>
+        </div>
         
         <!-- SECTION: INSIGHTS & CAREER PERFORMANCE TREND CHART -->
         <section id="insights-section" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -389,6 +472,10 @@
                 </div>
             </div>
         </section>
+        <!-- PRINT ONLY VERIFICATION FOOTER -->
+        <div class="print-only-footer">
+            <p class="font-mono text-slate-500">Official Gwent Cross Country League Historical Record &bull; 40,922 Finishes Catalogued &bull; Certified Authenticated Career Dossier</p>
+        </div>
     </main>
 
     <!-- GLOBAL FOOTER CONTAINER -->

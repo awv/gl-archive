@@ -1,11 +1,11 @@
 {
   "summary": {
     "total_finishers": 40922,
-    "total_athletes": 7667,
-    "athletes_with_fixture_collisions": 232,
-    "total_fixture_collision_events": 805,
-    "athletes_with_age_regressions": 458,
-    "athletes_with_both_anomalies": 180
+    "total_athletes": 7672,
+    "athletes_with_fixture_collisions": 231,
+    "total_fixture_collision_events": 778,
+    "athletes_with_age_regressions": 457,
+    "athletes_with_both_anomalies": 179
   },
   "athletes_with_both_anomalies": [
     "A. Green",
@@ -14,7 +14,6 @@
     "A. Thompson",
     "A. Woods",
     "Adam Roberts",
-    "Adrian Lewis",
     "Alec Williams",
     "Alex Evans",
     "Alun Wood",
@@ -313,8 +312,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -342,8 +341,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -371,8 +370,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -400,8 +399,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -516,8 +515,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Amman Valley Harriers"
+        "Amman Valley Harriers",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -574,8 +573,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Amman Valley Harriers"
+        "Amman Valley Harriers",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -922,8 +921,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1125,9 +1124,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Cardiff University AC",
         "Les Croupiers Running Club",
-        "Caldicot Running Club",
-        "Cardiff University AC"
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -1163,8 +1162,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Cardiff University AC"
+        "Cardiff University AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1192,8 +1191,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Cardiff University AC"
+        "Cardiff University AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1221,8 +1220,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -1250,9 +1249,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Cardiff University AC",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1288,8 +1287,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1317,8 +1316,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Les Croupiers Running Club"
+        "Les Croupiers Running Club",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -1346,8 +1345,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1375,9 +1374,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Port Talbot Harriers & AC",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1442,9 +1441,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Lliswerry Runners",
-        "Sarn Helen"
+        "Sarn Helen",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1480,8 +1479,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1509,8 +1508,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1538,8 +1537,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1567,8 +1566,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -1625,8 +1624,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Taf Running & Orienteering Teams"
+        "Taf Running & Orienteering Teams",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -1654,8 +1653,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -1683,8 +1682,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -1712,9 +1711,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Islwyn Running Club",
         "Bristol and West Athletic Club",
-        "Bridgend Athletic Club",
-        "Islwyn Running Club"
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -1750,8 +1749,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -1874,8 +1873,8 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -1911,8 +1910,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Albany Road Run Club"
+        "Albany Road Run Club",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -1998,8 +1997,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Bristol University"
+        "Bristol University",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -2027,8 +2026,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -2056,8 +2055,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -2085,9 +2084,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Bridgend Athletic Club",
+        "Islwyn Running Club",
         "Bristol University",
-        "Islwyn Running Club"
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -2123,8 +2122,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -2152,9 +2151,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Port Talbot Harriers & AC",
+        "Islwyn Running Club",
         "Bridgend Athletic Club",
-        "Islwyn Running Club"
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -2190,9 +2189,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Port Talbot Harriers & AC",
+        "Islwyn Running Club",
         "Bridgend Athletic Club",
-        "Islwyn Running Club"
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -2257,8 +2256,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Bristol University"
+        "Bristol University",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -2344,8 +2343,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Bristol and West Athletic Club",
-        "Team GJE"
+        "Team GJE",
+        "Bristol and West Athletic Club"
       ],
       "finishes": [
         {
@@ -2402,8 +2401,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -2431,8 +2430,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -2460,8 +2459,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -2489,8 +2488,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -2508,870 +2507,6 @@
           "pos": 142,
           "age_cat": "Senior",
           "time": "26:06"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2019/2020",
-      "season_key": "2019_2020",
-      "match": 1,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 138,
-          "age_cat": "V45",
-          "time": "37:34"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 235,
-          "age_cat": "U23",
-          "time": "40:43"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2019/2020",
-      "season_key": "2019_2020",
-      "match": 2,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 132,
-          "age_cat": "V45",
-          "time": "36:16"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 135,
-          "age_cat": "U23",
-          "time": "36:26"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2019/2020",
-      "season_key": "2019_2020",
-      "match": 3,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 127,
-          "age_cat": "U23",
-          "time": "37:16"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 160,
-          "age_cat": "V45",
-          "time": "38:02"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2019/2020",
-      "season_key": "2019_2020",
-      "match": 4,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 94,
-          "age_cat": "U23",
-          "time": "33:43"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 118,
-          "age_cat": "V45",
-          "time": "34:37"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2018/2019",
-      "season_key": "2018_2019",
-      "match": 1,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 153,
-          "age_cat": "V45",
-          "time": "38:39"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 159,
-          "age_cat": "V35",
-          "time": "38:53"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 183,
-          "age_cat": "U23",
-          "time": "39:29"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2018/2019",
-      "season_key": "2018_2019",
-      "match": 2,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 121,
-          "age_cat": "V45",
-          "time": "36:44"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 137,
-          "age_cat": "V35",
-          "time": "37:15"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2018/2019",
-      "season_key": "2018_2019",
-      "match": 3,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 112,
-          "age_cat": "U23",
-          "time": "47:49"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 117,
-          "age_cat": "V35",
-          "time": "48:03"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 123,
-          "age_cat": "V45",
-          "time": "48:18"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2018/2019",
-      "season_key": "2018_2019",
-      "match": 4,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 95,
-          "age_cat": "V45",
-          "time": "42:12"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 103,
-          "age_cat": "V35",
-          "time": "42:43"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2018/2019",
-      "season_key": "2018_2019",
-      "match": 5,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 95,
-          "age_cat": "V45",
-          "time": "37:11"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 102,
-          "age_cat": "U23",
-          "time": "37:23"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 167,
-          "age_cat": "V35",
-          "time": "40:11"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2017/2018",
-      "season_key": "2017_2018",
-      "match": 1,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 113,
-          "age_cat": "V45",
-          "time": "34:18"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 175,
-          "age_cat": "V35",
-          "time": "36:27"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 193,
-          "age_cat": "U23",
-          "time": "36:50"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2017/2018",
-      "season_key": "2017_2018",
-      "match": 2,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 107,
-          "age_cat": "V45",
-          "time": "40:00"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 155,
-          "age_cat": "V35",
-          "time": "42:12"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 162,
-          "age_cat": "U23",
-          "time": "42:32"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2017/2018",
-      "season_key": "2017_2018",
-      "match": 3,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "University of the West of England",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 105,
-          "age_cat": "V45",
-          "time": "36:44"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 126,
-          "age_cat": "V35",
-          "time": "37:37"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "University of the West of England",
-          "raw_club": "University of the West of England",
-          "pos": 156,
-          "age_cat": "U23",
-          "time": "38:50"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2017/2018",
-      "season_key": "2017_2018",
-      "match": 4,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 73,
-          "age_cat": "V45",
-          "time": "42:08"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 86,
-          "age_cat": "V35",
-          "time": "43:13"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2015/2016",
-      "season_key": "2015_2016",
-      "match": 1,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 125,
-          "age_cat": "V40",
-          "time": "38:00"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 152,
-          "age_cat": "V35",
-          "time": "39:10"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2015/2016",
-      "season_key": "2015_2016",
-      "match": 2,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 133,
-          "age_cat": "V40",
-          "time": "38:42"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 166,
-          "age_cat": "V35",
-          "time": "39:56"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2015/2016",
-      "season_key": "2015_2016",
-      "match": 4,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Cardiff University AC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 69,
-          "age_cat": "V40",
-          "time": "44:15"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 122,
-          "age_cat": "U23",
-          "time": "47:06"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 177,
-          "age_cat": "V35",
-          "time": "50:41"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2014/2015",
-      "season_key": "2014_2015",
-      "match": 1,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers",
-        "Cardiff University AC"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 132,
-          "age_cat": "Senior",
-          "time": "41:11"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 162,
-          "age_cat": "V40",
-          "time": "42:44"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 207,
-          "age_cat": "U23",
-          "time": "44:14"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2014/2015",
-      "season_key": "2014_2015",
-      "match": 2,
-      "duplicate_count": 3,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers",
-        "Cardiff University AC"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 149,
-          "age_cat": "Senior",
-          "time": "40:26"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 157,
-          "age_cat": "V40",
-          "time": "40:48"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 217,
-          "age_cat": "U23",
-          "time": "43:01"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2014/2015",
-      "season_key": "2014_2015",
-      "match": 3,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Cardiff University AC"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 131,
-          "age_cat": "V40",
-          "time": "41:52"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 156,
-          "age_cat": "U23",
-          "time": "42:45"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2014/2015",
-      "season_key": "2014_2015",
-      "match": 4,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Cardiff University AC"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 91,
-          "age_cat": "U23",
-          "time": "40:09"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 133,
-          "age_cat": "V40",
-          "time": "42:02"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 1,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 84,
-          "age_cat": "Senior",
-          "time": "33:39"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 225,
-          "age_cat": "V40",
-          "time": "38:53"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 2,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 124,
-          "age_cat": "Senior",
-          "time": "40:57"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 209,
-          "age_cat": "V40",
-          "time": "44:06"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 3,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 186,
-          "age_cat": "Senior",
-          "time": "39:50"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 217,
-          "age_cat": "V40",
-          "time": "40:38"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 4,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 64,
-          "age_cat": "Senior",
-          "time": "39:57"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 122,
-          "age_cat": "V40",
-          "time": "43:45"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 5,
-      "duplicate_count": 2,
-      "clubs": [
-        "Aberdare Valley AAC",
-        "Neath Harriers"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 83,
-          "age_cat": "Senior",
-          "time": "40:23"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Aberdare Valley AAC",
-          "raw_club": "Aberdare Valley A. A. C.",
-          "pos": 116,
-          "age_cat": "V40",
-          "time": "42:04"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2012/2013",
-      "season_key": "2012_2013",
-      "match": 3,
-      "duplicate_count": 2,
-      "clubs": [
-        "Neath Harriers",
-        "Cardiff University AC"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Neath Harriers",
-          "raw_club": "Neath Harriers",
-          "pos": 105,
-          "age_cat": "Senior",
-          "time": "45:03"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Cardiff University AC",
-          "raw_club": "Cardiff University Harriers",
-          "pos": 255,
-          "age_cat": "U23",
-          "time": "53:35"
-        }
-      ]
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "season": "2010/2011",
-      "season_key": "2010_2011",
-      "match": 1,
-      "duplicate_count": 2,
-      "clubs": [
-        "Wells City Harriers",
-        "Taf Running & Orienteering Teams"
-      ],
-      "finishes": [
-        {
-          "raw_name": "A. Lewis",
-          "club": "Wells City Harriers",
-          "raw_club": "Wells and Yeovil",
-          "pos": 15,
-          "age_cat": "Senior",
-          "time": "26:09"
-        },
-        {
-          "raw_name": "A. Lewis",
-          "club": "Taf Running & Orienteering Teams",
-          "raw_club": "Taf Running & Orienteering Teams",
-          "pos": 96,
-          "age_cat": "V45",
-          "time": "32:05"
         }
       ]
     },
@@ -3411,9 +2546,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Pembrokeshire Harriers",
         "Neath Harriers",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Pembrokeshire Harriers"
       ],
       "finishes": [
         {
@@ -3449,8 +2584,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pembrokeshire Harriers",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Pembrokeshire Harriers"
       ],
       "finishes": [
         {
@@ -3506,8 +2641,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3535,8 +2670,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3564,8 +2699,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3593,8 +2728,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3622,8 +2757,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3651,8 +2786,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3680,8 +2815,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3709,8 +2844,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -3796,8 +2931,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "CRPRC",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "CRPRC"
       ],
       "finishes": [
         {
@@ -3825,9 +2960,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "CRPRC",
+        "Clevedon AC",
         "Aberdare Valley AAC",
-        "Clevedon AC"
+        "CRPRC"
       ],
       "finishes": [
         {
@@ -3863,8 +2998,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CRPRC",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "CRPRC"
       ],
       "finishes": [
         {
@@ -3892,8 +3027,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Aberdare Valley AAC",
-        "Clevedon AC"
+        "Clevedon AC",
+        "Aberdare Valley AAC"
       ],
       "finishes": [
         {
@@ -3921,8 +3056,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CRPRC",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "CRPRC"
       ],
       "finishes": [
         {
@@ -3950,8 +3085,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "University of Bath"
+        "University of Bath",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -4211,9 +3346,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4249,9 +3384,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4287,8 +3422,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4316,8 +3451,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4345,9 +3480,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4383,9 +3518,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4421,9 +3556,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4488,9 +3623,9 @@
       "match": 5,
       "duplicate_count": 3,
       "clubs": [
+        "Dragon RC",
         "Carmarthen & District Harriers AC",
-        "Pontypridd Roadents Athletic Club",
-        "Dragon RC"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4642,8 +3777,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Chepstow Harriers",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Chepstow Harriers"
       ],
       "finishes": [
         {
@@ -4671,8 +3806,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4700,8 +3835,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4729,8 +3864,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4758,8 +3893,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -4787,8 +3922,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -4903,8 +4038,8 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Taf Running & Orienteering Teams",
         "Penarth and Dinas Runners",
+        "Taf Running & Orienteering Teams",
         "Bridgend Athletic Club"
       ],
       "finishes": [
@@ -4941,8 +4076,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -4970,8 +4105,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -4999,8 +4134,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -5057,8 +4192,8 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Taf Running & Orienteering Teams",
         "Penarth and Dinas Runners",
+        "Taf Running & Orienteering Teams",
         "Bridgend Athletic Club"
       ],
       "finishes": [
@@ -5095,8 +4230,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Ogmore Phoenix Runners",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Ogmore Phoenix Runners"
       ],
       "finishes": [
         {
@@ -5124,8 +4259,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Clevedon AC"
+        "Clevedon AC",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -5153,8 +4288,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Clevedon AC"
+        "Clevedon AC",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -5182,8 +4317,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Clevedon AC"
+        "Clevedon AC",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -5211,8 +4346,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Clevedon AC"
+        "Clevedon AC",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -5298,8 +4433,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Guest"
+        "Guest",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -5327,8 +4462,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Guest",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Guest"
       ],
       "finishes": [
         {
@@ -5500,8 +4635,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -5529,8 +4664,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -6527,9 +5662,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Aberdare Valley AAC",
         "Cardiff Amateur Athletic Club",
-        "Les Croupiers Running Club",
-        "Aberdare Valley AAC"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6653,8 +5788,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Swansea Harriers Athletic Club",
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6690,8 +5825,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6719,8 +5854,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6748,8 +5883,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6777,8 +5912,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6806,8 +5941,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6864,8 +5999,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6893,8 +6028,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -6922,8 +6057,8 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Chepstow Harriers",
+        "Les Croupiers Running Club",
         "Cardiff University AC"
       ],
       "finishes": [
@@ -6960,8 +6095,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7047,8 +6182,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7076,9 +6211,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Women Running Penarth",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7114,8 +6249,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Women Running Penarth"
+        "Women Running Penarth",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7143,9 +6278,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Women Running Penarth",
         "Taf Running & Orienteering Teams",
-        "Women Running Penarth"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7181,8 +6316,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Taf Running & Orienteering Teams"
+        "Taf Running & Orienteering Teams",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7210,9 +6345,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Women Running Penarth",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7248,9 +6383,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Women Running Penarth",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7286,8 +6421,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Women Running Penarth"
+        "Women Running Penarth",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7315,8 +6450,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -7431,8 +6566,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Fairwater Runners"
+        "Fairwater Runners",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -7547,8 +6682,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -7576,8 +6711,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Amman Valley Harriers"
+        "Amman Valley Harriers",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -7634,8 +6769,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -7663,8 +6798,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -7721,8 +6856,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -7750,8 +6885,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -7779,8 +6914,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -7808,8 +6943,8 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Westbury Harriers",
         "Lliswerry Runners",
+        "Westbury Harriers",
         "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
@@ -7846,8 +6981,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -7876,8 +7011,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Westbury Harriers",
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -7913,8 +7048,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -8000,8 +7135,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -8029,8 +7164,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -8058,8 +7193,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -8174,8 +7309,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -8203,8 +7338,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -8232,8 +7367,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -8589,9 +7724,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Neath Harriers",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -8627,9 +7762,9 @@
       "match": 4,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Neath Harriers",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -8665,8 +7800,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Sarn Helen",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Sarn Helen"
       ],
       "finishes": [
         {
@@ -8694,8 +7829,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8723,8 +7858,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8752,8 +7887,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8781,8 +7916,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8810,9 +7945,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Carmarthen & District Harriers AC",
+        "Islwyn Running Club",
         "Parc Bryn Bach Running Club",
-        "Islwyn Running Club"
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8848,8 +7983,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8877,8 +8012,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -8935,8 +8070,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "North Somerset AC",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "North Somerset AC"
       ],
       "finishes": [
         {
@@ -8964,8 +8099,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -8993,8 +8128,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Bristol University"
+        "Bristol University",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -9022,8 +8157,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "University of Bath"
+        "University of Bath",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -9051,8 +8186,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "University of Bath"
+        "University of Bath",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -9080,8 +8215,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "University of Bath"
+        "University of Bath",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -9109,8 +8244,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -9388,8 +8523,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -9417,8 +8552,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -9446,8 +8581,8 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
         "Cardiff Harlequins",
+        "Cardiff Amateur Athletic Club",
         "Lliswerry Runners"
       ],
       "finishes": [
@@ -9513,8 +8648,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Harlequins",
-        "Team Bath AC"
+        "Team Bath AC",
+        "Cardiff Harlequins"
       ],
       "finishes": [
         {
@@ -9600,8 +8735,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -9629,8 +8764,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Neath Harriers",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Neath Harriers"
       ],
       "finishes": [
         {
@@ -9658,8 +8793,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -9687,8 +8822,8 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
         "Islwyn Running Club",
+        "Pontypridd Roadents Athletic Club",
         "Cardiff University AC"
       ],
       "finishes": [
@@ -9725,8 +8860,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -9754,9 +8889,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Neath Harriers",
         "Pontypridd Roadents Athletic Club",
-        "Neath Harriers"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -9792,8 +8927,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -9821,8 +8956,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -9850,8 +8985,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -9879,8 +9014,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -9908,8 +9043,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -10024,8 +9159,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -10206,8 +9341,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Fairwater Runners",
-        "Taf Running & Orienteering Teams",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -10301,8 +9436,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Fairwater Runners"
       ],
       "finishes": [
         {
@@ -10388,8 +9523,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Barry & Vale Harriers A. A. C.",
-        "Fairwater Runners"
+        "Fairwater Runners",
+        "Barry & Vale Harriers A. A. C."
       ],
       "finishes": [
         {
@@ -10475,8 +9610,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -10504,8 +9639,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -10533,8 +9668,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -10562,8 +9697,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Ogmore Phoenix Runners",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Ogmore Phoenix Runners"
       ],
       "finishes": [
         {
@@ -10765,10 +9900,10 @@
       "match": 1,
       "duplicate_count": 4,
       "clubs": [
+        "Mansfield Harriers",
         "Pont-y-Pwl & District Runners",
-        "Croft Ambrey",
         "Pontypridd Roadents Athletic Club",
-        "Mansfield Harriers"
+        "Croft Ambrey"
       ],
       "finishes": [
         {
@@ -10937,8 +10072,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Guest",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Guest"
       ],
       "finishes": [
         {
@@ -11024,11 +10159,11 @@
       "match": 1,
       "duplicate_count": 5,
       "clubs": [
+        "Penarth and Dinas Runners",
         "Pontypridd Roadents Athletic Club",
-        "Bristol and West Athletic Club",
         "Croft Ambrey",
-        "Thornbury Running Club",
-        "Penarth and Dinas Runners"
+        "Bristol and West Athletic Club",
+        "Thornbury Running Club"
       ],
       "finishes": [
         {
@@ -11080,8 +10215,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -11109,8 +10244,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -11138,8 +10273,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "3M Gorseinon Road Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "3M Gorseinon Road Runners"
       ],
       "finishes": [
         {
@@ -11408,8 +10543,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -11437,8 +10572,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -11466,8 +10601,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -11495,8 +10630,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Carmarthen & District Harriers AC",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Carmarthen & District Harriers AC"
       ],
       "finishes": [
         {
@@ -11553,8 +10688,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -11582,8 +10717,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -11611,8 +10746,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -11930,8 +11065,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -12017,9 +11152,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Pontyclun Road Runners",
         "San Domenico Road Runners Club",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -12084,8 +11219,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "San Domenico Road Runners Club"
+        "San Domenico Road Runners Club",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -12113,9 +11248,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Pontyclun Road Runners",
         "San Domenico Road Runners Club",
-        "University of Swansea"
+        "University of Swansea",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -12151,8 +11286,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -12180,8 +11315,8 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Bristol and West Athletic Club",
+        "Les Croupiers Running Club",
         "Thornbury Running Club"
       ],
       "finishes": [
@@ -12218,12 +11353,12 @@
       "match": 2,
       "duplicate_count": 6,
       "clubs": [
+        "Carmarthen & District Harriers AC",
+        "3M Gorseinon Road Runners",
         "Les Croupiers Running Club",
         "Cardiff University AC",
-        "3M Gorseinon Road Runners",
         "Bristol and West Athletic Club",
-        "Thornbury Running Club",
-        "Carmarthen & District Harriers AC"
+        "Thornbury Running Club"
       ],
       "finishes": [
         {
@@ -12466,8 +11601,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "University of Bath"
+        "University of Bath",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12495,8 +11630,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "University of Bath"
+        "University of Bath",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12524,9 +11659,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "University of Bath",
         "Newport Harriers",
-        "University of Bath"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12562,8 +11697,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "University of Bath"
+        "University of Bath",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12736,8 +11871,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12765,8 +11900,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12794,8 +11929,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -12823,8 +11958,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12852,8 +11987,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12881,8 +12016,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12910,8 +12045,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12939,8 +12074,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12968,8 +12103,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -12997,8 +12132,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13026,8 +12161,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13055,8 +12190,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13084,8 +12219,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13113,8 +12248,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13142,8 +12277,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -13171,8 +12306,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -13200,8 +12335,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13287,8 +12422,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -13316,8 +12451,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Avon Valley Runners"
+        "Avon Valley Runners",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -13345,9 +12480,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "University of Swansea",
+        "Avon Valley Runners",
         "Parc Bryn Bach Running Club",
-        "Avon Valley Runners"
+        "University of Swansea"
       ],
       "finishes": [
         {
@@ -13383,8 +12518,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -13412,8 +12547,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -13441,8 +12576,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -13470,8 +12605,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13499,8 +12634,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13528,8 +12663,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13557,8 +12692,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13586,8 +12721,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13615,8 +12750,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -13644,8 +12779,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -13673,8 +12808,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -13760,8 +12895,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pembrokeshire Harriers",
-        "Bristol University"
+        "Bristol University",
+        "Pembrokeshire Harriers"
       ],
       "finishes": [
         {
@@ -13905,8 +13040,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -13963,8 +13098,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Aberdare Valley AAC",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Aberdare Valley AAC"
       ],
       "finishes": [
         {
@@ -14021,8 +13156,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pont-y-Pwl & District Runners",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Pont-y-Pwl & District Runners"
       ],
       "finishes": [
         {
@@ -14050,8 +13185,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Southville Running Club"
+        "Southville Running Club",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -14137,8 +13272,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -14166,8 +13301,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Dragon RC"
+        "Dragon RC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -14282,8 +13417,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Harlequins",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Cardiff Harlequins"
       ],
       "finishes": [
         {
@@ -14311,9 +13446,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Aberdare Valley AAC",
         "Lliswerry Runners",
-        "Aberdare Valley AAC"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -14350,8 +13485,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Aberdare Valley AAC",
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -14387,9 +13522,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Swansea Harriers Athletic Club",
+        "Aberdare Valley AAC",
         "Llanelli Amateur Athletic Club",
-        "Aberdare Valley AAC"
+        "Swansea Harriers Athletic Club"
       ],
       "finishes": [
         {
@@ -14483,9 +13618,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Swansea Harriers Athletic Club",
         "Aberdare Valley AAC",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Swansea Harriers Athletic Club"
       ],
       "finishes": [
         {
@@ -14580,10 +13715,10 @@
       "duplicate_count": 5,
       "clubs": [
         "Aberdare Valley AAC",
-        "Lliswerry Runners",
         "Amman Valley Harriers",
-        "Parc Bryn Bach Running Club",
-        "Women Running Penarth"
+        "Lliswerry Runners",
+        "Women Running Penarth",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -14635,9 +13770,9 @@
       "match": 2,
       "duplicate_count": 4,
       "clubs": [
-        "Parc Bryn Bach Running Club",
         "Aberdare Valley AAC",
         "Amman Valley Harriers",
+        "Parc Bryn Bach Running Club",
         "Lliswerry Runners"
       ],
       "finishes": [
@@ -14712,8 +13847,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Parc Bryn Bach Running Club",
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -14750,9 +13885,9 @@
       "duplicate_count": 4,
       "clubs": [
         "Parc Bryn Bach Running Club",
-        "Pontypridd Roadents Athletic Club",
+        "Brecon Athletic Club",
         "Lliswerry Runners",
-        "Brecon Athletic Club"
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -14797,8 +13932,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Parc Bryn Bach Running Club",
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -14834,8 +13969,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -14863,8 +13998,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -14892,9 +14027,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Caldicot Running Club",
+        "Islwyn Running Club",
         "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -14930,8 +14065,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -14988,8 +14123,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -15017,8 +14152,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -15104,8 +14239,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -15133,8 +14268,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -15162,8 +14297,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "Bristol University"
+        "Bristol University",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -15249,11 +14384,11 @@
       "match": 1,
       "duplicate_count": 5,
       "clubs": [
-        "Neath Harriers",
-        "Spirit of Monmouth RC",
-        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club",
         "Ogmore Phoenix Runners",
-        "Pontypridd Roadents Athletic Club"
+        "Parc Bryn Bach Running Club",
+        "Spirit of Monmouth RC",
+        "Neath Harriers"
       ],
       "finishes": [
         {
@@ -15392,9 +14527,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Parc Bryn Bach Running Club",
         "Llanelli Amateur Athletic Club",
-        "Neath Harriers",
-        "Parc Bryn Bach Running Club"
+        "Neath Harriers"
       ],
       "finishes": [
         {
@@ -15430,8 +14565,8 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -15524,8 +14659,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -15553,8 +14688,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Neath Harriers",
-        "Bitton Road Runners"
+        "Bitton Road Runners",
+        "Neath Harriers"
       ],
       "finishes": [
         {
@@ -15698,8 +14833,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -15727,8 +14862,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -15756,8 +14891,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -15785,8 +14920,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Bristol University"
+        "Bristol University",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -15814,8 +14949,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "CDF Runners",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "CDF Runners"
       ],
       "finishes": [
         {
@@ -15843,8 +14978,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Guest",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Guest"
       ],
       "finishes": [
         {
@@ -15872,8 +15007,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Guest",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Guest"
       ],
       "finishes": [
         {
@@ -15930,8 +15065,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -15959,8 +15094,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -16133,8 +15268,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Women Running Penarth"
+        "Women Running Penarth",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16162,8 +15297,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Women Running Penarth",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Women Running Penarth"
       ],
       "finishes": [
         {
@@ -16191,8 +15326,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Women Running Penarth",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Women Running Penarth"
       ],
       "finishes": [
         {
@@ -16220,8 +15355,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Women Running Penarth",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Women Running Penarth"
       ],
       "finishes": [
         {
@@ -16365,9 +15500,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Cwm Ogwr",
+        "Penarth and Dinas Runners",
         "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Cwm Ogwr"
       ],
       "finishes": [
         {
@@ -16403,9 +15538,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
+        "Penarth and Dinas Runners",
         "Fairwater Runners",
-        "Caldicot Running Club",
-        "Penarth and Dinas Runners"
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -16441,8 +15576,8 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Fairwater Runners",
         "Penarth and Dinas Runners",
+        "Fairwater Runners",
         "Parc Bryn Bach Running Club"
       ],
       "finishes": [
@@ -16479,8 +15614,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Fairwater Runners"
       ],
       "finishes": [
         {
@@ -16508,8 +15643,8 @@
       "match": 5,
       "duplicate_count": 3,
       "clubs": [
-        "Fairwater Runners",
         "Penarth and Dinas Runners",
+        "Fairwater Runners",
         "Parc Bryn Bach Running Club"
       ],
       "finishes": [
@@ -16546,8 +15681,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Fairwater Runners"
       ],
       "finishes": [
         {
@@ -16575,9 +15710,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Penarth and Dinas Runners",
         "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16613,10 +15748,10 @@
       "match": 2,
       "duplicate_count": 4,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Fairwater Runners",
         "Penarth and Dinas Runners",
-        "Brecon Athletic Club"
+        "Fairwater Runners",
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16660,8 +15795,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Fairwater Runners"
+        "Fairwater Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16689,8 +15824,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Fairwater Runners"
+        "Fairwater Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16718,9 +15853,9 @@
       "match": 5,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Penarth and Dinas Runners",
         "Fairwater Runners",
-        "Penarth and Dinas Runners"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16756,9 +15891,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
+        "Penarth and Dinas Runners",
         "Taf Running & Orienteering Teams",
-        "Penarth and Dinas Runners"
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16794,9 +15929,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
+        "Les Croupiers Running Club",
         "Aberystwyth Athletic Club",
-        "Port Talbot Harriers & AC",
-        "Les Croupiers Running Club"
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -16946,8 +16081,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -16975,8 +16110,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Amman Valley Harriers"
+        "Amman Valley Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -17207,8 +16342,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -17236,8 +16371,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -17265,9 +16400,9 @@
       "match": 3,
       "duplicate_count": 3,
       "clubs": [
-        "Taf Running & Orienteering Teams",
+        "Islwyn Running Club",
         "Guest",
-        "Islwyn Running Club"
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -17303,8 +16438,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -17360,9 +16495,9 @@
       "match": 1,
       "duplicate_count": 3,
       "clubs": [
-        "Les Croupiers Running Club",
         "Fairwater Runners",
-        "Bridgend Athletic Club"
+        "Bridgend Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -17755,8 +16890,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -17784,8 +16919,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -17813,8 +16948,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Griffithstown Harriers AAC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Griffithstown Harriers AAC"
       ],
       "finishes": [
         {
@@ -17842,8 +16977,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Griffithstown Harriers AAC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Griffithstown Harriers AAC"
       ],
       "finishes": [
         {
@@ -17871,8 +17006,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Griffithstown Harriers AAC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Griffithstown Harriers AAC"
       ],
       "finishes": [
         {
@@ -17900,8 +17035,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Griffithstown Harriers AAC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Griffithstown Harriers AAC"
       ],
       "finishes": [
         {
@@ -17958,8 +17093,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -18015,8 +17150,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -18044,8 +17179,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -18073,8 +17208,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -18102,8 +17237,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Usk Runners",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Usk Runners"
       ],
       "finishes": [
         {
@@ -18131,8 +17266,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Usk Runners",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Usk Runners"
       ],
       "finishes": [
         {
@@ -18247,8 +17382,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -18276,8 +17411,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontypridd Roadents Athletic Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Pontypridd Roadents Athletic Club"
       ],
       "finishes": [
         {
@@ -18305,8 +17440,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18334,8 +17469,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18363,8 +17498,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18392,8 +17527,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18421,8 +17556,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18450,8 +17585,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18479,8 +17614,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Pont-y-Pwl & District Runners",
-        "Bristol University"
+        "Bristol University",
+        "Pont-y-Pwl & District Runners"
       ],
       "finishes": [
         {
@@ -18537,8 +17672,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Islwyn Running Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Islwyn Running Club"
       ],
       "finishes": [
         {
@@ -18624,8 +17759,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -18740,8 +17875,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Amman Valley Harriers",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Amman Valley Harriers"
       ],
       "finishes": [
         {
@@ -18827,8 +17962,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pont-y-Pwl & District Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Pont-y-Pwl & District Runners"
       ],
       "finishes": [
         {
@@ -18856,8 +17991,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -18885,8 +18020,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18914,8 +18049,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -18972,8 +18107,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Griffithstown Harriers AAC",
-        "Cardiff Triathletes"
+        "Cardiff Triathletes",
+        "Griffithstown Harriers AAC"
       ],
       "finishes": [
         {
@@ -19001,8 +18136,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -19457,8 +18592,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Wells City Harriers",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Wells City Harriers"
       ],
       "finishes": [
         {
@@ -19582,8 +18717,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Aberdare Valley AAC"
+        "Aberdare Valley AAC",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -19640,8 +18775,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Penarth and Dinas Runners",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Penarth and Dinas Runners"
       ],
       "finishes": [
         {
@@ -19814,8 +18949,8 @@
       "duplicate_count": 3,
       "clubs": [
         "Aberdare Valley AAC",
-        "Chepstow Harriers",
-        "Amman Valley Harriers"
+        "Amman Valley Harriers",
+        "Chepstow Harriers"
       ],
       "finishes": [
         {
@@ -19919,8 +19054,8 @@
       "duplicate_count": 3,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Taf Running & Orienteering Teams",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -19956,8 +19091,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Taf Running & Orienteering Teams",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -19986,8 +19121,8 @@
       "duplicate_count": 3,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Taf Running & Orienteering Teams",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Taf Running & Orienteering Teams"
       ],
       "finishes": [
         {
@@ -20081,8 +19216,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Rhondda Valley Runners"
+        "Rhondda Valley Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -20110,8 +19245,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Rhondda Valley Runners"
+        "Rhondda Valley Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -20284,8 +19419,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20313,8 +19448,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20342,8 +19477,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20371,8 +19506,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20400,8 +19535,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20429,8 +19564,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20458,8 +19593,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -20487,8 +19622,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Micky Morris Racing Team",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Micky Morris Racing Team"
       ],
       "finishes": [
         {
@@ -20516,8 +19651,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pont-y-Pwl & District Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Pont-y-Pwl & District Runners"
       ],
       "finishes": [
         {
@@ -20806,8 +19941,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Wells City Harriers",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Wells City Harriers"
       ],
       "finishes": [
         {
@@ -20864,8 +19999,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Wells City Harriers",
-        "Parc Bryn Bach Running Club"
+        "Parc Bryn Bach Running Club",
+        "Wells City Harriers"
       ],
       "finishes": [
         {
@@ -20980,8 +20115,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21009,8 +20144,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21038,8 +20173,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Brecon Athletic Club"
+        "Brecon Athletic Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21067,8 +20202,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21096,8 +20231,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21154,8 +20289,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21183,8 +20318,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pont-y-Pwl & District Runners"
+        "Pont-y-Pwl & District Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21212,8 +20347,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21270,8 +20405,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -21299,8 +20434,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "North Somerset AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "North Somerset AC"
       ],
       "finishes": [
         {
@@ -21328,8 +20463,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Wltshire A.A."
+        "Wltshire A.A.",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -21386,8 +20521,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "GoodGym Race Team"
+        "GoodGym Race Team",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21444,8 +20579,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21473,8 +20608,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21502,8 +20637,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21531,9 +20666,9 @@
       "match": 2,
       "duplicate_count": 3,
       "clubs": [
+        "Neath Harriers",
         "Guest",
-        "Port Talbot Harriers & AC",
-        "Neath Harriers"
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21569,8 +20704,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21598,8 +20733,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "3M Gorseinon Road Runners"
+        "3M Gorseinon Road Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21656,8 +20791,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Penarth and Dinas Runners"
+        "Penarth and Dinas Runners",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21685,8 +20820,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21715,8 +20850,8 @@
       "duplicate_count": 3,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Port Talbot Harriers & AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21753,8 +20888,8 @@
       "duplicate_count": 3,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Port Talbot Harriers & AC",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21791,9 +20926,9 @@
       "duplicate_count": 4,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Port Talbot Harriers & AC",
         "Neath Harriers",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21867,8 +21002,8 @@
       "duplicate_count": 3,
       "clubs": [
         "San Domenico Road Runners Club",
-        "Port Talbot Harriers & AC",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21904,8 +21039,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Neath Harriers"
+        "Neath Harriers",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -21933,10 +21068,10 @@
       "match": 1,
       "duplicate_count": 4,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Port Talbot Harriers & AC",
         "Neath Harriers",
-        "Lliswerry Runners"
+        "Port Talbot Harriers & AC",
+        "Lliswerry Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -21980,8 +21115,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Bristol and West Athletic Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Bristol and West Athletic Club"
       ],
       "finishes": [
         {
@@ -22009,8 +21144,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Rhondda Valley Runners"
+        "Rhondda Valley Runners",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -22125,8 +21260,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Parc Bryn Bach Running Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Parc Bryn Bach Running Club"
       ],
       "finishes": [
         {
@@ -22154,8 +21289,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Rhondda Valley Runners"
+        "Rhondda Valley Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -22183,8 +21318,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -22212,8 +21347,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Caldicot Running Club",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Caldicot Running Club"
       ],
       "finishes": [
         {
@@ -22269,8 +21404,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Southville Running Club"
+        "Southville Running Club",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -22298,8 +21433,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -22413,8 +21548,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Pontyclun Road Runners",
-        "Chepstow Harriers"
+        "Chepstow Harriers",
+        "Pontyclun Road Runners"
       ],
       "finishes": [
         {
@@ -22442,8 +21577,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Llanelli Amateur Athletic Club",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Llanelli Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -22645,8 +21780,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Aberdare Valley AAC",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Aberdare Valley AAC"
       ],
       "finishes": [
         {
@@ -22674,8 +21809,8 @@
       "match": 5,
       "duplicate_count": 2,
       "clubs": [
-        "Aberdare Valley AAC",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Aberdare Valley AAC"
       ],
       "finishes": [
         {
@@ -22703,8 +21838,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -22732,8 +21867,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Bridgend Athletic Club",
-        "Newport Harriers"
+        "Newport Harriers",
+        "Bridgend Athletic Club"
       ],
       "finishes": [
         {
@@ -22876,8 +22011,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Spirit of Monmouth RC"
+        "Spirit of Monmouth RC",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -22905,8 +22040,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Rhondda Valley Runners"
+        "Rhondda Valley Runners",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -22934,8 +22069,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -23165,8 +22300,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "Llanelli Amateur Athletic Club"
+        "Llanelli Amateur Athletic Club",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -23368,8 +22503,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Port Talbot Harriers & AC",
-        "Pembrokeshire Harriers"
+        "Pembrokeshire Harriers",
+        "Port Talbot Harriers & AC"
       ],
       "finishes": [
         {
@@ -23397,8 +22532,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Triathletes",
-        "San Domenico Road Runners Club"
+        "San Domenico Road Runners Club",
+        "Cardiff Triathletes"
       ],
       "finishes": [
         {
@@ -23484,8 +22619,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "University of Swansea",
-        "University of Bath"
+        "University of Bath",
+        "University of Swansea"
       ],
       "finishes": [
         {
@@ -23513,8 +22648,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "University of Swansea",
-        "University of Bath"
+        "University of Bath",
+        "University of Swansea"
       ],
       "finishes": [
         {
@@ -23542,8 +22677,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Porthcawl Runners",
-        "Bristol University"
+        "Bristol University",
+        "Porthcawl Runners"
       ],
       "finishes": [
         {
@@ -23687,8 +22822,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -23774,8 +22909,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff Amateur Athletic Club",
-        "University of the West of England"
+        "University of the West of England",
+        "Cardiff Amateur Athletic Club"
       ],
       "finishes": [
         {
@@ -23803,8 +22938,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -23832,8 +22967,8 @@
       "match": 1,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Carmarthen & District Harriers AC"
+        "Carmarthen & District Harriers AC",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -23861,8 +22996,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Rhondda Valley Runners",
-        "Cardiff Metropolitan University"
+        "Cardiff Metropolitan University",
+        "Rhondda Valley Runners"
       ],
       "finishes": [
         {
@@ -23919,8 +23054,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Caerleon RC",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Caerleon RC"
       ],
       "finishes": [
         {
@@ -23948,8 +23083,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Pontypridd Roadents Athletic Club"
+        "Pontypridd Roadents Athletic Club",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -24150,8 +23285,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Lliswerry Runners",
-        "Islwyn Running Club"
+        "Islwyn Running Club",
+        "Lliswerry Runners"
       ],
       "finishes": [
         {
@@ -24179,8 +23314,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Pont-y-Pwl & District Runners",
-        "Bristol and West Athletic Club"
+        "Bristol and West Athletic Club",
+        "Pont-y-Pwl & District Runners"
       ],
       "finishes": [
         {
@@ -24208,8 +23343,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Team Bath AC"
+        "Team Bath AC",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -24294,8 +23429,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Cardiff University AC",
-        "Lliswerry Runners"
+        "Lliswerry Runners",
+        "Cardiff University AC"
       ],
       "finishes": [
         {
@@ -24323,8 +23458,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Westbury Harriers",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Westbury Harriers"
       ],
       "finishes": [
         {
@@ -24352,8 +23487,8 @@
       "match": 2,
       "duplicate_count": 2,
       "clubs": [
-        "Les Croupiers Running Club",
-        "Westbury Harriers"
+        "Westbury Harriers",
+        "Les Croupiers Running Club"
       ],
       "finishes": [
         {
@@ -24410,8 +23545,8 @@
       "match": 4,
       "duplicate_count": 2,
       "clubs": [
-        "Forest of Dean Athletic Club",
-        "Blaenau Gwent"
+        "Blaenau Gwent",
+        "Forest of Dean Athletic Club"
       ],
       "finishes": [
         {
@@ -24439,8 +23574,8 @@
       "match": 3,
       "duplicate_count": 2,
       "clubs": [
-        "Wells City Harriers",
-        "Great Western Runners"
+        "Great Western Runners",
+        "Wells City Harriers"
       ],
       "finishes": [
         {
@@ -24980,26 +24115,6 @@
         "pos": 337
       },
       "age_drop": 12
-    },
-    {
-      "athlete": "Adrian Lewis",
-      "older_record": {
-        "season": "2010/2011",
-        "match": 1,
-        "club": "Taf Running & Orienteering Teams",
-        "raw_name": "A. Lewis",
-        "age_cat": "V45",
-        "pos": 96
-      },
-      "younger_record": {
-        "season": "2010/2011",
-        "match": 2,
-        "club": "Wells City Harriers",
-        "raw_name": "A. Lewis",
-        "age_cat": "Senior",
-        "pos": 9
-      },
-      "age_drop": 17
     },
     {
       "athlete": "Mark Taylor",

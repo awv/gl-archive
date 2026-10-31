@@ -682,6 +682,58 @@
     "flags": []
   },
   {
+    "id": "name_change__arwel_davies__arwel_evans",
+    "club": "Bristol and West Athletic Club",
+    "gender": "F",
+    "earlier_name": "Arwel Davies",
+    "later_name": "Arwel Evans",
+    "effective_season": "2014/2015",
+    "confidence": 64,
+    "status": "pending",
+    "is_compound": false,
+    "overlap_count": 0,
+    "overlapping_seasons": [],
+    "gap_years": 1,
+    "earlier_stats": {
+      "name": "Arwel Davies",
+      "club": "Bristol and West Athletic Club",
+      "count": 9,
+      "seasons": [
+        "2011/2012",
+        "2012/2013",
+        "2013/2014"
+      ],
+      "years_span": "2011\u20132014 (3 seasons)",
+      "avg_pos": 55.3,
+      "best_pos": 31,
+      "categories": [
+        "Senior"
+      ]
+    },
+    "later_stats": {
+      "name": "Arwel Evans",
+      "club": "Bristol and West Athletic Club",
+      "count": 2,
+      "seasons": [
+        "2014/2015",
+        "2015/2016"
+      ],
+      "years_span": "2014\u20132016 (2 seasons)",
+      "avg_pos": 145.5,
+      "best_pos": 127,
+      "categories": [
+        "Senior"
+      ]
+    },
+    "reasons": [
+      "Speculative Timeline Candidate \u2022 Verify with club records",
+      "Sequential career handover with 1-year gap (2013/2014 \u2794 2014/2015)",
+      "Category consistency: Senior \u2794 Senior",
+      "Single pair with first name 'Arwel' at Bristol and West Athletic Club"
+    ],
+    "flags": []
+  },
+  {
     "id": "name_change__bethan_apglyn__bethan_williams",
     "club": "Penarth and Dinas Runners",
     "gender": "F",

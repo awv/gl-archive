@@ -40,10 +40,11 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/fixture_team_standings.js"></script>
     <script src="data.js"></script>
     <script src="site-layout.js"></script>
 </head>
-<body class="text-slate-800 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd]">
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950 transition-colors">
 
     <!-- GLOBAL NAVIGATION CONTAINER -->
     <div id="global-nav"></div>
@@ -102,27 +103,65 @@
             </div>
         </section>
 
+        <!-- SECTION: OFFICIAL GWENT LEAGUE DIVISION CHAMPIONSHIPS & FINAL STANDINGS -->
+        <section id="section-season-divisions" class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 block">
+                        OFFICIAL LEAGUE RECORD
+                    </span>
+                    <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
+                        <span>Division Championships &amp; Final Standings</span>
+                        <span id="season-div-match-badge" class="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Final Series Standings</span>
+                    </h2>
+                </div>
+
+                <!-- Division Gender Filters -->
+                <div class="flex items-center gap-1.5" id="season-div-filter-container">
+                    <button type="button" data-filter="all" class="season-div-pill px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs transition-all">
+                        All Divisions
+                    </button>
+                    <button type="button" data-filter="M" class="season-div-pill px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all">
+                        Men's Divisions
+                    </button>
+                    <button type="button" data-filter="F" class="season-div-pill px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all">
+                        Women's Divisions
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trophies & League Champions Row -->
+            <div id="season-champions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Dynamically populated championship cards -->
+            </div>
+
+            <!-- Division Tables Grid -->
+            <div id="season-divisions-grid" class="space-y-6">
+                <!-- Dynamically populated division standings tables -->
+            </div>
+        </section>
+
         <!-- TOP POINTS SCORERS THIS SEASON -->
         <section class="space-y-4">
-            <h2 class="text-xl font-serif font-bold text-slate-900">Campaign Top Performers</h2>
+            <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Campaign Top Performers</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
                 <!-- Men Top Scorers -->
-                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
-                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                         Top Senior Men Finishes
                     </h3>
-                    <div id="top-men-list" class="divide-y divide-slate-100 text-xs">
+                    <div id="top-men-list" class="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
                         <!-- Populated -->
                     </div>
                 </div>
 
                 <!-- Women Top Scorers -->
-                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
-                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                         Top Senior Women Finishes
                     </h3>
-                    <div id="top-women-list" class="divide-y divide-slate-100 text-xs">
+                    <div id="top-women-list" class="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
                         <!-- Populated -->
                     </div>
                 </div>
@@ -234,14 +273,14 @@
                         <div class="flex items-center gap-3">
                             <span class="font-mono text-slate-400 font-bold w-4">${idx + 1}</span>
                             <div>
-                                <a href="athlete.html?name=${encodeURIComponent(s.name)}" class="font-serif font-bold text-slate-900 hover:text-emerald-800">
+                                <a href="athlete.html?name=${encodeURIComponent(s.name)}" class="font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
                                     ${s.name}
                                 </a>
-                                <div class="text-[11px] text-slate-500 font-sans">${s.club}</div>
+                                <div class="text-[11px] text-slate-500 dark:text-slate-400 font-sans">${s.club}</div>
                             </div>
                         </div>
                         <div class="text-right font-mono text-[11px]">
-                            <span class="font-bold text-slate-900">${s.pts.toLocaleString()} pts</span>
+                            <span class="font-bold text-slate-900 dark:text-slate-100">${s.pts.toLocaleString()} pts</span>
                             <div class="text-slate-400 text-[10px]">${s.races} races &bull; Best: #${s.bestPos}</div>
                         </div>
                     </div>
@@ -250,6 +289,187 @@
 
             renderTopList('top-men-list', getTopScorers('M'));
             renderTopList('top-women-list', getTopScorers('F'));
+
+            // RENDER OFFICIAL DIVISION CHAMPIONSHIPS & STANDINGS
+            const renderSeasonDivisions = () => {
+                const fixtureMap = window.FIXTURE_TEAM_STANDINGS || {};
+                const divSection = document.getElementById('section-season-divisions');
+                const champGrid = document.getElementById('season-champions-grid');
+                const divGrid = document.getElementById('season-divisions-grid');
+                const badgeEl = document.getElementById('season-div-match-badge');
+
+                // Find final match in this season (usually M5, or highest available match)
+                const matches = [5, 4, 3, 2, 1];
+                let finalFixData = null;
+                let finalMatchNum = 5;
+
+                for (const m of matches) {
+                    const key = `${targetSeason}_m${m}`;
+                    if (fixtureMap[key] && fixtureMap[key].divisions && fixtureMap[key].divisions.length > 0) {
+                        finalFixData = fixtureMap[key];
+                        finalMatchNum = m;
+                        break;
+                    }
+                }
+
+                if (!finalFixData) {
+                    if (divSection) divSection.classList.add('hidden');
+                    return;
+                }
+
+                if (badgeEl) {
+                    badgeEl.textContent = `Cumulative Standings through Match ${finalMatchNum}`;
+                }
+
+                const divisions = finalFixData.divisions;
+                let activeDivFilter = 'all';
+
+                // Extract Champions
+                const champions = [];
+                divisions.forEach(d => {
+                    const champEntry = d.standings.find(s => {
+                        const cp = String(s.cum_pos || '').toLowerCase();
+                        const note = String(s.note || '').toLowerCase();
+                        return cp.includes('champion') || note.includes('champion') || cp === '1';
+                    });
+                    if (champEntry) {
+                        champions.push({
+                            division: d.division,
+                            gender: d.gender,
+                            club: champEntry.team.replace(/\s+['"]?[B-Z]['"]?$/i, '').trim(),
+                            rawTeam: champEntry.team,
+                            pts: champEntry.cum_pts || champEntry.pts,
+                            title: 'League Champions'
+                        });
+                    }
+                });
+
+                if (champGrid) {
+                    champGrid.innerHTML = champions.map(c => `
+                        <div class="bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/80 rounded-xl p-4 flex items-center gap-3 shadow-xs">
+                            <span class="text-3xl">🏆</span>
+                            <div class="truncate">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 block truncate">
+                                    ${c.division}
+                                </span>
+                                <a href="club.html?club=${encodeURIComponent(c.club)}" class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline truncate block">
+                                    ${c.rawTeam}
+                                </a>
+                                <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">${c.pts ? c.pts.toLocaleString() + ' cumulative pts' : 'Title Winners'}</span>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+                function renderDivisionTables() {
+                    let filtered = divisions;
+                    if (activeDivFilter === 'M') filtered = filtered.filter(d => d.gender === 'M');
+                    if (activeDivFilter === 'F') filtered = filtered.filter(d => d.gender === 'F');
+
+                    divGrid.innerHTML = filtered.map(d => {
+                        const isMen = d.gender === 'M';
+                        const isDiv1 = d.division.toLowerCase().includes('division 1');
+                        const divBadgeCls = isDiv1
+                            ? (isMen ? 'bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' : 'bg-purple-50 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800')
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700';
+
+                        // Sort by cumulative points descending if present
+                        const sortedStandings = [...d.standings].sort((a, b) => {
+                            if (a.cum_pts && b.cum_pts) return b.cum_pts - a.cum_pts;
+                            return a.pos - b.pos;
+                        });
+
+                        return `
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-xs">
+                                <div class="px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/60 dark:bg-slate-800/40">
+                                    <div class="flex items-center gap-2.5">
+                                        <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${divBadgeCls}">
+                                            ${isMen ? "Men's" : "Women's"}
+                                        </span>
+                                        <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100">${d.division}</h3>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-400">${sortedStandings.length} Teams</span>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left border-collapse text-xs">
+                                        <thead>
+                                            <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
+                                                <th class="py-2.5 px-4 w-16 text-center">Rank</th>
+                                                <th class="py-2.5 px-4">Club / Team</th>
+                                                <th class="py-2.5 px-4 w-28 text-right font-mono">Match Pts</th>
+                                                <th class="py-2.5 px-4 w-28 text-right font-mono">Cum Pts</th>
+                                                <th class="py-2.5 px-4 w-44 text-right font-mono">Status / Honours</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                                            ${sortedStandings.map((s, idx) => {
+                                                const cleanClub = s.team.replace(/\s+['"]?[B-Z]['"]?$/i, '').trim();
+                                                const isFirst = idx === 0;
+                                                const cumPosStr = String(s.cum_pos || s.note || '');
+                                                const isChamp = cumPosStr.toLowerCase().includes('champion');
+                                                const isPromo = cumPosStr.toLowerCase().includes('promot');
+                                                const isReleg = cumPosStr.toLowerCase().includes('relegat');
+
+                                                let statusBadge = '—';
+                                                if (isChamp) {
+                                                    statusBadge = `<span class="px-2 py-0.5 rounded font-bold text-[10px] bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">🏆 Champions</span>`;
+                                                } else if (isPromo) {
+                                                    statusBadge = `<span class="px-2 py-0.5 rounded font-bold text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">↑ Promoted</span>`;
+                                                } else if (isReleg) {
+                                                    statusBadge = `<span class="px-2 py-0.5 rounded font-bold text-[10px] bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300">↓ Relegated</span>`;
+                                                } else if (s.cum_pos) {
+                                                    statusBadge = `<span class="text-slate-500 font-mono text-[11px]">${s.cum_pos}</span>`;
+                                                }
+
+                                                return `
+                                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors ${isFirst ? 'font-semibold bg-amber-50/20 dark:bg-amber-950/10' : ''}">
+                                                        <td class="py-2.5 px-4 text-center font-mono font-bold ${isFirst ? 'text-amber-600' : 'text-slate-400'}">
+                                                            ${idx + 1}
+                                                        </td>
+                                                        <td class="py-2.5 px-4 font-sans font-medium">
+                                                            <a href="club.html?club=${encodeURIComponent(cleanClub)}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline transition-colors text-slate-900 dark:text-slate-100">
+                                                                ${s.team}
+                                                            </a>
+                                                        </td>
+                                                        <td class="py-2.5 px-4 text-right font-mono text-slate-600 dark:text-slate-400">
+                                                            ${s.pts.toLocaleString()}
+                                                        </td>
+                                                        <td class="py-2.5 px-4 text-right font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                                                            ${s.cum_pts !== null && s.cum_pts !== undefined ? s.cum_pts.toLocaleString() : '—'}
+                                                        </td>
+                                                        <td class="py-2.5 px-4 text-right font-mono">
+                                                            ${statusBadge}
+                                                        </td>
+                                                    </tr>
+                                                `;
+                                            }).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // Filter buttons
+                const filterContainer = document.getElementById('season-div-filter-container');
+                if (filterContainer) {
+                    filterContainer.querySelectorAll('.season-div-pill').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            filterContainer.querySelectorAll('.season-div-pill').forEach(b => {
+                                b.className = 'season-div-pill px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-all';
+                            });
+                            btn.className = 'season-div-pill px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs transition-all';
+                            activeDivFilter = btn.dataset.filter;
+                            renderDivisionTables();
+                        });
+                    });
+                }
+
+                renderDivisionTables();
+            };
+
+            renderSeasonDivisions();
         })();
     </script>
 </body>

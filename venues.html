@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses & Venues • John H Collins Gwent Cross Country League</title>
     <meta name="description" content="All-time course records, terrain dossiers, historic battles, and venue statistics across the iconic championship courses of the Gwent Cross Country League.">
+    <script>
+        // Immediate dark mode initialization to prevent flash
+        if (localStorage.getItem('gl_theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -275,25 +283,41 @@
                                     All-Time Fastest Marks on this Course
                                 </h4>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-                                    <!-- Men Top 5 -->
-                                    <div class="space-y-1">
-                                        <span class="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 uppercase block mb-1">Top Men</span>
-                                        ${v.men_top10.slice(0, 5).map((m, i) => `
-                                            <div class="flex items-center justify-between py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800/50">
-                                                <span class="text-slate-400 font-bold">${i+1}.</span>
-                                                <a href="athlete.html?name=${encodeURIComponent(m.athlete)}&club=${encodeURIComponent(m.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 ml-1.5">${m.athlete}</a>
-                                                <span class="font-bold text-emerald-700 dark:text-emerald-400 ml-auto shrink-0">${m.time}</span>
+                                    <!-- Men Top 10 -->
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-[9px] font-bold text-emerald-700 dark:text-emerald-400 uppercase">Top 10 Men's Times</span>
+                                            <span class="text-[9px] text-slate-400 font-mono">Rank &bull; Mark</span>
+                                        </div>
+                                        ${v.men_top10.slice(0, 10).map((m, i) => `
+                                            <div class="flex items-center justify-between py-1 px-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80">
+                                                <div class="flex items-center gap-1.5 truncate">
+                                                    <span class="text-slate-400 font-bold w-4">${i+1}.</span>
+                                                    <div class="truncate">
+                                                        <a href="athlete.html?name=${encodeURIComponent(m.athlete)}&club=${encodeURIComponent(m.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 font-semibold block">${m.athlete}</a>
+                                                        <span class="text-[9px] text-slate-400 truncate block">${m.club} &bull; ${m.season}</span>
+                                                    </div>
+                                                </div>
+                                                <span class="font-bold text-emerald-700 dark:text-emerald-400 ml-2 shrink-0 font-mono">${m.time}</span>
                                             </div>
                                         `).join('')}
                                     </div>
-                                    <!-- Women Top 5 -->
-                                    <div class="space-y-1">
-                                        <span class="text-[9px] font-bold text-purple-700 dark:text-purple-400 uppercase block mb-1">Top Women</span>
-                                        ${v.women_top10.slice(0, 5).map((w, i) => `
-                                            <div class="flex items-center justify-between py-0.5 px-2 rounded bg-slate-50 dark:bg-slate-800/50">
-                                                <span class="text-slate-400 font-bold">${i+1}.</span>
-                                                <a href="athlete.html?name=${encodeURIComponent(w.athlete)}&club=${encodeURIComponent(w.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 ml-1.5">${w.athlete}</a>
-                                                <span class="font-bold text-purple-700 dark:text-purple-400 ml-auto shrink-0">${w.time}</span>
+                                    <!-- Women Top 10 -->
+                                    <div class="space-y-1.5">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-[9px] font-bold text-purple-700 dark:text-purple-400 uppercase">Top 10 Women's Times</span>
+                                            <span class="text-[9px] text-slate-400 font-mono">Rank &bull; Mark</span>
+                                        </div>
+                                        ${v.women_top10.slice(0, 10).map((w, i) => `
+                                            <div class="flex items-center justify-between py-1 px-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80">
+                                                <div class="flex items-center gap-1.5 truncate">
+                                                    <span class="text-slate-400 font-bold w-4">${i+1}.</span>
+                                                    <div class="truncate">
+                                                        <a href="athlete.html?name=${encodeURIComponent(w.athlete)}&club=${encodeURIComponent(w.club)}" class="truncate hover:underline text-slate-800 dark:text-slate-200 font-semibold block">${w.athlete}</a>
+                                                        <span class="text-[9px] text-slate-400 truncate block">${w.club} &bull; ${w.season}</span>
+                                                    </div>
+                                                </div>
+                                                <span class="font-bold text-purple-700 dark:text-purple-400 ml-2 shrink-0 font-mono">${w.time}</span>
                                             </div>
                                         `).join('')}
                                     </div>
