@@ -47970,7 +47970,6 @@
       "Lee Aherne"
     ],
     "clubs": [
-      "Lliswerry Runners",
       "Parc Bryn Bach Running Club"
     ],
     "seasons": [
@@ -47986,13 +47985,13 @@
       "2023/2024",
       "2024/2025"
     ],
-    "gender": "F",
+    "gender": "M",
     "categories": [
       "V45",
       "V50",
       "V55"
     ],
-    "finishes": 45,
+    "finishes": 41,
     "first_year": 2013,
     "last_year": 2024
   },
@@ -132134,25 +132133,6 @@
     "first_year": 2016,
     "last_year": 2016
   },
-  "l. ahern": {
-    "canonical_name": "L. Ahern",
-    "raw_names": [
-      "L. Ahern"
-    ],
-    "clubs": [
-      "Lliswerry Runners"
-    ],
-    "seasons": [
-      "2016/2017"
-    ],
-    "gender": "F",
-    "categories": [
-      "V50"
-    ],
-    "finishes": 1,
-    "first_year": 2016,
-    "last_year": 2016
-  },
   "s. lloyd-perks": {
     "canonical_name": "S. Lloyd-Perks",
     "raw_names": [
@@ -167438,5 +167418,27 @@
     "finishes": 1,
     "first_year": 2010,
     "last_year": 2010
+  },
+  "louise ahern": {
+    "canonical_name": "Louise Ahern",
+    "raw_names": [
+      "L. Ahern",
+      "L. Aherne"
+    ],
+    "clubs": [
+      "Lliswerry Runners"
+    ],
+    "seasons": [
+      "2015/2016",
+      "2016/2017"
+    ],
+    "gender": "F",
+    "categories": [
+      "V45",
+      "V50"
+    ],
+    "finishes": 5,
+    "first_year": 2015,
+    "last_year": 2016
   }
 }

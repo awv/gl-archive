@@ -523,6 +523,13 @@
             let resolvedName = targetName;
             let isNameChangeAthlete = false;
 
+            // Misattribution alias resolution (e.g. female runner at Lliswerry erroneously recorded as Lee Aherne)
+            if ((targetName.toLowerCase() === 'lee aherne' || targetName.toLowerCase() === 'l. aherne') && 
+                ((targetClub && targetClub.toLowerCase().includes('lliswerry')) || targetGender === 'F')) {
+                resolvedName = 'Louise Ahern';
+                if (!targetClub) targetClub = 'Lliswerry Runners';
+            }
+
             for (const [maiden, info] of Object.entries(confirmedNameChanges)) {
                 if (maiden.toLowerCase() === targetName.toLowerCase() || 
                     info.primary_name.toLowerCase() === targetName.toLowerCase()) {
@@ -546,8 +553,23 @@
                 }
             }
 
+            // Deduce gender if not specified in URL to keep male and female runners strictly separated
+            let resolvedGender = targetGender;
+            if (!resolvedGender && targetClub) {
+                const clubMatches = allData.filter(r => 
+                    (r.athlete && r.athlete.toLowerCase() === resolvedName.toLowerCase() ||
+                     r.raw_name && r.raw_name.toLowerCase() === resolvedName.toLowerCase()) &&
+                    r.club && r.club.toLowerCase() === targetClub.toLowerCase()
+                );
+                const genders = new Set(clubMatches.map(r => r.gender).filter(Boolean));
+                if (genders.size === 1) {
+                    resolvedGender = Array.from(genders)[0];
+                }
+            }
+
             // 2. Match finishes
             let allMatches = allData.filter(r => {
+                if (resolvedGender && r.gender && r.gender !== resolvedGender) return false;
                 if (r.athlete && r.athlete.toLowerCase() === resolvedName.toLowerCase()) return true;
                 if (r.raw_name && r.raw_name.toLowerCase() === resolvedName.toLowerCase()) return true;
                 if (isNameChangeAthlete && nameChangeInfo) {
@@ -706,8 +728,8 @@
 
             // Determine career finishes for this specific profile
             let careerRecords = allMatches;
-            if (targetGender) {
-                careerRecords = careerRecords.filter(r => r.gender === targetGender);
+            if (resolvedGender) {
+                careerRecords = careerRecords.filter(r => r.gender === resolvedGender);
             }
             if (isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0) {
                 careerRecords = careerRecords.filter(r => transferInfo.clubs.some(tc => tc.toLowerCase() === (r.club || '').toLowerCase()));
