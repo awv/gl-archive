@@ -91,7 +91,7 @@
             <!-- PROMINENT HERO SEARCH INPUT -->
             <div class="max-w-xl mx-auto relative pt-2 text-left">
                 <div class="relative">
-                    <input type="text" id="hero-search-input" placeholder="Search runner name (e.g. Dewi Griffiths, Robert Gale) or club..." autocomplete="off"
+                    <input type="text" id="hero-search-input" placeholder="Search runner name (e.g. Dewi Griffiths or Lee Aherne) or club..." autocomplete="off"
                         class="w-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 focus:border-emerald-600 dark:focus:border-emerald-500 text-slate-900 dark:text-slate-100 placeholder-slate-400 rounded-xl px-5 py-4 pl-12 text-base font-medium focus:outline-none transition-all shadow-md">
                     <svg class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -764,30 +764,40 @@
                 </a>
             `).join('');
 
-            // 5. RENDER TOP CLUBS
-            const clubFinishes = new Map();
+            // 5. RENDER TOP CLUBS & INDEX CLUBS FOR SEARCH
+            const clubStatsMap = new Map();
             allData.forEach(r => {
                 if (!r.club || r.club === 'Unattached') return;
-                clubFinishes.set(r.club, (clubFinishes.get(r.club) || 0) + 1);
+                const c = r.club.trim();
+                if (!clubStatsMap.has(c)) {
+                    clubStatsMap.set(c, { name: c, finishes: 0, runners: new Set() });
+                }
+                const item = clubStatsMap.get(c);
+                item.finishes++;
+                if (r.athlete) item.runners.add(r.athlete);
             });
 
-            const topClubs = Array.from(clubFinishes.entries())
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 12);
+            const allClubsList = Array.from(clubStatsMap.values()).map(c => ({
+                name: c.name,
+                finishes: c.finishes,
+                runnerCount: c.runners.size
+            })).sort((a, b) => b.finishes - a.finishes);
+
+            const topClubs = allClubsList.slice(0, 12);
 
             const topClubsContainer = document.getElementById('top-clubs-grid');
-            topClubsContainer.innerHTML = topClubs.map(([club, count]) => `
-                <a href="club.html?club=${encodeURIComponent(club)}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 shadow-xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all block group">
+            topClubsContainer.innerHTML = topClubs.map(c => `
+                <a href="club.html?club=${encodeURIComponent(c.name)}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 shadow-xs hover:border-emerald-500/60 dark:hover:border-emerald-500/60 transition-all block group">
                     <div class="text-xs font-semibold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors truncate">
-                        ${club}
+                        ${c.name}
                     </div>
                     <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-1">
-                        ${count.toLocaleString()} finishes
+                        ${c.finishes.toLocaleString()} finishes
                     </div>
                 </a>
             `).join('');
 
-            // 6. HERO SEARCH LIVE AUTOCOMPLETE
+            // 6. HERO SEARCH LIVE AUTOCOMPLETE (Runners & Clubs)
             const heroInput = document.getElementById('hero-search-input');
             const heroDropdown = document.getElementById('hero-search-results');
 
@@ -799,8 +809,12 @@
                     return;
                 }
 
+                // 1. Search Matching Clubs
+                const matchingClubs = allClubsList.filter(c => c.name.toLowerCase().includes(query)).slice(0, 3);
+
+                // 2. Search Matching Runners (by name, alias, or club)
                 const runnersList = Array.from(runnerAppearances.values());
-                const matches = runnersList.filter(r => {
+                const matchingRunners = runnersList.filter(r => {
                     if (r.name.toLowerCase().includes(query)) return true;
                     if (r.club.toLowerCase().includes(query)) return true;
                     if (r.aliases) {
@@ -809,37 +823,98 @@
                         }
                     }
                     return false;
-                }).sort((a, b) => b.finishes - a.finishes).slice(0, 8);
+                }).sort((a, b) => {
+                    const aName = a.name.toLowerCase().includes(query);
+                    const bName = b.name.toLowerCase().includes(query);
+                    if (aName && !bName) return -1;
+                    if (!aName && bName) return 1;
+                    return b.finishes - a.finishes;
+                }).slice(0, 8);
 
-                if (!matches.length) {
-                    heroDropdown.innerHTML = `<div class="p-4 text-center text-xs text-slate-400">No runners found for "${query}".</div>`;
+                if (!matchingClubs.length && !matchingRunners.length) {
+                    heroDropdown.innerHTML = `<div class="p-4 text-center text-xs text-slate-400 font-mono">No runners or clubs found for "${query}".</div>`;
                     heroDropdown.classList.remove('hidden');
                     return;
                 }
 
-                heroDropdown.innerHTML = matches.map(r => {
-                    let transferBadge = '';
-                    if (r.isTransfer) {
-                        const former = (r.transferClubs || []).filter(c => c.toLowerCase() !== r.club.toLowerCase());
-                        const formerStr = former.length > 0 ? `ex ${former[0].replace(' Running Club', '').replace(' Athletic Club', '').replace(' Harriers', '')}` : 'Transferred';
-                        transferBadge = `<span class="text-[9px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 ml-1.5 font-bold">${formerStr}</span>`;
-                    }
-                    return `
-                    <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
-                        <div>
-                            <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center flex-wrap gap-1">
-                                <span>${r.name}</span>
-                                ${transferBadge}
-                            </div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400">${r.club}</div>
+                let html = '';
+
+                // Render Club Results if any
+                if (matchingClubs.length > 0) {
+                    html += `
+                        <div class="p-2 bg-slate-50/80 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center justify-between">
+                            <span>Club Profiles</span>
+                            <span>${matchingClubs.length} match${matchingClubs.length > 1 ? 'es' : ''}</span>
                         </div>
-                        <span class="text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded">
-                            ${r.finishes} finishes
-                        </span>
-                    </a>
-                `;
-                }).join('');
+                    `;
+                    html += matchingClubs.map(c => `
+                        <a href="club.html?club=${encodeURIComponent(c.name)}" class="hero-search-item flex items-center justify-between p-3.5 hover:bg-emerald-50/60 dark:hover:bg-emerald-950/40 transition-colors group">
+                            <div class="flex items-center gap-3 truncate">
+                                <span class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 flex items-center justify-center text-base shrink-0">🏛️</span>
+                                <div class="truncate">
+                                    <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center gap-2 truncate">
+                                        <span class="truncate">${c.name}</span>
+                                        <span class="text-[9px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold shrink-0">Club</span>
+                                    </div>
+                                    <div class="text-[11px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">${c.finishes.toLocaleString()} finishes &bull; ${c.runnerCount} runners</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0 ml-3">
+                                View Club &rarr;
+                            </span>
+                        </a>
+                    `).join('');
+                }
+
+                // Render Runner Results if any
+                if (matchingRunners.length > 0) {
+                    if (matchingClubs.length > 0) {
+                        html += `
+                            <div class="p-2 bg-slate-50/80 dark:bg-slate-800/50 border-t border-b border-slate-100 dark:border-slate-800 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center justify-between">
+                                <span>Athletes</span>
+                                <span>${matchingRunners.length} found</span>
+                            </div>
+                        `;
+                    }
+                    html += matchingRunners.map(r => {
+                        let transferBadge = '';
+                        if (r.isTransfer) {
+                            const former = (r.transferClubs || []).filter(c => c.toLowerCase() !== r.club.toLowerCase());
+                            const formerStr = former.length > 0 ? `ex ${former[0].replace(' Running Club', '').replace(' Athletic Club', '').replace(' Harriers', '')}` : 'Transferred';
+                            transferBadge = `<span class="text-[9px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 ml-1.5 font-bold">${formerStr}</span>`;
+                        }
+                        return `
+                            <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="hero-search-item flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
+                                <div class="truncate">
+                                    <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center flex-wrap gap-1">
+                                        <span>${r.name}</span>
+                                        ${transferBadge}
+                                    </div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400 truncate">${r.club}</div>
+                                </div>
+                                <span class="text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2.5 py-1 rounded shrink-0 ml-3">
+                                    ${r.finishes} finishes
+                                </span>
+                            </a>
+                        `;
+                    }).join('');
+                }
+
+                heroDropdown.innerHTML = html;
                 heroDropdown.classList.remove('hidden');
+            });
+
+            // Enter key support on hero search
+            heroInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const firstItem = heroDropdown.querySelector('.hero-search-item');
+                    if (firstItem) {
+                        e.preventDefault();
+                        firstItem.click();
+                    }
+                } else if (e.key === 'Escape') {
+                    heroDropdown.classList.add('hidden');
+                }
             });
 
             // Quick search button triggers
