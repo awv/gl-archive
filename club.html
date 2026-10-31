@@ -132,7 +132,7 @@
 
                 <button type="button" onclick="window.print()" class="no-print self-start sm:self-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 text-xs font-mono font-semibold text-slate-200 hover:text-white hover:border-slate-500 shadow-xs transition-all">
                     <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-                    <span>Export Club AGM Dossier (PDF)</span>
+                    <span>Download Page as PDF</span>
                 </button>
             </div>
 
@@ -237,20 +237,20 @@
                     </h2>
                 </div>
                 <div class="flex flex-wrap items-center gap-2">
-                    <a href="season.html?season=2025_2026" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors">
-                        <span>2025/2026 Division Standings</span>
+                    <a id="club-season-standings-link" href="season.html?season=2026_2027" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors">
+                        <span id="club-season-standings-link-text">2026/2027 Division Standings</span>
                         <span>&rarr;</span>
                     </a>
                 </div>
             </div>
 
-            <!-- 2025/2026 Official Division Standings Cards -->
+            <!-- Official Division Standings Cards -->
             <div id="section-current-divisions" class="space-y-3">
                 <div class="flex items-center justify-between">
-                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        2025/2026 Campaign Record &bull; Final Division Standings
+                    <span id="campaign-record-title" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        2026/2027 Campaign Record &bull; Current Division Standings
                     </span>
-                    <span class="text-[11px] font-mono text-slate-400">Through Match 5 (Parc Bryn Bach)</span>
+                    <span id="campaign-record-sub" class="text-[11px] font-mono text-slate-400">Through Race 1 (Pembrey Country Park)</span>
                 </div>
                 <div id="club-divisions-2025-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                     <!-- Populated dynamically -->
@@ -262,12 +262,12 @@
                 <!-- Dynamically populated trophy banners -->
             </div>
 
-            <!-- Match Victories Section Header -->
+            <!-- Race Victories Section Header -->
             <div id="section-match-victories-header" class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                         <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-                            <span>Outright 1st-Place Match Victories</span>
+                            <span>Outright 1st-Place Race Victories</span>
                             <span id="match-victories-badge" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"></span>
                         </h3>
                         <p class="text-[11px] text-slate-500 dark:text-slate-400 font-sans mt-0.5">
@@ -279,9 +279,9 @@
                     </div>
                 </div>
 
-                <!-- Match Victories Grid -->
+                <!-- Race Victories Grid -->
                 <div id="team-match-wins-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Dynamically populated match victory cards with scoring runners -->
+                    <!-- Dynamically populated race victory cards with scoring runners -->
                 </div>
             </div>
         </section>
@@ -1018,20 +1018,49 @@
                 const teamWinsEl = document.getElementById('stat-team-wins');
                 const teamWinsSubEl = document.getElementById('stat-team-wins-sub');
 
-                // 1. Gather 2025/2026 Official Division Standings & Form
+                // 1. Gather Latest Official Division Standings & Form
                 const normClub = clubName.trim().toLowerCase();
-                const m5 = (window.FIXTURE_TEAM_STANDINGS && window.FIXTURE_TEAM_STANDINGS['2025_2026_m5']) || null;
+                const standingsMap = window.FIXTURE_TEAM_STANDINGS || {};
+                
+                // Find latest fixture that has divisions
+                const fixKeys = Object.keys(standingsMap);
+                const latestFixKey = fixKeys.find(k => standingsMap[k] && standingsMap[k].divisions && standingsMap[k].divisions.some(d => (d.standings || []).some(s => {
+                    const st = s.team.trim().toLowerCase();
+                    return st === normClub || st.startsWith(normClub);
+                }))) || fixKeys[0] || '2026_2027_m1';
+
+                const latestFix = standingsMap[latestFixKey] || null;
                 const clubDivisions = [];
-                if (m5 && m5.divisions) {
-                    m5.divisions.forEach(d => {
+                if (latestFix && latestFix.divisions) {
+                    const seasonKey = latestFix.season_key || latestFixKey.substring(0, 9);
+                    const isFinalMatch = latestFix.match === 5;
+                    const campTitleEl = document.getElementById('campaign-record-title');
+                    const campSubEl = document.getElementById('campaign-record-sub');
+                    const campLink = document.getElementById('club-season-standings-link');
+                    const campLinkText = document.getElementById('club-season-standings-link-text');
+
+                    if (campTitleEl) {
+                        campTitleEl.textContent = `${latestFix.season} Campaign Record • ${isFinalMatch ? 'Final' : 'Current'} Division Standings`;
+                    }
+                    if (campSubEl) {
+                        campSubEl.textContent = `Through Race ${latestFix.match} (${latestFix.venue})`;
+                    }
+                    if (campLink) {
+                        campLink.href = `season.html?season=${seasonKey}`;
+                    }
+                    if (campLinkText) {
+                        campLinkText.textContent = `${latestFix.season} Division Standings`;
+                    }
+
+                    latestFix.divisions.forEach(d => {
                         const matchingTeams = (d.standings || []).filter(s => {
                             const st = s.team.trim().toLowerCase();
                             return st === normClub || st.startsWith(normClub);
                         });
                         matchingTeams.forEach(s => {
-                            const matchKeys = ['2025_2026_m1', '2025_2026_m2', '2025_2026_m3', '2025_2026_m4', '2025_2026_m5'];
+                            const matchKeys = [1, 2, 3, 4, 5].map(m => `${seasonKey}_m${m}`);
                             const form = matchKeys.map((mKey, idx) => {
-                                const fix = window.FIXTURE_TEAM_STANDINGS[mKey];
+                                const fix = standingsMap[mKey];
                                 if (!fix) return null;
                                 const fixDiv = (fix.divisions || []).find(fd => fd.division === d.division);
                                 if (!fixDiv) return null;
@@ -1052,6 +1081,7 @@
                                 totalTeams: d.standings.length,
                                 cumPts: s.cum_pts || s.pts,
                                 m5Pts: s.pts,
+                                lastMatchNum: latestFix.match,
                                 form
                             });
                         });
@@ -1107,7 +1137,7 @@
                         teamWinsSubEl.textContent = `Pos #${clubDivisions[0].pos} of ${clubDivisions[0].totalTeams}`;
                     } else if (wins.length > 0) {
                         teamWinsEl.textContent = `${wins.length} Wins`;
-                        teamWinsSubEl.textContent = 'Match Victories';
+                        teamWinsSubEl.textContent = 'Race Victories';
                     } else {
                         teamWinsEl.textContent = '-';
                         teamWinsSubEl.textContent = 'League Archive';
@@ -1125,9 +1155,9 @@
                 const countBadge = document.getElementById('team-wins-count-badge');
                 if (countBadge) {
                     const badges = [];
-                    if (clubDivisions.length > 0) badges.push(`${clubDivisions.length} Active Squads (2025/26)`);
+                    if (clubDivisions.length > 0) badges.push(`${clubDivisions.length} Active Squads (${latestFix ? latestFix.season : 'Current'})`);
                     if (titles.length > 0) badges.push(`${titles.length} Title${titles.length > 1 ? 's' : ''}`);
-                    if (wins.length > 0) badges.push(`${wins.length} Match Win${wins.length > 1 ? 's' : ''}`);
+                    if (wins.length > 0) badges.push(`${wins.length} Race Win${wins.length > 1 ? 's' : ''}`);
                     countBadge.textContent = badges.join(' • ') || 'Active League Member';
                 }
 
@@ -1167,14 +1197,14 @@
                             const formHtml = cd.form.map((f, idx) => {
                                 const mNum = idx + 1;
                                 if (!f || f.pos === null || f.pos === undefined) {
-                                    return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-400" title="Match ${mNum}: Did not field complete scoring squad">M${mNum}: -</span>`;
+                                    return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-400" title="Race ${mNum}: Did not field complete scoring squad">R${mNum}: -</span>`;
                                 }
                                 const isTop3 = f.pos <= 3;
                                 const isWinner = f.pos === 1;
                                 const bg = isWinner 
                                     ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 font-bold border border-amber-300' 
                                     : (isTop3 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 font-semibold' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400');
-                                return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono ${bg}" title="Match ${mNum}: Pos #${f.pos}${f.pts ? ` (${f.pts.toLocaleString()} pts)` : ''}">M${mNum}: #${f.pos}</span>`;
+                                return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono ${bg}" title="Race ${mNum}: Pos #${f.pos}${f.pts ? ` (${f.pts.toLocaleString()} pts)` : ''}">R${mNum}: #${f.pos}</span>`;
                             }).join('');
 
                             return `
@@ -1201,8 +1231,8 @@
 
                                     <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
                                         <div class="flex items-center justify-between mb-1.5">
-                                            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Match Form</span>
-                                            <span class="text-[10px] font-mono text-slate-400">M5: ${cd.m5Pts ? cd.m5Pts.toLocaleString() + ' pts' : '-'}</span>
+                                            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Race Form</span>
+                                            <span class="text-[10px] font-mono text-slate-400">R${cd.lastMatchNum || 1}: ${cd.m5Pts ? cd.m5Pts.toLocaleString() + ' pts' : '-'}</span>
                                         </div>
                                         <div class="flex items-center gap-1.5 flex-wrap">
                                             ${formHtml}
@@ -1259,7 +1289,7 @@
                     if (matchVicSection) matchVicSection.classList.add('hidden');
                 } else {
                     if (matchVicSection) matchVicSection.classList.remove('hidden');
-                    if (matchVicBadge) matchVicBadge.textContent = `${wins.length} Victories`;
+                    if (matchVicBadge) matchVicBadge.textContent = `${wins.length} Race Victories`;
                 }
 
                 function updateFilterPills() {
@@ -1359,7 +1389,7 @@
                                             ${w.division}${w.tier && w.tier !== 'First Team' ? ` • ${w.tier}` : ''}
                                         </span>
                                         <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 mt-1.5">
-                                            ${w.season} Match ${w.match}
+                                            ${w.season} Race ${w.match}
                                         </h3>
                                         <p class="text-xs font-sans text-slate-500 dark:text-slate-400 mt-0.5">
                                             ${w.venue}${w.date ? ` • ${w.date}` : ''}

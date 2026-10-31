@@ -435,7 +435,7 @@
                                     <th class="py-3 px-4 w-12 text-center">Rank</th>
                                     <th class="py-3 px-4">Athlete</th>
                                     <th class="py-3 px-4">Primary Club</th>
-                                    <th class="py-3 px-4 text-center">Consecutive Matches</th>
+                                    <th class="py-3 px-4 text-center">Consecutive Races</th>
                                     <th class="py-3 px-4 text-center">Campaigns Spanned</th>
                                     <th class="py-3 px-4 text-right font-mono">Streak Period</th>
                                 </tr>
@@ -559,7 +559,7 @@
                                 <thead class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-[10px] font-bold uppercase text-slate-400">
                                     <tr>
                                         <th class="py-2.5 px-4">Season</th>
-                                        <th class="py-2.5 px-3 text-center">Match</th>
+                                        <th class="py-2.5 px-3 text-center">Race</th>
                                         <th class="py-2.5 px-4">Venue</th>
                                         <th class="py-2.5 px-4 text-center" id="th-runner-a">Runner A</th>
                                         <th class="py-2.5 px-4 text-center" id="th-runner-b">Runner B</th>
@@ -1594,7 +1594,7 @@
                         }
 
                         const refMatch = matchA || matchB;
-                        const matchLink = `<a href="results.html?season=${encodeURIComponent(refMatch.season_key)}&match=${refMatch.match}&gender=${refMatch.gender}&highlight=${encodeURIComponent(progRunner)}" class="hover:underline hover:text-emerald-600 font-bold">Match ${m}</a>`;
+                        const matchLink = `<a href="results.html?season=${encodeURIComponent(refMatch.season_key)}&match=${refMatch.match}&gender=${refMatch.gender}&highlight=${encodeURIComponent(progRunner)}" class="hover:underline hover:text-emerald-600 font-bold">Race ${m}</a>`;
 
                         const row = `
                             <tr class="hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors">

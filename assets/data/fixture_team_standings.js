@@ -1,4 +1,1340 @@
 window.FIXTURE_TEAM_STANDINGS = {
+  "2026_2027_m1": {
+    "season": "2026/2027",
+    "season_key": "2026_2027",
+    "match": 1,
+    "venue": "Pembrey Country Park",
+    "date": "10 October 2026",
+    "divisions": [
+      {
+        "division": "Senior Men Division 1",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Bristol and West Athletic Club",
+            "pts": 1875,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Swansea Harriers Athletic Club",
+            "pts": 1838,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Parc Bryn Bach Running Club",
+            "pts": 1809,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Wells City Harriers",
+            "pts": 1749,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Les Croupiers Running Club",
+            "pts": 1741,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Bristol University",
+            "pts": 1733,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Pontypridd Roadents Athletic Club",
+            "pts": 1703,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Westbury Harriers",
+            "pts": 1690,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Aberdare Valley A.A.C",
+            "pts": 1664,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Neath Harriers",
+            "pts": 1455,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "University of Swansea",
+            "pts": 1310,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Clevedon AC",
+            "pts": 1109,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Men Division 2",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Pont-y-Pwl & District Runners",
+            "pts": 1370,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Brecon Athletic Club",
+            "pts": 1354,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Lliswerry Runners",
+            "pts": 1332,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Bridgend Athletic Club",
+            "pts": 1235,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "North Somerset",
+            "pts": 1214,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Amman Valley Harriers",
+            "pts": 1189,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Chepstow Harriers",
+            "pts": 985,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Forest of Dean Athletic Club",
+            "pts": 948,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "San Domenico Road Runners Club",
+            "pts": 943,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "CDF Runners",
+            "pts": 748,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Penarth and Dinas Runners",
+            "pts": 524,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Men Division 3",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Cardiff Amateur Athletic Club",
+            "pts": 1829,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Cardiff University AC",
+            "pts": 1825,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Caerleon RC",
+            "pts": 1031,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Taf Running & Orienteering Teams",
+            "pts": 953,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Micky Morris Racing Team",
+            "pts": 926,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Islwyn Running Club",
+            "pts": 857,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "3M Gorseinon Road Runners",
+            "pts": 788,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Pembrokeshire Harriers",
+            "pts": 681,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Caldicot Running Club",
+            "pts": 622,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Port Talbot Harriers & A. C.",
+            "pts": 564,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Cardiff Metropolitan University",
+            "pts": 368,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Newport Harriers",
+            "pts": 206,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Men Division 4",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "University of the West of England",
+            "pts": 1111,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Spirit of Monmouth",
+            "pts": 946,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Rhondda Valley Runners",
+            "pts": 777,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Rhondda A.C.",
+            "pts": 709,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Carmarthen & District Harriers A.C.",
+            "pts": 632,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Ystrad Mynach Running Club",
+            "pts": 343,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Llanelli Amateur Athletic Club",
+            "pts": 280,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Griffithstown Harriers A.A.C.",
+            "pts": 265,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Caerphilly Running Club",
+            "pts": 177,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Team GJE",
+            "pts": 159,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "CRPRC",
+            "pts": 125,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Fairwater Runners",
+            "pts": 121,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 13,
+            "team": "Crickhowell Running Club",
+            "pts": 82,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 14,
+            "team": "Ogmore Phoenix Runners",
+            "pts": 58,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 15,
+            "team": "Great Western Runners",
+            "pts": 1,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Men B Division",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Bristol and West Athletic Club",
+            "pts": 1765,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Parc Bryn Bach Running Club",
+            "pts": 1568,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Les Croupiers Running Club",
+            "pts": 1475,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Swansea Harriers Athletic Club",
+            "pts": 1367,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Wells City Harriers",
+            "pts": 1258,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Westbury Harriers",
+            "pts": 1160,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Pontypridd Roadents Athletic Club",
+            "pts": 1108,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Aberdare Valley A.A.C",
+            "pts": 952,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Lliswerry Runners",
+            "pts": 912,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Cardiff University AC",
+            "pts": 755,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Bristol University",
+            "pts": 678,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Bridgend Athletic Club",
+            "pts": 492,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 13,
+            "team": "Pont-y-Pwl & District Runners",
+            "pts": 429,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 14,
+            "team": "Cardiff Amateur Athletic Club",
+            "pts": 412,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 15,
+            "team": "Islwyn Running Club",
+            "pts": 348,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 16,
+            "team": "North Somerset",
+            "pts": 334,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 17,
+            "team": "Caerleon RC",
+            "pts": 331,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 18,
+            "team": "Taf Running & Orienteering Teams",
+            "pts": 328,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 19,
+            "team": "Forest of Dean Athletic Club",
+            "pts": 210,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 20,
+            "team": "Brecon Athletic Club",
+            "pts": 137,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 21,
+            "team": "San Domenico Road Runners Club",
+            "pts": 119,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 22,
+            "team": "Spirit of Monmouth",
+            "pts": 95,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 23,
+            "team": "Neath Harriers",
+            "pts": 93,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 24,
+            "team": "University of Swansea",
+            "pts": 62,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 25,
+            "team": "Rhondda Valley Runners",
+            "pts": 48,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 26,
+            "team": "Sarn Helen",
+            "pts": 28,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 27,
+            "team": "Penarth and Dinas Runners",
+            "pts": 12,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 28,
+            "team": "CDF Runners",
+            "pts": 11,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 29,
+            "team": "Chepstow Harriers",
+            "pts": 10,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 30,
+            "team": "Amman Valley Harriers",
+            "pts": 4,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Men Reserve Division",
+        "gender": "M",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Bristol and West Athletic Club     'C'",
+            "pts": 1298,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Les Croupiers Running Club     'C'",
+            "pts": 1242,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Les Croupiers Running Club     'D'",
+            "pts": 1092,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Bristol and West Athletic Club     'D'",
+            "pts": 1017,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Les Croupiers Running Club     'E'",
+            "pts": 850,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Swansea Harriers Athletic Club     'C'",
+            "pts": 749,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Parc Bryn Bach Running Club     'C'",
+            "pts": 704,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Bristol and West Athletic Club     'E'",
+            "pts": 604,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Aberdare Valley A.A.C     'C'",
+            "pts": 462,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Westbury Harriers     'C'",
+            "pts": 445,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Les Croupiers Running Club     'F'",
+            "pts": 393,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Pontypridd Roadents Athletic Club     'C'",
+            "pts": 293,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 13,
+            "team": "Wells City Harriers     'C'",
+            "pts": 261,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 14,
+            "team": "Lliswerry Runners     'C'",
+            "pts": 193,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 15,
+            "team": "Aberdare Valley A.A.C     'D'",
+            "pts": 86,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 16,
+            "team": "Les Croupiers Running Club     'G'",
+            "pts": 62,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 17,
+            "team": "Islwyn Running Club     'C'",
+            "pts": 49,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 18,
+            "team": "Swansea Harriers Athletic Club     'D'",
+            "pts": 32,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 19,
+            "team": "Westbury Harriers     'D'",
+            "pts": 27,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 20,
+            "team": "Bridgend Athletic Club     'C'",
+            "pts": 22,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 21,
+            "team": "Pontypridd Roadents Athletic Club     'D'",
+            "pts": 6,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Women Division 1",
+        "gender": "F",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Les Croupiers Running Club",
+            "pts": 1444,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Bristol and West Athletic Club",
+            "pts": 1386,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Swansea Harriers Athletic Club",
+            "pts": 1316,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Parc Bryn Bach Running Club",
+            "pts": 1301,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Westbury Harriers",
+            "pts": 1224,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Cardiff University AC",
+            "pts": 1169,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Chepstow Harriers",
+            "pts": 1101,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Lliswerry Runners",
+            "pts": 1082,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Taf Running & Orienteering Teams",
+            "pts": 889,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Penarth and Dinas Runners",
+            "pts": 880,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Aberdare Valley A.A.C",
+            "pts": 716,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "North Somerset",
+            "pts": 703,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Women Division 2",
+        "gender": "F",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Wells City Harriers",
+            "pts": 1136,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Clevedon AC",
+            "pts": 1131,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "San Domenico Road Runners Club",
+            "pts": 1055,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Amman Valley Harriers",
+            "pts": 1014,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Neath Harriers",
+            "pts": 979,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Brecon Athletic Club",
+            "pts": 957,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Bridgend Athletic Club",
+            "pts": 864,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Bristol University",
+            "pts": 536,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Spirit of Monmouth",
+            "pts": 470,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "University of Swansea",
+            "pts": 419,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Pontypridd Roadents Athletic Club",
+            "pts": 173,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Pont-y-Pwl & District Runners",
+            "pts": 171,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Women Division 3",
+        "gender": "F",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Caerleon RC",
+            "pts": 1071,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "CDF Runners",
+            "pts": 1010,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Sarn Helen",
+            "pts": 933,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Islwyn Running Club",
+            "pts": 713,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "3M Gorseinon Road Runners",
+            "pts": 564,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Llanelli Amateur Athletic Club",
+            "pts": 549,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Carmarthen & District Harriers A.C.",
+            "pts": 507,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Rhondda Valley Runners",
+            "pts": 410,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Griffithstown Harriers A.A.C.",
+            "pts": 391,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Fairwater Runners",
+            "pts": 382,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Port Talbot Harriers & A. C.",
+            "pts": 370,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "University of the West of England",
+            "pts": 295,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 13,
+            "team": "Caldicot Running Club",
+            "pts": 292,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 14,
+            "team": "Newport Harriers",
+            "pts": 280,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 15,
+            "team": "Cardiff Metropolitan University",
+            "pts": 276,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 16,
+            "team": "Albany Road Run Club",
+            "pts": 267,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 17,
+            "team": "Builth and District",
+            "pts": 228,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 18,
+            "team": "Crickhowell Running Club",
+            "pts": 215,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 19,
+            "team": "Pembrokeshire Harriers",
+            "pts": 214,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 20,
+            "team": "Gloucester Athletic Club",
+            "pts": 189,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 21,
+            "team": "Caerphilly Running Club",
+            "pts": 158,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 22,
+            "team": "Forest of Dean Athletic Club",
+            "pts": 143,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 23,
+            "team": "Ogmore Phoenix Runners",
+            "pts": 125,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 24,
+            "team": "Great Western Runners",
+            "pts": 100,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 25,
+            "team": "Pegasus Running Club Cardiff",
+            "pts": 27,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      },
+      {
+        "division": "Senior Women Reserve Division",
+        "gender": "F",
+        "standings": [
+          {
+            "pos": 1,
+            "team": "Les Croupiers Running Club     'B'",
+            "pts": 1302,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 2,
+            "team": "Bristol and West Athletic Club     'B'",
+            "pts": 1145,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 3,
+            "team": "Les Croupiers Running Club     'C'",
+            "pts": 955,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 4,
+            "team": "Swansea Harriers Athletic Club     'B'",
+            "pts": 951,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 5,
+            "team": "Westbury Harriers     'B'",
+            "pts": 890,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 6,
+            "team": "Les Croupiers Running Club     'D'",
+            "pts": 721,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 7,
+            "team": "Chepstow Harriers     'B'",
+            "pts": 541,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 8,
+            "team": "Les Croupiers Running Club     'E'",
+            "pts": 490,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 9,
+            "team": "Lliswerry Runners     'B'",
+            "pts": 478,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 10,
+            "team": "Brecon Athletic Club     'B'",
+            "pts": 473,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 11,
+            "team": "Amman Valley Harriers     'B'",
+            "pts": 367,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 12,
+            "team": "Westbury Harriers     'C'",
+            "pts": 357,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 13,
+            "team": "Parc Bryn Bach Running Club     'B'",
+            "pts": 341,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 14,
+            "team": "Swansea Harriers Athletic Club     'C'",
+            "pts": 281,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 15,
+            "team": "3M Gorseinon Road Runners     'B'",
+            "pts": 277,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 16,
+            "team": "Islwyn Running Club     'B'",
+            "pts": 251,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 17,
+            "team": "Caerleon RC     'B'",
+            "pts": 233,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 18,
+            "team": "Cardiff University AC     'B'",
+            "pts": 191,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 19,
+            "team": "Penarth and Dinas Runners     'B'",
+            "pts": 190,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 20,
+            "team": "Aberdare Valley A.A.C     'B'",
+            "pts": 164,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 21,
+            "team": "Taf Running & Orienteering Teams     'B'",
+            "pts": 149,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 22,
+            "team": "Bristol and West Athletic Club     'C'",
+            "pts": 146,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 23,
+            "team": "Bridgend Athletic Club     'B'",
+            "pts": 145,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 24,
+            "team": "Lliswerry Runners     'C'",
+            "pts": 100,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 25,
+            "team": "CDF Runners     'B'",
+            "pts": 99,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 26,
+            "team": "Clevedon AC     'B'",
+            "pts": 79,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 27,
+            "team": "Les Croupiers Running Club     'F'",
+            "pts": 78,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 28,
+            "team": "Llanelli Amateur Athletic Club     'B'",
+            "pts": 37,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 29,
+            "team": "Caldicot Running Club     'B'",
+            "pts": 34,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 30,
+            "team": "3M Gorseinon Road Runners     'C'",
+            "pts": 23,
+            "cum_pts": null,
+            "cum_pos": null
+          },
+          {
+            "pos": 31,
+            "team": "Port Talbot Harriers & A. C.     'B'",
+            "pts": 7,
+            "cum_pts": null,
+            "cum_pos": null
+          }
+        ]
+      }
+    ]
+  },
   "2025_2026_m1": {
     "season": "2025/2026",
     "season_key": "2025_2026",

@@ -183,24 +183,24 @@
                     <div class="lg:col-span-7 space-y-4">
                         <div class="flex flex-wrap items-center gap-2">
                             <span id="showcase-match-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-[#903A3D] text-white shadow-xs border border-[#ab484c]/50 font-black">
-                                Match 5
+                                Race 1
                             </span>
                             <span class="text-xs font-mono text-slate-400">•</span>
                             <span id="showcase-date" class="text-xs font-mono text-slate-300">
-                                28 February 2026
+                                10 October 2026
                             </span>
                             <span class="text-xs font-mono text-slate-400">•</span>
                             <span class="text-xs font-mono text-slate-400">
-                                2025/2026 Campaign
+                                2026/2027 Campaign
                             </span>
                         </div>
 
                         <div>
                             <h3 id="showcase-venue" class="text-2xl md:text-4xl font-serif font-black tracking-tight text-white leading-tight">
-                                Parc Bryn Bach
+                                Pembrey Country Park
                             </h3>
                             <p id="showcase-location-sub" class="text-xs md:text-sm font-sans text-slate-300 mt-1 font-medium">
-                                Cross Country Championship Course • Rolling Terrain
+                                Cross Country Championship Course &bull; Coastal Park Trails
                             </p>
                         </div>
 
@@ -208,22 +208,22 @@
                         <div class="grid grid-cols-3 gap-3 pt-2 font-mono">
                             <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
                                 <span class="block text-[9px] uppercase tracking-wider text-slate-400">Total Field</span>
-                                <span id="showcase-total-field" class="text-xl md:text-2xl font-black text-emerald-400 block mt-0.5">468</span>
+                                <span id="showcase-total-field" class="text-xl md:text-2xl font-black text-emerald-400 block mt-0.5">687</span>
                             </div>
                             <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
                                 <span class="block text-[9px] uppercase tracking-wider text-slate-400">Gender Split</span>
-                                <span id="showcase-gender-split" class="text-xs md:text-sm font-bold text-slate-200 block mt-1">273M / 195F</span>
+                                <span id="showcase-gender-split" class="text-xs md:text-sm font-bold text-slate-200 block mt-1">392M / 295F</span>
                             </div>
                             <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-3">
                                 <span class="block text-[9px] uppercase tracking-wider text-slate-400">Member Clubs</span>
-                                <span id="showcase-clubs-count" class="text-xl md:text-2xl font-black text-slate-200 block mt-0.5">53</span>
+                                <span id="showcase-clubs-count" class="text-xl md:text-2xl font-black text-slate-200 block mt-0.5">54</span>
                             </div>
                         </div>
 
                         <!-- Action CTA -->
                         <div class="pt-2">
-                            <a id="showcase-results-link" href="results.html?season=2025_2026&match=5" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004942] hover:bg-[#00685e] text-white text-xs font-mono font-bold tracking-wide transition-all shadow-md hover:shadow-[#004942]/40 border border-[#903A3D]/50">
-                                <span>Browse Full Match Results</span>
+                            <a id="showcase-results-link" href="results.html?season=2026_2027&match=1" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004942] hover:bg-[#00685e] text-white text-xs font-mono font-bold tracking-wide transition-all shadow-md hover:shadow-[#004942]/40 border border-[#903A3D]/50">
+                                <span>Browse Full Race Results</span>
                                 <span class="text-sm">&rarr;</span>
                             </a>
                         </div>
@@ -273,20 +273,20 @@
             </div>
         </section>
 
-        <!-- SECTION 1: LATEST CAMPAIGN FIXTURES (2025/2026) -->
+        <!-- SECTION 1: LATEST CAMPAIGN FIXTURES (2026/2027) -->
         <section class="space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-slate-200 dark:border-slate-800 pb-3 gap-2">
                 <div>
                     <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 rounded">Current Campaign</span>
-                    <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">2025 / 2026 Fixture Series</h2>
+                    <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">2026 / 2027 Fixture Series</h2>
                 </div>
                 <a href="seasons.html" class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline decoration-slate-300 dark:decoration-slate-700">
-                    Browse All 15 Seasons &rarr;
+                    Browse All 16 Campaigns &rarr;
                 </a>
             </div>
 
             <div id="latest-fixtures-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
-                <!-- Dynamically populated 2025/2026 fixture cards -->
+                <!-- Dynamically populated 2026/2027 fixture cards -->
             </div>
         </section>
 
@@ -433,8 +433,9 @@
             document.getElementById('hero-stat-runners').textContent = uniqueRunners.size.toLocaleString();
             document.getElementById('hero-stat-clubs').textContent = uniqueClubs.size;
 
-            // 1. GATHER LATEST SEASON FIXTURES (2025/2026)
-            const latestRecords = allData.filter(r => r.season_key === '2025_2026');
+            // 1. GATHER LATEST SEASON FIXTURES (2026/2027)
+            const latestSeason = allData.some(r => r.season_key === '2026_2027') ? '2026_2027' : '2025_2026';
+            const latestRecords = allData.filter(r => r.season_key === latestSeason);
             const matchMap = new Map();
             latestRecords.forEach(r => {
                 if (!matchMap.has(r.match)) {
@@ -464,25 +465,67 @@
                 }
             });
 
+            // Official 2026/2027 Scheduled Calendar
+            const SEASON_CALENDAR = {
+                '2026_2027': [
+                    { match: 1, venue: 'Pembrey Country Park', date: 'Saturday 10 October 2026' },
+                    { match: 2, venue: 'Llandaff Fields, Cardiff (Cardiff Cross Challenge & URDD)', date: 'Sunday 8 November 2026' },
+                    { match: 3, venue: 'Blaise Castle, Bristol (Westbury Harriers)', date: 'Saturday 5 December 2026' },
+                    { match: 4, venue: 'Trelai Park, Cardiff (Cardiff AAC)', date: 'Sunday 14 February 2027' },
+                    { match: 5, venue: 'To Be Confirmed', date: '6/7 March 2027' }
+                ]
+            };
+
+            const calendarItems = SEASON_CALENDAR[latestSeason] || [];
+            calendarItems.forEach(cal => {
+                if (!matchMap.has(cal.match)) {
+                    matchMap.set(cal.match, {
+                        match: cal.match,
+                        venue: cal.venue,
+                        date: cal.date,
+                        season: '2026/2027',
+                        season_key: latestSeason,
+                        menCount: 0,
+                        womenCount: 0,
+                        winnerMen: null,
+                        winnerWomen: null,
+                        clubs: new Set(),
+                        isScheduled: true
+                    });
+                }
+            });
+
             const fixtureCards = Array.from(matchMap.values()).sort((a, b) => a.match - b.match);
 
-            // 2. FEATURED SHOWCASE LOGIC (Interactive Match Switching)
+            // 2. FEATURED SHOWCASE LOGIC (Interactive Race Switching)
             const showcasePills = document.getElementById('showcase-match-pills');
-            let activeShowcaseMatch = 5; // Default to latest match (Parc Bryn Bach)
+            const initialMatch = latestSeason === '2026_2027' ? 1 : 5;
+            let activeShowcaseMatch = initialMatch;
 
             function updateShowcase(mNum) {
                 activeShowcaseMatch = mNum;
-                const f = matchMap.get(mNum) || fixtureCards[fixtureCards.length - 1];
+                const f = matchMap.get(mNum) || fixtureCards[0];
                 if (!f) return;
 
+                const isUpcoming = f.isScheduled || (f.menCount + f.womenCount === 0);
                 const total = f.menCount + f.womenCount;
-                document.getElementById('showcase-match-badge').textContent = `Match ${f.match}`;
+                document.getElementById('showcase-match-badge').textContent = `Race ${f.match}${isUpcoming ? ' • Scheduled' : ''}`;
                 document.getElementById('showcase-date').textContent = f.date || 'TBD';
                 document.getElementById('showcase-venue').textContent = f.venue;
-                document.getElementById('showcase-total-field').textContent = total.toLocaleString();
-                document.getElementById('showcase-gender-split').textContent = `${f.menCount}M / ${f.womenCount}F`;
-                document.getElementById('showcase-clubs-count').textContent = f.clubs.size;
-                document.getElementById('showcase-results-link').href = `results.html?season=${f.season_key}&match=${f.match}`;
+                document.getElementById('showcase-total-field').textContent = isUpcoming ? '—' : total.toLocaleString();
+                document.getElementById('showcase-gender-split').textContent = isUpcoming ? 'Upcoming' : `${f.menCount}M / ${f.womenCount}F`;
+                document.getElementById('showcase-clubs-count').textContent = isUpcoming ? '—' : f.clubs.size;
+                
+                const resLink = document.getElementById('showcase-results-link');
+                if (isUpcoming) {
+                    resLink.href = 'https://www.gwent-league.org.uk/fixtures.html';
+                    resLink.target = '_blank';
+                    resLink.innerHTML = `<span>View Fixture Information</span><span class="text-sm">&rarr;</span>`;
+                } else {
+                    resLink.href = `results.html?season=${f.season_key}&match=${f.match}`;
+                    resLink.removeAttribute('target');
+                    resLink.innerHTML = `<span>Browse Full Race Results</span><span class="text-sm">&rarr;</span>`;
+                }
 
                 // Winner Men
                 const mWin = f.winnerMen;
@@ -495,6 +538,12 @@
                     mClubEl.textContent = mWin.club;
                     mClubEl.href = `club.html?club=${encodeURIComponent(mWin.club)}`;
                     mTimeEl.textContent = mWin.time || '—';
+                } else {
+                    mWinEl.textContent = 'Race Not Yet Run';
+                    mWinEl.href = '#';
+                    mClubEl.textContent = 'Schedule Pending';
+                    mClubEl.href = '#';
+                    mTimeEl.textContent = '—';
                 }
 
                 // Winner Women
@@ -508,6 +557,12 @@
                     wClubEl.textContent = wWin.club;
                     wClubEl.href = `club.html?club=${encodeURIComponent(wWin.club)}`;
                     wTimeEl.textContent = wWin.time || '—';
+                } else {
+                    wWinEl.textContent = 'Race Not Yet Run';
+                    wWinEl.href = '#';
+                    wClubEl.textContent = 'Schedule Pending';
+                    wClubEl.href = '#';
+                    wTimeEl.textContent = '—';
                 }
 
                 // Update Switcher Pills active state
@@ -527,7 +582,7 @@
                     const shortVenue = f.venue.split(',')[0].trim();
                     return `
                         <button type="button" data-match="${f.match}" class="showcase-pill-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all shrink-0">
-                            M${f.match} ${shortVenue}
+                            R${f.match} ${shortVenue}
                         </button>
                     `;
                 }).join('');
@@ -539,29 +594,52 @@
                     });
                 });
 
-                // Initialize showcase with Match 5
-                updateShowcase(5);
+                // Initialize showcase with first match of 2026/2027
+                updateShowcase(initialMatch);
             }
 
-            // 3. RENDER FIXTURE CARDS ROW (2025/2026)
+            // 3. RENDER FIXTURE CARDS ROW (2026/2027)
             const fixturesContainer = document.getElementById('latest-fixtures-grid');
-            fixturesContainer.innerHTML = fixtureCards.map(f => `
-                <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-md transition-all group shadow-xs">
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800 px-2 py-0.5 rounded">
-                            Match ${f.match}
-                        </span>
-                        <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
-                    </div>
-                    <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1" title="${f.venue}">
-                        ${f.venue}
-                    </h3>
-                    <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                        <span>${f.menCount + f.womenCount} total</span>
-                        <span>(${f.menCount}M / ${f.womenCount}F)</span>
-                    </div>
-                </a>
-            `).join('');
+            fixturesContainer.innerHTML = fixtureCards.map(f => {
+                const isUpcoming = f.isScheduled || (f.menCount + f.womenCount === 0);
+                if (isUpcoming) {
+                    return `
+                        <div class="block bg-slate-50/50 dark:bg-slate-900/50 border border-dashed border-slate-300 dark:border-slate-800 rounded-xl p-4 transition-all group shadow-xs">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded">
+                                    Race ${f.match} &bull; Scheduled
+                                </span>
+                                <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
+                            </div>
+                            <h3 class="text-sm font-serif font-bold text-slate-800 dark:text-slate-200 line-clamp-1" title="${f.venue}">
+                                ${f.venue}
+                            </h3>
+                            <div class="mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-400">
+                                <span>Upcoming Fixture</span>
+                                <a target="_blank" href="https://www.gwent-league.org.uk/fixtures.html" class="text-emerald-700 dark:text-emerald-400 hover:underline">Info &rarr;</a>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-md transition-all group shadow-xs">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800 px-2 py-0.5 rounded">
+                                Race ${f.match}
+                            </span>
+                            <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
+                        </div>
+                        <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1" title="${f.venue}">
+                            ${f.venue}
+                        </h3>
+                        <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                            <span>${f.menCount + f.womenCount} total</span>
+                            <span>(${f.menCount}M / ${f.womenCount}F)</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
 
             // 4. RENDER STALWARTS & HERO SEARCH RUNNERS (Entity-Level Resolution)
             const confirmedTransfers = window.glClubTransfers || {};

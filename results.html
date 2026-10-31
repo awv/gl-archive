@@ -67,7 +67,7 @@
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span id="fixture-badge" class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white">
-                            Match 1
+                            Race 1
                         </span>
                         <span class="text-xs font-mono text-slate-400">•</span>
                         <span id="fixture-season-text" class="text-xs font-mono font-semibold text-slate-500 uppercase tracking-wider">
@@ -95,11 +95,11 @@
                     <div>
                         <label class="block text-[10px] font-mono font-bold uppercase text-slate-400 mb-1">Fixture</label>
                         <select id="match-selector" class="text-xs font-semibold bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
-                            <option value="1">Match 1</option>
-                            <option value="2">Match 2</option>
-                            <option value="3">Match 3</option>
-                            <option value="4">Match 4</option>
-                            <option value="5">Match 5</option>
+                            <option value="1">Race 1</option>
+                            <option value="2">Race 2</option>
+                            <option value="3">Race 3</option>
+                            <option value="4">Race 4</option>
+                            <option value="5">Race 5</option>
                         </select>
                     </div>
                 </div>
@@ -392,7 +392,7 @@
                 }
 
                 const sample = matchRecords[0];
-                let venueText = sample.venue || `Match ${selectedMatch}`;
+                let venueText = sample.venue || `Race ${selectedMatch}`;
                 let dateText = sample.date || '';
 
                 // Defensive check if date was prepended into venue string
@@ -404,7 +404,7 @@
                     }
                 }
 
-                document.getElementById('fixture-badge').textContent = `Match ${selectedMatch}`;
+                document.getElementById('fixture-badge').textContent = `Race ${selectedMatch}`;
                 document.getElementById('fixture-season-text').textContent = `${sample.season} Season`;
                 document.getElementById('fixture-venue').textContent = venueText;
                 document.getElementById('fixture-date').textContent = dateText || 'Date not recorded';
@@ -734,7 +734,7 @@
                                         <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
                                             <th class="py-2.5 px-4 w-16 text-center">Pos</th>
                                             <th class="py-2.5 px-4">Club / Team</th>
-                                            <th class="py-2.5 px-4 w-28 text-right font-mono">Match Pts</th>
+                                            <th class="py-2.5 px-4 w-28 text-right font-mono">Race Pts</th>
                                             <th class="py-2.5 px-4 w-28 text-right font-mono">Cum Pts</th>
                                             <th class="py-2.5 px-4 w-36 text-right font-mono">Cum Rank</th>
                                         </tr>

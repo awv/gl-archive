@@ -1,5 +1,23 @@
 [
   {
+    "season": "2026/2027",
+    "season_key": "2026_2027",
+    "match": 1,
+    "date": "10 October 2026",
+    "venue": "Pembrey Country Park",
+    "hub_url": "https://www.gwent-league.org.uk/2026/res261.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2026/sm261i.htm",
+      "filename": "2026_2027_m1_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2026/sl261i.htm",
+      "filename": "2026_2027_m1_women.htm",
+      "cached": true
+    }
+  },
+  {
     "season": "2025/2026",
     "season_key": "2025_2026",
     "match": 1,

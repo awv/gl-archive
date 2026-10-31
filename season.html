@@ -191,7 +191,7 @@
             document.getElementById('season-title').textContent = `${seasonLabel} Campaign`;
             const sBc = document.getElementById('season-breadcrumb-name');
             if (sBc) sBc.textContent = `${seasonLabel} Campaign`;
-            document.getElementById('season-sub').textContent = `Full five-match series metrics and individual results index.`;
+            document.getElementById('season-sub').textContent = `Full five-race series metrics and individual results index.`;
 
             // Metrics
             const matchMap = new Map();
@@ -224,6 +224,32 @@
                 }
             });
 
+            // Official 2026/2027 Fixture Calendar
+            const SEASON_CALENDAR = {
+                '2026_2027': [
+                    { match: 1, venue: 'Pembrey Country Park', date: 'Saturday 10 October 2026' },
+                    { match: 2, venue: 'Llandaff Fields, Cardiff (Cardiff Cross Challenge & URDD)', date: 'Sunday 8 November 2026' },
+                    { match: 3, venue: 'Blaise Castle, Bristol (Westbury Harriers)', date: 'Saturday 5 December 2026' },
+                    { match: 4, venue: 'Trelai Park, Cardiff (Cardiff AAC)', date: 'Sunday 14 February 2027' },
+                    { match: 5, venue: 'To Be Confirmed', date: '6/7 March 2027' }
+                ]
+            };
+
+            const calendarItems = SEASON_CALENDAR[selectedSeason] || [];
+            calendarItems.forEach(cal => {
+                if (!matchMap.has(cal.match)) {
+                    matchMap.set(cal.match, {
+                        match: cal.match,
+                        venue: cal.venue,
+                        date: cal.date,
+                        season_key: selectedSeason,
+                        men: 0,
+                        women: 0,
+                        isScheduled: true
+                    });
+                }
+            });
+
             document.getElementById('stat-season-fixtures').textContent = matchMap.size;
             document.getElementById('stat-season-finishes').textContent = seasonRecords.length.toLocaleString();
             document.getElementById('stat-season-runners').textContent = uniqueRunners.size.toLocaleString();
@@ -231,28 +257,54 @@
 
             // Render Fixture Cards
             const fixturesContainer = document.getElementById('season-fixtures-grid');
-            fixturesContainer.innerHTML = Array.from(matchMap.values()).sort((a,b) => a.match - b.match).map(m => `
-                <div class="season-fixture-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4 hover:border-slate-300 dark:hover:border-slate-700 transition-all">
-                    <div class="flex justify-between items-start">
-                        <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800/60 px-2 py-0.5 rounded shadow-xs">
-                            Match ${m.match}
-                        </span>
-                        <span class="text-xs font-mono text-slate-400 dark:text-slate-400">${m.date}</span>
+            fixturesContainer.innerHTML = Array.from(matchMap.values()).sort((a,b) => a.match - b.match).map(m => {
+                const isUpcoming = m.isScheduled || (m.men + m.women === 0);
+                if (isUpcoming) {
+                    return `
+                        <div class="season-fixture-card bg-slate-50/50 dark:bg-slate-900/50 border border-dashed border-slate-300 dark:border-slate-800 rounded-xl p-5 shadow-xs space-y-4 transition-all">
+                            <div class="flex justify-between items-start">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded shadow-xs">
+                                    Race ${m.match} &bull; Scheduled
+                                </span>
+                                <span class="text-xs font-mono text-slate-500 dark:text-slate-400 font-semibold">${m.date}</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-serif font-bold text-slate-800 dark:text-slate-200">${m.venue}</h3>
+                                <p class="text-xs text-slate-400 dark:text-slate-500 font-mono mt-1">Upcoming official Gwent League fixture</p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-200/60 dark:border-slate-800/80 flex items-center justify-between">
+                                <a target="_blank" href="https://www.gwent-league.org.uk/fixtures.html" class="text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+                                    <span>Fixture Information &amp; Travel</span>
+                                    <span>&rarr;</span>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="season-fixture-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-sm space-y-4 hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800/60 px-2 py-0.5 rounded shadow-xs">
+                                Race ${m.match}
+                            </span>
+                            <span class="text-xs font-mono text-slate-400 dark:text-slate-400">${m.date}</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100">${m.venue}</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-1">${m.men + m.women} finishers (${m.men} Men / ${m.women} Women)</p>
+                        </div>
+                        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                            <a href="results.html?season=${m.season_key}&match=${m.match}&gender=M" class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline">
+                                Men's Results &rarr;
+                            </a>
+                            <a href="results.html?season=${m.season_key}&match=${m.match}&gender=F" class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline">
+                                Women's Results &rarr;
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100">${m.venue}</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono mt-1">${m.men + m.women} finishers (${m.men} Men / ${m.women} Women)</p>
-                    </div>
-                    <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                        <a href="results.html?season=${m.season_key}&match=${m.match}&gender=M" class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline">
-                            Men's Standings &rarr;
-                        </a>
-                        <a href="results.html?season=${m.season_key}&match=${m.match}&gender=F" class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline">
-                            Women's Standings &rarr;
-                        </a>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
             // Top performers this season (by total points)
             const getTopScorers = (gender) => {
@@ -320,7 +372,7 @@
                 }
 
                 if (badgeEl) {
-                    badgeEl.textContent = `Cumulative Standings through Match ${finalMatchNum}`;
+                    badgeEl.textContent = `Cumulative Standings through Race ${finalMatchNum}`;
                 }
 
                 const divisions = finalFixData.divisions;
@@ -398,7 +450,7 @@
                                             <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
                                                 <th class="py-2.5 px-4 w-16 text-center">Rank</th>
                                                 <th class="py-2.5 px-4">Club / Team</th>
-                                                <th class="py-2.5 px-4 w-28 text-right font-mono">Match Pts</th>
+                                                <th class="py-2.5 px-4 w-28 text-right font-mono">Race Pts</th>
                                                 <th class="py-2.5 px-4 w-28 text-right font-mono">Cum Pts</th>
                                                 <th class="py-2.5 px-4 w-44 text-right font-mono">Status / Honours</th>
                                             </tr>

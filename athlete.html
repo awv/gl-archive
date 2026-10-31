@@ -184,26 +184,36 @@
 
                 <!-- CAREER CLUB TRANSFER BANNER -->
                 <div id="transfer-banner" class="hidden pt-2">
-                    <div class="bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200/90 dark:border-emerald-800/60 rounded-xl p-4 text-xs space-y-3">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 dark:border-emerald-800 pb-2.5">
-                            <div class="flex items-center gap-2 font-semibold text-emerald-950 dark:text-emerald-200">
+                    <details id="transfer-details" class="group bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200/90 dark:border-emerald-800/60 rounded-xl overflow-hidden transition-all text-xs">
+                        <summary class="p-2.5 px-3.5 cursor-pointer select-none flex items-center justify-between font-mono hover:bg-emerald-100/40 dark:hover:bg-emerald-900/40 transition-colors">
+                            <div class="flex items-center gap-2 font-semibold text-emerald-950 dark:text-emerald-200 truncate">
                                 <svg class="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
                                 </svg>
                                 <span class="text-xs font-serif font-bold uppercase tracking-tight">Verified Multi-Club Career History</span>
                                 <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-700">Unified Dossier</span>
+                                <span id="transfer-summary-path" class="text-[11px] text-emerald-800 dark:text-emerald-300 font-sans font-normal truncate hidden md:inline ml-1"></span>
                             </div>
-                            <div id="transfer-filter-pills" class="flex flex-wrap items-center gap-1.5 text-xs font-mono">
-                                <!-- Populated dynamically with Club filter buttons -->
+                            <div class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 text-xs shrink-0">
+                                <span class="hidden sm:inline font-mono text-[11px] font-normal">Past clubs &amp; spells</span>
+                                <span class="transition-transform group-open:rotate-180">▾</span>
                             </div>
+                        </summary>
+                        <div class="p-4 pt-2.5 border-t border-emerald-100 dark:border-emerald-800 space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-100 dark:border-emerald-800 pb-2.5">
+                                <span class="text-[11px] font-mono text-emerald-800 dark:text-emerald-300">Filter career finishes by club spell:</span>
+                                <div id="transfer-filter-pills" class="flex flex-wrap items-center gap-1.5 text-xs font-mono">
+                                    <!-- Populated dynamically with Club filter buttons -->
+                                </div>
+                            </div>
+                            <div id="transfer-timeline-path" class="text-xs font-medium text-emerald-900 dark:text-emerald-200 flex items-center gap-2 flex-wrap">
+                                <!-- Populated with: Club A (2021–2022) ➔ Club B (2022–Present) -->
+                            </div>
+                            <p class="text-emerald-700 dark:text-emerald-300 text-[11px] leading-relaxed">
+                                This athlete transferred clubs. All finishes across their entire Gwent League career are unified into this single profile. Use the filter buttons above to isolate a specific club spell.
+                            </p>
                         </div>
-                        <div id="transfer-timeline-path" class="text-xs font-medium text-emerald-900 dark:text-emerald-200 flex items-center gap-2 flex-wrap">
-                            <!-- Populated with: Club A (2021–2022) ➔ Club B (2022–Present) -->
-                        </div>
-                        <p class="text-emerald-700 dark:text-emerald-300 text-[11px] leading-relaxed">
-                            This athlete transferred clubs. All finishes across their entire Gwent League career are unified into this single profile. Use the filter buttons above to isolate a specific club spell.
-                        </p>
-                    </div>
+                    </details>
                 </div>
 
                 <!-- VERIFIED NAME CHANGE (MARRIAGE/MAIDEN) BANNER -->
@@ -227,19 +237,27 @@
 
                 <!-- NAMESAKE DISAMBIGUATION BANNER -->
                 <div id="namesake-banner" class="hidden pt-2">
-                    <div class="bg-sky-50/80 dark:bg-sky-950/40 border border-sky-200/90 dark:border-sky-800/60 rounded-xl p-3.5 text-xs space-y-2">
-                        <div class="flex flex-wrap items-center gap-2">
-                            <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 border border-sky-200 dark:border-sky-700 px-2 py-1 rounded">
-                                👥 Same / Similar Name in Gwent League:
-                            </span>
-                            <div id="namesake-pills" class="flex flex-wrap items-center gap-1.5">
+                    <details id="namesake-details" class="group bg-sky-50/80 dark:bg-sky-950/40 border border-sky-200/90 dark:border-sky-800/60 rounded-xl overflow-hidden text-xs">
+                        <summary class="p-2.5 px-3.5 cursor-pointer select-none flex items-center justify-between font-mono hover:bg-sky-100/40 dark:hover:bg-sky-900/40 transition-colors">
+                            <div class="flex items-center gap-2 font-semibold text-sky-950 dark:text-sky-200 truncate">
+                                <span class="text-xs">👥</span>
+                                <span class="text-xs font-serif font-bold uppercase tracking-tight">Same / Similar Name in Gwent League:</span>
+                                <span id="namesake-count-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 border border-sky-200 dark:border-sky-700"></span>
+                            </div>
+                            <div class="flex items-center gap-1.5 text-sky-700 dark:text-sky-400 text-xs shrink-0">
+                                <span class="hidden sm:inline font-mono text-[11px] font-normal">Show profiles</span>
+                                <span class="transition-transform group-open:rotate-180">▾</span>
+                            </div>
+                        </summary>
+                        <div class="p-3.5 pt-2 border-t border-sky-100 dark:border-sky-800/60 space-y-2">
+                            <div id="namesake-pills" class="flex flex-wrap items-center gap-1.5 pt-1">
                                 <!-- Populated dynamically with namesake links -->
                             </div>
+                            <p class="text-sky-800/80 dark:text-sky-300/80 text-[11px] leading-relaxed">
+                                Athletes above share this name but are verified as separate runners at different clubs. Click any runner to view their distinct profile.
+                            </p>
                         </div>
-                        <p class="text-sky-800/80 dark:text-sky-300/80 text-[11px] leading-relaxed">
-                            Athletes above share this name but are verified as separate runners at different clubs. Click any runner to view their distinct profile.
-                        </p>
-                    </div>
+                    </details>
                 </div>
             </div>
 
@@ -457,7 +475,7 @@
                         <thead>
                             <tr class="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
                                 <th class="py-3 px-4 w-28">Season</th>
-                                <th class="py-3 px-3 w-16 text-center">Match</th>
+                                <th class="py-3 px-3 w-16 text-center">Race</th>
                                 <th class="py-3 px-4">Fixture</th>
                                 <th class="py-3 px-3 w-16 text-center">Pos</th>
                                 <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
@@ -663,9 +681,13 @@
             if (namesakeMap.size > 0 && !isAbbreviated) {
                 const nsBanner = document.getElementById('namesake-banner');
                 const nsPills = document.getElementById('namesake-pills');
+                const nsBadge = document.getElementById('namesake-count-badge');
                 if (nsBanner && nsPills) {
                     nsBanner.classList.remove('hidden');
                     const sortedNamesakes = Array.from(namesakeMap.values()).sort((a, b) => b.races - a.races);
+                    if (nsBadge) {
+                        nsBadge.textContent = `${sortedNamesakes.length} ${sortedNamesakes.length === 1 ? 'Other Runner' : 'Other Runners'}`;
+                    }
                     nsPills.innerHTML = sortedNamesakes.map(ns => {
                         const catLabel = ns.age_cat ? ns.age_cat : '';
                         const metaLabel = `${catLabel ? catLabel + ' • ' : ''}${ns.races} ${ns.races === 1 ? 'race' : 'races'}${ns.isTransfer ? ' • Transferred' : ''}`;
@@ -698,6 +720,7 @@
                 const transBanner = document.getElementById('transfer-banner');
                 const transPath = document.getElementById('transfer-timeline-path');
                 const transPills = document.getElementById('transfer-filter-pills');
+                const transSummary = document.getElementById('transfer-summary-path');
                 if (transBanner) transBanner.classList.remove('hidden');
 
                 const clubFirstYear = {};
@@ -709,6 +732,9 @@
                 });
 
                 const sortedClubsChron = Object.keys(clubFirstYear).sort((a, b) => clubFirstYear[a] - clubFirstYear[b]);
+                if (transSummary) {
+                    transSummary.textContent = `• ${sortedClubsChron.join(' ➔ ')}`;
+                }
                 if (transPath) {
                     transPath.innerHTML = sortedClubsChron.map((c, i) => {
                         const span = `${clubFirstYear[c]}–${clubLastYear[c] + 1}`;
@@ -1078,12 +1104,12 @@
                         </td>
                         <td class="py-3 px-3 text-center">
                             <a href="${fixtureUrl}" class="inline-block px-1.5 py-0.5 rounded font-mono text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-emerald-100 hover:text-emerald-800 dark:hover:bg-emerald-950 dark:hover:text-emerald-300 transition-colors">
-                                M${r.match}
+                                R${r.match}
                             </a>
                         </td>
                         <td class="py-3 px-4">
                             <a href="${fixtureUrl}" class="group font-medium text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5">
-                                <span>${r.venue || 'Gwent League Match'}</span>
+                                <span>${r.venue || 'Gwent League Race'}</span>
                                 <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-emerald-600 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             </a>
                             ${subline}
@@ -1311,7 +1337,7 @@
                         ${closestMatch ? `
                             <div class="flex items-center justify-between text-xs font-mono p-3 bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200/80 dark:border-emerald-800 rounded-xl">
                                 <span class="text-emerald-900 dark:text-emerald-200 font-semibold">Closest Battle:</span>
-                                <span class="text-emerald-700 dark:text-emerald-400">${closestMatch.season} M${closestMatch.match} (${closestMatch.venue}) • Decided by just ${closestMatch.diffSec} seconds!</span>
+                                <span class="text-emerald-700 dark:text-emerald-400">${closestMatch.season} R${closestMatch.match} (${closestMatch.venue}) • Decided by just ${closestMatch.diffSec} seconds!</span>
                             </div>
                         ` : ''}
 
@@ -1324,7 +1350,7 @@
                                 <table class="w-full text-left border-collapse text-xs">
                                     <thead>
                                         <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 tracking-wider">
-                                            <th class="py-2.5 px-4">Season & Match</th>
+                                            <th class="py-2.5 px-4">Season & Race</th>
                                             <th class="py-2.5 px-4">Venue</th>
                                             <th class="py-2.5 px-3 text-center">${resolvedName}</th>
                                             <th class="py-2.5 px-3 text-center">${rival.name}</th>
@@ -1356,7 +1382,7 @@
                                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                                                     <td class="py-2.5 px-4 font-mono">
                                                         <a href="${fixtureLink}" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
-                                                            ${enc.season} M${enc.match}
+                                                            ${enc.season} R${enc.match}
                                                         </a>
                                                     </td>
                                                     <td class="py-2.5 px-4 text-slate-600 dark:text-slate-300">
