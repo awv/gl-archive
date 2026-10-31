@@ -156,16 +156,39 @@
             const btnSwap = document.getElementById('btn-swap-athletes');
             const resultContainer = document.getElementById('compare-result-container');
 
-            // Unique athlete names map
+            // Unique athlete names map with transfer support
+            const confirmedTransfers = window.glClubTransfers || {};
+            const confirmedNameChanges = window.glNameChanges || {};
+
             const athletesMap = new Map();
             allData.forEach(r => {
-                if (r.athlete && r.pos > 0) {
-                    if (!athletesMap.has(r.athlete)) {
-                        athletesMap.set(r.athlete, { name: r.athlete, club: r.club, finishes: 1 });
-                    } else {
-                        athletesMap.get(r.athlete).finishes++;
-                    }
+                const rawName = r.athlete || r.raw_name;
+                if (!rawName || r.pos <= 0) return;
+
+                const nc = confirmedNameChanges[rawName];
+                const resolvedName = nc ? nc.primary_name : rawName;
+                const rClub = (r.club && r.club !== 'Guest' && r.club !== 'Unattached') ? r.club : 'Unattached';
+
+                const transInfo = confirmedTransfers[resolvedName] || confirmedTransfers[rawName];
+                const isTransfer = transInfo && transInfo.clubs && transInfo.clubs.some(c => c.toLowerCase() === rClub.toLowerCase());
+
+                let entityKey = '';
+                let primaryClub = rClub;
+
+                if (isTransfer) {
+                    entityKey = `trans_${resolvedName.toLowerCase()}`;
+                    primaryClub = transInfo.primary_club || rClub;
+                } else if (rClub !== 'Unattached') {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_${rClub.toLowerCase()}`;
+                    primaryClub = rClub;
+                } else {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_guest`;
                 }
+
+                if (!athletesMap.has(entityKey)) {
+                    athletesMap.set(entityKey, { name: resolvedName, club: primaryClub, finishes: 0 });
+                }
+                athletesMap.get(entityKey).finishes++;
             });
             const allAthletes = Array.from(athletesMap.values()).sort((a, b) => b.finishes - a.finishes);
 

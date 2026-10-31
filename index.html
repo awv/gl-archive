@@ -563,28 +563,68 @@
                 </a>
             `).join('');
 
-            // 4. RENDER STALWARTS (Top runners by appearances)
+            // 4. RENDER STALWARTS & HERO SEARCH RUNNERS (Entity-Level Resolution)
+            const confirmedTransfers = window.glClubTransfers || {};
+            const confirmedNameChanges = window.glNameChanges || {};
+
             const runnerAppearances = new Map();
             allData.forEach(r => {
-                if (!r.athlete || r.pos <= 0) return;
-                const k = r.athlete;
-                if (!runnerAppearances.has(k)) {
-                    runnerAppearances.set(k, {
-                        name: r.athlete,
-                        club: r.club,
+                const rawName = r.athlete || r.raw_name;
+                if (!rawName || r.pos <= 0) return;
+
+                const nc = confirmedNameChanges[rawName];
+                const resolvedName = nc ? nc.primary_name : rawName;
+                const gender = r.gender || 'M';
+                const rClub = (r.club && r.club !== 'Guest' && r.club !== 'Unattached') ? r.club : 'Unattached';
+
+                const transInfo = confirmedTransfers[resolvedName] || confirmedTransfers[rawName];
+                const isTransfer = transInfo && transInfo.clubs && transInfo.clubs.some(c => c.toLowerCase() === rClub.toLowerCase());
+
+                let entityKey = '';
+                let primaryClub = rClub;
+                let isTransferredRunner = false;
+
+                if (isTransfer) {
+                    entityKey = `trans_${resolvedName.toLowerCase()}_${gender}`;
+                    primaryClub = transInfo.primary_club || rClub;
+                    isTransferredRunner = true;
+                } else if (rClub !== 'Unattached') {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_${gender}_${rClub.toLowerCase()}`;
+                    primaryClub = rClub;
+                } else {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_${gender}_guest`;
+                    primaryClub = 'Unattached';
+                }
+
+                if (!runnerAppearances.has(entityKey)) {
+                    runnerAppearances.set(entityKey, {
+                        name: resolvedName,
+                        club: primaryClub,
+                        gender: gender,
                         finishes: 0,
                         wins: 0,
                         catWins: 0,
+                        isTransfer: isTransferredRunner,
+                        transferClubs: isTransferredRunner ? transInfo.clubs : [primaryClub],
                         seasons: new Set(),
-                        gender: r.gender
+                        aliases: new Set()
                     });
                 }
-                const entry = runnerAppearances.get(k);
+                const entry = runnerAppearances.get(entityKey);
                 entry.finishes++;
-                entry.club = r.club;
                 entry.seasons.add(r.season);
                 if (r.pos === 1) entry.wins++;
                 if (r.cat_pos === 1) entry.catWins++;
+                if (rawName && rawName.toLowerCase() !== resolvedName.toLowerCase()) {
+                    entry.aliases.add(rawName);
+                }
+                if (isTransferredRunner && transInfo.clubs) {
+                    transInfo.clubs.forEach(c => {
+                        if (c.toLowerCase() !== primaryClub.toLowerCase()) {
+                            entry.aliases.add(c);
+                        }
+                    });
+                }
             });
 
             const topStalwarts = Array.from(runnerAppearances.values())
@@ -647,9 +687,16 @@
                 }
 
                 const runnersList = Array.from(runnerAppearances.values());
-                const matches = runnersList.filter(r => 
-                    r.name.toLowerCase().includes(query) || r.club.toLowerCase().includes(query)
-                ).slice(0, 8);
+                const matches = runnersList.filter(r => {
+                    if (r.name.toLowerCase().includes(query)) return true;
+                    if (r.club.toLowerCase().includes(query)) return true;
+                    if (r.aliases) {
+                        for (const alias of r.aliases) {
+                            if (alias.toLowerCase().includes(query)) return true;
+                        }
+                    }
+                    return false;
+                }).sort((a, b) => b.finishes - a.finishes).slice(0, 8);
 
                 if (!matches.length) {
                     heroDropdown.innerHTML = `<div class="p-4 text-center text-xs text-slate-400">No runners found for "${query}".</div>`;
@@ -657,11 +704,19 @@
                     return;
                 }
 
-                heroDropdown.innerHTML = matches.map(r => `
+                heroDropdown.innerHTML = matches.map(r => {
+                    let transferBadge = '';
+                    if (r.isTransfer) {
+                        const former = (r.transferClubs || []).filter(c => c.toLowerCase() !== r.club.toLowerCase());
+                        const formerStr = former.length > 0 ? `ex ${former[0].replace(' Running Club', '').replace(' Athletic Club', '').replace(' Harriers', '')}` : 'Transferred';
+                        transferBadge = `<span class="text-[9px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 ml-1.5 font-bold">${formerStr}</span>`;
+                    }
+                    return `
                     <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group">
                         <div>
-                            <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
-                                ${r.name}
+                            <div class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center flex-wrap gap-1">
+                                <span>${r.name}</span>
+                                ${transferBadge}
                             </div>
                             <div class="text-xs text-slate-500 dark:text-slate-400">${r.club}</div>
                         </div>
@@ -669,7 +724,8 @@
                             ${r.finishes} finishes
                         </span>
                     </a>
-                `).join('');
+                `;
+                }).join('');
                 heroDropdown.classList.remove('hidden');
             });
 
