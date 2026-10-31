@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="h-full bg-slate-50 dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll of Honour &amp; League Champions — Gwent League Archive</title>
+    <meta name="description" content="Official Roll of Honour for the Gwent Cross Country League (1964–2026). Complete list of team champions, 1st/2nd/3rd division podiums, and individual champions.">
+    <script>
+        // Immediate dark mode initialization to prevent flash
+        if (localStorage.getItem('gl_theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gwent: {
+                            green: "#004942",
+                            "green-light": "#00685e",
+                            maroon: "#903A3D",
+                            "maroon-light": "#ab484c",
+                            "maroon-dark": "#6b2729"
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <script src="assets/data/champions_data.js"></script>
+    <script src="data.js"></script>
+    <script src="backend_tools/club_transfers.js"></script>
+    <script src="backend_tools/name_changes.js"></script>
+    <script src="site-layout.js"></script>
+</head>
+<body class="text-slate-800 dark:text-slate-200 font-sans antialiased min-h-full flex flex-col bg-[#fbfcfd] dark:bg-slate-950 transition-colors">
+
+    <!-- GLOBAL NAVIGATION CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- ROLL OF HONOUR MASTHEAD -->
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex items-center space-x-2 text-xs font-mono text-slate-500 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <span>/</span>
+                <span class="text-slate-800 dark:text-slate-200 font-bold">Roll of Honour</span>
+            </nav>
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#903A3D] dark:text-[#f87171] bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900/60 px-2.5 py-1 rounded-md">
+                        Official Archives 1964–2026
+                    </span>
+                    <h1 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-2">
+                        Roll of Honour &amp; Champions
+                    </h1>
+                    <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium mt-1.5 max-w-2xl leading-relaxed">
+                        A definitive historical record of Gwent Cross Country League champions, all-time team podiums (1st, 2nd, and 3rd), and individual title winners across six decades of competition.
+                    </p>
+                </div>
+
+                <!-- Macro Stats Header Pills -->
+                <div class="flex flex-wrap items-center gap-2 font-mono text-xs shrink-0">
+                    <div class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80">
+                        <span class="block text-lg font-serif font-black text-slate-900 dark:text-slate-100">62</span>
+                        <span class="text-[10px] uppercase text-slate-400 tracking-wider">Men's Titles</span>
+                    </div>
+                    <div class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80">
+                        <span class="block text-lg font-serif font-black text-slate-900 dark:text-slate-100">54</span>
+                        <span class="text-[10px] uppercase text-slate-400 tracking-wider">Women's Titles</span>
+                    </div>
+                    <div class="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80">
+                        <span class="block text-lg font-serif font-black text-slate-900 dark:text-slate-100">12</span>
+                        <span class="text-[10px] uppercase text-slate-400 tracking-wider">Champion Clubs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full flex-grow space-y-10">
+
+        <!-- VIEW SELECTOR TABS -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-2">
+            <div class="flex items-center gap-2 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl text-xs font-mono font-semibold" id="tab-buttons">
+                <button type="button" data-tab="historical" class="tab-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-xs transition-all">
+                    📜 Historical Champions (1964–2026)
+                </button>
+                <button type="button" data-tab="podiums" class="tab-btn px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all">
+                    🏆 Division 1 Podiums (1st, 2nd, 3rd)
+                </button>
+                <button type="button" data-tab="individuals" class="tab-btn px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all">
+                    🥇 Individual Champions
+                </button>
+            </div>
+
+            <!-- Search Filter Input -->
+            <div class="relative w-full sm:w-64">
+                <input type="text" id="filter-search" placeholder="Filter by club or athlete..."
+                    class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 rounded-lg px-3 py-1.5 pl-8 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: HISTORICAL LEAGUE CHAMPIONS (1964–2026)                            -->
+        <!-- ========================================================================= -->
+        <section id="view-historical" class="space-y-8">
+            <!-- All-Time Titles Summary Cards -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        All-Time Championship Title Leaderboard
+                    </h3>
+                    <div class="flex items-center gap-1.5 text-xs font-mono" id="tally-gender-toggle">
+                        <button type="button" data-mode="both" class="tally-btn px-2.5 py-1 rounded bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold">Combined</button>
+                        <button type="button" data-mode="men" class="tally-btn px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Men</button>
+                        <button type="button" data-mode="women" class="tally-btn px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Women</button>
+                    </div>
+                </div>
+
+                <div id="titles-leaderboard-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Historical Chronicle Table -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs space-y-0">
+                <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between sm:items-center gap-3">
+                    <div>
+                        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100">
+                            Chronological Roll of Champions (1964–2026)
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                            Directly transcribed from official league notebooks and historical records.
+                        </p>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400 dark:text-slate-500" id="hist-row-count">
+                        62 Seasons Recorded
+                    </span>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
+                                <th class="py-3 px-4 w-20">Year</th>
+                                <th class="py-3 px-4 w-28">Season</th>
+                                <th class="py-3 px-4 text-emerald-800 dark:text-emerald-300 font-bold">Senior Men Champions (from 1964)</th>
+                                <th class="py-3 px-4 text-[#903A3D] dark:text-[#f87171] font-bold">Senior Women Champions (from 1972)</th>
+                                <th class="py-3 px-4 text-right">Historical Context</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historical-champions-tbody" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: DIVISION 1 TEAM PODIUMS (1st, 2nd, 3rd)                           -->
+        <!-- ========================================================================= -->
+        <section id="view-podiums" class="space-y-6 hidden">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                    <h3 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100">
+                        Division 1 Team Podiums (2010–2026)
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Official 1st, 2nd, and 3rd place teams with cumulative league points for each completed season.
+                    </p>
+                </div>
+
+                <!-- Division Switcher -->
+                <div class="flex items-center gap-1.5 text-xs font-mono font-semibold" id="podium-gender-toggle">
+                    <button type="button" data-div="men" class="podium-btn px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xs">
+                        Senior Men Division 1
+                    </button>
+                    <button type="button" data-div="women" class="podium-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                        Senior Women Division 1
+                    </button>
+                </div>
+            </div>
+
+            <!-- Podiums Grid -->
+            <div id="podiums-container" class="space-y-4">
+                <!-- Injected dynamically -->
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: INDIVIDUAL LEAGUE CHAMPIONS                                        -->
+        <!-- ========================================================================= -->
+        <section id="view-individuals" class="space-y-8 hidden">
+            <!-- Multi-Title Athletes Hall of Fame -->
+            <div class="space-y-3">
+                <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    Multiple Individual League Title Winners
+                </h3>
+                <div id="multi-title-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Individual Champions Table -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs space-y-0">
+                <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100">
+                            Season-by-Season Individual Champions (2010–2026)
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                            Overall title winners determined across official best-4 scoring fixtures per campaign.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
+                                <th class="py-3 px-4 w-28">Season</th>
+                                <th class="py-3 px-4 text-emerald-800 dark:text-emerald-300 font-bold">Senior Men Champion 🥇</th>
+                                <th class="py-3 px-4 text-slate-500">Men's Runners-Up 🥈</th>
+                                <th class="py-3 px-4 text-[#903A3D] dark:text-[#f87171] font-bold">Senior Women Champion 🥇</th>
+                                <th class="py-3 px-4 text-slate-500">Women's Runners-Up 🥈</th>
+                            </tr>
+                        </thead>
+                        <tbody id="individual-champions-tbody" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+    <!-- JAVASCRIPT CONTROLLER -->
+    <script>
+        (() => {
+            const data = window.glChampionsData || {};
+            const histMen = data.historical_champions?.men || [];
+            const histWomen = data.historical_champions?.women || [];
+            const podiums = data.team_podiums || [];
+            const individuals = data.individual_champions || [];
+            const multiAthletes = data.multi_title_athletes || [];
+
+            // State
+            let activeTab = 'historical';
+            let searchQuery = '';
+            let tallyMode = 'both';
+            let podiumGender = 'men';
+
+            // --- 1. TABS SWITCHING ---
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const viewHistorical = document.getElementById('view-historical');
+            const viewPodiums = document.getElementById('view-podiums');
+            const viewIndividuals = document.getElementById('view-individuals');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeTab = btn.getAttribute('data-tab');
+                    tabButtons.forEach(b => {
+                        b.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100', 'shadow-xs');
+                        b.classList.add('text-slate-600', 'dark:text-slate-400');
+                    });
+                    btn.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100', 'shadow-xs');
+                    btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+
+                    viewHistorical.classList.toggle('hidden', activeTab !== 'historical');
+                    viewPodiums.classList.toggle('hidden', activeTab !== 'podiums');
+                    viewIndividuals.classList.toggle('hidden', activeTab !== 'individuals');
+                });
+            });
+
+            // Search filter input
+            const searchInput = document.getElementById('filter-search');
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim().toLowerCase();
+                renderAll();
+            });
+
+            // --- 2. RENDER HISTORICAL CHAMPIONS ---
+            function renderHistorical() {
+                // Tally titles
+                const menTally = {};
+                histMen.forEach(m => { menTally[m.winner] = (menTally[m.winner] || 0) + 1; });
+                const womenTally = {};
+                histWomen.forEach(w => { womenTally[w.winner] = (womenTally[w.winner] || 0) + 1; });
+
+                const combinedTally = {};
+                Object.keys(menTally).forEach(c => { combinedTally[c] = (combinedTally[c] || 0) + menTally[c]; });
+                Object.keys(womenTally).forEach(c => { combinedTally[c] = (combinedTally[c] || 0) + womenTally[c]; });
+
+                let activeTally = combinedTally;
+                if (tallyMode === 'men') activeTally = menTally;
+                if (tallyMode === 'women') activeTally = womenTally;
+
+                const sortedClubs = Object.entries(activeTally)
+                    .sort((a, b) => b[1] - a[1])
+                    .filter(([c]) => !searchQuery || c.toLowerCase().includes(searchQuery));
+
+                const tallyContainer = document.getElementById('titles-leaderboard-grid');
+                tallyContainer.innerHTML = sortedClubs.map(([club, titles]) => `
+                    <a href="club.html?club=${encodeURIComponent(club)}" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 shadow-xs hover:border-emerald-500/60 transition-all block group">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-base">🏆</span>
+                            <span class="font-serif font-black text-lg text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
+                                ${titles}
+                            </span>
+                        </div>
+                        <div class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 mt-1 truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400">
+                            ${club}
+                        </div>
+                        <span class="text-[10px] font-mono text-slate-400 block mt-0.5">
+                            ${titles === 1 ? '1 title' : `${titles} titles`}
+                        </span>
+                    </a>
+                `).join('');
+
+                // Table
+                const womenMap = {};
+                histWomen.forEach(w => { womenMap[w.year] = w; });
+
+                const rows = histMen.filter(m => {
+                    const w = womenMap[m.year];
+                    const wWin = w ? w.winner : '';
+                    if (!searchQuery) return true;
+                    return m.winner.toLowerCase().includes(searchQuery) || 
+                           wWin.toLowerCase().includes(searchQuery) || 
+                           m.year.toString().includes(searchQuery);
+                }).sort((a, b) => b.year - a.year);
+
+                document.getElementById('hist-row-count').textContent = `${rows.length} Seasons Shown`;
+
+                const tbody = document.getElementById('historical-champions-tbody');
+                tbody.innerHTML = rows.map(m => {
+                    const w = womenMap[m.year];
+                    const wWinner = w ? w.winner : '—';
+                    const context = m.notes || (w ? w.notes : '') || '';
+
+                    return `
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <td class="py-3 px-4 font-mono font-bold text-slate-900 dark:text-slate-100">
+                                ${m.year}
+                            </td>
+                            <td class="py-3 px-4 font-mono text-slate-500 dark:text-slate-400">
+                                <a href="season.html?season=${m.year - 1}_${m.year}" class="hover:underline hover:text-emerald-600">
+                                    ${m.season}
+                                </a>
+                            </td>
+                            <td class="py-3 px-4">
+                                <a href="club.html?club=${encodeURIComponent(m.winner)}" class="font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
+                                    ${m.winner}
+                                </a>
+                            </td>
+                            <td class="py-3 px-4">
+                                ${wWinner !== '—' ? `
+                                    <a href="club.html?club=${encodeURIComponent(wWinner)}" class="font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-rose-700 dark:hover:text-rose-400 hover:underline">
+                                        ${wWinner}
+                                    </a>
+                                ` : '<span class="text-slate-400 font-mono">—</span>'}
+                            </td>
+                            <td class="py-3 px-4 text-right font-mono text-[11px] text-slate-400">
+                                ${context ? `<span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">${context}</span>` : '—'}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Tally mode toggle
+            document.querySelectorAll('.tally-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tallyMode = btn.getAttribute('data-mode');
+                    document.querySelectorAll('.tally-btn').forEach(b => {
+                        b.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'font-bold');
+                        b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    });
+                    btn.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'font-bold');
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    renderHistorical();
+                });
+            });
+
+            // --- 3. RENDER TEAM PODIUMS ---
+            function renderPodiums() {
+                const container = document.getElementById('podiums-container');
+                const list = podiums.filter(p => {
+                    const teams = podiumGender === 'men' ? p.men : p.women;
+                    if (!searchQuery) return true;
+                    return teams.some(t => t.team.toLowerCase().includes(searchQuery)) || p.season.includes(searchQuery);
+                }).sort((a, b) => b.year - a.year);
+
+                container.innerHTML = list.map(item => {
+                    const teams = podiumGender === 'men' ? item.men : item.women;
+                    const gold = teams[0];
+                    const silver = teams[1];
+                    const bronze = teams[2];
+
+                    return `
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-4">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                <div class="flex items-center gap-2.5">
+                                    <h4 class="text-lg font-serif font-bold text-slate-900 dark:text-slate-100">
+                                        ${item.season} Campaign
+                                    </h4>
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                        Final Match ${item.final_match}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 font-sans">
+                                <!-- 1st Gold -->
+                                ${gold ? `
+                                    <div class="p-3.5 rounded-xl bg-amber-500/10 dark:bg-amber-500/15 border border-amber-500/30 flex items-center justify-between">
+                                        <div class="flex items-center gap-2.5 truncate">
+                                            <span class="text-2xl">🥇</span>
+                                            <div class="truncate">
+                                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 block">Champions</span>
+                                                <a href="club.html?club=${encodeURIComponent(gold.team)}" class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 hover:text-amber-700 dark:hover:text-amber-400 hover:underline truncate block">
+                                                    ${gold.team}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs font-mono font-bold text-amber-900 dark:text-amber-300 shrink-0 ml-2">
+                                            ${gold.pts.toLocaleString()} pts
+                                        </span>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 2nd Silver -->
+                                ${silver ? `
+                                    <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                        <div class="flex items-center gap-2.5 truncate">
+                                            <span class="text-2xl">🥈</span>
+                                            <div class="truncate">
+                                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Runners-Up</span>
+                                                <a href="club.html?club=${encodeURIComponent(silver.team)}" class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline truncate block">
+                                                    ${silver.team}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 shrink-0 ml-2">
+                                            ${silver.pts.toLocaleString()} pts
+                                        </span>
+                                    </div>
+                                ` : ''}
+
+                                <!-- 3rd Bronze -->
+                                ${bronze ? `
+                                    <div class="p-3.5 rounded-xl bg-orange-500/10 dark:bg-orange-950/20 border border-orange-500/20 flex items-center justify-between">
+                                        <div class="flex items-center gap-2.5 truncate">
+                                            <span class="text-2xl">🥉</span>
+                                            <div class="truncate">
+                                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-orange-700 dark:text-orange-400 block">3rd Place</span>
+                                                <a href="club.html?club=${encodeURIComponent(bronze.team)}" class="font-serif font-bold text-sm text-slate-900 dark:text-slate-100 hover:text-orange-700 dark:hover:text-orange-400 hover:underline truncate block">
+                                                    ${bronze.team}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs font-mono font-bold text-orange-900 dark:text-orange-300 shrink-0 ml-2">
+                                            ${bronze.pts.toLocaleString()} pts
+                                        </span>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Podium gender toggle
+            document.querySelectorAll('.podium-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    podiumGender = btn.getAttribute('data-div');
+                    document.querySelectorAll('.podium-btn').forEach(b => {
+                        b.classList.remove('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'shadow-xs');
+                        b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    });
+                    btn.classList.add('bg-slate-900', 'dark:bg-white', 'text-white', 'dark:text-slate-900', 'shadow-xs');
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    renderPodiums();
+                });
+            });
+
+            // --- 4. RENDER INDIVIDUAL CHAMPIONS ---
+            function renderIndividuals() {
+                // Multi title athletes
+                const multiGrid = document.getElementById('multi-title-grid');
+                multiGrid.innerHTML = multiAthletes.map(ath => `
+                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">${ath.titles === 4 ? '👑' : '⭐'}</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+                                ${ath.titles} League Titles
+                            </span>
+                        </div>
+                        <div>
+                            <a href="athlete.html?name=${encodeURIComponent(ath.name)}&club=${encodeURIComponent(ath.club)}&gender=${ath.gender}" class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors block">
+                                ${ath.name}
+                            </a>
+                            <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">${ath.club}</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 text-[11px] font-mono text-slate-400">
+                            <span>Championship Campaigns:</span>
+                            <div class="font-bold text-slate-700 dark:text-slate-300 mt-0.5">${ath.seasons.join(', ')}</div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Table
+                const tbody = document.getElementById('individual-champions-tbody');
+                const filtered = individuals.filter(ind => {
+                    const m1 = ind.men[0];
+                    const w1 = ind.women[0];
+                    if (!searchQuery) return true;
+                    return (m1 && (m1.athlete.toLowerCase().includes(searchQuery) || m1.club.toLowerCase().includes(searchQuery))) ||
+                           (w1 && (w1.athlete.toLowerCase().includes(searchQuery) || w1.club.toLowerCase().includes(searchQuery))) ||
+                           ind.season.includes(searchQuery);
+                }).sort((a, b) => b.year - a.year);
+
+                tbody.innerHTML = filtered.map(item => {
+                    const m1 = item.men[0];
+                    const m2 = item.men[1];
+                    const w1 = item.women[0];
+                    const w2 = item.women[1];
+
+                    return `
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <td class="py-3 px-4 font-mono font-bold text-slate-900 dark:text-slate-100">
+                                <a href="season.html?season=${item.year - 1}_${item.year}" class="hover:underline hover:text-emerald-600">
+                                    ${item.season}
+                                </a>
+                            </td>
+                            <!-- Men Champion -->
+                            <td class="py-3 px-4">
+                                ${m1 ? `
+                                    <div class="font-serif font-bold text-slate-900 dark:text-slate-100">
+                                        <a href="athlete.html?name=${encodeURIComponent(m1.athlete)}&club=${encodeURIComponent(m1.club)}&gender=M" class="hover:text-emerald-700 dark:hover:text-emerald-400 hover:underline">
+                                            ${m1.athlete}
+                                        </a>
+                                    </div>
+                                    <div class="text-[11px] font-mono text-slate-400">
+                                        ${m1.club} &bull; <strong class="text-slate-700 dark:text-slate-300">${m1.best4_pts} pts</strong>
+                                    </div>
+                                ` : '—'}
+                            </td>
+                            <!-- Men Runner-Up -->
+                            <td class="py-3 px-4">
+                                ${m2 ? `
+                                    <div class="font-serif text-slate-700 dark:text-slate-300">
+                                        <a href="athlete.html?name=${encodeURIComponent(m2.athlete)}&club=${encodeURIComponent(m2.club)}&gender=M" class="hover:underline">
+                                            ${m2.athlete}
+                                        </a>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-400">
+                                        ${m2.club} &bull; ${m2.best4_pts} pts
+                                    </div>
+                                ` : '—'}
+                            </td>
+                            <!-- Women Champion -->
+                            <td class="py-3 px-4">
+                                ${w1 ? `
+                                    <div class="font-serif font-bold text-slate-900 dark:text-slate-100">
+                                        <a href="athlete.html?name=${encodeURIComponent(w1.athlete)}&club=${encodeURIComponent(w1.club)}&gender=F" class="hover:text-rose-700 dark:hover:text-rose-400 hover:underline">
+                                            ${w1.athlete}
+                                        </a>
+                                    </div>
+                                    <div class="text-[11px] font-mono text-slate-400">
+                                        ${w1.club} &bull; <strong class="text-slate-700 dark:text-slate-300">${w1.best4_pts} pts</strong>
+                                    </div>
+                                ` : '—'}
+                            </td>
+                            <!-- Women Runner-Up -->
+                            <td class="py-3 px-4">
+                                ${w2 ? `
+                                    <div class="font-serif text-slate-700 dark:text-slate-300">
+                                        <a href="athlete.html?name=${encodeURIComponent(w2.athlete)}&club=${encodeURIComponent(w2.club)}&gender=F" class="hover:underline">
+                                            ${w2.athlete}
+                                        </a>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-400">
+                                        ${w2.club} &bull; ${w2.best4_pts} pts
+                                    </div>
+                                ` : '—'}
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            function renderAll() {
+                renderHistorical();
+                renderPodiums();
+                renderIndividuals();
+            }
+
+            renderAll();
+        })();
+    </script>
+</body>
+</html>

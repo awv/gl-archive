@@ -54,6 +54,13 @@ def main():
     # Fixture standings map
     fixture_standings_map = {}
 
+    max_match_by_season = defaultdict(int)
+    for fix in fixtures:
+        sk = fix.get("season_key")
+        m = fix.get("match", 0)
+        if m > max_match_by_season[sk]:
+            max_match_by_season[sk] = m
+
     for fix in fixtures:
         season = fix["season"]
         season_key = fix["season_key"]
@@ -61,6 +68,7 @@ def main():
         venue = fix["venue"]
         date = fix["date"]
         fix_key = f"{season_key}_m{match_num}"
+        is_final_match = (match_num == max_match_by_season[season_key]) and (season_key != "2026_2027")
 
         fixture_standings_map[fix_key] = {
             "season": season,
@@ -85,8 +93,16 @@ def main():
                 raw_team = entry["team"]
                 c_club = clean_club_name(raw_team, aliases)
                 tier = get_team_tier(raw_team)
+                cum_pos = entry.get("cum_pos")
 
-                if "champion" in cum_pos_str.lower() or "champion" in note_str.lower():
+                is_champ = "champion" in cum_pos_str.lower() or "champion" in note_str.lower() or (is_final_match and cum_pos == 1)
+                is_ru = "runner-up" in cum_pos_str.lower() or "runner-up" in note_str.lower() or "runners-up" in note_str.lower() or (is_final_match and cum_pos == 2)
+
+                # Ensure no duplicate title for this season and division
+                existing_titles = club_honours[c_club]["division_titles"]
+                already_has_season = any(t["season"] == season and t["division"] == div_name for t in existing_titles)
+
+                if is_champ and not already_has_season:
                     club_honours[c_club]["division_titles"].append({
                         "season": season,
                         "division": div_name,
@@ -95,7 +111,7 @@ def main():
                         "title": "League Champions",
                         "pts": entry.get("cum_pts")
                     })
-                elif "runner-up" in cum_pos_str.lower() or "runner-up" in note_str.lower() or "runners-up" in note_str.lower():
+                elif is_ru and not already_has_season:
                     club_honours[c_club]["division_titles"].append({
                         "season": season,
                         "division": div_name,

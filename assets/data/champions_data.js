@@ -1,0 +1,2172 @@
+window.glChampionsData = {
+  "historical_champions": {
+    "men": [
+      {
+        "year": 1964,
+        "season": "1963/1964",
+        "winner": "Gilwern",
+        "notes": "Inaugural League Champions"
+      },
+      {
+        "year": 1965,
+        "season": "1964/1965",
+        "winner": "Gilwern"
+      },
+      {
+        "year": 1966,
+        "season": "1965/1966",
+        "winner": "Newport Harriers"
+      },
+      {
+        "year": 1967,
+        "season": "1966/1967",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 1968,
+        "season": "1967/1968",
+        "winner": "Roath"
+      },
+      {
+        "year": 1969,
+        "season": "1968/1969",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1970,
+        "season": "1969/1970",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1971,
+        "season": "1970/1971",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1972,
+        "season": "1971/1972",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1973,
+        "season": "1972/1973",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1974,
+        "season": "1973/1974",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1975,
+        "season": "1974/1975",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1976,
+        "season": "1975/1976",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1977,
+        "season": "1976/1977",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1978,
+        "season": "1977/1978",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1979,
+        "season": "1978/1979",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1980,
+        "season": "1979/1980",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1981,
+        "season": "1980/1981",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1982,
+        "season": "1981/1982",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1983,
+        "season": "1982/1983",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1984,
+        "season": "1983/1984",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1985,
+        "season": "1984/1985",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1986,
+        "season": "1985/1986",
+        "winner": "Newport Harriers"
+      },
+      {
+        "year": 1987,
+        "season": "1986/1987",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1988,
+        "season": "1987/1988",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1989,
+        "season": "1988/1989",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1990,
+        "season": "1989/1990",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1991,
+        "season": "1990/1991",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1992,
+        "season": "1991/1992",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1993,
+        "season": "1992/1993",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1994,
+        "season": "1993/1994",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1995,
+        "season": "1994/1995",
+        "winner": "Bridgend Athletic Club"
+      },
+      {
+        "year": 1996,
+        "season": "1995/1996",
+        "winner": "Bridgend Athletic Club"
+      },
+      {
+        "year": 1997,
+        "season": "1996/1997",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1998,
+        "season": "1997/1998",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1999,
+        "season": "1998/1999",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 2000,
+        "season": "1999/2000",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2001,
+        "season": "2000/2001",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2002,
+        "season": "2001/2002",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2003,
+        "season": "2002/2003",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 2004,
+        "season": "2003/2004",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2005,
+        "season": "2004/2005",
+        "winner": "Bridgend Athletic Club"
+      },
+      {
+        "year": 2006,
+        "season": "2005/2006",
+        "winner": "Bridgend Athletic Club"
+      },
+      {
+        "year": 2007,
+        "season": "2006/2007",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 2008,
+        "season": "2007/2008",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2009,
+        "season": "2008/2009",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2010,
+        "season": "2009/2010",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2011,
+        "season": "2010/2011",
+        "winner": "Wells City Harriers"
+      },
+      {
+        "year": 2012,
+        "season": "2011/2012",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 2013,
+        "season": "2012/2013",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2014,
+        "season": "2013/2014",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2015,
+        "season": "2014/2015",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2016,
+        "season": "2015/2016",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 2017,
+        "season": "2016/2017",
+        "winner": "Aberdare Valley A. A. C."
+      },
+      {
+        "year": 2018,
+        "season": "2017/2018",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2019,
+        "season": "2018/2019",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2020,
+        "season": "2019/2020",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2022,
+        "season": "2021/2022",
+        "winner": "Bristol and West Athletic Club",
+        "notes": "2020/21 cancelled (Covid)"
+      },
+      {
+        "year": 2023,
+        "season": "2022/2023",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2024,
+        "season": "2023/2024",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2025,
+        "season": "2024/2025",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2026,
+        "season": "2025/2026",
+        "winner": "Bristol and West Athletic Club"
+      }
+    ],
+    "women": [
+      {
+        "year": 1972,
+        "season": "1971/1972",
+        "winner": "Newport Harriers",
+        "notes": "Inaugural Women's Champions"
+      },
+      {
+        "year": 1973,
+        "season": "1972/1973",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1974,
+        "season": "1973/1974",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1975,
+        "season": "1974/1975",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1976,
+        "season": "1975/1976",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1977,
+        "season": "1976/1977",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1978,
+        "season": "1977/1978",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1979,
+        "season": "1978/1979",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1980,
+        "season": "1979/1980",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1981,
+        "season": "1980/1981",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1982,
+        "season": "1981/1982",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1983,
+        "season": "1982/1983",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1984,
+        "season": "1983/1984",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1985,
+        "season": "1984/1985",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1986,
+        "season": "1985/1986",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1987,
+        "season": "1986/1987",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1988,
+        "season": "1987/1988",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1989,
+        "season": "1988/1989",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1990,
+        "season": "1989/1990",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1991,
+        "season": "1990/1991",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1992,
+        "season": "1991/1992",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1993,
+        "season": "1992/1993",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 1994,
+        "season": "1993/1994",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1995,
+        "season": "1994/1995",
+        "winner": "Swansea Harriers Athletic Club"
+      },
+      {
+        "year": 1996,
+        "season": "1995/1996",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 1997,
+        "season": "1996/1997",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1998,
+        "season": "1997/1998",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 1999,
+        "season": "1998/1999",
+        "winner": "Cardiff Amateur Athletic Club"
+      },
+      {
+        "year": 2000,
+        "season": "1999/2000",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2001,
+        "season": "2000/2001",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2002,
+        "season": "2001/2002",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2003,
+        "season": "2002/2003",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2004,
+        "season": "2003/2004",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2005,
+        "season": "2004/2005",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 2006,
+        "season": "2005/2006",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 2007,
+        "season": "2006/2007",
+        "winner": "Cardiff University AC"
+      },
+      {
+        "year": 2008,
+        "season": "2007/2008",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 2009,
+        "season": "2008/2009",
+        "winner": "Taf Running & Orienteering Teams"
+      },
+      {
+        "year": 2010,
+        "season": "2009/2010",
+        "winner": "Taf Running & Orienteering Teams"
+      },
+      {
+        "year": 2011,
+        "season": "2010/2011",
+        "winner": "Westbury Harriers"
+      },
+      {
+        "year": 2012,
+        "season": "2011/2012",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2013,
+        "season": "2012/2013",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2014,
+        "season": "2013/2014",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2015,
+        "season": "2014/2015",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2016,
+        "season": "2015/2016",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2017,
+        "season": "2016/2017",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2018,
+        "season": "2017/2018",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2019,
+        "season": "2018/2019",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2020,
+        "season": "2019/2020",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2022,
+        "season": "2021/2022",
+        "winner": "Bristol and West Athletic Club",
+        "notes": "2020/21 cancelled (Covid)"
+      },
+      {
+        "year": 2023,
+        "season": "2022/2023",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2024,
+        "season": "2023/2024",
+        "winner": "Les Croupiers Running Club"
+      },
+      {
+        "year": 2025,
+        "season": "2024/2025",
+        "winner": "Bristol and West Athletic Club"
+      },
+      {
+        "year": 2026,
+        "season": "2025/2026",
+        "winner": "Bristol and West Athletic Club"
+      }
+    ]
+  },
+  "team_podiums": [
+    {
+      "season": "2010/2011",
+      "season_key": "2010_2011",
+      "year": 2011,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Wells and Yeovil",
+          "pts": 4361,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 4279,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Neath Harriers",
+          "pts": 4094,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Westbury Harriers",
+          "pts": 2248,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 2099,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Taf Running & Orienteering Teams",
+          "pts": 1917,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2011/2012",
+      "season_key": "2011_2012",
+      "year": 2012,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Westbury Harriers",
+          "pts": 5780,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 5750,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Wells City Harriers",
+          "pts": 4891,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 3354,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 3176,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Cardiff Amateur Athletic Club",
+          "pts": 2500,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2012/2013",
+      "season_key": "2012_2013",
+      "year": 2013,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 6373,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Cardiff University Harriers",
+          "pts": 5980,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Neath Harriers",
+          "pts": 5758,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 3728,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 3698,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Chepstow Harriers",
+          "pts": 3508,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2013/2014",
+      "season_key": "2013_2014",
+      "year": 2014,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 7677,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 7602,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 6997,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 4792,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 4717,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Cardiff University Harriers",
+          "pts": 4219,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2014/2015",
+      "season_key": "2014_2015",
+      "year": 2015,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6709,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 6438,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 6267,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 4077,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 3725,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Cardiff University Harriers",
+          "pts": 3559,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2015/2016",
+      "season_key": "2015_2016",
+      "year": 2016,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Cardiff University Harriers",
+          "pts": 8691,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Bristol and West Athletic Club",
+          "pts": 8670,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 8436,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 5185,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Cardiff University Harriers",
+          "pts": 4686,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Chepstow Harriers",
+          "pts": 4599,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2016/2017",
+      "season_key": "2016_2017",
+      "year": 2017,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Aberdare Valley A. A. C.",
+          "pts": 8259,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Bristol and West Athletic Club",
+          "pts": 8048,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 7980,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 5550,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 5384,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Cardiff University Harriers",
+          "pts": 5093,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2017/2018",
+      "season_key": "2017_2018",
+      "year": 2018,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 7525,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Aberdare Valley A. A. C.",
+          "pts": 7458,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 7428,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 5575,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 5273,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Lliswerry Runners",
+          "pts": 5009,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2018/2019",
+      "season_key": "2018_2019",
+      "year": 2019,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 9135,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Micky Morris Racing Team",
+          "pts": 9031,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Aberdare Valley A. A. C.",
+          "pts": 8872,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6785,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 6472,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Avon Valley Runners",
+          "pts": 6185,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2019/2020",
+      "season_key": "2019_2020",
+      "year": 2020,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 8825,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Aberdare Valley A. A. C.",
+          "pts": 8404,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Micky Morris Racing Team",
+          "pts": 8121,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6515,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 6105,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 5991,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2021/2022",
+      "season_key": "2021_2022",
+      "year": 2022,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 8362,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 7948,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 7661,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6251,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Chepstow Harriers",
+          "pts": 5897,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 5438,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2022/2023",
+      "season_key": "2022_2023",
+      "year": 2023,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 8693,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 8585,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Neath Harriers",
+          "pts": 8218,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6005,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 5751,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 5598,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2023/2024",
+      "season_key": "2023_2024",
+      "year": 2024,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 9559,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 9202,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Pontypridd Roadents Athletic Club",
+          "pts": 9003,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 6363,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 6216,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 6151,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2024/2025",
+      "season_key": "2024_2025",
+      "year": 2025,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 9981,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 9638,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 9511,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 6942,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 6910,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 6778,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2025/2026",
+      "season_key": "2025_2026",
+      "year": 2026,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 10130,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 10000,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 9949,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol and West Athletic Club",
+          "pts": 7078,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Parc Bryn Bach Running Club",
+          "pts": 6987,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 6870,
+          "is_welsh": false
+        }
+      ]
+    }
+  ],
+  "individual_champions": [
+    {
+      "season": "2010/2011",
+      "year": 2011,
+      "men": [
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Swansea Harriers Athletic Club",
+          "races": 4,
+          "best4_pts": 940,
+          "best4_pos": 14,
+          "total_pts": 940
+        },
+        {
+          "athlete": "Matthew Harvey",
+          "club": "Chepstow Harriers",
+          "races": 6,
+          "best4_pts": 927,
+          "best4_pos": 117,
+          "total_pts": 1212
+        },
+        {
+          "athlete": "J. Mills",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 4,
+          "best4_pts": 926,
+          "best4_pos": 28,
+          "total_pts": 926
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kate Roberts",
+          "club": "Bridgend Athletic Club",
+          "races": 4,
+          "best4_pts": 542,
+          "best4_pos": 13,
+          "total_pts": 542
+        },
+        {
+          "athlete": "D. Marsden",
+          "club": "Westbury Harriers",
+          "races": 4,
+          "best4_pts": 541,
+          "best4_pos": 14,
+          "total_pts": 541
+        },
+        {
+          "athlete": "E. Loveland",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 4,
+          "best4_pts": 525,
+          "best4_pos": 31,
+          "total_pts": 525
+        }
+      ]
+    },
+    {
+      "season": "2011/2012",
+      "year": 2012,
+      "men": [
+        {
+          "athlete": "B. Nagy",
+          "club": "University of Bath",
+          "races": 5,
+          "best4_pts": 1061,
+          "best4_pos": 6,
+          "total_pts": 1275
+        },
+        {
+          "athlete": "Austin Davies",
+          "club": "Brecon Athletic Club",
+          "races": 5,
+          "best4_pts": 1039,
+          "best4_pos": 15,
+          "total_pts": 1251
+        },
+        {
+          "athlete": "J. Mills",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 4,
+          "best4_pts": 1030,
+          "best4_pos": 43,
+          "total_pts": 1030
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kate Roberts",
+          "club": "Les Croupiers Running Club",
+          "races": 7,
+          "best4_pts": 629,
+          "best4_pos": 14,
+          "total_pts": 843
+        },
+        {
+          "athlete": "A. Grady",
+          "club": "University of Bath",
+          "races": 5,
+          "best4_pts": 621,
+          "best4_pos": 15,
+          "total_pts": 755
+        },
+        {
+          "athlete": "Arwel Davies",
+          "club": "Bristol and West Athletic Club",
+          "races": 6,
+          "best4_pts": 594,
+          "best4_pos": 47,
+          "total_pts": 829
+        }
+      ]
+    },
+    {
+      "season": "2012/2013",
+      "year": 2013,
+      "men": [
+        {
+          "athlete": "Huw Evans",
+          "club": "Les Croupiers Running Club",
+          "races": 5,
+          "best4_pts": 1138,
+          "best4_pos": 21,
+          "total_pts": 1352
+        },
+        {
+          "athlete": "Dan Nash",
+          "club": "Cardiff University AC",
+          "races": 4,
+          "best4_pts": 1127,
+          "best4_pos": 25,
+          "total_pts": 1127
+        },
+        {
+          "athlete": "Matthew Harvey",
+          "club": "Chepstow Harriers",
+          "races": 9,
+          "best4_pts": 1117,
+          "best4_pos": 39,
+          "total_pts": 1905
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 5,
+          "best4_pts": 669,
+          "best4_pos": 20,
+          "total_pts": 801
+        },
+        {
+          "athlete": "Lucy Richens",
+          "club": "Westbury Harriers",
+          "races": 5,
+          "best4_pts": 651,
+          "best4_pos": 29,
+          "total_pts": 786
+        },
+        {
+          "athlete": "S. Turvey",
+          "club": "Cardiff University AC",
+          "races": 4,
+          "best4_pts": 648,
+          "best4_pos": 41,
+          "total_pts": 648
+        }
+      ]
+    },
+    {
+      "season": "2013/2014",
+      "year": 2014,
+      "men": [
+        {
+          "athlete": "James Thie",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 5,
+          "best4_pts": 1379,
+          "best4_pos": 24,
+          "total_pts": 1599
+        },
+        {
+          "athlete": "Austin Davies",
+          "club": "Brecon Athletic Club",
+          "races": 4,
+          "best4_pts": 1350,
+          "best4_pos": 36,
+          "total_pts": 1350
+        },
+        {
+          "athlete": "R. Gardiner",
+          "club": "Aberdare Valley AAC",
+          "races": 5,
+          "best4_pts": 1350,
+          "best4_pos": 54,
+          "total_pts": 1559
+        }
+      ],
+      "women": [
+        {
+          "athlete": "F. Price",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 4,
+          "best4_pts": 855,
+          "best4_pos": 10,
+          "total_pts": 855
+        },
+        {
+          "athlete": "E. Journeaux",
+          "club": "Westbury Harriers",
+          "races": 5,
+          "best4_pts": 823,
+          "best4_pos": 32,
+          "total_pts": 964
+        },
+        {
+          "athlete": "Katie Hughes",
+          "club": "Westbury Harriers",
+          "races": 5,
+          "best4_pts": 801,
+          "best4_pos": 53,
+          "total_pts": 937
+        }
+      ]
+    },
+    {
+      "season": "2014/2015",
+      "year": 2015,
+      "men": [
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Swansea Harriers Athletic Club",
+          "races": 4,
+          "best4_pts": 1400,
+          "best4_pos": 12,
+          "total_pts": 1400
+        },
+        {
+          "athlete": "J. McKenna",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1375,
+          "best4_pos": 37,
+          "total_pts": 1375
+        },
+        {
+          "athlete": "R. Weeks",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1370,
+          "best4_pos": 43,
+          "total_pts": 1370
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 4,
+          "best4_pts": 835,
+          "best4_pos": 20,
+          "total_pts": 835
+        },
+        {
+          "athlete": "Cheryl Lee",
+          "club": "Westbury Harriers",
+          "races": 4,
+          "best4_pts": 827,
+          "best4_pos": 28,
+          "total_pts": 827
+        },
+        {
+          "athlete": "C. Beatty",
+          "club": "Les Croupiers Running Club",
+          "races": 4,
+          "best4_pts": 785,
+          "best4_pos": 70,
+          "total_pts": 785
+        }
+      ]
+    },
+    {
+      "season": "2015/2016",
+      "year": 2016,
+      "men": [
+        {
+          "athlete": "Dan Nash",
+          "club": "Cardiff University AC",
+          "races": 5,
+          "best4_pts": 1611,
+          "best4_pos": 7,
+          "total_pts": 1851
+        },
+        {
+          "athlete": "J. McKenna",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1575,
+          "best4_pos": 45,
+          "total_pts": 1575
+        },
+        {
+          "athlete": "M. Evans",
+          "club": "Chepstow Harriers",
+          "races": 10,
+          "best4_pts": 1559,
+          "best4_pos": 202,
+          "total_pts": 2737
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 5,
+          "best4_pts": 924,
+          "best4_pos": 14,
+          "total_pts": 1081
+        },
+        {
+          "athlete": "Cheryl Evans",
+          "club": "Pontypridd Roadents Athletic Club",
+          "races": 5,
+          "best4_pts": 917,
+          "best4_pos": 19,
+          "total_pts": 1074
+        },
+        {
+          "athlete": "Megan Mcbrien",
+          "club": "Cardiff University AC",
+          "races": 5,
+          "best4_pts": 908,
+          "best4_pos": 30,
+          "total_pts": 1062
+        }
+      ]
+    },
+    {
+      "season": "2016/2017",
+      "year": 2017,
+      "men": [
+        {
+          "athlete": "J. McKenna",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1554,
+          "best4_pos": 11,
+          "total_pts": 1554
+        },
+        {
+          "athlete": "Adam Bull",
+          "club": "Aberdare Valley AAC",
+          "races": 5,
+          "best4_pts": 1531,
+          "best4_pos": 27,
+          "total_pts": 1746
+        },
+        {
+          "athlete": "Michael Towler",
+          "club": "Avon Valley Runners",
+          "races": 5,
+          "best4_pts": 1506,
+          "best4_pos": 47,
+          "total_pts": 1717
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Lucy Marland",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 5,
+          "best4_pts": 1019,
+          "best4_pos": 9,
+          "total_pts": 1186
+        },
+        {
+          "athlete": "Emily Lagomarsino",
+          "club": "San Domenico Road Runners Club",
+          "races": 4,
+          "best4_pts": 985,
+          "best4_pos": 43,
+          "total_pts": 985
+        },
+        {
+          "athlete": "E. Journeaux",
+          "club": "Westbury Harriers",
+          "races": 5,
+          "best4_pts": 981,
+          "best4_pos": 37,
+          "total_pts": 1144
+        }
+      ]
+    },
+    {
+      "season": "2017/2018",
+      "year": 2018,
+      "men": [
+        {
+          "athlete": "Ciaran Lewis",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 4,
+          "best4_pts": 1553,
+          "best4_pos": 48,
+          "total_pts": 1553
+        },
+        {
+          "athlete": "Daniel Bodman",
+          "club": "Aberdare Valley AAC",
+          "races": 4,
+          "best4_pts": 1552,
+          "best4_pos": 49,
+          "total_pts": 1552
+        },
+        {
+          "athlete": "R. Gardiner",
+          "club": "Aberdare Valley AAC",
+          "races": 4,
+          "best4_pts": 1526,
+          "best4_pos": 75,
+          "total_pts": 1526
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 4,
+          "best4_pts": 1141,
+          "best4_pos": 26,
+          "total_pts": 1141
+        },
+        {
+          "athlete": "N. Griffiths",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1141,
+          "best4_pos": 27,
+          "total_pts": 1141
+        },
+        {
+          "athlete": "Cheryl Evans",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 5,
+          "best4_pts": 1116,
+          "best4_pos": 53,
+          "total_pts": 1312
+        }
+      ]
+    },
+    {
+      "season": "2018/2019",
+      "year": 2019,
+      "men": [
+        {
+          "athlete": "S. Morris",
+          "club": "Cardiff Amateur Athletic Club",
+          "races": 5,
+          "best4_pts": 1621,
+          "best4_pos": 23,
+          "total_pts": 1915
+        },
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Swansea Harriers Athletic Club",
+          "races": 4,
+          "best4_pts": 1610,
+          "best4_pos": 14,
+          "total_pts": 1610
+        },
+        {
+          "athlete": "R. McFlynn",
+          "club": "Micky Morris Racing Team",
+          "races": 4,
+          "best4_pts": 1579,
+          "best4_pos": 72,
+          "total_pts": 1579
+        }
+      ],
+      "women": [
+        {
+          "athlete": "N. Griffiths",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1152,
+          "best4_pos": 20,
+          "total_pts": 1152
+        },
+        {
+          "athlete": "Lauren Cooper",
+          "club": "Parc Bryn Bach Running Club",
+          "races": 5,
+          "best4_pts": 1144,
+          "best4_pos": 17,
+          "total_pts": 1365
+        },
+        {
+          "athlete": "I. Talbot-Price",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1143,
+          "best4_pos": 25,
+          "total_pts": 1363
+        }
+      ]
+    },
+    {
+      "season": "2019/2020",
+      "year": 2020,
+      "men": [
+        {
+          "athlete": "Adam Bull",
+          "club": "Pontypridd Roadents Athletic Club",
+          "races": 4,
+          "best4_pts": 1811,
+          "best4_pos": 16,
+          "total_pts": 1811
+        },
+        {
+          "athlete": "Luke Williams",
+          "club": "San Domenico Road Runners Club",
+          "races": 4,
+          "best4_pts": 1797,
+          "best4_pos": 30,
+          "total_pts": 1797
+        },
+        {
+          "athlete": "Michael Towler",
+          "club": "Avon Valley Runners",
+          "races": 4,
+          "best4_pts": 1749,
+          "best4_pos": 78,
+          "total_pts": 1749
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Alaw Evans",
+          "club": "Swansea Harriers Athletic Club",
+          "races": 4,
+          "best4_pts": 1322,
+          "best4_pos": 14,
+          "total_pts": 1322
+        },
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 4,
+          "best4_pts": 1302,
+          "best4_pos": 35,
+          "total_pts": 1302
+        },
+        {
+          "athlete": "Elaina Rose Gard",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1273,
+          "best4_pos": 64,
+          "total_pts": 1273
+        }
+      ]
+    },
+    {
+      "season": "2021/2022",
+      "year": 2022,
+      "men": [
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Parc Bryn Bach Running Club",
+          "races": 5,
+          "best4_pts": 1483,
+          "best4_pos": 12,
+          "total_pts": 1731
+        },
+        {
+          "athlete": "Owain Morris",
+          "club": "Les Croupiers Running Club",
+          "races": 5,
+          "best4_pts": 1433,
+          "best4_pos": 54,
+          "total_pts": 1678
+        },
+        {
+          "athlete": "Michael Towler",
+          "club": "Avon Valley Runners",
+          "races": 5,
+          "best4_pts": 1419,
+          "best4_pos": 71,
+          "total_pts": 1645
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Chelsea Creak",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1101,
+          "best4_pos": 8,
+          "total_pts": 1279
+        },
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 5,
+          "best4_pts": 1074,
+          "best4_pos": 34,
+          "total_pts": 1251
+        },
+        {
+          "athlete": "Hannah Dyer",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1060,
+          "best4_pos": 45,
+          "total_pts": 1231
+        }
+      ]
+    },
+    {
+      "season": "2022/2023",
+      "year": 2023,
+      "men": [
+        {
+          "athlete": "Luke Burgess",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1564,
+          "best4_pos": 20,
+          "total_pts": 1826
+        },
+        {
+          "athlete": "Chris Green",
+          "club": "Wells City Harriers",
+          "races": 5,
+          "best4_pts": 1539,
+          "best4_pos": 35,
+          "total_pts": 1797
+        },
+        {
+          "athlete": "Joe Gentry",
+          "club": "North Somerset AC",
+          "races": 4,
+          "best4_pts": 1538,
+          "best4_pos": 54,
+          "total_pts": 1538
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Katrina Entwistle",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1085,
+          "best4_pos": 9,
+          "total_pts": 1245
+        },
+        {
+          "athlete": "Bridget Belfourd",
+          "club": "Westbury Harriers",
+          "races": 5,
+          "best4_pts": 1051,
+          "best4_pos": 37,
+          "total_pts": 1203
+        },
+        {
+          "athlete": "Sophia Harrison",
+          "club": "Swansea Harriers Athletic Club",
+          "races": 5,
+          "best4_pts": 1039,
+          "best4_pos": 44,
+          "total_pts": 1192
+        }
+      ]
+    },
+    {
+      "season": "2023/2024",
+      "year": 2024,
+      "men": [
+        {
+          "athlete": "Owain Jones",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1714,
+          "best4_pos": 14,
+          "total_pts": 1953
+        },
+        {
+          "athlete": "Adam Bull",
+          "club": "Pontypridd Roadents Athletic Club",
+          "races": 4,
+          "best4_pts": 1713,
+          "best4_pos": 24,
+          "total_pts": 1713
+        },
+        {
+          "athlete": "Arthur Peel",
+          "club": "Bristol University",
+          "races": 5,
+          "best4_pts": 1676,
+          "best4_pos": 35,
+          "total_pts": 1920
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Alaw Evans",
+          "club": "Les Croupiers Running Club",
+          "races": 5,
+          "best4_pts": 1203,
+          "best4_pos": 7,
+          "total_pts": 1399
+        },
+        {
+          "athlete": "Katrina Entwistle",
+          "club": "Bristol and West Athletic Club",
+          "races": 5,
+          "best4_pts": 1194,
+          "best4_pos": 15,
+          "total_pts": 1389
+        },
+        {
+          "athlete": "Erin Burt",
+          "club": "Cardiff University AC",
+          "races": 5,
+          "best4_pts": 1187,
+          "best4_pos": 19,
+          "total_pts": 1381
+        }
+      ]
+    },
+    {
+      "season": "2024/2025",
+      "year": 2025,
+      "men": [
+        {
+          "athlete": "Felix McGrath",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1423,
+          "best4_pos": 6,
+          "total_pts": 1423
+        },
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Parc Bryn Bach Running Club",
+          "races": 4,
+          "best4_pts": 1414,
+          "best4_pos": 15,
+          "total_pts": 1414
+        },
+        {
+          "athlete": "Lee Gawler",
+          "club": "Bristol and West Athletic Club",
+          "races": 4,
+          "best4_pts": 1360,
+          "best4_pos": 69,
+          "total_pts": 1360
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Louise Flynn",
+          "club": "Les Croupiers Running Club",
+          "races": 4,
+          "best4_pts": 1045,
+          "best4_pos": 22,
+          "total_pts": 1045
+        },
+        {
+          "athlete": "Catherine Treble",
+          "club": "Westbury Harriers",
+          "races": 4,
+          "best4_pts": 1014,
+          "best4_pos": 53,
+          "total_pts": 1014
+        },
+        {
+          "athlete": "Kath Matthews",
+          "club": "Chepstow Harriers",
+          "races": 4,
+          "best4_pts": 1008,
+          "best4_pos": 59,
+          "total_pts": 1008
+        }
+      ]
+    },
+    {
+      "season": "2025/2026",
+      "year": 2026,
+      "men": [
+        {
+          "athlete": "Phillip Matthews",
+          "club": "Parc Bryn Bach Running Club",
+          "races": 5,
+          "best4_pts": 1812,
+          "best4_pos": 16,
+          "total_pts": 2079
+        },
+        {
+          "athlete": "Chris Green",
+          "club": "Wells City Harriers",
+          "races": 5,
+          "best4_pts": 1766,
+          "best4_pos": 45,
+          "total_pts": 2035
+        },
+        {
+          "athlete": "William Stewart",
+          "club": "Bristol University",
+          "races": 5,
+          "best4_pts": 1764,
+          "best4_pos": 38,
+          "total_pts": 2034
+        }
+      ],
+      "women": [
+        {
+          "athlete": "Lucy Williamson",
+          "club": "Parc Bryn Bach Running Club",
+          "races": 5,
+          "best4_pts": 1279,
+          "best4_pos": 17,
+          "total_pts": 1465
+        },
+        {
+          "athlete": "Nynke Kuiper",
+          "club": "Les Croupiers Running Club",
+          "races": 5,
+          "best4_pts": 1257,
+          "best4_pos": 28,
+          "total_pts": 1450
+        },
+        {
+          "athlete": "Louise Flynn",
+          "club": "Les Croupiers Running Club",
+          "races": 5,
+          "best4_pts": 1246,
+          "best4_pos": 50,
+          "total_pts": 1427
+        }
+      ]
+    }
+  ],
+  "multi_title_athletes": [
+    {
+      "name": "Phillip Matthews",
+      "gender": "M",
+      "titles": 4,
+      "seasons": [
+        "2010/2011",
+        "2014/2015",
+        "2021/2022",
+        "2025/2026"
+      ],
+      "club": "Parc Bryn Bach Running Club"
+    },
+    {
+      "name": "Kath Matthews",
+      "gender": "F",
+      "titles": 4,
+      "seasons": [
+        "2012/2013",
+        "2014/2015",
+        "2015/2016",
+        "2017/2018"
+      ],
+      "club": "Chepstow Harriers"
+    },
+    {
+      "name": "Kate Roberts",
+      "gender": "F",
+      "titles": 2,
+      "seasons": [
+        "2010/2011",
+        "2011/2012"
+      ],
+      "club": "Les Croupiers Running Club"
+    },
+    {
+      "name": "Alaw Evans",
+      "gender": "F",
+      "titles": 2,
+      "seasons": [
+        "2019/2020",
+        "2023/2024"
+      ],
+      "club": "Les Croupiers Running Club"
+    }
+  ]
+};
