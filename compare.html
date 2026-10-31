@@ -83,7 +83,7 @@
         <section class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
                 <!-- Athlete A Input -->
-                <div class="md:col-span-5 relative">
+                <div class="md:col-span-5 relative z-30">
                     <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1.5">
                         First Athlete (Runner A)
                     </label>
@@ -106,7 +106,7 @@
                 </div>
 
                 <!-- Athlete B Input -->
-                <div class="md:col-span-5 relative">
+                <div class="md:col-span-5 relative z-20">
                     <label class="block text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1.5">
                         Second Athlete (Runner B)
                     </label>
@@ -295,6 +295,47 @@
                 return (sec >= 0 ? `+${str}` : `-${str}`);
             }
 
+            function resolveCanonicalName(name) {
+                if (!name) return '';
+                const norm = name.trim().toLowerCase();
+                for (const [maiden, info] of Object.entries(confirmedNameChanges)) {
+                    if (maiden.toLowerCase() === norm || (info.primary_name && info.primary_name.toLowerCase() === norm)) {
+                        return info.primary_name;
+                    }
+                }
+                return name;
+            }
+
+            function getAthleteRecords(athleteName) {
+                if (!athleteName) return [];
+                const normTarget = athleteName.trim().toLowerCase();
+                const namesToMatch = new Set([normTarget]);
+                for (const [maiden, info] of Object.entries(confirmedNameChanges)) {
+                    if (maiden.toLowerCase() === normTarget || (info.primary_name && info.primary_name.toLowerCase() === normTarget)) {
+                        namesToMatch.add(maiden.toLowerCase());
+                        if (info.primary_name) namesToMatch.add(info.primary_name.toLowerCase());
+                    }
+                }
+                return allData.filter(r => {
+                    if (!r.pos || r.pos <= 0) return false;
+                    const rName = (r.athlete || r.raw_name || '').toLowerCase();
+                    return namesToMatch.has(rName);
+                });
+            }
+
+            function getPrimaryClub(name, records) {
+                const tr = confirmedTransfers[name];
+                if (tr && tr.primary_club) return tr.primary_club;
+                for (const [maiden, info] of Object.entries(confirmedNameChanges)) {
+                    if (maiden.toLowerCase() === name.toLowerCase() || (info.primary_name && info.primary_name.toLowerCase() === name.toLowerCase())) {
+                        const tr2 = confirmedTransfers[info.primary_name] || confirmedTransfers[maiden];
+                        if (tr2 && tr2.primary_club) return tr2.primary_club;
+                    }
+                }
+                const sorted = [...records].sort((a,b) => (b.season_key || '').localeCompare(a.season_key || '') || (b.match || 0) - (a.match || 0));
+                return sorted[0]?.club || 'Unattached';
+            }
+
             function compareAthletes() {
                 if (!currentA || !currentB) {
                     resultContainer.innerHTML = `
@@ -305,12 +346,17 @@
                     return;
                 }
 
-                // Gather records
-                const recordsA = allData.filter(r => r.athlete === currentA && r.pos > 0);
-                const recordsB = allData.filter(r => r.athlete === currentB && r.pos > 0);
+                currentA = resolveCanonicalName(currentA);
+                currentB = resolveCanonicalName(currentB);
+                inputA.value = currentA;
+                inputB.value = currentB;
 
-                const clubA = recordsA[0]?.club || 'Unattached';
-                const clubB = recordsB[0]?.club || 'Unattached';
+                // Gather records across name changes and maiden names
+                const recordsA = getAthleteRecords(currentA);
+                const recordsB = getAthleteRecords(currentB);
+
+                const clubA = getPrimaryClub(currentA, recordsA);
+                const clubB = getPrimaryClub(currentB, recordsB);
 
                 // Map fixtures
                 const fixMapA = {};
