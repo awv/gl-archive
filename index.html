@@ -598,43 +598,78 @@
                 updateShowcase(initialMatch);
             }
 
+            function formatShortDate(dateStr) {
+                if (!dateStr) return 'TBD';
+                let d = dateStr.replace(/^(Saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday)\s+/i, '').trim();
+                const months = {
+                    'January': 'Jan', 'February': 'Feb', 'March': 'Mar', 'April': 'Apr',
+                    'May': 'May', 'June': 'Jun', 'July': 'Jul', 'August': 'Aug',
+                    'September': 'Sep', 'October': 'Oct', 'November': 'Nov', 'December': 'Dec'
+                };
+                for (const [full, short] of Object.entries(months)) {
+                    d = d.replace(full, short);
+                }
+                return d;
+            }
+
+            function formatVenue(fullVenue) {
+                if (!fullVenue) return { title: 'To Be Confirmed', detail: '' };
+                const match = fullVenue.match(/^([^()]+)(?:\s*\((.*)\))?$/);
+                if (match) {
+                    return {
+                        title: match[1].trim(),
+                        detail: match[2] ? match[2].trim() : ''
+                    };
+                }
+                return { title: fullVenue, detail: '' };
+            }
+
             // 3. RENDER FIXTURE CARDS ROW (2026/2027)
             const fixturesContainer = document.getElementById('latest-fixtures-grid');
             fixturesContainer.innerHTML = fixtureCards.map(f => {
                 const isUpcoming = f.isScheduled || (f.menCount + f.womenCount === 0);
+                const shortDate = formatShortDate(f.date);
+                const venueInfo = formatVenue(f.venue);
+
                 if (isUpcoming) {
                     return `
-                        <div class="block bg-slate-50/50 dark:bg-slate-900/50 border border-dashed border-slate-300 dark:border-slate-800 rounded-xl p-4 transition-all group shadow-xs">
-                            <div class="flex justify-between items-start mb-2">
-                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded">
-                                    Race ${f.match} &bull; Scheduled
-                                </span>
-                                <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
+                        <div class="flex flex-col justify-between bg-slate-50/60 dark:bg-slate-900/40 border border-dashed border-slate-300 dark:border-slate-800 rounded-xl p-4 transition-all group shadow-xs">
+                            <div>
+                                <div class="flex items-center justify-between gap-1 mb-2">
+                                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded whitespace-nowrap">
+                                        Race ${f.match}
+                                    </span>
+                                    <span class="text-xs font-mono text-slate-400 font-semibold whitespace-nowrap">${shortDate}</span>
+                                </div>
+                                <h3 class="text-sm font-serif font-bold text-slate-800 dark:text-slate-200 line-clamp-1" title="${f.venue}">
+                                    ${venueInfo.title}
+                                </h3>
+                                ${venueInfo.detail ? `<p class="text-[10px] font-mono text-slate-400 truncate mt-0.5" title="${venueInfo.detail}">${venueInfo.detail}</p>` : `<p class="text-[10px] font-mono text-transparent select-none mt-0.5">&nbsp;</p>`}
                             </div>
-                            <h3 class="text-sm font-serif font-bold text-slate-800 dark:text-slate-200 line-clamp-1" title="${f.venue}">
-                                ${f.venue}
-                            </h3>
                             <div class="mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-400">
-                                <span>Upcoming Fixture</span>
-                                <a target="_blank" href="https://www.gwent-league.org.uk/fixtures.html" class="text-emerald-700 dark:text-emerald-400 hover:underline">Info &rarr;</a>
+                                <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Scheduled</span>
+                                <a target="_blank" href="https://www.gwent-league.org.uk/fixtures.html" class="text-emerald-700 dark:text-emerald-400 hover:underline font-semibold inline-flex items-center gap-0.5"><span>Guide</span><span>&rarr;</span></a>
                             </div>
                         </div>
                     `;
                 }
 
                 return `
-                    <a href="results.html?season=${f.season_key}&match=${f.match}" class="block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-md transition-all group shadow-xs">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800 px-2 py-0.5 rounded">
-                                Race ${f.match}
-                            </span>
-                            <span class="text-xs font-mono text-slate-400 font-semibold">${f.date}</span>
+                    <a href="results.html?season=${f.season_key}&match=${f.match}" class="flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 hover:shadow-md transition-all group shadow-xs">
+                        <div>
+                            <div class="flex items-center justify-between gap-1 mb-2">
+                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 text-white dark:bg-emerald-950 dark:text-emerald-300 border border-transparent dark:border-emerald-800 px-2 py-0.5 rounded whitespace-nowrap">
+                                    Race ${f.match}
+                                </span>
+                                <span class="text-xs font-mono text-slate-400 font-semibold whitespace-nowrap">${shortDate}</span>
+                            </div>
+                            <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1" title="${f.venue}">
+                                ${venueInfo.title}
+                            </h3>
+                            ${venueInfo.detail ? `<p class="text-[10px] font-mono text-slate-400 truncate mt-0.5" title="${venueInfo.detail}">${venueInfo.detail}</p>` : `<p class="text-[10px] font-mono text-transparent select-none mt-0.5">&nbsp;</p>`}
                         </div>
-                        <h3 class="text-sm font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-1" title="${f.venue}">
-                            ${f.venue}
-                        </h3>
                         <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                            <span>${f.menCount + f.womenCount} total</span>
+                            <span class="font-bold text-slate-700 dark:text-slate-300">${f.menCount + f.womenCount} total</span>
                             <span>(${f.menCount}M / ${f.womenCount}F)</span>
                         </div>
                     </a>
