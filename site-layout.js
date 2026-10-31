@@ -194,40 +194,86 @@ function initSearchPalette() {
     let indexedRunners = null;
     let indexedClubs = null;
 
+    // Ensure transfer and name-change datasets are loaded
+    if (typeof document !== 'undefined') {
+        if (!window.glClubTransfers) {
+            const s = document.createElement('script');
+            s.src = 'backend_tools/club_transfers.js';
+            document.head.appendChild(s);
+        }
+        if (!window.glNameChanges) {
+            const s = document.createElement('script');
+            s.src = 'backend_tools/name_changes.js';
+            document.head.appendChild(s);
+        }
+    }
+
     const buildIndex = () => {
         if (indexedRunners && indexedClubs) return;
         const results = window.glResults || [];
         const runnerMap = new Map();
         const clubMap = new Map();
         const nameChanges = window.glNameChanges || {};
+        const clubTransfers = window.glClubTransfers || {};
 
         results.forEach(r => {
-            // Runner
-            const name = r.athlete;
-            if (name && r.pos > 0) {
-                const key = name.toLowerCase();
-                if (!runnerMap.has(key)) {
-                    runnerMap.set(key, {
-                        name: name,
-                        club: r.club,
+            // Runner entity resolution
+            const rawName = r.athlete || r.raw_name;
+            if (rawName && r.pos > 0) {
+                const nc = nameChanges[rawName];
+                const resolvedName = nc ? nc.primary_name : rawName;
+                const gender = r.gender || 'M';
+                const rClub = (r.club && r.club !== 'Guest' && r.club !== 'Unattached') ? r.club : 'Unattached';
+
+                // Check transfer membership
+                const transInfo = clubTransfers[resolvedName] || clubTransfers[rawName];
+                const isTransfer = transInfo && transInfo.clubs && transInfo.clubs.some(c => c.toLowerCase() === rClub.toLowerCase());
+
+                let entityKey = '';
+                let primaryClub = rClub;
+                let isTransferredRunner = false;
+
+                if (isTransfer) {
+                    entityKey = `trans_${resolvedName.toLowerCase()}_${gender}`;
+                    primaryClub = transInfo.primary_club || rClub;
+                    isTransferredRunner = true;
+                } else if (rClub !== 'Unattached') {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_${gender}_${rClub.toLowerCase()}`;
+                    primaryClub = rClub;
+                } else {
+                    entityKey = `ath_${resolvedName.toLowerCase()}_${gender}_guest`;
+                    primaryClub = 'Unattached';
+                }
+
+                if (!runnerMap.has(entityKey)) {
+                    runnerMap.set(entityKey, {
+                        name: resolvedName,
+                        club: primaryClub,
+                        gender: gender,
                         finishes: 0,
-                        gender: r.gender,
-                        latestSeason: r.season,
+                        isTransfer: isTransferredRunner,
+                        transferClubs: isTransferredRunner ? transInfo.clubs : [primaryClub],
                         aliases: new Set()
                     });
                 }
-                const entry = runnerMap.get(key);
+                const entry = runnerMap.get(entityKey);
                 entry.finishes++;
-                entry.club = r.club; // latest club
-                entry.latestSeason = r.season;
-                if (r.raw_name && r.raw_name.toLowerCase() !== key) {
-                    entry.aliases.add(r.raw_name);
+
+                if (rawName && rawName.toLowerCase() !== resolvedName.toLowerCase()) {
+                    entry.aliases.add(rawName);
+                }
+                if (isTransferredRunner && transInfo.clubs) {
+                    transInfo.clubs.forEach(c => {
+                        if (c.toLowerCase() !== primaryClub.toLowerCase()) {
+                            entry.aliases.add(c);
+                        }
+                    });
                 }
             }
 
             // Club
             const club = r.club;
-            if (club && club !== "Unattached") {
+            if (club && club !== "Unattached" && club !== "Guest") {
                 const cKey = club.toLowerCase();
                 if (!clubMap.has(cKey)) {
                     clubMap.set(cKey, { club: club, finishes: 0 });
@@ -239,15 +285,16 @@ function initSearchPalette() {
         // Add confirmed maiden/former names into runner aliases
         Object.values(nameChanges).forEach(nc => {
             if (nc.primary_name && nc.maiden_name) {
-                const pKey = nc.primary_name.toLowerCase();
-                if (runnerMap.has(pKey)) {
-                    runnerMap.get(pKey).aliases.add(nc.maiden_name);
+                for (const runner of runnerMap.values()) {
+                    if (runner.name.toLowerCase() === nc.primary_name.toLowerCase()) {
+                        runner.aliases.add(nc.maiden_name);
+                    }
                 }
             }
         });
 
-        indexedRunners = Array.from(runnerMap.values());
-        indexedClubs = Array.from(clubMap.values());
+        indexedRunners = Array.from(runnerMap.values()).sort((a, b) => b.finishes - a.finishes);
+        indexedClubs = Array.from(clubMap.values()).sort((a, b) => b.finishes - a.finishes);
     };
 
     input.addEventListener('input', (e) => {
@@ -338,24 +385,33 @@ function initSearchPalette() {
                 if (r.aliases && r.aliases.size > 0 && !r.name.toLowerCase().includes(query)) {
                     for (const alias of r.aliases) {
                         if (alias.toLowerCase().includes(query)) {
-                            aliasBadge = `<span class="text-[9px] font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200 ml-1.5 font-normal">matches: ${alias}</span>`;
+                            aliasBadge = `<span class="text-[9px] font-mono text-purple-700 bg-purple-50 dark:bg-purple-950 dark:text-purple-300 px-1.5 py-0.5 rounded border border-purple-200 dark:border-purple-800 ml-1.5 font-normal">matches: ${alias}</span>`;
                             break;
                         }
                     }
                 }
+
+                let transferBadge = '';
+                if (r.isTransfer) {
+                    const former = (r.transferClubs || []).filter(c => c.toLowerCase() !== r.club.toLowerCase());
+                    const formerStr = former.length > 0 ? `ex ${former[0].replace(' Running Club', '').replace(' Athletic Club', '').replace(' Harriers', '')}` : 'Transferred';
+                    transferBadge = `<span class="text-[9px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 ml-1.5 font-bold">${formerStr}</span>`;
+                }
+
                 return `
-                <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 transition-colors group">
+                <a href="athlete.html?name=${encodeURIComponent(r.name)}&club=${encodeURIComponent(r.club)}&gender=${r.gender}" class="flex items-center justify-between p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
                     <div>
-                        <div class="text-xs font-serif font-bold text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center">
+                        <div class="text-xs font-serif font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors flex items-center flex-wrap gap-1">
                             <span>${r.name}</span>
                             ${aliasBadge}
+                            ${transferBadge}
                         </div>
-                        <div class="text-[11px] text-slate-500 font-sans">
+                        <div class="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
                             ${r.club}
                         </div>
                     </div>
                     <div class="text-right">
-                        <span class="text-[10px] font-mono font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                        <span class="text-[10px] font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded">
                             ${r.finishes} ${r.finishes === 1 ? 'race' : 'races'}
                         </span>
                     </div>

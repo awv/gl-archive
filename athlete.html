@@ -139,7 +139,7 @@
             <div class="space-y-4">
                 
                 <!-- Category / League Tag -->
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 flex-wrap">
                     <span id="athlete-gender-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-slate-900 dark:bg-emerald-950 text-white dark:text-emerald-300 border border-transparent dark:border-emerald-800">
                         Senior Men
                     </span>
@@ -147,6 +147,7 @@
                     <a id="athlete-club-badge" href="#" class="text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider hover:underline">
                         Club Name
                     </a>
+                    <span id="athlete-historical-stint" class="hidden"></span>
                 </div>
 
                 <!-- Runner Name -->
@@ -555,6 +556,21 @@
             }
             let isConfirmedTransfer = !!transferInfo;
 
+            // CRITICAL DISAMBIGUATION CHECK:
+            // A profile is ONLY a confirmed transfer if:
+            // 1) targetClub is not specified, OR
+            // 2) targetClub matches one of the verified transfer clubs!
+            // If targetClub is specified and does NOT match any transfer club,
+            // this runner is an independent namesake at that club (e.g. Huw Evans at Lliswerry Runners), NOT the transferred athlete!
+            if (isConfirmedTransfer && targetClub && transferInfo.clubs && transferInfo.clubs.length > 0) {
+                const targetClubLower = targetClub.toLowerCase();
+                const matchesTransferClub = transferInfo.clubs.some(c => c.toLowerCase() === targetClubLower);
+                if (!matchesTransferClub) {
+                    isConfirmedTransfer = false;
+                    transferInfo = null;
+                }
+            }
+
             // Gather clubs
             const clubCountsAll = {};
             allMatches.forEach(r => {
@@ -567,9 +583,13 @@
             // Is this an abbreviated name?
             const isAbbreviated = targetName.split(' ')[0].replace('.', '').length === 1;
 
-            if (!isConfirmedTransfer && !targetClub && uniqueClubs.length > 0) {
-                const sortedClubs = [...uniqueClubs].sort((a, b) => (clubCountsAll[b] || 0) - (clubCountsAll[a] || 0));
-                targetClub = sortedClubs[0];
+            if (!targetClub && uniqueClubs.length > 0) {
+                if (isConfirmedTransfer && transferInfo && transferInfo.primary_club) {
+                    targetClub = transferInfo.primary_club;
+                } else {
+                    const sortedClubs = [...uniqueClubs].sort((a, b) => (clubCountsAll[b] || 0) - (clubCountsAll[a] || 0));
+                    targetClub = sortedClubs[0];
+                }
             }
 
             // Recognized clubs for primary profile
@@ -606,16 +626,29 @@
                 const cLower = r.club.toLowerCase();
                 if (recognizedClubs.has(cLower)) return;
 
-                const nKey = `${cLower}|${r.gender || ''}`;
+                // Check if this other club belongs to a confirmed transfer
+                const otherTrans = confirmedTransfers[resolvedName];
+                let displayClubName = r.club;
+                let isOtherTransfer = false;
+                let nKey = `${cLower}|${r.gender || ''}`;
+
+                if (otherTrans && otherTrans.clubs && otherTrans.clubs.some(c => c.toLowerCase() === cLower)) {
+                    displayClubName = otherTrans.primary_club || r.club;
+                    isOtherTransfer = true;
+                    nKey = `transfer_${resolvedName.toLowerCase()}|${r.gender || ''}`;
+                }
+
                 const yr = parseInt(r.season_key.split('_')[0], 10);
                 if (!namesakeMap.has(nKey)) {
                     namesakeMap.set(nKey, {
                         name: r.athlete,
-                        club: r.club,
+                        club: displayClubName,
                         gender: r.gender,
                         age_cat: r.age_cat || '',
                         latestYear: yr,
-                        races: 1
+                        races: 1,
+                        isTransfer: isOtherTransfer,
+                        transferClubs: isOtherTransfer ? otherTrans.clubs : [r.club]
                     });
                 } else {
                     const ex = namesakeMap.get(nKey);
@@ -635,7 +668,7 @@
                     const sortedNamesakes = Array.from(namesakeMap.values()).sort((a, b) => b.races - a.races);
                     nsPills.innerHTML = sortedNamesakes.map(ns => {
                         const catLabel = ns.age_cat ? ns.age_cat : '';
-                        const metaLabel = `${catLabel ? catLabel + ' • ' : ''}${ns.races} ${ns.races === 1 ? 'race' : 'races'}`;
+                        const metaLabel = `${catLabel ? catLabel + ' • ' : ''}${ns.races} ${ns.races === 1 ? 'race' : 'races'}${ns.isTransfer ? ' • Transferred' : ''}`;
                         const genderParam = ns.gender ? `&gender=${encodeURIComponent(ns.gender)}` : '';
                         return `
                             <a href="athlete.html?name=${encodeURIComponent(ns.name)}&club=${encodeURIComponent(ns.club)}${genderParam}"
@@ -655,9 +688,9 @@
                 careerRecords = careerRecords.filter(r => r.gender === targetGender);
             }
             if (isConfirmedTransfer && transferInfo.clubs && transferInfo.clubs.length > 0) {
-                careerRecords = careerRecords.filter(r => transferInfo.clubs.includes(r.club) || r.is_guest);
+                careerRecords = careerRecords.filter(r => transferInfo.clubs.some(tc => tc.toLowerCase() === (r.club || '').toLowerCase()));
             } else if (targetClub) {
-                careerRecords = careerRecords.filter(r => r.club.toLowerCase() === targetClub.toLowerCase() || r.is_guest);
+                careerRecords = careerRecords.filter(r => (r.club || '').toLowerCase() === targetClub.toLowerCase());
             }
 
             // Transfer banner display
@@ -690,18 +723,20 @@
                 }
 
                 if (transPills) {
+                    const primaryClubName = transferInfo.primary_club || sortedClubsChron[sortedClubsChron.length - 1];
                     transPills.innerHTML = `
-                        <a href="athlete.html?name=${encodeURIComponent(resolvedName)}" 
-                           class="px-2 py-0.5 rounded font-bold ${!targetClub ? 'bg-emerald-800 text-white' : 'bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200'}">
-                            All Clubs (${careerRecords.length})
+                        <a href="athlete.html?name=${encodeURIComponent(resolvedName)}&club=${encodeURIComponent(primaryClubName)}" 
+                           class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${(!targetClub || targetClub.toLowerCase() === primaryClubName.toLowerCase()) ? 'bg-emerald-700 text-white shadow-xs' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-emerald-500'}">
+                            All Clubs / Primary (${careerRecords.length})
                         </a>
                         ${sortedClubsChron.map(cl => {
+                            const isCurrent = cl.toLowerCase() === primaryClubName.toLowerCase();
                             const isSelected = targetClub && targetClub.toLowerCase() === cl.toLowerCase();
-                            const cnt = careerRecords.filter(r => r.club === cl).length;
+                            const cnt = careerRecords.filter(r => (r.club || '').toLowerCase() === cl.toLowerCase()).length;
                             return `
                                 <a href="athlete.html?name=${encodeURIComponent(resolvedName)}&club=${encodeURIComponent(cl)}" 
-                                   class="px-2 py-0.5 rounded font-medium ${isSelected ? 'bg-emerald-800 text-white' : 'bg-white dark:bg-slate-800 text-emerald-900 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-700'}">
-                                    ${cl} (${cnt})
+                                   class="px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${isSelected ? 'bg-emerald-700 text-white shadow-xs' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-emerald-500'}">
+                                    ${cl} (${cnt})${isCurrent ? ' • Current' : ''}
                                 </a>
                             `;
                         }).join('')}
@@ -714,15 +749,36 @@
             document.getElementById('athlete-name').textContent = displayName;
             document.title = `${displayName} — GL Archive Profile`;
 
-            const primaryClub = targetClub || (careerRecords[0] ? careerRecords[0].club : 'Gwent League');
+            let activePrimaryClub = targetClub;
+            if (isConfirmedTransfer && transferInfo && transferInfo.primary_club) {
+                activePrimaryClub = transferInfo.primary_club;
+            } else if (!activePrimaryClub) {
+                activePrimaryClub = careerRecords[0] ? careerRecords[0].club : 'Gwent League';
+            }
+
             const clubBadge = document.getElementById('athlete-club-badge');
-            clubBadge.textContent = primaryClub;
-            clubBadge.href = `club.html?club=${encodeURIComponent(primaryClub)}`;
+            clubBadge.textContent = activePrimaryClub;
+            clubBadge.href = `club.html?club=${encodeURIComponent(activePrimaryClub)}`;
+
+            // If viewing an earlier club stint in a multi-club transfer, show an explicit historical tag
+            const subClubContainer = document.getElementById('athlete-historical-stint');
+            if (isConfirmedTransfer && targetClub && transferInfo && transferInfo.primary_club && targetClub.toLowerCase() !== transferInfo.primary_club.toLowerCase()) {
+                if (subClubContainer) {
+                    subClubContainer.innerHTML = `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-amber-50 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                        <span>Viewing historical races at <strong>${targetClub}</strong></span>
+                        <span>•</span>
+                        <a href="athlete.html?name=${encodeURIComponent(resolvedName)}&club=${encodeURIComponent(activePrimaryClub)}" class="underline hover:text-emerald-600 font-bold">Switch to current club (${activePrimaryClub}) &rarr;</a>
+                    </span>`;
+                    subClubContainer.classList.remove('hidden');
+                }
+            } else if (subClubContainer) {
+                subClubContainer.classList.add('hidden');
+            }
 
             const bcClub = document.getElementById('athlete-breadcrumb-club');
             if (bcClub) {
-                bcClub.textContent = primaryClub;
-                bcClub.href = `club.html?club=${encodeURIComponent(primaryClub)}`;
+                bcClub.textContent = activePrimaryClub;
+                bcClub.href = `club.html?club=${encodeURIComponent(activePrimaryClub)}`;
             }
             const bcName = document.getElementById('athlete-breadcrumb-name');
             if (bcName) {
