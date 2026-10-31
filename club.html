@@ -245,15 +245,18 @@
             </div>
 
             <!-- Official Division Standings Cards -->
-            <div id="section-current-divisions" class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <span id="campaign-record-title" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        2026/2027 Campaign Record &bull; Current Division Standings
-                    </span>
+            <div id="section-current-divisions" class="space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <div>
+                        <span id="campaign-record-title" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                            2026/2027 Campaign Record &bull; Current Division Standings
+                        </span>
+                        <p class="text-[11px] text-slate-400 font-sans mt-0.5">Official league standings grouped by competitive division tier</p>
+                    </div>
                     <span id="campaign-record-sub" class="text-[11px] font-mono text-slate-400">Through Race 1 (Pembrey Country Park)</span>
                 </div>
-                <div id="club-divisions-2025-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-                    <!-- Populated dynamically -->
+                <div id="club-divisions-container" class="space-y-5">
+                    <!-- Populated dynamically with tiered division groups -->
                 </div>
             </div>
 
@@ -263,25 +266,30 @@
             </div>
 
             <!-- Race Victories Section Header -->
-            <div id="section-match-victories-header" class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div id="section-match-victories-header" class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
                         <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                             <span>Outright 1st-Place Race Victories</span>
                             <span id="match-victories-badge" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"></span>
                         </h3>
                         <p class="text-[11px] text-slate-500 dark:text-slate-400 font-sans mt-0.5">
-                            Fixtures where the team scored the lowest combined finish positions to claim 1st place overall on the day.
+                            Fixtures where the team scored the lowest combined finish positions to claim 1st place overall on the day. Grouped by season and division.
                         </p>
                     </div>
-                    <div class="flex flex-wrap items-center gap-1.5" id="team-wins-filter-container">
-                        <!-- Filters populated dynamically -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-1.5" id="team-wins-filter-container">
+                            <!-- Filters populated dynamically -->
+                        </div>
+                        <button type="button" id="btn-toggle-all-seasons" class="text-xs font-mono font-semibold px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer">
+                            Expand All
+                        </button>
                     </div>
                 </div>
 
-                <!-- Race Victories Grid -->
-                <div id="team-match-wins-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Dynamically populated race victory cards with scoring runners -->
+                <!-- Race Victories Accordion Container -->
+                <div id="team-match-wins-container" class="space-y-3.5">
+                    <!-- Dynamically populated collapsible season groups -->
                 </div>
             </div>
         </section>
@@ -1161,15 +1169,58 @@
                     countBadge.textContent = badges.join(' • ') || 'Active League Member';
                 }
 
-                // Render 2025/2026 Official Division Standings Cards
-                const divGrid = document.getElementById('club-divisions-2025-grid');
+                // Render Official Division Standings Cards grouped by tier
+                const divContainer = document.getElementById('club-divisions-container');
                 const divSection = document.getElementById('section-current-divisions');
                 if (clubDivisions.length === 0) {
                     if (divSection) divSection.classList.add('hidden');
                 } else {
                     if (divSection) divSection.classList.remove('hidden');
-                    if (divGrid) {
-                        divGrid.innerHTML = clubDivisions.map(cd => {
+                    if (divContainer) {
+                        const tierDefs = [
+                            {
+                                key: 'top_flight',
+                                title: 'Top Flight • Division 1',
+                                subtitle: 'Premier League Competition',
+                                icon: '🏆',
+                                filter: cd => cd.division.toLowerCase().includes('division 1')
+                            },
+                            {
+                                key: 'senior_divs',
+                                title: 'Senior Divisions',
+                                subtitle: 'Divisions 2, 3 & 4',
+                                icon: '🏃',
+                                filter: cd => cd.division.toLowerCase().includes('division 2') || cd.division.toLowerCase().includes('division 3') || cd.division.toLowerCase().includes('division 4')
+                            },
+                            {
+                                key: 'b_division',
+                                title: 'Senior B Division',
+                                subtitle: 'Second Scoring Squad Competition',
+                                icon: '⚡',
+                                filter: cd => cd.division.toLowerCase().includes('b division')
+                            },
+                            {
+                                key: 'reserve_divs',
+                                title: 'Reserve Divisions',
+                                subtitle: 'Development & Reserve Squads',
+                                icon: '🛡️',
+                                filter: cd => cd.division.toLowerCase().includes('reserve')
+                            },
+                            {
+                                key: 'other_divs',
+                                title: 'Other Divisions',
+                                subtitle: 'Additional Categories',
+                                icon: '🏷️',
+                                filter: cd => !cd.division.toLowerCase().includes('division 1') &&
+                                              !cd.division.toLowerCase().includes('division 2') &&
+                                              !cd.division.toLowerCase().includes('division 3') &&
+                                              !cd.division.toLowerCase().includes('division 4') &&
+                                              !cd.division.toLowerCase().includes('b division') &&
+                                              !cd.division.toLowerCase().includes('reserve')
+                            }
+                        ];
+
+                        const renderDivisionCard = (cd) => {
                             const isMen = cd.gender === 'M';
                             const isDiv1 = cd.division.toLowerCase().includes('division 1');
                             const posNum = parseInt(cd.pos, 10);
@@ -1178,10 +1229,10 @@
                             let borderAccent = 'border-slate-200 dark:border-slate-800';
                             
                             if (posNum === 1) {
-                                trophyBadge = '<span class="text-xs font-mono font-bold text-amber-700 dark:text-amber-400">🏆 Champions</span>';
+                                trophyBadge = '<span class="text-xs font-mono font-bold text-amber-700 dark:text-amber-400">🏆 1st Place</span>';
                                 borderAccent = 'border-amber-300 dark:border-amber-800 bg-amber-50/30 dark:bg-amber-950/20';
                             } else if (posNum === 2) {
-                                trophyBadge = '<span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">🥈 Runners-Up</span>';
+                                trophyBadge = '<span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">🥈 2nd Place</span>';
                                 borderAccent = 'border-slate-300 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40';
                             } else if (posNum === 3) {
                                 trophyBadge = '<span class="text-xs font-mono font-bold text-amber-800 dark:text-amber-500">🥉 3rd Place</span>';
@@ -1240,7 +1291,31 @@
                                     </div>
                                 </div>
                             `;
-                        }).join('');
+                        };
+
+                        const tierBlocks = tierDefs.map(t => {
+                            const squads = clubDivisions.filter(t.filter);
+                            if (squads.length === 0) return '';
+                            return `
+                                <div class="space-y-2.5">
+                                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-sm">${t.icon}</span>
+                                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">
+                                                ${t.title}
+                                            </span>
+                                            <span class="text-[11px] font-mono text-slate-400">(${squads.length} ${squads.length === 1 ? 'squad' : 'squads'})</span>
+                                        </div>
+                                        <span class="text-[10px] font-mono text-slate-400 hidden sm:inline">${t.subtitle}</span>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                                        ${squads.map(renderDivisionCard).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        }).filter(Boolean);
+
+                        divContainer.innerHTML = tierBlocks.join('');
                     }
                 }
 
@@ -1281,8 +1356,8 @@
                 let activeFilter = 'all';
 
                 // Count Senior Men / Women Div 1 wins
-                const menDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && w.division.toLowerCase().includes('division 1')).length;
-                const womenDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && w.division.toLowerCase().includes('division 1')).length;
+                const menDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && (w.division || '').toLowerCase().includes('division 1')).length;
+                const womenDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && (w.division || '').toLowerCase().includes('division 1')).length;
                 const totalDiv1Wins = menDiv1Wins + womenDiv1Wins;
 
                 if (wins.length === 0) {
@@ -1327,91 +1402,224 @@
                     });
                 }
 
+                // Helper to render individual victory card
+                function renderVictoryCard(w) {
+                    const isMen = w.gender === 'M';
+                    const isDiv1 = (w.division || '').toLowerCase().includes('division 1');
+                    const divBadgeBg = isDiv1 
+                        ? (isMen ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' : 'bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800')
+                        : 'bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800';
+
+                    const marginText = w.is_tied 
+                        ? `Joint 1st with ${w.runner_up} (${w.pts} pts)`
+                        : (w.runner_up ? `+${w.margin} pts ahead of ${w.runner_up} (${w.runner_up_pts} pts)` : `${w.pts} pts`);
+
+                    const scorersHtml = (w.scorers && w.scorers.length > 0) ? `
+                        <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+                            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                                Scoring Lineup (${w.scorers.length} athletes)
+                            </span>
+                            <div class="space-y-1 font-mono text-xs">
+                                ${w.scorers.map(s => `
+                                    <div class="flex items-center justify-between py-1 px-2 rounded bg-slate-50 dark:bg-slate-800/60">
+                                        <div class="flex items-center gap-2 truncate">
+                                            <span class="text-[10px] font-bold text-slate-400 w-6">#${s.pos}</span>
+                                            <a href="athlete.html?name=${encodeURIComponent(s.athlete)}&club=${encodeURIComponent(clubName)}"
+                                               class="font-sans font-semibold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 truncate transition-colors">
+                                                ${s.athlete}
+                                            </a>
+                                        </div>
+                                        <div class="flex items-center gap-3 shrink-0 text-slate-500">
+                                            ${s.time ? `<span class="text-[11px]">${s.time}</span>` : ''}
+                                            <span class="font-bold text-emerald-700 dark:text-emerald-400">${s.pts} pts</span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : '';
+
+                    return `
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 sm:p-5 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                            <div class="flex items-start justify-between gap-3 mb-2">
+                                <div>
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${divBadgeBg}">
+                                        ${w.division}${w.tier && w.tier !== 'First Team' ? ` • ${w.tier}` : ''}
+                                    </span>
+                                    <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 mt-1.5">
+                                        ${w.season} Race ${w.match}
+                                    </h3>
+                                    <p class="text-xs font-sans text-slate-500 dark:text-slate-400 mt-0.5">
+                                        ${w.venue}${w.date ? ` • ${w.date}` : ''}
+                                    </p>
+                                </div>
+                                <div class="text-right shrink-0">
+                                    <span class="text-xl font-serif font-bold text-emerald-700 dark:text-emerald-400 block leading-tight">
+                                        ${w.pts}
+                                    </span>
+                                    <span class="text-[9px] font-mono text-slate-400 block uppercase">Team Pts</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-2 text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                                <span class="text-emerald-600">✔</span>
+                                <span>${marginText}</span>
+                            </div>
+
+                            ${scorersHtml}
+                        </div>
+                    `;
+                }
+
                 function renderCards() {
-                    const grid = document.getElementById('team-match-wins-grid');
-                    if (!grid) return;
+                    const container = document.getElementById('team-match-wins-container');
+                    if (!container) return;
 
                     let filtered = wins;
                     if (activeFilter === 'm-d1') {
-                        filtered = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && w.division.toLowerCase().includes('division 1'));
+                        filtered = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && (w.division || '').toLowerCase().includes('division 1'));
                     } else if (activeFilter === 'w-d1') {
-                        filtered = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && w.division.toLowerCase().includes('division 1'));
+                        filtered = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && (w.division || '').toLowerCase().includes('division 1'));
                     } else if (activeFilter === 'other') {
-                        filtered = wins.filter(w => !(w.tier === 'First Team' && w.division.toLowerCase().includes('division 1')));
+                        filtered = wins.filter(w => !(w.tier === 'First Team' && (w.division || '').toLowerCase().includes('division 1')));
                     }
 
                     if (filtered.length === 0) {
-                        grid.innerHTML = `<div class="col-span-2 text-center py-8 text-xs font-mono text-slate-400">No match victories found in this division filter.</div>`;
+                        container.innerHTML = `<div class="text-center py-8 text-xs font-mono text-slate-400">No race victories found in this division filter.</div>`;
+                        updateToggleAllBtn();
                         return;
                     }
 
-                    grid.innerHTML = filtered.map((w, idx) => {
-                        const isMen = w.gender === 'M';
-                        const isDiv1 = w.division.toLowerCase().includes('division 1');
-                        const divBadgeBg = isDiv1 
-                            ? (isMen ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' : 'bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800')
-                            : 'bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800';
+                    // Group by Season / Year (descending order)
+                    const seasonMap = {};
+                    const seasons = [];
+                    filtered.forEach(w => {
+                        const s = w.season || 'Unknown';
+                        if (!seasonMap[s]) {
+                            seasonMap[s] = [];
+                            seasons.push(s);
+                        }
+                        seasonMap[s].push(w);
+                    });
 
-                        const marginText = w.is_tied 
-                            ? `Joint 1st with ${w.runner_up} (${w.pts} pts)`
-                            : (w.runner_up ? `+${w.margin} pts ahead of ${w.runner_up} (${w.runner_up_pts} pts)` : `${w.pts} pts`);
+                    seasons.sort((a, b) => b.localeCompare(a));
 
-                        const scorersHtml = (w.scorers && w.scorers.length > 0) ? `
-                            <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800">
-                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                                    Scoring Lineup (${w.scorers.length} athletes)
-                                </span>
-                                <div class="space-y-1 font-mono text-xs">
-                                    ${w.scorers.map(s => `
-                                        <div class="flex items-center justify-between py-1 px-2 rounded bg-slate-50 dark:bg-slate-800/60">
-                                            <div class="flex items-center gap-2 truncate">
-                                                <span class="text-[10px] font-bold text-slate-400 w-6">#${s.pos}</span>
-                                                <a href="athlete.html?name=${encodeURIComponent(s.athlete)}&club=${encodeURIComponent(clubName)}"
-                                                   class="font-sans font-semibold text-slate-900 dark:text-slate-100 hover:text-emerald-700 dark:hover:text-emerald-400 truncate transition-colors">
-                                                    ${s.athlete}
-                                                </a>
+                    const divPriority = (divName) => {
+                        const name = (divName || '').toLowerCase();
+                        if (name.includes('division 1') || name.includes('div 1')) return 1;
+                        if (name.includes('division 2') || name.includes('div 2')) return 2;
+                        if (name.includes('division 3') || name.includes('div 3')) return 3;
+                        if (name.includes('division 4') || name.includes('div 4')) return 4;
+                        if (name.includes('b division') || name.includes('b div')) return 5;
+                        if (name.includes('reserve')) return 6;
+                        return 10;
+                    };
+
+                    container.innerHTML = seasons.map((season, sIdx) => {
+                        const sWins = seasonMap[season];
+                        // Sort inside season to keep divisions together: div priority, gender (M before F), match #
+                        sWins.sort((a, b) => {
+                            const pA = divPriority(a.division);
+                            const pB = divPriority(b.division);
+                            if (pA !== pB) return pA - pB;
+                            if (a.division !== b.division) return a.division.localeCompare(b.division);
+                            if (a.gender !== b.gender) return a.gender === 'M' ? -1 : 1;
+                            return (a.match || 0) - (b.match || 0);
+                        });
+
+                        // Identify distinct divisions in this season
+                        const seasonDivs = [...new Set(sWins.map(w => w.division))];
+                        const divPills = seasonDivs.map(d => {
+                            const isD1 = d.toLowerCase().includes('division 1');
+                            return `<span class="text-[10px] font-mono px-2 py-0.5 rounded ${isD1 ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'}">${d}</span>`;
+                        }).join(' ');
+
+                        // Top 2 seasons open by default, older collapsed
+                        const isOpen = sIdx < 2;
+
+                        // Group wins within this season by division if more than 1 division
+                        let bodyHtml = '';
+                        if (seasonDivs.length > 1) {
+                            const divGroups = [];
+                            const grouped = {};
+                            sWins.forEach(w => {
+                                const key = `${w.division}${w.tier && w.tier !== 'First Team' ? ` (${w.tier})` : ''}`;
+                                if (!grouped[key]) {
+                                    grouped[key] = { division: key, wins: [] };
+                                    divGroups.push(grouped[key]);
+                                }
+                                grouped[key].wins.push(w);
+                            });
+
+                            bodyHtml = `
+                                <div class="space-y-4 pt-2">
+                                    ${divGroups.map(dg => `
+                                        <div class="space-y-2">
+                                            <div class="flex items-center gap-2 pt-1 border-b border-slate-200/50 dark:border-slate-800/50 pb-1">
+                                                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                                                    ${dg.division} &bull; ${dg.wins.length} ${dg.wins.length === 1 ? 'Win' : 'Wins'}
+                                                </span>
                                             </div>
-                                            <div class="flex items-center gap-3 shrink-0 text-slate-500">
-                                                ${s.time ? `<span class="text-[11px]">${s.time}</span>` : ''}
-                                                <span class="font-bold text-emerald-700 dark:text-emerald-400">${s.pts} pts</span>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                                                ${dg.wins.map(renderVictoryCard).join('')}
                                             </div>
                                         </div>
                                     `).join('')}
                                 </div>
-                            </div>
-                        ` : '';
+                            `;
+                        } else {
+                            bodyHtml = `
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+                                    ${sWins.map(renderVictoryCard).join('')}
+                                </div>
+                            `;
+                        }
 
                         return `
-                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
-                                <div class="flex items-start justify-between gap-3 mb-2">
-                                    <div>
-                                        <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${divBadgeBg}">
-                                            ${w.division}${w.tier && w.tier !== 'First Team' ? ` • ${w.tier}` : ''}
+                            <details class="season-wins-group group bg-slate-50/70 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-all" ${isOpen ? 'open' : ''}>
+                                <summary class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3.5 sm:p-4 cursor-pointer hover:bg-slate-100/70 dark:hover:bg-slate-800/50 list-none select-none transition-colors">
+                                    <div class="flex items-center gap-2.5 flex-wrap">
+                                        <span class="text-slate-400 group-open:rotate-90 transition-transform duration-150 text-[10px] inline-block w-3">▶</span>
+                                        <span class="text-base font-serif font-bold text-slate-900 dark:text-slate-100">${season} Campaign</span>
+                                        <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                                            ${sWins.length} ${sWins.length === 1 ? 'Victory' : 'Victories'}
                                         </span>
-                                        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 mt-1.5">
-                                            ${w.season} Race ${w.match}
-                                        </h3>
-                                        <p class="text-xs font-sans text-slate-500 dark:text-slate-400 mt-0.5">
-                                            ${w.venue}${w.date ? ` • ${w.date}` : ''}
-                                        </p>
                                     </div>
-                                    <div class="text-right shrink-0">
-                                        <span class="text-xl font-serif font-bold text-emerald-700 dark:text-emerald-400 block leading-tight">
-                                            ${w.pts}
-                                        </span>
-                                        <span class="text-[9px] font-mono text-slate-400 block uppercase">Team Pts</span>
+                                    <div class="flex items-center gap-1.5 flex-wrap sm:justify-end pl-5 sm:pl-0">
+                                        ${divPills}
                                     </div>
+                                </summary>
+                                <div class="p-3.5 sm:p-4 pt-0 border-t border-slate-200/60 dark:border-slate-800/60">
+                                    ${bodyHtml}
                                 </div>
-
-                                <div class="mt-2 text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
-                                    <span class="text-emerald-600">✔</span>
-                                    <span>${marginText}</span>
-                                </div>
-
-                                ${scorersHtml}
-                            </div>
+                            </details>
                         `;
                     }).join('');
+
+                    updateToggleAllBtn();
+                }
+
+                function updateToggleAllBtn() {
+                    const btn = document.getElementById('btn-toggle-all-seasons');
+                    if (!btn) return;
+                    const groups = document.querySelectorAll('.season-wins-group');
+                    if (groups.length === 0) {
+                        btn.classList.add('hidden');
+                        return;
+                    }
+                    btn.classList.remove('hidden');
+                    const allOpen = Array.from(groups).every(g => g.open);
+                    btn.textContent = allOpen ? 'Collapse All' : 'Expand All';
+                }
+
+                const toggleAllBtn = document.getElementById('btn-toggle-all-seasons');
+                if (toggleAllBtn) {
+                    toggleAllBtn.onclick = () => {
+                        const groups = document.querySelectorAll('.season-wins-group');
+                        const allOpen = Array.from(groups).every(g => g.open);
+                        groups.forEach(g => { g.open = !allOpen; });
+                        updateToggleAllBtn();
+                    };
                 }
 
                 updateFilterPills();
