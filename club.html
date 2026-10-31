@@ -179,9 +179,9 @@
                     <span id="stat-turnout-sub" class="block text-[9px] font-mono text-slate-400 truncate mt-0.5">All-time</span>
                 </div>
                 <div id="stat-card-team-wins" class="club-telemetry-card rounded-xl p-3 border border-l-4" style="border-left-color: #10b981;">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Team Victories</span>
-                    <span id="stat-team-wins" class="text-2xl font-bold font-serif text-emerald-400 block mt-0.5">0</span>
-                    <span id="stat-team-wins-sub" class="block text-[9px] font-mono text-emerald-400/90 truncate mt-0.5">0 Div 1 Wins</span>
+                    <span id="stat-team-wins-label" class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">League Status</span>
+                    <span id="stat-team-wins" class="text-2xl font-bold font-serif text-emerald-400 block mt-0.5">Division 1</span>
+                    <span id="stat-team-wins-sub" class="block text-[9px] font-mono text-emerald-400/90 truncate mt-0.5">Senior Men &amp; Women</span>
                 </div>
                 <div class="club-telemetry-card rounded-xl p-3 border">
                     <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-400">Men / Women</span>
@@ -224,7 +224,7 @@
             </div>
         </div>
 
-        <!-- SECTION: OFFICIAL GWENT LEAGUE TEAM HONOURS & MATCH VICTORIES -->
+        <!-- SECTION: OFFICIAL GWENT LEAGUE TEAM HONOURS & DIVISION STANDINGS -->
         <section id="section-team-honours" class="space-y-6 hidden">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div>
@@ -232,12 +232,28 @@
                         OFFICIAL LEAGUE RECORD
                     </span>
                     <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-2">
-                        <span>Team Honours & Match Victories</span>
+                        <span>League Standings &amp; Team Honours</span>
                         <span id="team-wins-count-badge" class="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300"></span>
                     </h2>
                 </div>
-                <div class="flex flex-wrap items-center gap-1.5" id="team-wins-filter-container">
-                    <!-- Filters populated dynamically -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="season.html?season=2025_2026" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition-colors">
+                        <span>2025/2026 Division Standings</span>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2025/2026 Official Division Standings Cards -->
+            <div id="section-current-divisions" class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        2025/2026 Campaign Record &bull; Final Division Standings
+                    </span>
+                    <span class="text-[11px] font-mono text-slate-400">Through Match 5 (Parc Bryn Bach)</span>
+                </div>
+                <div id="club-divisions-2025-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                    <!-- Populated dynamically -->
                 </div>
             </div>
 
@@ -246,9 +262,27 @@
                 <!-- Dynamically populated trophy banners -->
             </div>
 
-            <!-- Match Victories Grid -->
-            <div id="team-match-wins-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Dynamically populated match victory cards with scoring runners -->
+            <!-- Match Victories Section Header -->
+            <div id="section-match-victories-header" class="pt-6 border-t border-slate-100 dark:border-slate-800 space-y-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <h3 class="text-base font-serif font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                            <span>Outright 1st-Place Match Victories</span>
+                            <span id="match-victories-badge" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"></span>
+                        </h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 font-sans mt-0.5">
+                            Fixtures where the team scored the lowest combined finish positions to claim 1st place overall on the day.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-1.5" id="team-wins-filter-container">
+                        <!-- Filters populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Match Victories Grid -->
+                <div id="team-match-wins-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Dynamically populated match victory cards with scoring runners -->
+                </div>
             </div>
         </section>
         
@@ -973,7 +1007,7 @@
 
             renderDreamTeam();
 
-            // Render Official Team Honours & Match Victories
+            // Render Official Team Honours & Division Standings
             function renderTeamHonours(clubName) {
                 const honoursData = window.CLUB_TEAM_HONOURS || {};
                 const clubHonours = honoursData[clubName] || { division_titles: [], match_wins: [] };
@@ -984,35 +1018,200 @@
                 const teamWinsEl = document.getElementById('stat-team-wins');
                 const teamWinsSubEl = document.getElementById('stat-team-wins-sub');
 
-                // Count Senior Men / Women Div 1 wins
-                const menDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && w.division.toLowerCase().includes('division 1')).length;
-                const womenDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && w.division.toLowerCase().includes('division 1')).length;
-                const totalDiv1Wins = menDiv1Wins + womenDiv1Wins;
+                // 1. Gather 2025/2026 Official Division Standings & Form
+                const normClub = clubName.trim().toLowerCase();
+                const m5 = (window.FIXTURE_TEAM_STANDINGS && window.FIXTURE_TEAM_STANDINGS['2025_2026_m5']) || null;
+                const clubDivisions = [];
+                if (m5 && m5.divisions) {
+                    m5.divisions.forEach(d => {
+                        const matchingTeams = (d.standings || []).filter(s => {
+                            const st = s.team.trim().toLowerCase();
+                            return st === normClub || st.startsWith(normClub);
+                        });
+                        matchingTeams.forEach(s => {
+                            const matchKeys = ['2025_2026_m1', '2025_2026_m2', '2025_2026_m3', '2025_2026_m4', '2025_2026_m5'];
+                            const form = matchKeys.map((mKey, idx) => {
+                                const fix = window.FIXTURE_TEAM_STANDINGS[mKey];
+                                if (!fix) return null;
+                                const fixDiv = (fix.divisions || []).find(fd => fd.division === d.division);
+                                if (!fixDiv) return null;
+                                const fixTeam = (fixDiv.standings || []).find(fst => fst.team.trim().toLowerCase() === s.team.trim().toLowerCase());
+                                return fixTeam ? { match: fix.match || (idx + 1), pos: fixTeam.pos, pts: fixTeam.pts } : null;
+                            });
 
-                if (teamWinsEl) {
-                    teamWinsEl.textContent = totalDiv1Wins.toLocaleString();
+                            const isPrimary = s.team.trim() === clubName.trim();
+                            const teamLabel = isPrimary ? 'First Team' : (s.team.replace(new RegExp('^' + clubName, 'i'), '').trim() || 'Reserve');
+
+                            clubDivisions.push({
+                                division: d.division,
+                                gender: d.gender,
+                                teamLabel,
+                                isPrimary,
+                                fullTeamName: s.team,
+                                pos: s.cum_pos || s.pos,
+                                totalTeams: d.standings.length,
+                                cumPts: s.cum_pts || s.pts,
+                                m5Pts: s.pts,
+                                form
+                            });
+                        });
+                    });
                 }
-                if (teamWinsSubEl) {
-                    if (totalDiv1Wins > 0) {
-                        teamWinsSubEl.textContent = `${menDiv1Wins} Men / ${womenDiv1Wins} Women Div 1`;
+
+                // Sort divisions by seniority: Div 1 > Div 2 > Div 3 > Div 4 > B Div > Reserve
+                const divPriority = (divName) => {
+                    const name = divName.toLowerCase();
+                    if (name.includes('division 1')) return 1;
+                    if (name.includes('division 2')) return 2;
+                    if (name.includes('division 3')) return 3;
+                    if (name.includes('division 4')) return 4;
+                    if (name.includes('b division')) return 5;
+                    if (name.includes('reserve')) return 6;
+                    return 10;
+                };
+                clubDivisions.sort((a, b) => {
+                    const pA = divPriority(a.division);
+                    const pB = divPriority(b.division);
+                    if (pA !== pB) return pA - pB;
+                    if (a.gender !== b.gender) return a.gender === 'M' ? -1 : 1;
+                    return parseInt(a.pos, 10) - parseInt(b.pos, 10);
+                });
+
+                // Senior status indicators
+                const menD1 = clubDivisions.find(d => d.division.includes('Senior Men Division 1'));
+                const womenD1 = clubDivisions.find(d => d.division.includes('Senior Women Division 1'));
+                const menD2 = clubDivisions.find(d => d.division.includes('Senior Men Division 2'));
+                const womenD2 = clubDivisions.find(d => d.division.includes('Senior Women Division 2'));
+                const menD3 = clubDivisions.find(d => d.division.includes('Senior Men Division 3'));
+                const womenD3 = clubDivisions.find(d => d.division.includes('Senior Women Division 3'));
+
+                // Telemetry Header Card
+                if (teamWinsEl && teamWinsSubEl) {
+                    if (menD1 && womenD1) {
+                        teamWinsEl.textContent = 'Division 1';
+                        teamWinsSubEl.textContent = `Men (#${menD1.pos}) & Women (#${womenD1.pos})`;
+                    } else if (menD1) {
+                        teamWinsEl.textContent = 'Division 1';
+                        teamWinsSubEl.textContent = womenD2 ? `Senior Men (#${menD1.pos}) • Women Div 2` : `Senior Men (#${menD1.pos})`;
+                    } else if (womenD1) {
+                        teamWinsEl.textContent = 'Division 1';
+                        teamWinsSubEl.textContent = menD2 ? `Senior Women (#${womenD1.pos}) • Men Div 2` : `Senior Women (#${womenD1.pos})`;
+                    } else if (menD2 || womenD2) {
+                        teamWinsEl.textContent = 'Division 2';
+                        teamWinsSubEl.textContent = menD2 && womenD2 ? `Men (#${menD2.pos}) & Women (#${womenD2.pos})` : (menD2 ? `Senior Men (#${menD2.pos})` : `Senior Women (#${womenD2.pos})`);
+                    } else if (menD3 || womenD3) {
+                        teamWinsEl.textContent = 'Division 3';
+                        teamWinsSubEl.textContent = menD3 && womenD3 ? `Men (#${menD3.pos}) & Women (#${womenD3.pos})` : (menD3 ? `Senior Men (#${menD3.pos})` : `Senior Women (#${womenD3.pos})`);
+                    } else if (clubDivisions.length > 0) {
+                        teamWinsEl.textContent = clubDivisions[0].division.replace('Senior ', '').replace(' Division', '');
+                        teamWinsSubEl.textContent = `Pos #${clubDivisions[0].pos} of ${clubDivisions[0].totalTeams}`;
                     } else if (wins.length > 0) {
-                        teamWinsSubEl.textContent = `${wins.length} Other Div Wins`;
+                        teamWinsEl.textContent = `${wins.length} Wins`;
+                        teamWinsSubEl.textContent = 'Match Victories';
                     } else {
-                        teamWinsSubEl.textContent = '0 Div 1 Wins';
+                        teamWinsEl.textContent = '-';
+                        teamWinsSubEl.textContent = 'League Archive';
                     }
                 }
 
-                if (titles.length === 0 && wins.length === 0) {
+                // If no divisions, titles, or match victories, hide entire section
+                if (clubDivisions.length === 0 && titles.length === 0 && wins.length === 0) {
                     if (sectionEl) sectionEl.classList.add('hidden');
                     return;
                 }
-
                 if (sectionEl) sectionEl.classList.remove('hidden');
 
-                // Badge count
+                // Header Badge Count
                 const countBadge = document.getElementById('team-wins-count-badge');
                 if (countBadge) {
-                    countBadge.textContent = `${wins.length} Match Victories${titles.length > 0 ? ` • ${titles.length} Title${titles.length > 1 ? 's' : ''}` : ''}`;
+                    const badges = [];
+                    if (clubDivisions.length > 0) badges.push(`${clubDivisions.length} Active Squads (2025/26)`);
+                    if (titles.length > 0) badges.push(`${titles.length} Title${titles.length > 1 ? 's' : ''}`);
+                    if (wins.length > 0) badges.push(`${wins.length} Match Win${wins.length > 1 ? 's' : ''}`);
+                    countBadge.textContent = badges.join(' • ') || 'Active League Member';
+                }
+
+                // Render 2025/2026 Official Division Standings Cards
+                const divGrid = document.getElementById('club-divisions-2025-grid');
+                const divSection = document.getElementById('section-current-divisions');
+                if (clubDivisions.length === 0) {
+                    if (divSection) divSection.classList.add('hidden');
+                } else {
+                    if (divSection) divSection.classList.remove('hidden');
+                    if (divGrid) {
+                        divGrid.innerHTML = clubDivisions.map(cd => {
+                            const isMen = cd.gender === 'M';
+                            const isDiv1 = cd.division.toLowerCase().includes('division 1');
+                            const posNum = parseInt(cd.pos, 10);
+                            
+                            let trophyBadge = '';
+                            let borderAccent = 'border-slate-200 dark:border-slate-800';
+                            
+                            if (posNum === 1) {
+                                trophyBadge = '<span class="text-xs font-mono font-bold text-amber-700 dark:text-amber-400">🏆 Champions</span>';
+                                borderAccent = 'border-amber-300 dark:border-amber-800 bg-amber-50/30 dark:bg-amber-950/20';
+                            } else if (posNum === 2) {
+                                trophyBadge = '<span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">🥈 Runners-Up</span>';
+                                borderAccent = 'border-slate-300 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/40';
+                            } else if (posNum === 3) {
+                                trophyBadge = '<span class="text-xs font-mono font-bold text-amber-800 dark:text-amber-500">🥉 3rd Place</span>';
+                                borderAccent = 'border-amber-200 dark:border-amber-900/50';
+                            } else if (isDiv1 && posNum <= 8) {
+                                trophyBadge = '<span class="text-[10px] font-mono font-bold text-emerald-700 dark:text-emerald-400">Top Flight</span>';
+                            }
+
+                            const divPillBg = isDiv1
+                                ? (isMen ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' : 'bg-purple-50 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-800')
+                                : 'bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800';
+
+                            const formHtml = cd.form.map((f, idx) => {
+                                const mNum = idx + 1;
+                                if (!f || f.pos === null || f.pos === undefined) {
+                                    return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-400" title="Match ${mNum}: Did not field complete scoring squad">M${mNum}: -</span>`;
+                                }
+                                const isTop3 = f.pos <= 3;
+                                const isWinner = f.pos === 1;
+                                const bg = isWinner 
+                                    ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 font-bold border border-amber-300' 
+                                    : (isTop3 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 font-semibold' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400');
+                                return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono ${bg}" title="Match ${mNum}: Pos #${f.pos}${f.pts ? ` (${f.pts.toLocaleString()} pts)` : ''}">M${mNum}: #${f.pos}</span>`;
+                            }).join('');
+
+                            return `
+                                <div class="bg-white dark:bg-slate-900 border ${borderAccent} rounded-xl p-4 shadow-xs flex flex-col justify-between hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                                    <div>
+                                        <div class="flex items-center justify-between gap-2 mb-2">
+                                            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${divPillBg}">
+                                                ${cd.division}
+                                            </span>
+                                            ${trophyBadge}
+                                        </div>
+                                        <div class="flex items-baseline justify-between mt-2">
+                                            <div>
+                                                <span class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100">#${cd.pos}</span>
+                                                <span class="text-xs font-mono text-slate-400 ml-1">of ${cd.totalTeams} clubs</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <span class="text-base font-mono font-bold text-emerald-700 dark:text-emerald-400 block">${(cd.cumPts || 0).toLocaleString()}</span>
+                                                <span class="text-[9px] font-mono uppercase tracking-wider text-slate-400 block">Cumulative Pts</span>
+                                            </div>
+                                        </div>
+                                        ${cd.teamLabel && cd.teamLabel !== 'First Team' ? `<div class="text-[11px] font-mono text-slate-500 mt-1">Squad: <span class="font-bold text-slate-700 dark:text-slate-300">${cd.teamLabel}</span></div>` : ''}
+                                    </div>
+
+                                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
+                                        <div class="flex items-center justify-between mb-1.5">
+                                            <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400">Match Form</span>
+                                            <span class="text-[10px] font-mono text-slate-400">M5: ${cd.m5Pts ? cd.m5Pts.toLocaleString() + ' pts' : '-'}</span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            ${formHtml}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    }
                 }
 
                 // Render Championship Trophies
@@ -1045,17 +1244,35 @@
                     }
                 }
 
-                // Filter Controls
+                // Match Victories Section & Filters
+                const matchVicSection = document.getElementById('section-match-victories-header');
+                const matchVicBadge = document.getElementById('match-victories-badge');
                 const filterContainer = document.getElementById('team-wins-filter-container');
                 let activeFilter = 'all';
 
+                // Count Senior Men / Women Div 1 wins
+                const menDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'M' && w.division.toLowerCase().includes('division 1')).length;
+                const womenDiv1Wins = wins.filter(w => w.tier === 'First Team' && w.gender === 'F' && w.division.toLowerCase().includes('division 1')).length;
+                const totalDiv1Wins = menDiv1Wins + womenDiv1Wins;
+
+                if (wins.length === 0) {
+                    if (matchVicSection) matchVicSection.classList.add('hidden');
+                } else {
+                    if (matchVicSection) matchVicSection.classList.remove('hidden');
+                    if (matchVicBadge) matchVicBadge.textContent = `${wins.length} Victories`;
+                }
+
                 function updateFilterPills() {
-                    if (!filterContainer) return;
+                    if (!filterContainer || wins.length === 0) return;
                     const filters = [
-                        { id: 'all', label: `All (${wins.length})` },
-                        { id: 'm-d1', label: `Senior Men Div 1 (${menDiv1Wins})` },
-                        { id: 'w-d1', label: `Senior Women Div 1 (${womenDiv1Wins})` }
+                        { id: 'all', label: `All (${wins.length})` }
                     ];
+                    if (menDiv1Wins > 0) {
+                        filters.push({ id: 'm-d1', label: `Senior Men Div 1 (${menDiv1Wins})` });
+                    }
+                    if (womenDiv1Wins > 0) {
+                        filters.push({ id: 'w-d1', label: `Senior Women Div 1 (${womenDiv1Wins})` });
+                    }
                     const otherCount = wins.length - totalDiv1Wins;
                     if (otherCount > 0) {
                         filters.push({ id: 'other', label: `Other Divisions (${otherCount})` });
