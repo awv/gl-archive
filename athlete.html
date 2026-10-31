@@ -429,7 +429,7 @@
                 <div class="relative w-full sm:w-72">
                     <input type="text" id="rival-search-input" placeholder="Compare against any runner..."
                         class="w-full pl-8 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900">
-                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                     <!-- Search Autocomplete Dropdown -->
@@ -1201,15 +1201,19 @@
                 let currentRivalName = sortedCompetitors[0].name;
 
                 const renderFrequentPills = () => {
-                    frequentContainer.innerHTML = sortedCompetitors.slice(0, 6).map(comp => {
+                    let pillsList = sortedCompetitors.slice(0, 6);
+                    if (currentRivalName && !pillsList.some(comp => comp.name === currentRivalName) && competitorStats[currentRivalName]) {
+                        pillsList = [competitorStats[currentRivalName], ...pillsList.slice(0, 5)];
+                    }
+
+                    frequentContainer.innerHTML = pillsList.map(comp => {
                         const isSelected = comp.name === currentRivalName;
-                        const winPct = Math.round((comp.wins / comp.together) * 100);
                         const activeCls = isSelected 
                             ? 'bg-emerald-700 text-white shadow-xs font-bold' 
                             : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-medium';
 
                         return `
-                            <button type="button" data-rival="${encodeURIComponent(comp.name)}" class="frequent-rival-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs transition-colors ${activeCls}">
+                            <button type="button" data-rival="${encodeURIComponent(comp.name)}" class="frequent-rival-btn inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs transition-colors ${activeCls} cursor-pointer">
                                 <span>${comp.name}</span>
                                 <span class="text-[10px] font-mono opacity-80">(${comp.together} races • ${comp.wins}-${comp.losses})</span>
                             </button>
@@ -1411,11 +1415,41 @@
                     `;
                 };
 
+                // Build global athlete index for search across all competitors in the league
+                const allAthletesMap = new Map();
+                allData.forEach(r => {
+                    if (!r.athlete) return;
+                    const key = r.athlete.trim().toLowerCase();
+                    if (!allAthletesMap.has(key)) {
+                        allAthletesMap.set(key, {
+                            name: r.athlete.trim(),
+                            club: r.club || 'Gwent League',
+                            gender: r.gender,
+                            finishes: 1
+                        });
+                    } else {
+                        allAthletesMap.get(key).finishes++;
+                    }
+                });
+
                 // Search Autocomplete Handler
                 const searchInput = document.getElementById('rival-search-input');
                 const dropdown = document.getElementById('rival-search-dropdown');
 
                 if (searchInput && dropdown) {
+                    const selectRivalItem = (name, type) => {
+                        if (type === 'compare') {
+                            window.location.href = `compare.html?a1=${encodeURIComponent(resolvedName)}&a2=${encodeURIComponent(name)}`;
+                            return;
+                        }
+                        currentRivalName = name;
+                        searchInput.value = '';
+                        dropdown.classList.add('hidden');
+                        renderFrequentPills();
+                        renderScoreboard(currentRivalName);
+                        scoreboardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    };
+
                     searchInput.addEventListener('input', (e) => {
                         const q = e.target.value.trim().toLowerCase();
                         if (!q || q.length < 2) {
@@ -1423,35 +1457,73 @@
                             return;
                         }
 
-                        // Search among all competitors who have raced with target athlete, or all competitors
-                        const matches = sortedCompetitors.filter(c => c.name.toLowerCase().includes(q)).slice(0, 8);
-                        if (matches.length === 0) {
-                            dropdown.innerHTML = `<div class="p-3 text-slate-400 font-mono text-center">No shared competitors found</div>`;
+                        // 1. Direct rivals with shared starting line
+                        const directMatches = sortedCompetitors.filter(c => c.name.toLowerCase().includes(q)).slice(0, 8);
+
+                        // 2. Other league athletes without direct encounters
+                        const otherMatches = [];
+                        if (directMatches.length < 8) {
+                            for (const [key, a] of allAthletesMap.entries()) {
+                                if (key.includes(q) && key !== resolvedName.toLowerCase() && !competitorStats[a.name]) {
+                                    otherMatches.push(a);
+                                    if (directMatches.length + otherMatches.length >= 8) break;
+                                }
+                            }
+                        }
+
+                        if (directMatches.length === 0 && otherMatches.length === 0) {
+                            dropdown.innerHTML = `<div class="p-3 text-slate-400 font-mono text-center">No athletes found matching "${q}"</div>`;
                         } else {
-                            dropdown.innerHTML = matches.map(c => `
-                                <div class="p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer flex items-center justify-between rival-dropdown-item" data-rival="${encodeURIComponent(c.name)}">
+                            const directHtml = directMatches.map((c, i) => `
+                                <div class="p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer flex items-center justify-between rival-dropdown-item ${i === 0 ? 'bg-slate-50/60 dark:bg-slate-800/40' : ''}" data-rival="${encodeURIComponent(c.name)}" data-type="direct">
                                     <div>
                                         <span class="font-bold text-slate-900 dark:text-slate-100 block">${c.name}</span>
-                                        <span class="text-[10px] text-slate-400 font-mono">${c.club}</span>
+                                        <span class="text-[10px] text-slate-400 font-mono">${c.club || 'Gwent League'}</span>
                                     </div>
-                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
-                                        ${c.together} races
+                                    <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                                        ${c.together} races (${c.wins}-${c.losses})
                                     </span>
                                 </div>
                             `).join('');
 
+                            const otherHtml = otherMatches.map((a, i) => `
+                                <div class="p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer flex items-center justify-between rival-dropdown-item ${(directMatches.length === 0 && i === 0) ? 'bg-slate-50/60 dark:bg-slate-800/40' : ''}" data-rival="${encodeURIComponent(a.name)}" data-type="compare">
+                                    <div>
+                                        <span class="font-bold text-slate-900 dark:text-slate-100 block">${a.name}</span>
+                                        <span class="text-[10px] text-slate-400 font-mono">${a.club} &bull; ${a.finishes} career finishes</span>
+                                    </div>
+                                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex items-center gap-1">
+                                        <span>Compare 🔗</span>
+                                    </span>
+                                </div>
+                            `).join('');
+
+                            dropdown.innerHTML = directHtml + otherHtml;
+
                             dropdown.querySelectorAll('.rival-dropdown-item').forEach(item => {
-                                item.addEventListener('click', () => {
-                                    currentRivalName = decodeURIComponent(item.dataset.rival);
-                                    searchInput.value = '';
-                                    dropdown.classList.add('hidden');
-                                    renderFrequentPills();
-                                    renderScoreboard(currentRivalName);
-                                    scoreboardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                item.addEventListener('mousedown', (evt) => {
+                                    evt.preventDefault();
+                                    const rName = decodeURIComponent(item.dataset.rival);
+                                    const rType = item.dataset.type;
+                                    selectRivalItem(rName, rType);
                                 });
                             });
                         }
                         dropdown.classList.remove('hidden');
+                    });
+
+                    searchInput.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            const firstItem = dropdown.querySelector('.rival-dropdown-item');
+                            if (firstItem) {
+                                const rName = decodeURIComponent(firstItem.dataset.rival);
+                                const rType = firstItem.dataset.type;
+                                selectRivalItem(rName, rType);
+                            }
+                        } else if (e.key === 'Escape') {
+                            dropdown.classList.add('hidden');
+                        }
                     });
 
                     document.addEventListener('click', (e) => {
