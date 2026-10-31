@@ -781,6 +781,7 @@
             } else if (!activePrimaryClub) {
                 activePrimaryClub = careerRecords[0] ? careerRecords[0].club : 'Gwent League';
             }
+            const primaryClub = activePrimaryClub;
 
             const clubBadge = document.getElementById('athlete-club-badge');
             clubBadge.textContent = activePrimaryClub;

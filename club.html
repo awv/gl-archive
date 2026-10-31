@@ -1163,7 +1163,7 @@
                 const countBadge = document.getElementById('team-wins-count-badge');
                 if (countBadge) {
                     const badges = [];
-                    if (clubDivisions.length > 0) badges.push(`${clubDivisions.length} Active Squads (${latestFix ? latestFix.season : 'Current'})`);
+                    if (clubDivisions.length > 0) badges.push(`${clubDivisions.length} Active Teams (${latestFix ? latestFix.season : 'Current'})`);
                     if (titles.length > 0) badges.push(`${titles.length} Title${titles.length > 1 ? 's' : ''}`);
                     if (wins.length > 0) badges.push(`${wins.length} Race Win${wins.length > 1 ? 's' : ''}`);
                     countBadge.textContent = badges.join(' • ') || 'Active League Member';
@@ -1195,14 +1195,14 @@
                             {
                                 key: 'b_division',
                                 title: 'Senior B Division',
-                                subtitle: 'Second Scoring Squad Competition',
+                                subtitle: 'Second Scoring Team Competition',
                                 icon: '⚡',
                                 filter: cd => cd.division.toLowerCase().includes('b division')
                             },
                             {
                                 key: 'reserve_divs',
                                 title: 'Reserve Divisions',
-                                subtitle: 'Development & Reserve Squads',
+                                subtitle: 'Development & Reserve Teams',
                                 icon: '🛡️',
                                 filter: cd => cd.division.toLowerCase().includes('reserve')
                             },
@@ -1248,7 +1248,7 @@
                             const formHtml = cd.form.map((f, idx) => {
                                 const mNum = idx + 1;
                                 if (!f || f.pos === null || f.pos === undefined) {
-                                    return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-400" title="Race ${mNum}: Did not field complete scoring squad">R${mNum}: -</span>`;
+                                    return `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-400" title="Race ${mNum}: Did not field complete scoring team">R${mNum}: -</span>`;
                                 }
                                 const isTop3 = f.pos <= 3;
                                 const isWinner = f.pos === 1;
@@ -1277,7 +1277,7 @@
                                                 <span class="text-[9px] font-mono uppercase tracking-wider text-slate-400 block">Cumulative Pts</span>
                                             </div>
                                         </div>
-                                        ${cd.teamLabel && cd.teamLabel !== 'First Team' ? `<div class="text-[11px] font-mono text-slate-500 mt-1">Squad: <span class="font-bold text-slate-700 dark:text-slate-300">${cd.teamLabel}</span></div>` : ''}
+                                        ${cd.teamLabel && cd.teamLabel !== 'First Team' ? `<div class="text-[11px] font-mono text-slate-500 mt-1">Team: <span class="font-bold text-slate-700 dark:text-slate-300">${cd.teamLabel}</span></div>` : ''}
                                     </div>
 
                                     <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800">
@@ -1294,8 +1294,8 @@
                         };
 
                         const tierBlocks = tierDefs.map(t => {
-                            const squads = clubDivisions.filter(t.filter);
-                            if (squads.length === 0) return '';
+                            const teams = clubDivisions.filter(t.filter);
+                            if (teams.length === 0) return '';
                             return `
                                 <div class="space-y-2.5">
                                     <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5">
@@ -1304,12 +1304,12 @@
                                             <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">
                                                 ${t.title}
                                             </span>
-                                            <span class="text-[11px] font-mono text-slate-400">(${squads.length} ${squads.length === 1 ? 'squad' : 'squads'})</span>
+                                            <span class="text-[11px] font-mono text-slate-400">(${teams.length} ${teams.length === 1 ? 'team' : 'teams'})</span>
                                         </div>
                                         <span class="text-[10px] font-mono text-slate-400 hidden sm:inline">${t.subtitle}</span>
                                     </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-                                        ${squads.map(renderDivisionCard).join('')}
+                                        ${teams.map(renderDivisionCard).join('')}
                                     </div>
                                 </div>
                             `;
