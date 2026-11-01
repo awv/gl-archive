@@ -1,9 +1,18 @@
 // site-layout.js — Global Layout, Dark/Light Theme & Search Palette for GL Archive
 
-// 0. IMMEDIATE THEME INITIALIZATION (Prevents white flash, defaults to dark)
+// 0. IMMEDIATE THEME INITIALIZATION (Prevents white flash, defaults to dark unless forced or stored)
 (function() {
-    const stored = localStorage.getItem('gl_theme');
-    const theme = (stored === 'light') ? 'light' : 'dark';
+    const urlParams = new URLSearchParams(window.location.search);
+    const forceLight = document.documentElement.getAttribute('data-theme') === 'light' || urlParams.get('theme') === 'light';
+
+    let theme;
+    if (forceLight) {
+        theme = 'light';
+    } else {
+        const stored = localStorage.getItem('gl_theme');
+        theme = (stored === 'light') ? 'light' : 'dark';
+    }
+
     if (theme === 'dark') {
         document.documentElement.classList.add('dark');
     } else {

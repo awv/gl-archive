@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="light" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Features &amp; Launch Guide &bull; Gwent League Historical Archive</title>
+    
+    <!-- Meta tags for social sharing -->
+    <meta name="description" content="Discover the key features, tools, and records in the Gwent Cross Country League Historical Archive (1964–2026). Explore athlete dossiers, head-to-head comparisons, club dream teams, and the 62-year Roll of Honour.">
+    <meta property="og:title" content="Gwent League Historical Archive — Platform Overview &amp; Features">
+    <meta property="og:description" content="Six decades of cross country history, 14,000+ athletes, 100,000+ finishes, and 62 years of league champions brought to life.">
+    <meta property="og:image" content="assets/img/screenshots/index.png">
+    
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        serif: ['Lora', 'Georgia', 'serif'],
+                        mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            forest: '#004942',
+                            crimson: '#903A3D',
+                            brass: '#b45309',
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/theme.css">
+    
+    <!-- Force Light Mode for this showcase page -->
+    <script>
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+    <script src="site-layout.js?v=2"></script>
+</head>
+<body class="min-h-full flex flex-col font-sans text-slate-800 bg-slate-50 selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <aside aria-label="Announcement" class="bg-[#004942] text-white py-2.5 px-4 text-center text-xs font-mono font-medium tracking-wide flex items-center justify-center gap-2 shadow-sm">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Official Launch Guide &bull; John H Collins Gwent Cross Country League Archive (1964–2026)</span>
+    </aside>
+
+    <!-- GLOBAL NAV CONTAINER -->
+    <div id="global-nav"></div>
+
+    <!-- HERO HEADER -->
+    <header class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100/80 border-b border-slate-200 py-16 md:py-20 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            
+            <!-- Launch Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono font-semibold uppercase tracking-wider border border-emerald-200 shadow-xs">
+                <span>⭐ Platform Overview &amp; Interactive Guide</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-slate-900 tracking-tight leading-[1.12]">
+                Six Decades of Cross Country History,<br class="hidden sm:inline">
+                <span class="text-[#004942]">Brought to Life.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
+                Welcome to the digital home of the <strong>John H Collins Gwent Cross Country League</strong>. 
+                Whether you are tracking down your own lifetime racing records, analysing club rivalries, exploring the Hall of Fame, or examining 62 years of champions, this guide walks through everything the platform has to offer.
+            </p>
+
+            <!-- Quick Action Links -->
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a href="index.html?theme=light" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#004942] hover:bg-[#003833] text-white font-sans font-semibold text-sm shadow-sm transition-all hover:shadow-md">
+                    <span>Explore Archive Home</span>
+                    <span>&rarr;</span>
+                </a>
+                <a href="champions.html?theme=light" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-sans font-semibold text-sm border border-slate-300 shadow-xs transition-all hover:border-slate-400">
+                    <span>📜 Roll of Honour (1964–2026)</span>
+                </a>
+                <button type="button" onclick="navigator.clipboard.writeText(window.location.href); alert('Page link copied to clipboard!');" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-mono text-xs border border-slate-200 transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    <span>Copy Share Link</span>
+                </button>
+            </div>
+
+            <!-- Key Macro Statistics Strip -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-8 max-w-4xl mx-auto font-mono text-left">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">16</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Digital Seasons</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">2010 to 2026 full fixtures</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">71</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">League Fixtures</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">Across Wales &amp; West</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">14,200+</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Unique Athletes</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">100,000+ finishes</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-[#004942]">62 Yrs</span>
+                    <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Roll of Honour</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">1964–2026 Champions</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 space-y-20 flex-grow">
+
+        <!-- TABLE OF CONTENTS PILLS -->
+        <nav aria-label="Feature sections" class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs">
+            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-3">Jump to Feature Section:</span>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <a href="#feature-search" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">🔍 1. Real-Time Search</a>
+                <a href="#feature-athletes" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">🏃 2. Athlete Dossiers</a>
+                <a href="#feature-champions" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">📜 3. Roll of Honour</a>
+                <a href="#feature-clubs" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">🛡️ 4. Clubs &amp; Dream Teams</a>
+                <a href="#feature-compare" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">⚔️ 5. Head-to-Head Rivalry</a>
+                <a href="#feature-hof" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">🏆 6. Century Club &amp; Records</a>
+                <a href="#feature-seasons" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">📅 7. Season Hubs</a>
+            </div>
+        </nav>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 1: REAL-TIME SEARCH & COMMAND PALETTE -->
+        <!-- ========================================== -->
+        <section id="feature-search" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">1</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Instant Athlete &amp; Club Search</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Find any runner or club in milliseconds with autocomplete and quick keyboard shortcuts.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        The search system indexes <strong>over 14,000 athletes</strong> and <strong>100+ clubs</strong> across all 16 seasons. You can search directly from the home page or invoke the <strong>Quick Search Command Palette</strong> from any page simply by pressing <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">⌘K</kbd> (Mac) or <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">Ctrl+K</kbd> (Windows).
+                    </p>
+                    <ul class="space-y-2 text-xs font-mono text-slate-700 list-disc list-inside">
+                        <li>Instant suggestions as you type (athletes, clubs, venues)</li>
+                        <li>Direct navigation to athlete dossiers and club hubs</li>
+                        <li>Club filters to browse entire team rosters</li>
+                    </ul>
+                    
+                    <div class="pt-2">
+                        <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">Try Searching These Examples:</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <a href="athlete.html?name=Dewi%20Griffiths&club=Swansea%20Harriers%20Athletic%20Club&gender=M&theme=light" class="px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200">Dewi Griffiths (Swansea)</a>
+                            <a href="athlete.html?name=Lauren%20Cooper&club=Parc%20Bryn%20Bach%20Running%20Club&gender=F&theme=light" class="px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200">Lauren Cooper (PBB)</a>
+                            <a href="athlete.html?name=Phillip%20Matthews&club=Parc%20Bryn%20Bach%20Running%20Club&gender=M&theme=light" class="px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200">Phil Matthews (4x Champ)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/index.png" alt="Home Page and Search Interface" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Gwent League home page featuring macro statistics and athlete search</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 2: ATHLETE CAREER DOSSIERS -->
+        <!-- ========================================== -->
+        <section id="feature-athletes" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">2</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Athlete Career Dossiers</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Every race, time, position, season standing, and course record in one personal profile.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Each athlete profile provides a complete historical ledger of their career in the Gwent League. Nothing is lost—every match result since 2010 is accounted for.
+                    </p>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-slate-900 font-serif">Key Dossier Highlights:</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-700 font-sans list-disc list-inside">
+                            <li><strong>Career Summary</strong>: Total finishes, wins, podium finishes, best overall position, and total points scored.</li>
+                            <li><strong>Season Campaigns</strong>: Detailed best-4 season score tracking, division titles, and end-of-year standings.</li>
+                            <li><strong>Venue &amp; Course Breakdown</strong>: Personal fastest times and average positions across iconic championship courses like Blaise Castle, Margam Park, Pembrey, and Pontypool.</li>
+                            <li><strong>Transfer Lineage</strong>: Unified career profiles for athletes who represented multiple clubs (e.g. Dan Bodman across Aberdare and Pontypridd).</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2">
+                        <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">Featured Athlete Profiles:</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <a href="athlete.html?name=Dewi%20Griffiths&club=Swansea%20Harriers%20Athletic%20Club&gender=M&theme=light" class="px-2.5 py-1 rounded bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200">👑 Dewi Griffiths (32 Wins)</a>
+                            <a href="athlete.html?name=Lauren%20Cooper&club=Parc%20Bryn%20Bach%20Running%20Club&gender=F&theme=light" class="px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200">🥇 Lauren Cooper (PBB)</a>
+                            <a href="athlete.html?name=Daniel%20Bodman&club=Aberdare%20Valley%20A.%20A.%20C.&gender=M&theme=light" class="px-2.5 py-1 rounded bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200">🏅 Dan Bodman (66 Finishes)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <img src="assets/img/screenshots/athlete_dewi.png" alt="Athlete Career Profile - Dewi Griffiths" class="w-full rounded-xl border border-slate-100">
+                        <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Dewi Griffiths profile: 33 races, 32 wins, and course records</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <img src="assets/img/screenshots/athlete_lauren.png" alt="Athlete Career Profile - Lauren Cooper" class="w-full rounded-xl border border-slate-100">
+                        <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Lauren Cooper profile: season bests, podium counts, and head-to-head records</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 3: ROLL OF HONOUR & HISTORICAL PODIUMS -->
+        <!-- ========================================== -->
+        <section id="feature-champions" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">3</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Roll of Honour &amp; Champions (1964–2026)</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">The definitive record of team titles, Division 1 podiums, and individual champions.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Transcribed directly from official handwritten archives kept by league officials, the <strong>Roll of Honour</strong> establishes the permanent legacy of champions across three comprehensive views:
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-700 font-sans list-disc list-inside">
+                        <li><strong>62-Year Historical Champions (1964–2026)</strong>: Full Senior Men (from Gilwern in 1964) and Senior Women (from 1972) champions, with all-time title leaderboards (Westbury 13, Bristol &amp; West 11, Cardiff AAC 10, Les Croupiers 10).</li>
+                        <li><strong>Division 1 Team Podiums (2010–2026)</strong>: Gold (1st Champions), Silver (2nd Runners-Up), and Bronze (3rd Place) teams for every digital season with cumulative points.</li>
+                        <li><strong>Individual Champions &amp; Multi-Title Legends</strong>: Season title winners and multi-crown holders like Phil Matthews (4x), Kath Matthews (4x), Kate Roberts (2x), and Alaw Evans (2x).</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <a href="champions.html?theme=light" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-900 border border-amber-300 font-mono text-xs font-bold transition-colors">
+                            <span>Open Roll of Honour Page &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/champions.png" alt="Roll of Honour and Division 1 Podiums" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Division 1 podiums and multi-title athlete leaderboards</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 4: CLUB HUBS & ALL-TIME DREAM TEAMS -->
+        <!-- ========================================== -->
+        <section id="feature-clubs" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">4</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Club Hubs &amp; All-Time Dream Teams</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Club honours, division campaigns, active squads, and all-time top 5 Men / 4 Women.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Every member club has a dedicated portal. Features include accurate racing kit renders, full squad rosters, division titles, and the <strong>All-Time Dream Team</strong>.
+                    </p>
+                    <div class="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 space-y-2 text-xs text-slate-700">
+                        <span class="font-bold text-emerald-900 font-serif block">⭐ All-Time Scoring Dream Team</span>
+                        <p class="leading-relaxed">
+                            The algorithm calculates each club’s ultimate scoring team (Top 5 Senior Men and Top 4 Senior Women) across 16 seasons based on average race points (minimum 5 appearances), showing the greatest squad a club could assemble in league history.
+                        </p>
+                    </div>
+
+                    <div class="pt-2">
+                        <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">Explore Club Portals:</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <a href="club.html?club=Parc%20Bryn%20Bach%20Running%20Club&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">Parc Bryn Bach RC</a>
+                            <a href="club.html?club=Les%20Croupiers%20Running%20Club&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">Les Croupiers RC</a>
+                            <a href="club.html?club=Swansea%20Harriers%20Athletic%20Club&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">Swansea Harriers</a>
+                            <a href="club.html?club=Bristol%20and%20West%20Athletic%20Club&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">Bristol &amp; West AC</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/club_pbb.png" alt="Club Hub - Parc Bryn Bach Running Club" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Club profile displaying team honours, squad rosters, and Dream Team scoring</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 5: HEAD-TO-HEAD RIVALRY COMPARATOR -->
+        <!-- ========================================== -->
+        <section id="feature-compare" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">5</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Head-to-Head Rivalry Comparator</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Settle friendly rivalries: compare any two athletes across their mutual races.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        The <strong>Head-to-Head tool</strong> matches any two runners who have lined up together in the Gwent League. It filters all 71 fixtures to isolate the exact races both finished, calculating:
+                    </p>
+                    <ul class="space-y-1.5 text-xs text-slate-700 font-sans list-disc list-inside">
+                        <li><strong>Head-to-Head Record</strong>: Wins, losses, and win percentages.</li>
+                        <li><strong>Finish Margin &amp; Time Delta</strong>: Average positions ahead/behind and cumulative time separation.</li>
+                        <li><strong>Race-by-Race Log</strong>: Detailed table of every mutual fixture with positions, times, and venue locations.</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">Try Classic Rivalries:</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <a href="compare.html?a1=Lauren%20Cooper&a2=Alaw%20Evans&theme=light" class="px-2.5 py-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200">⚔️ Lauren Cooper vs Alaw Evans</a>
+                            <a href="compare.html?a1=Dewi%20Griffiths&a2=Phillip%20Matthews&theme=light" class="px-2.5 py-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200">⚔️ Dewi Griffiths vs Phil Matthews</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/compare.png" alt="Head-to-Head Rivalry Comparison" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Head-to-head matchup showing win rate, time deltas, and mutual race history</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 6: ALL-TIME HALL OF FAME & CENTURY CLUB -->
+        <!-- ========================================== -->
+        <section id="feature-hof" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">6</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">All-Time Hall of Fame &amp; Century Club</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Celebrating league longevity: 50+ finishes, race winners, and iron streaks.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Cross country is the ultimate test of resilience. The <strong>Analytics &amp; Hall of Fame</strong> honors athletes who have shown extraordinary dedication to the league:
+                    </p>
+                    <ul class="space-y-2 text-xs text-slate-700 font-sans list-disc list-inside">
+                        <li><strong>The Century Club</strong>: An elite brotherhood of 17 athletes who have completed <strong>50 or more league fixtures</strong> since 2010 (led by Richard Self with 71, Huw Evans with 68, and Brian Dias with 66).</li>
+                        <li><strong>All-Time Race Winners</strong>: Ranked leaderboard of every runner who has ever taken individual victory in a Senior Men or Senior Women fixture.</li>
+                        <li><strong>Iron Streaks</strong>: The longest unbroken streaks of consecutive race appearances without missing a fixture.</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <a href="analytics.html?tab=hof&theme=light" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs font-bold transition-colors">
+                            <span>View Hall of Fame &amp; Century Club &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/analytics.png" alt="Hall of Fame and Century Club" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">The 50+ finishes Century Club honor roll and race winners leaderboard</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200">
+
+        <!-- ========================================== -->
+        <!-- FEATURE 7: SEASONS, FIXTURES & PROMOTION TABLES -->
+        <!-- ========================================== -->
+        <section id="feature-seasons" class="scroll-mt-20 space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">7</span>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Seasons &amp; Official Division Tables</h2>
+                    <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">Explore any season from 2010 to 2026: division promotion/relegation and match results.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Every season has its own campaign hub. You can inspect match-by-match results, weather conditions, course elevation profiles, and official division tables:
+                    </p>
+                    <ul class="space-y-1.5 text-xs text-slate-700 font-sans list-disc list-inside">
+                        <li><strong>Division 1 to Division 4 Standings</strong>: Full Senior Men, Senior Women, Reserve, and Masters tables.</li>
+                        <li><strong>Promotion &amp; Relegation Status</strong>: Clearly marked end-of-season outcomes.</li>
+                        <li><strong>Full Race Results</strong>: Every finisher, club, category, and gun time across all fixtures.</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block mb-2">Explore Season Hubs:</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono">
+                            <a href="season.html?season=2025_2026&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">2025/2026 Season</a>
+                            <a href="season.html?season=2024_2025&theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">2024/2025 Season</a>
+                            <a href="seasons.html?theme=light" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800">All 16 Seasons &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <img src="assets/img/screenshots/season.png" alt="Season Campaign Hub" class="w-full rounded-xl border border-slate-100">
+                    <span class="text-[11px] font-mono text-slate-400 mt-2 block text-center">Season campaign hub showing fixtures, division standings, and champions</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CALL TO ACTION / SHARING FOOTER BANNER -->
+        <!-- ========================================== -->
+        <section class="bg-gradient-to-br from-[#004942] to-[#002f2a] text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-md">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-300 font-semibold block">John H Collins Gwent League</span>
+            <h3 class="text-3xl sm:text-4xl font-serif font-bold tracking-tight">Ready to Explore Your Racing History?</h3>
+            <p class="text-sm sm:text-base text-emerald-100 max-w-2xl mx-auto leading-relaxed">
+                Dive into the archive, look up your club teammates, check out your head-to-head records, and celebrate 62 years of Welsh and West Country cross country excellence.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a href="index.html?theme=light" class="px-6 py-3 rounded-xl bg-white hover:bg-emerald-50 text-[#004942] font-semibold text-sm shadow-sm transition-all">
+                    Go to Archive Home &rarr;
+                </a>
+                <a href="champions.html?theme=light" class="px-6 py-3 rounded-xl bg-emerald-800/80 hover:bg-emerald-800 text-white font-semibold text-sm border border-emerald-600 transition-all">
+                    View Roll of Honour
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER CONTAINER -->
+    <div id="global-footer"></div>
+
+</body>
+</html>
