@@ -4,8 +4,8 @@ window.VENUE_PROFILES = [
     "region": "Bristol / West of England",
     "terrain": "Historic estate parkland, steep wooded inclines, heavy winter mud, and open meadow stretches.",
     "tagline": "The historic cornerstone of the English fixture calendar.",
-    "fixture_count": 14,
-    "total_finishes": 8110,
+    "fixture_count": 21,
+    "total_finishes": 10410,
     "men_course_record": {
       "athlete": "Kurt Taylor",
       "club": "Bristol and West Athletic Club",
@@ -17,12 +17,12 @@ window.VENUE_PROFILES = [
       "pos": 1
     },
     "women_course_record": {
-      "athlete": "G. Nicholls",
-      "club": "University of Bath",
-      "time": "18:16",
-      "sec": 1096,
-      "season": "2011/2012",
-      "season_key": "2011_2012",
+      "athlete": "E. Wimshurst",
+      "club": "Bristol and West Athletic Club",
+      "time": "18:12",
+      "sec": 1092,
+      "season": "2009/2010",
+      "season_key": "2009_2010",
       "match": 5,
       "pos": 1
     },
@@ -130,6 +130,16 @@ window.VENUE_PROFILES = [
     ],
     "women_top10": [
       {
+        "athlete": "E. Wimshurst",
+        "club": "Bristol and West Athletic Club",
+        "time": "18:12",
+        "sec": 1092,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 5,
+        "pos": 1
+      },
+      {
         "athlete": "G. Nicholls",
         "club": "University of Bath",
         "time": "18:16",
@@ -150,6 +160,26 @@ window.VENUE_PROFILES = [
         "pos": 2
       },
       {
+        "athlete": "Alaw Beynon-Thomas",
+        "club": "Carmarthen & District Harriers AC",
+        "time": "18:49",
+        "sec": 1129,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "K. Goodhead",
+        "club": "Bristol and West Athletic Club",
+        "time": "18:50",
+        "sec": 1130,
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 5,
+        "pos": 1
+      },
+      {
         "athlete": "K. Goodhead",
         "club": "Bristol and West Athletic Club",
         "time": "18:53",
@@ -160,72 +190,42 @@ window.VENUE_PROFILES = [
         "pos": 1
       },
       {
-        "athlete": "Lucy Richens",
+        "athlete": "R. Golding",
         "club": "Westbury Harriers",
-        "time": "19:10",
-        "sec": 1150,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "time": "18:56",
+        "sec": 1136,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
         "match": 5,
         "pos": 3
       },
       {
-        "athlete": "F. Price",
+        "athlete": "Dylan Jones",
         "club": "Cardiff Amateur Athletic Club",
-        "time": "19:14",
-        "sec": 1154,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
+        "time": "18:56",
+        "sec": 1136,
+        "season": "2007/2008",
+        "season_key": "2007_2008",
         "match": 5,
         "pos": 2
       },
       {
-        "athlete": "F. Dannah",
-        "club": "North Somerset AC",
-        "time": "19:24",
-        "sec": 1164,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 5,
-        "pos": 3
-      },
-      {
-        "athlete": "G. Kinsey",
-        "club": "Stroud & District Athletic Club",
-        "time": "19:25",
-        "sec": 1165,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "athlete": "B. Strange",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "18:59",
+        "sec": 1139,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
         "match": 5,
         "pos": 4
       },
       {
-        "athlete": "E. Journeaux",
-        "club": "Westbury Harriers",
-        "time": "19:26",
-        "sec": 1166,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 5,
-        "pos": 4
-      },
-      {
-        "athlete": "G. France",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:33",
-        "sec": 1173,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 5,
-        "pos": 5
-      },
-      {
-        "athlete": "A. Grady",
-        "club": "University of Bath",
-        "time": "19:41",
-        "sec": 1181,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "athlete": "Kate Roberts",
+        "club": "Bridgend Athletic Club",
+        "time": "19:06",
+        "sec": 1146,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
         "match": 5,
         "pos": 5
       }
@@ -262,15 +262,15 @@ window.VENUE_PROFILES = [
         "wins": 2
       },
       {
+        "athlete": "K. Goodhead",
+        "wins": 2
+      },
+      {
         "athlete": "Rosie Hamilton-James",
         "wins": 1
       },
       {
         "athlete": "Gemma Tutton",
-        "wins": 1
-      },
-      {
-        "athlete": "Alaw Evans",
         "wins": 1
       }
     ],
@@ -540,6 +540,2153 @@ window.VENUE_PROFILES = [
           "club": "Carmarthen & District Harriers AC",
           "time": "21:16"
         }
+      },
+      {
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 5,
+        "date": "6 March 2010",
+        "starters": 332,
+        "men_starters": 208,
+        "women_starters": 124,
+        "men_winner": {
+          "athlete": "T. Wallis",
+          "club": "Bristol and West Athletic Club",
+          "time": "31:16"
+        },
+        "women_winner": {
+          "athlete": "E. Wimshurst",
+          "club": "Bristol and West Athletic Club",
+          "time": "18:12"
+        }
+      },
+      {
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 3,
+        "date": "6 December 2008",
+        "starters": 423,
+        "men_starters": 273,
+        "women_starters": 150,
+        "men_winner": {
+          "athlete": "R. Whalley",
+          "club": "Bristol and West Athletic Club",
+          "time": "35:55"
+        },
+        "women_winner": {
+          "athlete": "N. Sykes",
+          "club": "Taf Running & Orienteering Teams",
+          "time": "23:59"
+        }
+      },
+      {
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 5,
+        "date": "1 March 2008",
+        "starters": 312,
+        "men_starters": 204,
+        "women_starters": 108,
+        "men_winner": {
+          "athlete": "James Thie",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "32:10"
+        },
+        "women_winner": {
+          "athlete": "K. Goodhead",
+          "club": "Bristol and West Athletic Club",
+          "time": "18:50"
+        }
+      },
+      {
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 3,
+        "date": "02 December 2006",
+        "starters": 440,
+        "men_starters": 287,
+        "women_starters": 153,
+        "men_winner": {
+          "athlete": "R. Gardiner",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "36:09"
+        },
+        "women_winner": {
+          "athlete": "R. Felton",
+          "club": "Shaftesbury Barnet Athletic Club",
+          "time": "24:25"
+        }
+      },
+      {
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 4,
+        "date": "11 February 2006",
+        "starters": 371,
+        "men_starters": 241,
+        "women_starters": 130,
+        "men_winner": {
+          "athlete": "Andrew Hunt",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "36:08"
+        },
+        "women_winner": {
+          "athlete": "M. Woodward",
+          "club": "Aldershot Farnham and District",
+          "time": "25:28"
+        }
+      },
+      {
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 4,
+        "date": "10 January 2004",
+        "starters": 418,
+        "men_starters": 273,
+        "women_starters": 145,
+        "men_winner": {
+          "athlete": "M. Cox",
+          "club": "University of Bath",
+          "time": "38:19"
+        },
+        "women_winner": {
+          "athlete": "J. Knapman",
+          "club": "Great Western Runners",
+          "time": "25:08"
+        }
+      },
+      {
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 4,
+        "date": "01 February 2003",
+        "starters": 4,
+        "men_starters": 4,
+        "women_starters": 0,
+        "men_winner": null,
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Newbridge Fields, Bridgend",
+    "region": "Bridgend / Glamorgan",
+    "terrain": "Riverside parkland loops featuring traditional bog sections, sharp ditch crossings, and sprint finishes.",
+    "tagline": "Classic South Wales winter cross-country.",
+    "fixture_count": 17,
+    "total_finishes": 7247,
+    "men_course_record": {
+      "athlete": "Martyn Jenkins",
+      "club": "Bridgend Athletic Club",
+      "time": "29:48",
+      "sec": 1788,
+      "season": "2003/2004",
+      "season_key": "2003_2004",
+      "match": 1,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "K. Reed",
+      "club": "Bristol Athletic Club",
+      "time": "22:19",
+      "sec": 1339,
+      "season": "2003/2004",
+      "season_key": "2003_2004",
+      "match": 1,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "Martyn Jenkins",
+        "club": "Bridgend Athletic Club",
+        "time": "29:48",
+        "sec": 1788,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "Andrew Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "29:49",
+        "sec": 1789,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "D. Robinson",
+        "club": "Stroud & District Athletic Club",
+        "time": "30:02",
+        "sec": 1802,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "M. Cox",
+        "club": "University of Bath",
+        "time": "30:03",
+        "sec": 1803,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 3
+      },
+      {
+        "athlete": "M. Cox",
+        "club": "Bristol and West Athletic Club",
+        "time": "30:25",
+        "sec": 1825,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "Matthew Rees",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "30:31",
+        "sec": 1831,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 4
+      },
+      {
+        "athlete": "R. Bugden",
+        "club": "Cardiff Metropolitan University",
+        "time": "30:49",
+        "sec": 1849,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "pos": 3
+      },
+      {
+        "athlete": "S. Everington",
+        "club": "Westbury Harriers",
+        "time": "30:52",
+        "sec": 1852,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "pos": 4
+      },
+      {
+        "athlete": "Mark Jennings",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "30:53",
+        "sec": 1853,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "pos": 5
+      },
+      {
+        "athlete": "R. Stannard",
+        "club": "Bridgend Athletic Club",
+        "time": "30:53",
+        "sec": 1853,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 5
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "K. Reed",
+        "club": "Bristol Athletic Club",
+        "time": "22:19",
+        "sec": 1339,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "A. Emerson",
+        "club": "Bridgend Athletic Club",
+        "time": "22:37",
+        "sec": 1357,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "22:56",
+        "sec": 1376,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 3
+      },
+      {
+        "athlete": "R. Felton",
+        "club": "Stroud & District Athletic Club",
+        "time": "23:19",
+        "sec": 1399,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "S. Hignett",
+        "club": "Team Bath AC",
+        "time": "23:23",
+        "sec": 1403,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "B. Hawling",
+        "club": "Cardiff University AC",
+        "time": "23:24",
+        "sec": 1404,
+        "season": "2015/2016",
+        "season_key": "2015_2016",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "N. Sykes",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "23:36",
+        "sec": 1416,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "Louise Copp",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "23:38",
+        "sec": 1418,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 4
+      },
+      {
+        "athlete": "Andrew Jones",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:48",
+        "sec": 1428,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "C. Martin",
+        "club": "Newport Harriers",
+        "time": "23:49",
+        "sec": 1429,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "pos": 5
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "Dewi Griffiths",
+        "wins": 3
+      },
+      {
+        "athlete": "N. Lane",
+        "wins": 2
+      },
+      {
+        "athlete": "Andrew Hunt",
+        "wins": 2
+      },
+      {
+        "athlete": "Corinna Jones",
+        "wins": 1
+      },
+      {
+        "athlete": "Joshua Griffiths",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "Dylan Jones",
+        "wins": 2
+      },
+      {
+        "athlete": "K. Reed",
+        "wins": 2
+      },
+      {
+        "athlete": "H. Jarvis",
+        "wins": 1
+      },
+      {
+        "athlete": "B. Hawling",
+        "wins": 1
+      },
+      {
+        "athlete": "I. Ainsworth",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2016/2017",
+        "season_key": "2016_2017",
+        "match": 1,
+        "date": "16 October 2016",
+        "starters": 773,
+        "men_starters": 468,
+        "women_starters": 305,
+        "men_winner": {
+          "athlete": "Corinna Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "33:15"
+        },
+        "women_winner": {
+          "athlete": "H. Jarvis",
+          "club": "Dorking and Mole Valley",
+          "time": "25:48"
+        }
+      },
+      {
+        "season": "2015/2016",
+        "season_key": "2015_2016",
+        "match": 1,
+        "date": "11 October 2015",
+        "starters": 661,
+        "men_starters": 410,
+        "women_starters": 251,
+        "men_winner": {
+          "athlete": "Joshua Griffiths",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "31:03"
+        },
+        "women_winner": {
+          "athlete": "B. Hawling",
+          "club": "Cardiff University AC",
+          "time": "23:24"
+        }
+      },
+      {
+        "season": "2014/2015",
+        "season_key": "2014_2015",
+        "match": 1,
+        "date": "12 October 2014",
+        "starters": 586,
+        "men_starters": 369,
+        "women_starters": 217,
+        "men_winner": {
+          "athlete": "Owain Jones",
+          "club": "Bristol and West Athletic Club",
+          "time": "32:42"
+        },
+        "women_winner": {
+          "athlete": "I. Ainsworth",
+          "club": "Bristol and West Athletic Club",
+          "time": "24:39"
+        }
+      },
+      {
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 2,
+        "date": "10 November 2013",
+        "starters": 582,
+        "men_starters": 360,
+        "women_starters": 222,
+        "men_winner": {
+          "athlete": "C. Maclean",
+          "club": "Bristol and West Athletic Club",
+          "time": "32:12"
+        },
+        "women_winner": {
+          "athlete": "F. Price",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "24:43"
+        }
+      },
+      {
+        "season": "2012/2013",
+        "season_key": "2012_2013",
+        "match": 1,
+        "date": "21 October 2012",
+        "starters": 502,
+        "men_starters": 318,
+        "women_starters": 184,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "University of Swansea",
+          "time": "31:34"
+        },
+        "women_winner": {
+          "athlete": "Kate Roberts",
+          "club": "Bridgend Athletic Club",
+          "time": "24:57"
+        }
+      },
+      {
+        "season": "2011/2012",
+        "season_key": "2011_2012",
+        "match": 1,
+        "date": "9 October 2011",
+        "starters": 500,
+        "men_starters": 321,
+        "women_starters": 179,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "33:19"
+        },
+        "women_winner": {
+          "athlete": "R. Randall",
+          "club": "Bristol and West Athletic Club",
+          "time": "25:45"
+        }
+      },
+      {
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 1,
+        "date": "10 October 2010",
+        "starters": 462,
+        "men_starters": 291,
+        "women_starters": 171,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Carmarthen & District Harriers AC",
+          "time": "31:38"
+        },
+        "women_winner": {
+          "athlete": "E. Wimshurst",
+          "club": "Bristol and West Athletic Club",
+          "time": "24:13"
+        }
+      },
+      {
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 1,
+        "date": "11 October 2009",
+        "starters": 510,
+        "men_starters": 329,
+        "women_starters": 181,
+        "men_winner": {
+          "athlete": "N. Lane",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "31:56"
+        },
+        "women_winner": {
+          "athlete": "R. Felton",
+          "club": "Stroud & District Athletic Club",
+          "time": "23:19"
+        }
+      },
+      {
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 1,
+        "date": "12 October 2008",
+        "starters": 462,
+        "men_starters": 316,
+        "women_starters": 146,
+        "men_winner": {
+          "athlete": "N. Lane",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "32:16"
+        },
+        "women_winner": {
+          "athlete": "S. Hignett",
+          "club": "Team Bath AC",
+          "time": "23:23"
+        }
+      },
+      {
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 3,
+        "date": "2 December 2007 (Sunday)",
+        "starters": 371,
+        "men_starters": 250,
+        "women_starters": 121,
+        "men_winner": {
+          "athlete": "R. Gardiner",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "33:32"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "25:20"
+        }
+      },
+      {
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 4,
+        "date": "04 March 2007",
+        "starters": 280,
+        "men_starters": 185,
+        "women_starters": 95,
+        "men_winner": {
+          "athlete": "Andrew Hunt",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "33:02"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "25:37"
+        }
+      },
+      {
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 2,
+        "date": "6 November 2005",
+        "starters": 487,
+        "men_starters": 309,
+        "women_starters": 178,
+        "men_winner": {
+          "athlete": "Andrew Hunt",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "34:07"
+        },
+        "women_winner": {
+          "athlete": "K. Reed",
+          "club": "Bristol and West Athletic Club",
+          "time": "24:10"
+        }
+      },
+      {
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 1,
+        "date": "10 October 2004",
+        "starters": 295,
+        "men_starters": 295,
+        "women_starters": 0,
+        "men_winner": {
+          "athlete": "D. Robinson",
+          "club": "Stroud & District Athletic Club",
+          "time": "30:02"
+        },
+        "women_winner": null
+      },
+      {
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 1,
+        "date": "12 October 2003",
+        "starters": 537,
+        "men_starters": 343,
+        "women_starters": 194,
+        "men_winner": {
+          "athlete": "Martyn Jenkins",
+          "club": "Bridgend Athletic Club",
+          "time": "29:48"
+        },
+        "women_winner": {
+          "athlete": "K. Reed",
+          "club": "Bristol Athletic Club",
+          "time": "22:19"
+        }
+      },
+      {
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 1,
+        "date": "13 October 2002",
+        "starters": 226,
+        "men_starters": 225,
+        "women_starters": 1,
+        "men_winner": {
+          "athlete": "Justin Phillips",
+          "club": "Cardiff Metropolitan University",
+          "time": "36:12"
+        },
+        "women_winner": null
+      },
+      {
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 3,
+        "date": "02 December 2001",
+        "starters": 6,
+        "men_starters": 2,
+        "women_starters": 4,
+        "men_winner": null,
+        "women_winner": null
+      },
+      {
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 4,
+        "date": "17 February 2001",
+        "starters": 7,
+        "men_starters": 6,
+        "women_starters": 1,
+        "men_winner": null,
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Brecon (Penlan)",
+    "region": "Powys / Brecon Beacons",
+    "terrain": "Exposed high-altitude hill loops with severe climbs, biting winds, and sweeping mountain panoramas.",
+    "tagline": "The unforgiving mountain amphitheatre.",
+    "fixture_count": 12,
+    "total_finishes": 5013,
+    "men_course_record": {
+      "athlete": "Felix McGrath",
+      "club": "Bristol and West Athletic Club",
+      "time": "24:34",
+      "sec": 1474,
+      "season": "2024/2025",
+      "season_key": "2024_2025",
+      "match": 5,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "K. Goodhead",
+      "club": "Bristol and West Athletic Club",
+      "time": "19:48",
+      "sec": 1188,
+      "season": "2013/2014",
+      "season_key": "2013_2014",
+      "match": 4,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "Felix McGrath",
+        "club": "Bristol and West Athletic Club",
+        "time": "24:34",
+        "sec": 1474,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "Phillip Matthews",
+        "club": "Parc Bryn Bach Running Club",
+        "time": "25:09",
+        "sec": 1509,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "Greg Hayward",
+        "club": "Westbury Harriers",
+        "time": "25:13",
+        "sec": 1513,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "Owain Jones",
+        "club": "Bristol and West Athletic Club",
+        "time": "25:35",
+        "sec": 1535,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 4
+      },
+      {
+        "athlete": "Lloyd Cottrell",
+        "club": "Lliswerry Runners",
+        "time": "26:09",
+        "sec": 1569,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 5
+      },
+      {
+        "athlete": "Chris Green",
+        "club": "Wells City Harriers",
+        "time": "26:12",
+        "sec": 1572,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 6
+      },
+      {
+        "athlete": "Maciej Bialogonski",
+        "club": "Bristol and West Athletic Club",
+        "time": "26:13",
+        "sec": 1573,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 7
+      },
+      {
+        "athlete": "Ash Finch",
+        "club": "Bristol University",
+        "time": "26:19",
+        "sec": 1579,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 8
+      },
+      {
+        "athlete": "Ned Gilford",
+        "club": "University of Swansea",
+        "time": "26:22",
+        "sec": 1582,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 9
+      },
+      {
+        "athlete": "Michael Lewis",
+        "club": "Parc Bryn Bach Running Club",
+        "time": "26:22",
+        "sec": 1582,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "pos": 10
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "K. Goodhead",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:48",
+        "sec": 1188,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 1
+      },
+      {
+        "athlete": "Jessie Sanzo",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:53",
+        "sec": 1193,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "Helen Sharpe",
+        "club": "Bristol and West Athletic Club",
+        "time": "20:07",
+        "sec": 1207,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 3
+      },
+      {
+        "athlete": "Chris Green",
+        "club": "Bristol and West Athletic Club",
+        "time": "20:18",
+        "sec": 1218,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 4
+      },
+      {
+        "athlete": "E. D'Alton",
+        "club": "Westbury Harriers",
+        "time": "21:00",
+        "sec": 1260,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 5
+      },
+      {
+        "athlete": "A. Burton",
+        "club": "Bristol and West Athletic Club",
+        "time": "21:10",
+        "sec": 1270,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 6
+      },
+      {
+        "athlete": "David Rees",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "21:21",
+        "sec": 1281,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "E. Journeaux",
+        "club": "Westbury Harriers",
+        "time": "21:22",
+        "sec": 1282,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "pos": 7
+      },
+      {
+        "athlete": "R. Randall",
+        "club": "Bristol and West Athletic Club",
+        "time": "21:26",
+        "sec": 1286,
+        "season": "2012/2013",
+        "season_key": "2012_2013",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "Kate Roberts",
+        "club": "Bridgend Athletic Club",
+        "time": "21:31",
+        "sec": 1291,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 3,
+        "pos": 2
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "Dewi Griffiths",
+        "wins": 3
+      },
+      {
+        "athlete": "Dan Nash",
+        "wins": 2
+      },
+      {
+        "athlete": "Felix McGrath",
+        "wins": 1
+      },
+      {
+        "athlete": "B. Westhenry",
+        "wins": 1
+      },
+      {
+        "athlete": "Owain Jones",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "Alaw Beynon-Thomas",
+        "wins": 2
+      },
+      {
+        "athlete": "David Rees",
+        "wins": 2
+      },
+      {
+        "athlete": "Gemma Tutton",
+        "wins": 1
+      },
+      {
+        "athlete": "Chris Green",
+        "wins": 1
+      },
+      {
+        "athlete": "I. Ainsworth",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 5,
+        "date": "02 March 2025",
+        "starters": 489,
+        "men_starters": 273,
+        "women_starters": 216,
+        "men_winner": {
+          "athlete": "Felix McGrath",
+          "club": "Bristol and West Athletic Club",
+          "time": "24:34"
+        },
+        "women_winner": {
+          "athlete": "Gemma Tutton",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "22:05"
+        }
+      },
+      {
+        "season": "2017/2018",
+        "season_key": "2017_2018",
+        "match": 2,
+        "date": "11 November 2017",
+        "starters": 729,
+        "men_starters": 415,
+        "women_starters": 314,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "31:36"
+        },
+        "women_winner": {
+          "athlete": "Alaw Beynon-Thomas",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "22:39"
+        }
+      },
+      {
+        "season": "2016/2017",
+        "season_key": "2016_2017",
+        "match": 2,
+        "date": "12 November 2016",
+        "starters": 588,
+        "men_starters": 360,
+        "women_starters": 228,
+        "men_winner": {
+          "athlete": "Dan Nash",
+          "club": "East Cornwall",
+          "time": "32:26"
+        },
+        "women_winner": {
+          "athlete": "Alaw Beynon-Thomas",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "22:17"
+        }
+      },
+      {
+        "season": "2015/2016",
+        "season_key": "2015_2016",
+        "match": 5,
+        "date": "05 March 2016",
+        "starters": 390,
+        "men_starters": 231,
+        "women_starters": 159,
+        "men_winner": {
+          "athlete": "Dan Nash",
+          "club": "Cardiff University AC",
+          "time": "34:44"
+        },
+        "women_winner": {
+          "athlete": "Chris Green",
+          "club": "Bristol and West Athletic Club",
+          "time": "22:39"
+        }
+      },
+      {
+        "season": "2014/2015",
+        "season_key": "2014_2015",
+        "match": 3,
+        "date": "06 December 2014",
+        "starters": 523,
+        "men_starters": 339,
+        "women_starters": 184,
+        "men_winner": {
+          "athlete": "B. Westhenry",
+          "club": "Bristol and West Athletic Club",
+          "time": "33:59"
+        },
+        "women_winner": {
+          "athlete": "I. Ainsworth",
+          "club": "Bristol and West Athletic Club",
+          "time": "22:27"
+        }
+      },
+      {
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 4,
+        "date": "08 February 2014",
+        "starters": 347,
+        "men_starters": 208,
+        "women_starters": 139,
+        "men_winner": {
+          "athlete": "Owain Jones",
+          "club": "Bristol and West Athletic Club",
+          "time": "31:34"
+        },
+        "women_winner": {
+          "athlete": "K. Goodhead",
+          "club": "Bristol and West Athletic Club",
+          "time": "19:48"
+        }
+      },
+      {
+        "season": "2012/2013",
+        "season_key": "2012_2013",
+        "match": 5,
+        "date": "2 March 2013",
+        "starters": 381,
+        "men_starters": 228,
+        "women_starters": 153,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "University of Swansea",
+          "time": "30:52"
+        },
+        "women_winner": {
+          "athlete": "R. Randall",
+          "club": "Bristol and West Athletic Club",
+          "time": "21:26"
+        }
+      },
+      {
+        "season": "2011/2012",
+        "season_key": "2011_2012",
+        "match": 4,
+        "date": "11 February 2012",
+        "starters": 349,
+        "men_starters": 212,
+        "women_starters": 137,
+        "men_winner": {
+          "athlete": "B. Nagy",
+          "club": "University of Bath",
+          "time": "32:57"
+        },
+        "women_winner": {
+          "athlete": "David Rees",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "22:24"
+        }
+      },
+      {
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 3,
+        "date": "12 February 2011",
+        "starters": 316,
+        "men_starters": 198,
+        "women_starters": 118,
+        "men_winner": {
+          "athlete": "R. Gardiner",
+          "club": "Aberdare Valley AAC",
+          "time": "32:18"
+        },
+        "women_winner": {
+          "athlete": "David Rees",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "21:21"
+        }
+      },
+      {
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 4,
+        "date": "13 February 2010",
+        "starters": 316,
+        "men_starters": 200,
+        "women_starters": 116,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Carmarthen & District Harriers AC",
+          "time": "31:17"
+        },
+        "women_winner": {
+          "athlete": "Kate Roberts",
+          "club": "Bridgend Athletic Club",
+          "time": "22:11"
+        }
+      },
+      {
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 4,
+        "date": "14 February 2009",
+        "starters": 292,
+        "men_starters": 197,
+        "women_starters": 95,
+        "men_winner": {
+          "athlete": "Darren Stevens",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "32:41"
+        },
+        "women_winner": {
+          "athlete": "N. Sykes",
+          "club": "Taf Running & Orienteering Teams",
+          "time": "22:12"
+        }
+      },
+      {
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 4,
+        "date": "9 February 2008",
+        "starters": 293,
+        "men_starters": 193,
+        "women_starters": 100,
+        "men_winner": {
+          "athlete": "Mark Jennings",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "34:40"
+        },
+        "women_winner": {
+          "athlete": "K. Humphreys",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "24:56"
+        }
+      }
+    ]
+  },
+  {
+    "name": "University of Bath",
+    "region": "Bath / Somerset",
+    "terrain": "High Claverton Down plateau, open sports field circuits, and exposed crosswinds.",
+    "tagline": "Collegiate speed on Somerset's plateau.",
+    "fixture_count": 11,
+    "total_finishes": 4497,
+    "men_course_record": {
+      "athlete": "P. Wilson",
+      "club": "Clevedon AC",
+      "time": "31:10",
+      "sec": 1870,
+      "season": "2003/2004",
+      "season_key": "2003_2004",
+      "match": 3,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "A. Hutchinson",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "18:41",
+      "sec": 1121,
+      "season": "2009/2010",
+      "season_key": "2009_2010",
+      "match": 2,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "P. Wilson",
+        "club": "Clevedon AC",
+        "time": "31:10",
+        "sec": 1870,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "Ben Tickner",
+        "club": "Wells City Harriers",
+        "time": "31:16",
+        "sec": 1876,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "Max Hobbs",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "31:20",
+        "sec": 1880,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "D. McKerracher",
+        "club": "Guest",
+        "time": "31:25",
+        "sec": 1885,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "Mark Jennings",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "31:25",
+        "sec": 1885,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "pos": 4
+      },
+      {
+        "athlete": "R. Bugden",
+        "club": "Cardiff Metropolitan University",
+        "time": "31:29",
+        "sec": 1889,
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "R. Bugden",
+        "club": "Cardiff Metropolitan University",
+        "time": "31:31",
+        "sec": 1891,
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "C. Bromhall",
+        "club": "Bristol Athletic Club",
+        "time": "31:33",
+        "sec": 1893,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "pos": 5
+      },
+      {
+        "athlete": "T. Russell",
+        "club": "Bristol University",
+        "time": "31:34",
+        "sec": 1894,
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 2,
+        "pos": 2
+      },
+      {
+        "athlete": "R. Gardiner",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "31:36",
+        "sec": 1896,
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 2,
+        "pos": 2
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "A. Hutchinson",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "18:41",
+        "sec": 1121,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "C. Hallissey",
+        "club": "Bristol and West Athletic Club",
+        "time": "18:50",
+        "sec": 1130,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 2
+      },
+      {
+        "athlete": "R. Randell",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:09",
+        "sec": 1149,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 3
+      },
+      {
+        "athlete": "E. Wimshurst",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:11",
+        "sec": 1151,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 4
+      },
+      {
+        "athlete": "K. Goodhead",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:17",
+        "sec": 1157,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "Jessie Sanzo",
+        "club": "Bristol and West Athletic Club",
+        "time": "19:18",
+        "sec": 1158,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "Caryl Jones",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "19:24",
+        "sec": 1164,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "pos": 5
+      },
+      {
+        "athlete": "H. Rush",
+        "club": "Team Bath AC",
+        "time": "19:25",
+        "sec": 1165,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "R. Felton",
+        "club": "Shaftesbury Barnet Athletic Club",
+        "time": "19:27",
+        "sec": 1167,
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "V. Ockenden",
+        "club": "University of Swansea",
+        "time": "19:28",
+        "sec": 1168,
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 3,
+        "pos": 4
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "R. Bugden",
+        "wins": 2
+      },
+      {
+        "athlete": "T. Merson",
+        "wins": 1
+      },
+      {
+        "athlete": "R. Buffet",
+        "wins": 1
+      },
+      {
+        "athlete": "P. Wylie",
+        "wins": 1
+      },
+      {
+        "athlete": "Ben Tickner",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "K. Goodhead",
+        "wins": 2
+      },
+      {
+        "athlete": "Dylan Jones",
+        "wins": 2
+      },
+      {
+        "athlete": "E. D'Alton",
+        "wins": 1
+      },
+      {
+        "athlete": "Corinna Jones",
+        "wins": 1
+      },
+      {
+        "athlete": "A. Hutchinson",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2013/2014",
+        "season_key": "2013_2014",
+        "match": 3,
+        "date": "08 December 2013",
+        "starters": 607,
+        "men_starters": 384,
+        "women_starters": 223,
+        "men_winner": {
+          "athlete": "T. Merson",
+          "club": "Bristol and West Athletic Club",
+          "time": "32:16"
+        },
+        "women_winner": {
+          "athlete": "K. Goodhead",
+          "club": "Bristol and West Athletic Club",
+          "time": "19:17"
+        }
+      },
+      {
+        "season": "2012/2013",
+        "season_key": "2012_2013",
+        "match": 4,
+        "date": "9 February 2013",
+        "starters": 350,
+        "men_starters": 216,
+        "women_starters": 134,
+        "men_winner": {
+          "athlete": "R. Buffet",
+          "club": "Brecon Athletic Club",
+          "time": "33:31"
+        },
+        "women_winner": {
+          "athlete": "E. D'Alton",
+          "club": "Westbury Harriers",
+          "time": "20:21"
+        }
+      },
+      {
+        "season": "2011/2012",
+        "season_key": "2011_2012",
+        "match": 2,
+        "date": "13 November 2011",
+        "starters": 410,
+        "men_starters": 252,
+        "women_starters": 158,
+        "men_winner": {
+          "athlete": "P. Wylie",
+          "club": "Bristol and West Athletic Club",
+          "time": "31:46"
+        },
+        "women_winner": {
+          "athlete": "Corinna Jones",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "20:09"
+        }
+      },
+      {
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 2,
+        "date": "8 November 2009",
+        "starters": 462,
+        "men_starters": 296,
+        "women_starters": 166,
+        "men_winner": {
+          "athlete": "Ben Tickner",
+          "club": "Wells City Harriers",
+          "time": "31:16"
+        },
+        "women_winner": {
+          "athlete": "A. Hutchinson",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "18:41"
+        }
+      },
+      {
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 2,
+        "date": "9 November 2008",
+        "starters": 441,
+        "men_starters": 278,
+        "women_starters": 163,
+        "men_winner": {
+          "athlete": "T. Russell",
+          "club": "Bristol and West Athletic Club",
+          "time": "31:57"
+        },
+        "women_winner": {
+          "athlete": "N. Sykes",
+          "club": "Taf Running & Orienteering Teams",
+          "time": "19:32"
+        }
+      },
+      {
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 2,
+        "date": "11 November 2007 (Sunday)",
+        "starters": 448,
+        "men_starters": 302,
+        "women_starters": 146,
+        "men_winner": {
+          "athlete": "R. Bugden",
+          "club": "Cardiff Metropolitan University",
+          "time": "31:31"
+        },
+        "women_winner": {
+          "athlete": "R. Felton",
+          "club": "Shaftesbury Barnet Athletic Club",
+          "time": "19:27"
+        }
+      },
+      {
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 2,
+        "date": "12 November 2006",
+        "starters": 468,
+        "men_starters": 301,
+        "women_starters": 167,
+        "men_winner": {
+          "athlete": "R. Bugden",
+          "club": "Cardiff Metropolitan University",
+          "time": "31:29"
+        },
+        "women_winner": {
+          "athlete": "H. Moulder",
+          "club": "Bristol and West Athletic Club",
+          "time": "19:56"
+        }
+      },
+      {
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 3,
+        "date": "4 December 2005",
+        "starters": 398,
+        "men_starters": 260,
+        "women_starters": 138,
+        "men_winner": {
+          "athlete": "Andrew Hunt",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "33:41"
+        },
+        "women_winner": {
+          "athlete": "K. Goodhead",
+          "club": "University of Bath",
+          "time": "20:43"
+        }
+      },
+      {
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 3,
+        "date": "05 December 2004",
+        "starters": 437,
+        "men_starters": 288,
+        "women_starters": 149,
+        "men_winner": {
+          "athlete": "J. Ward",
+          "club": "Bristol and West Athletic Club",
+          "time": "33:58"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "21:07"
+        }
+      },
+      {
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 3,
+        "date": "30 November 2003",
+        "starters": 472,
+        "men_starters": 293,
+        "women_starters": 179,
+        "men_winner": {
+          "athlete": "P. Wilson",
+          "club": "Clevedon AC",
+          "time": "31:10"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "24:08"
+        }
+      },
+      {
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 3,
+        "date": "01 December 2002",
+        "starters": 4,
+        "men_starters": 4,
+        "women_starters": 0,
+        "men_winner": null,
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Pembrey Country Park",
+    "region": "Carmarthenshire / West Wales",
+    "terrain": "Coastal dunes, pine forest sandy tracks, undulating grassland, and exposed maritime winds.",
+    "tagline": "The iconic West Wales coastal challenge.",
+    "fixture_count": 10,
+    "total_finishes": 5896,
+    "men_course_record": {
+      "athlete": "Dafydd Jones",
+      "club": "Swansea Harriers Athletic Club",
+      "time": "28:21",
+      "sec": 1701,
+      "season": "2024/2025",
+      "season_key": "2024_2025",
+      "match": 1,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "H. Hobbs",
+      "club": "Westbury Harriers",
+      "time": "22:16",
+      "sec": 1336,
+      "season": "2017/2018",
+      "season_key": "2017_2018",
+      "match": 3,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "Dafydd Jones",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "28:21",
+        "sec": 1701,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "Dewi Griffiths",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "28:54",
+        "sec": 1734,
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "Kurt Taylor",
+        "club": "Bristol and West Athletic Club",
+        "time": "29:07",
+        "sec": 1747,
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "Morgan Davies",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "29:28",
+        "sec": 1768,
+        "season": "2019/2020",
+        "season_key": "2019_2020",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "Lloyd Sheppard-Brown",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "29:31",
+        "sec": 1771,
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 1,
+        "pos": 3
+      },
+      {
+        "athlete": "Joshua Griffiths",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "29:32",
+        "sec": 1772,
+        "season": "2021/2022",
+        "season_key": "2021_2022",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "Felix McGrath",
+        "club": "Bristol and West Athletic Club",
+        "time": "29:42",
+        "sec": 1782,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "J. Heneghan",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "29:50",
+        "sec": 1790,
+        "season": "2019/2020",
+        "season_key": "2019_2020",
+        "match": 2,
+        "pos": 2
+      },
+      {
+        "athlete": "Adam Bull",
+        "club": "Pontypridd Roadents Athletic Club",
+        "time": "29:57",
+        "sec": 1797,
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 1,
+        "pos": 4
+      },
+      {
+        "athlete": "Matthew Edwards",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "29:57",
+        "sec": 1797,
+        "season": "2019/2020",
+        "season_key": "2019_2020",
+        "match": 2,
+        "pos": 3
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "H. Hobbs",
+        "club": "Westbury Harriers",
+        "time": "22:16",
+        "sec": 1336,
+        "season": "2017/2018",
+        "season_key": "2017_2018",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "S. Edwards",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "22:41",
+        "sec": 1361,
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "Alaw Beynon-Thomas",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "22:45",
+        "sec": 1365,
+        "season": "2017/2018",
+        "season_key": "2017_2018",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "Alaw Beynon-Thomas",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "22:56",
+        "sec": 1376,
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "pos": 2
+      },
+      {
+        "athlete": "Cheryl Evans",
+        "club": "Pontypridd Roadents Athletic Club",
+        "time": "23:06",
+        "sec": 1386,
+        "season": "2016/2017",
+        "season_key": "2016_2017",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "H. Hobbs",
+        "club": "Westbury Harriers",
+        "time": "23:07",
+        "sec": 1387,
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "pos": 3
+      },
+      {
+        "athlete": "V. Jackson",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:08",
+        "sec": 1388,
+        "season": "2017/2018",
+        "season_key": "2017_2018",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "H. Brooks",
+        "club": "Cardiff Metropolitan University",
+        "time": "23:11",
+        "sec": 1391,
+        "season": "2016/2017",
+        "season_key": "2016_2017",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "N. Griffiths",
+        "club": "Bristol and West Athletic Club",
+        "time": "23:17",
+        "sec": 1397,
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "pos": 4
+      },
+      {
+        "athlete": "Megan Mcbrien",
+        "club": "Cardiff University AC",
+        "time": "23:31",
+        "sec": 1411,
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "pos": 5
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "Dafydd Jones",
+        "wins": 2
+      },
+      {
+        "athlete": "Ciaran Lewis",
+        "wins": 2
+      },
+      {
+        "athlete": "Dewi Griffiths",
+        "wins": 1
+      },
+      {
+        "athlete": "Joshua Griffiths",
+        "wins": 1
+      },
+      {
+        "athlete": "Morgan Davies",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "Lauren Cooper",
+        "wins": 2
+      },
+      {
+        "athlete": "Sian Duval",
+        "wins": 1
+      },
+      {
+        "athlete": "Georgia Palmer",
+        "wins": 1
+      },
+      {
+        "athlete": "Caryl Edwards",
+        "wins": 1
+      },
+      {
+        "athlete": "Alaw Beynon-Thomas",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 1,
+        "date": "10 October 2026",
+        "starters": 687,
+        "men_starters": 392,
+        "women_starters": 295,
+        "men_winner": {
+          "athlete": "Dafydd Jones",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "30:04"
+        },
+        "women_winner": {
+          "athlete": "Sian Duval",
+          "club": "University of the West of England",
+          "time": "27:02"
+        }
+      },
+      {
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 1,
+        "date": "12 October 2024",
+        "starters": 786,
+        "men_starters": 440,
+        "women_starters": 346,
+        "men_winner": {
+          "athlete": "Dafydd Jones",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "28:21"
+        },
+        "women_winner": {
+          "athlete": "Georgia Palmer",
+          "club": "Cardiff University AC",
+          "time": "25:32"
+        }
+      },
+      {
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 1,
+        "date": "14 October 2023",
+        "starters": 728,
+        "men_starters": 442,
+        "women_starters": 286,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "28:54"
+        },
+        "women_winner": {
+          "athlete": "Caryl Edwards",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "26:02"
+        }
+      },
+      {
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 3,
+        "date": "03 December 2022",
+        "starters": 557,
+        "men_starters": 336,
+        "women_starters": 221,
+        "men_winner": {
+          "athlete": "Ciaran Lewis",
+          "club": "Les Croupiers Running Club",
+          "time": "29:58"
+        },
+        "women_winner": {
+          "athlete": "Lauren Cooper",
+          "club": "Parc Bryn Bach Running Club",
+          "time": "26:02"
+        }
+      },
+      {
+        "season": "2021/2022",
+        "season_key": "2021_2022",
+        "match": 3,
+        "date": "04 December 2021",
+        "starters": 637,
+        "men_starters": 360,
+        "women_starters": 277,
+        "men_winner": {
+          "athlete": "Joshua Griffiths",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "29:32"
+        },
+        "women_winner": {
+          "athlete": "Lauren Cooper",
+          "club": "Parc Bryn Bach Running Club",
+          "time": "26:00"
+        }
+      },
+      {
+        "season": "2019/2020",
+        "season_key": "2019_2020",
+        "match": 2,
+        "date": "9 November 2019",
+        "starters": 758,
+        "men_starters": 429,
+        "women_starters": 329,
+        "men_winner": {
+          "athlete": "Morgan Davies",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "29:28"
+        },
+        "women_winner": {
+          "athlete": "Alaw Beynon-Thomas",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "25:04"
+        }
+      },
+      {
+        "season": "2018/2019",
+        "season_key": "2018_2019",
+        "match": 2,
+        "date": "10 November 2018",
+        "starters": 706,
+        "men_starters": 405,
+        "women_starters": 301,
+        "men_winner": {
+          "athlete": "Ciaran Lewis",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "30:08"
+        },
+        "women_winner": {
+          "athlete": "S. Edwards",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "22:41"
+        }
+      },
+      {
+        "season": "2017/2018",
+        "season_key": "2017_2018",
+        "match": 3,
+        "date": "3 December 2017",
+        "starters": 654,
+        "men_starters": 387,
+        "women_starters": 267,
+        "men_winner": {
+          "athlete": "James Hunt",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "30:20"
+        },
+        "women_winner": {
+          "athlete": "H. Hobbs",
+          "club": "Westbury Harriers",
+          "time": "22:16"
+        }
+      },
+      {
+        "season": "2016/2017",
+        "season_key": "2016_2017",
+        "match": 5,
+        "date": "04 March 2017",
+        "starters": 377,
+        "men_starters": 214,
+        "women_starters": 163,
+        "men_winner": {
+          "athlete": "Corinna Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "30:41"
+        },
+        "women_winner": {
+          "athlete": "Cheryl Evans",
+          "club": "Pontypridd Roadents Athletic Club",
+          "time": "23:06"
+        }
+      },
+      {
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 5,
+        "date": "15 March 2003",
+        "starters": 6,
+        "men_starters": 6,
+        "women_starters": 0,
+        "men_winner": null,
+        "women_winner": null
       }
     ]
   },
@@ -993,1126 +3140,635 @@ window.VENUE_PROFILES = [
     ]
   },
   {
-    "name": "Brecon (Penlan)",
-    "region": "Powys / Brecon Beacons",
-    "terrain": "Exposed high-altitude hill loops with severe climbs, biting winds, and sweeping mountain panoramas.",
-    "tagline": "The unforgiving mountain amphitheatre.",
-    "fixture_count": 9,
-    "total_finishes": 4112,
+    "name": "Singleton Park, Swansea",
+    "region": "Swansea / South West Wales",
+    "terrain": "Rolling botanical parkland overlooking Swansea Bay with steep punchy ascents.",
+    "tagline": "Sea-view undulations and fast grass descents.",
+    "fixture_count": 6,
+    "total_finishes": 2178,
     "men_course_record": {
-      "athlete": "Felix McGrath",
-      "club": "Bristol and West Athletic Club",
-      "time": "24:34",
-      "sec": 1474,
-      "season": "2024/2025",
-      "season_key": "2024_2025",
-      "match": 5,
+      "athlete": "M. Ekvall",
+      "club": "Guest",
+      "time": "26:54",
+      "sec": 1614,
+      "season": "2010/2011",
+      "season_key": "2010_2011",
+      "match": 4,
       "pos": 1
     },
     "women_course_record": {
-      "athlete": "K. Goodhead",
-      "club": "Bristol and West Athletic Club",
-      "time": "19:48",
-      "sec": 1188,
-      "season": "2013/2014",
-      "season_key": "2013_2014",
+      "athlete": "Caryl Jones",
+      "club": "Taf Running & Orienteering Teams",
+      "time": "17:14",
+      "sec": 1034,
+      "season": "2010/2011",
+      "season_key": "2010_2011",
       "match": 4,
       "pos": 1
     },
     "men_top10": [
       {
-        "athlete": "Felix McGrath",
-        "club": "Bristol and West Athletic Club",
-        "time": "24:34",
-        "sec": 1474,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
+        "athlete": "M. Ekvall",
+        "club": "Guest",
+        "time": "26:54",
+        "sec": 1614,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
         "pos": 1
+      },
+      {
+        "athlete": "Dewi Griffiths",
+        "club": "University of Swansea",
+        "time": "27:01",
+        "sec": 1621,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "J. Mills",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "27:53",
+        "sec": 1673,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 3
+      },
+      {
+        "athlete": "W. Evans",
+        "club": "Carmarthen & District Harriers AC",
+        "time": "28:00",
+        "sec": 1680,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 4
       },
       {
         "athlete": "Phillip Matthews",
-        "club": "Parc Bryn Bach Running Club",
-        "time": "25:09",
-        "sec": 1509,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 2
-      },
-      {
-        "athlete": "Greg Hayward",
-        "club": "Westbury Harriers",
-        "time": "25:13",
-        "sec": 1513,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 3
-      },
-      {
-        "athlete": "Owain Jones",
-        "club": "Bristol and West Athletic Club",
-        "time": "25:35",
-        "sec": 1535,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 4
-      },
-      {
-        "athlete": "Lloyd Cottrell",
-        "club": "Lliswerry Runners",
-        "time": "26:09",
-        "sec": 1569,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
+        "club": "Swansea Harriers Athletic Club",
+        "time": "28:20",
+        "sec": 1700,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
         "pos": 5
       },
       {
-        "athlete": "Chris Green",
-        "club": "Wells City Harriers",
-        "time": "26:12",
-        "sec": 1572,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
+        "athlete": "C. Discombe",
+        "club": "Les Croupiers Running Club",
+        "time": "28:31",
+        "sec": 1711,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
         "pos": 6
       },
       {
-        "athlete": "Maciej Bialogonski",
-        "club": "Bristol and West Athletic Club",
-        "time": "26:13",
-        "sec": 1573,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
+        "athlete": "A. Marriott",
+        "club": "Wells City Harriers",
+        "time": "28:44",
+        "sec": 1724,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
         "pos": 7
       },
       {
-        "athlete": "Ash Finch",
-        "club": "Bristol University",
-        "time": "26:19",
-        "sec": 1579,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 8
-      },
-      {
-        "athlete": "Ned Gilford",
-        "club": "University of Swansea",
-        "time": "26:22",
-        "sec": 1582,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 9
-      },
-      {
-        "athlete": "Michael Lewis",
-        "club": "Parc Bryn Bach Running Club",
-        "time": "26:22",
-        "sec": 1582,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "pos": 10
-      }
-    ],
-    "women_top10": [
-      {
-        "athlete": "K. Goodhead",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:48",
-        "sec": 1188,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "Jessie Sanzo",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:53",
-        "sec": 1193,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 2
-      },
-      {
-        "athlete": "Helen Sharpe",
-        "club": "Bristol and West Athletic Club",
-        "time": "20:07",
-        "sec": 1207,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 3
-      },
-      {
-        "athlete": "Chris Green",
-        "club": "Bristol and West Athletic Club",
-        "time": "20:18",
-        "sec": 1218,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 4
-      },
-      {
-        "athlete": "E. D'Alton",
-        "club": "Westbury Harriers",
-        "time": "21:00",
-        "sec": 1260,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 5
-      },
-      {
-        "athlete": "A. Burton",
-        "club": "Bristol and West Athletic Club",
-        "time": "21:10",
-        "sec": 1270,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 4,
-        "pos": 6
-      },
-      {
-        "athlete": "David Rees",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "21:21",
-        "sec": 1281,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
+        "athlete": "B. Nagy",
+        "club": "University of Bath",
+        "time": "28:48",
+        "sec": 1728,
+        "season": "2011/2012",
+        "season_key": "2011_2012",
         "match": 3,
         "pos": 1
       },
       {
-        "athlete": "E. Journeaux",
-        "club": "Westbury Harriers",
-        "time": "21:22",
-        "sec": 1282,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
+        "athlete": "Jon James",
+        "club": "Wells City Harriers",
+        "time": "29:06",
+        "sec": 1746,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
         "match": 4,
-        "pos": 7
+        "pos": 8
       },
       {
-        "athlete": "R. Randall",
-        "club": "Bristol and West Athletic Club",
-        "time": "21:26",
-        "sec": 1286,
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 5,
+        "athlete": "D. Studley",
+        "club": "Westbury Harriers",
+        "time": "29:10",
+        "sec": 1750,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 9
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "Caryl Jones",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "17:14",
+        "sec": 1034,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
         "pos": 1
+      },
+      {
+        "athlete": "David Rees",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "17:17",
+        "sec": 1037,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "A. Whitcombe",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "17:28",
+        "sec": 1048,
+        "season": "2011/2012",
+        "season_key": "2011_2012",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "Alaw Beynon-Thomas",
+        "club": "Carmarthen & District Harriers AC",
+        "time": "17:57",
+        "sec": 1077,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 3
       },
       {
         "athlete": "Kate Roberts",
         "club": "Bridgend Athletic Club",
-        "time": "21:31",
-        "sec": 1291,
+        "time": "18:02",
+        "sec": 1082,
         "season": "2010/2011",
         "season_key": "2010_2011",
-        "match": 3,
-        "pos": 2
-      }
-    ],
-    "men_most_wins": [
-      {
-        "athlete": "Dewi Griffiths",
-        "wins": 2
-      },
-      {
-        "athlete": "Dan Nash",
-        "wins": 2
-      },
-      {
-        "athlete": "Felix McGrath",
-        "wins": 1
-      },
-      {
-        "athlete": "B. Westhenry",
-        "wins": 1
-      },
-      {
-        "athlete": "Owain Jones",
-        "wins": 1
-      }
-    ],
-    "women_most_wins": [
-      {
-        "athlete": "Alaw Beynon-Thomas",
-        "wins": 2
-      },
-      {
-        "athlete": "David Rees",
-        "wins": 2
-      },
-      {
-        "athlete": "Gemma Tutton",
-        "wins": 1
-      },
-      {
-        "athlete": "Chris Green",
-        "wins": 1
-      },
-      {
-        "athlete": "I. Ainsworth",
-        "wins": 1
-      }
-    ],
-    "fixtures": [
-      {
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 5,
-        "date": "02 March 2025",
-        "starters": 489,
-        "men_starters": 273,
-        "women_starters": 216,
-        "men_winner": {
-          "athlete": "Felix McGrath",
-          "club": "Bristol and West Athletic Club",
-          "time": "24:34"
-        },
-        "women_winner": {
-          "athlete": "Gemma Tutton",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "22:05"
-        }
-      },
-      {
-        "season": "2017/2018",
-        "season_key": "2017_2018",
-        "match": 2,
-        "date": "11 November 2017",
-        "starters": 729,
-        "men_starters": 415,
-        "women_starters": 314,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "31:36"
-        },
-        "women_winner": {
-          "athlete": "Alaw Beynon-Thomas",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "22:39"
-        }
-      },
-      {
-        "season": "2016/2017",
-        "season_key": "2016_2017",
-        "match": 2,
-        "date": "12 November 2016",
-        "starters": 588,
-        "men_starters": 360,
-        "women_starters": 228,
-        "men_winner": {
-          "athlete": "Dan Nash",
-          "club": "East Cornwall",
-          "time": "32:26"
-        },
-        "women_winner": {
-          "athlete": "Alaw Beynon-Thomas",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "22:17"
-        }
-      },
-      {
-        "season": "2015/2016",
-        "season_key": "2015_2016",
-        "match": 5,
-        "date": "05 March 2016",
-        "starters": 390,
-        "men_starters": 231,
-        "women_starters": 159,
-        "men_winner": {
-          "athlete": "Dan Nash",
-          "club": "Cardiff University AC",
-          "time": "34:44"
-        },
-        "women_winner": {
-          "athlete": "Chris Green",
-          "club": "Bristol and West Athletic Club",
-          "time": "22:39"
-        }
-      },
-      {
-        "season": "2014/2015",
-        "season_key": "2014_2015",
-        "match": 3,
-        "date": "06 December 2014",
-        "starters": 523,
-        "men_starters": 339,
-        "women_starters": 184,
-        "men_winner": {
-          "athlete": "B. Westhenry",
-          "club": "Bristol and West Athletic Club",
-          "time": "33:59"
-        },
-        "women_winner": {
-          "athlete": "I. Ainsworth",
-          "club": "Bristol and West Athletic Club",
-          "time": "22:27"
-        }
-      },
-      {
-        "season": "2013/2014",
-        "season_key": "2013_2014",
         "match": 4,
-        "date": "08 February 2014",
-        "starters": 347,
-        "men_starters": 208,
-        "women_starters": 139,
-        "men_winner": {
-          "athlete": "Owain Jones",
-          "club": "Bristol and West Athletic Club",
-          "time": "31:34"
-        },
-        "women_winner": {
-          "athlete": "K. Goodhead",
-          "club": "Bristol and West Athletic Club",
-          "time": "19:48"
-        }
+        "pos": 4
       },
       {
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 5,
-        "date": "2 March 2013",
-        "starters": 381,
-        "men_starters": 228,
-        "women_starters": 153,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "University of Swansea",
-          "time": "30:52"
-        },
-        "women_winner": {
-          "athlete": "R. Randall",
-          "club": "Bristol and West Athletic Club",
-          "time": "21:26"
-        }
+        "athlete": "D. Marsden",
+        "club": "Westbury Harriers",
+        "time": "18:21",
+        "sec": 1101,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 5
       },
       {
+        "athlete": "E. Loveland",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "18:26",
+        "sec": 1106,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 6
+      },
+      {
+        "athlete": "Arwel Davies",
+        "club": "University of Bath",
+        "time": "18:27",
+        "sec": 1107,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 7
+      },
+      {
+        "athlete": "H. Fell",
+        "club": "Team Bath AC",
+        "time": "18:37",
+        "sec": 1117,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "pos": 8
+      },
+      {
+        "athlete": "A. Grady",
+        "club": "University of Bath",
+        "time": "18:52",
+        "sec": 1132,
         "season": "2011/2012",
         "season_key": "2011_2012",
-        "match": 4,
-        "date": "11 February 2012",
-        "starters": 349,
-        "men_starters": 212,
-        "women_starters": 137,
-        "men_winner": {
-          "athlete": "B. Nagy",
-          "club": "University of Bath",
-          "time": "32:57"
-        },
-        "women_winner": {
-          "athlete": "David Rees",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "22:24"
-        }
-      },
-      {
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 3,
-        "date": "12 February 2011",
-        "starters": 316,
-        "men_starters": 198,
-        "women_starters": 118,
-        "men_winner": {
-          "athlete": "R. Gardiner",
-          "club": "Aberdare Valley AAC",
-          "time": "32:18"
-        },
-        "women_winner": {
-          "athlete": "David Rees",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "21:21"
-        }
-      }
-    ]
-  },
-  {
-    "name": "Pembrey Country Park",
-    "region": "Carmarthenshire / West Wales",
-    "terrain": "Coastal dunes, pine forest sandy tracks, undulating grassland, and exposed maritime winds.",
-    "tagline": "The iconic West Wales coastal challenge.",
-    "fixture_count": 8,
-    "total_finishes": 5203,
-    "men_course_record": {
-      "athlete": "Dafydd Jones",
-      "club": "Swansea Harriers Athletic Club",
-      "time": "28:21",
-      "sec": 1701,
-      "season": "2024/2025",
-      "season_key": "2024_2025",
-      "match": 1,
-      "pos": 1
-    },
-    "women_course_record": {
-      "athlete": "H. Hobbs",
-      "club": "Westbury Harriers",
-      "time": "22:16",
-      "sec": 1336,
-      "season": "2017/2018",
-      "season_key": "2017_2018",
-      "match": 3,
-      "pos": 1
-    },
-    "men_top10": [
-      {
-        "athlete": "Dafydd Jones",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:21",
-        "sec": 1701,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:54",
-        "sec": 1734,
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Kurt Taylor",
-        "club": "Bristol and West Athletic Club",
-        "time": "29:07",
-        "sec": 1747,
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "Morgan Davies",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "29:28",
-        "sec": 1768,
-        "season": "2019/2020",
-        "season_key": "2019_2020",
-        "match": 2,
-        "pos": 1
-      },
-      {
-        "athlete": "Lloyd Sheppard-Brown",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "29:31",
-        "sec": 1771,
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 1,
-        "pos": 3
-      },
-      {
-        "athlete": "Joshua Griffiths",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "29:32",
-        "sec": 1772,
-        "season": "2021/2022",
-        "season_key": "2021_2022",
-        "match": 3,
-        "pos": 1
-      },
-      {
-        "athlete": "Felix McGrath",
-        "club": "Bristol and West Athletic Club",
-        "time": "29:42",
-        "sec": 1782,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "J. Heneghan",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "29:50",
-        "sec": 1790,
-        "season": "2019/2020",
-        "season_key": "2019_2020",
-        "match": 2,
-        "pos": 2
-      },
-      {
-        "athlete": "Adam Bull",
-        "club": "Pontypridd Roadents Athletic Club",
-        "time": "29:57",
-        "sec": 1797,
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 1,
-        "pos": 4
-      },
-      {
-        "athlete": "Matthew Edwards",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "29:57",
-        "sec": 1797,
-        "season": "2019/2020",
-        "season_key": "2019_2020",
-        "match": 2,
-        "pos": 3
-      }
-    ],
-    "women_top10": [
-      {
-        "athlete": "H. Hobbs",
-        "club": "Westbury Harriers",
-        "time": "22:16",
-        "sec": 1336,
-        "season": "2017/2018",
-        "season_key": "2017_2018",
-        "match": 3,
-        "pos": 1
-      },
-      {
-        "athlete": "S. Edwards",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "22:41",
-        "sec": 1361,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 1
-      },
-      {
-        "athlete": "Alaw Beynon-Thomas",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "22:45",
-        "sec": 1365,
-        "season": "2017/2018",
-        "season_key": "2017_2018",
         "match": 3,
         "pos": 2
-      },
-      {
-        "athlete": "Alaw Beynon-Thomas",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "22:56",
-        "sec": 1376,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 2
-      },
-      {
-        "athlete": "Cheryl Evans",
-        "club": "Pontypridd Roadents Athletic Club",
-        "time": "23:06",
-        "sec": 1386,
-        "season": "2016/2017",
-        "season_key": "2016_2017",
-        "match": 5,
-        "pos": 1
-      },
-      {
-        "athlete": "H. Hobbs",
-        "club": "Westbury Harriers",
-        "time": "23:07",
-        "sec": 1387,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 3
-      },
-      {
-        "athlete": "V. Jackson",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "23:08",
-        "sec": 1388,
-        "season": "2017/2018",
-        "season_key": "2017_2018",
-        "match": 3,
-        "pos": 3
-      },
-      {
-        "athlete": "H. Brooks",
-        "club": "Cardiff Metropolitan University",
-        "time": "23:11",
-        "sec": 1391,
-        "season": "2016/2017",
-        "season_key": "2016_2017",
-        "match": 5,
-        "pos": 2
-      },
-      {
-        "athlete": "N. Griffiths",
-        "club": "Bristol and West Athletic Club",
-        "time": "23:17",
-        "sec": 1397,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 4
-      },
-      {
-        "athlete": "Megan Mcbrien",
-        "club": "Cardiff University AC",
-        "time": "23:31",
-        "sec": 1411,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 5
       }
     ],
     "men_most_wins": [
       {
-        "athlete": "Ciaran Lewis",
-        "wins": 2
-      },
-      {
-        "athlete": "Dafydd Jones",
+        "athlete": "Luke Burgess",
         "wins": 1
       },
       {
-        "athlete": "Dewi Griffiths",
+        "athlete": "B. Nagy",
         "wins": 1
       },
       {
-        "athlete": "Joshua Griffiths",
+        "athlete": "M. Ekvall",
         "wins": 1
       },
       {
-        "athlete": "Morgan Davies",
+        "athlete": "R. Bugden",
+        "wins": 1
+      },
+      {
+        "athlete": "Ian Williams",
         "wins": 1
       }
     ],
     "women_most_wins": [
       {
         "athlete": "Lauren Cooper",
-        "wins": 2
-      },
-      {
-        "athlete": "Georgia Palmer",
         "wins": 1
       },
       {
-        "athlete": "Caryl Edwards",
+        "athlete": "A. Whitcombe",
         "wins": 1
       },
       {
-        "athlete": "Alaw Beynon-Thomas",
+        "athlete": "Caryl Jones",
         "wins": 1
       },
       {
-        "athlete": "S. Edwards",
+        "athlete": "S. Hignett",
+        "wins": 1
+      },
+      {
+        "athlete": "Edward Brown",
         "wins": 1
       }
     ],
     "fixtures": [
       {
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 1,
-        "date": "12 October 2024",
-        "starters": 786,
-        "men_starters": 440,
-        "women_starters": 346,
-        "men_winner": {
-          "athlete": "Dafydd Jones",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "28:21"
-        },
-        "women_winner": {
-          "athlete": "Georgia Palmer",
-          "club": "Cardiff University AC",
-          "time": "25:32"
-        }
-      },
-      {
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 1,
-        "date": "14 October 2023",
-        "starters": 728,
-        "men_starters": 442,
-        "women_starters": 286,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "28:54"
-        },
-        "women_winner": {
-          "athlete": "Caryl Edwards",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "26:02"
-        }
-      },
-      {
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 3,
-        "date": "03 December 2022",
-        "starters": 557,
-        "men_starters": 336,
-        "women_starters": 221,
-        "men_winner": {
-          "athlete": "Ciaran Lewis",
-          "club": "Les Croupiers Running Club",
-          "time": "29:58"
-        },
-        "women_winner": {
-          "athlete": "Lauren Cooper",
-          "club": "Parc Bryn Bach Running Club",
-          "time": "26:02"
-        }
-      },
-      {
         "season": "2021/2022",
         "season_key": "2021_2022",
-        "match": 3,
-        "date": "04 December 2021",
-        "starters": 637,
-        "men_starters": 360,
-        "women_starters": 277,
+        "match": 5,
+        "date": "19 March 2022",
+        "starters": 428,
+        "men_starters": 249,
+        "women_starters": 179,
         "men_winner": {
-          "athlete": "Joshua Griffiths",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "29:32"
+          "athlete": "Luke Burgess",
+          "club": "University of the West of England",
+          "time": "30:01"
         },
         "women_winner": {
           "athlete": "Lauren Cooper",
           "club": "Parc Bryn Bach Running Club",
-          "time": "26:00"
+          "time": "23:21"
         }
       },
       {
-        "season": "2019/2020",
-        "season_key": "2019_2020",
-        "match": 2,
-        "date": "9 November 2019",
-        "starters": 758,
-        "men_starters": 429,
-        "women_starters": 329,
-        "men_winner": {
-          "athlete": "Morgan Davies",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "29:28"
-        },
-        "women_winner": {
-          "athlete": "Alaw Beynon-Thomas",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "25:04"
-        }
-      },
-      {
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "date": "10 November 2018",
-        "starters": 706,
-        "men_starters": 405,
-        "women_starters": 301,
-        "men_winner": {
-          "athlete": "Ciaran Lewis",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "30:08"
-        },
-        "women_winner": {
-          "athlete": "S. Edwards",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "22:41"
-        }
-      },
-      {
-        "season": "2017/2018",
-        "season_key": "2017_2018",
+        "season": "2011/2012",
+        "season_key": "2011_2012",
         "match": 3,
-        "date": "3 December 2017",
-        "starters": 654,
-        "men_starters": 387,
-        "women_starters": 267,
+        "date": "4 December 2011",
+        "starters": 408,
+        "men_starters": 257,
+        "women_starters": 151,
         "men_winner": {
-          "athlete": "James Hunt",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "30:20"
+          "athlete": "B. Nagy",
+          "club": "University of Bath",
+          "time": "28:48"
         },
         "women_winner": {
-          "athlete": "H. Hobbs",
-          "club": "Westbury Harriers",
-          "time": "22:16"
+          "athlete": "A. Whitcombe",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "17:28"
         }
       },
       {
-        "season": "2016/2017",
-        "season_key": "2016_2017",
-        "match": 5,
-        "date": "04 March 2017",
-        "starters": 377,
-        "men_starters": 214,
-        "women_starters": 163,
+        "season": "2010/2011",
+        "season_key": "2010_2011",
+        "match": 4,
+        "date": "13 March 2011",
+        "starters": 316,
+        "men_starters": 201,
+        "women_starters": 115,
         "men_winner": {
-          "athlete": "Corinna Jones",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "30:41"
+          "athlete": "M. Ekvall",
+          "club": "Guest",
+          "time": "26:54"
         },
         "women_winner": {
-          "athlete": "Cheryl Evans",
-          "club": "Pontypridd Roadents Athletic Club",
-          "time": "23:06"
+          "athlete": "Caryl Jones",
+          "club": "Taf Running & Orienteering Teams",
+          "time": "17:14"
+        }
+      },
+      {
+        "season": "2007/2008",
+        "season_key": "2007_2008",
+        "match": 1,
+        "date": "13 October 2007",
+        "starters": 390,
+        "men_starters": 269,
+        "women_starters": 121,
+        "men_winner": {
+          "athlete": "R. Bugden",
+          "club": "Cardiff Metropolitan University",
+          "time": "33:34"
+        },
+        "women_winner": {
+          "athlete": "S. Hignett",
+          "club": "University of Bath",
+          "time": "23:18"
+        }
+      },
+      {
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 5,
+        "date": "5 March 2006",
+        "starters": 262,
+        "men_starters": 160,
+        "women_starters": 102,
+        "men_winner": {
+          "athlete": "Ian Williams",
+          "club": "Taf Running & Orienteering Teams",
+          "time": "35:55"
+        },
+        "women_winner": {
+          "athlete": "Edward Brown",
+          "club": "Cardiff Metropolitan University",
+          "time": "24:41"
+        }
+      },
+      {
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 4,
+        "date": "13 February 2005",
+        "starters": 374,
+        "men_starters": 232,
+        "women_starters": 142,
+        "men_winner": {
+          "athlete": "Justin Phillips",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "36:28"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol and West Athletic Club",
+          "time": "25:10"
         }
       }
     ]
   },
   {
-    "name": "Newbridge Fields, Bridgend",
-    "region": "Bridgend / Glamorgan",
-    "terrain": "Riverside parkland loops featuring traditional bog sections, sharp ditch crossings, and sprint finishes.",
-    "tagline": "Classic South Wales winter cross-country.",
-    "fixture_count": 7,
-    "total_finishes": 4066,
+    "name": "Margam Park, Port Talbot",
+    "region": "Neath Port Talbot",
+    "terrain": "Scenic Gothic castle grounds, steep deer park inclines, rough grass, and historic tree-lined avenues.",
+    "tagline": "Grand castle vistas meet punishing climbs.",
+    "fixture_count": 5,
+    "total_finishes": 2460,
     "men_course_record": {
-      "athlete": "Joshua Griffiths",
+      "athlete": "Dafydd Jones",
       "club": "Swansea Harriers Athletic Club",
-      "time": "31:03",
-      "sec": 1863,
-      "season": "2015/2016",
-      "season_key": "2015_2016",
+      "time": "28:32",
+      "sec": 1712,
+      "season": "2025/2026",
+      "season_key": "2025_2026",
       "match": 1,
       "pos": 1
     },
     "women_course_record": {
-      "athlete": "B. Hawling",
-      "club": "Cardiff University AC",
-      "time": "23:24",
-      "sec": 1404,
-      "season": "2015/2016",
-      "season_key": "2015_2016",
+      "athlete": "Ellie Wallace",
+      "club": "North Somerset AC",
+      "time": "23:08",
+      "sec": 1388,
+      "season": "2025/2026",
+      "season_key": "2025_2026",
       "match": 1,
       "pos": 1
     },
     "men_top10": [
       {
-        "athlete": "Joshua Griffiths",
+        "athlete": "Dafydd Jones",
         "club": "Swansea Harriers Athletic Club",
-        "time": "31:03",
-        "sec": 1863,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "time": "28:32",
+        "sec": 1712,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 1
       },
       {
-        "athlete": "Max Hobbs",
+        "athlete": "Dewi Griffiths",
         "club": "Swansea Harriers Athletic Club",
-        "time": "31:28",
-        "sec": 1888,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "time": "28:39",
+        "sec": 1719,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 1
+      },
+      {
+        "athlete": "Dewi Griffiths",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "28:59",
+        "sec": 1739,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 2
       },
       {
-        "athlete": "Dan Nash",
-        "club": "Cardiff University AC",
-        "time": "31:34",
-        "sec": 1894,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Felix McGrath",
+        "club": "Bristol and West Athletic Club",
+        "time": "29:09",
+        "sec": 1749,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 3
       },
       {
-        "athlete": "Dewi Griffiths",
-        "club": "University of Swansea",
-        "time": "31:34",
-        "sec": 1894,
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "club": "Carmarthen & District Harriers AC",
-        "time": "31:38",
-        "sec": 1898,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Corinna Jones",
+        "athlete": "Alex Jackson",
         "club": "Cardiff Amateur Athletic Club",
-        "time": "31:47",
-        "sec": 1907,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "time": "29:43",
+        "sec": 1783,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "Felix McGrath",
+        "club": "Bristol and West Athletic Club",
+        "time": "29:49",
+        "sec": 1789,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 4,
+        "pos": 1
+      },
+      {
+        "athlete": "James Heneghan",
+        "club": "Pontypridd Roadents Athletic Club",
+        "time": "29:58",
+        "sec": 1798,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 4
       },
       {
-        "athlete": "C. Maclean",
-        "club": "Bristol and West Athletic Club",
-        "time": "31:49",
-        "sec": 1909,
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "D. Studley",
-        "club": "Bristol and West Athletic Club",
-        "time": "31:54",
-        "sec": 1914,
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 1,
+        "athlete": "Aaron Enser",
+        "club": "Cardiff University AC",
+        "time": "29:58",
+        "sec": 1798,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
         "pos": 3
       },
       {
-        "athlete": "J. Davis",
-        "club": "North Somerset AC",
-        "time": "31:56",
-        "sec": 1916,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
-        "match": 1,
-        "pos": 5
+        "athlete": "Daniel Maydew",
+        "club": "Wells City Harriers",
+        "time": "30:12",
+        "sec": 1812,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 4
       },
       {
-        "athlete": "J. Morgan",
-        "club": "Newport Harriers",
-        "time": "32:04",
-        "sec": 1924,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
-        "match": 1,
-        "pos": 6
+        "athlete": "Chris Green",
+        "club": "Wells City Harriers",
+        "time": "30:12",
+        "sec": 1812,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 5
       }
     ],
     "women_top10": [
       {
-        "athlete": "B. Hawling",
-        "club": "Cardiff University AC",
-        "time": "23:24",
-        "sec": 1404,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Ellie Wallace",
+        "club": "North Somerset AC",
+        "time": "23:08",
+        "sec": 1388,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 1
       },
       {
-        "athlete": "Kate Roberts",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "24:12",
-        "sec": 1452,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Olivia Tsim",
+        "club": "Pontypridd Roadents Athletic Club",
+        "time": "23:14",
+        "sec": 1394,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 1
+      },
+      {
+        "athlete": "Katrina Entwistle",
+        "club": "Bristol and West Athletic Club",
+        "time": "23:23",
+        "sec": 1403,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "Freya Bradley",
+        "club": "Westbury Harriers",
+        "time": "23:25",
+        "sec": 1405,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 2
       },
       {
-        "athlete": "E. Wimshurst",
-        "club": "Bristol and West Athletic Club",
-        "time": "24:13",
-        "sec": 1453,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 1,
-        "pos": 1
+        "athlete": "Lucy Marland",
+        "club": "Les Croupiers Running Club",
+        "time": "23:29",
+        "sec": 1409,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 3
       },
       {
-        "athlete": "Kath Matthews",
-        "club": "Chepstow Harriers",
-        "time": "24:25",
-        "sec": 1465,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Sian Duval",
+        "club": "University of the West of England",
+        "time": "24:12",
+        "sec": 1452,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 3
       },
       {
-        "athlete": "C. Barnes",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "24:28",
-        "sec": 1468,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Gemma Tutton",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "24:17",
+        "sec": 1457,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 4
+      },
+      {
+        "athlete": "Sophia Harrison",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "24:49",
+        "sec": 1489,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "pos": 5
+      },
+      {
+        "athlete": "Katrina Entwistle",
+        "club": "Bristol and West Athletic Club",
+        "time": "24:50",
+        "sec": 1490,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 4
       },
       {
-        "athlete": "Cheryl Evans",
-        "club": "Pontypridd Roadents Athletic Club",
-        "time": "24:33",
-        "sec": 1473,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
+        "athlete": "Millie Gold",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "25:09",
+        "sec": 1509,
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
         "pos": 5
-      },
-      {
-        "athlete": "Megan Mcbrien",
-        "club": "Cardiff University AC",
-        "time": "24:35",
-        "sec": 1475,
-        "season": "2015/2016",
-        "season_key": "2015_2016",
-        "match": 1,
-        "pos": 6
-      },
-      {
-        "athlete": "Kate Roberts",
-        "club": "Bridgend Athletic Club",
-        "time": "24:35",
-        "sec": 1475,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "I. Ainsworth",
-        "club": "Bristol and West Athletic Club",
-        "time": "24:39",
-        "sec": 1479,
-        "season": "2014/2015",
-        "season_key": "2014_2015",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "D. Marsden",
-        "club": "Westbury Harriers",
-        "time": "24:40",
-        "sec": 1480,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 1,
-        "pos": 3
       }
     ],
     "men_most_wins": [
       {
-        "athlete": "Dewi Griffiths",
-        "wins": 3
-      },
-      {
-        "athlete": "Corinna Jones",
+        "athlete": "Dafydd Jones",
         "wins": 1
       },
       {
-        "athlete": "Joshua Griffiths",
+        "athlete": "Felix McGrath",
         "wins": 1
       },
       {
@@ -2120,165 +3776,111 @@ window.VENUE_PROFILES = [
         "wins": 1
       },
       {
-        "athlete": "C. Maclean",
+        "athlete": "Dewi Griffiths",
         "wins": 1
       }
     ],
     "women_most_wins": [
       {
-        "athlete": "H. Jarvis",
+        "athlete": "Katrina Entwistle",
+        "wins": 2
+      },
+      {
+        "athlete": "Ellie Wallace",
         "wins": 1
       },
       {
-        "athlete": "B. Hawling",
-        "wins": 1
-      },
-      {
-        "athlete": "I. Ainsworth",
-        "wins": 1
-      },
-      {
-        "athlete": "F. Price",
-        "wins": 1
-      },
-      {
-        "athlete": "Kate Roberts",
+        "athlete": "Olivia Tsim",
         "wins": 1
       }
     ],
     "fixtures": [
       {
-        "season": "2016/2017",
-        "season_key": "2016_2017",
+        "season": "2025/2026",
+        "season_key": "2025_2026",
         "match": 1,
-        "date": "16 October 2016",
-        "starters": 773,
-        "men_starters": 468,
-        "women_starters": 305,
+        "date": "11 October 2025",
+        "starters": 829,
+        "men_starters": 472,
+        "women_starters": 357,
         "men_winner": {
-          "athlete": "Corinna Jones",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "33:15"
-        },
-        "women_winner": {
-          "athlete": "H. Jarvis",
-          "club": "Dorking and Mole Valley",
-          "time": "25:48"
-        }
-      },
-      {
-        "season": "2015/2016",
-        "season_key": "2015_2016",
-        "match": 1,
-        "date": "11 October 2015",
-        "starters": 661,
-        "men_starters": 410,
-        "women_starters": 251,
-        "men_winner": {
-          "athlete": "Joshua Griffiths",
+          "athlete": "Dafydd Jones",
           "club": "Swansea Harriers Athletic Club",
-          "time": "31:03"
+          "time": "28:32"
         },
         "women_winner": {
-          "athlete": "B. Hawling",
-          "club": "Cardiff University AC",
-          "time": "23:24"
+          "athlete": "Ellie Wallace",
+          "club": "North Somerset AC",
+          "time": "23:08"
         }
       },
       {
-        "season": "2014/2015",
-        "season_key": "2014_2015",
-        "match": 1,
-        "date": "12 October 2014",
-        "starters": 586,
-        "men_starters": 369,
-        "women_starters": 217,
+        "season": "2024/2025",
+        "season_key": "2024_2025",
+        "match": 4,
+        "date": "08 February 2025",
+        "starters": 486,
+        "men_starters": 289,
+        "women_starters": 197,
+        "men_winner": {
+          "athlete": "Felix McGrath",
+          "club": "Bristol and West Athletic Club",
+          "time": "29:49"
+        },
+        "women_winner": {
+          "athlete": "Katrina Entwistle",
+          "club": "Bristol and West Athletic Club",
+          "time": "25:11"
+        }
+      },
+      {
+        "season": "2023/2024",
+        "season_key": "2023_2024",
+        "match": 4,
+        "date": "10 February 2024",
+        "starters": 570,
+        "men_starters": 332,
+        "women_starters": 238,
         "men_winner": {
           "athlete": "Owain Jones",
           "club": "Bristol and West Athletic Club",
-          "time": "32:42"
+          "time": "35:54"
         },
         "women_winner": {
-          "athlete": "I. Ainsworth",
+          "athlete": "Katrina Entwistle",
           "club": "Bristol and West Athletic Club",
-          "time": "24:39"
+          "time": "29:34"
         }
       },
       {
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 2,
-        "date": "10 November 2013",
-        "starters": 582,
-        "men_starters": 360,
-        "women_starters": 222,
-        "men_winner": {
-          "athlete": "C. Maclean",
-          "club": "Bristol and West Athletic Club",
-          "time": "32:12"
-        },
-        "women_winner": {
-          "athlete": "F. Price",
-          "club": "Cardiff Amateur Athletic Club",
-          "time": "24:43"
-        }
-      },
-      {
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 1,
-        "date": "21 October 2012",
-        "starters": 502,
-        "men_starters": 318,
-        "women_starters": 184,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "University of Swansea",
-          "time": "31:34"
-        },
-        "women_winner": {
-          "athlete": "Kate Roberts",
-          "club": "Bridgend Athletic Club",
-          "time": "24:57"
-        }
-      },
-      {
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 1,
-        "date": "9 October 2011",
-        "starters": 500,
-        "men_starters": 321,
-        "women_starters": 179,
+        "season": "2022/2023",
+        "season_key": "2022_2023",
+        "match": 4,
+        "date": "11 February 2023",
+        "starters": 568,
+        "men_starters": 342,
+        "women_starters": 226,
         "men_winner": {
           "athlete": "Dewi Griffiths",
           "club": "Swansea Harriers Athletic Club",
-          "time": "33:19"
+          "time": "28:39"
         },
         "women_winner": {
-          "athlete": "R. Randall",
-          "club": "Bristol and West Athletic Club",
-          "time": "25:45"
+          "athlete": "Olivia Tsim",
+          "club": "Pontypridd Roadents Athletic Club",
+          "time": "23:14"
         }
       },
       {
-        "season": "2010/2011",
-        "season_key": "2010_2011",
+        "season": "2001/2002",
+        "season_key": "2001_2002",
         "match": 1,
-        "date": "10 October 2010",
-        "starters": 462,
-        "men_starters": 291,
-        "women_starters": 171,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "Carmarthen & District Harriers AC",
-          "time": "31:38"
-        },
-        "women_winner": {
-          "athlete": "E. Wimshurst",
-          "club": "Bristol and West Athletic Club",
-          "time": "24:13"
-        }
+        "date": "13 October 2001",
+        "starters": 7,
+        "men_starters": 5,
+        "women_starters": 2,
+        "men_winner": null,
+        "women_winner": null
       }
     ]
   },
@@ -2656,982 +4258,866 @@ window.VENUE_PROFILES = [
     ]
   },
   {
-    "name": "Margam Park, Port Talbot",
-    "region": "Neath Port Talbot",
-    "terrain": "Scenic Gothic castle grounds, steep deer park inclines, rough grass, and historic tree-lined avenues.",
-    "tagline": "Grand castle vistas meet punishing climbs.",
+    "name": "Leckwith Stadium, Cardiff",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
     "fixture_count": 4,
-    "total_finishes": 2453,
+    "total_finishes": 1870,
     "men_course_record": {
-      "athlete": "Dafydd Jones",
-      "club": "Swansea Harriers Athletic Club",
-      "time": "28:32",
-      "sec": 1712,
-      "season": "2025/2026",
-      "season_key": "2025_2026",
-      "match": 1,
-      "pos": 1
-    },
-    "women_course_record": {
-      "athlete": "Ellie Wallace",
-      "club": "North Somerset AC",
-      "time": "23:08",
-      "sec": 1388,
-      "season": "2025/2026",
-      "season_key": "2025_2026",
-      "match": 1,
-      "pos": 1
-    },
-    "men_top10": [
-      {
-        "athlete": "Dafydd Jones",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:32",
-        "sec": 1712,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:39",
-        "sec": 1719,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:59",
-        "sec": 1739,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "Felix McGrath",
-        "club": "Bristol and West Athletic Club",
-        "time": "29:09",
-        "sec": 1749,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 3
-      },
-      {
-        "athlete": "Alex Jackson",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "29:43",
-        "sec": 1783,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 2
-      },
-      {
-        "athlete": "Felix McGrath",
-        "club": "Bristol and West Athletic Club",
-        "time": "29:49",
-        "sec": 1789,
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "James Heneghan",
-        "club": "Pontypridd Roadents Athletic Club",
-        "time": "29:58",
-        "sec": 1798,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 4
-      },
-      {
-        "athlete": "Aaron Enser",
-        "club": "Cardiff University AC",
-        "time": "29:58",
-        "sec": 1798,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 3
-      },
-      {
-        "athlete": "Daniel Maydew",
-        "club": "Wells City Harriers",
-        "time": "30:12",
-        "sec": 1812,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 4
-      },
-      {
-        "athlete": "Chris Green",
-        "club": "Wells City Harriers",
-        "time": "30:12",
-        "sec": 1812,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 5
-      }
-    ],
-    "women_top10": [
-      {
-        "athlete": "Ellie Wallace",
-        "club": "North Somerset AC",
-        "time": "23:08",
-        "sec": 1388,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 1
-      },
-      {
-        "athlete": "Olivia Tsim",
-        "club": "Pontypridd Roadents Athletic Club",
-        "time": "23:14",
-        "sec": 1394,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "Katrina Entwistle",
-        "club": "Bristol and West Athletic Club",
-        "time": "23:23",
-        "sec": 1403,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 2
-      },
-      {
-        "athlete": "Freya Bradley",
-        "club": "Westbury Harriers",
-        "time": "23:25",
-        "sec": 1405,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 2
-      },
-      {
-        "athlete": "Lucy Marland",
-        "club": "Les Croupiers Running Club",
-        "time": "23:29",
-        "sec": 1409,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 3
-      },
-      {
-        "athlete": "Sian Duval",
-        "club": "University of the West of England",
-        "time": "24:12",
-        "sec": 1452,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 3
-      },
-      {
-        "athlete": "Gemma Tutton",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "24:17",
-        "sec": 1457,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 4
-      },
-      {
-        "athlete": "Sophia Harrison",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "24:49",
-        "sec": 1489,
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "pos": 5
-      },
-      {
-        "athlete": "Katrina Entwistle",
-        "club": "Bristol and West Athletic Club",
-        "time": "24:50",
-        "sec": 1490,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 4
-      },
-      {
-        "athlete": "Millie Gold",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "25:09",
-        "sec": 1509,
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "pos": 5
-      }
-    ],
-    "men_most_wins": [
-      {
-        "athlete": "Dafydd Jones",
-        "wins": 1
-      },
-      {
-        "athlete": "Felix McGrath",
-        "wins": 1
-      },
-      {
-        "athlete": "Owain Jones",
-        "wins": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "wins": 1
-      }
-    ],
-    "women_most_wins": [
-      {
-        "athlete": "Katrina Entwistle",
-        "wins": 2
-      },
-      {
-        "athlete": "Ellie Wallace",
-        "wins": 1
-      },
-      {
-        "athlete": "Olivia Tsim",
-        "wins": 1
-      }
-    ],
-    "fixtures": [
-      {
-        "season": "2025/2026",
-        "season_key": "2025_2026",
-        "match": 1,
-        "date": "11 October 2025",
-        "starters": 829,
-        "men_starters": 472,
-        "women_starters": 357,
-        "men_winner": {
-          "athlete": "Dafydd Jones",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "28:32"
-        },
-        "women_winner": {
-          "athlete": "Ellie Wallace",
-          "club": "North Somerset AC",
-          "time": "23:08"
-        }
-      },
-      {
-        "season": "2024/2025",
-        "season_key": "2024_2025",
-        "match": 4,
-        "date": "08 February 2025",
-        "starters": 486,
-        "men_starters": 289,
-        "women_starters": 197,
-        "men_winner": {
-          "athlete": "Felix McGrath",
-          "club": "Bristol and West Athletic Club",
-          "time": "29:49"
-        },
-        "women_winner": {
-          "athlete": "Katrina Entwistle",
-          "club": "Bristol and West Athletic Club",
-          "time": "25:11"
-        }
-      },
-      {
-        "season": "2023/2024",
-        "season_key": "2023_2024",
-        "match": 4,
-        "date": "10 February 2024",
-        "starters": 570,
-        "men_starters": 332,
-        "women_starters": 238,
-        "men_winner": {
-          "athlete": "Owain Jones",
-          "club": "Bristol and West Athletic Club",
-          "time": "35:54"
-        },
-        "women_winner": {
-          "athlete": "Katrina Entwistle",
-          "club": "Bristol and West Athletic Club",
-          "time": "29:34"
-        }
-      },
-      {
-        "season": "2022/2023",
-        "season_key": "2022_2023",
-        "match": 4,
-        "date": "11 February 2023",
-        "starters": 568,
-        "men_starters": 342,
-        "women_starters": 226,
-        "men_winner": {
-          "athlete": "Dewi Griffiths",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "28:39"
-        },
-        "women_winner": {
-          "athlete": "Olivia Tsim",
-          "club": "Pontypridd Roadents Athletic Club",
-          "time": "23:14"
-        }
-      }
-    ]
-  },
-  {
-    "name": "Singleton Park, Swansea",
-    "region": "Swansea / South West Wales",
-    "terrain": "Rolling botanical parkland overlooking Swansea Bay with steep punchy ascents.",
-    "tagline": "Sea-view undulations and fast grass descents.",
-    "fixture_count": 3,
-    "total_finishes": 1152,
-    "men_course_record": {
-      "athlete": "M. Ekvall",
-      "club": "Guest",
-      "time": "26:54",
-      "sec": 1614,
-      "season": "2010/2011",
-      "season_key": "2010_2011",
-      "match": 4,
-      "pos": 1
-    },
-    "women_course_record": {
-      "athlete": "Caryl Jones",
-      "club": "Taf Running & Orienteering Teams",
-      "time": "17:14",
-      "sec": 1034,
-      "season": "2010/2011",
-      "season_key": "2010_2011",
-      "match": 4,
-      "pos": 1
-    },
-    "men_top10": [
-      {
-        "athlete": "M. Ekvall",
-        "club": "Guest",
-        "time": "26:54",
-        "sec": 1614,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "Dewi Griffiths",
-        "club": "University of Swansea",
-        "time": "27:01",
-        "sec": 1621,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 2
-      },
-      {
-        "athlete": "J. Mills",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "27:53",
-        "sec": 1673,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 3
-      },
-      {
-        "athlete": "W. Evans",
-        "club": "Carmarthen & District Harriers AC",
-        "time": "28:00",
-        "sec": 1680,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 4
-      },
-      {
-        "athlete": "Phillip Matthews",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "28:20",
-        "sec": 1700,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 5
-      },
-      {
-        "athlete": "C. Discombe",
-        "club": "Les Croupiers Running Club",
-        "time": "28:31",
-        "sec": 1711,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 6
-      },
-      {
-        "athlete": "A. Marriott",
-        "club": "Wells City Harriers",
-        "time": "28:44",
-        "sec": 1724,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 7
-      },
-      {
-        "athlete": "B. Nagy",
-        "club": "University of Bath",
-        "time": "28:48",
-        "sec": 1728,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 3,
-        "pos": 1
-      },
-      {
-        "athlete": "Jon James",
-        "club": "Wells City Harriers",
-        "time": "29:06",
-        "sec": 1746,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 8
-      },
-      {
-        "athlete": "D. Studley",
-        "club": "Westbury Harriers",
-        "time": "29:10",
-        "sec": 1750,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 9
-      }
-    ],
-    "women_top10": [
-      {
-        "athlete": "Caryl Jones",
-        "club": "Taf Running & Orienteering Teams",
-        "time": "17:14",
-        "sec": 1034,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 1
-      },
-      {
-        "athlete": "David Rees",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "17:17",
-        "sec": 1037,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 2
-      },
-      {
-        "athlete": "A. Whitcombe",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "17:28",
-        "sec": 1048,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 3,
-        "pos": 1
-      },
-      {
-        "athlete": "Alaw Beynon-Thomas",
-        "club": "Carmarthen & District Harriers AC",
-        "time": "17:57",
-        "sec": 1077,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 3
-      },
-      {
-        "athlete": "Kate Roberts",
-        "club": "Bridgend Athletic Club",
-        "time": "18:02",
-        "sec": 1082,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 4
-      },
-      {
-        "athlete": "D. Marsden",
-        "club": "Westbury Harriers",
-        "time": "18:21",
-        "sec": 1101,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 5
-      },
-      {
-        "athlete": "E. Loveland",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "18:26",
-        "sec": 1106,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 6
-      },
-      {
-        "athlete": "Arwel Davies",
-        "club": "University of Bath",
-        "time": "18:27",
-        "sec": 1107,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 7
-      },
-      {
-        "athlete": "H. Fell",
-        "club": "Team Bath AC",
-        "time": "18:37",
-        "sec": 1117,
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "pos": 8
-      },
-      {
-        "athlete": "A. Grady",
-        "club": "University of Bath",
-        "time": "18:52",
-        "sec": 1132,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 3,
-        "pos": 2
-      }
-    ],
-    "men_most_wins": [
-      {
-        "athlete": "Luke Burgess",
-        "wins": 1
-      },
-      {
-        "athlete": "B. Nagy",
-        "wins": 1
-      },
-      {
-        "athlete": "M. Ekvall",
-        "wins": 1
-      }
-    ],
-    "women_most_wins": [
-      {
-        "athlete": "Lauren Cooper",
-        "wins": 1
-      },
-      {
-        "athlete": "A. Whitcombe",
-        "wins": 1
-      },
-      {
-        "athlete": "Caryl Jones",
-        "wins": 1
-      }
-    ],
-    "fixtures": [
-      {
-        "season": "2021/2022",
-        "season_key": "2021_2022",
-        "match": 5,
-        "date": "19 March 2022",
-        "starters": 428,
-        "men_starters": 249,
-        "women_starters": 179,
-        "men_winner": {
-          "athlete": "Luke Burgess",
-          "club": "University of the West of England",
-          "time": "30:01"
-        },
-        "women_winner": {
-          "athlete": "Lauren Cooper",
-          "club": "Parc Bryn Bach Running Club",
-          "time": "23:21"
-        }
-      },
-      {
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 3,
-        "date": "4 December 2011",
-        "starters": 408,
-        "men_starters": 257,
-        "women_starters": 151,
-        "men_winner": {
-          "athlete": "B. Nagy",
-          "club": "University of Bath",
-          "time": "28:48"
-        },
-        "women_winner": {
-          "athlete": "A. Whitcombe",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "17:28"
-        }
-      },
-      {
-        "season": "2010/2011",
-        "season_key": "2010_2011",
-        "match": 4,
-        "date": "13 March 2011",
-        "starters": 316,
-        "men_starters": 201,
-        "women_starters": 115,
-        "men_winner": {
-          "athlete": "M. Ekvall",
-          "club": "Guest",
-          "time": "26:54"
-        },
-        "women_winner": {
-          "athlete": "Caryl Jones",
-          "club": "Taf Running & Orienteering Teams",
-          "time": "17:14"
-        }
-      }
-    ]
-  },
-  {
-    "name": "University of Bath",
-    "region": "Bath / Somerset",
-    "terrain": "High Claverton Down plateau, open sports field circuits, and exposed crosswinds.",
-    "tagline": "Collegiate speed on Somerset's plateau.",
-    "fixture_count": 3,
-    "total_finishes": 1367,
-    "men_course_record": {
-      "athlete": "P. Wylie",
-      "club": "Bristol and West Athletic Club",
-      "time": "31:46",
-      "sec": 1906,
-      "season": "2011/2012",
-      "season_key": "2011_2012",
+      "athlete": "Andrew Jones",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "32:42",
+      "sec": 1962,
+      "season": "2003/2004",
+      "season_key": "2003_2004",
       "match": 2,
       "pos": 1
     },
     "women_course_record": {
-      "athlete": "K. Goodhead",
-      "club": "Bristol and West Athletic Club",
-      "time": "19:17",
-      "sec": 1157,
-      "season": "2013/2014",
-      "season_key": "2013_2014",
-      "match": 3,
+      "athlete": "Louise Copp",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "25:27",
+      "sec": 1527,
+      "season": "2003/2004",
+      "season_key": "2003_2004",
+      "match": 2,
       "pos": 1
     },
     "men_top10": [
       {
-        "athlete": "P. Wylie",
-        "club": "Bristol and West Athletic Club",
-        "time": "31:46",
-        "sec": 1906,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 2,
-        "pos": 1
-      },
-      {
-        "athlete": "T. Merson",
-        "club": "Bristol and West Athletic Club",
-        "time": "32:16",
-        "sec": 1936,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
-        "pos": 1
-      },
-      {
-        "athlete": "Phillip Matthews",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "32:16",
-        "sec": 1936,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 2,
-        "pos": 2
-      },
-      {
-        "athlete": "B. Nagy",
-        "club": "University of Bath",
-        "time": "32:18",
-        "sec": 1938,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
-        "match": 2,
-        "pos": 3
-      },
-      {
-        "athlete": "Andrew Hunt",
+        "athlete": "Andrew Jones",
         "club": "Cardiff Amateur Athletic Club",
-        "time": "32:25",
-        "sec": 1945,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "time": "32:42",
+        "sec": 1962,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "pos": 1
+      },
+      {
+        "athlete": "E. Malloch",
+        "club": "University of Bath",
+        "time": "33:07",
+        "sec": 1987,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 2
       },
       {
-        "athlete": "Phillip Matthews",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "32:38",
-        "sec": 1958,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "G. Davenport",
+        "club": "Bristol Athletic Club",
+        "time": "33:07",
+        "sec": 1987,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 3
       },
       {
-        "athlete": "C. Carpanini",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "32:40",
-        "sec": 1960,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
-        "pos": 4
-      },
-      {
-        "athlete": "A. Marriott",
-        "club": "Wells City Harriers",
-        "time": "32:41",
-        "sec": 1961,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "athlete": "R. Kinsie",
+        "club": "Cardiff Metropolitan University",
+        "time": "33:25",
+        "sec": 2005,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
         "match": 2,
         "pos": 4
       },
       {
-        "athlete": "P. Radley",
-        "club": "University of Bath",
-        "time": "32:54",
-        "sec": 1974,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "C. Bromhall",
+        "club": "Bristol Athletic Club",
+        "time": "33:39",
+        "sec": 2019,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 5
       },
       {
-        "athlete": "James Thie",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "33:00",
-        "sec": 1980,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "A. Young",
+        "club": "University of Bath",
+        "time": "33:48",
+        "sec": 2028,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 6
+      },
+      {
+        "athlete": "J. Baker",
+        "club": "Les Croupiers Running Club",
+        "time": "34:29",
+        "sec": 2069,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "pos": 7
+      },
+      {
+        "athlete": "C. Busaileh",
+        "club": "University of Bath",
+        "time": "34:35",
+        "sec": 2075,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "pos": 8
+      },
+      {
+        "athlete": "D. Carthy",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "34:37",
+        "sec": 2077,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "pos": 9
+      },
+      {
+        "athlete": "R. Atkins",
+        "club": "Bridgend Athletic Club",
+        "time": "34:37",
+        "sec": 2077,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "pos": 10
       }
     ],
     "women_top10": [
       {
-        "athlete": "K. Goodhead",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:17",
-        "sec": 1157,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "Louise Copp",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "25:27",
+        "sec": 1527,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 1
       },
       {
-        "athlete": "Jessie Sanzo",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:18",
-        "sec": 1158,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "25:29",
+        "sec": 1529,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 2
       },
       {
-        "athlete": "H. Rush",
-        "club": "Team Bath AC",
-        "time": "19:25",
-        "sec": 1165,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "A. Chalk",
+        "club": "Bristol and West Athletic Club",
+        "time": "26:22",
+        "sec": 1582,
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "R. Goddard",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "26:23",
+        "sec": 1583,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 3
       },
       {
-        "athlete": "V. Ockenden",
-        "club": "University of Swansea",
-        "time": "19:28",
-        "sec": 1168,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "J. Knapman",
+        "club": "Great Western Runners",
+        "time": "26:34",
+        "sec": 1594,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 4
       },
       {
-        "athlete": "E. D'Alton",
-        "club": "Westbury Harriers",
-        "time": "19:41",
-        "sec": 1181,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "E. Crowley",
+        "club": "Cardiff Metropolitan University",
+        "time": "26:37",
+        "sec": 1597,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 5
       },
       {
-        "athlete": "F. Price",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "19:50",
-        "sec": 1190,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "H. Fines",
+        "club": "Forest of Dean Athletic Club",
+        "time": "26:41",
+        "sec": 1601,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 6
       },
       {
-        "athlete": "Helen Sharpe",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:56",
-        "sec": 1196,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "C. Knox",
+        "club": "Guest",
+        "time": "26:43",
+        "sec": 1603,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 7
       },
       {
-        "athlete": "A. Burton",
-        "club": "Bristol and West Athletic Club",
-        "time": "19:57",
-        "sec": 1197,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
+        "athlete": "M. Watson",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "26:45",
+        "sec": 1605,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
         "pos": 8
       },
       {
-        "athlete": "Philip Williams",
-        "club": "Bristol University",
-        "time": "20:08",
-        "sec": 1208,
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
-        "pos": 9
-      },
-      {
-        "athlete": "Corinna Jones",
-        "club": "Swansea Harriers Athletic Club",
-        "time": "20:09",
-        "sec": 1209,
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "athlete": "M. Wilkinson",
+        "club": "University of Wales - Aberystwyth",
+        "time": "26:58",
+        "sec": 1618,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
         "match": 2,
         "pos": 1
       }
     ],
     "men_most_wins": [
       {
-        "athlete": "T. Merson",
+        "athlete": "R. Bugden",
+        "wins": 2
+      },
+      {
+        "athlete": "J. Ward",
         "wins": 1
       },
       {
-        "athlete": "R. Buffet",
-        "wins": 1
-      },
-      {
-        "athlete": "P. Wylie",
+        "athlete": "Andrew Jones",
         "wins": 1
       }
     ],
     "women_most_wins": [
       {
-        "athlete": "K. Goodhead",
+        "athlete": "H. Moulder",
         "wins": 1
       },
       {
-        "athlete": "E. D'Alton",
+        "athlete": "A. Chalk",
         "wins": 1
       },
       {
-        "athlete": "Corinna Jones",
+        "athlete": "M. Wilkinson",
+        "wins": 1
+      },
+      {
+        "athlete": "Louise Copp",
         "wins": 1
       }
     ],
     "fixtures": [
       {
-        "season": "2013/2014",
-        "season_key": "2013_2014",
-        "match": 3,
-        "date": "08 December 2013",
-        "starters": 607,
-        "men_starters": 384,
-        "women_starters": 223,
+        "season": "2006/2007",
+        "season_key": "2006_2007",
+        "match": 1,
+        "date": "14 October 2006",
+        "starters": 425,
+        "men_starters": 274,
+        "women_starters": 151,
         "men_winner": {
-          "athlete": "T. Merson",
-          "club": "Bristol and West Athletic Club",
-          "time": "32:16"
+          "athlete": "R. Bugden",
+          "club": "Cardiff Metropolitan University",
+          "time": "35:09"
         },
         "women_winner": {
-          "athlete": "K. Goodhead",
+          "athlete": "H. Moulder",
           "club": "Bristol and West Athletic Club",
-          "time": "19:17"
+          "time": "28:10"
         }
       },
       {
-        "season": "2012/2013",
-        "season_key": "2012_2013",
-        "match": 4,
-        "date": "9 February 2013",
-        "starters": 350,
-        "men_starters": 216,
-        "women_starters": 134,
+        "season": "2005/2006",
+        "season_key": "2005_2006",
+        "match": 1,
+        "date": "16 October 2005",
+        "starters": 465,
+        "men_starters": 290,
+        "women_starters": 175,
         "men_winner": {
-          "athlete": "R. Buffet",
-          "club": "Brecon Athletic Club",
-          "time": "33:31"
+          "athlete": "R. Bugden",
+          "club": "Bristol and West Athletic Club",
+          "time": "34:56"
         },
         "women_winner": {
-          "athlete": "E. D'Alton",
-          "club": "Westbury Harriers",
-          "time": "20:21"
+          "athlete": "A. Chalk",
+          "club": "Bristol and West Athletic Club",
+          "time": "26:22"
         }
       },
       {
-        "season": "2011/2012",
-        "season_key": "2011_2012",
+        "season": "2004/2005",
+        "season_key": "2004_2005",
         "match": 2,
-        "date": "13 November 2011",
-        "starters": 410,
-        "men_starters": 252,
-        "women_starters": 158,
+        "date": "31 October 2004",
+        "starters": 521,
+        "men_starters": 326,
+        "women_starters": 195,
         "men_winner": {
-          "athlete": "P. Wylie",
+          "athlete": "J. Ward",
           "club": "Bristol and West Athletic Club",
-          "time": "31:46"
+          "time": "35:11"
         },
         "women_winner": {
-          "athlete": "Corinna Jones",
-          "club": "Swansea Harriers Athletic Club",
-          "time": "20:09"
+          "athlete": "M. Wilkinson",
+          "club": "University of Wales - Aberystwyth",
+          "time": "26:58"
         }
+      },
+      {
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 2,
+        "date": "02 November 2002",
+        "starters": 459,
+        "men_starters": 290,
+        "women_starters": 169,
+        "men_winner": {
+          "athlete": "Andrew Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "32:42"
+        },
+        "women_winner": {
+          "athlete": "Louise Copp",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "25:27"
+        }
+      }
+    ]
+  },
+  {
+    "name": "United Counties Showground, Carmarthen",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 3,
+    "total_finishes": 579,
+    "men_course_record": {
+      "athlete": "Dewi Griffiths",
+      "club": "Carmarthen & District Harriers AC",
+      "time": "26:53",
+      "sec": 1613,
+      "season": "2008/2009",
+      "season_key": "2008_2009",
+      "match": 5,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "David Rees",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "18:09",
+      "sec": 1089,
+      "season": "2008/2009",
+      "season_key": "2008_2009",
+      "match": 5,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "Dewi Griffiths",
+        "club": "Carmarthen & District Harriers AC",
+        "time": "26:53",
+        "sec": 1613,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "M. Cox",
+        "club": "University of Bath",
+        "time": "27:03",
+        "sec": 1623,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "Austin Davies",
+        "club": "Brecon Athletic Club",
+        "time": "27:08",
+        "sec": 1628,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "C. Discombe",
+        "club": "Les Croupiers Running Club",
+        "time": "27:18",
+        "sec": 1638,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "E. North",
+        "club": "Bristol Athletic Club",
+        "time": "27:19",
+        "sec": 1639,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "R. Gardiner",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "27:32",
+        "sec": 1652,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "R. Bugden",
+        "club": "Cardiff Metropolitan University",
+        "time": "27:36",
+        "sec": 1656,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 4
+      },
+      {
+        "athlete": "S. Waldron",
+        "club": "Cardiff Metropolitan University",
+        "time": "27:37",
+        "sec": 1657,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 5
+      },
+      {
+        "athlete": "C. Bromhall",
+        "club": "Bristol Athletic Club",
+        "time": "27:54",
+        "sec": 1674,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 6
+      },
+      {
+        "athlete": "Nathan Hardee",
+        "club": "Newport Harriers",
+        "time": "28:02",
+        "sec": 1682,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 4
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "David Rees",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "18:09",
+        "sec": 1089,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "18:20",
+        "sec": 1100,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "Caryl Jones",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "18:45",
+        "sec": 1125,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "J. Knapman",
+        "club": "Bristol Athletic Club",
+        "time": "19:35",
+        "sec": 1175,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "J. Binks",
+        "club": "Westbury Harriers",
+        "time": "19:45",
+        "sec": 1185,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "A. Nixon",
+        "club": "Forest of Dean Athletic Club",
+        "time": "19:54",
+        "sec": 1194,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 4
+      },
+      {
+        "athlete": "B. Stearn",
+        "club": "Cardiff University AC",
+        "time": "19:56",
+        "sec": 1196,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "H. Fines",
+        "club": "Bristol Athletic Club",
+        "time": "19:56",
+        "sec": 1196,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 5
+      },
+      {
+        "athlete": "Rebecca Edwards",
+        "club": "Westbury Harriers",
+        "time": "20:05",
+        "sec": 1205,
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "pos": 6
+      },
+      {
+        "athlete": "L. Backhouse",
+        "club": "Cardiff University AC",
+        "time": "20:07",
+        "sec": 1207,
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "pos": 4
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "Dewi Griffiths",
+        "wins": 1
+      },
+      {
+        "athlete": "M. Cox",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "David Rees",
+        "wins": 1
+      },
+      {
+        "athlete": "Dylan Jones",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2008/2009",
+        "season_key": "2008_2009",
+        "match": 5,
+        "date": "14 March 2009",
+        "starters": 252,
+        "men_starters": 171,
+        "women_starters": 81,
+        "men_winner": {
+          "athlete": "Dewi Griffiths",
+          "club": "Carmarthen & District Harriers AC",
+          "time": "26:53"
+        },
+        "women_winner": {
+          "athlete": "David Rees",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "18:09"
+        }
+      },
+      {
+        "season": "2003/2004",
+        "season_key": "2003_2004",
+        "match": 5,
+        "date": "20 March 2004",
+        "starters": 325,
+        "men_starters": 205,
+        "women_starters": 120,
+        "men_winner": {
+          "athlete": "M. Cox",
+          "club": "University of Bath",
+          "time": "27:03"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "18:20"
+        }
+      },
+      {
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 5,
+        "date": "16 March 2002",
+        "starters": 2,
+        "men_starters": 1,
+        "women_starters": 1,
+        "men_winner": null,
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Dare Valley Country Park, Aberdare",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 3,
+    "total_finishes": 24,
+    "men_course_record": {
+      "athlete": "P. Kendrick",
+      "club": "Spa Tans",
+      "time": "31:44",
+      "sec": 1904,
+      "season": "2001/2002",
+      "season_key": "2001_2002",
+      "match": 2,
+      "pos": 28
+    },
+    "women_course_record": {
+      "athlete": "Andrew Jones",
+      "club": "Griffithstown Harriers AAC",
+      "time": "24:02",
+      "sec": 1442,
+      "season": "2001/2002",
+      "season_key": "2001_2002",
+      "match": 2,
+      "pos": 19
+    },
+    "men_top10": [
+      {
+        "athlete": "P. Kendrick",
+        "club": "Spa Tans",
+        "time": "31:44",
+        "sec": 1904,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 28
+      },
+      {
+        "athlete": "Dominic Davies",
+        "club": "Spa Tans",
+        "time": "32:22",
+        "sec": 1942,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 34
+      },
+      {
+        "athlete": "Dimitri Vorres",
+        "club": "Griffithstown Harriers AAC",
+        "time": "32:24",
+        "sec": 1944,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 35
+      },
+      {
+        "athlete": "N. Swift",
+        "club": "Guest",
+        "time": "32:38",
+        "sec": 1958,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 40
+      },
+      {
+        "athlete": "S. Brown",
+        "club": "Cheltenham Harriers",
+        "time": "34:36",
+        "sec": 2076,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 67
+      },
+      {
+        "athlete": "M. Worlock",
+        "club": "Guest",
+        "time": "36:01",
+        "sec": 2161,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 106
+      },
+      {
+        "athlete": "P. Allen",
+        "club": "Halesowen Athletic Club",
+        "time": "36:21",
+        "sec": 2181,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 114
+      },
+      {
+        "athlete": "K. Buckle",
+        "club": "Cheltenham Harriers",
+        "time": "36:58",
+        "sec": 2218,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 132
+      },
+      {
+        "athlete": "L. Davis",
+        "club": "Severn Athletic Club",
+        "time": "37:04",
+        "sec": 2224,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 159
+      },
+      {
+        "athlete": "P. Lloyd",
+        "club": "Guest",
+        "time": "37:31",
+        "sec": 2251,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 172
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "Andrew Jones",
+        "club": "Griffithstown Harriers AAC",
+        "time": "24:02",
+        "sec": 1442,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 19
+      },
+      {
+        "athlete": "Joy Williams",
+        "club": "Orion A.C.",
+        "time": "25:38",
+        "sec": 1538,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 28
+      },
+      {
+        "athlete": "Ella Turner",
+        "club": "Guest",
+        "time": "25:53",
+        "sec": 1553,
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 2,
+        "pos": 8
+      },
+      {
+        "athlete": "K. Potter",
+        "club": "Griffithstown Harriers AAC",
+        "time": "28:58",
+        "sec": 1738,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 81
+      },
+      {
+        "athlete": "S. Lee",
+        "club": "Guest",
+        "time": "38:35",
+        "sec": 2315,
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 2,
+        "pos": 122
+      }
+    ],
+    "men_most_wins": [],
+    "women_most_wins": [],
+    "fixtures": [
+      {
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 2,
+        "date": "02 November 2002",
+        "starters": 9,
+        "men_starters": 7,
+        "women_starters": 2,
+        "men_winner": null,
+        "women_winner": null
+      },
+      {
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "date": "03 November 2001",
+        "starters": 9,
+        "men_starters": 7,
+        "women_starters": 2,
+        "men_winner": null,
+        "women_winner": null
+      },
+      {
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "date": "14 October 2000",
+        "starters": 6,
+        "men_starters": 5,
+        "women_starters": 1,
+        "men_winner": null,
+        "women_winner": null
       }
     ]
   },
@@ -5038,6 +6524,1046 @@ window.VENUE_PROFILES = [
           "club": "Swansea Harriers Athletic Club",
           "time": "26:45"
         }
+      }
+    ]
+  },
+  {
+    "name": "Hestercombe Gardens, Taunton",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 1,
+    "total_finishes": 379,
+    "men_course_record": {
+      "athlete": "Ben Tickner",
+      "club": "Wells City Harriers",
+      "time": "33:54",
+      "sec": 2034,
+      "season": "2009/2010",
+      "season_key": "2009_2010",
+      "match": 3,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "A. Whitcombe",
+      "club": "Swansea Harriers Athletic Club",
+      "time": "21:03",
+      "sec": 1263,
+      "season": "2009/2010",
+      "season_key": "2009_2010",
+      "match": 3,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "Ben Tickner",
+        "club": "Wells City Harriers",
+        "time": "33:54",
+        "sec": 2034,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "R. Buffett",
+        "club": "University of Bath",
+        "time": "34:47",
+        "sec": 2087,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "Austin Davies",
+        "club": "Brecon Athletic Club",
+        "time": "35:08",
+        "sec": 2108,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "A. Marriot",
+        "club": "Wells City Harriers",
+        "time": "35:19",
+        "sec": 2119,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 4
+      },
+      {
+        "athlete": "T. Wallis",
+        "club": "Bristol and West Athletic Club",
+        "time": "35:26",
+        "sec": 2126,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 5
+      },
+      {
+        "athlete": "Owain Jones",
+        "club": "Windsor Slough and Eton",
+        "time": "35:38",
+        "sec": 2138,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 6
+      },
+      {
+        "athlete": "R. Peters",
+        "club": "Bristol and West Athletic Club",
+        "time": "36:13",
+        "sec": 2173,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 7
+      },
+      {
+        "athlete": "M. Hopkinson",
+        "club": "Taunton Athletic Club",
+        "time": "36:14",
+        "sec": 2174,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 8
+      },
+      {
+        "athlete": "Jon James",
+        "club": "Wells City Harriers",
+        "time": "36:25",
+        "sec": 2185,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 9
+      },
+      {
+        "athlete": "J. Emery",
+        "club": "Clevedon AC",
+        "time": "36:31",
+        "sec": 2191,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 10
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "A. Whitcombe",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "21:03",
+        "sec": 1263,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 1
+      },
+      {
+        "athlete": "I. Ainsworth",
+        "club": "Bristol University",
+        "time": "21:59",
+        "sec": 1319,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "C. Coffey",
+        "club": "Bristol and West Athletic Club",
+        "time": "22:10",
+        "sec": 1330,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "Kate Roberts",
+        "club": "Bridgend Athletic Club",
+        "time": "22:11",
+        "sec": 1331,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 4
+      },
+      {
+        "athlete": "L. Dunn",
+        "club": "University of Bath",
+        "time": "22:31",
+        "sec": 1351,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 5
+      },
+      {
+        "athlete": "A. Thomas",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "22:34",
+        "sec": 1354,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 6
+      },
+      {
+        "athlete": "J. Moore",
+        "club": "Wells City Harriers",
+        "time": "22:41",
+        "sec": 1361,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 7
+      },
+      {
+        "athlete": "F. Ross-Harris",
+        "club": "University of Bath",
+        "time": "22:48",
+        "sec": 1368,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 8
+      },
+      {
+        "athlete": "Katie Beecher",
+        "club": "Les Croupiers Running Club",
+        "time": "22:54",
+        "sec": 1374,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 9
+      },
+      {
+        "athlete": "B. Strange",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "22:56",
+        "sec": 1376,
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "pos": 10
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "Ben Tickner",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "A. Whitcombe",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2009/2010",
+        "season_key": "2009_2010",
+        "match": 3,
+        "date": "6 December 2009",
+        "starters": 379,
+        "men_starters": 254,
+        "women_starters": 125,
+        "men_winner": {
+          "athlete": "Ben Tickner",
+          "club": "Wells City Harriers",
+          "time": "33:54"
+        },
+        "women_winner": {
+          "athlete": "A. Whitcombe",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "21:03"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Tredegar House and Country Park, Newport",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 1,
+    "total_finishes": 369,
+    "men_course_record": {
+      "athlete": "A. Young",
+      "club": "University of Bath",
+      "time": "32:57",
+      "sec": 1977,
+      "season": "2004/2005",
+      "season_key": "2004_2005",
+      "match": 5,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "N. Stanford",
+      "club": "Swansea Harriers Athletic Club",
+      "time": "23:04",
+      "sec": 1384,
+      "season": "2004/2005",
+      "season_key": "2004_2005",
+      "match": 5,
+      "pos": 1
+    },
+    "men_top10": [
+      {
+        "athlete": "A. Young",
+        "club": "University of Bath",
+        "time": "32:57",
+        "sec": 1977,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "G. Davenport",
+        "club": "Bristol and West Athletic Club",
+        "time": "33:05",
+        "sec": 1985,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "T. Egerton",
+        "club": "Cardiff Metropolitan University",
+        "time": "33:27",
+        "sec": 2007,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "Alex Donald",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "33:31",
+        "sec": 2011,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 4
+      },
+      {
+        "athlete": "G. Colcombe",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "34:08",
+        "sec": 2048,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 5
+      },
+      {
+        "athlete": "S. Everington",
+        "club": "Westbury Harriers",
+        "time": "34:20",
+        "sec": 2060,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 6
+      },
+      {
+        "athlete": "M. Collins",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "34:28",
+        "sec": 2068,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 7
+      },
+      {
+        "athlete": "R. Atkins",
+        "club": "Bridgend Athletic Club",
+        "time": "34:33",
+        "sec": 2073,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 8
+      },
+      {
+        "athlete": "Gareth Davies",
+        "club": "Bridgend Athletic Club",
+        "time": "34:38",
+        "sec": 2078,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 9
+      },
+      {
+        "athlete": "J. Baker",
+        "club": "Les Croupiers Running Club",
+        "time": "34:54",
+        "sec": 2094,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 10
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "N. Stanford",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:04",
+        "sec": 1384,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 1
+      },
+      {
+        "athlete": "T. Ranson",
+        "club": "University of Wales - Aberystwyth",
+        "time": "23:50",
+        "sec": 1430,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 2
+      },
+      {
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "24:00",
+        "sec": 1440,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 3
+      },
+      {
+        "athlete": "R. Pickvance",
+        "club": "Les Croupiers Running Club",
+        "time": "24:18",
+        "sec": 1458,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 4
+      },
+      {
+        "athlete": "H. Fines",
+        "club": "Bristol and West Athletic Club",
+        "time": "24:51",
+        "sec": 1491,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 5
+      },
+      {
+        "athlete": "Edward Brown",
+        "club": "Cardiff Metropolitan University",
+        "time": "24:56",
+        "sec": 1496,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 6
+      },
+      {
+        "athlete": "S. Haikala",
+        "club": "Brecon Athletic Club",
+        "time": "25:08",
+        "sec": 1508,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 7
+      },
+      {
+        "athlete": "J. Binks",
+        "club": "Bristol and West Athletic Club",
+        "time": "25:30",
+        "sec": 1530,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 8
+      },
+      {
+        "athlete": "M. Watson",
+        "club": "Taf Running & Orienteering Teams",
+        "time": "25:33",
+        "sec": 1533,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 9
+      },
+      {
+        "athlete": "S. Cooper",
+        "club": "Guest",
+        "time": "25:45",
+        "sec": 1545,
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "pos": 10
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "A. Young",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "N. Stanford",
+        "wins": 1
+      }
+    ],
+    "fixtures": [
+      {
+        "season": "2004/2005",
+        "season_key": "2004_2005",
+        "match": 5,
+        "date": "12 March 2005",
+        "starters": 369,
+        "men_starters": 229,
+        "women_starters": 140,
+        "men_winner": {
+          "athlete": "A. Young",
+          "club": "University of Bath",
+          "time": "32:57"
+        },
+        "women_winner": {
+          "athlete": "N. Stanford",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "23:04"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Woodhouse Park, Almondsbury, Bristol",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 1,
+    "total_finishes": 13,
+    "men_course_record": {
+      "athlete": "D. McKerracher",
+      "club": "Total Fitness Bath",
+      "time": "37:04",
+      "sec": 2224,
+      "season": "2001/2002",
+      "season_key": "2001_2002",
+      "match": 4,
+      "pos": 1
+    },
+    "women_course_record": {
+      "athlete": "Andrew Jones",
+      "club": "Griffithstown Harriers AAC",
+      "time": "26:02",
+      "sec": 1562,
+      "season": "2001/2002",
+      "season_key": "2001_2002",
+      "match": 4,
+      "pos": 13
+    },
+    "men_top10": [
+      {
+        "athlete": "D. McKerracher",
+        "club": "Total Fitness Bath",
+        "time": "37:04",
+        "sec": 2224,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 1
+      },
+      {
+        "athlete": "A.N. Unknown",
+        "club": "Anonymous Athletic Club",
+        "time": "37:35",
+        "sec": 2255,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 5
+      },
+      {
+        "athlete": "C. Low",
+        "club": "Wells City Harriers",
+        "time": "37:38",
+        "sec": 2258,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 6
+      },
+      {
+        "athlete": "D. Hayes",
+        "club": "Total Fitness Bath",
+        "time": "38:43",
+        "sec": 2323,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 11
+      },
+      {
+        "athlete": "Dimitri Vorres",
+        "club": "Griffithstown Harriers AAC",
+        "time": "40:30",
+        "sec": 2430,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 28
+      },
+      {
+        "athlete": "M. Whitlock",
+        "club": "Severn Athletic Club",
+        "time": "40:51",
+        "sec": 2451,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 33
+      },
+      {
+        "athlete": "W. Fear",
+        "club": "Bitton Athletic Club",
+        "time": "41:23",
+        "sec": 2483,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 39
+      },
+      {
+        "athlete": "N. Leighton",
+        "club": "Total Fitness Bath",
+        "time": "41:39",
+        "sec": 2499,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 42
+      },
+      {
+        "athlete": "C. Tanner",
+        "club": "Griffithstown Harriers AAC",
+        "time": "55:50",
+        "sec": 3350,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 220
+      },
+      {
+        "athlete": "C. Lloyd",
+        "club": "Griffithstown Harriers AAC",
+        "time": "64:54",
+        "sec": 3894,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 258
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "Andrew Jones",
+        "club": "Griffithstown Harriers AAC",
+        "time": "26:02",
+        "sec": 1562,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 13
+      },
+      {
+        "athlete": "D. Low",
+        "club": "Wells City Harriers",
+        "time": "26:48",
+        "sec": 1608,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 17
+      },
+      {
+        "athlete": "C. Tanner",
+        "club": "Griffithstown Harriers AAC",
+        "time": "32:41",
+        "sec": 1961,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 61
+      }
+    ],
+    "men_most_wins": [
+      {
+        "athlete": "D. McKerracher",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [],
+    "fixtures": [
+      {
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "date": "02 February 2002",
+        "starters": 13,
+        "men_starters": 10,
+        "women_starters": 3,
+        "men_winner": {
+          "athlete": "D. McKerracher",
+          "club": "Total Fitness Bath",
+          "time": "37:04"
+        },
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Hengrove Park, Bristol",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 1,
+    "total_finishes": 21,
+    "men_course_record": {
+      "athlete": "M. Grist",
+      "club": "Bournemouth Athletic Club",
+      "time": "35:23",
+      "sec": 2123,
+      "season": "2000/2001",
+      "season_key": "2000_2001",
+      "match": 2,
+      "pos": 2
+    },
+    "women_course_record": {
+      "athlete": "J. Turnbull",
+      "club": "Cheltenham Harriers",
+      "time": "24:12",
+      "sec": 1452,
+      "season": "2000/2001",
+      "season_key": "2000_2001",
+      "match": 2,
+      "pos": 12
+    },
+    "men_top10": [
+      {
+        "athlete": "M. Grist",
+        "club": "Bournemouth Athletic Club",
+        "time": "35:23",
+        "sec": 2123,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 2
+      },
+      {
+        "athlete": "M. Spencer",
+        "club": "Bideford Athletic Club",
+        "time": "37:12",
+        "sec": 2232,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 12
+      },
+      {
+        "athlete": "C. Bailey",
+        "club": "Guest",
+        "time": "37:48",
+        "sec": 2268,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 23
+      },
+      {
+        "athlete": "C. Morris",
+        "club": "Exeter University",
+        "time": "37:54",
+        "sec": 2274,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 25
+      },
+      {
+        "athlete": "G. Miller",
+        "club": "Bournemouth Athletic Club",
+        "time": "38:02",
+        "sec": 2282,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 26
+      },
+      {
+        "athlete": "W. Fear",
+        "club": "Bitton Athletic Club",
+        "time": "38:38",
+        "sec": 2318,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 35
+      },
+      {
+        "athlete": "P. Rigler",
+        "club": "Bideford Athletic Club",
+        "time": "39:09",
+        "sec": 2349,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 45
+      },
+      {
+        "athlete": "I. Stuart",
+        "club": "Exeter University",
+        "time": "40:04",
+        "sec": 2404,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 60
+      },
+      {
+        "athlete": "A. McLaren",
+        "club": "Bideford Athletic Club",
+        "time": "40:19",
+        "sec": 2419,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 64
+      },
+      {
+        "athlete": "A. Benn",
+        "club": "Taunton Athletic Club",
+        "time": "40:40",
+        "sec": 2440,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 78
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "J. Turnbull",
+        "club": "Cheltenham Harriers",
+        "time": "24:12",
+        "sec": 1452,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 12
+      },
+      {
+        "athlete": "C. Stevinson",
+        "club": "Exeter University",
+        "time": "24:15",
+        "sec": 1455,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 14
+      },
+      {
+        "athlete": "S. Nicholls",
+        "club": "Guest",
+        "time": "25:56",
+        "sec": 1556,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 31
+      },
+      {
+        "athlete": "C. Sapwell",
+        "club": "Arena 80",
+        "time": "27:43",
+        "sec": 1663,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 48
+      },
+      {
+        "athlete": "R. Tabor",
+        "club": "Dulwich Runners",
+        "time": "28:07",
+        "sec": 1687,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 56
+      },
+      {
+        "athlete": "D. Tsakarisianos",
+        "club": "Gloucester Athletic Club",
+        "time": "29:18",
+        "sec": 1758,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 74
+      },
+      {
+        "athlete": "Bethan Phillips",
+        "club": "Guest",
+        "time": "39:37",
+        "sec": 2377,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 141
+      }
+    ],
+    "men_most_wins": [],
+    "women_most_wins": [],
+    "fixtures": [
+      {
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "date": "04 November 2000",
+        "starters": 21,
+        "men_starters": 14,
+        "women_starters": 7,
+        "men_winner": null,
+        "women_winner": null
+      }
+    ]
+  },
+  {
+    "name": "Bracelands, Forest of Dean",
+    "region": "South Wales / West",
+    "terrain": "Classic cross-country parkland.",
+    "tagline": "Traditional Gwent League racing.",
+    "fixture_count": 1,
+    "total_finishes": 6,
+    "men_course_record": {
+      "athlete": "J. Russell",
+      "club": "Club 69 Tredegar",
+      "time": "41:36",
+      "sec": 2496,
+      "season": "2000/2001",
+      "season_key": "2000_2001",
+      "match": 3,
+      "pos": 84
+    },
+    "women_course_record": {
+      "athlete": "S. Abraham",
+      "club": "Guest",
+      "time": "34:42",
+      "sec": 2082,
+      "season": "2000/2001",
+      "season_key": "2000_2001",
+      "match": 3,
+      "pos": 98
+    },
+    "men_top10": [
+      {
+        "athlete": "J. Russell",
+        "club": "Club 69 Tredegar",
+        "time": "41:36",
+        "sec": 2496,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 84
+      },
+      {
+        "athlete": "T. Long",
+        "club": "Guest",
+        "time": "42:47",
+        "sec": 2567,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 106
+      },
+      {
+        "athlete": "E. Bayne",
+        "club": "Guest",
+        "time": "43:09",
+        "sec": 2589,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 114
+      },
+      {
+        "athlete": "A. Miles",
+        "club": "Hillingdon A.C.",
+        "time": "43:39",
+        "sec": 2619,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 127
+      },
+      {
+        "athlete": "B. Monk",
+        "club": "Club 69 Tredegar",
+        "time": "50:09",
+        "sec": 3009,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 245
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "S. Abraham",
+        "club": "Guest",
+        "time": "34:42",
+        "sec": 2082,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 98
+      }
+    ],
+    "men_most_wins": [],
+    "women_most_wins": [],
+    "fixtures": [
+      {
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "date": "02 December 2000",
+        "starters": 6,
+        "men_starters": 5,
+        "women_starters": 1,
+        "men_winner": null,
+        "women_winner": null
       }
     ]
   }

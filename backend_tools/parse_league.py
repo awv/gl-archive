@@ -164,7 +164,7 @@ def parse_legacy_file(filepath):
             raw_club = middle[25:].strip() if len(middle) > 25 else "Unattached"
 
         raw_name = re.sub(r'\(ind\)', '', raw_name, flags=re.I).strip()
-        points = int(pts_str) if pts_str.isdigit() else 0
+        points = int(pts_str) if pts_str and pts_str.isdigit() else 0
         cat_code, cat_group = normalize_age_category(age_tag)
 
         results.append({
@@ -178,6 +178,12 @@ def parse_legacy_file(filepath):
             "points": points,
             "is_guest": is_guest
         })
+
+    # If points were not in the raw HTML (e.g. 2000-2003 seasons), compute standard Gwent points
+    total_starters = len(results)
+    for r in results:
+        if r["points"] == 0 and not r["is_guest"]:
+            r["points"] = max(1, total_starters - r["pos"] + 1)
 
     return results
 

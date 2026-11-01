@@ -591,6 +591,447 @@
   },
   "team_podiums": [
     {
+      "season": "2000/2001",
+      "season_key": "2000_2001",
+      "year": 2001,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 5827,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 5729,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Neath Harriers",
+          "pts": 5314,
+          "is_welsh": true
+        }
+      ],
+      "women": []
+    },
+    {
+      "season": "2001/2002",
+      "season_key": "2001_2002",
+      "year": 2002,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 6773,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 6527,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Bridgend Athletic Club",
+          "pts": 6400,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Bristol Athletic Club",
+          "pts": 2964,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 2819,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 2610,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2002/2003",
+      "season_key": "2002_2003",
+      "year": 2003,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 6767,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 6528,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 5552,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 2731,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Cardiff Amateur Athletic Club",
+          "pts": 2522,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Forest of Dean Athletic Club",
+          "pts": 2333,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2003/2004",
+      "season_key": "2003_2004",
+      "year": 2004,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 6596,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Bridgend Athletic Club",
+          "pts": 6512,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 6310,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 3457,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 3344,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Forest of Dean Athletic Club",
+          "pts": 3273,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2004/2005",
+      "season_key": "2004_2005",
+      "year": 2005,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bridgend Athletic Club",
+          "pts": 6624,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 6391,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 5818,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Westbury Harriers",
+          "pts": 3493,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 3485,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Cardiff Amateur Athletic Club",
+          "pts": 3410,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2005/2006",
+      "season_key": "2005_2006",
+      "year": 2006,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Bridgend Athletic Club",
+          "pts": 5936,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 5779,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Bristol and West Athletic Club",
+          "pts": 5492,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Westbury Harriers",
+          "pts": 3180,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 2871,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Taf Running & Orienteering Teams",
+          "pts": 2774,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2006/2007",
+      "season_key": "2006_2007",
+      "year": 2007,
+      "final_match": 4,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Cardiff Amateur Athletic Club",
+          "pts": 5085,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 5004,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Bristol and West Athletic Club",
+          "pts": 4977,
+          "is_welsh": false
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "University of Wales Inst. Cardiff",
+          "pts": 2429,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 2240,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 2200,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2007/2008",
+      "season_key": "2007_2008",
+      "year": 2008,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 5479,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Bridgend Athletic Club",
+          "pts": 5277,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Swansea Harriers Athletic Club",
+          "pts": 4955,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Westbury Harriers",
+          "pts": 2284,
+          "is_welsh": false
+        },
+        {
+          "pos": 2,
+          "team": "Les Croupiers Running Club",
+          "pts": 2254,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Taf Running & Orienteering Teams",
+          "pts": 2239,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
+      "season": "2008/2009",
+      "season_key": "2008_2009",
+      "year": 2009,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 5899,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Brecon Athletic Club",
+          "pts": 5831,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Bridgend Athletic Club",
+          "pts": 5303,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Taf Running & Orienteering Teams",
+          "pts": 2578,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Cardiff Amateur Athletic Club",
+          "pts": 2451,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Westbury Harriers",
+          "pts": 2412,
+          "is_welsh": false
+        }
+      ]
+    },
+    {
+      "season": "2009/2010",
+      "season_key": "2009_2010",
+      "year": 2010,
+      "final_match": 5,
+      "men": [
+        {
+          "pos": 1,
+          "team": "Les Croupiers Running Club",
+          "pts": 5951,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Neath Harriers",
+          "pts": 5657,
+          "is_welsh": true
+        },
+        {
+          "pos": 3,
+          "team": "Brecon Athletic Club",
+          "pts": 5159,
+          "is_welsh": true
+        }
+      ],
+      "women": [
+        {
+          "pos": 1,
+          "team": "Taf Running & Orienteering Teams",
+          "pts": 3047,
+          "is_welsh": true
+        },
+        {
+          "pos": 2,
+          "team": "Westbury Harriers",
+          "pts": 2792,
+          "is_welsh": false
+        },
+        {
+          "pos": 3,
+          "team": "Les Croupiers Running Club",
+          "pts": 2764,
+          "is_welsh": true
+        }
+      ]
+    },
+    {
       "season": "2010/2011",
       "season_key": "2010_2011",
       "year": 2011,
