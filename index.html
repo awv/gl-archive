@@ -69,17 +69,12 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-14 text-center space-y-6">
             
-            <!-- Series Badge & Club Attribution -->
-            <div class="flex flex-wrap items-center justify-center gap-2">
+            <!-- Series Badge -->
+            <div class="flex items-center justify-center">
                 <a href="champions.html" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-[11px] font-mono font-semibold uppercase tracking-widest border border-slate-200 dark:border-slate-700 shadow-xs transition-colors group">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>John H Collins Gwent League</span>
-                    <span>•</span>
-                    <span>Roll of Honour 1964–2026</span>
+                    <span>John H Collins Gwent League — 2000–<span class="gl-archive-end-year">2026</span></span>
                     <span class="text-emerald-700 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">&rarr;</span>
-                </a>
-                <a href="club.html?club=Parc%20Bryn%20Bach%20Running%20Club" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 text-[11px] font-mono font-semibold border border-emerald-200 dark:border-emerald-800 shadow-xs transition-colors">
-                    <span>🛡️ Produced by Parc Bryn Bach RC</span>
                 </a>
             </div>
 
@@ -91,7 +86,7 @@
             <!-- Editorial Subtitle -->
             <p class="text-sm sm:text-base font-sans text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
                 A definitive statistical record of the Gwent Cross Country League, produced and maintained by <strong>Parc Bryn Bach Running Club</strong>.
-                Search over <strong class="text-slate-900 dark:text-slate-100 font-semibold">55,000 race finishes</strong> across 26 seasons, track individual career trajectories, and explore all-time club standings.
+                Search over <strong class="text-slate-900 dark:text-slate-100 font-semibold">60,000 race finishes</strong> across 26 seasons, track individual career trajectories, and explore all-time club standings.
             </p>
 
             <!-- PROMINENT HERO SEARCH INPUT -->
@@ -206,7 +201,7 @@
                                 Pembrey Country Park
                             </h3>
                             <p id="showcase-location-sub" class="text-xs md:text-sm font-sans text-slate-300 mt-1 font-medium">
-                                Cross Country Championship Course &bull; Coastal Park Trails
+                                Carmarthenshire
                             </p>
                         </div>
 
@@ -387,12 +382,12 @@
             </a>
         </section>
 
-        <!-- SECTION 2: LEAGUE STALWARTS & PROLIFIC RACERS -->
+        <!-- SECTION 2: LEAGUE LEGENDS & PROLIFIC RACERS -->
         <section class="space-y-6">
             <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
                 <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Hall of Endurance</span>
-                <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">League Stalwarts</h2>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Athletes with the highest number of Gwent League finishes across all 71 fixtures since 2010.</p>
+                <h2 class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight mt-1">League Legends</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Athletes with the highest number of Gwent League finishes across all fixtures in the archive.</p>
             </div>
 
             <div id="stalwarts-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -518,6 +513,35 @@
                 document.getElementById('showcase-match-badge').textContent = `Race ${f.match}${isUpcoming ? ' • Scheduled' : ''}`;
                 document.getElementById('showcase-date').textContent = f.date || 'TBD';
                 document.getElementById('showcase-venue').textContent = f.venue;
+
+                const venueLocMap = {
+                    'pembrey': 'Carmarthenshire',
+                    'blaise': 'Bristol',
+                    'trelai': 'Cardiff',
+                    'llandaff': 'Cardiff',
+                    'pontypool': 'Pontypool, Torfaen',
+                    'margam': 'Neath Port Talbot',
+                    'brecon': 'Brecon, Powys',
+                    'penlan': 'Brecon, Powys',
+                    'newbridge': 'Bridgend',
+                    'chepstow': 'Monmouthshire',
+                    'bryn bach': 'Tredegar, Blaenau Gwent',
+                    'cardiff': 'Cardiff',
+                    'bristol': 'Bristol',
+                    'gloucester': 'Gloucester',
+                    'stroud': 'Gloucestershire',
+                    'bath': 'Bath',
+                    'dare valley': 'Rhondda Cynon Taf',
+                    'aberdare': 'Rhondda Cynon Taf'
+                };
+                let locStr = 'South Wales & West Country';
+                const vLow = (f.venue || '').toLowerCase();
+                for (const [k, v] of Object.entries(venueLocMap)) {
+                    if (vLow.includes(k)) { locStr = v; break; }
+                }
+                const locEl = document.getElementById('showcase-location-sub');
+                if (locEl) locEl.textContent = locStr;
+
                 document.getElementById('showcase-total-field').textContent = isUpcoming ? '—' : total.toLocaleString();
                 document.getElementById('showcase-gender-split').textContent = isUpcoming ? 'Upcoming' : `${f.menCount}M / ${f.womenCount}F`;
                 document.getElementById('showcase-clubs-count').textContent = isUpcoming ? '—' : f.clubs.size;

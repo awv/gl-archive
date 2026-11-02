@@ -35,27 +35,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navContainer) {
         // Cache-busted fetch ensures newly deployed nav links appear immediately
-        fetch('components/nav.html?v=20261101_pbb', { cache: 'no-cache' })
+        fetch('components/nav.html?v=20261102_update', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 navContainer.innerHTML = html;
                 initNavEvents();
+                updateDynamicYears();
             })
             .catch(err => console.error("Error loading nav:", err));
     }
 
     if (footerContainer) {
-        fetch('components/footer.html?v=20261101_pbb', { cache: 'no-cache' })
+        fetch('components/footer.html?v=20261102_update', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 footerContainer.innerHTML = html;
+                updateDynamicYears();
             })
             .catch(err => console.error("Error loading footer:", err));
     }
 
+    updateDynamicYears();
+
     // 2. SETUP COMMAND PALETTE / SEARCH MODAL
     initSearchPalette();
 });
+
+function updateDynamicYears() {
+    let currentYear = new Date().getFullYear();
+    if (window.glResults && window.glResults.length > 0) {
+        const years = window.glResults.map(r => r.season ? parseInt((r.season.split('/')[1] || r.season.split('/')[0]), 10) : 0).filter(y => y > 2000);
+        if (years.length > 0) {
+            currentYear = Math.max(currentYear, ...years);
+        }
+    }
+    document.querySelectorAll('.gl-archive-end-year').forEach(el => {
+        el.textContent = currentYear;
+    });
+}
 
 function initNavEvents() {
     const toggleBtn = document.getElementById('mobile-nav-toggle');

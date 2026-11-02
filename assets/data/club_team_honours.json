@@ -41,7 +41,38 @@
         "runner_up_pts": 1228,
         "margin": 18,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Richard Bullen",
+            "pos": 7,
+            "time": "37:58",
+            "pts": 257
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 11,
+            "time": "38:49",
+            "pts": 253
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 15,
+            "time": "39:21",
+            "pts": 249
+          },
+          {
+            "athlete": "K. Davies",
+            "pos": 30,
+            "time": "40:27",
+            "pts": 234
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 34,
+            "time": "40:45",
+            "pts": 230
+          }
+        ]
       },
       {
         "season": "2000/2001",
@@ -57,7 +88,38 @@
         "runner_up_pts": 843,
         "margin": 70,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Richard Bullen",
+            "pos": 7,
+            "time": "37:58",
+            "pts": 257
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 11,
+            "time": "38:49",
+            "pts": 253
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 15,
+            "time": "39:21",
+            "pts": 249
+          },
+          {
+            "athlete": "K. Davies",
+            "pos": 30,
+            "time": "40:27",
+            "pts": 234
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 34,
+            "time": "40:45",
+            "pts": 230
+          }
+        ]
       },
       {
         "season": "2000/2001",
@@ -73,7 +135,38 @@
         "runner_up_pts": 162,
         "margin": 295,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Carter",
+            "pos": 94,
+            "time": "43:43",
+            "pts": 170
+          },
+          {
+            "athlete": "Clive Osmond",
+            "pos": 103,
+            "time": "43:58",
+            "pts": 161
+          },
+          {
+            "athlete": "J. Aston",
+            "pos": 119,
+            "time": "44:44",
+            "pts": 145
+          },
+          {
+            "athlete": "M. James",
+            "pos": 152,
+            "time": "46:44",
+            "pts": 112
+          },
+          {
+            "athlete": "D. Weeden",
+            "pos": 154,
+            "time": "46:46",
+            "pts": 110
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -89,7 +182,38 @@
         "runner_up_pts": 1516,
         "margin": 20,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Cook",
+            "pos": 10,
+            "time": "34:22",
+            "pts": 304
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 11,
+            "time": "34:31",
+            "pts": 303
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 17,
+            "time": "35:11",
+            "pts": 297
+          },
+          {
+            "athlete": "D. Williams",
+            "pos": 21,
+            "time": "35:32",
+            "pts": 293
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 35,
+            "time": "36:36",
+            "pts": 279
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -105,7 +229,38 @@
         "runner_up_pts": 967,
         "margin": 269,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Cook",
+            "pos": 10,
+            "time": "34:22",
+            "pts": 304
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 11,
+            "time": "34:31",
+            "pts": 303
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 17,
+            "time": "35:11",
+            "pts": 297
+          },
+          {
+            "athlete": "D. Williams",
+            "pos": 21,
+            "time": "35:32",
+            "pts": 293
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 35,
+            "time": "36:36",
+            "pts": 279
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -121,7 +276,38 @@
         "runner_up_pts": 650,
         "margin": 378,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "R. Rodgers",
+            "pos": 59,
+            "time": "37:44",
+            "pts": 255
+          },
+          {
+            "athlete": "D. Carter",
+            "pos": 88,
+            "time": "39:27",
+            "pts": 226
+          },
+          {
+            "athlete": "J. Huggins",
+            "pos": 101,
+            "time": "40:20",
+            "pts": 213
+          },
+          {
+            "athlete": "J. Crofts",
+            "pos": 107,
+            "time": "40:32",
+            "pts": 207
+          },
+          {
+            "athlete": "Clive Osmond",
+            "pos": 113,
+            "time": "40:46",
+            "pts": 201
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -137,7 +323,32 @@
         "runner_up_pts": 142,
         "margin": 202,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Yvonne Bullen",
+            "pos": 53,
+            "time": "32:23",
+            "pts": 95
+          },
+          {
+            "athlete": "C. Miller",
+            "pos": 57,
+            "time": "33:00",
+            "pts": 91
+          },
+          {
+            "athlete": "E. Payne",
+            "pos": 58,
+            "time": "33:00",
+            "pts": 90
+          },
+          {
+            "athlete": "S. Neal",
+            "pos": 62,
+            "time": "33:52",
+            "pts": 86
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -153,7 +364,38 @@
         "runner_up_pts": 1147,
         "margin": 104,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Haines",
+            "pos": 5,
+            "time": "29:27",
+            "pts": 319
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 9,
+            "time": "30:16",
+            "pts": 315
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 13,
+            "time": "30:26",
+            "pts": 311
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 15,
+            "time": "30:45",
+            "pts": 309
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 21,
+            "time": "31:15",
+            "pts": 303
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -169,7 +411,38 @@
         "runner_up_pts": 568,
         "margin": 343,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "B. Johnston",
+            "pos": 75,
+            "time": "34:10",
+            "pts": 249
+          },
+          {
+            "athlete": "D. Headon",
+            "pos": 78,
+            "time": "34:15",
+            "pts": 246
+          },
+          {
+            "athlete": "D. Carter",
+            "pos": 97,
+            "time": "34:57",
+            "pts": 227
+          },
+          {
+            "athlete": "J. Huggins",
+            "pos": 115,
+            "time": "35:44",
+            "pts": 209
+          },
+          {
+            "athlete": "Terry Caveney",
+            "pos": 119,
+            "time": "35:49",
+            "pts": 205
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -185,7 +458,32 @@
         "runner_up_pts": 133,
         "margin": 209,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "G. Edwards",
+            "pos": 41,
+            "time": "25:33",
+            "pts": 107
+          },
+          {
+            "athlete": "C. Gardner",
+            "pos": 43,
+            "time": "25:37",
+            "pts": 105
+          },
+          {
+            "athlete": "C. Miller",
+            "pos": 55,
+            "time": "26:34",
+            "pts": 93
+          },
+          {
+            "athlete": "P. Ham",
+            "pos": 56,
+            "time": "26:42",
+            "pts": 92
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -201,7 +499,38 @@
         "runner_up_pts": 1126,
         "margin": 27,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Cook",
+            "pos": 6,
+            "time": "38:09",
+            "pts": 284
+          },
+          {
+            "athlete": "D. Haines",
+            "pos": 7,
+            "time": "38:28",
+            "pts": 283
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 11,
+            "time": "38:48",
+            "pts": 279
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 13,
+            "time": "38:59",
+            "pts": 277
+          },
+          {
+            "athlete": "D. Williams",
+            "pos": 29,
+            "time": "40:32",
+            "pts": 261
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -217,7 +546,38 @@
         "runner_up_pts": 446,
         "margin": 396,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Huggins",
+            "pos": 82,
+            "time": "44:23",
+            "pts": 208
+          },
+          {
+            "athlete": "K. Sullivan",
+            "pos": 85,
+            "time": "44:28",
+            "pts": 205
+          },
+          {
+            "athlete": "Terry Caveney",
+            "pos": 102,
+            "time": "45:39",
+            "pts": 188
+          },
+          {
+            "athlete": "Clive Osmond",
+            "pos": 107,
+            "time": "46:01",
+            "pts": 183
+          },
+          {
+            "athlete": "J. Crofts",
+            "pos": 112,
+            "time": "46:11",
+            "pts": 178
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -233,7 +593,32 @@
         "runner_up_pts": 44,
         "margin": 229,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "C. Gardner",
+            "pos": 39,
+            "time": "29:04",
+            "pts": 90
+          },
+          {
+            "athlete": "E. Payne",
+            "pos": 46,
+            "time": "29:59",
+            "pts": 83
+          },
+          {
+            "athlete": "P. Ham",
+            "pos": 50,
+            "time": "30:26",
+            "pts": 79
+          },
+          {
+            "athlete": "S. Neal",
+            "pos": 61,
+            "time": "31:45",
+            "pts": 68
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -249,7 +634,38 @@
         "runner_up_pts": 1211,
         "margin": 46,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wheeler",
+            "pos": 7,
+            "time": "37:40",
+            "pts": 253
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 9,
+            "time": "38:03",
+            "pts": 251
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 26,
+            "time": "40:21",
+            "pts": 234
+          },
+          {
+            "athlete": "N. Webb",
+            "pos": 27,
+            "time": "40:25",
+            "pts": 233
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 40,
+            "time": "41:29",
+            "pts": 220
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -265,7 +681,38 @@
         "runner_up_pts": 771,
         "margin": 171,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wheeler",
+            "pos": 7,
+            "time": "37:40",
+            "pts": 253
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 9,
+            "time": "38:03",
+            "pts": 251
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 26,
+            "time": "40:21",
+            "pts": 234
+          },
+          {
+            "athlete": "N. Webb",
+            "pos": 27,
+            "time": "40:25",
+            "pts": 233
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 40,
+            "time": "41:29",
+            "pts": 220
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -281,7 +728,38 @@
         "runner_up_pts": 320,
         "margin": 338,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Clive Osmond",
+            "pos": 92,
+            "time": "45:00",
+            "pts": 168
+          },
+          {
+            "athlete": "K. Sullivan",
+            "pos": 97,
+            "time": "45:08",
+            "pts": 163
+          },
+          {
+            "athlete": "D. Headon",
+            "pos": 101,
+            "time": "45:28",
+            "pts": 159
+          },
+          {
+            "athlete": "C. Cheshire",
+            "pos": 103,
+            "time": "45:32",
+            "pts": 157
+          },
+          {
+            "athlete": "K. McGeoch",
+            "pos": 113,
+            "time": "46:02",
+            "pts": 147
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -297,7 +775,32 @@
         "runner_up_pts": 86,
         "margin": 235,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "C. Gardner",
+            "pos": 30,
+            "time": "28:25",
+            "pts": 81
+          },
+          {
+            "athlete": "C. Miller",
+            "pos": 32,
+            "time": "28:43",
+            "pts": 79
+          },
+          {
+            "athlete": "V. Singleton",
+            "pos": 39,
+            "time": "29:21",
+            "pts": 72
+          },
+          {
+            "athlete": "G. Edwards",
+            "pos": 40,
+            "time": "29:28",
+            "pts": 71
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -313,7 +816,38 @@
         "runner_up_pts": 923,
         "margin": 26,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wheeler",
+            "pos": 3,
+            "time": "33:17",
+            "pts": 200
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 8,
+            "time": "34:38",
+            "pts": 195
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 16,
+            "time": "35:20",
+            "pts": 187
+          },
+          {
+            "athlete": "John Cox",
+            "pos": 18,
+            "time": "35:27",
+            "pts": 185
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 19,
+            "time": "35:29",
+            "pts": 184
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -329,7 +863,38 @@
         "runner_up_pts": 491,
         "margin": 216,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wheeler",
+            "pos": 3,
+            "time": "33:17",
+            "pts": 200
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 8,
+            "time": "34:38",
+            "pts": 195
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 16,
+            "time": "35:20",
+            "pts": 187
+          },
+          {
+            "athlete": "John Cox",
+            "pos": 18,
+            "time": "35:27",
+            "pts": 185
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 19,
+            "time": "35:29",
+            "pts": 184
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -345,7 +910,38 @@
         "runner_up_pts": null,
         "margin": 0,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "C. Cheshire",
+            "pos": 74,
+            "time": "39:20",
+            "pts": 129
+          },
+          {
+            "athlete": "K. Sullivan",
+            "pos": 75,
+            "time": "39:27",
+            "pts": 128
+          },
+          {
+            "athlete": "Clive Osmond",
+            "pos": 92,
+            "time": "40:34",
+            "pts": 111
+          },
+          {
+            "athlete": "D. Weeden",
+            "pos": 97,
+            "time": "40:47",
+            "pts": 106
+          },
+          {
+            "athlete": "Terry Caveney",
+            "pos": 102,
+            "time": "41:01",
+            "pts": 101
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -361,7 +957,32 @@
         "runner_up_pts": 78,
         "margin": 71,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "G. Edwards",
+            "pos": 29,
+            "time": "25:15",
+            "pts": 67
+          },
+          {
+            "athlete": "C. Gardner",
+            "pos": 30,
+            "time": "25:24",
+            "pts": 66
+          },
+          {
+            "athlete": "C. Miller",
+            "pos": 32,
+            "time": "25:31",
+            "pts": 64
+          },
+          {
+            "athlete": "Henry Williams",
+            "pos": 41,
+            "time": "26:38",
+            "pts": 55
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -471,7 +1092,32 @@
         "runner_up_pts": 287,
         "margin": 186,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Thomas",
+            "pos": 45,
+            "time": "28:03",
+            "pts": 123
+          },
+          {
+            "athlete": "Ella Turner",
+            "pos": 46,
+            "time": "28:10",
+            "pts": 122
+          },
+          {
+            "athlete": "Henry Williams",
+            "pos": 50,
+            "time": "28:15",
+            "pts": 118
+          },
+          {
+            "athlete": "G. Edwards",
+            "pos": 54,
+            "time": "28:56",
+            "pts": 114
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -487,7 +1133,38 @@
         "runner_up_pts": 632,
         "margin": 317,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Kellam",
+            "pos": 60,
+            "time": "43:59",
+            "pts": 234
+          },
+          {
+            "athlete": "P. Beaumont",
+            "pos": 71,
+            "time": "44:39",
+            "pts": 223
+          },
+          {
+            "athlete": "G. Hughes",
+            "pos": 86,
+            "time": "45:16",
+            "pts": 208
+          },
+          {
+            "athlete": "D. Carter",
+            "pos": 95,
+            "time": "45:49",
+            "pts": 199
+          },
+          {
+            "athlete": "M. Townsend",
+            "pos": 120,
+            "time": "47:03",
+            "pts": 174
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -503,7 +1180,32 @@
         "runner_up_pts": 144,
         "margin": 162,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Henry Williams",
+            "pos": 35,
+            "time": "28:45",
+            "pts": 106
+          },
+          {
+            "athlete": "Yvonne Bullen",
+            "pos": 37,
+            "time": "28:50",
+            "pts": 104
+          },
+          {
+            "athlete": "G. Edwards",
+            "pos": 45,
+            "time": "29:35",
+            "pts": 96
+          },
+          {
+            "athlete": "Jason Pritchard",
+            "pos": 52,
+            "time": "30:02",
+            "pts": 89
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -519,7 +1221,38 @@
         "runner_up_pts": 577,
         "margin": 94,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "B. Johnston",
+            "pos": 93,
+            "time": "41:11",
+            "pts": 193
+          },
+          {
+            "athlete": "D. Carter",
+            "pos": 104,
+            "time": "41:54",
+            "pts": 182
+          },
+          {
+            "athlete": "Dave Coles",
+            "pos": 128,
+            "time": "43:06",
+            "pts": 158
+          },
+          {
+            "athlete": "K. Sullivan",
+            "pos": 136,
+            "time": "43:41",
+            "pts": 150
+          },
+          {
+            "athlete": "D. Bright",
+            "pos": 143,
+            "time": "43:58",
+            "pts": 143
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -535,7 +1268,38 @@
         "runner_up_pts": 1037,
         "margin": 80,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Richard Bullen",
+            "pos": 7,
+            "time": "41:33",
+            "pts": 221
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 11,
+            "time": "42:26",
+            "pts": 217
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 17,
+            "time": "42:55",
+            "pts": 211
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 20,
+            "time": "43:19",
+            "pts": 208
+          },
+          {
+            "athlete": "N. Webb",
+            "pos": 21,
+            "time": "43:21",
+            "pts": 207
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -551,7 +1315,38 @@
         "runner_up_pts": 768,
         "margin": 108,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Richard Bullen",
+            "pos": 7,
+            "time": "41:33",
+            "pts": 221
+          },
+          {
+            "athlete": "P. Cook",
+            "pos": 11,
+            "time": "42:26",
+            "pts": 217
+          },
+          {
+            "athlete": "M. McGeoch",
+            "pos": 17,
+            "time": "42:55",
+            "pts": 211
+          },
+          {
+            "athlete": "J. Baker",
+            "pos": 20,
+            "time": "43:19",
+            "pts": 208
+          },
+          {
+            "athlete": "N. Webb",
+            "pos": 21,
+            "time": "43:21",
+            "pts": 207
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -567,7 +1362,38 @@
         "runner_up_pts": 434,
         "margin": 97,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Miller",
+            "pos": 62,
+            "time": "47:18",
+            "pts": 166
+          },
+          {
+            "athlete": "Dave Coles",
+            "pos": 78,
+            "time": "48:47",
+            "pts": 150
+          },
+          {
+            "athlete": "Clive Osmond",
+            "pos": 93,
+            "time": "49:50",
+            "pts": 135
+          },
+          {
+            "athlete": "J. Plain",
+            "pos": 96,
+            "time": "49:55",
+            "pts": 132
+          },
+          {
+            "athlete": "D. Weeden",
+            "pos": 109,
+            "time": "50:43",
+            "pts": 119
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -583,7 +1409,38 @@
         "runner_up_pts": 470,
         "margin": 225,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Baker",
+            "pos": 3,
+            "time": "37:13",
+            "pts": 223
+          },
+          {
+            "athlete": "Richard Bullen",
+            "pos": 4,
+            "time": "37:17",
+            "pts": 222
+          },
+          {
+            "athlete": "N. Webb",
+            "pos": 15,
+            "time": "39:15",
+            "pts": 211
+          },
+          {
+            "athlete": "S. Nurse",
+            "pos": 25,
+            "time": "40:17",
+            "pts": 201
+          },
+          {
+            "athlete": "B. Johnston",
+            "pos": 33,
+            "time": "40:59",
+            "pts": 193
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -599,7 +1456,38 @@
         "runner_up_pts": 433,
         "margin": 10,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Terry Caveney",
+            "pos": 100,
+            "time": "44:48",
+            "pts": 126
+          },
+          {
+            "athlete": "Stuart Reeves",
+            "pos": 101,
+            "time": "44:54",
+            "pts": 125
+          },
+          {
+            "athlete": "B. Fear",
+            "pos": 104,
+            "time": "45:06",
+            "pts": 122
+          },
+          {
+            "athlete": "J. Aston",
+            "pos": 109,
+            "time": "45:19",
+            "pts": 117
+          },
+          {
+            "athlete": "D. Bright",
+            "pos": 112,
+            "time": "45:41",
+            "pts": 114
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -615,7 +1503,32 @@
         "runner_up_pts": 446,
         "margin": 4,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Julie Scholey",
+            "pos": 15,
+            "time": "26:52",
+            "pts": 95
+          },
+          {
+            "athlete": "C. Miller",
+            "pos": 22,
+            "time": "28:20",
+            "pts": 88
+          },
+          {
+            "athlete": "Yvonne Bullen",
+            "pos": 25,
+            "time": "28:36",
+            "pts": 85
+          },
+          {
+            "athlete": "G. Edwards",
+            "pos": 26,
+            "time": "28:44",
+            "pts": 84
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -631,7 +1544,32 @@
         "runner_up_pts": 141,
         "margin": 70,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Jason Pritchard",
+            "pos": 27,
+            "time": "28:47",
+            "pts": 83
+          },
+          {
+            "athlete": "S. Neal",
+            "pos": 49,
+            "time": "31:13",
+            "pts": 61
+          },
+          {
+            "athlete": "C. Peck",
+            "pos": 55,
+            "time": "31:38",
+            "pts": 55
+          },
+          {
+            "athlete": "J. Ward",
+            "pos": 61,
+            "time": "32:49",
+            "pts": 49
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -9675,7 +10613,38 @@
         "runner_up_pts": 1577,
         "margin": 5,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Matthew Rees",
+            "pos": 3,
+            "time": "29:19",
+            "pts": 321
+          },
+          {
+            "athlete": "S. Mosley",
+            "pos": 6,
+            "time": "29:54",
+            "pts": 318
+          },
+          {
+            "athlete": "D. Hiscox",
+            "pos": 7,
+            "time": "29:54",
+            "pts": 317
+          },
+          {
+            "athlete": "S. Tobin",
+            "pos": 14,
+            "time": "30:27",
+            "pts": 310
+          },
+          {
+            "athlete": "Peter Osborne",
+            "pos": 29,
+            "time": "31:47",
+            "pts": 295
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -9691,7 +10660,32 @@
         "runner_up_pts": 681,
         "margin": 20,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "R. Goddard",
+            "pos": 2,
+            "time": "21:39",
+            "pts": 146
+          },
+          {
+            "athlete": "L. Howe",
+            "pos": 3,
+            "time": "22:12",
+            "pts": 145
+          },
+          {
+            "athlete": "Justin Jones",
+            "pos": 9,
+            "time": "23:25",
+            "pts": 139
+          },
+          {
+            "athlete": "W. Huggins",
+            "pos": 18,
+            "time": "23:58",
+            "pts": 130
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -9707,7 +10701,38 @@
         "runner_up_pts": 1454,
         "margin": 29,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Tobin",
+            "pos": 2,
+            "time": "37:20",
+            "pts": 288
+          },
+          {
+            "athlete": "Matthew Rees",
+            "pos": 3,
+            "time": "37:28",
+            "pts": 287
+          },
+          {
+            "athlete": "S. Mosley",
+            "pos": 4,
+            "time": "37:41",
+            "pts": 286
+          },
+          {
+            "athlete": "A. Doel",
+            "pos": 8,
+            "time": "38:31",
+            "pts": 282
+          },
+          {
+            "athlete": "P. Richards",
+            "pos": 20,
+            "time": "39:29",
+            "pts": 270
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -9723,7 +10748,32 @@
         "runner_up_pts": 438,
         "margin": 12,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "R. Goddard",
+            "pos": 2,
+            "time": "20:40",
+            "pts": 94
+          },
+          {
+            "athlete": "L. Howe",
+            "pos": 5,
+            "time": "22:29",
+            "pts": 91
+          },
+          {
+            "athlete": "E. Crowley",
+            "pos": 6,
+            "time": "22:38",
+            "pts": 90
+          },
+          {
+            "athlete": "W. Huggins",
+            "pos": 9,
+            "time": "22:57",
+            "pts": 87
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -9786,7 +10836,38 @@
         "runner_up_pts": 1440,
         "margin": 69,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Mosley",
+            "pos": 4,
+            "time": "38:40",
+            "pts": 290
+          },
+          {
+            "athlete": "Max Hobbs",
+            "pos": 5,
+            "time": "38:50",
+            "pts": 289
+          },
+          {
+            "athlete": "Gavin Davies",
+            "pos": 6,
+            "time": "38:59",
+            "pts": 288
+          },
+          {
+            "athlete": "Mark Roberts",
+            "pos": 7,
+            "time": "39:31",
+            "pts": 287
+          },
+          {
+            "athlete": "D. Beynon",
+            "pos": 10,
+            "time": "39:57",
+            "pts": 284
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -9802,7 +10883,38 @@
         "runner_up_pts": 1242,
         "margin": 69,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Mosley",
+            "pos": 4,
+            "time": "38:40",
+            "pts": 290
+          },
+          {
+            "athlete": "Max Hobbs",
+            "pos": 5,
+            "time": "38:50",
+            "pts": 289
+          },
+          {
+            "athlete": "Gavin Davies",
+            "pos": 6,
+            "time": "38:59",
+            "pts": 288
+          },
+          {
+            "athlete": "Mark Roberts",
+            "pos": 7,
+            "time": "39:31",
+            "pts": 287
+          },
+          {
+            "athlete": "D. Beynon",
+            "pos": 10,
+            "time": "39:57",
+            "pts": 284
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -9818,7 +10930,38 @@
         "runner_up_pts": 1333,
         "margin": 104,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Mosley",
+            "pos": 4,
+            "time": "35:15",
+            "pts": 282
+          },
+          {
+            "athlete": "J. Byrne",
+            "pos": 5,
+            "time": "35:18",
+            "pts": 281
+          },
+          {
+            "athlete": "D. Hiscox",
+            "pos": 7,
+            "time": "35:30",
+            "pts": 279
+          },
+          {
+            "athlete": "Gavin Davies",
+            "pos": 8,
+            "time": "35:32",
+            "pts": 278
+          },
+          {
+            "athlete": "S. Tobin",
+            "pos": 9,
+            "time": "35:42",
+            "pts": 277
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -9834,7 +10977,38 @@
         "runner_up_pts": 1029,
         "margin": 206,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Mosley",
+            "pos": 4,
+            "time": "35:15",
+            "pts": 282
+          },
+          {
+            "athlete": "J. Byrne",
+            "pos": 5,
+            "time": "35:18",
+            "pts": 281
+          },
+          {
+            "athlete": "D. Hiscox",
+            "pos": 7,
+            "time": "35:30",
+            "pts": 279
+          },
+          {
+            "athlete": "Gavin Davies",
+            "pos": 8,
+            "time": "35:32",
+            "pts": 278
+          },
+          {
+            "athlete": "S. Tobin",
+            "pos": 9,
+            "time": "35:42",
+            "pts": 277
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -9850,7 +11024,38 @@
         "runner_up_pts": 1070,
         "margin": 7,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Wilson-Evans",
+            "pos": 5,
+            "time": "37:20",
+            "pts": 221
+          },
+          {
+            "athlete": "S. Mosley",
+            "pos": 9,
+            "time": "38:05",
+            "pts": 217
+          },
+          {
+            "athlete": "A. Doel",
+            "pos": 12,
+            "time": "38:56",
+            "pts": 214
+          },
+          {
+            "athlete": "T. O'Connor",
+            "pos": 16,
+            "time": "39:21",
+            "pts": 210
+          },
+          {
+            "athlete": "Peter Osborne",
+            "pos": 31,
+            "time": "40:53",
+            "pts": 195
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -11560,7 +12765,38 @@
         "runner_up_pts": 1207,
         "margin": 79,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Humphreys",
+            "pos": 17,
+            "time": "40:36",
+            "pts": 277
+          },
+          {
+            "athlete": "J. Foster",
+            "pos": 30,
+            "time": "41:40",
+            "pts": 264
+          },
+          {
+            "athlete": "M. Pengelly",
+            "pos": 49,
+            "time": "43:07",
+            "pts": 245
+          },
+          {
+            "athlete": "Laura Smith",
+            "pos": 55,
+            "time": "43:32",
+            "pts": 239
+          },
+          {
+            "athlete": "Morgan Davies",
+            "pos": 121,
+            "time": "47:05",
+            "pts": 173
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -11576,7 +12812,38 @@
         "runner_up_pts": 776,
         "margin": 145,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "D. Humphries",
+            "pos": 24,
+            "time": "43:48",
+            "pts": 204
+          },
+          {
+            "athlete": "Laura Smith",
+            "pos": 25,
+            "time": "43:55",
+            "pts": 203
+          },
+          {
+            "athlete": "M. Pengilly",
+            "pos": 48,
+            "time": "46:10",
+            "pts": 180
+          },
+          {
+            "athlete": "Morgan Davies",
+            "pos": 81,
+            "time": "48:51",
+            "pts": 147
+          },
+          {
+            "athlete": "C. Bradley",
+            "pos": 99,
+            "time": "50:01",
+            "pts": 129
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -11592,7 +12859,38 @@
         "runner_up_pts": 720,
         "margin": 92,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Foster",
+            "pos": 17,
+            "time": "39:26",
+            "pts": 209
+          },
+          {
+            "athlete": "D. Humphries",
+            "pos": 21,
+            "time": "39:55",
+            "pts": 205
+          },
+          {
+            "athlete": "C. Bradley",
+            "pos": 69,
+            "time": "43:03",
+            "pts": 157
+          },
+          {
+            "athlete": "Morgan Davies",
+            "pos": 91,
+            "time": "44:10",
+            "pts": 135
+          },
+          {
+            "athlete": "N. Pringle",
+            "pos": 149,
+            "time": "47:40",
+            "pts": 77
+          }
+        ]
       },
       {
         "season": "2012/2013",
@@ -11793,7 +13091,32 @@
         "runner_up_pts": 173,
         "margin": 66,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "L. Park",
+            "pos": 45,
+            "time": "32:44",
+            "pts": 73
+          },
+          {
+            "athlete": "Carol Jones",
+            "pos": 59,
+            "time": "34:20",
+            "pts": 59
+          },
+          {
+            "athlete": "J. Green",
+            "pos": 68,
+            "time": "35:43",
+            "pts": 50
+          },
+          {
+            "athlete": "S. Bowdler",
+            "pos": 71,
+            "time": "36:20",
+            "pts": 47
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -12598,7 +13921,32 @@
         "runner_up_pts": 394,
         "margin": 82,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Gallagher",
+            "pos": 23,
+            "time": "30:00",
+            "pts": 125
+          },
+          {
+            "athlete": "D. Ford",
+            "pos": 51,
+            "time": "32:10",
+            "pts": 97
+          },
+          {
+            "athlete": "T. Elson",
+            "pos": 52,
+            "time": "32:21",
+            "pts": 96
+          },
+          {
+            "athlete": "P. Robson",
+            "pos": 79,
+            "time": "35:40",
+            "pts": 69
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -12614,7 +13962,32 @@
         "runner_up_pts": 339,
         "margin": 82,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Elson",
+            "pos": 38,
+            "time": "25:28",
+            "pts": 110
+          },
+          {
+            "athlete": "D. Ford",
+            "pos": 54,
+            "time": "26:27",
+            "pts": 94
+          },
+          {
+            "athlete": "P. Robson",
+            "pos": 71,
+            "time": "28:07",
+            "pts": 77
+          },
+          {
+            "athlete": "J. Bearman",
+            "pos": 84,
+            "time": "29:15",
+            "pts": 64
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -12630,7 +14003,32 @@
         "runner_up_pts": 254,
         "margin": 82,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Elson",
+            "pos": 30,
+            "time": "28:26",
+            "pts": 99
+          },
+          {
+            "athlete": "J. Bearman",
+            "pos": 64,
+            "time": "31:56",
+            "pts": 65
+          },
+          {
+            "athlete": "S. Lavis",
+            "pos": 69,
+            "time": "32:09",
+            "pts": 60
+          },
+          {
+            "athlete": "H. Kula",
+            "pos": 73,
+            "time": "32:34",
+            "pts": 56
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -12646,7 +14044,32 @@
         "runner_up_pts": 290,
         "margin": 19,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Elson",
+            "pos": 26,
+            "time": "28:07",
+            "pts": 85
+          },
+          {
+            "athlete": "M. Coffey",
+            "pos": 48,
+            "time": "30:27",
+            "pts": 63
+          },
+          {
+            "athlete": "J. Bearman",
+            "pos": 52,
+            "time": "31:07",
+            "pts": 59
+          },
+          {
+            "athlete": "Marilyn Palmer",
+            "pos": 60,
+            "time": "32:39",
+            "pts": 51
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -12662,7 +14085,32 @@
         "runner_up_pts": 204,
         "margin": 10,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Elson",
+            "pos": 31,
+            "time": "25:27",
+            "pts": 65
+          },
+          {
+            "athlete": "H. Kula",
+            "pos": 40,
+            "time": "26:32",
+            "pts": 56
+          },
+          {
+            "athlete": "P. Robson",
+            "pos": 49,
+            "time": "27:40",
+            "pts": 47
+          },
+          {
+            "athlete": "Marilyn Palmer",
+            "pos": 61,
+            "time": "28:47",
+            "pts": 35
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -15181,7 +16629,38 @@
         "runner_up_pts": 1064,
         "margin": 25,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "M. Davis",
+            "pos": 26,
+            "time": "40:12",
+            "pts": 238
+          },
+          {
+            "athlete": "P. McDonnell",
+            "pos": 51,
+            "time": "41:42",
+            "pts": 213
+          },
+          {
+            "athlete": "M. Humphries",
+            "pos": 53,
+            "time": "41:52",
+            "pts": 211
+          },
+          {
+            "athlete": "M. Neale",
+            "pos": 60,
+            "time": "42:14",
+            "pts": 204
+          },
+          {
+            "athlete": "N. Long",
+            "pos": 70,
+            "time": "42:49",
+            "pts": 194
+          }
+        ]
       },
       {
         "season": "2010/2011",
@@ -15253,7 +16732,38 @@
         "runner_up_pts": 1006,
         "margin": 66,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "N. Janvier",
+            "pos": 23,
+            "time": "37:25",
+            "pts": 263
+          },
+          {
+            "athlete": "Alun Wood",
+            "pos": 24,
+            "time": "37:32",
+            "pts": 262
+          },
+          {
+            "athlete": "H. Beatty",
+            "pos": 75,
+            "time": "40:18",
+            "pts": 211
+          },
+          {
+            "athlete": "T. Lewis",
+            "pos": 96,
+            "time": "41:24",
+            "pts": 190
+          },
+          {
+            "athlete": "C. McCabe",
+            "pos": 145,
+            "time": "44:04",
+            "pts": 141
+          }
+        ]
       }
     ]
   },
@@ -15484,7 +16994,38 @@
         "runner_up_pts": 1092,
         "margin": 6,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Cooper",
+            "pos": 27,
+            "time": "40:24",
+            "pts": 263
+          },
+          {
+            "athlete": "S. Wilkinson",
+            "pos": 56,
+            "time": "43:01",
+            "pts": 234
+          },
+          {
+            "athlete": "A. Perkins",
+            "pos": 73,
+            "time": "43:44",
+            "pts": 217
+          },
+          {
+            "athlete": "Steve Davies",
+            "pos": 123,
+            "time": "46:50",
+            "pts": 167
+          },
+          {
+            "athlete": "J. O'Brien",
+            "pos": 147,
+            "time": "47:48",
+            "pts": 143
+          }
+        ]
       },
       {
         "season": "2005/2006",
@@ -15814,7 +17355,38 @@
         "runner_up_pts": 1122,
         "margin": 150,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Weeks",
+            "pos": 19,
+            "time": "35:27",
+            "pts": 295
+          },
+          {
+            "athlete": "J. Palmer",
+            "pos": 58,
+            "time": "37:43",
+            "pts": 256
+          },
+          {
+            "athlete": "A. Stobbs",
+            "pos": 60,
+            "time": "37:46",
+            "pts": 254
+          },
+          {
+            "athlete": "L. Salter",
+            "pos": 89,
+            "time": "39:37",
+            "pts": 225
+          },
+          {
+            "athlete": "K. Mills",
+            "pos": 136,
+            "time": "41:50",
+            "pts": 178
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -15830,7 +17402,38 @@
         "runner_up_pts": 1076,
         "margin": 205,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Weekes",
+            "pos": 25,
+            "time": "31:38",
+            "pts": 299
+          },
+          {
+            "athlete": "J. Palmer",
+            "pos": 38,
+            "time": "32:34",
+            "pts": 286
+          },
+          {
+            "athlete": "A. Stobbs",
+            "pos": 65,
+            "time": "33:40",
+            "pts": 259
+          },
+          {
+            "athlete": "L. Salter",
+            "pos": 85,
+            "time": "34:28",
+            "pts": 239
+          },
+          {
+            "athlete": "K. Mills",
+            "pos": 162,
+            "time": "37:09",
+            "pts": 162
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -15846,7 +17449,38 @@
         "runner_up_pts": 991,
         "margin": 67,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Palmer",
+            "pos": 32,
+            "time": "40:50",
+            "pts": 228
+          },
+          {
+            "athlete": "J. Zaple",
+            "pos": 41,
+            "time": "41:38",
+            "pts": 219
+          },
+          {
+            "athlete": "L. Salter",
+            "pos": 68,
+            "time": "43:52",
+            "pts": 192
+          },
+          {
+            "athlete": "A. Stobbs",
+            "pos": 82,
+            "time": "44:29",
+            "pts": 178
+          },
+          {
+            "athlete": "K. Mills",
+            "pos": 100,
+            "time": "45:24",
+            "pts": 160
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -15862,7 +17496,38 @@
         "runner_up_pts": 559,
         "margin": 302,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Palmer",
+            "pos": 22,
+            "time": "35:42",
+            "pts": 181
+          },
+          {
+            "athlete": "S. Weekes",
+            "pos": 24,
+            "time": "35:47",
+            "pts": 179
+          },
+          {
+            "athlete": "M. Cowan",
+            "pos": 31,
+            "time": "36:32",
+            "pts": 172
+          },
+          {
+            "athlete": "A. Stobbs",
+            "pos": 38,
+            "time": "37:15",
+            "pts": 165
+          },
+          {
+            "athlete": "L. Salter",
+            "pos": 47,
+            "time": "37:59",
+            "pts": 156
+          }
+        ]
       }
     ]
   },
@@ -16583,7 +18248,32 @@
         "runner_up_pts": 1051,
         "margin": 198,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "C. Stephenson",
+            "pos": 1,
+            "time": "32:38",
+            "pts": 313
+          },
+          {
+            "athlete": "Andrew Hunt",
+            "pos": 2,
+            "time": "33:00",
+            "pts": 312
+          },
+          {
+            "athlete": "R. Gardiner",
+            "pos": 4,
+            "time": "33:38",
+            "pts": 310
+          },
+          {
+            "athlete": "Alex Donald",
+            "pos": 48,
+            "time": "37:17",
+            "pts": 266
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -16599,7 +18289,32 @@
         "runner_up_pts": 711,
         "margin": 84,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Dylan Jones",
+            "pos": 2,
+            "time": "23:54",
+            "pts": 166
+          },
+          {
+            "athlete": "Louise Copp",
+            "pos": 3,
+            "time": "24:18",
+            "pts": 165
+          },
+          {
+            "athlete": "J. Clarke",
+            "pos": 11,
+            "time": "25:33",
+            "pts": 157
+          },
+          {
+            "athlete": "J. Parry-Williams",
+            "pos": 18,
+            "time": "26:26",
+            "pts": 150
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -16615,7 +18330,32 @@
         "runner_up_pts": 597,
         "margin": 20,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Dylan Jones",
+            "pos": 2,
+            "time": "23:54",
+            "pts": 139
+          },
+          {
+            "athlete": "J. Clarke",
+            "pos": 9,
+            "time": "25:56",
+            "pts": 132
+          },
+          {
+            "athlete": "B. Harries",
+            "pos": 15,
+            "time": "26:54",
+            "pts": 126
+          },
+          {
+            "athlete": "Beverley Tucker",
+            "pos": 40,
+            "time": "29:13",
+            "pts": 101
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -16631,7 +18371,32 @@
         "runner_up_pts": 498,
         "margin": 35,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Dylan Jones",
+            "pos": 1,
+            "time": "26:20",
+            "pts": 117
+          },
+          {
+            "athlete": "B. Harries",
+            "pos": 9,
+            "time": "28:42",
+            "pts": 109
+          },
+          {
+            "athlete": "J. Clarke",
+            "pos": 11,
+            "time": "28:56",
+            "pts": 107
+          },
+          {
+            "athlete": "Beverley Tucker",
+            "pos": 21,
+            "time": "30:49",
+            "pts": 97
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -18685,7 +20450,38 @@
         "runner_up_pts": 563,
         "margin": 182,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Collins",
+            "pos": 48,
+            "time": "41:37",
+            "pts": 216
+          },
+          {
+            "athlete": "D. Laver",
+            "pos": 108,
+            "time": "44:15",
+            "pts": 156
+          },
+          {
+            "athlete": "I. Wall",
+            "pos": 120,
+            "time": "44:45",
+            "pts": 144
+          },
+          {
+            "athlete": "M. Kelsall",
+            "pos": 127,
+            "time": "45:15",
+            "pts": 137
+          },
+          {
+            "athlete": "O. Herbert",
+            "pos": 207,
+            "time": "50:56",
+            "pts": 57
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -18701,7 +20497,32 @@
         "runner_up_pts": 479,
         "margin": 88,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Antony Phillips",
+            "pos": 13,
+            "time": "25:48",
+            "pts": 155
+          },
+          {
+            "athlete": "S. Giardino",
+            "pos": 49,
+            "time": "28:14",
+            "pts": 119
+          },
+          {
+            "athlete": "Z. Hanson",
+            "pos": 64,
+            "time": "29:23",
+            "pts": 104
+          },
+          {
+            "athlete": "V. Plummer",
+            "pos": 78,
+            "time": "30:38",
+            "pts": 90
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -18717,7 +20538,32 @@
         "runner_up_pts": 427,
         "margin": 29,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Antony Phillips",
+            "pos": 10,
+            "time": "26:04",
+            "pts": 131
+          },
+          {
+            "athlete": "S. Giardino",
+            "pos": 38,
+            "time": "28:51",
+            "pts": 103
+          },
+          {
+            "athlete": "Z. Hanson",
+            "pos": 63,
+            "time": "30:56",
+            "pts": 78
+          },
+          {
+            "athlete": "V. Plummer",
+            "pos": 70,
+            "time": "31:33",
+            "pts": 71
+          }
+        ]
       }
     ]
   },
@@ -18738,7 +20584,38 @@
         "runner_up_pts": 749,
         "margin": 2,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Ceri Davies",
+            "pos": 76,
+            "time": "44:12",
+            "pts": 184
+          },
+          {
+            "athlete": "A. Thomas",
+            "pos": 83,
+            "time": "44:32",
+            "pts": 177
+          },
+          {
+            "athlete": "D. Thomas",
+            "pos": 141,
+            "time": "47:58",
+            "pts": 119
+          },
+          {
+            "athlete": "M. Howells",
+            "pos": 145,
+            "time": "48:21",
+            "pts": 115
+          },
+          {
+            "athlete": "T. Mills",
+            "pos": 189,
+            "time": "51:42",
+            "pts": 71
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -18754,7 +20631,38 @@
         "runner_up_pts": 406,
         "margin": 153,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Ceri Davies",
+            "pos": 43,
+            "time": "37:49",
+            "pts": 160
+          },
+          {
+            "athlete": "A. Thomas",
+            "pos": 55,
+            "time": "38:25",
+            "pts": 148
+          },
+          {
+            "athlete": "L. Thomas",
+            "pos": 103,
+            "time": "41:08",
+            "pts": 100
+          },
+          {
+            "athlete": "M. Howells",
+            "pos": 112,
+            "time": "41:46",
+            "pts": 91
+          },
+          {
+            "athlete": "M. Reed",
+            "pos": 143,
+            "time": "44:02",
+            "pts": 60
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -18904,7 +20812,38 @@
         "runner_up_pts": 691,
         "margin": 300,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "N. Clement",
+            "pos": 37,
+            "time": "41:36",
+            "pts": 253
+          },
+          {
+            "athlete": "D. Hendley",
+            "pos": 84,
+            "time": "44:26",
+            "pts": 206
+          },
+          {
+            "athlete": "I. Spilsbury",
+            "pos": 88,
+            "time": "44:38",
+            "pts": 202
+          },
+          {
+            "athlete": "R. Wilcox",
+            "pos": 149,
+            "time": "48:00",
+            "pts": 141
+          },
+          {
+            "athlete": "R. Wilson",
+            "pos": 174,
+            "time": "48:44",
+            "pts": 116
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -18920,7 +20859,32 @@
         "runner_up_pts": 267,
         "margin": 46,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Denise Evans",
+            "pos": 19,
+            "time": "27:53",
+            "pts": 91
+          },
+          {
+            "athlete": "J. Laity",
+            "pos": 28,
+            "time": "29:15",
+            "pts": 82
+          },
+          {
+            "athlete": "D. Williams",
+            "pos": 39,
+            "time": "30:17",
+            "pts": 71
+          },
+          {
+            "athlete": "B. Wilcox",
+            "pos": 62,
+            "time": "32:59",
+            "pts": 48
+          }
+        ]
       },
       {
         "season": "2004/2005",
@@ -19503,7 +21467,20 @@
         "runner_up_pts": 82,
         "margin": 54,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "L. Croome",
+            "pos": 28,
+            "time": "28:21",
+            "pts": 83
+          },
+          {
+            "athlete": "C. Bishop",
+            "pos": 69,
+            "time": "33:34",
+            "pts": 42
+          }
+        ]
       },
       {
         "season": "2006/2007",
@@ -20555,7 +22532,32 @@
         "runner_up_pts": 235,
         "margin": 661,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Preece",
+            "pos": 12,
+            "time": "38:53",
+            "pts": 252
+          },
+          {
+            "athlete": "G. Prothero",
+            "pos": 47,
+            "time": "41:34",
+            "pts": 217
+          },
+          {
+            "athlete": "Martin Shaw",
+            "pos": 54,
+            "time": "41:57",
+            "pts": 210
+          },
+          {
+            "athlete": "Derek Osborne",
+            "pos": 69,
+            "time": "42:48",
+            "pts": 195
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -20571,7 +22573,38 @@
         "runner_up_pts": 887,
         "margin": 159,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "G. Prothero",
+            "pos": 66,
+            "time": "33:47",
+            "pts": 258
+          },
+          {
+            "athlete": "Ray Davies",
+            "pos": 96,
+            "time": "34:52",
+            "pts": 228
+          },
+          {
+            "athlete": "Martin Shaw",
+            "pos": 103,
+            "time": "35:12",
+            "pts": 221
+          },
+          {
+            "athlete": "Derek Osborne",
+            "pos": 125,
+            "time": "35:54",
+            "pts": 199
+          },
+          {
+            "athlete": "Morgan Davies",
+            "pos": 227,
+            "time": "39:40",
+            "pts": 97
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -20587,7 +22620,32 @@
         "runner_up_pts": 267,
         "margin": 12,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "M. Gittoes",
+            "pos": 41,
+            "time": "32:21",
+            "pts": 77
+          },
+          {
+            "athlete": "M. Wheale",
+            "pos": 46,
+            "time": "32:48",
+            "pts": 72
+          },
+          {
+            "athlete": "H. Phillips",
+            "pos": 63,
+            "time": "34:55",
+            "pts": 55
+          },
+          {
+            "athlete": "J. Roberts",
+            "pos": 88,
+            "time": "39:09",
+            "pts": 30
+          }
+        ]
       },
       {
         "season": "2004/2005",
@@ -21498,7 +23556,32 @@
         "runner_up_pts": 681,
         "margin": 20,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Gray",
+            "pos": 1,
+            "time": "26:35",
+            "pts": 147
+          },
+          {
+            "athlete": "K. Wharton",
+            "pos": 11,
+            "time": "28:38",
+            "pts": 137
+          },
+          {
+            "athlete": "S. Monahan",
+            "pos": 13,
+            "time": "28:53",
+            "pts": 135
+          },
+          {
+            "athlete": "B. Fear",
+            "pos": 19,
+            "time": "29:42",
+            "pts": 129
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -21514,7 +23597,32 @@
         "runner_up_pts": 596,
         "margin": 9,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Gray",
+            "pos": 1,
+            "time": "23:58",
+            "pts": 128
+          },
+          {
+            "athlete": "V. McConnell",
+            "pos": 5,
+            "time": "25:15",
+            "pts": 124
+          },
+          {
+            "athlete": "B. Fear",
+            "pos": 9,
+            "time": "26:33",
+            "pts": 120
+          },
+          {
+            "athlete": "A. Hurford",
+            "pos": 11,
+            "time": "26:45",
+            "pts": 118
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -21530,7 +23638,32 @@
         "runner_up_pts": 476,
         "margin": 63,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "S. Gray",
+            "pos": 1,
+            "time": "22:37",
+            "pts": 110
+          },
+          {
+            "athlete": "H. Moulder",
+            "pos": 4,
+            "time": "24:27",
+            "pts": 107
+          },
+          {
+            "athlete": "L. Doughty",
+            "pos": 7,
+            "time": "25:13",
+            "pts": 104
+          },
+          {
+            "athlete": "B. Fear",
+            "pos": 9,
+            "time": "25:27",
+            "pts": 102
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -21959,7 +24092,14 @@
         "runner_up_pts": 184,
         "margin": 42,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "G. Smith",
+            "pos": 44,
+            "time": "41:17",
+            "pts": 220
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -21975,7 +24115,26 @@
         "runner_up_pts": 338,
         "margin": 12,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Jagger",
+            "pos": 18,
+            "time": "29:37",
+            "pts": 130
+          },
+          {
+            "athlete": "T. Walker",
+            "pos": 29,
+            "time": "30:41",
+            "pts": 119
+          },
+          {
+            "athlete": "C. Deamer",
+            "pos": 63,
+            "time": "34:01",
+            "pts": 85
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -21991,7 +24150,32 @@
         "runner_up_pts": 545,
         "margin": 50,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Jagger",
+            "pos": 13,
+            "time": "23:45",
+            "pts": 135
+          },
+          {
+            "athlete": "F. Morgan",
+            "pos": 24,
+            "time": "24:24",
+            "pts": 124
+          },
+          {
+            "athlete": "C. Mitchell",
+            "pos": 28,
+            "time": "24:57",
+            "pts": 120
+          },
+          {
+            "athlete": "E. Langdon",
+            "pos": 52,
+            "time": "26:20",
+            "pts": 96
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -22007,7 +24191,26 @@
         "runner_up_pts": 214,
         "margin": 35,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "T. Walker",
+            "pos": 10,
+            "time": "26:41",
+            "pts": 119
+          },
+          {
+            "athlete": "C. Deamer",
+            "pos": 45,
+            "time": "29:51",
+            "pts": 84
+          },
+          {
+            "athlete": "E. Dumbleton",
+            "pos": 87,
+            "time": "33:48",
+            "pts": 42
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -22023,7 +24226,20 @@
         "runner_up_pts": 34,
         "margin": 117,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Jagger",
+            "pos": 7,
+            "time": "22:47",
+            "pts": 89
+          },
+          {
+            "athlete": "C. Deamer",
+            "pos": 36,
+            "time": "26:09",
+            "pts": 60
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -22947,7 +25163,38 @@
         "runner_up_pts": 565,
         "margin": 28,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "R. Marks",
+            "pos": 51,
+            "time": "46:29",
+            "pts": 177
+          },
+          {
+            "athlete": "Joshua Griffiths",
+            "pos": 58,
+            "time": "46:57",
+            "pts": 170
+          },
+          {
+            "athlete": "Paul Davies",
+            "pos": 135,
+            "time": "52:35",
+            "pts": 93
+          },
+          {
+            "athlete": "B. Thomas",
+            "pos": 181,
+            "time": "56:28",
+            "pts": 47
+          },
+          {
+            "athlete": "Matthew Phillips",
+            "pos": 187,
+            "time": "57:29",
+            "pts": 41
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -22963,7 +25210,38 @@
         "runner_up_pts": 636,
         "margin": 218,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "A. Abbott",
+            "pos": 10,
+            "time": "38:23",
+            "pts": 216
+          },
+          {
+            "athlete": "Joshua Griffiths",
+            "pos": 48,
+            "time": "41:58",
+            "pts": 178
+          },
+          {
+            "athlete": "R. Marks",
+            "pos": 49,
+            "time": "42:05",
+            "pts": 177
+          },
+          {
+            "athlete": "H. Lloyd",
+            "pos": 72,
+            "time": "43:20",
+            "pts": 154
+          },
+          {
+            "athlete": "Paul Davies",
+            "pos": 123,
+            "time": "46:20",
+            "pts": 103
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -23269,7 +25547,38 @@
         "runner_up_pts": 1195,
         "margin": 55,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "N. Leighton",
+            "pos": 13,
+            "time": "34:45",
+            "pts": 301
+          },
+          {
+            "athlete": "A. Lockett",
+            "pos": 43,
+            "time": "37:03",
+            "pts": 271
+          },
+          {
+            "athlete": "L. Harman",
+            "pos": 99,
+            "time": "40:17",
+            "pts": 215
+          },
+          {
+            "athlete": "J. Barber",
+            "pos": 105,
+            "time": "40:28",
+            "pts": 209
+          },
+          {
+            "athlete": "P. Gillham",
+            "pos": 123,
+            "time": "41:09",
+            "pts": 191
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -23285,7 +25594,38 @@
         "runner_up_pts": 1053,
         "margin": 369,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "M. Cox",
+            "pos": 1,
+            "time": "28:47",
+            "pts": 323
+          },
+          {
+            "athlete": "A. Lockett",
+            "pos": 12,
+            "time": "30:25",
+            "pts": 312
+          },
+          {
+            "athlete": "J-P. Croix",
+            "pos": 60,
+            "time": "33:29",
+            "pts": 264
+          },
+          {
+            "athlete": "M. Goodger",
+            "pos": 62,
+            "time": "33:32",
+            "pts": 262
+          },
+          {
+            "athlete": "M. Brear",
+            "pos": 95,
+            "time": "34:50",
+            "pts": 229
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -23301,7 +25641,38 @@
         "runner_up_pts": 1058,
         "margin": 145,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "N. Leighton",
+            "pos": 17,
+            "time": "39:18",
+            "pts": 273
+          },
+          {
+            "athlete": "A. Lockett",
+            "pos": 19,
+            "time": "39:26",
+            "pts": 271
+          },
+          {
+            "athlete": "M. Brear",
+            "pos": 78,
+            "time": "44:00",
+            "pts": 212
+          },
+          {
+            "athlete": "L. Hurman",
+            "pos": 95,
+            "time": "45:12",
+            "pts": 195
+          },
+          {
+            "athlete": "J. Barber",
+            "pos": 111,
+            "time": "46:09",
+            "pts": 179
+          }
+        ]
       },
       {
         "season": "2001/2002",
@@ -23317,7 +25688,26 @@
         "runner_up_pts": 519,
         "margin": 15,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "M. Cox",
+            "pos": 1,
+            "time": "31:35",
+            "pts": 202
+          },
+          {
+            "athlete": "A. Lockett",
+            "pos": 13,
+            "time": "35:06",
+            "pts": 190
+          },
+          {
+            "athlete": "E. Williams",
+            "pos": 65,
+            "time": "38:48",
+            "pts": 138
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -23333,7 +25723,32 @@
         "runner_up_pts": 161,
         "margin": 556,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Horne",
+            "pos": 6,
+            "time": "24:43",
+            "pts": 162
+          },
+          {
+            "athlete": "F. Wood",
+            "pos": 24,
+            "time": "26:48",
+            "pts": 144
+          },
+          {
+            "athlete": "Lee Morris",
+            "pos": 31,
+            "time": "27:03",
+            "pts": 137
+          },
+          {
+            "athlete": "L. Austen",
+            "pos": 35,
+            "time": "27:18",
+            "pts": 133
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -23349,7 +25764,38 @@
         "runner_up_pts": 1198,
         "margin": 69,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "M. Cox",
+            "pos": 1,
+            "time": "37:57",
+            "pts": 293
+          },
+          {
+            "athlete": "P. Cox",
+            "pos": 24,
+            "time": "41:10",
+            "pts": 270
+          },
+          {
+            "athlete": "M. Goodger",
+            "pos": 36,
+            "time": "42:14",
+            "pts": 258
+          },
+          {
+            "athlete": "E. Williams",
+            "pos": 85,
+            "time": "45:14",
+            "pts": 209
+          },
+          {
+            "athlete": "M. Davidson",
+            "pos": 142,
+            "time": "48:29",
+            "pts": 152
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -23365,7 +25811,32 @@
         "runner_up_pts": 116,
         "margin": 396,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Horne",
+            "pos": 4,
+            "time": "24:41",
+            "pts": 137
+          },
+          {
+            "athlete": "Lee Morris",
+            "pos": 14,
+            "time": "26:52",
+            "pts": 127
+          },
+          {
+            "athlete": "S. Hartshorn",
+            "pos": 22,
+            "time": "27:35",
+            "pts": 119
+          },
+          {
+            "athlete": "J. Hawes",
+            "pos": 27,
+            "time": "28:12",
+            "pts": 114
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -23381,7 +25852,38 @@
         "runner_up_pts": 1055,
         "margin": 190,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "N. Leighton",
+            "pos": 6,
+            "time": "35:28",
+            "pts": 280
+          },
+          {
+            "athlete": "P. Cox",
+            "pos": 19,
+            "time": "37:12",
+            "pts": 267
+          },
+          {
+            "athlete": "D. Moulton",
+            "pos": 22,
+            "time": "37:24",
+            "pts": 264
+          },
+          {
+            "athlete": "A. Lockett",
+            "pos": 25,
+            "time": "37:34",
+            "pts": 261
+          },
+          {
+            "athlete": "M. Wood",
+            "pos": 63,
+            "time": "39:48",
+            "pts": 223
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -23397,7 +25899,26 @@
         "runner_up_pts": 85,
         "margin": 229,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Horne",
+            "pos": 3,
+            "time": "24:30",
+            "pts": 107
+          },
+          {
+            "athlete": "F. Wood",
+            "pos": 9,
+            "time": "26:14",
+            "pts": 101
+          },
+          {
+            "athlete": "Lee Morris",
+            "pos": 13,
+            "time": "26:43",
+            "pts": 97
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -24291,7 +26812,38 @@
         "runner_up_pts": 647,
         "margin": 211,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "Simon Lewis",
+            "pos": 61,
+            "time": "44:03",
+            "pts": 233
+          },
+          {
+            "athlete": "D. Rainbird",
+            "pos": 102,
+            "time": "46:10",
+            "pts": 192
+          },
+          {
+            "athlete": "P. Miles",
+            "pos": 129,
+            "time": "47:42",
+            "pts": 165
+          },
+          {
+            "athlete": "Ian Line",
+            "pos": 206,
+            "time": "52:19",
+            "pts": 88
+          },
+          {
+            "athlete": "C. Cooksey",
+            "pos": 208,
+            "time": "52:25",
+            "pts": 86
+          }
+        ]
       },
       {
         "season": "2006/2007",
@@ -25549,7 +28101,38 @@
         "runner_up_pts": 672,
         "margin": 552,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "A. Woods",
+            "pos": 2,
+            "time": "34:44",
+            "pts": 284
+          },
+          {
+            "athlete": "G. Woods",
+            "pos": 31,
+            "time": "38:08",
+            "pts": 255
+          },
+          {
+            "athlete": "C. Davey",
+            "pos": 33,
+            "time": "38:12",
+            "pts": 253
+          },
+          {
+            "athlete": "P. Synott",
+            "pos": 40,
+            "time": "38:42",
+            "pts": 246
+          },
+          {
+            "athlete": "D. Keepen",
+            "pos": 44,
+            "time": "38:54",
+            "pts": 242
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -25565,7 +28148,26 @@
         "runner_up_pts": 84,
         "margin": 230,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "A. Vuagniaux",
+            "pos": 12,
+            "time": "29:00",
+            "pts": 106
+          },
+          {
+            "athlete": "Z. Marchant",
+            "pos": 14,
+            "time": "29:10",
+            "pts": 104
+          },
+          {
+            "athlete": "Phillipa Spruit",
+            "pos": 26,
+            "time": "31:21",
+            "pts": 92
+          }
+        ]
       },
       {
         "season": "2005/2006",
@@ -25715,7 +28317,32 @@
         "runner_up_pts": 435,
         "margin": 336,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wilson",
+            "pos": 19,
+            "time": "39:33",
+            "pts": 241
+          },
+          {
+            "athlete": "M. Page",
+            "pos": 35,
+            "time": "41:02",
+            "pts": 225
+          },
+          {
+            "athlete": "B. Atkinson",
+            "pos": 133,
+            "time": "47:24",
+            "pts": 127
+          },
+          {
+            "athlete": "N. Wallace",
+            "pos": 144,
+            "time": "48:18",
+            "pts": 116
+          }
+        ]
       },
       {
         "season": "2002/2003",
@@ -25731,7 +28358,38 @@
         "runner_up_pts": 408,
         "margin": 513,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "P. Wilson",
+            "pos": 8,
+            "time": "41:39",
+            "pts": 220
+          },
+          {
+            "athlete": "N. Page",
+            "pos": 13,
+            "time": "42:38",
+            "pts": 215
+          },
+          {
+            "athlete": "A. Heyes",
+            "pos": 52,
+            "time": "46:36",
+            "pts": 176
+          },
+          {
+            "athlete": "D. Hoddlell",
+            "pos": 89,
+            "time": "49:33",
+            "pts": 139
+          },
+          {
+            "athlete": "B. Atkinson",
+            "pos": 113,
+            "time": "51:07",
+            "pts": 115
+          }
+        ]
       },
       {
         "season": "2003/2004",
@@ -27493,7 +30151,38 @@
         "runner_up_pts": 553,
         "margin": 126,
         "is_tied": false,
-        "scorers": []
+        "scorers": [
+          {
+            "athlete": "J. Neenway",
+            "pos": 13,
+            "time": "39:08",
+            "pts": 213
+          },
+          {
+            "athlete": "D. Curran",
+            "pos": 39,
+            "time": "41:26",
+            "pts": 187
+          },
+          {
+            "athlete": "S. Black",
+            "pos": 131,
+            "time": "46:37",
+            "pts": 95
+          },
+          {
+            "athlete": "A. Francis",
+            "pos": 139,
+            "time": "46:59",
+            "pts": 87
+          },
+          {
+            "athlete": "J. Padfield",
+            "pos": 165,
+            "time": "48:56",
+            "pts": 61
+          }
+        ]
       },
       {
         "season": "2004/2005",

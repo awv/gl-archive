@@ -133,7 +133,7 @@ def parse_legacy_file(filepath):
         if not l or l.startswith("Pos") or "Starters" in l or "---" in l or "Senior" in l or "League" in l or "==" in l or "Final Results" in l:
             continue
 
-        m = re.match(r'^\*?\s*(\d+)\s+(.+?)\s+(\d{1,2}[\.:]\d{2}(?:[\.:]\d{2})?)\s+(\d+|Guest|guest|Disq\.?|-)?$', l)
+        m = re.match(r'^\*?\s*(\d+)\s+(.+?)\s+(\d{1,2}[\.:]\d{2}(?:[\.:]\d{2})?)(?:\s+(\d+|Guest|guest|Disq\.?|-))?$', l)
         if not m:
             continue
 

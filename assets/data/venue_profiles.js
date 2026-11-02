@@ -5,7 +5,7 @@ window.VENUE_PROFILES = [
     "terrain": "Historic estate parkland, steep wooded inclines, heavy winter mud, and open meadow stretches.",
     "tagline": "The historic cornerstone of the English fixture calendar.",
     "fixture_count": 21,
-    "total_finishes": 10410,
+    "total_finishes": 10750,
     "men_course_record": {
       "athlete": "Kurt Taylor",
       "club": "Bristol and West Athletic Club",
@@ -240,15 +240,15 @@ window.VENUE_PROFILES = [
         "wins": 2
       },
       {
+        "athlete": "R. Gardiner",
+        "wins": 2
+      },
+      {
         "athlete": "Alex Stewart",
         "wins": 1
       },
       {
         "athlete": "Ciaran Lewis",
-        "wins": 1
-      },
-      {
-        "athlete": "Kurt Taylor",
         "wins": 1
       }
     ],
@@ -660,11 +660,19 @@ window.VENUE_PROFILES = [
         "season_key": "2002_2003",
         "match": 4,
         "date": "01 February 2003",
-        "starters": 4,
-        "men_starters": 4,
-        "women_starters": 0,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 344,
+        "men_starters": 227,
+        "women_starters": 117,
+        "men_winner": {
+          "athlete": "R. Gardiner",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "39:41"
+        },
+        "women_winner": {
+          "athlete": "Dylan Jones",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "26:20"
+        }
       }
     ]
   },
@@ -674,7 +682,7 @@ window.VENUE_PROFILES = [
     "terrain": "Riverside parkland loops featuring traditional bog sections, sharp ditch crossings, and sprint finishes.",
     "tagline": "Classic South Wales winter cross-country.",
     "fixture_count": 17,
-    "total_finishes": 7247,
+    "total_finishes": 8183,
     "men_course_record": {
       "athlete": "Martyn Jenkins",
       "club": "Bridgend Athletic Club",
@@ -859,6 +867,16 @@ window.VENUE_PROFILES = [
         "pos": 1
       },
       {
+        "athlete": "S. Gray",
+        "club": "Bristol Athletic Club",
+        "time": "23:34",
+        "sec": 1414,
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 1,
+        "pos": 1
+      },
+      {
         "athlete": "N. Sykes",
         "club": "Taf Running & Orienteering Teams",
         "time": "23:36",
@@ -887,16 +905,6 @@ window.VENUE_PROFILES = [
         "season_key": "2009_2010",
         "match": 1,
         "pos": 2
-      },
-      {
-        "athlete": "C. Martin",
-        "club": "Newport Harriers",
-        "time": "23:49",
-        "sec": 1429,
-        "season": "2003/2004",
-        "season_key": "2003_2004",
-        "match": 1,
-        "pos": 5
       }
     ],
     "men_most_wins": [
@@ -913,11 +921,11 @@ window.VENUE_PROFILES = [
         "wins": 2
       },
       {
-        "athlete": "Corinna Jones",
-        "wins": 1
+        "athlete": "Martyn Jenkins",
+        "wins": 2
       },
       {
-        "athlete": "Joshua Griffiths",
+        "athlete": "Corinna Jones",
         "wins": 1
       }
     ],
@@ -931,15 +939,15 @@ window.VENUE_PROFILES = [
         "wins": 2
       },
       {
+        "athlete": "S. Gray",
+        "wins": 2
+      },
+      {
         "athlete": "H. Jarvis",
         "wins": 1
       },
       {
         "athlete": "B. Hawling",
-        "wins": 1
-      },
-      {
-        "athlete": "I. Ainsworth",
         "wins": 1
       }
     ],
@@ -1177,9 +1185,9 @@ window.VENUE_PROFILES = [
         "season_key": "2004_2005",
         "match": 1,
         "date": "10 October 2004",
-        "starters": 295,
+        "starters": 297,
         "men_starters": 295,
-        "women_starters": 0,
+        "women_starters": 2,
         "men_winner": {
           "athlete": "D. Robinson",
           "club": "Stroud & District Athletic Club",
@@ -1211,37 +1219,57 @@ window.VENUE_PROFILES = [
         "season_key": "2002_2003",
         "match": 1,
         "date": "13 October 2002",
-        "starters": 226,
+        "starters": 392,
         "men_starters": 225,
-        "women_starters": 1,
+        "women_starters": 167,
         "men_winner": {
           "athlete": "Justin Phillips",
           "club": "Cardiff Metropolitan University",
           "time": "36:12"
         },
-        "women_winner": null
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "23:34"
+        }
       },
       {
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 3,
         "date": "02 December 2001",
-        "starters": 6,
-        "men_starters": 2,
-        "women_starters": 4,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 417,
+        "men_starters": 289,
+        "women_starters": 128,
+        "men_winner": {
+          "athlete": "Martyn Jenkins",
+          "club": "Bridgend Athletic Club",
+          "time": "37:17"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "23:58"
+        }
       },
       {
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 4,
         "date": "17 February 2001",
-        "starters": 7,
-        "men_starters": 6,
-        "women_starters": 1,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 364,
+        "men_starters": 263,
+        "women_starters": 101,
+        "men_winner": {
+          "athlete": "D. Hiscox",
+          "club": "Bridgend Athletic Club",
+          "time": "36:08"
+        },
+        "women_winner": {
+          "athlete": "V. Rolfe",
+          "club": "Bristol Athletic Club",
+          "time": "24:37"
+        }
       }
     ]
   },
@@ -1757,7 +1785,7 @@ window.VENUE_PROFILES = [
     "terrain": "High Claverton Down plateau, open sports field circuits, and exposed crosswinds.",
     "tagline": "Collegiate speed on Somerset's plateau.",
     "fixture_count": 11,
-    "total_finishes": 4497,
+    "total_finishes": 4914,
     "men_course_record": {
       "athlete": "P. Wilson",
       "club": "Clevedon AC",
@@ -2222,11 +2250,19 @@ window.VENUE_PROFILES = [
         "season_key": "2002_2003",
         "match": 3,
         "date": "01 December 2002",
-        "starters": 4,
-        "men_starters": 4,
-        "women_starters": 0,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 421,
+        "men_starters": 285,
+        "women_starters": 136,
+        "men_winner": {
+          "athlete": "R. Whalley",
+          "club": "University of Bath",
+          "time": "33:04"
+        },
+        "women_winner": {
+          "athlete": "A. Mellodew",
+          "club": "University of Bath",
+          "time": "23:56"
+        }
       }
     ]
   },
@@ -2236,15 +2272,15 @@ window.VENUE_PROFILES = [
     "terrain": "Coastal dunes, pine forest sandy tracks, undulating grassland, and exposed maritime winds.",
     "tagline": "The iconic West Wales coastal challenge.",
     "fixture_count": 10,
-    "total_finishes": 5896,
+    "total_finishes": 6224,
     "men_course_record": {
-      "athlete": "Dafydd Jones",
-      "club": "Swansea Harriers Athletic Club",
-      "time": "28:21",
-      "sec": 1701,
-      "season": "2024/2025",
-      "season_key": "2024_2025",
-      "match": 1,
+      "athlete": "Justin Phillips",
+      "club": "Cardiff Metropolitan University",
+      "time": "26:12",
+      "sec": 1572,
+      "season": "2002/2003",
+      "season_key": "2002_2003",
+      "match": 5,
       "pos": 1
     },
     "women_course_record": {
@@ -2258,6 +2294,16 @@ window.VENUE_PROFILES = [
       "pos": 1
     },
     "men_top10": [
+      {
+        "athlete": "Justin Phillips",
+        "club": "Cardiff Metropolitan University",
+        "time": "26:12",
+        "sec": 1572,
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 5,
+        "pos": 1
+      },
       {
         "athlete": "Dafydd Jones",
         "club": "Swansea Harriers Athletic Club",
@@ -2347,16 +2393,6 @@ window.VENUE_PROFILES = [
         "season_key": "2023_2024",
         "match": 1,
         "pos": 4
-      },
-      {
-        "athlete": "Matthew Edwards",
-        "club": "Cardiff Amateur Athletic Club",
-        "time": "29:57",
-        "sec": 1797,
-        "season": "2019/2020",
-        "season_key": "2019_2020",
-        "match": 2,
-        "pos": 3
       }
     ],
     "women_top10": [
@@ -2451,14 +2487,14 @@ window.VENUE_PROFILES = [
         "pos": 4
       },
       {
-        "athlete": "Megan Mcbrien",
-        "club": "Cardiff University AC",
-        "time": "23:31",
-        "sec": 1411,
-        "season": "2018/2019",
-        "season_key": "2018_2019",
-        "match": 2,
-        "pos": 5
+        "athlete": "R. Goddard",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:22",
+        "sec": 1402,
+        "season": "2002/2003",
+        "season_key": "2002_2003",
+        "match": 5,
+        "pos": 1
       }
     ],
     "men_most_wins": [
@@ -2682,11 +2718,19 @@ window.VENUE_PROFILES = [
         "season_key": "2002_2003",
         "match": 5,
         "date": "15 March 2003",
-        "starters": 6,
-        "men_starters": 6,
-        "women_starters": 0,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 334,
+        "men_starters": 225,
+        "women_starters": 109,
+        "men_winner": {
+          "athlete": "Justin Phillips",
+          "club": "Cardiff Metropolitan University",
+          "time": "26:12"
+        },
+        "women_winner": {
+          "athlete": "R. Goddard",
+          "club": "Swansea Harriers Athletic Club",
+          "time": "23:22"
+        }
       }
     ]
   },
@@ -3537,7 +3581,7 @@ window.VENUE_PROFILES = [
     "terrain": "Scenic Gothic castle grounds, steep deer park inclines, rough grass, and historic tree-lined avenues.",
     "tagline": "Grand castle vistas meet punishing climbs.",
     "fixture_count": 5,
-    "total_finishes": 2460,
+    "total_finishes": 2913,
     "men_course_record": {
       "athlete": "Dafydd Jones",
       "club": "Swansea Harriers Athletic Club",
@@ -3778,6 +3822,10 @@ window.VENUE_PROFILES = [
       {
         "athlete": "Dewi Griffiths",
         "wins": 1
+      },
+      {
+        "athlete": "C. Stephenson",
+        "wins": 1
       }
     ],
     "women_most_wins": [
@@ -3791,6 +3839,10 @@ window.VENUE_PROFILES = [
       },
       {
         "athlete": "Olivia Tsim",
+        "wins": 1
+      },
+      {
+        "athlete": "S. Gray",
         "wins": 1
       }
     ],
@@ -3876,11 +3928,19 @@ window.VENUE_PROFILES = [
         "season_key": "2001_2002",
         "match": 1,
         "date": "13 October 2001",
-        "starters": 7,
-        "men_starters": 5,
-        "women_starters": 2,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 460,
+        "men_starters": 313,
+        "women_starters": 147,
+        "men_winner": {
+          "athlete": "C. Stephenson",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "32:38"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "26:35"
+        }
       }
     ]
   },
@@ -4605,7 +4665,7 @@ window.VENUE_PROFILES = [
     "terrain": "Classic cross-country parkland.",
     "tagline": "Traditional Gwent League racing.",
     "fixture_count": 3,
-    "total_finishes": 579,
+    "total_finishes": 874,
     "men_course_record": {
       "athlete": "Dewi Griffiths",
       "club": "Carmarthen & District Harriers AC",
@@ -4832,11 +4892,11 @@ window.VENUE_PROFILES = [
     ],
     "men_most_wins": [
       {
-        "athlete": "Dewi Griffiths",
-        "wins": 1
+        "athlete": "M. Cox",
+        "wins": 2
       },
       {
-        "athlete": "M. Cox",
+        "athlete": "Dewi Griffiths",
         "wins": 1
       }
     ],
@@ -4847,6 +4907,10 @@ window.VENUE_PROFILES = [
       },
       {
         "athlete": "Dylan Jones",
+        "wins": 1
+      },
+      {
+        "athlete": "S. Gray",
         "wins": 1
       }
     ],
@@ -4894,11 +4958,19 @@ window.VENUE_PROFILES = [
         "season_key": "2001_2002",
         "match": 5,
         "date": "16 March 2002",
-        "starters": 2,
-        "men_starters": 1,
-        "women_starters": 1,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 297,
+        "men_starters": 202,
+        "women_starters": 95,
+        "men_winner": {
+          "athlete": "M. Cox",
+          "club": "University of Bath",
+          "time": "31:35"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "20:35"
+        }
       }
     ]
   },
@@ -4908,216 +4980,308 @@ window.VENUE_PROFILES = [
     "terrain": "Classic cross-country parkland.",
     "tagline": "Traditional Gwent League racing.",
     "fixture_count": 3,
-    "total_finishes": 24,
+    "total_finishes": 1348,
     "men_course_record": {
-      "athlete": "P. Kendrick",
-      "club": "Spa Tans",
-      "time": "31:44",
-      "sec": 1904,
+      "athlete": "M. Cox",
+      "club": "University of Bath",
+      "time": "28:47",
+      "sec": 1727,
       "season": "2001/2002",
       "season_key": "2001_2002",
       "match": 2,
-      "pos": 28
+      "pos": 1
     },
     "women_course_record": {
-      "athlete": "Andrew Jones",
-      "club": "Griffithstown Harriers AAC",
-      "time": "24:02",
-      "sec": 1442,
+      "athlete": "S. Gray",
+      "club": "Bristol Athletic Club",
+      "time": "21:31",
+      "sec": 1291,
       "season": "2001/2002",
       "season_key": "2001_2002",
       "match": 2,
-      "pos": 19
+      "pos": 1
     },
     "men_top10": [
       {
-        "athlete": "P. Kendrick",
-        "club": "Spa Tans",
-        "time": "31:44",
-        "sec": 1904,
+        "athlete": "M. Cox",
+        "club": "University of Bath",
+        "time": "28:47",
+        "sec": 1727,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
-        "pos": 28
+        "pos": 1
       },
       {
-        "athlete": "Dominic Davies",
-        "club": "Spa Tans",
-        "time": "32:22",
-        "sec": 1942,
+        "athlete": "Andrew Hunt",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "29:00",
+        "sec": 1740,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
-        "pos": 34
+        "pos": 2
       },
       {
-        "athlete": "Dimitri Vorres",
-        "club": "Griffithstown Harriers AAC",
-        "time": "32:24",
-        "sec": 1944,
+        "athlete": "Matthew Rees",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "29:19",
+        "sec": 1759,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
-        "pos": 35
+        "pos": 3
       },
       {
-        "athlete": "N. Swift",
-        "club": "Guest",
-        "time": "32:38",
-        "sec": 1958,
+        "athlete": "Mark Jennings",
+        "club": "Fairwater Runners",
+        "time": "29:27",
+        "sec": 1767,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
-        "pos": 40
+        "pos": 4
       },
       {
-        "athlete": "S. Brown",
-        "club": "Cheltenham Harriers",
-        "time": "34:36",
-        "sec": 2076,
+        "athlete": "D. Haines",
+        "club": "Les Croupiers Running Club",
+        "time": "29:27",
+        "sec": 1767,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 5
+      },
+      {
+        "athlete": "S. Mosley",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "29:54",
+        "sec": 1794,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 6
+      },
+      {
+        "athlete": "D. Hiscox",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "29:54",
+        "sec": 1794,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 7
+      },
+      {
+        "athlete": "A. Doel",
+        "club": "Neath Harriers",
+        "time": "30:00",
+        "sec": 1800,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 1,
-        "pos": 67
+        "pos": 1
       },
       {
-        "athlete": "M. Worlock",
-        "club": "Guest",
-        "time": "36:01",
-        "sec": 2161,
-        "season": "2000/2001",
-        "season_key": "2000_2001",
-        "match": 1,
-        "pos": 106
-      },
-      {
-        "athlete": "P. Allen",
-        "club": "Halesowen Athletic Club",
-        "time": "36:21",
-        "sec": 2181,
-        "season": "2000/2001",
-        "season_key": "2000_2001",
-        "match": 1,
-        "pos": 114
-      },
-      {
-        "athlete": "K. Buckle",
-        "club": "Cheltenham Harriers",
-        "time": "36:58",
-        "sec": 2218,
-        "season": "2000/2001",
-        "season_key": "2000_2001",
-        "match": 1,
-        "pos": 132
-      },
-      {
-        "athlete": "L. Davis",
-        "club": "Severn Athletic Club",
-        "time": "37:04",
-        "sec": 2224,
+        "athlete": "R. Haines",
+        "club": "Cardiff Metropolitan University",
+        "time": "30:12",
+        "sec": 1812,
         "season": "2001/2002",
         "season_key": "2001_2002",
-        "match": 2,
-        "pos": 159
-      },
-      {
-        "athlete": "P. Lloyd",
-        "club": "Guest",
-        "time": "37:31",
-        "sec": 2251,
-        "season": "2001/2002",
-        "season_key": "2001_2002",
-        "match": 2,
-        "pos": 172
-      }
-    ],
-    "women_top10": [
-      {
-        "athlete": "Andrew Jones",
-        "club": "Griffithstown Harriers AAC",
-        "time": "24:02",
-        "sec": 1442,
-        "season": "2001/2002",
-        "season_key": "2001_2002",
-        "match": 2,
-        "pos": 19
-      },
-      {
-        "athlete": "Joy Williams",
-        "club": "Orion A.C.",
-        "time": "25:38",
-        "sec": 1538,
-        "season": "2000/2001",
-        "season_key": "2000_2001",
-        "match": 1,
-        "pos": 28
-      },
-      {
-        "athlete": "Ella Turner",
-        "club": "Guest",
-        "time": "25:53",
-        "sec": 1553,
-        "season": "2002/2003",
-        "season_key": "2002_2003",
         "match": 2,
         "pos": 8
       },
       {
-        "athlete": "K. Potter",
-        "club": "Griffithstown Harriers AAC",
-        "time": "28:58",
-        "sec": 1738,
+        "athlete": "C. Bromhall",
+        "club": "Bristol Athletic Club",
+        "time": "30:14",
+        "sec": 1814,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 2
+      }
+    ],
+    "women_top10": [
+      {
+        "athlete": "S. Gray",
+        "club": "Bristol Athletic Club",
+        "time": "21:31",
+        "sec": 1291,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
-        "pos": 81
+        "pos": 1
       },
       {
-        "athlete": "S. Lee",
-        "club": "Guest",
-        "time": "38:35",
-        "sec": 2315,
-        "season": "2002/2003",
-        "season_key": "2002_2003",
+        "athlete": "R. Goddard",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "21:39",
+        "sec": 1299,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
         "match": 2,
-        "pos": 122
+        "pos": 2
+      },
+      {
+        "athlete": "L. Howe",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "22:12",
+        "sec": 1332,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 3
+      },
+      {
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "22:18",
+        "sec": 1338,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 4
+      },
+      {
+        "athlete": "Louise Copp",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "22:39",
+        "sec": 1359,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 1
+      },
+      {
+        "athlete": "F. Gill",
+        "club": "Neath Harriers",
+        "time": "22:45",
+        "sec": 1365,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 5
+      },
+      {
+        "athlete": "S. Bunn",
+        "club": "Lliswerry Runners",
+        "time": "22:48",
+        "sec": 1368,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 2
+      },
+      {
+        "athlete": "V. Rolfe",
+        "club": "Bristol Athletic Club",
+        "time": "23:04",
+        "sec": 1384,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 3
+      },
+      {
+        "athlete": "V. McConnell",
+        "club": "Bristol Athletic Club",
+        "time": "23:05",
+        "sec": 1385,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 1,
+        "pos": 4
+      },
+      {
+        "athlete": "N. Haines-Jones",
+        "club": "Newport Harriers",
+        "time": "23:12",
+        "sec": 1392,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 2,
+        "pos": 6
       }
     ],
-    "men_most_wins": [],
-    "women_most_wins": [],
+    "men_most_wins": [
+      {
+        "athlete": "M. Cox",
+        "wins": 2
+      },
+      {
+        "athlete": "A. Doel",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "S. Gray",
+        "wins": 2
+      },
+      {
+        "athlete": "Louise Copp",
+        "wins": 1
+      }
+    ],
     "fixtures": [
       {
         "season": "2002/2003",
         "season_key": "2002_2003",
         "match": 2,
         "date": "02 November 2002",
-        "starters": 9,
-        "men_starters": 7,
-        "women_starters": 2,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 433,
+        "men_starters": 293,
+        "women_starters": 140,
+        "men_winner": {
+          "athlete": "M. Cox",
+          "club": "University of Bath",
+          "time": "37:57"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "23:36"
+        }
       },
       {
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 2,
         "date": "03 November 2001",
-        "starters": 9,
-        "men_starters": 7,
-        "women_starters": 2,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 470,
+        "men_starters": 323,
+        "women_starters": 147,
+        "men_winner": {
+          "athlete": "M. Cox",
+          "club": "University of Bath",
+          "time": "28:47"
+        },
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "21:31"
+        }
       },
       {
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 1,
         "date": "14 October 2000",
-        "starters": 6,
-        "men_starters": 5,
-        "women_starters": 1,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 445,
+        "men_starters": 304,
+        "women_starters": 141,
+        "men_winner": {
+          "athlete": "A. Doel",
+          "club": "Neath Harriers",
+          "time": "30:00"
+        },
+        "women_winner": {
+          "athlete": "Louise Copp",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "22:39"
+        }
       }
     ]
   },
@@ -7063,7 +7227,7 @@ window.VENUE_PROFILES = [
     "terrain": "Classic cross-country parkland.",
     "tagline": "Traditional Gwent League racing.",
     "fixture_count": 1,
-    "total_finishes": 13,
+    "total_finishes": 369,
     "men_course_record": {
       "athlete": "D. McKerracher",
       "club": "Total Fitness Bath",
@@ -7075,14 +7239,14 @@ window.VENUE_PROFILES = [
       "pos": 1
     },
     "women_course_record": {
-      "athlete": "Andrew Jones",
-      "club": "Griffithstown Harriers AAC",
-      "time": "26:02",
-      "sec": 1562,
+      "athlete": "S. Gray",
+      "club": "Bristol Athletic Club",
+      "time": "22:37",
+      "sec": 1357,
       "season": "2001/2002",
       "season_key": "2001_2002",
       "match": 4,
-      "pos": 13
+      "pos": 1
     },
     "men_top10": [
       {
@@ -7094,6 +7258,36 @@ window.VENUE_PROFILES = [
         "season_key": "2001_2002",
         "match": 4,
         "pos": 1
+      },
+      {
+        "athlete": "Gareth Davies",
+        "club": "Bridgend Athletic Club",
+        "time": "37:07",
+        "sec": 2227,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 2
+      },
+      {
+        "athlete": "M. O'Doherty",
+        "club": "Westbury Harriers",
+        "time": "37:22",
+        "sec": 2242,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 3
+      },
+      {
+        "athlete": "S. Tobin",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "37:28",
+        "sec": 2248,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 4
       },
       {
         "athlete": "A.N. Unknown",
@@ -7116,106 +7310,146 @@ window.VENUE_PROFILES = [
         "pos": 6
       },
       {
-        "athlete": "D. Hayes",
-        "club": "Total Fitness Bath",
-        "time": "38:43",
-        "sec": 2323,
+        "athlete": "P. Wheeler",
+        "club": "Les Croupiers Running Club",
+        "time": "37:40",
+        "sec": 2260,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 11
+        "pos": 7
       },
       {
-        "athlete": "Dimitri Vorres",
-        "club": "Griffithstown Harriers AAC",
-        "time": "40:30",
-        "sec": 2430,
+        "athlete": "S. Mosley",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "37:51",
+        "sec": 2271,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 28
+        "pos": 8
       },
       {
-        "athlete": "M. Whitlock",
-        "club": "Severn Athletic Club",
-        "time": "40:51",
-        "sec": 2451,
+        "athlete": "P. Cook",
+        "club": "Les Croupiers Running Club",
+        "time": "38:03",
+        "sec": 2283,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 33
+        "pos": 9
       },
       {
-        "athlete": "W. Fear",
-        "club": "Bitton Athletic Club",
-        "time": "41:23",
-        "sec": 2483,
+        "athlete": "C. Purt",
+        "club": "Pontypridd Roadents Running Club",
+        "time": "38:08",
+        "sec": 2288,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 39
-      },
-      {
-        "athlete": "N. Leighton",
-        "club": "Total Fitness Bath",
-        "time": "41:39",
-        "sec": 2499,
-        "season": "2001/2002",
-        "season_key": "2001_2002",
-        "match": 4,
-        "pos": 42
-      },
-      {
-        "athlete": "C. Tanner",
-        "club": "Griffithstown Harriers AAC",
-        "time": "55:50",
-        "sec": 3350,
-        "season": "2001/2002",
-        "season_key": "2001_2002",
-        "match": 4,
-        "pos": 220
-      },
-      {
-        "athlete": "C. Lloyd",
-        "club": "Griffithstown Harriers AAC",
-        "time": "64:54",
-        "sec": 3894,
-        "season": "2001/2002",
-        "season_key": "2001_2002",
-        "match": 4,
-        "pos": 258
+        "pos": 10
       }
     ],
     "women_top10": [
       {
-        "athlete": "Andrew Jones",
-        "club": "Griffithstown Harriers AAC",
-        "time": "26:02",
-        "sec": 1562,
+        "athlete": "S. Gray",
+        "club": "Bristol Athletic Club",
+        "time": "22:37",
+        "sec": 1357,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 13
+        "pos": 1
       },
       {
-        "athlete": "D. Low",
-        "club": "Wells City Harriers",
-        "time": "26:48",
-        "sec": 1608,
+        "athlete": "Dylan Jones",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "23:29",
+        "sec": 1409,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 17
+        "pos": 2
       },
       {
-        "athlete": "C. Tanner",
-        "club": "Griffithstown Harriers AAC",
-        "time": "32:41",
-        "sec": 1961,
+        "athlete": "R. Goddard",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:57",
+        "sec": 1437,
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
-        "pos": 61
+        "pos": 3
+      },
+      {
+        "athlete": "H. Moulder",
+        "club": "Bristol Athletic Club",
+        "time": "24:27",
+        "sec": 1467,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 4
+      },
+      {
+        "athlete": "F. Gill",
+        "club": "Neath Harriers",
+        "time": "24:39",
+        "sec": 1479,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 5
+      },
+      {
+        "athlete": "J. Clarke",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "25:10",
+        "sec": 1510,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 6
+      },
+      {
+        "athlete": "L. Doughty",
+        "club": "Bristol Athletic Club",
+        "time": "25:13",
+        "sec": 1513,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 7
+      },
+      {
+        "athlete": "W. Edwards",
+        "club": "Les Croupiers Running Club",
+        "time": "25:21",
+        "sec": 1521,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 8
+      },
+      {
+        "athlete": "B. Fear",
+        "club": "Bristol Athletic Club",
+        "time": "25:27",
+        "sec": 1527,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 9
+      },
+      {
+        "athlete": "C. Reynolds",
+        "club": "Bristol Athletic Club",
+        "time": "25:34",
+        "sec": 1534,
+        "season": "2001/2002",
+        "season_key": "2001_2002",
+        "match": 4,
+        "pos": 10
       }
     ],
     "men_most_wins": [
@@ -7224,22 +7458,31 @@ window.VENUE_PROFILES = [
         "wins": 1
       }
     ],
-    "women_most_wins": [],
+    "women_most_wins": [
+      {
+        "athlete": "S. Gray",
+        "wins": 1
+      }
+    ],
     "fixtures": [
       {
         "season": "2001/2002",
         "season_key": "2001_2002",
         "match": 4,
         "date": "02 February 2002",
-        "starters": 13,
-        "men_starters": 10,
-        "women_starters": 3,
+        "starters": 369,
+        "men_starters": 259,
+        "women_starters": 110,
         "men_winner": {
           "athlete": "D. McKerracher",
           "club": "Total Fitness Bath",
           "time": "37:04"
         },
-        "women_winner": null
+        "women_winner": {
+          "athlete": "S. Gray",
+          "club": "Bristol Athletic Club",
+          "time": "22:37"
+        }
       }
     ]
   },
@@ -7249,28 +7492,38 @@ window.VENUE_PROFILES = [
     "terrain": "Classic cross-country parkland.",
     "tagline": "Traditional Gwent League racing.",
     "fixture_count": 1,
-    "total_finishes": 21,
+    "total_finishes": 462,
     "men_course_record": {
-      "athlete": "M. Grist",
-      "club": "Bournemouth Athletic Club",
-      "time": "35:23",
-      "sec": 2123,
+      "athlete": "Andy Gardiner",
+      "club": "Stroud & District Athletic Club",
+      "time": "34:57",
+      "sec": 2097,
       "season": "2000/2001",
       "season_key": "2000_2001",
       "match": 2,
-      "pos": 2
+      "pos": 1
     },
     "women_course_record": {
-      "athlete": "J. Turnbull",
-      "club": "Cheltenham Harriers",
-      "time": "24:12",
-      "sec": 1452,
+      "athlete": "M. Dillen",
+      "club": "Bristol Athletic Club",
+      "time": "22:06",
+      "sec": 1326,
       "season": "2000/2001",
       "season_key": "2000_2001",
       "match": 2,
-      "pos": 12
+      "pos": 1
     },
     "men_top10": [
+      {
+        "athlete": "Andy Gardiner",
+        "club": "Stroud & District Athletic Club",
+        "time": "34:57",
+        "sec": 2097,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 1
+      },
       {
         "athlete": "M. Grist",
         "club": "Bournemouth Athletic Club",
@@ -7282,181 +7535,219 @@ window.VENUE_PROFILES = [
         "pos": 2
       },
       {
-        "athlete": "M. Spencer",
-        "club": "Bideford Athletic Club",
-        "time": "37:12",
-        "sec": 2232,
+        "athlete": "M. O'Doherty",
+        "club": "Westbury Harriers",
+        "time": "35:44",
+        "sec": 2144,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 12
+        "pos": 3
       },
       {
-        "athlete": "C. Bailey",
-        "club": "Guest",
-        "time": "37:48",
-        "sec": 2268,
+        "athlete": "S. Mosley",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "35:53",
+        "sec": 2153,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 23
+        "pos": 4
       },
       {
-        "athlete": "C. Morris",
-        "club": "Exeter University",
-        "time": "37:54",
-        "sec": 2274,
+        "athlete": "Steve Smith",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "36:10",
+        "sec": 2170,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 25
+        "pos": 5
       },
       {
-        "athlete": "G. Miller",
-        "club": "Bournemouth Athletic Club",
-        "time": "38:02",
-        "sec": 2282,
+        "athlete": "N. Adams",
+        "club": "Bristol Athletic Club",
+        "time": "36:14",
+        "sec": 2174,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 26
+        "pos": 6
       },
       {
-        "athlete": "W. Fear",
-        "club": "Bitton Athletic Club",
-        "time": "38:38",
-        "sec": 2318,
+        "athlete": "Mark Jennings",
+        "club": "Fairwater Runners",
+        "time": "36:28",
+        "sec": 2188,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 35
+        "pos": 7
       },
       {
-        "athlete": "P. Rigler",
-        "club": "Bideford Athletic Club",
-        "time": "39:09",
-        "sec": 2349,
+        "athlete": "J. Baker",
+        "club": "Les Croupiers Running Club",
+        "time": "36:43",
+        "sec": 2203,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 45
+        "pos": 8
       },
       {
-        "athlete": "I. Stuart",
-        "club": "Exeter University",
-        "time": "40:04",
-        "sec": 2404,
+        "athlete": "J. Bunn",
+        "club": "Lliswerry Runners",
+        "time": "36:47",
+        "sec": 2207,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 60
+        "pos": 9
       },
       {
-        "athlete": "A. McLaren",
-        "club": "Bideford Athletic Club",
-        "time": "40:19",
-        "sec": 2419,
+        "athlete": "G. Hughes",
+        "club": "Les Croupiers Running Club",
+        "time": "36:50",
+        "sec": 2210,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 64
-      },
-      {
-        "athlete": "A. Benn",
-        "club": "Taunton Athletic Club",
-        "time": "40:40",
-        "sec": 2440,
-        "season": "2000/2001",
-        "season_key": "2000_2001",
-        "match": 2,
-        "pos": 78
+        "pos": 10
       }
     ],
     "women_top10": [
       {
-        "athlete": "J. Turnbull",
-        "club": "Cheltenham Harriers",
-        "time": "24:12",
-        "sec": 1452,
+        "athlete": "M. Dillen",
+        "club": "Bristol Athletic Club",
+        "time": "22:06",
+        "sec": 1326,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 12
+        "pos": 1
       },
       {
-        "athlete": "C. Stevinson",
-        "club": "Exeter University",
-        "time": "24:15",
-        "sec": 1455,
+        "athlete": "S. Miles",
+        "club": "Cardiff Metropolitan University",
+        "time": "22:44",
+        "sec": 1364,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 14
+        "pos": 2
       },
       {
-        "athlete": "S. Nicholls",
-        "club": "Guest",
-        "time": "25:56",
-        "sec": 1556,
+        "athlete": "C. Dugdale",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:04",
+        "sec": 1384,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 31
+        "pos": 3
       },
       {
-        "athlete": "C. Sapwell",
-        "club": "Arena 80",
-        "time": "27:43",
-        "sec": 1663,
+        "athlete": "R. Pickvance",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "23:15",
+        "sec": 1395,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 48
+        "pos": 4
       },
       {
-        "athlete": "R. Tabor",
-        "club": "Dulwich Runners",
-        "time": "28:07",
-        "sec": 1687,
+        "athlete": "V. Rolfe",
+        "club": "Bristol Athletic Club",
+        "time": "23:28",
+        "sec": 1408,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 56
+        "pos": 5
       },
       {
-        "athlete": "D. Tsakarisianos",
-        "club": "Gloucester Athletic Club",
-        "time": "29:18",
-        "sec": 1758,
+        "athlete": "C. Knox",
+        "club": "San Domenico Road Runners Club",
+        "time": "23:35",
+        "sec": 1415,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 74
+        "pos": 6
       },
       {
-        "athlete": "Bethan Phillips",
-        "club": "Guest",
-        "time": "39:37",
-        "sec": 2377,
+        "athlete": "S. Bunn",
+        "club": "Lliswerry Runners",
+        "time": "23:41",
+        "sec": 1421,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
-        "pos": 141
+        "pos": 7
+      },
+      {
+        "athlete": "C. Martin",
+        "club": "Newport Harriers",
+        "time": "23:45",
+        "sec": 1425,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 8
+      },
+      {
+        "athlete": "V. McConnell",
+        "club": "Bristol Athletic Club",
+        "time": "23:53",
+        "sec": 1433,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 9
+      },
+      {
+        "athlete": "S. Bretherick",
+        "club": "Cleddau Preseli Athletic Club",
+        "time": "23:56",
+        "sec": 1436,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 2,
+        "pos": 10
       }
     ],
-    "men_most_wins": [],
-    "women_most_wins": [],
+    "men_most_wins": [
+      {
+        "athlete": "Andy Gardiner",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "M. Dillen",
+        "wins": 1
+      }
+    ],
     "fixtures": [
       {
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 2,
         "date": "04 November 2000",
-        "starters": 21,
-        "men_starters": 14,
-        "women_starters": 7,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 462,
+        "men_starters": 315,
+        "women_starters": 147,
+        "men_winner": {
+          "athlete": "Andy Gardiner",
+          "club": "Stroud & District Athletic Club",
+          "time": "34:57"
+        },
+        "women_winner": {
+          "athlete": "M. Dillen",
+          "club": "Bristol Athletic Club",
+          "time": "22:06"
+        }
       }
     ]
   },
@@ -7466,104 +7757,262 @@ window.VENUE_PROFILES = [
     "terrain": "Classic cross-country parkland.",
     "tagline": "Traditional Gwent League racing.",
     "fixture_count": 1,
-    "total_finishes": 6,
+    "total_finishes": 443,
     "men_course_record": {
-      "athlete": "J. Russell",
-      "club": "Club 69 Tredegar",
-      "time": "41:36",
-      "sec": 2496,
+      "athlete": "R. Gardiner",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "34:55",
+      "sec": 2095,
       "season": "2000/2001",
       "season_key": "2000_2001",
       "match": 3,
-      "pos": 84
+      "pos": 1
     },
     "women_course_record": {
-      "athlete": "S. Abraham",
-      "club": "Guest",
-      "time": "34:42",
-      "sec": 2082,
+      "athlete": "Louise Copp",
+      "club": "Cardiff Amateur Athletic Club",
+      "time": "22:03",
+      "sec": 1323,
       "season": "2000/2001",
       "season_key": "2000_2001",
       "match": 3,
-      "pos": 98
+      "pos": 1
     },
     "men_top10": [
       {
-        "athlete": "J. Russell",
-        "club": "Club 69 Tredegar",
-        "time": "41:36",
-        "sec": 2496,
+        "athlete": "R. Gardiner",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "34:55",
+        "sec": 2095,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 84
+        "pos": 1
       },
       {
-        "athlete": "T. Long",
-        "club": "Guest",
-        "time": "42:47",
-        "sec": 2567,
+        "athlete": "Andy Gardiner",
+        "club": "Stroud & District Athletic Club",
+        "time": "35:06",
+        "sec": 2106,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 106
+        "pos": 2
       },
       {
-        "athlete": "E. Bayne",
-        "club": "Guest",
-        "time": "43:09",
-        "sec": 2589,
+        "athlete": "D. Hiscox",
+        "club": "Bridgend Athletic Club",
+        "time": "35:26",
+        "sec": 2126,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 114
+        "pos": 3
       },
       {
-        "athlete": "A. Miles",
-        "club": "Hillingdon A.C.",
-        "time": "43:39",
-        "sec": 2619,
+        "athlete": "Steve Smith",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "35:54",
+        "sec": 2154,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 127
+        "pos": 4
       },
       {
-        "athlete": "B. Monk",
-        "club": "Club 69 Tredegar",
-        "time": "50:09",
-        "sec": 3009,
+        "athlete": "Mark Jennings",
+        "club": "Fairwater Runners",
+        "time": "35:58",
+        "sec": 2158,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 245
+        "pos": 5
+      },
+      {
+        "athlete": "S. Tobin",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "36:46",
+        "sec": 2206,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 6
+      },
+      {
+        "athlete": "P. Cook",
+        "club": "Les Croupiers Running Club",
+        "time": "36:54",
+        "sec": 2214,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 7
+      },
+      {
+        "athlete": "D. Carthy",
+        "club": "University of Wales - Cardiff",
+        "time": "37:10",
+        "sec": 2230,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 8
+      },
+      {
+        "athlete": "M. Collins",
+        "club": "Fairwater Runners",
+        "time": "37:13",
+        "sec": 2233,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 9
+      },
+      {
+        "athlete": "Randal Jones",
+        "club": "Pontypridd Roadents Running Club",
+        "time": "37:14",
+        "sec": 2234,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 10
       }
     ],
     "women_top10": [
       {
-        "athlete": "S. Abraham",
-        "club": "Guest",
-        "time": "34:42",
-        "sec": 2082,
+        "athlete": "Louise Copp",
+        "club": "Cardiff Amateur Athletic Club",
+        "time": "22:03",
+        "sec": 1323,
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
-        "pos": 98
+        "pos": 1
+      },
+      {
+        "athlete": "S. Miles",
+        "club": "Cardiff Metropolitan University",
+        "time": "22:14",
+        "sec": 1334,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 2
+      },
+      {
+        "athlete": "R. Pickvance",
+        "club": "Swansea Harriers Athletic Club",
+        "time": "22:34",
+        "sec": 1354,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 3
+      },
+      {
+        "athlete": "F. Gill",
+        "club": "Neath Harriers",
+        "time": "22:38",
+        "sec": 1358,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 4
+      },
+      {
+        "athlete": "V. Rolfe",
+        "club": "Bristol Athletic Club",
+        "time": "22:41",
+        "sec": 1361,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 5
+      },
+      {
+        "athlete": "C. Knox",
+        "club": "San Domenico Road Runners Club",
+        "time": "22:55",
+        "sec": 1375,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 6
+      },
+      {
+        "athlete": "S. Bretherick",
+        "club": "Pembrokeshire Harriers",
+        "time": "23:11",
+        "sec": 1391,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 7
+      },
+      {
+        "athlete": "A. Nixon",
+        "club": "Forest of Dean Athletic Club",
+        "time": "23:26",
+        "sec": 1406,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 8
+      },
+      {
+        "athlete": "R. Goddard",
+        "club": "Pontypridd Roadents Running Club",
+        "time": "23:34",
+        "sec": 1414,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 9
+      },
+      {
+        "athlete": "P. Gowling",
+        "club": "Bristol Athletic Club",
+        "time": "23:44",
+        "sec": 1424,
+        "season": "2000/2001",
+        "season_key": "2000_2001",
+        "match": 3,
+        "pos": 10
       }
     ],
-    "men_most_wins": [],
-    "women_most_wins": [],
+    "men_most_wins": [
+      {
+        "athlete": "R. Gardiner",
+        "wins": 1
+      }
+    ],
+    "women_most_wins": [
+      {
+        "athlete": "Louise Copp",
+        "wins": 1
+      }
+    ],
     "fixtures": [
       {
         "season": "2000/2001",
         "season_key": "2000_2001",
         "match": 3,
         "date": "02 December 2000",
-        "starters": 6,
-        "men_starters": 5,
-        "women_starters": 1,
-        "men_winner": null,
-        "women_winner": null
+        "starters": 443,
+        "men_starters": 322,
+        "women_starters": 121,
+        "men_winner": {
+          "athlete": "R. Gardiner",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "34:55"
+        },
+        "women_winner": {
+          "athlete": "Louise Copp",
+          "club": "Cardiff Amateur Athletic Club",
+          "time": "22:03"
+        }
       }
     ]
   }
