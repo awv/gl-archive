@@ -438,9 +438,9 @@
             </div>
 
             <!-- Frequent Competitors Quick Select -->
-            <div class="space-y-2">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
-                    Most Frequent Competitors (Shared Starting Line)
+            <div id="frequent-rivals-wrapper" class="space-y-2">
+                <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block">
+                    Closest Career Rivals (Similar Standard &amp; Era)
                 </span>
                 <div id="frequent-rivals-container" class="flex flex-wrap items-center gap-2">
                     <!-- Populated dynamically with top rivals -->
@@ -1176,6 +1176,7 @@
                             wins: 0,
                             losses: 0,
                             ties: 0,
+                            totalPosDiff: 0,
                             encounters: []
                         };
                     }
@@ -1186,6 +1187,7 @@
 
                     let outcome = 'tie';
                     if (myRecord.pos > 0 && r.pos > 0) {
+                        comp.totalPosDiff += Math.abs(myRecord.pos - r.pos);
                         if (myRecord.pos < r.pos) {
                             comp.wins++;
                             outcome = 'win';
@@ -1211,21 +1213,46 @@
                     });
                 });
 
-                const sortedCompetitors = Object.values(competitorStats).sort((a, b) => b.together - a.together);
-
-                if (sortedCompetitors.length === 0) {
+                if (Object.keys(competitorStats).length === 0) {
                     rivalrySection.classList.add('hidden');
                     return;
                 }
 
+                // Filter for competitors of a SIMILAR STANDARD who ran in the SAME ERA:
+                // 1. Shared at least 2 mutual race starting lines (same era)
+                // 2. Average position difference <= 35 places (similar standard)
+                // 3. Ranked by rivalry score (closeness + mutual encounters + competitive contest)
+                const rivalCandidates = Object.values(competitorStats)
+                    .filter(c => c.together >= 2)
+                    .map(c => {
+                        const avgDiff = c.totalPosDiff / c.together;
+                        const twoWayMultiplier = (c.wins > 0 && c.losses > 0) ? 1.5 : 1.0;
+                        const score = (c.together * twoWayMultiplier) / (1 + (avgDiff / 6));
+                        return {
+                            ...c,
+                            avgDiff: parseFloat(avgDiff.toFixed(1)),
+                            score: score
+                        };
+                    })
+                    .filter(c => c.avgDiff <= 35)
+                    .sort((a, b) => b.score - a.score);
+
                 // Render Top Frequent Rivals Pills
                 const frequentContainer = document.getElementById('frequent-rivals-container');
+                const rivalsWrapper = document.getElementById('frequent-rivals-wrapper');
                 let currentRivalName = null;
 
                 const renderFrequentPills = () => {
-                    let pillsList = sortedCompetitors.slice(0, 6);
+                    let pillsList = rivalCandidates.slice(0, 6);
                     if (currentRivalName && !pillsList.some(comp => comp.name === currentRivalName) && competitorStats[currentRivalName]) {
                         pillsList = [competitorStats[currentRivalName], ...pillsList.slice(0, 5)];
+                    }
+
+                    if (pillsList.length === 0) {
+                        if (rivalsWrapper) rivalsWrapper.classList.add('hidden');
+                        return;
+                    } else if (rivalsWrapper) {
+                        rivalsWrapper.classList.remove('hidden');
                     }
 
                     frequentContainer.innerHTML = pillsList.map(comp => {
@@ -1274,6 +1301,10 @@
 
                 const renderScoreboard = (rivalName) => {
                     if (!rivalName) {
+                        const hintText = rivalCandidates.length > 0 
+                            ? 'Select a career rival above or search for any runner across 26 seasons to view head-to-head records, win rates, and direct encounters.'
+                            : 'Search for any competitor above across 26 seasons to view head-to-head records, win rates, and direct encounters.';
+
                         scoreboardEl.innerHTML = `
                             <div class="py-12 px-4 text-center space-y-3">
                                 <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 flex items-center justify-center mx-auto text-xl shadow-xs">
@@ -1282,7 +1313,7 @@
                                 <div class="space-y-1">
                                     <h4 class="text-base sm:text-lg font-serif font-bold text-slate-800 dark:text-slate-100">Choose a Competitor to Compare</h4>
                                     <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                                        Select a frequent rival above or search for any runner across 26 seasons to view head-to-head records, win rates, and direct encounters.
+                                        ${hintText}
                                     </p>
                                 </div>
                             </div>

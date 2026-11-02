@@ -158,13 +158,13 @@ function initSearchPalette() {
         <div class="relative w-full max-w-xl bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh] z-10 animate-in fade-in zoom-in-95 duration-150">
             
             <!-- Search Input Header -->
-            <div class="flex items-center px-4 py-3 border-b border-slate-100 gap-3">
-                <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center px-4 py-4 sm:px-5 sm:py-4.5 border-b border-slate-100 dark:border-slate-800 gap-3.5">
+                <svg class="w-6 h-6 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
                 <input type="text" id="palette-search-input" placeholder="Search athletes, clubs, or venues..." autocomplete="off"
-                    class="w-full bg-transparent border-0 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:ring-0 font-medium">
-                <kbd class="text-[10px] font-mono font-semibold bg-slate-100 text-slate-500 px-2 py-0.5 rounded border border-slate-200 shrink-0">ESC</kbd>
+                    class="w-full h-12 sm:h-14 bg-transparent border-0 text-slate-900 dark:text-slate-100 placeholder-slate-400 text-base sm:text-lg focus:outline-none focus:ring-0 font-medium">
+                <kbd class="text-[11px] font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700 shrink-0">ESC</kbd>
             </div>
 
             <!-- Search Results Scroll Area -->
