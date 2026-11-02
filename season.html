@@ -12,7 +12,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GL Archive — Season Campaign Overview</title>
+    <title>GL Archive — Season Overview</title>
     <script>
         // Immediate theme initialization to prevent flash (defaults to light mode)
         const urlTheme = new URLSearchParams(window.location.search).get('theme');
@@ -70,17 +70,17 @@
                 <span>/</span>
                 <a href="seasons.html" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">Seasons</a>
                 <span>/</span>
-                <span id="season-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Campaign</span>
+                <span id="season-breadcrumb-name" class="text-slate-800 dark:text-slate-200 font-bold truncate">Season</span>
             </nav>
 
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2.5 py-1 rounded-md">
-                Campaign Overview
+                Season Overview
             </span>
             <h1 id="season-title" class="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mt-2">
-                Loading Campaign...
+                Loading Season...
             </h1>
             <p id="season-sub" class="text-xs md:text-sm text-slate-500 font-medium mt-1">
-                Calculating campaign metrics...
+                Calculating season metrics...
             </p>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-slate-100">
@@ -155,7 +155,7 @@
 
         <!-- TOP POINTS SCORERS THIS SEASON -->
         <section class="space-y-4">
-            <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Campaign Top Performers</h2>
+            <h2 class="text-xl font-serif font-bold text-slate-900 dark:text-slate-100">Season Top Performers</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
                 <!-- Men Top Scorers -->
@@ -197,10 +197,10 @@
             }
 
             const seasonLabel = seasonRecords[0].season;
-            document.title = `GL Archive — ${seasonLabel} Campaign`;
-            document.getElementById('season-title').textContent = `${seasonLabel} Campaign`;
+            document.title = `GL Archive — ${seasonLabel} Season`;
+            document.getElementById('season-title').textContent = `${seasonLabel} Season`;
             const sBc = document.getElementById('season-breadcrumb-name');
-            if (sBc) sBc.textContent = `${seasonLabel} Campaign`;
+            if (sBc) sBc.textContent = `${seasonLabel} Season`;
             document.getElementById('season-sub').textContent = `Full five-race series metrics and individual results index.`;
 
             // Metrics

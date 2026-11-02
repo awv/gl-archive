@@ -115,11 +115,11 @@
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs">
                     <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Total League Finishes</span>
                     <span id="stat-total-finishes" class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 block mt-1">0</span>
-                    <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 block mt-1 font-semibold">15 Campaigns (2010–2026)</span>
+                    <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 block mt-1 font-semibold">15 Seasons (2010–2026)</span>
                 </div>
 
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs">
-                    <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Peak Turnout Campaign</span>
+                    <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Peak Turnout Season</span>
                     <span id="stat-peak-season" class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 block mt-1">—</span>
                     <span id="stat-peak-count" class="text-[10px] font-mono text-slate-500 dark:text-slate-400 block mt-1 font-semibold">0 finishes</span>
                 </div>
@@ -203,7 +203,7 @@
                                     <th class="py-3 px-3 text-center">Races Run</th>
                                     <th class="py-3 px-3 text-center">Best Pos</th>
                                     <th class="py-3 px-3 text-center">Cat Wins</th>
-                                    <th class="py-3 px-4 text-right font-mono">Campaign Span</th>
+                                    <th class="py-3 px-4 text-right font-mono">Season Span</th>
                                 </tr>
                             </thead>
                             <tbody id="consistency-rows" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
@@ -455,7 +455,7 @@
                                     <th class="py-3 px-4">Athlete</th>
                                     <th class="py-3 px-4">Primary Club</th>
                                     <th class="py-3 px-4 text-center">Consecutive Races</th>
-                                    <th class="py-3 px-4 text-center">Campaigns Spanned</th>
+                                    <th class="py-3 px-4 text-center">Seasons Spanned</th>
                                     <th class="py-3 px-4 text-right font-mono">Streak Period</th>
                                 </tr>
                             </thead>
@@ -499,7 +499,7 @@
                                     <th class="py-3 px-3 text-center">Category Victories</th>
                                     <th class="py-3 px-3 text-center">Career Races</th>
                                     <th class="py-3 px-3 text-center">Primary Categories</th>
-                                    <th class="py-3 px-4 text-right font-mono">Campaign Span</th>
+                                    <th class="py-3 px-4 text-right font-mono">Season Span</th>
                                 </tr>
                             </thead>
                             <tbody id="masters-leaders-rows" class="divide-y divide-slate-100 dark:divide-slate-800 font-sans">
@@ -652,7 +652,7 @@
                         Season-on-Season Fixture Comparison
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-                        Track an athlete's personal progression by comparing corresponding fixtures across any two campaigns.
+                        Track an athlete's personal progression by comparing corresponding fixtures across any two seasons.
                     </p>
                 </div>
 
@@ -1288,7 +1288,7 @@
                             ⚡ ${s.streak} consecutive fixtures
                         </td>
                         <td class="py-3 px-4 text-center font-mono text-slate-500">
-                            ${s.seasonsSpanned} campaigns
+                            ${s.seasonsSpanned} seasons
                         </td>
                         <td class="py-3 px-4 text-right font-mono text-slate-400 text-xs">
                             ${s.startLabel} &rarr; ${s.endLabel}
@@ -1340,7 +1340,7 @@
                                 ${catsLabel}
                             </td>
                             <td class="py-3 px-4 text-right font-mono text-slate-400 text-xs">
-                                ${m.seasons.size} campaigns
+                                ${m.seasons.size} seasons
                             </td>
                         </tr>
                     `;
@@ -1539,7 +1539,7 @@
                     { label: "Race Victories (1st Overall)", valA: ca.raceWins, valB: cb.raceWins, numA: ca.raceWins, numB: cb.raceWins },
                     { label: "Age Category Wins", valA: ca.catWins, valB: cb.catWins, numA: ca.catWins, numB: cb.catWins },
                     { label: "Masters / Vet Finishes", valA: `${ca.vets} (${Math.round((ca.vets/ca.total)*100)}%)`, valB: `${cb.vets} (${Math.round((cb.vets/cb.total)*100)}%)`, numA: ca.vets/ca.total, numB: cb.vets/cb.total },
-                    { label: "Active Campaigns", valA: `${ca.seasons.size} seasons`, valB: `${cb.seasons.size} seasons`, numA: ca.seasons.size, numB: cb.seasons.size }
+                    { label: "Active Seasons", valA: `${ca.seasons.size} seasons`, valB: `${cb.seasons.size} seasons`, numA: ca.seasons.size, numB: cb.seasons.size }
                 ];
 
                 metrics.forEach(m => {

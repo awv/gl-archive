@@ -96,7 +96,7 @@
                 <!-- SELECTOR CONTROLS -->
                 <div class="flex flex-wrap items-center gap-2.5">
                     <div>
-                        <label class="block text-[10px] font-mono font-bold uppercase text-slate-400 mb-1">Campaign</label>
+                        <label class="block text-[10px] font-mono font-bold uppercase text-slate-400 mb-1">Season</label>
                         <select id="season-selector" class="text-xs font-semibold bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900">
                             <!-- Populated dynamically -->
                         </select>
@@ -322,7 +322,7 @@
             seasons.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s;
-                opt.textContent = s.replace('_', '/') + ' Campaign';
+                opt.textContent = s.replace('_', '/') + ' Season';
                 if (s === selectedSeason) opt.selected = true;
                 seasonSelect.appendChild(opt);
             });

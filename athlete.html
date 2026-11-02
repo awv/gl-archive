@@ -278,8 +278,8 @@
                     <span id="stat-appearances" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
                 </div>
                 <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
-                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Campaigns</span>
-                    <span id="stat-campaigns" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
+                    <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Seasons</span>
+                    <span id="stat-seasons" class="text-2xl font-bold font-serif text-slate-900 dark:text-slate-100 block mt-0.5">0</span>
                 </div>
                 <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-xl p-3">
                     <span class="block text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Venues Raced</span>
@@ -333,7 +333,7 @@
                     <span id="insight-card-value" class="text-2xl font-black font-serif text-slate-900 dark:text-slate-100 block mt-3">—</span>
                 </div>
                 <p id="insight-card-subtext" class="text-xs text-slate-500 dark:text-slate-400 mt-4 leading-relaxed font-medium">
-                    Analysing career finishes and category trajectory across Gwent League campaigns...
+                    Analysing career finishes and category trajectory across Gwent League seasons...
                 </p>
             </div>
 
@@ -882,7 +882,7 @@
             document.getElementById('athlete-finishes-span').textContent = `${careerRecords.length} RACES FINISHED`;
 
             document.getElementById('stat-appearances').textContent = careerRecords.length;
-            document.getElementById('stat-campaigns').textContent = seasons.length;
+            document.getElementById('stat-seasons').textContent = seasons.length;
             document.getElementById('stat-venues').textContent = venues.length;
             document.getElementById('stat-best-pos').textContent = bestPos !== 9999 ? `#${bestPos}` : '—';
             document.getElementById('stat-cat-wins').textContent = catWins;
@@ -903,7 +903,7 @@
                 if (catWins >= 3) {
                     titleEl.textContent = "Category Champion";
                     valEl.textContent = `${catWins} Category Victories`;
-                    subEl.textContent = `Proven age-group winner across Gwent League campaigns, claiming ${catWins} individual category victories with an all-time peak finish of #${bestPos}.`;
+                    subEl.textContent = `Proven age-group winner across Gwent League seasons, claiming ${catWins} individual category victories with an all-time peak finish of #${bestPos}.`;
                 } else if (careerRecords.length >= 15) {
                     titleEl.textContent = "League Legend";
                     valEl.textContent = `${careerRecords.length} League Appearances`;
