@@ -614,6 +614,8 @@
                 const neckTrim = meta.neckTrim || acc;
                 const armTrim = meta.armTrim || acc;
                 const flankTrim = meta.flankTrim || armTrim;
+                const bodyStroke = (bodyColor === '#ffffff' || bodyColor.toLowerCase() === '#fff') ? '#cbd5e1' : 'none';
+                const bodyStrokeWidth = bodyStroke !== 'none' ? '1' : '0';
 
                 let pattern = '';
                 if (style === 'dual-stripe' || style === 'horizontal-band' || style === 'hoop') {
@@ -661,9 +663,6 @@
                         <path d="M8 36L32 12V18L14 36H8Z" fill="${bandColor}" />
                     `;
                 }
-
-                const bodyStroke = (bodyColor === '#ffffff' || bodyColor.toLowerCase() === '#fff') ? '#cbd5e1' : 'none';
-                const bodyStrokeWidth = bodyStroke !== 'none' ? '1' : '0';
 
                 return `
                     <svg class="w-10 h-11 shrink-0 drop-shadow-md" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${meta.short || 'Club'} Racing Vest">
