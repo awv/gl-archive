@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navContainer) {
         // Cache-busted fetch ensures newly deployed nav links appear immediately
-        fetch('components/nav.html?v=20261102_latestrace', { cache: 'no-cache' })
+        fetch('components/nav.html?v=20261102_nohardcodedgreen', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 navContainer.innerHTML = html;
@@ -137,11 +137,30 @@ function initNavEvents() {
 
     // Highlight active nav item
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentSearch = new URLSearchParams(window.location.search);
     document.querySelectorAll('#global-nav nav a, #mobile-nav-tray a').forEach(a => {
         const href = a.getAttribute('href');
         if (!href) return;
-        const hrefBase = href.split('?')[0];
-        const isDirect = hrefBase === currentPath || (currentPath === '' && hrefBase === 'index.html');
+        const [hrefBase, hrefQuery] = href.split('?');
+        let isDirect = false;
+
+        if (hrefQuery) {
+            // For parametrized links like "Latest Race", only highlight if current fixture params match
+            if (hrefBase === currentPath) {
+                const linkParams = new URLSearchParams(hrefQuery);
+                let allMatch = true;
+                for (const [key, val] of linkParams.entries()) {
+                    if (currentSearch.get(key) !== val) {
+                        allMatch = false;
+                        break;
+                    }
+                }
+                isDirect = allMatch;
+            }
+        } else {
+            isDirect = hrefBase === currentPath || (currentPath === '' && hrefBase === 'index.html');
+        }
+
         if (isDirect) {
             a.classList.add('text-emerald-700', 'dark:text-emerald-400', 'border-emerald-600', 'dark:border-emerald-500', 'font-bold');
             a.classList.remove('border-transparent', 'text-slate-600', 'dark:text-slate-400');
