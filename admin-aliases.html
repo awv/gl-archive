@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="h-full bg-slate-50 dark">
+<html lang="en-GB" class="h-full bg-slate-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GL Archive — Identity & Alias Review Dashboard</title>
     <script>
-        // Immediate dark mode initialization to prevent flash
-        if (localStorage.getItem('gl_theme') === 'light') {
-            document.documentElement.classList.remove('dark');
-        } else {
+        // Immediate theme initialization to prevent flash (defaults to light mode)
+        const urlTheme = new URLSearchParams(window.location.search).get('theme');
+        if (urlTheme === 'dark' || (urlTheme !== 'light' && localStorage.getItem('gl_theme') === 'dark')) {
             document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>

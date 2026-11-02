@@ -1,16 +1,19 @@
 // site-layout.js — Global Layout, Dark/Light Theme & Search Palette for GL Archive
 
-// 0. IMMEDIATE THEME INITIALIZATION (Prevents white flash, defaults to dark unless forced or stored)
+// 0. IMMEDIATE THEME INITIALIZATION (Prevents flash, defaults to light unless forced or stored as dark)
 (function() {
     const urlParams = new URLSearchParams(window.location.search);
     const forceLight = document.documentElement.getAttribute('data-theme') === 'light' || urlParams.get('theme') === 'light';
+    const forceDark = urlParams.get('theme') === 'dark';
 
     let theme;
     if (forceLight) {
         theme = 'light';
+    } else if (forceDark) {
+        theme = 'dark';
     } else {
         const stored = localStorage.getItem('gl_theme');
-        theme = (stored === 'light') ? 'light' : 'dark';
+        theme = (stored === 'dark') ? 'dark' : 'light';
     }
 
     if (theme === 'dark') {
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navContainer) {
         // Cache-busted fetch ensures newly deployed nav links appear immediately
-        fetch('components/nav.html?v=20261102_update', { cache: 'no-cache' })
+        fetch('components/nav.html?v=20261102_lightmode', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 navContainer.innerHTML = html;
