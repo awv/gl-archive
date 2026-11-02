@@ -601,6 +601,9 @@
                 const bandColor = meta.vestBand || sec;
                 const acc = meta.accent || (bodyColor === '#ffffff' ? '#94a3b8' : '#ffffff');
                 const style = meta.vestStyle || 'horizontal-band';
+                const neckTrim = meta.neckTrim || acc;
+                const armTrim = meta.armTrim || acc;
+                const flankTrim = meta.flankTrim || armTrim;
 
                 let pattern = '';
                 if (style === 'dual-stripe' || style === 'horizontal-band' || style === 'hoop') {
@@ -614,6 +617,30 @@
                     pattern = `
                         <path d="M14 6L14 42H18L18 7Z" fill="${bandColor}" />
                         <path d="M22 7L22 42H26L26 6Z" fill="${bandColor}" />
+                    `;
+                } else if (style === 'side-panels') {
+                    const clipId = `vest-clip-${Math.random().toString(36).substr(2, 7)}`;
+                    return `
+                    <svg class="w-10 h-11 shrink-0 drop-shadow-md" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${meta.short || 'Club'} Racing Vest">
+                        <defs>
+                            <clipPath id="${clipId}">
+                                <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" />
+                            </clipPath>
+                        </defs>
+                        <!-- Vest Body -->
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2L36 6L33 16C31 16 30 18 30 20L31 42H9L10 20C10 18 9 16 7 16L4 6L12 2Z" fill="${bodyColor}" stroke="${bodyStroke}" stroke-width="${bodyStrokeWidth}" />
+                        <!-- White Side Panels & Red Flank Trim -->
+                        <g clip-path="url(#${clipId})">
+                            <path d="M6 14L14 18L15 43H7L9 20Z" fill="${bandColor}" />
+                            <path d="M34 14L26 18L25 43H33L31 20Z" fill="${bandColor}" />
+                            <path d="M4 6L7 16L10 20L9 43" stroke="${flankTrim}" stroke-width="2.4" stroke-linejoin="round" fill="none" />
+                            <path d="M36 6L33 16L30 20L31 43" stroke="${flankTrim}" stroke-width="2.4" stroke-linejoin="round" fill="none" />
+                        </g>
+                        <!-- Collar & Trim -->
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2" stroke="${neckTrim}" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M4 6L7 16" stroke="${armTrim}" stroke-width="1.3"/>
+                        <path d="M36 6L33 16" stroke="${armTrim}" stroke-width="1.3"/>
+                    </svg>
                     `;
                 } else if (style === 'quarters') {
                     pattern = `
@@ -635,9 +662,9 @@
                         <!-- Pattern -->
                         ${pattern}
                         <!-- Collar & Trim -->
-                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2" stroke="${acc}" stroke-width="1.3" stroke-linecap="round"/>
-                        <path d="M4 6L7 16" stroke="${acc}" stroke-width="1.3"/>
-                        <path d="M36 6L33 16" stroke="${acc}" stroke-width="1.3"/>
+                        <path d="M12 2C12 5 15 7 20 7C25 7 28 5 28 2" stroke="${neckTrim}" stroke-width="1.3" stroke-linecap="round"/>
+                        <path d="M4 6L7 16" stroke="${armTrim}" stroke-width="1.3"/>
+                        <path d="M36 6L33 16" stroke="${armTrim}" stroke-width="1.3"/>
                     </svg>
                 `;
             }

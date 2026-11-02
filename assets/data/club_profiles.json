@@ -106,11 +106,16 @@
   },
   "Cardiff Amateur Athletic Club": {
     "short": "Cardiff AAC",
-    "primary": "#1d4ed8",
+    "primary": "#1351d8",
     "secondary": "#dc2626",
-    "accent": "#ffffff",
-    "vestStyle": "vertical-stripes",
-    "description": "Blue with Red and White side stripes",
+    "accent": "#dc2626",
+    "vestStyle": "side-panels",
+    "vestBody": "#1351d8",
+    "vestBand": "#ffffff",
+    "armTrim": "#dc2626",
+    "flankTrim": "#dc2626",
+    "neckTrim": "#1351d8",
+    "description": "Royal Blue with White side panels and Red trim",
     "banner": ""
   },
   "Cardiff University AC": {

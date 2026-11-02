@@ -108,11 +108,16 @@ window.glClubProfiles = {
   },
   "Cardiff Amateur Athletic Club": {
     "short": "Cardiff AAC",
-    "primary": "#1d4ed8",       // Royal Blue
+    "primary": "#1351d8",       // Royal Blue
     "secondary": "#dc2626",     // Red
-    "accent": "#ffffff",        // White
-    "vestStyle": "vertical-stripes",
-    "description": "Blue with Red and White side stripes",
+    "accent": "#dc2626",        // Red
+    "vestStyle": "side-panels",
+    "vestBody": "#1351d8",      // Royal Blue body
+    "vestBand": "#ffffff",      // White vertical side panels
+    "armTrim": "#dc2626",       // Bold Red arm trim
+    "flankTrim": "#dc2626",     // Bold Red outer flank piping
+    "neckTrim": "#1351d8",      // Royal Blue collar
+    "description": "Royal Blue with White side panels and Red trim",
     "banner": ""
   },
   "Cardiff University AC": {
