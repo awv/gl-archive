@@ -283,9 +283,24 @@ html.dark #search-palette-modal kbd {
     color: #8b9bb2 !important;
 }
 
-html.dark #search-palette-modal input {
-    background-color: transparent !important;
+#search-palette-modal #palette-search-input {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+    border-radius: 0.75rem !important;
+}
+
+html.dark #search-palette-modal #palette-search-input {
+    background-color: rgba(30, 41, 59, 0.4) !important;
+    border-color: #2f3d54 !important;
     color: #f1f5f9 !important;
+}
+
+html.dark #search-palette-modal #palette-search-input:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35) !important;
+    background-color: rgba(30, 41, 59, 0.75) !important;
 }
 
 /* Navigation & Mobile Tray */
