@@ -477,8 +477,8 @@
                                 <th class="py-3 px-4 w-28">Season</th>
                                 <th class="py-3 px-3 w-16 text-center">Race</th>
                                 <th class="py-3 px-4">Fixture</th>
-                                <th class="py-3 px-3 w-16 text-center">Pos</th>
-                                <th class="py-3 px-3 w-16 text-center">Cat Pos</th>
+                                <th class="py-3 px-3 w-24 text-center whitespace-nowrap">Pos</th>
+                                <th class="py-3 px-3 w-20 text-center whitespace-nowrap">Cat Pos</th>
                                 <th class="py-3 px-3">Division</th>
                                 <th class="py-3 px-4 w-24 text-right font-mono">Time</th>
                                 <th class="py-3 px-4 w-16 text-right font-mono">Pts</th>
@@ -1092,14 +1092,22 @@
 
             historyBody.innerHTML = descendingHistory.map(r => {
                 const isCatWin = r.cat_pos === 1;
-                const isRaceWin = r.pos === 1;
-                const posBadge = isRaceWin 
-                    ? `<span class="px-2 py-0.5 rounded font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700">🥇 1st</span>`
-                    : `#${r.pos}`;
+                let posBadge = '';
+                if (r.pos === 1) {
+                    posBadge = `<span class="inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full font-sans font-bold text-xs bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 whitespace-nowrap shadow-xs">🥇 1st</span>`;
+                } else if (r.pos === 2) {
+                    posBadge = `<span class="inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full font-sans font-bold text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 whitespace-nowrap">🥈 2nd</span>`;
+                } else if (r.pos === 3) {
+                    posBadge = `<span class="inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full font-sans font-bold text-xs bg-amber-50 dark:bg-amber-950/50 text-amber-900 dark:text-amber-400 border border-amber-200 dark:border-amber-800 whitespace-nowrap">🥉 3rd</span>`;
+                } else if (r.pos > 0) {
+                    posBadge = `<span class="font-mono font-bold text-slate-700 dark:text-slate-300">#${r.pos}</span>`;
+                } else {
+                    posBadge = `<span class="text-slate-300 dark:text-slate-600">—</span>`;
+                }
 
                 const catPosBadge = isCatWin
-                    ? `<span class="px-1.5 py-0.5 rounded font-bold text-[10px] bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">1st</span>`
-                    : (r.cat_pos > 0 ? `#${r.cat_pos}` : '—');
+                    ? `<span class="inline-flex items-center justify-center px-1.5 py-0.5 rounded-full font-mono font-bold text-[10px] bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800 whitespace-nowrap">1st</span>`
+                    : (r.cat_pos > 0 ? `<span class="font-mono font-semibold text-slate-600 dark:text-slate-400">#${r.cat_pos}</span>` : '<span class="text-slate-300 dark:text-slate-600">—</span>');
 
                 const sKey = r.season_key || r.season.replace('/', '_');
                 const fixtureUrl = `results.html?season=${encodeURIComponent(sKey)}&match=${r.match}&gender=${r.gender}&highlight=${encodeURIComponent(r.athlete)}`;
@@ -1137,8 +1145,8 @@
                             </a>
                             ${subline}
                         </td>
-                        <td class="py-3 px-3 text-center font-mono font-bold">${posBadge}</td>
-                        <td class="py-3 px-3 text-center font-mono">${catPosBadge}</td>
+                        <td class="py-3 px-3 text-center whitespace-nowrap">${posBadge}</td>
+                        <td class="py-3 px-3 text-center whitespace-nowrap font-mono">${catPosBadge}</td>
                         <td class="py-3 px-3 font-mono text-[11px] text-slate-500 dark:text-slate-400">${r.age_cat || 'Senior'}</td>
                         <td class="py-3 px-4 text-right font-mono text-slate-600 dark:text-slate-300">${r.time || '—'}</td>
                         <td class="py-3 px-4 text-right font-mono font-bold text-slate-800 dark:text-slate-200">${r.pts || '0'}</td>
