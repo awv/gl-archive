@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. SETUP COMMAND PALETTE / SEARCH MODAL
     initSearchPalette();
+
+    // 3. SETUP WELCOME GREETING MODAL
+    initWelcomeModal();
 });
 
 function updateDynamicYears() {
@@ -468,4 +471,164 @@ function initSearchPalette() {
 
         resultsContainer.innerHTML = html;
     });
+}
+
+function initWelcomeModal() {
+    if (document.getElementById('gl-welcome-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'gl-welcome-modal';
+    modal.className = 'hidden fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 overflow-y-auto';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'welcome-modal-title');
+
+    modal.innerHTML = `
+        <!-- Backdrop -->
+        <div id="welcome-modal-backdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity"></div>
+        
+        <!-- Modal Card -->
+        <div class="relative w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10 my-auto animate-in fade-in zoom-in-95 duration-200 text-slate-800 dark:text-slate-200 font-sans">
+            
+            <!-- Header Dual-Tone Ribbon -->
+            <div class="h-1.5 w-full flex">
+                <div class="flex-1 bg-[#004942]"></div>
+                <div class="flex-1 bg-[#903A3D]"></div>
+            </div>
+
+            <div class="p-6 sm:p-7 space-y-5">
+                
+                <!-- Top Badge & Close Button -->
+                <div class="flex items-center justify-between">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                        ⭐ Welcome to the Archive
+                    </span>
+                    <button type="button" id="welcome-modal-close-btn" aria-label="Close dialog" class="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                <!-- Main Titles -->
+                <div class="space-y-1">
+                    <h2 id="welcome-modal-title" class="text-2xl sm:text-3xl font-serif font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
+                        John H Collins Gwent League
+                    </h2>
+                    <p class="text-xs sm:text-sm font-mono text-emerald-700 dark:text-emerald-400 font-semibold">
+                        Historical Archive &bull; 2000–<span class="gl-archive-end-year">2026</span>
+                    </p>
+                </div>
+
+                <!-- Mission Description -->
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Produced &amp; maintained by <strong class="text-slate-900 dark:text-slate-100">Parc Bryn Bach Running Club</strong> and curated by <strong class="text-slate-900 dark:text-slate-100">Robert Gale</strong>, this digital archive preserves 26 seasons, 119 fixtures, and 60,000+ finishes as a free community resource for Welsh and West Country cross country athletics.
+                </p>
+
+                <!-- Feature Highlights Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-1">
+                        <div class="flex items-center gap-1.5 font-bold text-slate-900 dark:text-slate-100">
+                            <span>🏃</span> <span>Athlete Profiles</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                            Search your name to view every race, time, position, and course record since 2000.
+                        </p>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-1">
+                        <div class="flex items-center gap-1.5 font-bold text-slate-900 dark:text-slate-100">
+                            <span>⚔️</span> <span>Head-to-Head</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                            Compare any two runners across their mutual fixtures, win rates, and time deltas.
+                        </p>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-1">
+                        <div class="flex items-center gap-1.5 font-bold text-slate-900 dark:text-slate-100">
+                            <span>🏆</span> <span>Hall of Fame &amp; 50+</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                            All-time race winners, unbroken streaks, and the 50+ &amp; 100+ Century finish tiers.
+                        </p>
+                    </div>
+
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-1">
+                        <div class="flex items-center gap-1.5 font-bold text-slate-900 dark:text-slate-100">
+                            <span>🛡️</span> <span>Club Dream Teams</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-snug">
+                            Official vest colours, squad rosters, honours, and all-time top scoring dream teams.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center gap-2.5">
+                    <a href="features.html" id="welcome-learn-more-btn" class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#004942] hover:bg-[#003833] text-white font-semibold text-xs sm:text-sm shadow-sm transition-all text-center">
+                        <span>📖 Learn More &amp; Platform Guide</span>
+                        <span>&rarr;</span>
+                    </a>
+                    <button type="button" id="welcome-explore-btn" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm transition-colors text-center cursor-pointer">
+                        Explore Archive
+                    </button>
+                </div>
+
+                <!-- Dismissal Checkbox -->
+                <div class="pt-1 flex items-center justify-center sm:justify-start gap-2 text-[11px] text-slate-400">
+                    <label class="flex items-center gap-2 cursor-pointer select-none">
+                        <input type="checkbox" id="welcome-dont-show-checkbox" checked class="rounded border-slate-300 dark:border-slate-700 text-emerald-600 focus:ring-emerald-500 w-3.5 h-3.5">
+                        <span>Don't show this welcome message again</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeBtn = document.getElementById('welcome-modal-close-btn');
+    const backdrop = document.getElementById('welcome-modal-backdrop');
+    const exploreBtn = document.getElementById('welcome-explore-btn');
+    const learnMoreBtn = document.getElementById('welcome-learn-more-btn');
+    const dontShowCheck = document.getElementById('welcome-dont-show-checkbox');
+
+    const handleDismiss = () => {
+        if (!dontShowCheck || dontShowCheck.checked) {
+            localStorage.setItem('gl_welcome_dismissed', 'true');
+        }
+        modal.classList.add('hidden');
+    };
+
+    window.openWelcomeModal = () => {
+        modal.classList.remove('hidden');
+        if (typeof updateDynamicYears === 'function') updateDynamicYears();
+    };
+
+    window.closeWelcomeModal = () => {
+        handleDismiss();
+    };
+
+    closeBtn.addEventListener('click', handleDismiss);
+    backdrop.addEventListener('click', handleDismiss);
+    exploreBtn.addEventListener('click', handleDismiss);
+    learnMoreBtn.addEventListener('click', () => {
+        if (!dontShowCheck || dontShowCheck.checked) {
+            localStorage.setItem('gl_welcome_dismissed', 'true');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            handleDismiss();
+        }
+    });
+
+    // Automatically greet visitors on the home page if not previously dismissed
+    const path = window.location.pathname;
+    const isHomePage = path.endsWith('index.html') || path.endsWith('/') || path === '' || path.endsWith('gl-archive/') || path.endsWith('gl-archive/index.html');
+    if (isHomePage && !localStorage.getItem('gl_welcome_dismissed')) {
+        setTimeout(() => {
+            window.openWelcomeModal();
+        }, 500);
+    }
 }

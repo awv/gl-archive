@@ -8,7 +8,7 @@
     <!-- Meta tags for social sharing -->
     <meta name="description" content="Discover the key features, tools, and records in the Gwent Cross Country League Historical Archive (2000–2026). Explore athlete career profiles, head-to-head comparisons, club dream teams, and the historical Roll of Honour.">
     <meta property="og:title" content="Gwent League Historical Archive — Platform Overview &amp; Features">
-    <meta property="og:description" content="26 digital seasons (2000–2026), 9,300+ athletes, 55,000+ finishes, and 62 years of league champions brought to life.">
+    <meta property="og:description" content="26 digital seasons (2000–2026), 12,500+ athletes, 60,000+ finishes, and 26 seasons of league champions brought to life.">
     <meta property="og:image" content="assets/img/screenshots/index.png">
     
     <!-- Tailwind CSS (Play CDN) -->
@@ -76,8 +76,8 @@
 
             <!-- Subtitle -->
             <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
-                Welcome to the digital archive of the <strong>John H Collins Gwent Cross Country League</strong>, produced and maintained by <strong>Parc Bryn Bach Running Club</strong> as an open community service for Welsh and West Country athletics.
-                While the league has a proud heritage dating back to 1964, our complete race-by-race digital archive spans from <strong>2000 to 2026</strong> (26 full seasons, 119 league fixtures, and 55,000+ individual finishes). Whether you are tracking down your own lifetime racing records, analysing club rivalries, exploring the Hall of Fame, or examining 62 years of champions, this guide walks through everything the platform has to offer.
+                Welcome to the digital archive of the <strong>John H Collins Gwent Cross Country League</strong>, produced and maintained by <strong>Parc Bryn Bach Running Club</strong> and curated by <strong>Robert Gale</strong> as an open community service for Welsh and West Country athletics.
+                Our complete race-by-race digital archive spans from <strong>2000 to <span class="gl-archive-end-year">2026</span></strong> (26 full seasons, 119 league fixtures, and 60,000+ individual finishes). Whether you are tracking down your own lifetime racing records, analysing club rivalries, exploring the Hall of Fame, or examining league champions, this guide walks through everything the platform has to offer.
             </p>
 
             <!-- Quick Action Links -->
@@ -87,7 +87,7 @@
                     <span>&rarr;</span>
                 </a>
                 <a href="champions.html?theme=light" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-sans font-semibold text-sm border border-slate-300 shadow-xs transition-all hover:border-slate-400">
-                    <span>📜 Roll of Honour (1964–2026)</span>
+                    <span>📜 Roll of Honour (2000–<span class="gl-archive-end-year">2026</span>)</span>
                 </a>
                 <button type="button" onclick="navigator.clipboard.writeText(window.location.href); alert('Page link copied to clipboard!');" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-mono text-xs border border-slate-200 transition-colors">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
@@ -100,7 +100,7 @@
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
                     <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">26</span>
                     <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Digital Seasons</span>
-                    <span class="block text-[10px] text-slate-400 mt-0.5">2000 to 2026 full fixtures</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">2000 to <span class="gl-archive-end-year">2026</span> fixtures</span>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
                     <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">119</span>
@@ -108,14 +108,14 @@
                     <span class="block text-[10px] text-slate-400 mt-0.5">Every race since 2000</span>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-                    <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">9,300+</span>
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-slate-900">12,500+</span>
                     <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Unique Athletes</span>
-                    <span class="block text-[10px] text-slate-400 mt-0.5">55,000+ finishes</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">60,000+ finishes</span>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-                    <span class="block text-2xl md:text-3xl font-serif font-black text-[#004942]">62 Yrs</span>
+                    <span class="block text-2xl md:text-3xl font-serif font-black text-[#004942]">26 Yrs</span>
                     <span class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Roll of Honour</span>
-                    <span class="block text-[10px] text-slate-400 mt-0.5">Champions (1964–2026)</span>
+                    <span class="block text-[10px] text-slate-400 mt-0.5">Champions (2000–<span class="gl-archive-end-year">2026</span>)</span>
                 </div>
             </div>
 
@@ -154,7 +154,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
                     <p>
-                        The search system indexes <strong>over 14,000 athletes</strong> and <strong>100+ clubs</strong> across all 16 seasons. You can search directly from the home page or invoke the <strong>Quick Search Command Palette</strong> from any page simply by pressing <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">⌘K</kbd> (Mac) or <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">Ctrl+K</kbd> (Windows).
+                        The search system indexes <strong>over 12,500 athletes</strong> and <strong>100+ clubs</strong> across all 26 seasons. You can search directly from the home page or invoke the <strong>Quick Search Command Palette</strong> from any page simply by pressing <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">⌘K</kbd> (Mac) or <kbd class="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-xs text-slate-800">Ctrl+K</kbd> (Windows).
                     </p>
                     <ul class="space-y-2 text-xs font-mono text-slate-700 list-disc list-inside">
                         <li>Instant suggestions as you type (athletes, clubs, venues)</li>
@@ -240,7 +240,7 @@
             <div class="flex items-center gap-3">
                 <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 font-mono font-bold flex items-center justify-center text-sm">3</span>
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Roll of Honour &amp; Champions (1964–2026)</h2>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900">Roll of Honour &amp; Champions (2000–<span class="gl-archive-end-year">2026</span>)</h2>
                     <p class="text-xs sm:text-sm text-slate-500 font-sans mt-0.5">The definitive record of team titles, Division 1 podiums, and individual champions.</p>
                 </div>
             </div>
@@ -248,11 +248,11 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
                     <p>
-                        While complete race-by-race digital results currently begin in <strong>2000</strong>, the official <strong>Roll of Honour</strong> transcribes the complete list of League Champions from handwritten records dating back to <strong>1964</strong> across three views:
+                        The official <strong>Roll of Honour</strong> transcribes the complete record of League Champions, Division 1 podiums, and individual champions across the digital archive era (<strong>2000–<span class="gl-archive-end-year">2026</span></strong>):
                     </p>
                     <ul class="space-y-2 text-xs text-slate-700 font-sans list-disc list-inside">
-                        <li><strong>62-Year Historical Champions (1964–2026)</strong>: Full Senior Men (from Gilwern in 1964) and Senior Women (from 1972) champions, with all-time title leaderboards (Westbury 13, Bristol &amp; West 11, Cardiff AAC 10, Les Croupiers 10).</li>
-                        <li><strong>Division 1 Team Podiums (2000–2026)</strong>: Gold (1st Champions), Silver (2nd Runners-Up), and Bronze (3rd Place) teams for every digital season with cumulative points.</li>
+                        <li><strong>Historical Champions (2000–<span class="gl-archive-end-year">2026</span>)</strong>: Full Senior Men and Senior Women champions, with all-time title leaderboards across the archive era.</li>
+                        <li><strong>Division 1 Team Podiums (2000–<span class="gl-archive-end-year">2026</span>)</strong>: Gold (1st Champions), Silver (2nd Runners-Up), and Bronze (3rd Place) teams for every digital season with cumulative points.</li>
                         <li><strong>Individual Champions &amp; Multi-Title Legends</strong>: Season title winners and multi-crown holders like Phil Matthews (4x), Kath Matthews (4x), Kate Roberts (2x), and Alaw Evans (2x).</li>
                     </ul>
 
@@ -292,7 +292,7 @@
                     <div class="p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 space-y-2 text-xs text-slate-700">
                         <span class="font-bold text-emerald-900 font-serif block">⭐ All-Time Scoring Dream Team</span>
                         <p class="leading-relaxed">
-                            The algorithm calculates each club’s ultimate scoring team (Top 5 Senior Men and Top 4 Senior Women) across 16 seasons based on average race points (minimum 5 appearances), showing the greatest squad a club could assemble in league history.
+                            The algorithm calculates each club’s ultimate scoring team (Top 5 Senior Men and Top 4 Senior Women) across 26 seasons based on average race points (minimum 5 appearances), showing the greatest squad a club could assemble in league history.
                         </p>
                     </div>
 
@@ -331,7 +331,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-5 space-y-4 text-sm text-slate-600 leading-relaxed font-sans">
                     <p>
-                        The <strong>Head-to-Head tool</strong> matches any two runners who have lined up together in the Gwent League. It filters all 71 fixtures to isolate the exact races both finished, calculating:
+                        The <strong>Head-to-Head tool</strong> matches any two runners who have lined up together in the Gwent League. It filters all 119 fixtures to isolate the exact races both finished, calculating:
                     </p>
                     <ul class="space-y-1.5 text-xs text-slate-700 font-sans list-disc list-inside">
                         <li><strong>Head-to-Head Record</strong>: Wins, losses, and win percentages.</li>
@@ -375,7 +375,7 @@
                         Cross country is the ultimate test of resilience. The <strong>Analytics &amp; Hall of Fame</strong> honors athletes who have shown extraordinary dedication to the league:
                     </p>
                     <ul class="space-y-2 text-xs text-slate-700 font-sans list-disc list-inside">
-                        <li><strong>The Century Club</strong>: An elite brotherhood of over 100 dedicated athletes who have completed <strong>50 or more league fixtures</strong> (led by J. Davies, Morgan Davies, Andrew Jones, Ceri Davies, and Simon Merrick with 100+ finishes).</li>
+                        <li><strong>The 50+ &amp; Century Club</strong>: An elite honour roll of dedicated athletes who have completed <strong>50 or more league fixtures</strong> (led by 100+ finish Century legends Simon Merrick, Kevin Taylor, Clive Osmond, Julie Scholey, and John Hargreaves, alongside Grandmaster, Diamond, and Half-Century tiers).</li>
                         <li><strong>All-Time Race Winners</strong>: Ranked leaderboard of every runner who has ever taken individual victory in a Senior Men or Senior Women fixture.</li>
                         <li><strong>Iron Streaks</strong>: The longest unbroken streaks of consecutive race appearances without missing a fixture.</li>
                     </ul>
@@ -443,7 +443,7 @@
             <span class="text-xs font-mono uppercase tracking-widest text-emerald-300 font-semibold block">John H Collins Gwent League</span>
             <h3 class="text-3xl sm:text-4xl font-serif font-bold tracking-tight">Ready to Explore Your Racing History?</h3>
             <p class="text-sm sm:text-base text-emerald-100 max-w-2xl mx-auto leading-relaxed">
-                Dive into the archive, look up your club teammates, check out your head-to-head records, and celebrate 16 seasons of digital race history (alongside 62 years of champions) across Wales and the West Country.
+                Dive into the archive, look up your club teammates, check out your head-to-head records, and celebrate 26 seasons of digital race history (2000–<span class="gl-archive-end-year">2026</span>) across Wales and the West Country.
             </p>
             <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
                 <a href="index.html?theme=light" class="px-6 py-3 rounded-xl bg-white hover:bg-emerald-50 text-[#004942] font-semibold text-sm shadow-sm transition-all">
