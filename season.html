@@ -235,14 +235,14 @@
                 ]
             };
 
-            const calendarItems = SEASON_CALENDAR[selectedSeason] || [];
+            const calendarItems = SEASON_CALENDAR[targetSeason] || [];
             calendarItems.forEach(cal => {
                 if (!matchMap.has(cal.match)) {
                     matchMap.set(cal.match, {
                         match: cal.match,
                         venue: cal.venue,
                         date: cal.date,
-                        season_key: selectedSeason,
+                        season_key: targetSeason,
                         men: 0,
                         women: 0,
                         isScheduled: true
