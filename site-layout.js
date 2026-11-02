@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navContainer) {
         // Cache-busted fetch ensures newly deployed nav links appear immediately
-        fetch('components/nav.html?v=20261102_lightmode', { cache: 'no-cache' })
+        fetch('components/nav.html?v=20261102_latestrace', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 navContainer.innerHTML = html;
