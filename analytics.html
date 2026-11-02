@@ -318,21 +318,30 @@
                 <div class="absolute -right-8 -bottom-8 text-9xl opacity-10 select-none pointer-events-none">🏆</div>
             </div>
 
-            <!-- 1. THE CENTURY CLUB (50+ APPEARANCES) -->
+            <!-- 1. THE 50+ & CENTURY CLUB (APPEARANCE MILESTONES) -->
             <section class="space-y-4">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
                     <div>
                         <div class="flex items-center gap-2">
                             <span class="text-2xl">🎖️</span>
                             <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block">
-                                THE 50+ CLUB
+                                HALL OF FAME APPEARANCES
                             </span>
                         </div>
                         <h3 class="text-xl md:text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-                            The Century Club (50+ Finishes)
+                            The 50+ &amp; Century Club
                         </h3>
                     </div>
                     <span class="text-xs font-mono text-slate-500 dark:text-slate-400" id="century-club-count-badge">Calculating members...</span>
+                </div>
+
+                <!-- Milestone Tier Badges Legend -->
+                <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                    <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Honour Tiers:</span>
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-800 font-bold text-[10px]">💯 Century (100+)</span>
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 font-bold text-[10px]">🏆 Grandmaster (75–99)</span>
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-800 font-bold text-[10px]">💎 Diamond (60–74)</span>
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 font-bold text-[10px]">🥇 Half-Century (50–59)</span>
                 </div>
 
                 <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xs">
@@ -1052,10 +1061,12 @@
             if (centuryRowsEl) {
                 centuryRowsEl.innerHTML = centuryClubList.map((r, idx) => {
                     const primaryClub = r.club || Array.from(r.clubs)[0] || 'Gwent League';
-                    let tierBadge = `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">🥇 Century</span>`;
-                    if (r.finishes >= 65) {
+                    let tierBadge = `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">🥇 Half-Century</span>`;
+                    if (r.finishes >= 100) {
+                        tierBadge = `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-800">💯 Century</span>`;
+                    } else if (r.finishes >= 75) {
                         tierBadge = `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">🏆 Grandmaster</span>`;
-                    } else if (r.finishes >= 55) {
+                    } else if (r.finishes >= 60) {
                         tierBadge = `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-800">💎 Diamond</span>`;
                     }
 
