@@ -21,24 +21,27 @@
                 <a href="clubs.html" class="hover:text-slate-950 dark:hover:text-white transition-colors py-1 border-b-2 border-transparent hover:border-slate-900 dark:hover:border-emerald-400">Clubs</a>
                 <a href="results.html?season=2026_2027&match=1" class="hover:text-slate-950 dark:hover:text-white transition-colors py-1 border-b-2 border-transparent hover:border-slate-900 dark:hover:border-emerald-400">Latest Race</a>
                 <!-- Explore Dropdown -->
-                <div class="relative group">
-                    <button type="button" class="flex items-center gap-1 hover:text-slate-950 dark:hover:text-white transition-colors py-1 uppercase focus:outline-none">
+                <div id="nav-explore-dropdown" class="relative">
+                    <button id="nav-explore-btn" type="button" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-1 hover:text-slate-950 dark:hover:text-white transition-colors py-1 uppercase focus:outline-none cursor-pointer">
                         <span>Explore</span>
-                        <svg class="w-3 h-3 text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        <svg id="nav-explore-chevron" class="w-3 h-3 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div class="hidden group-hover:block absolute top-full right-0 mt-1 w-44 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-1.5 z-50 text-xs normal-case tracking-normal">
-                        <a href="venues.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">
-                            <span>📍</span> <span>Venues &amp; Records</span>
-                        </a>
-                        <a href="compare.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">
-                            <span>⚔️</span> <span>Head-to-Head</span>
-                        </a>
-                        <a href="analytics.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">
-                            <span>📊</span> <span>Analytics &amp; Records</span>
-                        </a>
-                        <a href="features.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">
-                            <span>💡</span> <span>Features &amp; Guide</span>
-                        </a>
+                    <!-- Dropdown Menu wrapper with seamless top padding to prevent dead zone -->
+                    <div id="nav-explore-menu" class="hidden absolute top-full right-0 pt-2 w-48 z-50">
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-1.5 text-xs normal-case tracking-normal">
+                            <a href="venues.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors">
+                                <span>📍</span> <span>Venues &amp; Records</span>
+                            </a>
+                            <a href="compare.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors">
+                                <span>⚔️</span> <span>Head-to-Head</span>
+                            </a>
+                            <a href="analytics.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors">
+                                <span>📊</span> <span>Analytics &amp; Records</span>
+                            </a>
+                            <a href="features.html" class="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors">
+                                <span>💡</span> <span>Features &amp; Guide</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>

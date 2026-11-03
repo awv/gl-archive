@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navContainer) {
         // Cache-busted fetch ensures newly deployed nav links appear immediately
-        fetch('components/nav.html?v=20261102_nohardcodedgreen', { cache: 'no-cache' })
+        fetch('components/nav.html?v=20261103_hoverintent', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 navContainer.innerHTML = html;
@@ -134,6 +134,70 @@ function initNavEvents() {
         mobileThemeBtn.addEventListener('click', toggleTheme);
     }
     updateThemeUI();
+
+    // Explore Dropdown (Hover Intent with grace period & click toggle)
+    const exploreDropdown = document.getElementById('nav-explore-dropdown');
+    const exploreBtn = document.getElementById('nav-explore-btn');
+    const exploreMenu = document.getElementById('nav-explore-menu');
+    const exploreChevron = document.getElementById('nav-explore-chevron');
+
+    if (exploreDropdown && exploreBtn && exploreMenu) {
+        let closeTimeout = null;
+
+        const openMenu = () => {
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+            exploreMenu.classList.remove('hidden');
+            exploreBtn.setAttribute('aria-expanded', 'true');
+            if (exploreChevron) exploreChevron.classList.add('rotate-180');
+        };
+
+        const closeMenu = (immediate = false) => {
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+            if (immediate) {
+                exploreMenu.classList.add('hidden');
+                exploreBtn.setAttribute('aria-expanded', 'false');
+                if (exploreChevron) exploreChevron.classList.remove('rotate-180');
+            } else {
+                // 250ms grace period so moving diagonally doesn't prematurely snap closed
+                closeTimeout = setTimeout(() => {
+                    exploreMenu.classList.add('hidden');
+                    exploreBtn.setAttribute('aria-expanded', 'false');
+                    if (exploreChevron) exploreChevron.classList.remove('rotate-180');
+                }, 250);
+            }
+        };
+
+        exploreDropdown.addEventListener('mouseenter', openMenu);
+        exploreDropdown.addEventListener('mouseleave', () => closeMenu(false));
+
+        exploreBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !exploreMenu.classList.contains('hidden');
+            if (isOpen) {
+                closeMenu(true);
+            } else {
+                openMenu();
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!exploreDropdown.contains(e.target)) {
+                closeMenu(true);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu(true);
+            }
+        });
+    }
 
     // Highlight active nav item
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
