@@ -386,7 +386,7 @@ function initSearchPalette() {
         // Match Quick Tools & Curated Portals
         const tools = [
             { title: "Roll of Honour & League Champions", subtitle: "Official 1964–2026 champions, Division 1 podiums & titles", href: "champions.html", icon: "👑", keywords: "champions roll of honour winners titles podiums historical record" },
-            { title: "Head-to-Head Rivalry Comparator", subtitle: "Compare any two athletes across 71 fixtures", href: "compare.html", icon: "⚔️", keywords: "compare rivalry head to head vs matchup comparator" },
+            { title: "Head-to-Head Rivalry Comparator", subtitle: "Compare any two athletes across 119 fixtures", href: "compare.html", icon: "⚔️", keywords: "compare rivalry head to head vs matchup comparator" },
             { title: "All-Time Hall of Fame & Century Club", subtitle: "50+ finishes, race winners & unbroken streaks", href: "analytics.html?tab=hof", icon: "🏆", keywords: "hall of fame century club winners streak iron immortals" },
             { title: "Courses & Championship Grounds", subtitle: "Course records and terrain profiles", href: "venues.html", icon: "📍", keywords: "venues courses terrain track" },
             { title: "Official Division Standings", subtitle: "Division 1-4 promotion & relegation standings", href: "results.html?season=2025_2026&match=5", icon: "📊", keywords: "divisions standings champions promotion table" }
