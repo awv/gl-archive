@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (footerContainer) {
-        fetch('components/footer.html?v=20261102_update', { cache: 'no-cache' })
+        fetch('components/footer.html?v=20261103_correction', { cache: 'no-cache' })
             .then(res => res.text())
             .then(html => {
                 footerContainer.innerHTML = html;
