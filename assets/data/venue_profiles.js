@@ -2739,8 +2739,8 @@ window.VENUE_PROFILES = [
     "region": "Cardiff / Glamorgan",
     "terrain": "Flat, wide, high-speed grass parkland bordering the River Taff. Ideal for relentless tempo racing.",
     "tagline": "The league's premier pure speedway.",
-    "fixture_count": 9,
-    "total_finishes": 7349,
+    "fixture_count": 10,
+    "total_finishes": 8255,
     "men_course_record": {
       "athlete": "G. Rush",
       "club": "Cheltenham Harriers",
@@ -2967,6 +2967,10 @@ window.VENUE_PROFILES = [
     ],
     "men_most_wins": [
       {
+        "athlete": "Alex Smart",
+        "wins": 1
+      },
+      {
         "athlete": "Dafydd Jones",
         "wins": 1
       },
@@ -2981,10 +2985,6 @@ window.VENUE_PROFILES = [
       {
         "athlete": "J Smith",
         "wins": 1
-      },
-      {
-        "athlete": "M. Ward",
-        "wins": 1
       }
     ],
     "women_most_wins": [
@@ -2997,19 +2997,38 @@ window.VENUE_PROFILES = [
         "wins": 2
       },
       {
+        "athlete": "Kayley Price",
+        "wins": 1
+      },
+      {
         "athlete": "Rosie Hamilton-James",
         "wins": 1
       },
       {
         "athlete": "K. Reed",
         "wins": 1
-      },
-      {
-        "athlete": "B. Hawling",
-        "wins": 1
       }
     ],
     "fixtures": [
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "date": "8 November 2026",
+        "starters": 906,
+        "men_starters": 522,
+        "women_starters": 384,
+        "men_winner": {
+          "athlete": "Alex Smart",
+          "club": "Cardiff University AC",
+          "time": "29:00"
+        },
+        "women_winner": {
+          "athlete": "Kayley Price",
+          "club": "Newport Harriers",
+          "time": "22:19"
+        }
+      },
       {
         "season": "2025/2026",
         "season_key": "2025_2026",

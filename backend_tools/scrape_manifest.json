@@ -2158,5 +2158,23 @@
       "filename": "2026_2027_m1_women.htm",
       "cached": true
     }
+  },
+  {
+    "season": "2026/2027",
+    "season_key": "2026_2027",
+    "match": 2,
+    "date": "8 November 2026",
+    "venue": "Llandaff Fields, Cardiff",
+    "hub_url": "https://www.gwent-league.org.uk/2026/res262.htm",
+    "men": {
+      "source_url": "https://www.gwent-league.org.uk/2026/sm262i.htm",
+      "filename": "2026_2027_m2_men.htm",
+      "cached": true
+    },
+    "women": {
+      "source_url": "https://www.gwent-league.org.uk/2026/sl262i.htm",
+      "filename": "2026_2027_m2_women.htm",
+      "cached": true
+    }
   }
 ]

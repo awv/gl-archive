@@ -9257,6 +9257,88 @@
             "pts": 265
           }
         ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Women Division 1",
+        "gender": "F",
+        "tier": "First Team",
+        "pts": 1885,
+        "runner_up": "Bristol and West Athletic Club",
+        "runner_up_pts": 1804,
+        "margin": 81,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Unknown Les_Croupiers",
+            "pos": 3,
+            "time": "22:54",
+            "pts": 381
+          },
+          {
+            "athlete": "Louise Flynn",
+            "pos": 5,
+            "time": "23:20",
+            "pts": 379
+          },
+          {
+            "athlete": "Georgia Palmer",
+            "pos": 6,
+            "time": "23:28",
+            "pts": 378
+          },
+          {
+            "athlete": "Alaw Evans",
+            "pos": 10,
+            "time": "23:49",
+            "pts": 374
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Women Reserve Division",
+        "gender": "F",
+        "tier": "B Team",
+        "pts": 1825,
+        "runner_up": "Bristol and West Athletic Club",
+        "runner_up_pts": 1614,
+        "margin": 211,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Helen Oliver",
+            "pos": 11,
+            "time": "23:52",
+            "pts": 373
+          },
+          {
+            "athlete": "Emily Fell",
+            "pos": 12,
+            "time": "23:56",
+            "pts": 372
+          },
+          {
+            "athlete": "Megan McBrien",
+            "pos": 14,
+            "time": "24:12",
+            "pts": 370
+          },
+          {
+            "athlete": "Nynke Kuiper",
+            "pos": 17,
+            "time": "24:16",
+            "pts": 367
+          }
+        ]
       }
     ]
   },
@@ -23536,6 +23618,53 @@
             "pts": 170
           }
         ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men Division 2",
+        "gender": "M",
+        "tier": "First Team",
+        "pts": 2178,
+        "runner_up": "Lliswerry Runners",
+        "runner_up_pts": 2056,
+        "margin": 122,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Ellis Davies",
+            "pos": 29,
+            "time": "31:45",
+            "pts": 494
+          },
+          {
+            "athlete": "Manny Trailor",
+            "pos": 95,
+            "time": "34:13",
+            "pts": 428
+          },
+          {
+            "athlete": "Samuel Clayton",
+            "pos": 96,
+            "time": "34:15",
+            "pts": 427
+          },
+          {
+            "athlete": "Michael Holloway",
+            "pos": 97,
+            "time": "34:18",
+            "pts": 426
+          },
+          {
+            "athlete": "Evan Price-Davies",
+            "pos": 120,
+            "time": "34:50",
+            "pts": 403
+          }
+        ]
       }
     ]
   },
@@ -24066,6 +24195,47 @@
             "pos": 218,
             "time": "40:21",
             "pts": 145
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men Division 4",
+        "gender": "M",
+        "tier": "First Team",
+        "pts": 1289,
+        "runner_up": "Spirit of Monmouth RC",
+        "runner_up_pts": 1257,
+        "margin": 32,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Ifan Bowen",
+            "pos": 15,
+            "time": "30:49",
+            "pts": 508
+          },
+          {
+            "athlete": "Steffan Davies",
+            "pos": 77,
+            "time": "33:37",
+            "pts": 446
+          },
+          {
+            "athlete": "Lee Ladd",
+            "pos": 344,
+            "time": "40:47",
+            "pts": 179
+          },
+          {
+            "athlete": "Huw Davies",
+            "pos": 367,
+            "time": "41:27",
+            "pts": 156
           }
         ]
       }
@@ -32314,6 +32484,53 @@
         "margin": 24,
         "is_tied": false,
         "scorers": []
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men Division 3",
+        "gender": "M",
+        "tier": "First Team",
+        "pts": 2510,
+        "runner_up": "Cardiff Amateur Athletic Club",
+        "runner_up_pts": 2110,
+        "margin": 400,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Alex Smart",
+            "pos": 1,
+            "time": "29:00",
+            "pts": 522
+          },
+          {
+            "athlete": "Thomas Claridge",
+            "pos": 7,
+            "time": "30:07",
+            "pts": 516
+          },
+          {
+            "athlete": "Sam Gunning",
+            "pos": 26,
+            "time": "31:27",
+            "pts": 497
+          },
+          {
+            "athlete": "Henry Fagan",
+            "pos": 32,
+            "time": "32:09",
+            "pts": 491
+          },
+          {
+            "athlete": "Oscar Tipping",
+            "pos": 39,
+            "time": "32:23",
+            "pts": 484
+          }
+        ]
       }
     ]
   },
@@ -43960,6 +44177,147 @@
             "pts": 240
           }
         ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men Division 1",
+        "gender": "M",
+        "tier": "First Team",
+        "pts": 2576,
+        "runner_up": "Parc Bryn Bach Running Club",
+        "runner_up_pts": 2466,
+        "margin": 110,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Max Davis",
+            "pos": 3,
+            "time": "29:25",
+            "pts": 520
+          },
+          {
+            "athlete": "Luke Burgess",
+            "pos": 4,
+            "time": "29:42",
+            "pts": 519
+          },
+          {
+            "athlete": "Joe Morrow",
+            "pos": 5,
+            "time": "29:45",
+            "pts": 518
+          },
+          {
+            "athlete": "Dylan Rigby",
+            "pos": 8,
+            "time": "30:09",
+            "pts": 515
+          },
+          {
+            "athlete": "David Awde",
+            "pos": 19,
+            "time": "31:17",
+            "pts": 504
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men B Division",
+        "gender": "M",
+        "tier": "First Team",
+        "pts": 2446,
+        "runner_up": "Parc Bryn Bach Running Club",
+        "runner_up_pts": 2185,
+        "margin": 261,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Max Davis",
+            "pos": 3,
+            "time": "29:25",
+            "pts": 520
+          },
+          {
+            "athlete": "Luke Burgess",
+            "pos": 4,
+            "time": "29:42",
+            "pts": 519
+          },
+          {
+            "athlete": "Joe Morrow",
+            "pos": 5,
+            "time": "29:45",
+            "pts": 518
+          },
+          {
+            "athlete": "Dylan Rigby",
+            "pos": 8,
+            "time": "30:09",
+            "pts": 515
+          },
+          {
+            "athlete": "David Awde",
+            "pos": 19,
+            "time": "31:17",
+            "pts": 504
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Men Reserve Division",
+        "gender": "M",
+        "tier": "C Team",
+        "pts": 2222,
+        "runner_up": "Les Croupiers Running Club",
+        "runner_up_pts": 1953,
+        "margin": 269,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Tomek Czerepinski",
+            "pos": 55,
+            "time": "32:49",
+            "pts": 468
+          },
+          {
+            "athlete": "William Christofi",
+            "pos": 61,
+            "time": "33:03",
+            "pts": 462
+          },
+          {
+            "athlete": "Michael Lambourne",
+            "pos": 63,
+            "time": "33:07",
+            "pts": 460
+          },
+          {
+            "athlete": "Jack Moore",
+            "pos": 106,
+            "time": "34:31",
+            "pts": 417
+          },
+          {
+            "athlete": "Dan Myers",
+            "pos": 108,
+            "time": "34:34",
+            "pts": 415
+          }
+        ]
       }
     ]
   },
@@ -45850,6 +46208,47 @@
             "pos": 54,
             "time": "30:46",
             "pts": 223
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Women Division 2",
+        "gender": "F",
+        "tier": "First Team",
+        "pts": 1579,
+        "runner_up": "Wells City Harriers",
+        "runner_up_pts": 1569,
+        "margin": 10,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Elise Hollis",
+            "pos": 48,
+            "time": "26:16",
+            "pts": 337
+          },
+          {
+            "athlete": "Alex Scrivens",
+            "pos": 53,
+            "time": "26:24",
+            "pts": 332
+          },
+          {
+            "athlete": "Holly Fisher",
+            "pos": 58,
+            "time": "26:42",
+            "pts": 327
+          },
+          {
+            "athlete": "Daisy Guilor",
+            "pos": 80,
+            "time": "27:29",
+            "pts": 305
           }
         ]
       }
@@ -51578,6 +51977,47 @@
             "pos": 209,
             "time": "50:56",
             "pts": 65
+          }
+        ]
+      },
+      {
+        "season": "2026/2027",
+        "season_key": "2026_2027",
+        "match": 2,
+        "venue": "Llandaff Fields, Cardiff",
+        "date": "8 November 2026",
+        "division": "Senior Women Division 3",
+        "gender": "F",
+        "tier": "First Team",
+        "pts": 1587,
+        "runner_up": "Caerleon RC",
+        "runner_up_pts": 1499,
+        "margin": 88,
+        "is_tied": false,
+        "scorers": [
+          {
+            "athlete": "Gemma Luckett",
+            "pos": 29,
+            "time": "25:05",
+            "pts": 355
+          },
+          {
+            "athlete": "Bethan Moor",
+            "pos": 32,
+            "time": "25:31",
+            "pts": 352
+          },
+          {
+            "athlete": "Jessie Benjamin",
+            "pos": 60,
+            "time": "26:45",
+            "pts": 325
+          },
+          {
+            "athlete": "Lauren Fines-Allin",
+            "pos": 67,
+            "time": "26:52",
+            "pts": 318
           }
         ]
       }
