@@ -117388,19 +117388,20 @@
     "handover_season": "2015/2016",
     "from_stats": {
       "club": "Swansea Harriers Athletic Club",
-      "count": 6,
+      "count": 7,
       "seasons": [
         "2001/2002",
         "2003/2004",
         "2017/2018",
-        "2023/2024"
+        "2023/2024",
+        "2026/2027"
       ],
       "first_yr": 2001,
-      "last_yr": 2023,
-      "years_span": "2001\u20132024 (4 seasons)",
-      "avg_pos": 9.5,
+      "last_yr": 2026,
+      "years_span": "2001\u20132027 (5 seasons)",
+      "avg_pos": 12.0,
       "best_pos": 3,
-      "avg_cat_pos": 2.5,
+      "avg_cat_pos": 2.7,
       "best_cat_pos": 1,
       "categories": [
         "Senior",
@@ -117436,7 +117437,7 @@
       ]
     },
     "reasons": [
-      "Clean immediate handover (2001\u20132024 \u2794 2015\u20132016) with 0 overlap"
+      "Clean immediate handover (2001\u20132027 \u2794 2015\u20132016) with 0 overlap"
     ],
     "flags": [
       "Impossible biological age regression: Senior, V35, V45, V50 \u2794 Senior (cannot be same runner)"

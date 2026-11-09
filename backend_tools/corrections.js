@@ -3195,5 +3195,8 @@ window.glCorrections = {
   "A Lewis [Taf Running & Orienteering Teams]": "A. Lewis (Taf RATS)",
   "Adam Roberts (M) [Port Talbot Harriers & AC]": "Adam Roberts (Port Talbot)",
   "Adam Roberts (M) [Clevedon AC]": "Alan Roberts",
-  "Alex Evans (M) [3M Gorseinon Road Runners]": "Alex Evans (3M)"
+  "Alex Evans (M) [3M Gorseinon Road Runners]": "Alex Evans (3M)",
+  "Matt Rees [Swansea Harriers Athletic Club]": "Matthew Rees",
+  "Matt Rees [M, Swansea Harriers Athletic Club]": "Matthew Rees",
+  "Matt Rees": "Matthew Rees"
 };
