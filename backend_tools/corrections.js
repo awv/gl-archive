@@ -3198,5 +3198,12 @@ window.glCorrections = {
   "Alex Evans (M) [3M Gorseinon Road Runners]": "Alex Evans (3M)",
   "Matt Rees [Swansea Harriers Athletic Club]": "Matthew Rees",
   "Matt Rees [M, Swansea Harriers Athletic Club]": "Matthew Rees",
-  "Matt Rees": "Matthew Rees"
+  "Matt Rees": "Matthew Rees",
+  "Lloyd Dowde [Caerleon RC]": "Lloyd Dowden",
+  "Lloyd Dowde [M, Caerleon RC]": "Lloyd Dowden",
+  "Lloyd Dowde": "Lloyd Dowden",
+  "L. Dowde [Caerleon RC]": "Lloyd Dowden",
+  "L. Dowde [M, Caerleon RC]": "Lloyd Dowden",
+  "L Dowde [Caerleon RC]": "Lloyd Dowden",
+  "L Dowde [M, Caerleon RC]": "Lloyd Dowden"
 };
